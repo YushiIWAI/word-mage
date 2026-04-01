@@ -38,6 +38,8 @@
   let lastPlayerDamage = $state(0);
   let lastEnemyDamage = $state(0);
   let lastGold = $state(0);
+  let lastRewardCards = $state<WordCard[]>([]);
+  let lastRewardItems = $state<import('./game/engine/types').Item[]>([]);
 
   // アニメーション
   let isTransitioning = $state(false);
@@ -145,7 +147,7 @@
 
       gameState = {
         ...gameState,
-        actionPoints: battleDef.actionPoints,
+        actionPoints: battleDef.actionPoints + getPersistentBonus('ap_bonus'),
         phase: 'battle',
         lastResult: null,
         map: { nodes: updatedNodes, currentNodeId: mapNodeId },
@@ -161,7 +163,7 @@
 
       gameState = {
         ...gameState,
-        actionPoints: normalDef.actionPoints,
+        actionPoints: normalDef.actionPoints + getPersistentBonus('ap_bonus'),
         phase: 'playing',
         lastResult: null,
         map: { nodes: updatedNodes, currentNodeId: mapNodeId },
@@ -172,6 +174,8 @@
     lastPlayerDamage = 0;
     lastEnemyDamage = 0;
     lastGold = 0;
+    lastRewardCards = [];
+    lastRewardItems = [];
   }
 
   // --- 共通ドラッグ操作 ---
@@ -274,6 +278,8 @@
 
     lastPlayerDamage = result.damage;
     lastGold = result.gold;
+    lastRewardCards = result.rewardCards ?? [];
+    lastRewardItems = result.rewardItems ?? [];
 
     let newState = { ...gameState, phase: 'resolved' as const, lastResult: result.resultText };
     newState = applyDamage(newState, result.damage);
@@ -348,7 +354,7 @@
 
     gameState = {
       ...gameState,
-      actionPoints: currentBattleNode.actionPoints,
+      actionPoints: currentBattleNode.actionPoints + getPersistentBonus('ap_bonus'),
       battle: nextBattle,
       lastResult: null,
     };
@@ -556,7 +562,11 @@
                   onclick={() => handleBuyCard(item, i)}
                 >
                   <span class="shop-card-text">{item.card.text}</span>
-                  <span class="shop-card-category">{item.card.category === 'modifier' ? '修' : item.card.category === 'subject' ? '主' : item.card.category === 'predicate' ? '述' : '対'}</span>
+                  {#if item.card.persistent}
+                    <span class="shop-card-persistent">{item.card.persistent.description}</span>
+                  {:else}
+                    <span class="shop-card-category">{item.card.category === 'modifier' ? '修' : item.card.category === 'subject' ? '主' : item.card.category === 'predicate' ? '述' : '対'}</span>
+                  {/if}
                   <span class="shop-card-price">{sold ? '売切' : item.price + ' G'}</span>
                 </button>
               {/each}
@@ -779,6 +789,16 @@
             {:else}<span class="stat-nodamage">ダメージなし</span>{/if}
             {#if lastGold > 0}<span class="stat-gold">+{lastGold} G</span>{/if}
           </div>
+          {#if lastRewardCards.length > 0 || lastRewardItems.length > 0}
+            <div class="reward-list">
+              {#each lastRewardCards as card}
+                <span class="reward-tag reward-card">+ 語「{card.text}」</span>
+              {/each}
+              {#each lastRewardItems as item}
+                <span class="reward-tag reward-item">{item.name}</span>
+              {/each}
+            </div>
+          {/if}
           {#if gameState.hp > 0}
             {@const mn = gameState.map.nodes.find(n => n.id === gameState.map.currentNodeId)}
             <button class="next-btn" onclick={handleReturnToMap}>
@@ -868,6 +888,15 @@
   .stat-gold { color: var(--gold-accent); }
   .stat-enemy-damage { color: #3b7ea7; }
 
+  .reward-list { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin: 6px 0; }
+  .reward-tag {
+    font-family: var(--font-story); font-size: 0.8rem; padding: 3px 10px;
+    border-radius: 4px; animation: rewardAppear 0.5s ease-out;
+  }
+  .reward-card { color: var(--slot-subject); background: rgba(43, 94, 167, 0.1); border: 1px solid rgba(43, 94, 167, 0.3); }
+  .reward-item { color: var(--gold-accent); background: rgba(196, 162, 101, 0.1); border: 1px solid rgba(196, 162, 101, 0.3); }
+  @keyframes rewardAppear { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
   .right-placeholder { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--ink-light); font-size: 0.9rem; font-style: italic; gap: 4px; }
   .next-btn { font-family: var(--font-story); font-size: 0.9rem; padding: 8px 24px; background: none; color: var(--gold-accent); border: 1px solid var(--gold-dim); border-radius: 4px; cursor: pointer; align-self: center; margin-top: 8px; transition: all 0.3s; }
   .next-btn:hover { background: rgba(196,162,101,0.1); box-shadow: 0 0 16px var(--magic-glow); }
@@ -925,6 +954,7 @@
   .shop-card.item-card { border-color: var(--gold-accent); }
   .shop-card-text { font-size: 0.95rem; color: var(--ink-dark); }
   .shop-card-category { font-size: 0.65rem; color: var(--ink-light); }
+  .shop-card-persistent { font-size: 0.6rem; color: #7b3ba7; background: rgba(123,59,167,0.1); padding: 1px 6px; border-radius: 3px; }
   .shop-card-desc { font-size: 0.65rem; color: var(--ink-light); font-style: italic; }
   .shop-card-price { font-size: 0.75rem; color: var(--gold-accent); font-weight: 700; }
   .shop-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(0,0,0,0.08); }

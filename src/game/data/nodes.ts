@@ -808,6 +808,15 @@ export const shopNodeDefs: Record<string, ShopNodeDef> = {
       { type: 'word', card: { id: 'shop_3', text: '竜', category: 'subject', tags: ['dragon', 'threat:high', 'fire'] }, price: 10 },
       { type: 'word', card: { id: 'shop_4', text: '砕く', category: 'predicate', tags: ['destroy', 'combat', 'force'] }, price: 8 },
       { type: 'word', card: { id: 'shop_5', text: '消え去る', category: 'predicate', tags: ['vanish', 'retreat', 'safe'] }, price: 6 },
+      // 永続カード
+      { type: 'word', card: {
+        id: 'shop_perm_quill', text: '魔法の羽根ペン', category: 'modifier', tags: ['magic', 'tool'],
+        persistent: { description: '毎ノードAP+1', effect: { type: 'ap_bonus', amount: 1 } },
+      }, price: 15 },
+      { type: 'word', card: {
+        id: 'shop_perm_pouch', text: '底なしの袋', category: 'modifier', tags: ['magic', 'container'],
+        persistent: { description: '手札上限+2', effect: { type: 'hand_limit', amount: 2 } },
+      }, price: 12 },
     ],
     sellPricePerCard: 3,
   },
