@@ -2,7 +2,8 @@
   import type { Snippet } from 'svelte';
   import paperGrunge from '../assets/textures/paper-grunge.jpg';
   import stoneTexture from '../assets/textures/stone-texture.jpg';
-  import classicFrame from '../assets/ui/classic-frame.png';
+  import frameTop from '../assets/ui/classic-frame-top.png';
+  import frameBottom from '../assets/ui/classic-frame-bottom.png';
 
   interface Props {
     leftTitle?: string;
@@ -29,7 +30,8 @@
         <!-- 紙の質感レイヤー -->
         <div class="paper-texture" style="background-image: url({paperGrunge})"></div>
         <div class="paper-grain" style="background-image: url({stoneTexture})"></div>
-        <div class="page-frame" style="background-image: url({classicFrame})"></div>
+        <div class="page-frame-top" style="background-image: url({frameTop})"></div>
+        <div class="page-frame-bottom" style="background-image: url({frameBottom})"></div>
         <div class="page-inner">
           {#if leftTitle}
             <h2 class="page-title">{leftTitle}</h2>
@@ -47,7 +49,8 @@
       <div class="page page-right">
         <div class="paper-texture" style="background-image: url({paperGrunge})"></div>
         <div class="paper-grain" style="background-image: url({stoneTexture})"></div>
-        <div class="page-frame" style="background-image: url({classicFrame})"></div>
+        <div class="page-frame-top" style="background-image: url({frameTop})"></div>
+        <div class="page-frame-bottom" style="background-image: url({frameBottom})"></div>
         <div class="page-inner">
           {#if rightTitle}
             <h2 class="page-title">{rightTitle}</h2>
@@ -99,16 +102,16 @@
 
   .corner-metal {
     position: absolute;
-    width: 16px;
-    height: 16px;
-    border: 2px solid var(--gold-dim);
-    opacity: 0.5;
+    width: 28px;
+    height: 28px;
+    border: 2.5px solid var(--gold-accent);
+    opacity: 0.6;
     pointer-events: none;
   }
-  .top-left { top: 4px; left: 4px; border-right: none; border-bottom: none; border-radius: 3px 0 0 0; }
-  .top-right { top: 4px; right: 4px; border-left: none; border-bottom: none; border-radius: 0 3px 0 0; }
-  .bottom-left { bottom: 4px; left: 4px; border-right: none; border-top: none; border-radius: 0 0 0 3px; }
-  .bottom-right { bottom: 4px; right: 4px; border-left: none; border-top: none; border-radius: 0 0 3px 0; }
+  .top-left { top: 3px; left: 3px; border-right: none; border-bottom: none; border-radius: 4px 0 0 0; }
+  .top-right { top: 3px; right: 3px; border-left: none; border-bottom: none; border-radius: 0 4px 0 0; }
+  .bottom-left { bottom: 3px; left: 3px; border-right: none; border-top: none; border-radius: 0 0 0 4px; }
+  .bottom-right { bottom: 3px; right: 3px; border-left: none; border-top: none; border-radius: 0 0 4px 0; }
 
   .book {
     width: 100%;
@@ -182,9 +185,10 @@
   .paper-texture {
     position: absolute;
     inset: 0;
-    background-size: cover;
+    background-size: 100% 100%;
     background-position: center;
-    opacity: 0.15;
+    background-repeat: no-repeat;
+    opacity: 0.18;
     mix-blend-mode: multiply;
     pointer-events: none;
   }
@@ -193,22 +197,32 @@
   .paper-grain {
     position: absolute;
     inset: 0;
-    background-size: cover;
+    background-size: 100% 100%;
     background-position: center;
-    opacity: 0.04;
+    background-repeat: no-repeat;
+    opacity: 0.08;
     mix-blend-mode: multiply;
     pointer-events: none;
   }
 
-  /* クラシックフレーム装飾 */
-  .page-frame {
+  /* クラシックフレーム装飾（上下分割） */
+  .page-frame-top, .page-frame-bottom {
     position: absolute;
-    inset: 8px;
-    background-size: contain;
+    left: 4px;
+    right: 4px;
+    height: 40%;
+    background-size: 100% auto;
     background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.35;
+    opacity: 0.4;
     pointer-events: none;
+  }
+  .page-frame-top {
+    top: 2px;
+    background-position: top center;
+  }
+  .page-frame-bottom {
+    bottom: 2px;
+    background-position: bottom center;
   }
 
   /* ページ端の影（本の厚み） */
@@ -264,13 +278,13 @@
 
   .page-number {
     position: absolute;
-    bottom: 12px;
+    bottom: 20px;
     font-family: var(--font-story);
     font-size: 0.7rem;
     color: var(--ink-light);
-    opacity: 0.6;
-    z-index: 1;
+    opacity: 0.5;
+    z-index: 2;
   }
-  .page-number.left { left: 28px; }
-  .page-number.right { right: 28px; }
+  .page-number.left { left: 50%; transform: translateX(-50%); }
+  .page-number.right { right: 50%; transform: translateX(50%); }
 </style>
