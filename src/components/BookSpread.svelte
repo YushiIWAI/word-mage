@@ -2,8 +2,6 @@
   import type { Snippet } from 'svelte';
   import paperGrunge from '../assets/textures/paper-grunge.jpg';
   import stoneTexture from '../assets/textures/stone-texture.jpg';
-  import frameTop from '../assets/ui/classic-frame-top.png';
-  import frameBottom from '../assets/ui/classic-frame-bottom.png';
 
   interface Props {
     leftTitle?: string;
@@ -30,8 +28,6 @@
         <!-- 紙の質感レイヤー -->
         <div class="paper-texture" style="background-image: url({paperGrunge})"></div>
         <div class="paper-grain" style="background-image: url({stoneTexture})"></div>
-        <div class="page-frame-top" style="background-image: url({frameTop})"></div>
-        <div class="page-frame-bottom" style="background-image: url({frameBottom})"></div>
         <div class="page-inner">
           {#if leftTitle}
             <h2 class="page-title">{leftTitle}</h2>
@@ -49,8 +45,6 @@
       <div class="page page-right">
         <div class="paper-texture" style="background-image: url({paperGrunge})"></div>
         <div class="paper-grain" style="background-image: url({stoneTexture})"></div>
-        <div class="page-frame-top" style="background-image: url({frameTop})"></div>
-        <div class="page-frame-bottom" style="background-image: url({frameBottom})"></div>
         <div class="page-inner">
           {#if rightTitle}
             <h2 class="page-title">{rightTitle}</h2>
@@ -205,25 +199,6 @@
     pointer-events: none;
   }
 
-  /* クラシックフレーム装飾（上下分割） */
-  .page-frame-top, .page-frame-bottom {
-    position: absolute;
-    left: 4px;
-    right: 4px;
-    height: 40%;
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    opacity: 0.4;
-    pointer-events: none;
-  }
-  .page-frame-top {
-    top: 2px;
-    background-position: top center;
-  }
-  .page-frame-bottom {
-    bottom: 2px;
-    background-position: bottom center;
-  }
 
   /* ページ端の影（本の厚み） */
   .page-edge-shadow {
@@ -256,6 +231,7 @@
     font-weight: 700;
     color: var(--ink-medium);
     text-align: center;
+    margin-top: 8px;
     margin-bottom: 4px;
     letter-spacing: 0.1em;
   }
@@ -264,7 +240,7 @@
     text-align: center;
     color: var(--gold-dim);
     font-size: 0.65rem;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     letter-spacing: 0.5em;
     opacity: 0.7;
   }

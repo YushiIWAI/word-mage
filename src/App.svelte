@@ -906,7 +906,7 @@
   .event-text { flex: 1; display: flex; align-items: center; justify-content: center; }
   .sentence-container { display: flex; flex-wrap: wrap; gap: 2px; justify-content: center; align-items: center; line-height: 2.6; }
   .fixed-text { font-family: var(--font-story); font-size: 1.15rem; color: var(--ink-medium); padding: 0 2px; }
-  .action-bar { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(0,0,0,0.08); }
+  .action-bar { display: flex; justify-content: space-between; align-items: center; margin-top: 4px; padding-top: 4px; }
   .ap-display { font-size: 0.85rem; color: var(--ink-light); font-family: var(--font-story); }
   .resolve-btn { font-family: var(--font-story); font-size: 0.85rem; padding: 6px 16px; background: var(--ink-dark); color: var(--page-cream); border: none; border-radius: 4px; cursor: pointer; transition: all 0.2s; }
   .resolve-btn:hover { background: var(--leather-light); box-shadow: 0 0 12px var(--magic-glow); }
