@@ -13,7 +13,7 @@ export function createInitialState(hand: WordCard[], mapNodes: MapNode[]): GameS
     },
     hp: 20,
     maxHp: 20,
-    gold: 0,
+    quill: 0,
     battle: null,
     items: [],
   };
@@ -137,9 +137,9 @@ export function applyDamage(state: GameState, damage: number): GameState {
   };
 }
 
-/** ゴールド獲得 */
-export function addGold(state: GameState, amount: number): GameState {
-  return { ...state, gold: state.gold + amount };
+/** Quill獲得 */
+export function addQuill(state: GameState, amount: number): GameState {
+  return { ...state, quill: state.quill + amount };
 }
 
 /** アイテム追加 */
@@ -149,11 +149,11 @@ export function addItems(state: GameState, items: import('./types').Item[]): Gam
 
 /** ショップで語カードを購入 */
 export function buyCard(state: GameState, card: import('./types').WordCard, price: number): GameState | null {
-  if (state.gold < price) return null;
+  if (state.quill < price) return null;
   if (state.hand.length >= state.handLimit) return null;
   return {
     ...state,
-    gold: state.gold - price,
+    quill: state.quill - price,
     hand: [...state.hand, card],
   };
 }
@@ -166,7 +166,7 @@ export function sellCard(state: GameState, cardIndex: number, price: number): Ga
   newHand.splice(cardIndex, 1);
   return {
     ...state,
-    gold: state.gold + price,
+    quill: state.quill + price,
     hand: newHand,
   };
 }
@@ -179,7 +179,7 @@ export function sellItem(state: GameState, itemIndex: number): GameState | null 
   newItems.splice(itemIndex, 1);
   return {
     ...state,
-    gold: state.gold + item.sellPrice,
+    quill: state.quill + item.sellPrice,
     items: newItems,
   };
 }

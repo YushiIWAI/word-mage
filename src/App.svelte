@@ -6,7 +6,7 @@
   import MagicEffect from './components/MagicEffect.svelte';
   import classicFrameImg from './assets/ui/classic-frame.png';
   import { nodeDefs, battleNodeDefs, shopNodeDefs, treasureNodeDefs, initialHand, mapNodes } from './game/data/nodes';
-  import { createInitialState, swapWord, extractWord, insertWord, getSelectableNodeIds, applyDamage, addGold, addItems, buyCard, sellCard, sellItem } from './game/engine/state';
+  import { createInitialState, swapWord, extractWord, insertWord, getSelectableNodeIds, applyDamage, addQuill, addItems, buyCard, sellCard, sellItem } from './game/engine/state';
   import { resolveNode } from './game/engine/evaluate';
   import { initBattle, resolveBattleTurn, advanceBattleTurn, isEnemyDefeated, getCurrentEnemyAction } from './game/engine/battle';
   import type { Slot, NodeDef, BattleNodeDef, BattleState, ShopNodeDef, ShopItem, TreasureNodeDef, WordCard, PersistentEffect } from './game/engine/types';
@@ -39,7 +39,7 @@
   // 直前の判定結果
   let lastPlayerDamage = $state(0);
   let lastEnemyDamage = $state(0);
-  let lastGold = $state(0);
+  let lastQuill = $state(0);
   let lastRewardCards = $state<WordCard[]>([]);
   let lastRewardItems = $state<import('./game/engine/types').Item[]>([]);
 
@@ -188,7 +188,7 @@
 
     lastPlayerDamage = 0;
     lastEnemyDamage = 0;
-    lastGold = 0;
+    lastQuill = 0;
     lastRewardCards = [];
     lastRewardItems = [];
   }
@@ -292,13 +292,13 @@
     const result = resolveNode(currentNodeDef, currentSlots);
 
     lastPlayerDamage = result.damage;
-    lastGold = result.gold;
+    lastQuill = result.quill;
     lastRewardCards = result.rewardCards ?? [];
     lastRewardItems = result.rewardItems ?? [];
 
     let newState = { ...gameState, phase: 'resolved' as const, lastResult: result.resultText };
     newState = applyDamage(newState, result.damage);
-    newState = addGold(newState, result.gold);
+    newState = addQuill(newState, result.quill);
     if (result.rewardItems) {
       newState = addItems(newState, result.rewardItems);
     }
@@ -354,12 +354,12 @@
 
     if (defeated) {
       // 勝利
-      newState = addGold(newState, currentBattleNode.victoryGold);
-      lastGold = currentBattleNode.victoryGold;
+      newState = addQuill(newState, currentBattleNode.victoryQuill);
+      lastQuill = currentBattleNode.victoryQuill;
       newState.phase = 'resolved';
       newState.lastResult = result.resultText + '\n\n' + currentBattleNode.enemyName + 'は倒れた。';
     } else {
-      lastGold = 0;
+      lastQuill = 0;
     }
 
     gameState = newState;
@@ -421,7 +421,7 @@
     allBattleSlots = [];
     lastPlayerDamage = 0;
     lastEnemyDamage = 0;
-    lastGold = 0;
+    lastQuill = 0;
   }
 
   function getSlotIndex(slotId: string): number {
@@ -461,7 +461,7 @@
         </div>
         <span class="hp-text">{gameState.hp}/{gameState.maxHp}</span>
       </div>
-      <div class="gold-display">{gameState.gold} G</div>
+      <div class="gold-display">{gameState.quill} Q</div>
     </div>
   {/if}
 
@@ -475,7 +475,7 @@
       {/snippet}
       {#snippet rightContent()}
         <div class="ending-page">
-          <p class="ending-fin">— GAME OVER —</p>
+          <p class="ending-fin">— QAME OVER —</p>
           <button class="restart-btn" onclick={handleRestart}>最初からやり直す</button>
         </div>
       {/snippet}
@@ -585,7 +585,7 @@
                 <button
                   class="shop-card"
                   class:sold
-                  disabled={sold || gameState.gold < item.price || gameState.hand.length >= gameState.handLimit}
+                  disabled={sold || gameState.quill < item.price || gameState.hand.length >= gameState.handLimit}
                   onclick={() => handleBuyCard(item, i)}
                 >
                   <span class="shop-card-text">{item.card.text}</span>
@@ -594,7 +594,7 @@
                   {:else}
                     <span class="shop-card-category">{item.card.category === 'modifier' ? '修' : item.card.category === 'subject' ? '主' : item.card.category === 'predicate' ? '述' : '対'}</span>
                   {/if}
-                  <span class="shop-card-price">{sold ? '売切' : item.price + ' G'}</span>
+                  <span class="shop-card-price">{sold ? '売切' : item.price + ' Q'}</span>
                 </button>
               {/each}
             </div>
@@ -606,12 +606,12 @@
         <div class="shop-content">
           <!-- 手札売却 -->
           <div class="shop-section">
-            <div class="section-label" style="color: var(--ink-medium)">手札を売る（{currentShopNode.sellPricePerCard} G/枚）</div>
+            <div class="section-label" style="color: var(--ink-medium)">手札を売る（{currentShopNode.sellPricePerCard} Q/枚）</div>
             <div class="shop-items">
               {#each gameState.hand as card, i}
                 <button class="shop-card sellable" onclick={() => handleSellCard(i)}>
                   <span class="shop-card-text">{card.text}</span>
-                  <span class="shop-card-price">+{currentShopNode.sellPricePerCard} G</span>
+                  <span class="shop-card-price">+{currentShopNode.sellPricePerCard} Q</span>
                 </button>
               {/each}
             </div>
@@ -626,7 +626,7 @@
                   <button class="shop-card sellable item-card" onclick={() => handleSellItem(i)}>
                     <span class="shop-card-text">{item.name}</span>
                     <span class="shop-card-desc">{item.description}</span>
-                    <span class="shop-card-price">+{item.sellPrice} G</span>
+                    <span class="shop-card-price">+{item.sellPrice} Q</span>
                   </button>
                 {/each}
               </div>
@@ -634,7 +634,7 @@
           {/if}
 
           <div class="shop-footer">
-            <div class="gold-display-large">{gameState.gold} G</div>
+            <div class="gold-display-large">{gameState.quill} Q</div>
             <div class="hand-count-shop">手札: {gameState.hand.length} / {gameState.handLimit}</div>
           </div>
 
@@ -722,7 +722,7 @@
                 </div>
                 <span class="hp-text">{gameState.hp}/{gameState.maxHp}</span>
               </div>
-              <div class="gold-display">{gameState.gold} G</div>
+              <div class="gold-display">{gameState.quill} Q</div>
             </div>
           </div>
         </div>
@@ -743,7 +743,7 @@
           <div class="result-stats">
             {#if lastPlayerDamage > 0}<span class="stat-damage">-{lastPlayerDamage} HP</span>{/if}
             {#if lastEnemyDamage > 0}<span class="stat-enemy-damage">敵に {lastEnemyDamage} ダメージ</span>{/if}
-            {#if lastGold > 0}<span class="stat-gold">+{lastGold} G</span>{/if}
+            {#if lastQuill > 0}<span class="stat-gold">+{lastQuill} Q</span>{/if}
           </div>
           <button class="next-btn" onclick={handleReturnToMap}>
             {gameState.map.nodes.find(n => n.id === gameState.map.currentNodeId)?.nextIds.length ? '次のページへ' : '物語を閉じる'}
@@ -820,7 +820,7 @@
             {#if lastPlayerDamage > 0}<span class="stat-damage">-{lastPlayerDamage} HP</span>
             {:else if lastPlayerDamage < 0}<span class="stat-heal">+{-lastPlayerDamage} HP</span>
             {:else}<span class="stat-nodamage">ダメージなし</span>{/if}
-            {#if lastGold > 0}<span class="stat-gold">+{lastGold} G</span>{/if}
+            {#if lastQuill > 0}<span class="stat-gold">+{lastQuill} Q</span>{/if}
           </div>
           {#if lastRewardCards.length > 0 || lastRewardItems.length > 0}
             <div class="reward-list">

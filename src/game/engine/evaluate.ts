@@ -19,11 +19,15 @@ export function evaluateOutcome(slots: Slot[], outcomes: Outcome[]): Outcome | n
 }
 
 function matchesCondition(slots: Slot[], outcome: Outcome): boolean {
-  for (const [slotId, requiredTags] of Object.entries(outcome.conditions)) {
+  for (const [slotId, condition] of Object.entries(outcome.conditions)) {
     const slot = slots.find(s => s.id === slotId);
     if (!slot || !slot.word) return false;
-    if (!requiredTags.every(tag => slot.word!.tags.includes(tag))) {
-      return false;
+    if (typeof condition === 'string') {
+      // カードID照合
+      if (slot.word.id !== condition) return false;
+    } else {
+      // タグ照合（既存互換）
+      if (!condition.every(tag => slot.word!.tags.includes(tag))) return false;
     }
   }
   return true;
@@ -31,12 +35,12 @@ function matchesCondition(slots: Slot[], outcome: Outcome): boolean {
 
 /**
  * ノードを解決する。
- * 返り値: { resultText, damage, gold, rewardCards }
+ * 返り値: { resultText, damage, quill, rewardCards }
  */
 export function resolveNode(node: NodeDef, currentSlots: Slot[]): {
   resultText: string;
   damage: number;
-  gold: number;
+  quill: number;
   rewardCards?: import('./types').WordCard[];
 } {
   const outcome = evaluateOutcome(currentSlots, node.outcomes);
@@ -44,13 +48,13 @@ export function resolveNode(node: NodeDef, currentSlots: Slot[]): {
     return {
       resultText: outcome.resultText,
       damage: outcome.damage,
-      gold: outcome.gold,
+      quill: outcome.quill,
       rewardCards: outcome.rewardCards,
     };
   }
   return {
     resultText: node.defaultOutcome.resultText,
     damage: node.defaultOutcome.damage,
-    gold: node.defaultOutcome.gold,
+    quill: node.defaultOutcome.quill,
   };
 }

@@ -51,7 +51,7 @@ export interface WordCard {
 export type PersistentEffect =
   | { type: 'ap_bonus'; amount: number }       // 毎ノードAP+N
   | { type: 'hand_limit'; amount: number }      // 手札上限+N
-  | { type: 'gold_bonus'; amount: number }      // 毎ノードゴールド+N
+  | { type: 'quill_bonus'; amount: number }      // 毎ノードゴールド+N
   | { type: 'heal_on_clear'; amount: number };  // ノードクリア時HP+N
 
 /** treasure ノード定義 */
@@ -97,14 +97,14 @@ export interface Item {
 /** 組み合わせ定義による結果判定 */
 export interface Outcome {
   id: string;
-  /** 条件: スロットIDごとに必要なタグ（AND条件） */
-  conditions: Record<string, string[]>;
+  /** 条件: スロットIDごとにカードID(string)または必要タグ(string[]) */
+  conditions: Record<string, string | string[]>;
   /** 結果テキスト */
   resultText: string;
   /** ダメージ（0=ノーダメ、低いほど良い結果） */
   damage: number;
   /** ゴールド報酬 */
-  gold: number;
+  quill: number;
   /** 獲得可能な語カード */
   rewardCards?: WordCard[];
   /** 獲得可能なアイテム */
@@ -150,7 +150,7 @@ export interface NodeDef {
   defaultOutcome: {
     resultText: string;
     damage: number;
-    gold: number;
+    quill: number;
   };
   /** このノードで使えるAP */
   actionPoints: number;
@@ -220,7 +220,7 @@ export interface BattleNodeDef {
   /** プレイヤーの行動文（毎ターンこの状態にリセット） */
   playerAction: PlayerAction;
   /** 勝利時の報酬 */
-  victoryGold: number;
+  victoryQuill: number;
   victoryRewardCards?: WordCard[];
 }
 
@@ -269,7 +269,7 @@ export interface GameState {
   hp: number;
   maxHp: number;
   /** ゴールド */
-  gold: number;
+  quill: number;
   /** バトル中の状態（phase === 'battle' の時のみ有効） */
   battle: BattleState | null;
   /** アイテムインベントリ */

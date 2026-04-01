@@ -85,7 +85,7 @@ export function isEnemyDefeated(battle: BattleState, enemyDamage: number): boole
 
 function evaluateBattleSentence(
   slots: Slot[],
-  outcomes: Array<{ id: string; conditions: Record<string, string[]>; resultText: string; playerDamage: number; enemyDamage: number }>,
+  outcomes: Array<{ id: string; conditions: Record<string, string | string[]>; resultText: string; playerDamage: number; enemyDamage: number }>,
   defaultOutcome: { resultText: string; playerDamage: number; enemyDamage: number }
 ): { resultText: string; playerDamage: number; enemyDamage: number } {
   for (const outcome of outcomes) {
@@ -100,11 +100,15 @@ function evaluateBattleSentence(
   return defaultOutcome;
 }
 
-function matchesCondition(slots: Slot[], conditions: Record<string, string[]>): boolean {
-  for (const [slotId, requiredTags] of Object.entries(conditions)) {
+function matchesCondition(slots: Slot[], conditions: Record<string, string | string[]>): boolean {
+  for (const [slotId, condition] of Object.entries(conditions)) {
     const slot = slots.find(s => s.id === slotId);
     if (!slot || !slot.word) return false;
-    if (!requiredTags.every(tag => slot.word!.tags.includes(tag))) return false;
+    if (typeof condition === 'string') {
+      if (slot.word.id !== condition) return false;
+    } else {
+      if (!condition.every(tag => slot.word!.tags.includes(tag))) return false;
+    }
   }
   return true;
 }
