@@ -14,6 +14,7 @@ export function createInitialState(hand: WordCard[], mapNodes: MapNode[]): GameS
     hp: 20,
     maxHp: 20,
     gold: 0,
+    battle: null,
   };
 }
 

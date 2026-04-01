@@ -76,9 +76,11 @@ export interface Outcome {
 }
 
 /** ノードの種別 */
-export type NodeType = 'puzzle' | 'elite' | 'rest' | 'shop' | 'boss' | 'event' | 'treasure';
+export type NodeType = 'puzzle' | 'elite' | 'rest' | 'shop' | 'boss' | 'event' | 'treasure' | 'battle';
 
-/** 1ノードの定義 */
+// ===== 1文構成ノード（非戦闘） =====
+
+/** 1ノードの定義（通常ノード / 非戦闘） */
 export interface NodeDef {
   id: string;
   title: string;
@@ -97,6 +99,91 @@ export interface NodeDef {
   };
   /** このノードで使えるAP */
   actionPoints: number;
+}
+
+// ===== 2文構成バトル =====
+
+/** バトルの1ターン分の敵行動パターン */
+export interface EnemyAction {
+  /** このターンの敵行動文の表示順 */
+  sentence: SentencePart[];
+  /** 敵行動文のスロット群 */
+  slots: Slot[];
+  /** 敵行動に対する判定（組み合わせ定義） */
+  outcomes: Outcome[];
+  /** デフォルト（プレイヤーが敵文を書き換えなかった場合） */
+  defaultOutcome: {
+    resultText: string;
+    /** プレイヤーへのダメージ */
+    playerDamage: number;
+    /** 敵へのダメージ */
+    enemyDamage: number;
+  };
+}
+
+/** プレイヤーの行動文テンプレート */
+export interface PlayerAction {
+  /** プレイヤー行動文の表示順 */
+  sentence: SentencePart[];
+  /** プレイヤー行動文のスロット群（毎ターンリセット） */
+  slots: Slot[];
+  /** 判定 */
+  outcomes: Outcome[];
+  /** デフォルト */
+  defaultOutcome: {
+    resultText: string;
+    playerDamage: number;
+    enemyDamage: number;
+  };
+}
+
+/** バトル用のOutcome（プレイヤー・敵双方へのダメージ） */
+export interface BattleOutcome {
+  id: string;
+  /** どの文のどのスロットに対する条件か（"enemy.s1", "player.s2" 等） */
+  conditions: Record<string, string[]>;
+  resultText: string;
+  /** プレイヤーへのダメージ（0以上） */
+  playerDamage: number;
+  /** 敵へのダメージ（0以上） */
+  enemyDamage: number;
+}
+
+/** バトルノードの定義 */
+export interface BattleNodeDef {
+  id: string;
+  title: string;
+  nodeType: 'battle' | 'boss';
+  /** 敵の名前 */
+  enemyName: string;
+  /** 敵の最大HP */
+  enemyHp: number;
+  /** 毎ターンのAP */
+  actionPoints: number;
+  /** 敵の行動パターン（ターンごとにローテーション） */
+  enemyActions: EnemyAction[];
+  /** プレイヤーの行動文（毎ターンこの状態にリセット） */
+  playerAction: PlayerAction;
+  /** 勝利時の報酬 */
+  victoryGold: number;
+  victoryRewardCards?: WordCard[];
+}
+
+/** バトル進行中の状態 */
+export interface BattleState {
+  /** 敵の現在HP */
+  enemyHp: number;
+  enemyMaxHp: number;
+  /** 現在のターン数（0始まり） */
+  turn: number;
+  /** 現在のターンの敵行動スロット（書き換え可能） */
+  enemySlots: Slot[];
+  /** 現在のターンのプレイヤー行動スロット（書き換え可能） */
+  playerSlots: Slot[];
+  /** ターンの結果テキスト */
+  turnResult: string | null;
+  /** ターンのフェーズ */
+  turnPhase: 'writing' | 'resolved';
 }
 
 /** マップ上のノード位置 */
@@ -120,7 +207,7 @@ export interface GameState {
   hand: WordCard[];
   handLimit: number;
   actionPoints: number;
-  phase: 'map' | 'playing' | 'resolved' | 'gameover';
+  phase: 'map' | 'playing' | 'resolved' | 'battle' | 'gameover';
   lastResult: string | null;
   map: GameMap;
   /** HP */
@@ -128,4 +215,6 @@ export interface GameState {
   maxHp: number;
   /** ゴールド */
   gold: number;
+  /** バトル中の状態（phase === 'battle' の時のみ有効） */
+  battle: BattleState | null;
 }

@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { GameMap, MapNode } from '../game/engine/types';
-  import { nodeDefs } from '../game/data/nodes';
+  import { nodeDefs, battleNodeDefs } from '../game/data/nodes';
 
   interface Props {
     map: GameMap;
@@ -22,7 +22,7 @@
   }
 
   function getNodeDef(node: MapNode) {
-    return nodeDefs[node.nodeDefId];
+    return nodeDefs[node.nodeDefId] ?? battleNodeDefs[node.nodeDefId];
   }
 
   const typeIcons: Record<string, string> = {

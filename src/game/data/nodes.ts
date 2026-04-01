@@ -1,4 +1,4 @@
-import type { NodeDef, WordCard, MapNode } from '../engine/types';
+import type { NodeDef, WordCard, MapNode, BattleNodeDef } from '../engine/types';
 
 /** プロトタイプ用：最初の手札 */
 export const initialHand: WordCard[] = [
@@ -230,46 +230,149 @@ export const nodeDefs: Record<string, NodeDef> = {
     actionPoints: 3,
   },
 
-  // --- ボス: 沈黙の門 ---
+};
+
+// ============================
+// バトルノード定義（2文構成・複数ターン）
+// ============================
+
+export const battleNodeDefs: Record<string, BattleNodeDef> = {
+  // --- ボス: 門の守護者 ---
   node_boss: {
     id: 'node_boss',
-    title: '沈黙の門',
+    title: '門の守護者',
     nodeType: 'boss',
+    enemyName: '呪いの番人',
+    enemyHp: 12,
+    actionPoints: 3,
+    victoryGold: 10,
+
+    // 敵の行動パターン（ターンごとにローテーション）
+    enemyActions: [
+      // ターン1: 呪いの炎
+      {
+        sentence: [
+          { type: 'slot', slotId: 'e1' },
+          { type: 'slot', slotId: 'e2' },
+          { type: 'slot', slotId: 'e3' },
+          { type: 'slot', slotId: 'e4' },
+        ],
+        slots: [
+          { id: 'e1', category: 'modifier', word: { id: 'be1_1', text: '暗い', category: 'modifier', tags: ['dark', 'curse', 'threat:medium'] } },
+          { id: 'e2', category: 'subject', word: { id: 'be1_2', text: '炎', category: 'subject', tags: ['fire', 'magic', 'threat:high'] } },
+          { id: 'e3', category: 'object', word: { id: 'be1_3', text: '旅人', category: 'object', tags: ['player', 'human'] } },
+          { id: 'e4', category: 'predicate', word: { id: 'be1_4', text: '焼き尽くす', category: 'predicate', tags: ['destroy', 'fire', 'combat'] } },
+        ],
+        outcomes: [
+          { id: 'be1_a', conditions: { 'e2': ['harmless'] },
+            resultText: '炎の正体は蛍火だった。光が散って消える。', playerDamage: 0, enemyDamage: 0 },
+          { id: 'be1_b', conditions: { 'e4': ['retreat'] },
+            resultText: '炎は旅人を避け、虚空へ消えた。', playerDamage: 0, enemyDamage: 0 },
+          { id: 'be1_c', conditions: { 'e1': ['weaken'] },
+            resultText: '炎の勢いは弱い。肌がわずかに熱い程度だ。', playerDamage: 1, enemyDamage: 0 },
+          { id: 'be1_d', conditions: { 'e4': ['safe'] },
+            resultText: '炎は旅人を包んだが、温かいだけだった。', playerDamage: 0, enemyDamage: 0 },
+        ],
+        defaultOutcome: {
+          resultText: '暗い炎が旅人を包む。呪いの熱が体を蝕んだ。',
+          playerDamage: 4, enemyDamage: 0,
+        },
+      },
+      // ターン2: 鎖の束縛
+      {
+        sentence: [
+          { type: 'slot', slotId: 'e1' },
+          { type: 'slot', slotId: 'e2' },
+          { type: 'slot', slotId: 'e3' },
+          { type: 'slot', slotId: 'e4' },
+        ],
+        slots: [
+          { id: 'e1', category: 'modifier', word: { id: 'be2_1', text: '鋭い', category: 'modifier', tags: ['sharp', 'weapon', 'threat:high'] } },
+          { id: 'e2', category: 'subject', word: { id: 'be2_2', text: '鎖', category: 'subject', tags: ['metal', 'bind', 'threat:medium'] } },
+          { id: 'e3', category: 'object', word: { id: 'be2_3', text: '旅人', category: 'object', tags: ['player', 'human'] } },
+          { id: 'e4', category: 'predicate', word: { id: 'be2_4', text: '縛りつける', category: 'predicate', tags: ['bind', 'block', 'combat'] } },
+        ],
+        outcomes: [
+          { id: 'be2_a', conditions: { 'e2': ['harmless'] },
+            resultText: '鎖は紙のように脆かった。', playerDamage: 0, enemyDamage: 0 },
+          { id: 'be2_b', conditions: { 'e4': ['retreat'] },
+            resultText: '鎖が旅人に届く前にほどけて落ちた。', playerDamage: 0, enemyDamage: 0 },
+          { id: 'be2_c', conditions: { 'e1': ['weaken'] },
+            resultText: '鎖は弱く、すぐに振りほどけた。', playerDamage: 1, enemyDamage: 0 },
+          { id: 'be2_d', conditions: { 'e1': ['size:small'] },
+            resultText: '小さな鎖が足首に絡む。少し動きづらいが問題ない。', playerDamage: 1, enemyDamage: 0 },
+        ],
+        defaultOutcome: {
+          resultText: '鋭い鎖が旅人の体に食い込む。動くたびに痛みが走る。',
+          playerDamage: 3, enemyDamage: 0,
+        },
+      },
+      // ターン3: 沈黙の叫び
+      {
+        sentence: [
+          { type: 'slot', slotId: 'e1' },
+          { type: 'slot', slotId: 'e2' },
+          { type: 'slot', slotId: 'e3' },
+          { type: 'slot', slotId: 'e4' },
+        ],
+        slots: [
+          { id: 'e1', category: 'modifier', word: { id: 'be3_1', text: '恐ろしい', category: 'modifier', tags: ['fear', 'curse', 'threat:high'] } },
+          { id: 'e2', category: 'subject', word: { id: 'be3_2', text: '叫び', category: 'subject', tags: ['sound', 'magic', 'threat:high'] } },
+          { id: 'e3', category: 'object', word: { id: 'be3_3', text: '旅人', category: 'object', tags: ['player', 'human'] } },
+          { id: 'e4', category: 'predicate', word: { id: 'be3_4', text: '打ちのめす', category: 'predicate', tags: ['destroy', 'combat', 'stun'] } },
+        ],
+        outcomes: [
+          { id: 'be3_a', conditions: { 'e2': ['harmless'] },
+            resultText: '叫びは子守唄のように穏やかだった。', playerDamage: 0, enemyDamage: 0 },
+          { id: 'be3_b', conditions: { 'e1': ['gentle'] },
+            resultText: '番人の声は優しく響く。敵意は感じられない。', playerDamage: 0, enemyDamage: 0 },
+          { id: 'be3_c', conditions: { 'e4': ['retreat'] },
+            resultText: '叫びは虚空に吸い込まれて消えた。', playerDamage: 0, enemyDamage: 0 },
+          { id: 'be3_d', conditions: { 'e1': ['weaken'] },
+            resultText: '弱々しい叫びが耳をかすめた。少し頭が痛む程度だ。', playerDamage: 1, enemyDamage: 0 },
+        ],
+        defaultOutcome: {
+          resultText: '恐ろしい叫びが体の芯を震わせる。意識が一瞬遠のいた。',
+          playerDamage: 5, enemyDamage: 0,
+        },
+      },
+    ],
+
+    // プレイヤーの行動文（毎ターンリセット）
     // [修飾語][主語]が [対象語]を [述語]
-    sentence: [
-      { type: 'slot', slotId: 's1' },
-      { type: 'slot', slotId: 's2' },
-      { type: 'slot', slotId: 's3' },
-      { type: 'slot', slotId: 's4' },
-    ],
-    slots: [
-      { id: 's1', category: 'modifier', word: { id: 'wb_1', text: '古い', category: 'modifier', tags: ['old', 'ancient', 'curse'] } },
-      { id: 's2', category: 'subject', word: { id: 'wb_2', text: '呪い', category: 'subject', tags: ['curse', 'magic', 'threat:high'] } },
-      { id: 's3', category: 'object', word: { id: 'wb_3', text: '門', category: 'object', tags: ['gate', 'structure', 'path'] } },
-      { id: 's4', category: 'predicate', word: { id: 'wb_4', text: '封じている', category: 'predicate', tags: ['seal', 'block', 'obstacle'] } },
-    ],
-    outcomes: [
-      // 複合: 主語＋述語を両方変更（最高評価）
-      { id: 'ob_a', conditions: { 's2': ['harmless'], 's4': ['safe'] },
-        resultText: '呪いも封印も、もはやここにはない。門はただそこに立っている。手で押すと、静かに開いた。', damage: 0, gold: 10 },
-      // 主語を無害化
-      { id: 'ob_b', conditions: { 's2': ['harmless'] },
-        resultText: '呪いの正体は見かけ倒しだった。門に触れると、封印は霧のように消えた。', damage: 2, gold: 7 },
-      // 述語を退却系に
-      { id: 'ob_c', conditions: { 's4': ['retreat'] },
-        resultText: '封印が自ら解け、遠くへ去っていく。門の向こうに光が差す。', damage: 2, gold: 7 },
-      // 修飾語を弱化系に
-      { id: 'ob_d', conditions: { 's1': ['weaken'] },
-        resultText: '呪いの力は弱い。門の封印に手をかけると、脆く崩れた。', damage: 3, gold: 5 },
-      // 述語を「守っている」にした場合 → 逆効果！
-      { id: 'ob_e', conditions: { 's4': ['guard'] },
-        resultText: '呪いが門を守護し始めた。封印はさらに固くなる。書き換えが裏目に出た。', damage: 8, gold: 1 },
-    ],
-    defaultOutcome: {
-      resultText: '門はびくともしない。だが壁の一部に古い亀裂を見つけ、そこから向こう側へ抜けた。',
-      damage: 6, gold: 2,
+    playerAction: {
+      sentence: [
+        { type: 'slot', slotId: 'p1' },
+        { type: 'slot', slotId: 'p2' },
+        { type: 'slot', slotId: 'p3' },
+        { type: 'slot', slotId: 'p4' },
+      ],
+      slots: [
+        { id: 'p1', category: 'modifier', word: { id: 'bp_1', text: '鈍い', category: 'modifier', tags: ['weak', 'dull'] } },
+        { id: 'p2', category: 'subject', word: { id: 'bp_2', text: '光', category: 'subject', tags: ['light', 'magic'] } },
+        { id: 'p3', category: 'object', word: { id: 'bp_3', text: '番人', category: 'object', tags: ['enemy', 'guardian'] } },
+        { id: 'p4', category: 'predicate', word: { id: 'bp_4', text: '照らしている', category: 'predicate', tags: ['illuminate', 'weak_attack'] } },
+      ],
+      outcomes: [
+        // 強い攻撃語を使った場合
+        { id: 'bp_a', conditions: { 'p4': ['destroy'] },
+          resultText: '光が番人を貫いた。呪いの鎧に亀裂が走る。', playerDamage: 0, enemyDamage: 5 },
+        { id: 'bp_b', conditions: { 'p4': ['combat'] },
+          resultText: '光が番人を打った。呪いの体が揺らぐ。', playerDamage: 0, enemyDamage: 3 },
+        // 修飾語で強化した場合
+        { id: 'bp_c', conditions: { 'p1': ['intense'] },
+          resultText: '激しい光が番人の目を焼いた。', playerDamage: 0, enemyDamage: 3 },
+        { id: 'bp_d', conditions: { 'p1': ['threat:high'] },
+          resultText: '強烈な光が番人を怯ませた。', playerDamage: 0, enemyDamage: 2 },
+        // 主語を変えた場合
+        { id: 'bp_e', conditions: { 'p2': ['threat:high'] },
+          resultText: '旅人が呼び出したものが番人に襲いかかった。', playerDamage: 0, enemyDamage: 3 },
+      ],
+      defaultOutcome: {
+        resultText: '鈍い光が番人を照らす。わずかに呪いが薄れた。',
+        playerDamage: 0, enemyDamage: 1,
+      },
     },
-    actionPoints: 4, // ボスは多め
   },
 };
 
