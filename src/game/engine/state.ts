@@ -1,19 +1,32 @@
-import type { GameState, WordCard, Slot, NodeDef } from './types';
+import type { GameState, WordCard, Slot, GameMap, MapNode } from './types';
 
-export function createInitialState(hand: WordCard[]): GameState {
+export function createInitialState(hand: WordCard[], mapNodes: MapNode[]): GameState {
   return {
-    currentNodeIndex: 0,
     hand,
-    handLimit: 5,
-    actionPoints: 3,
-    phase: 'playing',
+    handLimit: 7,
+    actionPoints: 0,
+    phase: 'map',
     lastResult: null,
+    map: {
+      nodes: mapNodes.map(n => ({ ...n })),
+      currentNodeId: null,
+    },
   };
+}
+
+/** 現在のマップノードから進行可能なノードIDを返す */
+export function getSelectableNodeIds(map: GameMap): string[] {
+  if (map.currentNodeId === null) {
+    // 最初: row 0 のノードが選択可能
+    return map.nodes.filter(n => n.row === 0).map(n => n.id);
+  }
+  const current = map.nodes.find(n => n.id === map.currentNodeId);
+  if (!current) return [];
+  return current.nextIds;
 }
 
 /**
  * 手札の語とスロットの語を入れ替える（Swap）
- * 手札からcardを消費し、スロットの語を手札に加える
  */
 export function swapWord(
   state: GameState,
@@ -40,18 +53,13 @@ export function swapWord(
   }
 
   return {
-    state: {
-      ...state,
-      hand: newHand,
-      actionPoints: state.actionPoints - 1,
-    },
+    state: { ...state, hand: newHand, actionPoints: state.actionPoints - 1 },
     slots: newSlots,
   };
 }
 
 /**
  * スロットから語を抜き取る（Extract）
- * スロットの語を手札に加え、スロットは空になる
  */
 export function extractWord(
   state: GameState,
@@ -69,14 +77,8 @@ export function extractWord(
   const newSlots = [...slots];
   newSlots[slotIndex] = { ...slot, word: null };
 
-  const newHand = [...state.hand, removedWord];
-
   return {
-    state: {
-      ...state,
-      hand: newHand,
-      actionPoints: state.actionPoints - 1,
-    },
+    state: { ...state, hand: [...state.hand, removedWord], actionPoints: state.actionPoints - 1 },
     slots: newSlots,
   };
 }
@@ -96,7 +98,7 @@ export function insertWord(
   const card = state.hand[cardIndex];
   const slot = slots[slotIndex];
   if (!card || !slot) return null;
-  if (slot.word !== null) return null; // 空スロットのみ
+  if (slot.word !== null) return null;
   if (card.category !== slot.category) return null;
 
   const newSlots = [...slots];
@@ -106,11 +108,7 @@ export function insertWord(
   newHand.splice(cardIndex, 1);
 
   return {
-    state: {
-      ...state,
-      hand: newHand,
-      actionPoints: state.actionPoints - 1,
-    },
+    state: { ...state, hand: newHand, actionPoints: state.actionPoints - 1 },
     slots: newSlots,
   };
 }

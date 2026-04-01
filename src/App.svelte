@@ -2,15 +2,19 @@
   import BookSpread from './components/BookSpread.svelte';
   import SlotWord from './components/SlotWord.svelte';
   import HandCard from './components/HandCard.svelte';
-  import { nodes, initialHand } from './game/data/nodes';
-  import { createInitialState, swapWord, extractWord, insertWord } from './game/engine/state';
+  import NodeMap from './components/NodeMap.svelte';
+  import { nodeDefs, initialHand, mapNodes } from './game/data/nodes';
+  import { createInitialState, swapWord, extractWord, insertWord, getSelectableNodeIds } from './game/engine/state';
   import { resolveNode } from './game/engine/evaluate';
-  import type { Slot } from './game/engine/types';
+  import type { Slot, NodeDef, SentencePart } from './game/engine/types';
 
   // ゲーム状態
-  let gameState = $state(createInitialState([...initialHand]));
-  let currentNode = $derived(nodes[gameState.currentNodeIndex]);
-  let currentSlots = $state<Slot[]>([...nodes[0].slots.map(s => ({ ...s, word: s.word ? { ...s.word } : null }))]);
+  let gameState = $state(createInitialState([...initialHand], mapNodes));
+  let selectableIds = $derived(getSelectableNodeIds(gameState.map));
+
+  // 現在のノード関連
+  let currentNodeDef = $state<NodeDef | null>(null);
+  let currentSlots = $state<Slot[]>([]);
 
   // ドラッグ状態
   let draggingCardIndex = $state<number | null>(null);
@@ -19,6 +23,32 @@
   // ページめくりアニメーション
   let isTransitioning = $state(false);
 
+  // --- マップ画面 ---
+  function handleSelectNode(mapNodeId: string) {
+    const mapNode = gameState.map.nodes.find(n => n.id === mapNodeId);
+    if (!mapNode) return;
+
+    const def = nodeDefs[mapNode.nodeDefId];
+    if (!def) return;
+
+    // マップ更新
+    const updatedNodes = gameState.map.nodes.map(n =>
+      n.id === mapNodeId ? { ...n, visited: true } : n
+    );
+
+    currentNodeDef = def;
+    currentSlots = def.slots.map(s => ({ ...s, word: s.word ? { ...s.word } : null }));
+
+    gameState = {
+      ...gameState,
+      actionPoints: def.actionPoints,
+      phase: 'playing',
+      lastResult: null,
+      map: { nodes: updatedNodes, currentNodeId: mapNodeId },
+    };
+  }
+
+  // --- パズル操作 ---
   function handleDragStartCard(index: number) {
     draggingCardIndex = index;
   }
@@ -38,16 +68,13 @@
 
   function handleDropOnSlot(slotIndex: number) {
     if (draggingCardIndex === null) return;
-
     const slot = currentSlots[slotIndex];
     if (!slot) return;
 
     let result;
     if (slot.word === null) {
-      // 空スロットなら挿し込み
       result = insertWord(gameState, slotIndex, draggingCardIndex, currentSlots);
     } else {
-      // 語があれば入れ替え
       result = swapWord(gameState, slotIndex, draggingCardIndex, currentSlots);
     }
 
@@ -69,101 +96,146 @@
   }
 
   function handleResolve() {
-    const resultText = resolveNode(currentNode, currentSlots);
+    if (!currentNodeDef) return;
+    const resultText = resolveNode(currentNodeDef, currentSlots);
     gameState = { ...gameState, phase: 'resolved', lastResult: resultText };
   }
 
-  function handleNextNode() {
-    const nextIndex = gameState.currentNodeIndex + 1;
-    if (nextIndex >= nodes.length) {
-      // ゲームクリア
-      gameState = { ...gameState, lastResult: '……物語の最後のページをめくった。世界は、あなたが書き換えた言葉のまま、静かに息づいている。' };
+  function handleReturnToMap() {
+    // ボスクリア後はゲームクリア
+    const currentMapNode = gameState.map.nodes.find(n => n.id === gameState.map.currentNodeId);
+    if (currentMapNode && currentMapNode.nextIds.length === 0) {
+      gameState = {
+        ...gameState,
+        phase: 'resolved',
+        lastResult: '……物語の最後のページをめくった。\n世界は、あなたが書き換えた言葉のまま、静かに息づいている。',
+      };
+      currentNodeDef = null;
       return;
     }
 
     isTransitioning = true;
     setTimeout(() => {
-      const nextNode = nodes[nextIndex];
-      currentSlots = nextNode.slots.map(s => ({ ...s, word: s.word ? { ...s.word } : null }));
-      gameState = {
-        ...gameState,
-        currentNodeIndex: nextIndex,
-        actionPoints: nextNode.actionPoints,
-        phase: 'playing',
-        lastResult: null,
-      };
+      gameState = { ...gameState, phase: 'map', lastResult: null };
+      currentNodeDef = null;
+      currentSlots = [];
       isTransitioning = false;
-    }, 600);
+    }, 500);
   }
 
-  function buildCurrentText(): string {
-    return currentSlots.map(s => s.word?.text ?? '████').join(' ');
+  /** sentenceパーツからスロットのインデックスを引く */
+  function getSlotIndex(slotId: string): number {
+    return currentSlots.findIndex(s => s.id === slotId);
   }
 </script>
 
 <div class="game-viewport" class:transitioning={isTransitioning}>
-  <!-- 見開きの本 -->
-  <BookSpread
-    leftTitle={currentNode.title}
-    rightTitle={gameState.phase === 'resolved' ? '書き換えの結果' : ''}
-    pageNumber={gameState.currentNodeIndex + 1}
-  >
-    {#snippet leftContent()}
-      <!-- 左ページ: イベント文 -->
-      <div class="event-text">
-        <div class="slots-container">
-          {#each currentSlots as slot, i}
-            <SlotWord
-              {slot}
-              index={i}
-              onDrop={handleDropOnSlot}
-              onExtract={handleExtract}
-              isDragOver={dragOverSlotIndex === i}
-              onDragEnter={handleSlotDragEnter}
-              onDragLeave={handleSlotDragLeave}
+  {#if gameState.phase === 'map' && !currentNodeDef}
+    <!-- マップ画面 -->
+    <div class="map-screen">
+      <BookSpread pageNumber={1}>
+        {#snippet leftContent()}
+          <div class="map-page">
+            <NodeMap
+              map={gameState.map}
+              {selectableIds}
+              onSelect={handleSelectNode}
             />
-          {/each}
+          </div>
+        {/snippet}
+        {#snippet rightContent()}
+          <div class="map-info">
+            <p class="map-hint">光るノードを選んで進む</p>
+            <div class="hand-count">
+              手札: {gameState.hand.length} / {gameState.handLimit}
+            </div>
+          </div>
+        {/snippet}
+      </BookSpread>
+    </div>
+  {:else if currentNodeDef}
+    <!-- パズル画面 -->
+    <BookSpread
+      leftTitle={currentNodeDef.title}
+      rightTitle={gameState.phase === 'resolved' ? '書き換えの結果' : ''}
+      pageNumber={gameState.map.nodes.filter(n => n.visited).length}
+    >
+      {#snippet leftContent()}
+        <div class="event-text">
+          <div class="sentence-container">
+            {#each currentNodeDef.sentence as part}
+              {#if part.type === 'particle'}
+                <span class="particle">{part.text}</span>
+              {:else}
+                {@const idx = getSlotIndex(part.slotId)}
+                {#if idx >= 0}
+                  <SlotWord
+                    slot={currentSlots[idx]}
+                    index={idx}
+                    onDrop={handleDropOnSlot}
+                    onExtract={handleExtract}
+                    isDragOver={dragOverSlotIndex === idx}
+                    onDragEnter={handleSlotDragEnter}
+                    onDragLeave={handleSlotDragLeave}
+                  />
+                {/if}
+              {/if}
+            {/each}
+          </div>
         </div>
-      </div>
 
-      <!-- AP表示 -->
-      <div class="status-bar">
-        <span class="ap-display">
-          残り {gameState.actionPoints} 手
-        </span>
-        {#if gameState.phase === 'playing'}
-          <button class="resolve-btn" onclick={handleResolve}>
-            書き換えを確定する
-          </button>
-        {/if}
-      </div>
-    {/snippet}
-
-    {#snippet rightContent()}
-      <!-- 右ページ: 結果 -->
-      {#if gameState.phase === 'resolved' && gameState.lastResult}
-        <div class="result-text" class:appear={gameState.phase === 'resolved'}>
-          <p>{gameState.lastResult}</p>
+        <div class="status-bar">
+          <span class="ap-display">
+            残り {gameState.actionPoints} 手
+          </span>
+          {#if gameState.phase === 'playing'}
+            <button class="resolve-btn" onclick={handleResolve}>
+              書き換えを確定する
+            </button>
+          {/if}
         </div>
-        {#if gameState.currentNodeIndex < nodes.length - 1}
-          <button class="next-btn" onclick={handleNextNode}>
-            次のページへ
-          </button>
+      {/snippet}
+
+      {#snippet rightContent()}
+        {#if gameState.phase === 'resolved' && gameState.lastResult}
+          <div class="result-text appear">
+            <p>{gameState.lastResult}</p>
+          </div>
+          {#if gameState.map.nodes.find(n => n.id === gameState.map.currentNodeId)?.nextIds.length}
+            <button class="next-btn" onclick={handleReturnToMap}>
+              次のページへ
+            </button>
+          {:else}
+            <button class="next-btn" onclick={handleReturnToMap}>
+              物語を閉じる
+            </button>
+          {/if}
         {:else}
-          <div class="ending">
-            <p class="ending-text">— 了 —</p>
+          <div class="right-placeholder">
+            <p>左の文章を書き換え、</p>
+            <p>確定すると結果が現れる</p>
           </div>
         {/if}
-      {:else}
-        <div class="right-placeholder">
-          <p>左の文章を書き換え、</p>
-          <p>確定すると結果が現れる</p>
+      {/snippet}
+    </BookSpread>
+  {:else}
+    <!-- ゲームクリア -->
+    <BookSpread pageNumber={99}>
+      {#snippet leftContent()}
+        <div class="ending-page">
+          <p class="ending-main">物語の最後のページをめくった。</p>
+          <p class="ending-sub">世界は、あなたが書き換えた言葉のまま、<br>静かに息づいている。</p>
         </div>
-      {/if}
-    {/snippet}
-  </BookSpread>
+      {/snippet}
+      {#snippet rightContent()}
+        <div class="ending-page">
+          <p class="ending-fin">— 了 —</p>
+        </div>
+      {/snippet}
+    </BookSpread>
+  {/if}
 
-  <!-- 手札エリア（机の上） -->
+  <!-- 手札エリア（常に表示） -->
   <div class="hand-area">
     <div class="hand-cards" role="list">
       {#each gameState.hand as card, i}
@@ -174,6 +246,9 @@
           onDragEnd={handleDragEnd}
         />
       {/each}
+      {#if gameState.hand.length === 0}
+        <span class="empty-hand">手札なし</span>
+      {/if}
     </div>
   </div>
 </div>
@@ -190,14 +265,47 @@
     padding: 20px;
     background:
       radial-gradient(ellipse at 50% 30%, rgba(60, 40, 20, 0.8) 0%, rgba(10, 8, 6, 1) 70%);
-    transition: opacity 0.6s ease;
+    transition: opacity 0.5s ease;
   }
 
   .game-viewport.transitioning {
     opacity: 0.3;
   }
 
-  /* 左ページ内 */
+  /* マップ画面 */
+  .map-screen {
+    width: 100%;
+    max-width: 960px;
+  }
+
+  .map-page {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .map-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .map-hint {
+    color: var(--ink-light);
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+
+  .hand-count {
+    color: var(--ink-medium);
+    font-size: 0.85rem;
+  }
+
+  /* パズル画面 */
   .event-text {
     flex: 1;
     display: flex;
@@ -205,13 +313,21 @@
     justify-content: center;
   }
 
-  .slots-container {
+  .sentence-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 2px;
     justify-content: center;
     align-items: center;
-    line-height: 2.5;
+    line-height: 2.8;
+  }
+
+  .particle {
+    font-family: var(--font-story);
+    font-size: 1.2rem;
+    color: var(--ink-medium);
+    padding: 0 2px;
+    align-self: center;
   }
 
   .status-bar {
@@ -246,7 +362,7 @@
     box-shadow: 0 0 12px var(--magic-glow);
   }
 
-  /* 右ページ内 */
+  /* 右ページ */
   .result-text {
     flex: 1;
     display: flex;
@@ -263,14 +379,8 @@
   }
 
   @keyframes inkAppear {
-    from {
-      opacity: 0;
-      filter: blur(4px);
-    }
-    to {
-      opacity: 1;
-      filter: blur(0);
-    }
+    from { opacity: 0; filter: blur(4px); }
+    to { opacity: 1; filter: blur(0); }
   }
 
   .right-placeholder {
@@ -304,14 +414,32 @@
     box-shadow: 0 0 16px var(--magic-glow);
   }
 
-  .ending {
+  /* ゲームクリア */
+  .ending-page {
     flex: 1;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 16px;
   }
 
-  .ending-text {
+  .ending-main {
+    font-family: var(--font-story);
+    font-size: 1.1rem;
+    color: var(--ink-dark);
+    line-height: 2;
+  }
+
+  .ending-sub {
+    font-family: var(--font-story);
+    font-size: 0.95rem;
+    color: var(--ink-medium);
+    line-height: 2;
+    text-align: center;
+  }
+
+  .ending-fin {
     font-family: var(--font-story);
     font-size: 1.3rem;
     color: var(--gold-accent);
@@ -337,5 +465,14 @@
     gap: 12px;
     justify-content: center;
     flex-wrap: wrap;
+    min-height: 60px;
+    align-items: center;
+  }
+
+  .empty-hand {
+    color: var(--ink-light);
+    font-family: var(--font-story);
+    font-size: 0.85rem;
+    font-style: italic;
   }
 </style>
