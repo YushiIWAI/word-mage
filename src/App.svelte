@@ -111,7 +111,6 @@
       currentNodeDef = null;
       currentBattleNode = null;
       currentShopNode = null;
-      currentTreasureNode = null;
       // ランダムに pickCount 枚選ぶ
       const shuffled = [...treasureDef.cardPool].sort(() => Math.random() - 0.5);
       treasureOffered = shuffled.slice(0, treasureDef.pickCount);
