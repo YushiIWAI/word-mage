@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Slot } from '../game/engine/types';
+  import { getParticle } from '../game/engine/types';
 
   interface Props {
     slot: Slot;
@@ -17,15 +18,18 @@
     subject: 'var(--slot-subject)',
     predicate: 'var(--slot-predicate)',
     object: 'var(--slot-object)',
+    object_ni: 'var(--slot-object)',
+    object_de: 'var(--slot-object)',
+    object_kara: 'var(--slot-object)',
     modifier: 'var(--slot-modifier)',
     adverb: 'var(--slot-adverb)',
   };
 
+  let particle = $derived(getParticle(slot.category));
+
   function handleDragOver(e: DragEvent) {
     e.preventDefault();
-    if (e.dataTransfer) {
-      e.dataTransfer.dropEffect = 'move';
-    }
+    if (e.dataTransfer) e.dataTransfer.dropEffect = 'move';
   }
 
   function handleDrop(e: DragEvent) {
@@ -34,49 +38,53 @@
   }
 
   function handleClick() {
-    if (slot.word) {
-      onExtract(index);
-    }
+    if (slot.word) onExtract(index);
   }
 </script>
 
-<button
-  class="slot-word"
-  class:empty={!slot.word}
-  class:drag-over={isDragOver}
-  style:--slot-color={categoryColors[slot.category]}
-  ondragover={handleDragOver}
-  ondrop={handleDrop}
-  ondragenter={() => onDragEnter(index)}
-  ondragleave={onDragLeave}
-  onclick={handleClick}
-  title={slot.word ? `${slot.category}: クリックで抜き取り` : `${slot.category}: 空`}
->
-  {#if slot.word}
-    <span class="word-text">{slot.word.text}</span>
-  {:else}
-    <span class="empty-mark">████</span>
-  {/if}
-  <span class="slot-indicator"></span>
-</button>
+<span class="slot-group">
+  <button
+    class="slot-word"
+    class:empty={!slot.word}
+    class:drag-over={isDragOver}
+    style:--slot-color={categoryColors[slot.category] ?? 'var(--ink-light)'}
+    ondragover={handleDragOver}
+    ondrop={handleDrop}
+    ondragenter={() => onDragEnter(index)}
+    ondragleave={onDragLeave}
+    onclick={handleClick}
+    title={slot.word ? `クリックで抜き取り` : `空スロット`}
+  >
+    {#if slot.word}
+      <span class="word-text">{slot.word.text}</span>
+    {:else}
+      <span class="empty-mark">████</span>
+    {/if}
+    <span class="slot-indicator"></span>
+  </button>{#if particle}<span class="particle">{particle}</span>{/if}
+</span>
 
 <style>
+  .slot-group {
+    display: inline-flex;
+    align-items: center;
+  }
+
   .slot-word {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 6px 16px;
-    margin: 0 2px;
+    padding: 6px 14px;
     border: 2px solid var(--slot-color);
     border-radius: 4px;
     background: rgba(255, 255, 255, 0.05);
     color: var(--ink-dark);
     font-family: var(--font-story);
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     cursor: pointer;
     transition: all 0.2s ease;
     position: relative;
-    min-height: 2.4rem;
+    min-height: 2.2rem;
   }
 
   .slot-word:hover {
@@ -104,7 +112,7 @@
   .empty-mark {
     color: var(--ink-light);
     letter-spacing: 2px;
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .slot-indicator {
@@ -117,5 +125,13 @@
     background: var(--slot-color);
     opacity: 0.6;
     border-radius: 1px;
+  }
+
+  .particle {
+    font-family: var(--font-story);
+    font-size: 1.15rem;
+    color: var(--ink-medium);
+    padding: 0 2px;
+    margin-right: 2px;
   }
 </style>

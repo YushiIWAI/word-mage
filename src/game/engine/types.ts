@@ -1,10 +1,43 @@
-/** スロットの種別 */
-export type SlotCategory = 'subject' | 'predicate' | 'object' | 'modifier' | 'adverb';
+/** スロットの種別（助詞を決定する） */
+export type SlotCategory =
+  | 'subject'      // → が
+  | 'object'       // → を
+  | 'object_ni'    // → に
+  | 'object_de'    // → で
+  | 'object_kara'  // → から
+  | 'modifier'     // → （なし）
+  | 'adverb'       // → （なし）
+  | 'predicate';   // → （なし、文末）
+
+/** スロットカテゴリの互換グループ（入れ替え可能なカテゴリ群） */
+export const CATEGORY_COMPAT: Record<string, SlotCategory[]> = {
+  subject: ['subject'],
+  object: ['object', 'object_ni', 'object_de', 'object_kara'],
+  object_ni: ['object', 'object_ni', 'object_de', 'object_kara'],
+  object_de: ['object', 'object_ni', 'object_de', 'object_kara'],
+  object_kara: ['object', 'object_ni', 'object_de', 'object_kara'],
+  modifier: ['modifier'],
+  adverb: ['adverb'],
+  predicate: ['predicate'],
+};
+
+/** スロットカテゴリから助詞を取得 */
+export function getParticle(category: SlotCategory): string {
+  switch (category) {
+    case 'subject': return 'が';
+    case 'object': return 'を';
+    case 'object_ni': return 'に';
+    case 'object_de': return 'で';
+    case 'object_kara': return 'から';
+    default: return '';
+  }
+}
 
 /** 語に付与されるタグ */
 export interface WordCard {
   id: string;
   text: string;
+  /** カードが持つカテゴリ（どのスロットに入れられるか） */
   category: SlotCategory;
   tags: string[];
 }
@@ -13,86 +46,86 @@ export interface WordCard {
 export interface Slot {
   id: string;
   category: SlotCategory;
-  word: WordCard | null; // nullなら空スロット（████）
+  word: WordCard | null;
 }
 
-/**
- * 文章の構成要素: スロット（操作可能）か固定テキスト（助詞等）のどちらか。
- * 表示順に並べて自然な日本語文にする。
- */
+/** 固定テキスト（「槍を持って」のような操作不可部分） */
+export interface FixedText {
+  type: 'fixed';
+  text: string;
+}
+
+/** 文の構成要素 */
 export type SentencePart =
   | { type: 'slot'; slotId: string }
-  | { type: 'particle'; text: string };
+  | FixedText;
 
-/** 書き換え結果の判定条件 */
+/** 組み合わせ定義による結果判定 */
 export interface Outcome {
   id: string;
-  /** タグ条件: 各スロットIDに対して必要なタグの配列 */
+  /** 条件: スロットIDごとに必要なタグ（AND条件） */
   conditions: Record<string, string[]>;
   /** 結果テキスト */
   resultText: string;
-  /** 獲得可能な追加報酬（ボーナスワード等） */
-  bonus?: WordCard[];
+  /** ダメージ（0=ノーダメ、低いほど良い結果） */
+  damage: number;
+  /** ゴールド報酬 */
+  gold: number;
+  /** 獲得可能な語カード */
+  rewardCards?: WordCard[];
 }
 
 /** ノードの種別 */
-export type NodeType = 'puzzle' | 'rest' | 'shop' | 'boss' | 'event';
+export type NodeType = 'puzzle' | 'elite' | 'rest' | 'shop' | 'boss' | 'event' | 'treasure';
 
 /** 1ノードの定義 */
 export interface NodeDef {
   id: string;
-  /** ノード表示名 */
   title: string;
-  /** ノード種別 */
   nodeType: NodeType;
-  /** 文章の表示順序（スロットと固定テキストの配列） */
+  /** 文の表示順（スロット＋固定テキスト） */
   sentence: SentencePart[];
   /** 操作可能なスロット群 */
   slots: Slot[];
-  /** 判定に使う結果パターン */
+  /** 組み合わせ定義の結果パターン（優先度順） */
   outcomes: Outcome[];
-  /** デフォルト結果（どのoutcomeにもマッチしない場合） */
+  /** どのoutcomeにもマッチしない場合（失敗） */
   defaultOutcome: {
     resultText: string;
+    damage: number;
+    gold: number;
   };
-  /** このノードで提供されるAP */
+  /** このノードで使えるAP */
   actionPoints: number;
 }
 
 /** マップ上のノード位置 */
 export interface MapNode {
   id: string;
-  /** 参照するNodeDefのID */
   nodeDefId: string;
-  /** マップ上の層（row）: 0がスタート */
   row: number;
-  /** マップ上の列位置 */
   col: number;
-  /** このノードから進める次のノードID */
   nextIds: string[];
-  /** 訪問済みフラグ */
   visited: boolean;
 }
 
-/** マップ全体の定義 */
+/** マップ全体 */
 export interface GameMap {
   nodes: MapNode[];
-  /** 現在のノードID（null=マップ選択中） */
   currentNodeId: string | null;
 }
 
 /** ゲーム全体の状態 */
 export interface GameState {
-  /** プレイヤーの手札 */
   hand: WordCard[];
-  /** 手札上限 */
   handLimit: number;
-  /** 現在のAP */
   actionPoints: number;
-  /** ゲームフェーズ */
-  phase: 'map' | 'playing' | 'resolved';
-  /** 直前の結果テキスト */
+  phase: 'map' | 'playing' | 'resolved' | 'gameover';
   lastResult: string | null;
-  /** マップ */
   map: GameMap;
+  /** HP */
+  hp: number;
+  maxHp: number;
+  /** ゴールド */
+  gold: number;
 }

@@ -1,4 +1,4 @@
-import type { GameState, WordCard, Slot, GameMap, MapNode } from './types';
+import type { GameState, WordCard, Slot, MapNode, CATEGORY_COMPAT } from './types';
 
 export function createInitialState(hand: WordCard[], mapNodes: MapNode[]): GameState {
   return {
@@ -11,18 +11,30 @@ export function createInitialState(hand: WordCard[], mapNodes: MapNode[]): GameS
       nodes: mapNodes.map(n => ({ ...n })),
       currentNodeId: null,
     },
+    hp: 20,
+    maxHp: 20,
+    gold: 0,
   };
 }
 
 /** 現在のマップノードから進行可能なノードIDを返す */
-export function getSelectableNodeIds(map: GameMap): string[] {
+export function getSelectableNodeIds(map: import('./types').GameMap): string[] {
   if (map.currentNodeId === null) {
-    // 最初: row 0 のノードが選択可能
     return map.nodes.filter(n => n.row === 0).map(n => n.id);
   }
   const current = map.nodes.find(n => n.id === map.currentNodeId);
   if (!current) return [];
   return current.nextIds;
+}
+
+/** カテゴリの互換性チェック */
+function isCategoryCompatible(cardCategory: string, slotCategory: string): boolean {
+  // object系は相互互換
+  const objectCategories = ['object', 'object_ni', 'object_de', 'object_kara'];
+  if (objectCategories.includes(cardCategory) && objectCategories.includes(slotCategory)) {
+    return true;
+  }
+  return cardCategory === slotCategory;
 }
 
 /**
@@ -40,7 +52,7 @@ export function swapWord(
   const card = state.hand[cardIndex];
   const slot = slots[slotIndex];
   if (!card || !slot) return null;
-  if (card.category !== slot.category) return null;
+  if (!isCategoryCompatible(card.category, slot.category)) return null;
 
   const removedWord = slot.word;
   const newSlots = [...slots];
@@ -99,7 +111,7 @@ export function insertWord(
   const slot = slots[slotIndex];
   if (!card || !slot) return null;
   if (slot.word !== null) return null;
-  if (card.category !== slot.category) return null;
+  if (!isCategoryCompatible(card.category, slot.category)) return null;
 
   const newSlots = [...slots];
   newSlots[slotIndex] = { ...slot, word: card };
@@ -111,4 +123,19 @@ export function insertWord(
     state: { ...state, hand: newHand, actionPoints: state.actionPoints - 1 },
     slots: newSlots,
   };
+}
+
+/** HP変更を適用（負のダメージ=回復） */
+export function applyDamage(state: GameState, damage: number): GameState {
+  const newHp = Math.max(0, Math.min(state.maxHp, state.hp - damage));
+  return {
+    ...state,
+    hp: newHp,
+    phase: newHp <= 0 ? 'gameover' : state.phase,
+  };
+}
+
+/** ゴールド獲得 */
+export function addGold(state: GameState, amount: number): GameState {
+  return { ...state, gold: state.gold + amount };
 }

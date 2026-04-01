@@ -1,7 +1,13 @@
 import type { Slot, Outcome, NodeDef } from './types';
 
 /**
- * 現在のスロット状態に対してoutcomeを評価し、最初にマッチしたものを返す。
+ * 組み合わせ定義ベースの判定。
+ * outcomes を先頭から走査し、最初にマッチした結果を返す。
+ * マッチしなければ null（呼び出し側が defaultOutcome を使う）。
+ *
+ * 条件の優先度:
+ * - 条件が多い（具体的な）Outcome を先に配置すべき
+ * - 条件が少ない（汎用的な）Outcome を後ろに配置
  */
 export function evaluateOutcome(slots: Slot[], outcomes: Outcome[]): Outcome | null {
   for (const outcome of outcomes) {
@@ -24,12 +30,27 @@ function matchesCondition(slots: Slot[], outcome: Outcome): boolean {
 }
 
 /**
- * ノードを解決し、結果テキストを返す
+ * ノードを解決する。
+ * 返り値: { resultText, damage, gold, rewardCards }
  */
-export function resolveNode(node: NodeDef, currentSlots: Slot[]): string {
+export function resolveNode(node: NodeDef, currentSlots: Slot[]): {
+  resultText: string;
+  damage: number;
+  gold: number;
+  rewardCards?: import('./types').WordCard[];
+} {
   const outcome = evaluateOutcome(currentSlots, node.outcomes);
   if (outcome) {
-    return outcome.resultText;
+    return {
+      resultText: outcome.resultText,
+      damage: outcome.damage,
+      gold: outcome.gold,
+      rewardCards: outcome.rewardCards,
+    };
   }
-  return node.defaultOutcome.resultText;
+  return {
+    resultText: node.defaultOutcome.resultText,
+    damage: node.defaultOutcome.damage,
+    gold: node.defaultOutcome.gold,
+  };
 }

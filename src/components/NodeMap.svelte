@@ -1,5 +1,6 @@
 <script lang="ts">
-  import type { GameMap, MapNode, NodeType } from '../game/engine/types';
+  import type { GameMap, MapNode } from '../game/engine/types';
+  import { nodeDefs } from '../game/data/nodes';
 
   interface Props {
     map: GameMap;
@@ -9,7 +10,6 @@
 
   let { map, selectableIds, onSelect }: Props = $props();
 
-  // 行ごとにグループ化
   let rows = $derived(groupByRow(map.nodes));
 
   function groupByRow(nodes: MapNode[]): MapNode[][] {
@@ -21,86 +21,64 @@
     return result;
   }
 
-  const nodeTypeLabels: Record<NodeType, string> = {
-    puzzle: '⚔',
-    rest: '♨',
-    shop: '🏪',
-    boss: '👑',
+  function getNodeDef(node: MapNode) {
+    return nodeDefs[node.nodeDefId];
+  }
+
+  const typeIcons: Record<string, string> = {
+    puzzle: '✦',
+    elite: '✧',
+    rest: '泉',
+    shop: '⚖',
+    boss: '門',
     event: '？',
+    treasure: '鍵',
   };
 
   function isSelectable(nodeId: string): boolean {
     return selectableIds.includes(nodeId);
   }
 
-  function isVisited(node: MapNode): boolean {
-    return node.visited;
-  }
-
-  function isCurrent(node: MapNode): boolean {
-    return map.currentNodeId === node.id;
-  }
-
-  // エッジ（接続線）の計算
+  // エッジの計算
   type Edge = { from: MapNode; to: MapNode };
-  let edges = $derived(computeEdges(map.nodes));
+  let edges = $derived(map.nodes.flatMap(n =>
+    n.nextIds.map(nid => ({ from: n, to: map.nodes.find(t => t.id === nid)! })).filter(e => e.to)
+  ));
 
-  function computeEdges(nodes: MapNode[]): Edge[] {
-    const result: Edge[] = [];
-    for (const node of nodes) {
-      for (const nextId of node.nextIds) {
-        const target = nodes.find(n => n.id === nextId);
-        if (target) {
-          result.push({ from: node, to: target });
-        }
-      }
-    }
-    return result;
-  }
-
-  // ノード位置の計算（SVG座標）
-  const COL_WIDTH = 120;
-  const ROW_HEIGHT = 80;
-  const PADDING_X = 60;
+  const COL_WIDTH = 130;
+  const ROW_HEIGHT = 90;
+  const PADDING_X = 65;
   const PADDING_Y = 40;
 
-  function nodeX(node: MapNode): number {
-    return PADDING_X + node.col * COL_WIDTH;
-  }
-
-  function nodeY(node: MapNode): number {
-    return PADDING_Y + node.row * ROW_HEIGHT;
-  }
+  function nodeX(node: MapNode): number { return PADDING_X + node.col * COL_WIDTH; }
+  function nodeY(node: MapNode): number { return PADDING_Y + node.row * ROW_HEIGHT; }
 </script>
 
 <div class="map-container">
   <h2 class="map-title">— 旅路を選べ —</h2>
-
   <div class="map-scroll">
-    <svg
-      class="map-svg"
+    <svg class="map-svg"
       viewBox="0 0 {PADDING_X * 2 + 2 * COL_WIDTH} {PADDING_Y * 2 + 3 * ROW_HEIGHT}"
       preserveAspectRatio="xMidYMid meet"
     >
-      <!-- 接続線 -->
       {#each edges as edge}
         <line
-          x1={nodeX(edge.from)}
-          y1={nodeY(edge.from) + 16}
-          x2={nodeX(edge.to)}
-          y2={nodeY(edge.to) - 16}
-          class="edge"
-          class:edge-visited={edge.from.visited}
+          x1={nodeX(edge.from)} y1={nodeY(edge.from) + 22}
+          x2={nodeX(edge.to)} y2={nodeY(edge.to) - 22}
+          class="edge" class:edge-visited={edge.from.visited}
         />
       {/each}
 
-      <!-- ノード -->
       {#each map.nodes as node}
+        {@const def = getNodeDef(node)}
         <g
           class="map-node"
           class:selectable={isSelectable(node.id)}
-          class:visited={isVisited(node)}
-          class:current={isCurrent(node)}
+          class:visited={node.visited}
+          class:current={map.currentNodeId === node.id}
+          class:boss={def?.nodeType === 'boss'}
+          class:elite={def?.nodeType === 'elite'}
+          class:rest={def?.nodeType === 'rest'}
           transform="translate({nodeX(node)}, {nodeY(node)})"
           onclick={() => isSelectable(node.id) && onSelect(node.id)}
           role="button"
@@ -108,9 +86,14 @@
           onkeydown={(e) => e.key === 'Enter' && isSelectable(node.id) && onSelect(node.id)}
         >
           <circle r="22" class="node-circle" />
-          <text class="node-icon" text-anchor="middle" dominant-baseline="central">
-            {nodeTypeLabels[node.nodeDefId.includes('boss') ? 'boss' : node.nodeDefId.includes('3b') ? 'rest' : 'puzzle']}
+          <text class="node-icon" text-anchor="middle" dominant-baseline="central" font-size="14">
+            {def ? typeIcons[def.nodeType] ?? '✦' : '?'}
           </text>
+          {#if def}
+            <text class="node-label" text-anchor="middle" y="34" font-size="10">
+              {def.title}
+            </text>
+          {/if}
         </g>
       {/each}
     </svg>
@@ -118,79 +101,37 @@
 </div>
 
 <style>
-  .map-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-  }
+  .map-container { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .map-title { font-family: var(--font-story); font-size: 1.1rem; color: var(--gold-accent); letter-spacing: 0.2em; font-weight: 400; }
+  .map-scroll { width: 100%; max-width: 420px; }
+  .map-svg { width: 100%; height: auto; }
 
-  .map-title {
-    font-family: var(--font-story);
-    font-size: 1.1rem;
-    color: var(--gold-accent);
-    letter-spacing: 0.2em;
-    font-weight: 400;
-  }
+  .edge { stroke: var(--ink-light); stroke-width: 1.5; opacity: 0.3; }
+  .edge-visited { stroke: var(--gold-dim); opacity: 0.6; }
 
-  .map-scroll {
-    width: 100%;
-    max-width: 400px;
-  }
+  .node-circle { fill: var(--page-aged); stroke: var(--ink-light); stroke-width: 2; transition: all 0.3s; }
+  .node-icon { fill: var(--ink-medium); pointer-events: none; }
+  .node-label { fill: var(--ink-medium); font-family: var(--font-story); pointer-events: none; }
 
-  .map-svg {
-    width: 100%;
-    height: auto;
-  }
+  .map-node.visited .node-circle { fill: var(--leather-light); stroke: var(--gold-dim); }
+  .map-node.visited .node-icon, .map-node.visited .node-label { fill: var(--page-cream); }
 
-  .edge {
-    stroke: var(--ink-light);
-    stroke-width: 1.5;
-    opacity: 0.3;
-  }
-  .edge-visited {
-    stroke: var(--gold-dim);
-    opacity: 0.6;
-  }
+  .map-node.current .node-circle { fill: var(--gold-accent); stroke: var(--ink-dark); }
 
-  .node-circle {
-    fill: var(--page-aged);
-    stroke: var(--ink-light);
-    stroke-width: 2;
-    transition: all 0.3s;
-  }
+  .map-node.boss .node-circle { stroke-width: 3; }
+  .map-node.boss .node-icon { font-size: 16px; }
 
-  .node-icon {
-    font-size: 16px;
-    fill: var(--ink-medium);
-    pointer-events: none;
-  }
+  .map-node.elite .node-circle { stroke: #a73b3b; }
 
-  .map-node.visited .node-circle {
-    fill: var(--leather-light);
-    stroke: var(--gold-dim);
-  }
-  .map-node.visited .node-icon {
-    fill: var(--page-cream);
-  }
+  .map-node.rest .node-circle { stroke: #3b8a5e; }
 
-  .map-node.current .node-circle {
-    fill: var(--gold-accent);
-    stroke: var(--ink-dark);
-  }
-
-  .map-node.selectable {
-    cursor: pointer;
-  }
+  .map-node.selectable { cursor: pointer; }
   .map-node.selectable .node-circle {
     stroke: var(--gold-accent);
     filter: drop-shadow(0 0 8px var(--magic-glow));
     animation: pulse 2s ease-in-out infinite;
   }
-
-  .map-node:not(.selectable):not(.visited) {
-    opacity: 0.4;
-  }
+  .map-node:not(.selectable):not(.visited) { opacity: 0.4; }
 
   @keyframes pulse {
     0%, 100% { filter: drop-shadow(0 0 6px var(--magic-glow)); }
