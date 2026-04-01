@@ -8,11 +8,12 @@
     onExtract: (slotIndex: number) => void;
     index: number;
     isDragOver: boolean;
+    isDragging: boolean; // 何かをドラッグ中かどうか
     onDragEnter: (index: number) => void;
     onDragLeave: () => void;
   }
 
-  let { slot, onDrop, onExtract, index, isDragOver, onDragEnter, onDragLeave }: Props = $props();
+  let { slot, onDrop, onExtract, index, isDragOver, isDragging = false, onDragEnter, onDragLeave }: Props = $props();
 
   const categoryColors: Record<string, string> = {
     subject: 'var(--slot-subject)',
@@ -43,25 +44,32 @@
 </script>
 
 <span class="slot-group">
-  <button
-    class="slot-word"
-    class:empty={!slot.word}
-    class:drag-over={isDragOver}
-    style:--slot-color={categoryColors[slot.category] ?? 'var(--ink-light)'}
+  <!-- 見えない拡張ドロップ領域（スロットの周囲にパディング） -->
+  <span
+    class="drop-zone"
+    class:drop-active={isDragging}
     ondragover={handleDragOver}
     ondrop={handleDrop}
     ondragenter={() => onDragEnter(index)}
     ondragleave={onDragLeave}
-    onclick={handleClick}
-    title={slot.word ? `クリックで抜き取り` : `空スロット`}
   >
-    {#if slot.word}
-      <span class="word-text">{slot.word.text}</span>
-    {:else}
-      <span class="empty-mark">████</span>
-    {/if}
-    <span class="slot-indicator"></span>
-  </button>{#if particle}<span class="particle">{particle}</span>{/if}
+    <button
+      class="slot-word"
+      class:empty={!slot.word}
+      class:drag-over={isDragOver}
+      class:drag-ready={isDragging && !isDragOver}
+      style:--slot-color={categoryColors[slot.category] ?? 'var(--ink-light)'}
+      onclick={handleClick}
+      title={slot.word ? `クリックで抜き取り` : `空スロット`}
+    >
+      {#if slot.word}
+        <span class="word-text">{slot.word.text}</span>
+      {:else}
+        <span class="empty-mark">████</span>
+      {/if}
+      <span class="slot-indicator"></span>
+    </button>
+  </span>{#if particle}<span class="particle">{particle}</span>{/if}
 </span>
 
 <style>
@@ -70,11 +78,23 @@
     align-items: center;
   }
 
+  .drop-zone {
+    display: inline-flex;
+    padding: 8px;
+    margin: -8px;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+
+  .drop-zone.drop-active {
+    /* ドラッグ中は当たり判定が広がっていることを微かに示す */
+  }
+
   .slot-word {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 6px 14px;
+    padding: 8px 16px;
     border: 2px solid var(--slot-color);
     border-radius: 4px;
     background: rgba(255, 255, 255, 0.05);
@@ -84,7 +104,8 @@
     cursor: pointer;
     transition: all 0.2s ease;
     position: relative;
-    min-height: 2.2rem;
+    min-height: 2.4rem;
+    min-width: 3rem;
   }
 
   .slot-word:hover {
@@ -92,16 +113,29 @@
     box-shadow: 0 0 12px var(--slot-color);
   }
 
+  /* ドラッグ中のスロット: 「ここに置けるよ」を示す */
+  .slot-word.drag-ready {
+    border-color: var(--gold-dim);
+    background: rgba(196, 162, 101, 0.06);
+    transform: scale(1.02);
+    box-shadow: 0 0 8px rgba(196, 162, 101, 0.3);
+  }
+
+  /* カードがスロットの上に来た時: 強い反応 */
   .slot-word.drag-over {
-    background: rgba(196, 162, 101, 0.2);
+    background: rgba(196, 162, 101, 0.25);
     border-color: var(--gold-accent);
-    box-shadow: 0 0 20px var(--magic-glow);
-    transform: scale(1.05);
+    box-shadow: 0 0 24px var(--magic-glow);
+    transform: scale(1.1);
   }
 
   .slot-word.empty {
     border-style: dashed;
     opacity: 0.7;
+  }
+  .slot-word.empty.drag-ready {
+    opacity: 1;
+    border-style: solid;
   }
 
   .word-text {

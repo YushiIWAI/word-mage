@@ -479,6 +479,7 @@
                     onDrop={handleDropOnSlot}
                     onExtract={handleExtract}
                     isDragOver={dragOverSlotIndex === idx}
+                    isDragging={draggingCardIndex !== null}
                     onDragEnter={handleSlotDragEnter}
                     onDragLeave={handleSlotDragLeave}
                   />

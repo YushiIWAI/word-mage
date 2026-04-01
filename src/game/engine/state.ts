@@ -48,7 +48,7 @@ export function swapWord(
   slots: Slot[]
 ): { state: GameState; slots: Slot[] } | null {
   if (state.actionPoints <= 0) return null;
-  if (state.phase !== 'playing') return null;
+  if (state.phase !== 'playing' && state.phase !== 'battle') return null;
 
   const card = state.hand[cardIndex];
   const slot = slots[slotIndex];
@@ -80,7 +80,7 @@ export function extractWord(
   slots: Slot[]
 ): { state: GameState; slots: Slot[] } | null {
   if (state.actionPoints <= 0) return null;
-  if (state.phase !== 'playing') return null;
+  if (state.phase !== 'playing' && state.phase !== 'battle') return null;
 
   const slot = slots[slotIndex];
   if (!slot || !slot.word) return null;
@@ -106,7 +106,7 @@ export function insertWord(
   slots: Slot[]
 ): { state: GameState; slots: Slot[] } | null {
   if (state.actionPoints <= 0) return null;
-  if (state.phase !== 'playing') return null;
+  if (state.phase !== 'playing' && state.phase !== 'battle') return null;
 
   const card = state.hand[cardIndex];
   const slot = slots[slotIndex];
