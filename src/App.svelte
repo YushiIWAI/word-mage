@@ -287,19 +287,21 @@
 
 <div class="game-viewport" class:transitioning={isTransitioning}>
 
-  <!-- ステータスバー -->
-  <div class="status-top">
-    <div class="hp-bar">
-      <span class="hp-label">HP</span>
-      <div class="hp-track">
-        <div class="hp-fill" style:width="{hpPercent}%"
-             class:hp-danger={gameState.hp <= 5}
-             class:hp-warn={gameState.hp > 5 && gameState.hp <= 10}></div>
+  <!-- ステータスバー（非バトル時のみ上部表示） -->
+  {#if !currentBattleNode}
+    <div class="status-top">
+      <div class="hp-bar">
+        <span class="hp-label">HP</span>
+        <div class="hp-track">
+          <div class="hp-fill" style:width="{hpPercent}%"
+               class:hp-danger={gameState.hp <= 5}
+               class:hp-warn={gameState.hp > 5 && gameState.hp <= 10}></div>
+        </div>
+        <span class="hp-text">{gameState.hp}/{gameState.maxHp}</span>
       </div>
-      <span class="hp-text">{gameState.hp}/{gameState.maxHp}</span>
+      <div class="gold-display">{gameState.gold} G</div>
     </div>
-    <div class="gold-display">{gameState.gold} G</div>
-  </div>
+  {/if}
 
   {#if gameState.phase === 'gameover'}
     <BookSpread pageNumber={99}>
@@ -381,6 +383,7 @@
                       onDrop={handleBattleDropOnSlot}
                       onExtract={handleBattleExtract}
                       isDragOver={dragOverSlotIndex === idx}
+                      isDragging={draggingCardIndex !== null}
                       onDragEnter={handleSlotDragEnter}
                       onDragLeave={handleSlotDragLeave}
                     />
@@ -406,12 +409,26 @@
                       onDrop={handleBattleDropOnSlot}
                       onExtract={handleBattleExtract}
                       isDragOver={dragOverSlotIndex === idx}
+                      isDragging={draggingCardIndex !== null}
                       onDragEnter={handleSlotDragEnter}
                       onDragLeave={handleSlotDragLeave}
                     />
                   {/if}
                 {/if}
               {/each}
+            </div>
+            <!-- プレイヤーHP・ゴールド -->
+            <div class="player-status-row">
+              <div class="hp-bar">
+                <span class="hp-label">HP</span>
+                <div class="hp-track">
+                  <div class="hp-fill" style:width="{hpPercent}%"
+                       class:hp-danger={gameState.hp <= 5}
+                       class:hp-warn={gameState.hp > 5 && gameState.hp <= 10}></div>
+                </div>
+                <span class="hp-text">{gameState.hp}/{gameState.maxHp}</span>
+              </div>
+              <div class="gold-display">{gameState.gold} G</div>
             </div>
           </div>
         </div>
@@ -566,6 +583,7 @@
   .section-label { font-family: var(--font-story); font-size: 0.75rem; margin-bottom: 6px; letter-spacing: 0.1em; }
   .enemy-label { color: #a73b3b; }
   .player-label { color: #3b8a5e; }
+  .player-status-row { display: flex; align-items: center; gap: 12px; margin-top: 8px; padding-top: 6px; border-top: 1px solid rgba(59, 138, 94, 0.15); }
 
   .enemy-hp-row { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; }
   .enemy-hp-label { font-family: var(--font-story); font-size: 0.7rem; color: var(--ink-medium); min-width: 60px; }
