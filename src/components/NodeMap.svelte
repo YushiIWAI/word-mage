@@ -1,45 +1,29 @@
 <script lang="ts">
-  import type { GameMap, MapNode } from '../game/engine/types';
+  import type { GameMap, MapNode, NodeDef, BattleNodeDef, ShopNodeDef } from '../game/engine/types';
   import { nodeDefs, battleNodeDefs, shopNodeDefs } from '../game/data/nodes';
 
   interface Props {
     map: GameMap;
     selectableIds: string[];
     onSelect: (nodeId: string) => void;
+    onHover: (nodeId: string | null) => void;
   }
 
-  let { map, selectableIds, onSelect }: Props = $props();
-
-  let rows = $derived(groupByRow(map.nodes));
-
-  function groupByRow(nodes: MapNode[]): MapNode[][] {
-    const maxRow = Math.max(...nodes.map(n => n.row));
-    const result: MapNode[][] = [];
-    for (let r = 0; r <= maxRow; r++) {
-      result.push(nodes.filter(n => n.row === r).sort((a, b) => a.col - b.col));
-    }
-    return result;
-  }
+  let { map, selectableIds, onSelect, onHover }: Props = $props();
 
   function getNodeDef(node: MapNode) {
     return nodeDefs[node.nodeDefId] ?? battleNodeDefs[node.nodeDefId] ?? shopNodeDefs[node.nodeDefId];
   }
 
   const typeIcons: Record<string, string> = {
-    puzzle: '✦',
-    elite: '✧',
-    rest: '泉',
-    shop: '⚖',
-    boss: '門',
-    event: '？',
-    treasure: '鍵',
+    puzzle: '✦', elite: '✧', rest: '泉', shop: '⚖',
+    boss: '門', battle: '⚔', event: '？', treasure: '鍵',
   };
 
   function isSelectable(nodeId: string): boolean {
     return selectableIds.includes(nodeId);
   }
 
-  // エッジの計算
   type Edge = { from: MapNode; to: MapNode };
   let edges = $derived(map.nodes.flatMap(n =>
     n.nextIds.map(nid => ({ from: n, to: map.nodes.find(t => t.id === nid)! })).filter(e => e.to)
@@ -80,10 +64,15 @@
           class:elite={def?.nodeType === 'elite'}
           class:rest={def?.nodeType === 'rest'}
           class:shop={def?.nodeType === 'shop'}
+          class:battle={def?.nodeType === 'battle'}
           transform="translate({nodeX(node)}, {nodeY(node)})"
           onclick={() => isSelectable(node.id) && onSelect(node.id)}
+          onmouseenter={() => isSelectable(node.id) && onHover(node.id)}
+          onmouseleave={() => onHover(null)}
           role="button"
           tabindex={isSelectable(node.id) ? 0 : -1}
+          onfocus={() => isSelectable(node.id) && onHover(node.id)}
+          onblur={() => onHover(null)}
           onkeydown={(e) => e.key === 'Enter' && isSelectable(node.id) && onSelect(node.id)}
         >
           <circle r="22" class="node-circle" />
@@ -116,14 +105,11 @@
 
   .map-node.visited .node-circle { fill: var(--leather-light); stroke: var(--gold-dim); }
   .map-node.visited .node-icon, .map-node.visited .node-label { fill: var(--page-cream); }
-
   .map-node.current .node-circle { fill: var(--gold-accent); stroke: var(--ink-dark); }
-
   .map-node.boss .node-circle { stroke-width: 3; }
   .map-node.boss .node-icon { font-size: 16px; }
-
   .map-node.elite .node-circle { stroke: #a73b3b; }
-
+  .map-node.battle .node-circle { stroke: #a73b3b; }
   .map-node.rest .node-circle { stroke: #3b8a5e; }
   .map-node.shop .node-circle { stroke: var(--gold-accent); }
 

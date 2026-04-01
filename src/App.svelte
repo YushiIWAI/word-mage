@@ -3,11 +3,11 @@
   import SlotWord from './components/SlotWord.svelte';
   import HandCard from './components/HandCard.svelte';
   import NodeMap from './components/NodeMap.svelte';
-  import { nodeDefs, battleNodeDefs, shopNodeDefs, initialHand, mapNodes } from './game/data/nodes';
+  import { nodeDefs, battleNodeDefs, shopNodeDefs, treasureNodeDefs, initialHand, mapNodes } from './game/data/nodes';
   import { createInitialState, swapWord, extractWord, insertWord, getSelectableNodeIds, applyDamage, addGold, addItems, buyCard, sellCard, sellItem } from './game/engine/state';
   import { resolveNode } from './game/engine/evaluate';
   import { initBattle, resolveBattleTurn, advanceBattleTurn, isEnemyDefeated, getCurrentEnemyAction } from './game/engine/battle';
-  import type { Slot, NodeDef, BattleNodeDef, BattleState, ShopNodeDef, ShopItem } from './game/engine/types';
+  import type { Slot, NodeDef, BattleNodeDef, BattleState, ShopNodeDef, ShopItem, TreasureNodeDef, WordCard, PersistentEffect } from './game/engine/types';
 
   // ゲーム状態
   let gameState = $state(createInitialState([...initialHand], mapNodes));
@@ -17,8 +17,13 @@
   let currentNodeDef = $state<NodeDef | null>(null);
   let currentBattleNode = $state<BattleNodeDef | null>(null);
   let currentShopNode = $state<ShopNodeDef | null>(null);
-  let shopSoldIds = $state<Set<string>>(new Set()); // 売り切れた商品ID
+  let currentTreasureNode = $state<TreasureNodeDef | null>(null);
+  let treasureOffered = $state<WordCard[]>([]); // treasure で提示されたカード
+  let shopSoldIds = $state<Set<string>>(new Set());
   let currentSlots = $state<Slot[]>([]);
+
+  // マップホバープレビュー
+  let hoveredNodeId = $state<string | null>(null);
 
   // バトル用: どちらの文を操作しているか区別するための全スロット配列
   // バトル時は [敵スロット..., プレイヤースロット...] を結合
@@ -43,6 +48,48 @@
     gameState.battle ? Math.max(0, (gameState.battle.enemyHp / gameState.battle.enemyMaxHp) * 100) : 0
   );
 
+  // --- 永続カード効果 ---
+  function getPersistentBonus(type: PersistentEffect['type']): number {
+    return gameState.hand
+      .filter(c => c.persistent?.effect.type === type)
+      .reduce((sum, c) => sum + (c.persistent!.effect as any).amount, 0);
+  }
+
+  // --- マップホバープレビュー ---
+  function handleNodeHover(nodeId: string | null) {
+    hoveredNodeId = nodeId;
+  }
+
+  let hoveredNodeInfo = $derived.by(() => {
+    if (!hoveredNodeId) return null;
+    const mapNode = gameState.map.nodes.find(n => n.id === hoveredNodeId);
+    if (!mapNode) return null;
+    const def = nodeDefs[mapNode.nodeDefId] ?? battleNodeDefs[mapNode.nodeDefId] ?? shopNodeDefs[mapNode.nodeDefId] ?? treasureNodeDefs[mapNode.nodeDefId];
+    if (!def) return null;
+
+    const typeLabels: Record<string, string> = {
+      puzzle: '探索', elite: '強敵', rest: '休憩', shop: '商人',
+      boss: 'ボス', battle: '戦闘', event: 'イベント', treasure: '宝箱',
+    };
+
+    let slotInfo = '';
+    if ('slots' in def && def.slots) {
+      const catSymbols: Record<string, string> = {
+        modifier: '■', subject: '◆', object: '▲', object_ni: '▲',
+        object_de: '▲', object_kara: '▲', adverb: '★', predicate: '●',
+      };
+      slotInfo = def.slots.map((s: any) => catSymbols[s.category] ?? '?').join(' ');
+    }
+    if ('enemyActions' in def) {
+      slotInfo = '⚔ 複数ターン戦闘';
+    }
+
+    let apInfo = '';
+    if ('actionPoints' in def) apInfo = `AP: ${def.actionPoints}`;
+
+    return { title: def.title, type: typeLabels[def.nodeType] ?? def.nodeType, slotInfo, apInfo };
+  });
+
   // --- マップ ---
   function handleSelectNode(mapNodeId: string) {
     const mapNode = gameState.map.nodes.find(n => n.id === mapNodeId);
@@ -55,9 +102,26 @@
     // ノードタイプ判定
     const battleDef = battleNodeDefs[mapNode.nodeDefId];
     const shopDef = shopNodeDefs[mapNode.nodeDefId];
+    const treasureDef = treasureNodeDefs[mapNode.nodeDefId];
     const normalDef = nodeDefs[mapNode.nodeDefId];
 
-    if (shopDef) {
+    if (treasureDef) {
+      // 宝箱
+      currentTreasureNode = treasureDef;
+      currentNodeDef = null;
+      currentBattleNode = null;
+      currentShopNode = null;
+      currentTreasureNode = null;
+      // ランダムに pickCount 枚選ぶ
+      const shuffled = [...treasureDef.cardPool].sort(() => Math.random() - 0.5);
+      treasureOffered = shuffled.slice(0, treasureDef.pickCount);
+      gameState = {
+        ...gameState,
+        phase: 'resolved',
+        lastResult: treasureDef.flavorText,
+        map: { nodes: updatedNodes, currentNodeId: mapNodeId },
+      };
+    } else if (shopDef) {
       // ショップ
       currentShopNode = shopDef;
       currentNodeDef = null;
@@ -74,6 +138,7 @@
       currentBattleNode = battleDef;
       currentNodeDef = null;
       currentShopNode = null;
+      currentTreasureNode = null;
       const battle = initBattle(battleDef);
 
       allBattleSlots = [...battle.enemySlots, ...battle.playerSlots];
@@ -92,6 +157,7 @@
       currentNodeDef = normalDef;
       currentBattleNode = null;
       currentShopNode = null;
+      currentTreasureNode = null;
       currentSlots = normalDef.slots.map(s => ({ ...s, word: s.word ? { ...s.word } : null }));
 
       gameState = {
@@ -195,6 +261,13 @@
     handleReturnToMap();
   }
 
+  // --- Treasure ---
+  function handlePickTreasure(card: WordCard) {
+    if (gameState.hand.length >= gameState.handLimit + getPersistentBonus('hand_limit')) return;
+    gameState = { ...gameState, hand: [...gameState.hand, { ...card, id: card.id + '_' + Date.now() }] };
+    treasureOffered = treasureOffered.filter(c => c.id !== card.id);
+  }
+
   // --- 通常ノードの解決 ---
   function handleResolve() {
     if (!currentNodeDef) return;
@@ -208,6 +281,14 @@
     newState = addGold(newState, result.gold);
     if (result.rewardItems) {
       newState = addItems(newState, result.rewardItems);
+    }
+    if (result.rewardCards && result.rewardCards.length > 0) {
+      const effectiveLimit = newState.handLimit + getPersistentBonus('hand_limit');
+      for (const card of result.rewardCards) {
+        if (newState.hand.length < effectiveLimit) {
+          newState = { ...newState, hand: [...newState.hand, { ...card, id: card.id + '_' + Date.now() }] };
+        }
+      }
     }
     gameState = newState;
   }
@@ -283,6 +364,7 @@
       currentNodeDef = null;
       currentBattleNode = null;
       currentShopNode = null;
+      currentTreasureNode = null;
       currentSlots = [];
       return;
     }
@@ -293,6 +375,7 @@
       currentNodeDef = null;
       currentBattleNode = null;
       currentShopNode = null;
+      currentTreasureNode = null;
       currentSlots = [];
       allBattleSlots = [];
       isTransitioning = false;
@@ -320,7 +403,7 @@
   }
 
   let isGameClear = $derived(
-    gameState.phase === 'resolved' && currentNodeDef === null && currentBattleNode === null && currentShopNode === null && gameState.hp > 0
+    gameState.phase === 'resolved' && currentNodeDef === null && currentBattleNode === null && currentShopNode === null && currentTreasureNode === null && gameState.hp > 0
   );
 
   let isBattleWon = $derived(
@@ -386,12 +469,69 @@
     <BookSpread pageNumber={1}>
       {#snippet leftContent()}
         <div class="map-page">
-          <NodeMap map={gameState.map} {selectableIds} onSelect={handleSelectNode} />
+          <NodeMap map={gameState.map} {selectableIds} onSelect={handleSelectNode} onHover={handleNodeHover} />
         </div>
       {/snippet}
       {#snippet rightContent()}
         <div class="map-info">
-          <p class="map-hint">光るノードを選んで進む</p>
+          {#if hoveredNodeInfo}
+            <div class="preview-card">
+              <div class="preview-type">{hoveredNodeInfo.type}</div>
+              <div class="preview-title">{hoveredNodeInfo.title}</div>
+              {#if hoveredNodeInfo.slotInfo}
+                <div class="preview-slots">{hoveredNodeInfo.slotInfo}</div>
+              {/if}
+              {#if hoveredNodeInfo.apInfo}
+                <div class="preview-ap">{hoveredNodeInfo.apInfo}</div>
+              {/if}
+            </div>
+          {:else}
+            <p class="map-hint">光るノードを選んで進む</p>
+          {/if}
+          <div class="map-status">
+            <span>手札: {gameState.hand.length}/{gameState.handLimit + getPersistentBonus('hand_limit')}</span>
+            {#if gameState.items.length > 0}
+              <span>アイテム: {gameState.items.length}</span>
+            {/if}
+          </div>
+        </div>
+      {/snippet}
+    </BookSpread>
+
+  {:else if currentTreasureNode}
+    <!-- ===== 宝箱画面 ===== -->
+    <BookSpread
+      leftTitle={currentTreasureNode.title}
+      rightTitle="見つけた言葉"
+      pageNumber={gameState.map.nodes.filter(n => n.visited).length}
+    >
+      {#snippet leftContent()}
+        <div class="treasure-content">
+          <p class="treasure-flavor">{currentTreasureNode.flavorText}</p>
+          <div class="treasure-cards">
+            {#each treasureOffered as card}
+              <button
+                class="treasure-card"
+                disabled={gameState.hand.length >= gameState.handLimit + getPersistentBonus('hand_limit')}
+                onclick={() => handlePickTreasure(card)}
+              >
+                <span class="treasure-card-text">{card.text}</span>
+                <span class="treasure-card-cat">{card.category === 'modifier' ? '修飾語' : card.category === 'subject' ? '主語' : card.category === 'predicate' ? '述語' : card.category === 'adverb' ? '副詞' : '対象語'}</span>
+              </button>
+            {/each}
+            {#if treasureOffered.length === 0}
+              <p class="treasure-done">すべて拾い終えた。</p>
+            {/if}
+          </div>
+        </div>
+      {/snippet}
+      {#snippet rightContent()}
+        <div class="treasure-content">
+          <p class="map-hint">カードをクリックして手札に加える</p>
+          <div class="map-status">
+            <span>手札: {gameState.hand.length}/{gameState.handLimit + getPersistentBonus('hand_limit')}</span>
+          </div>
+          <button class="next-btn" onclick={handleReturnToMap}>先へ進む</button>
         </div>
       {/snippet}
     </BookSpread>
@@ -739,6 +879,34 @@
   .ending-fin { font-family: var(--font-story); font-size: 1.3rem; color: var(--gold-accent); letter-spacing: 0.3em; }
   .restart-btn { font-family: var(--font-story); font-size: 0.85rem; padding: 8px 20px; margin-top: 12px; background: none; color: var(--gold-accent); border: 1px solid var(--gold-dim); border-radius: 4px; cursor: pointer; transition: all 0.3s; }
   .restart-btn:hover { background: rgba(196,162,101,0.1); }
+
+  /* --- マッププレビュー --- */
+  .preview-card {
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    padding: 16px; border: 1px solid rgba(196,162,101,0.3); border-radius: 6px;
+    background: rgba(196,162,101,0.05);
+  }
+  .preview-type { font-size: 0.7rem; color: var(--gold-accent); letter-spacing: 0.15em; text-transform: uppercase; }
+  .preview-title { font-size: 1.1rem; color: var(--ink-dark); font-family: var(--font-story); }
+  .preview-slots { font-size: 0.9rem; color: var(--ink-medium); letter-spacing: 0.3em; }
+  .preview-ap { font-size: 0.75rem; color: var(--ink-light); }
+  .map-status { display: flex; gap: 16px; color: var(--ink-light); font-size: 0.8rem; font-family: var(--font-story); margin-top: 16px; }
+
+  /* --- 宝箱 --- */
+  .treasure-content { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
+  .treasure-flavor { font-family: var(--font-story); font-size: 0.95rem; color: var(--ink-medium); line-height: 1.8; text-align: center; font-style: italic; }
+  .treasure-cards { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+  .treasure-card {
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
+    padding: 12px 20px; border: 2px solid var(--gold-accent); border-radius: 6px;
+    background: rgba(196,162,101,0.08); cursor: pointer;
+    font-family: var(--font-story); transition: all 0.2s;
+  }
+  .treasure-card:hover:not(:disabled) { transform: scale(1.05); box-shadow: 0 0 16px var(--magic-glow); background: rgba(196,162,101,0.15); }
+  .treasure-card:disabled { opacity: 0.4; cursor: not-allowed; }
+  .treasure-card-text { font-size: 1.1rem; color: var(--ink-dark); }
+  .treasure-card-cat { font-size: 0.7rem; color: var(--gold-dim); }
+  .treasure-done { color: var(--ink-light); font-style: italic; font-size: 0.9rem; }
 
   /* --- ショップ --- */
   .shop-content { flex: 1; display: flex; flex-direction: column; gap: 12px; }

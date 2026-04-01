@@ -40,6 +40,31 @@ export interface WordCard {
   /** カードが持つカテゴリ（どのスロットに入れられるか） */
   category: SlotCategory;
   tags: string[];
+  /** 永続カード: スロットに入れず、手札にあるだけでパッシブ効果 */
+  persistent?: {
+    description: string;
+    effect: PersistentEffect;
+  };
+}
+
+/** 永続カードの効果タイプ */
+export type PersistentEffect =
+  | { type: 'ap_bonus'; amount: number }       // 毎ノードAP+N
+  | { type: 'hand_limit'; amount: number }      // 手札上限+N
+  | { type: 'gold_bonus'; amount: number }      // 毎ノードゴールド+N
+  | { type: 'heal_on_clear'; amount: number };  // ノードクリア時HP+N
+
+/** treasure ノード定義 */
+export interface TreasureNodeDef {
+  id: string;
+  title: string;
+  nodeType: 'treasure';
+  /** 獲得できるカード（ランダムで1~2枚） */
+  cardPool: WordCard[];
+  /** 獲得枚数 */
+  pickCount: number;
+  /** フレーバーテキスト */
+  flavorText: string;
 }
 
 /** ノード内の1スロット */

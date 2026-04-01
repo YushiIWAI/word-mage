@@ -1,4 +1,4 @@
-import type { NodeDef, WordCard, MapNode, BattleNodeDef, ShopNodeDef, Item } from '../engine/types';
+import type { NodeDef, WordCard, MapNode, BattleNodeDef, ShopNodeDef, TreasureNodeDef, Item } from '../engine/types';
 
 /** プロトタイプ用：最初の手札 */
 export const initialHand: WordCard[] = [
@@ -398,6 +398,50 @@ export const shopNodeDefs: Record<string, ShopNodeDef> = {
 };
 
 // ============================
+// 宝箱ノード定義
+// ============================
+
+export const treasureNodeDefs: Record<string, TreasureNodeDef> = {
+  node_treasure: {
+    id: 'node_treasure',
+    title: '朽ちた書架',
+    nodeType: 'treasure',
+    pickCount: 2,
+    flavorText: '苔むした書架の隙間に、まだ読める頁が残っていた。言葉を拾い集める。',
+    cardPool: [
+      { id: 'tr_1', text: '鋭い', category: 'modifier', tags: ['sharp', 'weapon', 'threat:high'] },
+      { id: 'tr_2', text: '守る', category: 'predicate', tags: ['defend', 'guard', 'safe'] },
+      { id: 'tr_3', text: '風', category: 'subject', tags: ['wind', 'nature', 'harmless'] },
+      { id: 'tr_4', text: '穏やかに', category: 'adverb', tags: ['calm', 'gentle', 'peaceful'] },
+      { id: 'tr_5', text: '壊れた', category: 'modifier', tags: ['broken', 'weaken', 'size:small'] },
+      { id: 'tr_6', text: '輝く', category: 'predicate', tags: ['light', 'magic', 'illuminate'] },
+    ],
+  },
+};
+
+// ============================
+// 永続カード定義
+// ============================
+
+export const persistentCards: WordCard[] = [
+  {
+    id: 'perm_quill', text: '魔法の羽根ペン', category: 'modifier',
+    tags: ['magic', 'tool'],
+    persistent: { description: '毎ノードAP+1', effect: { type: 'ap_bonus', amount: 1 } },
+  },
+  {
+    id: 'perm_pouch', text: '底なしの袋', category: 'modifier',
+    tags: ['magic', 'container'],
+    persistent: { description: '手札上限+2', effect: { type: 'hand_limit', amount: 2 } },
+  },
+  {
+    id: 'perm_coin', text: '幸運の硬貨', category: 'modifier',
+    tags: ['gold', 'luck'],
+    persistent: { description: '毎ノード+2G', effect: { type: 'gold_bonus', amount: 2 } },
+  },
+];
+
+// ============================
 // マップ定義（ショップ追加、5層に拡張）
 // ============================
 
@@ -412,13 +456,25 @@ export const shopNodeDefs: Record<string, ShopNodeDef> = {
  *           |
  *       [node_boss]              Row 4 (ボス)
  */
+/**
+ *              [node_1]                  Row 0
+ *            /    |     \
+ *     [node_2a] [treasure] [node_2b]     Row 1
+ *      /    \      |       |    \
+ * [node_3a][node_3b]  [node_3c]          Row 2
+ *      \     |     /
+ *       [node_shop]                      Row 3
+ *           |
+ *       [node_boss]                      Row 4
+ */
 export const mapNodes: MapNode[] = [
-  { id: 'm_1',    nodeDefId: 'node_1',    row: 0, col: 1, nextIds: ['m_2a', 'm_2b'], visited: false },
-  { id: 'm_2a',   nodeDefId: 'node_2a',   row: 1, col: 0, nextIds: ['m_3a', 'm_3b'], visited: false },
-  { id: 'm_2b',   nodeDefId: 'node_2b',   row: 1, col: 2, nextIds: ['m_3b', 'm_3c'], visited: false },
-  { id: 'm_3a',   nodeDefId: 'node_3a',   row: 2, col: 0, nextIds: ['m_shop'], visited: false },
-  { id: 'm_3b',   nodeDefId: 'node_3b',   row: 2, col: 1, nextIds: ['m_shop'], visited: false },
-  { id: 'm_3c',   nodeDefId: 'node_3c',   row: 2, col: 2, nextIds: ['m_shop'], visited: false },
-  { id: 'm_shop', nodeDefId: 'node_shop', row: 3, col: 1, nextIds: ['m_boss'], visited: false },
-  { id: 'm_boss', nodeDefId: 'node_boss', row: 4, col: 1, nextIds: [], visited: false },
+  { id: 'm_1',       nodeDefId: 'node_1',       row: 0, col: 1, nextIds: ['m_2a', 'm_tr', 'm_2b'], visited: false },
+  { id: 'm_2a',      nodeDefId: 'node_2a',      row: 1, col: 0, nextIds: ['m_3a', 'm_3b'], visited: false },
+  { id: 'm_tr',      nodeDefId: 'node_treasure', row: 1, col: 1, nextIds: ['m_3b'], visited: false },
+  { id: 'm_2b',      nodeDefId: 'node_2b',      row: 1, col: 2, nextIds: ['m_3b', 'm_3c'], visited: false },
+  { id: 'm_3a',      nodeDefId: 'node_3a',      row: 2, col: 0, nextIds: ['m_shop'], visited: false },
+  { id: 'm_3b',      nodeDefId: 'node_3b',      row: 2, col: 1, nextIds: ['m_shop'], visited: false },
+  { id: 'm_3c',      nodeDefId: 'node_3c',      row: 2, col: 2, nextIds: ['m_shop'], visited: false },
+  { id: 'm_shop',    nodeDefId: 'node_shop',    row: 3, col: 1, nextIds: ['m_boss'], visited: false },
+  { id: 'm_boss',    nodeDefId: 'node_boss',    row: 4, col: 1, nextIds: [], visited: false },
 ];
