@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+src/assets/textures/paper-burnt.png
+src/assets/effects/fog.png
+src/assets/effects/magic-circle.png
+src/assets/ui/gauge-frame.png
+src/assets/ui/gauge-bar.png

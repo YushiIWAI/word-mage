@@ -1,5 +1,8 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
+  import paperGrunge from '../assets/textures/paper-grunge.jpg';
+  import stoneTexture from '../assets/textures/stone-texture.jpg';
+  import classicFrame from '../assets/ui/classic-frame.png';
 
   interface Props {
     leftTitle?: string;
@@ -24,8 +27,9 @@
       <!-- 左ページ -->
       <div class="page page-left">
         <!-- 紙の質感レイヤー -->
-        <div class="paper-texture"></div>
-        <div class="paper-stain"></div>
+        <div class="paper-texture" style="background-image: url({paperGrunge})"></div>
+        <div class="paper-grain" style="background-image: url({stoneTexture})"></div>
+        <div class="page-frame" style="background-image: url({classicFrame})"></div>
         <div class="page-inner">
           {#if leftTitle}
             <h2 class="page-title">{leftTitle}</h2>
@@ -36,14 +40,14 @@
           </div>
         </div>
         <span class="page-number left">{pageNumber * 2 - 1}</span>
-        <!-- ページの端の影（本の厚み表現） -->
         <div class="page-edge-shadow left-edge"></div>
       </div>
 
       <!-- 右ページ -->
       <div class="page page-right">
-        <div class="paper-texture"></div>
-        <div class="paper-stain"></div>
+        <div class="paper-texture" style="background-image: url({paperGrunge})"></div>
+        <div class="paper-grain" style="background-image: url({stoneTexture})"></div>
+        <div class="page-frame" style="background-image: url({classicFrame})"></div>
         <div class="page-inner">
           {#if rightTitle}
             <h2 class="page-title">{rightTitle}</h2>
@@ -58,11 +62,11 @@
       </div>
     </div>
 
-    <!-- 本の角の装飾 -->
-    <div class="corner-ornament top-left">◤</div>
-    <div class="corner-ornament top-right">◥</div>
-    <div class="corner-ornament bottom-left">◣</div>
-    <div class="corner-ornament bottom-right">◢</div>
+    <!-- 本の角の金具 -->
+    <div class="corner-metal top-left"></div>
+    <div class="corner-metal top-right"></div>
+    <div class="corner-metal bottom-left"></div>
+    <div class="corner-metal bottom-right"></div>
   </div>
 </div>
 
@@ -93,17 +97,18 @@
       inset 0 -1px 0 rgba(0, 0, 0, 0.3);
   }
 
-  .corner-ornament {
+  .corner-metal {
     position: absolute;
-    color: var(--gold-dim);
-    font-size: 12px;
-    opacity: 0.4;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--gold-dim);
+    opacity: 0.5;
     pointer-events: none;
   }
-  .top-left { top: 8px; left: 8px; }
-  .top-right { top: 8px; right: 8px; }
-  .bottom-left { bottom: 8px; left: 8px; }
-  .bottom-right { bottom: 8px; right: 8px; }
+  .top-left { top: 4px; left: 4px; border-right: none; border-bottom: none; border-radius: 3px 0 0 0; }
+  .top-right { top: 4px; right: 4px; border-left: none; border-bottom: none; border-radius: 0 3px 0 0; }
+  .bottom-left { bottom: 4px; left: 4px; border-right: none; border-top: none; border-radius: 0 0 0 3px; }
+  .bottom-right { bottom: 4px; right: 4px; border-left: none; border-top: none; border-radius: 0 0 3px 0; }
 
   .book {
     width: 100%;
@@ -173,27 +178,36 @@
       linear-gradient(225deg, #e0d5be 0%, #ece5d3 15%, #f5f0e1 40%, #f3edd8 100%);
   }
 
-  /* 紙の質感 — 複数レイヤー重ね */
+  /* 紙の質感 — 実画像テクスチャ */
   .paper-texture {
-    content: '';
     position: absolute;
     inset: 0;
-    background:
-      radial-gradient(ellipse at 20% 50%, rgba(160, 140, 100, 0.08) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 20%, rgba(160, 140, 100, 0.06) 0%, transparent 50%),
-      radial-gradient(ellipse at 50% 80%, rgba(160, 140, 100, 0.05) 0%, transparent 50%),
-      radial-gradient(ellipse at 10% 90%, rgba(120, 100, 60, 0.04) 0%, transparent 40%);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    mix-blend-mode: multiply;
     pointer-events: none;
   }
 
-  /* 紙のシミ・経年劣化 */
-  .paper-stain {
+  /* 石テクスチャで紙の繊維感を追加 */
+  .paper-grain {
     position: absolute;
     inset: 0;
-    background:
-      radial-gradient(circle at 85% 15%, rgba(150, 120, 70, 0.08) 0%, transparent 25%),
-      radial-gradient(circle at 15% 85%, rgba(130, 100, 50, 0.06) 0%, transparent 20%),
-      radial-gradient(circle at 60% 40%, rgba(140, 110, 60, 0.03) 0%, transparent 30%);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.04;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
+
+  /* クラシックフレーム装飾 */
+  .page-frame {
+    position: absolute;
+    inset: 8px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.35;
     pointer-events: none;
   }
 
