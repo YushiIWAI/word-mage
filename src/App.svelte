@@ -4,6 +4,7 @@
   import HandCard from './components/HandCard.svelte';
   import NodeMap from './components/NodeMap.svelte';
   import MagicEffect from './components/MagicEffect.svelte';
+  import classicFrameImg from './assets/ui/classic-frame.png';
   import { nodeDefs, battleNodeDefs, shopNodeDefs, treasureNodeDefs, initialHand, mapNodes } from './game/data/nodes';
   import { createInitialState, swapWord, extractWord, insertWord, getSelectableNodeIds, applyDamage, addGold, addItems, buyCard, sellCard, sellItem } from './game/engine/state';
   import { resolveNode } from './game/engine/evaluate';
@@ -808,7 +809,13 @@
 
       {#snippet rightContent()}
         {#if gameState.phase === 'resolved' && gameState.lastResult}
-          <div class="result-text appear"><p>{gameState.lastResult}</p></div>
+          <div class="result-text-box appear">
+            <img src={classicFrameImg} alt="" class="result-frame-tl" />
+            <img src={classicFrameImg} alt="" class="result-frame-tr" />
+            <img src={classicFrameImg} alt="" class="result-frame-bl" />
+            <img src={classicFrameImg} alt="" class="result-frame-br" />
+            <p class="result-text-inner">{gameState.lastResult}</p>
+          </div>
           <div class="result-stats">
             {#if lastPlayerDamage > 0}<span class="stat-damage">-{lastPlayerDamage} HP</span>
             {:else if lastPlayerDamage < 0}<span class="stat-heal">+{-lastPlayerDamage} HP</span>
@@ -912,7 +919,6 @@
   .resolve-btn:hover { background: var(--leather-light); box-shadow: 0 0 12px var(--magic-glow); }
 
   .result-text { flex: 1; display: flex; align-items: center; justify-content: center; font-family: var(--font-story); font-size: 1rem; line-height: 2; color: var(--ink-dark); }
-  .result-text.appear { animation: inkAppear 1s ease-out; }
   @keyframes inkAppear { from { opacity: 0; filter: blur(4px); } to { opacity: 1; filter: blur(0); } }
 
   .result-stats { display: flex; gap: 12px; justify-content: center; margin: 6px 0; font-family: var(--font-story); font-size: 0.85rem; flex-wrap: wrap; }
@@ -921,6 +927,25 @@
   .stat-nodamage { color: var(--ink-light); }
   .stat-gold { color: var(--gold-accent); }
   .stat-enemy-damage { color: #3b7ea7; }
+
+  /* 結果テキストボックス + クラシックフレーム四隅 */
+  .result-text-box {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    position: relative; padding: 24px 16px; margin: 4px 0;
+  }
+  .result-text-box.appear { animation: inkAppear 1s ease-out; }
+  .result-text-inner {
+    font-family: var(--font-story); font-size: 1.05rem; line-height: 2;
+    color: var(--ink-dark); text-align: center; position: relative; z-index: 1;
+  }
+  .result-frame-tl, .result-frame-tr, .result-frame-bl, .result-frame-br {
+    position: absolute; width: 60px; height: 42px; opacity: 0.35; pointer-events: none;
+    object-fit: contain;
+  }
+  .result-frame-tl { top: 0; left: 0; clip-path: inset(0 50% 50% 0); transform: scale(2); transform-origin: top left; }
+  .result-frame-tr { top: 0; right: 0; clip-path: inset(0 0 50% 50%); transform: scale(2); transform-origin: top right; }
+  .result-frame-bl { bottom: 0; left: 0; clip-path: inset(50% 50% 0 0); transform: scale(2); transform-origin: bottom left; }
+  .result-frame-br { bottom: 0; right: 0; clip-path: inset(50% 0 0 50%); transform: scale(2); transform-origin: bottom right; }
 
   .reward-list { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin: 6px 0; }
   .reward-tag {

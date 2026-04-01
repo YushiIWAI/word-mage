@@ -48,6 +48,11 @@ export const nodeDefs: Record<string, NodeDef> = {
         damage: 0, gold: 10,
         rewardItems: [{ id: 'item_dragon_debris', name: '竜鱗の欠片', description: '竜が残した鱗の破片', sellPrice: 18 }] },
       // 単体条件（新規）
+      // 大きな子猫が道を塞いでいる
+      { id: 'o1_q', conditions: { 's1': ['size:large'], 's2': ['harmless'] },
+        resultText: '大きな子猫が道を塞いでいる。巨大な毛玉だ。撫でると喉を鳴らして脇にどいた。',
+        damage: 0, gold: 6,
+        rewardCards: [{ id: 'reward_giant_cat', text: '巨大な', category: 'modifier', tags: ['size:large', 'heavy', 'impressive'] }] },
       { id: 'o1_h', conditions: { 's1': ['fire'] },
         resultText: '燃え盛る岩。道を塞ぐ障害が、道を焼く障害に変わった。熱風を浴びながら駆け抜けた。',
         damage: 2, gold: 4 },
@@ -127,6 +132,11 @@ export const nodeDefs: Record<string, NodeDef> = {
         resultText: '氷がさらに冷たく、さらに厚くなった。凍てつく冷気が全身を蝕む。',
         damage: 6, gold: 1 },
       // 単体条件（新規）
+      // 冷たい子猫が川を閉ざしている
+      { id: 'o2a_q', conditions: { 's1': ['cold'], 's2': ['harmless'] },
+        resultText: '冷たい子猫が川の上で丸くなっている。凍えているのだ。抱き上げて温めてやると、川は通れるようになった。',
+        damage: 0, gold: 5,
+        rewardCards: [{ id: 'reward_cold_cat', text: '冷たい', category: 'modifier', tags: ['cold', 'ice', 'harsh'] }] },
       { id: 'o2a_h', conditions: { 's1': ['fire'] },
         resultText: '燃え盛る炎が氷を溶かした。川は自由を取り戻し、魚が跳ねた。',
         damage: 0, gold: 8,
@@ -202,6 +212,10 @@ export const nodeDefs: Record<string, NodeDef> = {
         resultText: '燃え盛る竜が橋を守っている。番兵よりはるかに恐ろしい。近づくことすらできない。',
         damage: 7, gold: 0 },
       // 単体条件（新規）
+      // 修飾語そのまま + 主語を子猫に（面白い組み合わせ）
+      { id: 'o2b_r', conditions: { 's1': ['powerful'], 's2': ['harmless'] },
+        resultText: '屈強な子猫が橋を守っている。筋骨隆々の子猫だ。可愛いが、妙な迫力がある。結局よけて通った。',
+        damage: 0, gold: 6 },
       { id: 'o2b_h', conditions: { 's2': ['dragon'] },
         resultText: '竜が橋を守っている。番兵の代わりに竜。迂回に半日かかった。',
         damage: 6, gold: 1 },
@@ -284,6 +298,10 @@ export const nodeDefs: Record<string, NodeDef> = {
         damage: 0, gold: 7,
         rewardItems: [{ id: 'item_purified_water', name: '浄化された水', description: '風が毒を散らした後に残った清水', sellPrice: 8 }] },
       // 単体条件（新規）
+      // 深い子猫が沼に淀んでいる
+      { id: 'o3a_q', conditions: { 's1': ['deep'], 's2': ['harmless'] },
+        resultText: '深い……子猫が沼に淀んでいる。何が深いのかよくわからないが、沼は子猫で埋まっていて毒はない。',
+        damage: 0, gold: 5 },
       { id: 'o3a_h', conditions: { 's1': ['fire'] },
         resultText: '燃え盛る毒。沼地から有毒ガスが噴き上がった。火をつけるべきではなかった。',
         damage: 7, gold: 0 },
@@ -460,6 +478,10 @@ export const nodeDefs: Record<string, NodeDef> = {
         resultText: 'そよ風にすぎない。谷は穏やかで、道はどこまでも続いている。',
         damage: 0, gold: 9 },
       // 単体条件（新規）
+      // 激しい子猫が谷を引き裂いている
+      { id: 'o3c_s2', conditions: { 's1': ['intense'], 's2': ['harmless'] },
+        resultText: '激しい子猫が谷を引き裂いている。……引き裂けるわけがないのだが、すさまじい勢いで走り回っている。元気だ。',
+        damage: 0, gold: 7 },
       { id: 'o3c_i', conditions: { 's1': ['fire'] },
         resultText: '燃え盛る嵐。炎が渦を巻いて谷を駆け抜ける。火の竜巻だ。全力で逃げた。',
         damage: 8, gold: 1 },

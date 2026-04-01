@@ -38,8 +38,9 @@
     onDrop(index);
   }
 
+  // Extract（クリックで抜き取り）は無効化。SwapとInsertのみ許可。
   function handleClick() {
-    if (slot.word) onExtract(index);
+    // 何もしない
   }
 </script>
 
