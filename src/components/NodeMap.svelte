@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { GameMap, MapNode } from '../game/engine/types';
-  import { nodeDefs, battleNodeDefs } from '../game/data/nodes';
+  import { nodeDefs, battleNodeDefs, shopNodeDefs } from '../game/data/nodes';
 
   interface Props {
     map: GameMap;
@@ -22,7 +22,7 @@
   }
 
   function getNodeDef(node: MapNode) {
-    return nodeDefs[node.nodeDefId] ?? battleNodeDefs[node.nodeDefId];
+    return nodeDefs[node.nodeDefId] ?? battleNodeDefs[node.nodeDefId] ?? shopNodeDefs[node.nodeDefId];
   }
 
   const typeIcons: Record<string, string> = {
@@ -58,7 +58,7 @@
   <h2 class="map-title">— 旅路を選べ —</h2>
   <div class="map-scroll">
     <svg class="map-svg"
-      viewBox="0 0 {PADDING_X * 2 + 2 * COL_WIDTH} {PADDING_Y * 2 + 3 * ROW_HEIGHT}"
+      viewBox="0 0 {PADDING_X * 2 + 2 * COL_WIDTH} {PADDING_Y * 2 + 4 * ROW_HEIGHT}"
       preserveAspectRatio="xMidYMid meet"
     >
       {#each edges as edge}
@@ -79,6 +79,7 @@
           class:boss={def?.nodeType === 'boss'}
           class:elite={def?.nodeType === 'elite'}
           class:rest={def?.nodeType === 'rest'}
+          class:shop={def?.nodeType === 'shop'}
           transform="translate({nodeX(node)}, {nodeY(node)})"
           onclick={() => isSelectable(node.id) && onSelect(node.id)}
           role="button"
@@ -124,6 +125,7 @@
   .map-node.elite .node-circle { stroke: #a73b3b; }
 
   .map-node.rest .node-circle { stroke: #3b8a5e; }
+  .map-node.shop .node-circle { stroke: var(--gold-accent); }
 
   .map-node.selectable { cursor: pointer; }
   .map-node.selectable .node-circle {

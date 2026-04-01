@@ -3,19 +3,21 @@
   import SlotWord from './components/SlotWord.svelte';
   import HandCard from './components/HandCard.svelte';
   import NodeMap from './components/NodeMap.svelte';
-  import { nodeDefs, battleNodeDefs, initialHand, mapNodes } from './game/data/nodes';
-  import { createInitialState, swapWord, extractWord, insertWord, getSelectableNodeIds, applyDamage, addGold } from './game/engine/state';
+  import { nodeDefs, battleNodeDefs, shopNodeDefs, initialHand, mapNodes } from './game/data/nodes';
+  import { createInitialState, swapWord, extractWord, insertWord, getSelectableNodeIds, applyDamage, addGold, addItems, buyCard, sellCard, sellItem } from './game/engine/state';
   import { resolveNode } from './game/engine/evaluate';
   import { initBattle, resolveBattleTurn, advanceBattleTurn, isEnemyDefeated, getCurrentEnemyAction } from './game/engine/battle';
-  import type { Slot, NodeDef, BattleNodeDef, BattleState } from './game/engine/types';
+  import type { Slot, NodeDef, BattleNodeDef, BattleState, ShopNodeDef, ShopItem } from './game/engine/types';
 
   // ゲーム状態
   let gameState = $state(createInitialState([...initialHand], mapNodes));
   let selectableIds = $derived(getSelectableNodeIds(gameState.map));
 
-  // 現在のノード（通常ノードまたはバトルノード）
+  // 現在のノード（通常ノード、バトル、ショップ）
   let currentNodeDef = $state<NodeDef | null>(null);
   let currentBattleNode = $state<BattleNodeDef | null>(null);
+  let currentShopNode = $state<ShopNodeDef | null>(null);
+  let shopSoldIds = $state<Set<string>>(new Set()); // 売り切れた商品ID
   let currentSlots = $state<Slot[]>([]);
 
   // バトル用: どちらの文を操作しているか区別するための全スロット配列
@@ -50,14 +52,28 @@
       n.id === mapNodeId ? { ...n, visited: true } : n
     );
 
-    // バトルノードか通常ノードかを判定
+    // ノードタイプ判定
     const battleDef = battleNodeDefs[mapNode.nodeDefId];
+    const shopDef = shopNodeDefs[mapNode.nodeDefId];
     const normalDef = nodeDefs[mapNode.nodeDefId];
 
-    if (battleDef) {
+    if (shopDef) {
+      // ショップ
+      currentShopNode = shopDef;
+      currentNodeDef = null;
+      currentBattleNode = null;
+      shopSoldIds = new Set();
+      gameState = {
+        ...gameState,
+        phase: 'shop',
+        lastResult: null,
+        map: { nodes: updatedNodes, currentNodeId: mapNodeId },
+      };
+    } else if (battleDef) {
       // バトル開始
       currentBattleNode = battleDef;
       currentNodeDef = null;
+      currentShopNode = null;
       const battle = initBattle(battleDef);
 
       allBattleSlots = [...battle.enemySlots, ...battle.playerSlots];
@@ -75,6 +91,7 @@
       // 通常ノード
       currentNodeDef = normalDef;
       currentBattleNode = null;
+      currentShopNode = null;
       currentSlots = normalDef.slots.map(s => ({ ...s, word: s.word ? { ...s.word } : null }));
 
       gameState = {
@@ -154,6 +171,30 @@
     }
   }
 
+  // --- ショップ操作 ---
+  function handleBuyCard(shopItem: ShopItem, index: number) {
+    const result = buyCard(gameState, { ...shopItem.card, id: shopItem.card.id + '_' + Date.now() }, shopItem.price);
+    if (result) {
+      gameState = result;
+      shopSoldIds = new Set([...shopSoldIds, shopItem.card.id]);
+    }
+  }
+
+  function handleSellCard(cardIndex: number) {
+    if (!currentShopNode) return;
+    const result = sellCard(gameState, cardIndex, currentShopNode.sellPricePerCard);
+    if (result) gameState = result;
+  }
+
+  function handleSellItem(itemIndex: number) {
+    const result = sellItem(gameState, itemIndex);
+    if (result) gameState = result;
+  }
+
+  function handleLeaveShop() {
+    handleReturnToMap();
+  }
+
   // --- 通常ノードの解決 ---
   function handleResolve() {
     if (!currentNodeDef) return;
@@ -165,6 +206,9 @@
     let newState = { ...gameState, phase: 'resolved' as const, lastResult: result.resultText };
     newState = applyDamage(newState, result.damage);
     newState = addGold(newState, result.gold);
+    if (result.rewardItems) {
+      newState = addItems(newState, result.rewardItems);
+    }
     gameState = newState;
   }
 
@@ -238,6 +282,7 @@
     if (currentMapNode && currentMapNode.nextIds.length === 0) {
       currentNodeDef = null;
       currentBattleNode = null;
+      currentShopNode = null;
       currentSlots = [];
       return;
     }
@@ -247,6 +292,7 @@
       gameState = { ...gameState, phase: 'map', lastResult: null, battle: null };
       currentNodeDef = null;
       currentBattleNode = null;
+      currentShopNode = null;
       currentSlots = [];
       allBattleSlots = [];
       isTransitioning = false;
@@ -257,6 +303,7 @@
     gameState = createInitialState([...initialHand], mapNodes);
     currentNodeDef = null;
     currentBattleNode = null;
+    currentShopNode = null;
     currentSlots = [];
     allBattleSlots = [];
     lastPlayerDamage = 0;
@@ -273,7 +320,7 @@
   }
 
   let isGameClear = $derived(
-    gameState.phase === 'resolved' && currentNodeDef === null && currentBattleNode === null && gameState.hp > 0
+    gameState.phase === 'resolved' && currentNodeDef === null && currentBattleNode === null && currentShopNode === null && gameState.hp > 0
   );
 
   let isBattleWon = $derived(
@@ -345,6 +392,77 @@
       {#snippet rightContent()}
         <div class="map-info">
           <p class="map-hint">光るノードを選んで進む</p>
+        </div>
+      {/snippet}
+    </BookSpread>
+
+  {:else if currentShopNode && gameState.phase === 'shop'}
+    <!-- ===== ショップ画面 ===== -->
+    <BookSpread
+      leftTitle={currentShopNode.title}
+      rightTitle="あなたの持ち物"
+      pageNumber={gameState.map.nodes.filter(n => n.visited).length}
+    >
+      {#snippet leftContent()}
+        <div class="shop-content">
+          <div class="shop-section">
+            <div class="section-label" style="color: var(--gold-accent)">— 購入 —</div>
+            <div class="shop-items">
+              {#each currentShopNode.stock as item, i}
+                {@const sold = shopSoldIds.has(item.card.id)}
+                <button
+                  class="shop-card"
+                  class:sold
+                  disabled={sold || gameState.gold < item.price || gameState.hand.length >= gameState.handLimit}
+                  onclick={() => handleBuyCard(item, i)}
+                >
+                  <span class="shop-card-text">{item.card.text}</span>
+                  <span class="shop-card-category">{item.card.category === 'modifier' ? '修' : item.card.category === 'subject' ? '主' : item.card.category === 'predicate' ? '述' : '対'}</span>
+                  <span class="shop-card-price">{sold ? '売切' : item.price + ' G'}</span>
+                </button>
+              {/each}
+            </div>
+          </div>
+        </div>
+      {/snippet}
+
+      {#snippet rightContent()}
+        <div class="shop-content">
+          <!-- 手札売却 -->
+          <div class="shop-section">
+            <div class="section-label" style="color: var(--ink-medium)">手札を売る（{currentShopNode.sellPricePerCard} G/枚）</div>
+            <div class="shop-items">
+              {#each gameState.hand as card, i}
+                <button class="shop-card sellable" onclick={() => handleSellCard(i)}>
+                  <span class="shop-card-text">{card.text}</span>
+                  <span class="shop-card-price">+{currentShopNode.sellPricePerCard} G</span>
+                </button>
+              {/each}
+            </div>
+          </div>
+
+          <!-- アイテム売却 -->
+          {#if gameState.items.length > 0}
+            <div class="shop-section">
+              <div class="section-label" style="color: var(--gold-accent)">アイテムを売る</div>
+              <div class="shop-items">
+                {#each gameState.items as item, i}
+                  <button class="shop-card sellable item-card" onclick={() => handleSellItem(i)}>
+                    <span class="shop-card-text">{item.name}</span>
+                    <span class="shop-card-desc">{item.description}</span>
+                    <span class="shop-card-price">+{item.sellPrice} G</span>
+                  </button>
+                {/each}
+              </div>
+            </div>
+          {/if}
+
+          <div class="shop-footer">
+            <div class="gold-display-large">{gameState.gold} G</div>
+            <div class="hand-count-shop">手札: {gameState.hand.length} / {gameState.handLimit}</div>
+          </div>
+
+          <button class="next-btn" onclick={handleLeaveShop}>店を出る</button>
         </div>
       {/snippet}
     </BookSpread>
@@ -621,6 +739,30 @@
   .ending-fin { font-family: var(--font-story); font-size: 1.3rem; color: var(--gold-accent); letter-spacing: 0.3em; }
   .restart-btn { font-family: var(--font-story); font-size: 0.85rem; padding: 8px 20px; margin-top: 12px; background: none; color: var(--gold-accent); border: 1px solid var(--gold-dim); border-radius: 4px; cursor: pointer; transition: all 0.3s; }
   .restart-btn:hover { background: rgba(196,162,101,0.1); }
+
+  /* --- ショップ --- */
+  .shop-content { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+  .shop-section { display: flex; flex-direction: column; gap: 6px; }
+  .shop-items { display: flex; flex-wrap: wrap; gap: 6px; }
+  .shop-card {
+    display: flex; flex-direction: column; align-items: center; gap: 2px;
+    padding: 8px 12px; border: 1px solid var(--gold-dim); border-radius: 4px;
+    background: rgba(255,255,255,0.05); cursor: pointer;
+    font-family: var(--font-story); transition: all 0.2s;
+  }
+  .shop-card:hover:not(:disabled) { background: rgba(196,162,101,0.12); box-shadow: 0 0 8px var(--magic-glow); }
+  .shop-card:disabled { opacity: 0.4; cursor: not-allowed; }
+  .shop-card.sold { border-style: dashed; }
+  .shop-card.sellable { border-color: var(--ink-light); }
+  .shop-card.sellable:hover { border-color: #a73b3b; background: rgba(167,59,59,0.08); }
+  .shop-card.item-card { border-color: var(--gold-accent); }
+  .shop-card-text { font-size: 0.95rem; color: var(--ink-dark); }
+  .shop-card-category { font-size: 0.65rem; color: var(--ink-light); }
+  .shop-card-desc { font-size: 0.65rem; color: var(--ink-light); font-style: italic; }
+  .shop-card-price { font-size: 0.75rem; color: var(--gold-accent); font-weight: 700; }
+  .shop-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(0,0,0,0.08); }
+  .gold-display-large { color: var(--gold-accent); font-size: 1.1rem; font-family: var(--font-story); }
+  .hand-count-shop { color: var(--ink-light); font-size: 0.8rem; font-family: var(--font-story); }
 
   .hand-area { width: 100%; max-width: 960px; padding: 12px 24px; background: linear-gradient(180deg, rgba(61,43,31,0.9) 0%, rgba(26,20,16,0.95) 100%); border-radius: 8px; border: 1px solid rgba(196,162,101,0.2); box-shadow: inset 0 2px 8px rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.4); }
   .hand-cards { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; min-height: 56px; align-items: center; }

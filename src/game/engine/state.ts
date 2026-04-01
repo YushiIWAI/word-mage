@@ -15,6 +15,7 @@ export function createInitialState(hand: WordCard[], mapNodes: MapNode[]): GameS
     maxHp: 20,
     gold: 0,
     battle: null,
+    items: [],
   };
 }
 
@@ -139,4 +140,46 @@ export function applyDamage(state: GameState, damage: number): GameState {
 /** ゴールド獲得 */
 export function addGold(state: GameState, amount: number): GameState {
   return { ...state, gold: state.gold + amount };
+}
+
+/** アイテム追加 */
+export function addItems(state: GameState, items: import('./types').Item[]): GameState {
+  return { ...state, items: [...state.items, ...items] };
+}
+
+/** ショップで語カードを購入 */
+export function buyCard(state: GameState, card: import('./types').WordCard, price: number): GameState | null {
+  if (state.gold < price) return null;
+  if (state.hand.length >= state.handLimit) return null;
+  return {
+    ...state,
+    gold: state.gold - price,
+    hand: [...state.hand, card],
+  };
+}
+
+/** ショップで手札の語カードを売却 */
+export function sellCard(state: GameState, cardIndex: number, price: number): GameState | null {
+  const card = state.hand[cardIndex];
+  if (!card) return null;
+  const newHand = [...state.hand];
+  newHand.splice(cardIndex, 1);
+  return {
+    ...state,
+    gold: state.gold + price,
+    hand: newHand,
+  };
+}
+
+/** アイテムを売却 */
+export function sellItem(state: GameState, itemIndex: number): GameState | null {
+  const item = state.items[itemIndex];
+  if (!item) return null;
+  const newItems = [...state.items];
+  newItems.splice(itemIndex, 1);
+  return {
+    ...state,
+    gold: state.gold + item.sellPrice,
+    items: newItems,
+  };
 }

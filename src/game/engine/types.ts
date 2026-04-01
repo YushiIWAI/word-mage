@@ -60,6 +60,15 @@ export type SentencePart =
   | { type: 'slot'; slotId: string }
   | FixedText;
 
+/** アイテム（換金アイテム等） */
+export interface Item {
+  id: string;
+  name: string;
+  description: string;
+  /** 売却価格 */
+  sellPrice: number;
+}
+
 /** 組み合わせ定義による結果判定 */
 export interface Outcome {
   id: string;
@@ -73,6 +82,27 @@ export interface Outcome {
   gold: number;
   /** 獲得可能な語カード */
   rewardCards?: WordCard[];
+  /** 獲得可能なアイテム */
+  rewardItems?: Item[];
+}
+
+/** ショップの商品 */
+export interface ShopItem {
+  type: 'word';
+  card: WordCard;
+  price: number;
+}
+
+/** ショップノードの定義 */
+export interface ShopNodeDef {
+  id: string;
+  title: string;
+  nodeType: 'shop';
+  /** 販売する語カード */
+  stock: ShopItem[];
+  /** 語カードの買取価格（売却時） */
+  sellPricePerCard: number;
+  /** アイテムは個別にsellPriceを持つ */
 }
 
 /** ノードの種別 */
@@ -207,7 +237,7 @@ export interface GameState {
   hand: WordCard[];
   handLimit: number;
   actionPoints: number;
-  phase: 'map' | 'playing' | 'resolved' | 'battle' | 'gameover';
+  phase: 'map' | 'playing' | 'resolved' | 'battle' | 'shop' | 'gameover';
   lastResult: string | null;
   map: GameMap;
   /** HP */
@@ -217,4 +247,6 @@ export interface GameState {
   gold: number;
   /** バトル中の状態（phase === 'battle' の時のみ有効） */
   battle: BattleState | null;
+  /** アイテムインベントリ */
+  items: Item[];
 }

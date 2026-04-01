@@ -1,4 +1,4 @@
-import type { NodeDef, WordCard, MapNode, BattleNodeDef } from '../engine/types';
+import type { NodeDef, WordCard, MapNode, BattleNodeDef, ShopNodeDef, Item } from '../engine/types';
 
 /** プロトタイプ用：最初の手札 */
 export const initialHand: WordCard[] = [
@@ -42,7 +42,8 @@ export const nodeDefs: Record<string, NodeDef> = {
         resultText: '道を塞ぐものは何の脅威でもなかった。悠々と通り過ぎる。', damage: 0, gold: 5 },
       // 述語を「逃げていく」系に
       { id: 'o1_c', conditions: { 's4': ['retreat'] },
-        resultText: '岩がひとりでに転がり去った。道が開ける。', damage: 0, gold: 5 },
+        resultText: '岩がひとりでに転がり去った。道が開ける。転がった跡に何か光るものが落ちていた。', damage: 0, gold: 5,
+        rewardItems: [{ id: 'item_rolling_stone', name: '転がる石', description: '岩が去った跡に残された不思議な石', sellPrice: 8 }] },
       // 修飾語を「優しい」に（岩には不自然だが成功）
       { id: 'o1_d', conditions: { 's1': ['gentle'] },
         resultText: '岩の角が丸くなり、脇を楽に通れるようになった。', damage: 1, gold: 3 },
@@ -377,15 +378,47 @@ export const battleNodeDefs: Record<string, BattleNodeDef> = {
 };
 
 // ============================
-// マップ定義
+// ショップノード定義
 // ============================
 
+export const shopNodeDefs: Record<string, ShopNodeDef> = {
+  node_shop: {
+    id: 'node_shop',
+    title: '旅商人',
+    nodeType: 'shop',
+    stock: [
+      { type: 'word', card: { id: 'shop_1', text: '燃え盛る', category: 'modifier', tags: ['fire', 'intense', 'threat:high'] }, price: 8 },
+      { type: 'word', card: { id: 'shop_2', text: '堅い', category: 'modifier', tags: ['hard', 'durable', 'defend'] }, price: 6 },
+      { type: 'word', card: { id: 'shop_3', text: '竜', category: 'subject', tags: ['dragon', 'threat:high', 'fire'] }, price: 10 },
+      { type: 'word', card: { id: 'shop_4', text: '砕く', category: 'predicate', tags: ['destroy', 'combat', 'force'] }, price: 8 },
+      { type: 'word', card: { id: 'shop_5', text: '消え去る', category: 'predicate', tags: ['vanish', 'retreat', 'safe'] }, price: 6 },
+    ],
+    sellPricePerCard: 3,
+  },
+};
+
+// ============================
+// マップ定義（ショップ追加、5層に拡張）
+// ============================
+
+/**
+ *          [node_1]              Row 0
+ *          /      \
+ *     [node_2a] [node_2b]        Row 1
+ *      /    \      |    \
+ * [node_3a][node_3b][node_3c]    Row 2
+ *      \     |     /
+ *       [node_shop]              Row 3 (ショップ)
+ *           |
+ *       [node_boss]              Row 4 (ボス)
+ */
 export const mapNodes: MapNode[] = [
   { id: 'm_1',    nodeDefId: 'node_1',    row: 0, col: 1, nextIds: ['m_2a', 'm_2b'], visited: false },
   { id: 'm_2a',   nodeDefId: 'node_2a',   row: 1, col: 0, nextIds: ['m_3a', 'm_3b'], visited: false },
   { id: 'm_2b',   nodeDefId: 'node_2b',   row: 1, col: 2, nextIds: ['m_3b', 'm_3c'], visited: false },
-  { id: 'm_3a',   nodeDefId: 'node_3a',   row: 2, col: 0, nextIds: ['m_boss'], visited: false },
-  { id: 'm_3b',   nodeDefId: 'node_3b',   row: 2, col: 1, nextIds: ['m_boss'], visited: false },
-  { id: 'm_3c',   nodeDefId: 'node_3c',   row: 2, col: 2, nextIds: ['m_boss'], visited: false },
-  { id: 'm_boss', nodeDefId: 'node_boss', row: 3, col: 1, nextIds: [], visited: false },
+  { id: 'm_3a',   nodeDefId: 'node_3a',   row: 2, col: 0, nextIds: ['m_shop'], visited: false },
+  { id: 'm_3b',   nodeDefId: 'node_3b',   row: 2, col: 1, nextIds: ['m_shop'], visited: false },
+  { id: 'm_3c',   nodeDefId: 'node_3c',   row: 2, col: 2, nextIds: ['m_shop'], visited: false },
+  { id: 'm_shop', nodeDefId: 'node_shop', row: 3, col: 1, nextIds: ['m_boss'], visited: false },
+  { id: 'm_boss', nodeDefId: 'node_boss', row: 4, col: 1, nextIds: [], visited: false },
 ];
