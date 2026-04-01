@@ -3,6 +3,7 @@
   import SlotWord from './components/SlotWord.svelte';
   import HandCard from './components/HandCard.svelte';
   import NodeMap from './components/NodeMap.svelte';
+  import MagicEffect from './components/MagicEffect.svelte';
   import { nodeDefs, battleNodeDefs, shopNodeDefs, treasureNodeDefs, initialHand, mapNodes } from './game/data/nodes';
   import { createInitialState, swapWord, extractWord, insertWord, getSelectableNodeIds, applyDamage, addGold, addItems, buyCard, sellCard, sellItem } from './game/engine/state';
   import { resolveNode } from './game/engine/evaluate';
@@ -43,12 +44,25 @@
 
   // アニメーション
   let isTransitioning = $state(false);
+  let magicEffectActive = $state(false);
+  let magicEffectType = $state<'resolve' | 'damage' | 'heal' | 'reward'>('resolve');
 
   // HP割合
   let hpPercent = $derived(Math.max(0, (gameState.hp / gameState.maxHp) * 100));
   let enemyHpPercent = $derived(
     gameState.battle ? Math.max(0, (gameState.battle.enemyHp / gameState.battle.enemyMaxHp) * 100) : 0
   );
+
+  // --- エフェクト ---
+  function triggerMagicEffect(type: 'resolve' | 'damage' | 'heal' | 'reward') {
+    magicEffectActive = false;
+    // 次のフレームで再発火（連続使用に対応）
+    requestAnimationFrame(() => {
+      magicEffectType = type;
+      magicEffectActive = true;
+      setTimeout(() => { magicEffectActive = false; }, 1500);
+    });
+  }
 
   // --- 永続カード効果 ---
   function getPersistentBonus(type: PersistentEffect['type']): number {
@@ -296,6 +310,12 @@
       }
     }
     gameState = newState;
+
+    // エフェクト発火
+    if (result.damage < 0) triggerMagicEffect('heal');
+    else if (result.damage === 0 && (lastRewardCards.length > 0 || lastRewardItems.length > 0)) triggerMagicEffect('reward');
+    else if (result.damage <= 2) triggerMagicEffect('resolve');
+    else triggerMagicEffect('damage');
   }
 
   // --- バトルターン解決 ---
@@ -342,6 +362,10 @@
     }
 
     gameState = newState;
+
+    if (defeated) triggerMagicEffect('reward');
+    else if (result.playerDamage > 2) triggerMagicEffect('damage');
+    else triggerMagicEffect('resolve');
   }
 
   // --- バトル次ターン ---
@@ -421,6 +445,8 @@
 </script>
 
 <div class="game-viewport" class:transitioning={isTransitioning}>
+  <!-- 魔法エフェクト -->
+  <MagicEffect active={magicEffectActive} type={magicEffectType} />
 
   <!-- ステータスバー（非バトル時のみ上部表示） -->
   {#if !currentBattleNode}
@@ -836,7 +862,15 @@
     background: radial-gradient(ellipse at 50% 30%, rgba(60, 40, 20, 0.8) 0%, rgba(10, 8, 6, 1) 70%);
     transition: opacity 0.5s ease;
   }
-  .game-viewport.transitioning { opacity: 0.3; }
+  .game-viewport.transitioning {
+    animation: pageTurn 0.6s ease-in-out;
+  }
+  @keyframes pageTurn {
+    0% { opacity: 1; transform: perspective(1200px) rotateY(0deg); }
+    40% { opacity: 0.6; transform: perspective(1200px) rotateY(-8deg); }
+    60% { opacity: 0.3; transform: perspective(1200px) rotateY(4deg); }
+    100% { opacity: 1; transform: perspective(1200px) rotateY(0deg); }
+  }
 
   .status-top { width: 100%; max-width: 960px; display: flex; align-items: center; gap: 16px; padding: 0 8px; }
   .hp-bar { display: flex; align-items: center; gap: 8px; flex: 1; }
