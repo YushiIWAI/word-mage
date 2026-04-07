@@ -4,15 +4,15 @@ export function createInitialState(hand: WordCard[], mapNodes: MapNode[]): GameS
   return {
     hand,
     handLimit: 7,
-    actionPoints: 0,
+    actionPoints: 12,
     phase: 'map',
     lastResult: null,
     map: {
       nodes: mapNodes.map(n => ({ ...n })),
       currentNodeId: null,
     },
-    hp: 20,
-    maxHp: 20,
+    hp: 15,
+    maxHp: 15,
     quill: 0,
     battle: null,
     items: [],
@@ -54,6 +54,7 @@ export function swapWord(
   const card = state.hand[cardIndex];
   const slot = slots[slotIndex];
   if (!card || !slot) return null;
+  if (slot.locked) return null; // 固定スロットは書き換え不可
   if (!isCategoryCompatible(card.category, slot.category)) return null;
 
   const removedWord = slot.word;
@@ -85,6 +86,7 @@ export function extractWord(
 
   const slot = slots[slotIndex];
   if (!slot || !slot.word) return null;
+  if (slot.locked) return null; // 固定スロットは抜き取り不可
   if (state.hand.length >= state.handLimit) return null;
 
   const removedWord = slot.word;
@@ -112,6 +114,7 @@ export function insertWord(
   const card = state.hand[cardIndex];
   const slot = slots[slotIndex];
   if (!card || !slot) return null;
+  if (slot.locked) return null; // 固定スロットは挿入不可
   if (slot.word !== null) return null;
   if (!isCategoryCompatible(card.category, slot.category)) return null;
 

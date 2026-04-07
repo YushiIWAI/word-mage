@@ -6,13 +6,39 @@
   import MagicEffect from './components/MagicEffect.svelte';
   import classicFrameImg from './assets/ui/classic-frame.png';
   import { nodeDefs, battleNodeDefs, shopNodeDefs, treasureNodeDefs, initialHand, mapNodes } from './game/data/nodes';
+  import { expandedNodeDefs, expandedBattleNodeDefs } from './game/data/expanded-nodes';
+  import { expandedInitialHand, generateRandomHand } from './game/data/expanded-game';
+  import { generateMap } from './game/engine/map-generator';
+  import type { GeneratedMap } from './game/engine/map-generator';
+
+  // ?mode=expanded で拡張版5ノードゲーム
+  const isExpanded = new URLSearchParams(window.location.search).get('mode') === 'expanded';
+  const activeInitialHand = isExpanded ? generateRandomHand() : initialHand;
+  const initialGenerated = isExpanded ? generateMap() : null;
+  const activeMapNodes = isExpanded ? initialGenerated!.nodes : mapNodes;
+  // 拡張版ノードを既存のルックアップに追加
+  const allNodeDefs = { ...nodeDefs, ...expandedNodeDefs };
+  const allBattleNodeDefs = { ...battleNodeDefs, ...expandedBattleNodeDefs };
   import { createInitialState, swapWord, extractWord, insertWord, getSelectableNodeIds, applyDamage, addQuill, addItems, buyCard, sellCard, sellItem } from './game/engine/state';
-  import { resolveNode } from './game/engine/evaluate';
+  import { resolveNode, evaluateOutcome } from './game/engine/evaluate';
   import { initBattle, resolveBattleTurn, advanceBattleTurn, isEnemyDefeated, getCurrentEnemyAction } from './game/engine/battle';
   import type { Slot, NodeDef, BattleNodeDef, BattleState, ShopNodeDef, ShopItem, TreasureNodeDef, WordCard, PersistentEffect } from './game/engine/types';
 
+  // expanded版: 動的に生成されたショップ/トレジャー定義を保持
+  let dynamicShopDef = $state<ShopNodeDef | null>(initialGenerated?.shopDef ?? null);
+  let dynamicTreasureDef = $state<TreasureNodeDef | null>(initialGenerated?.treasureDef ?? null);
+
   // ゲーム状態
-  let gameState = $state(createInitialState([...initialHand], mapNodes));
+  let gameState = $state((() => {
+    const s = createInitialState([...activeInitialHand], activeMapNodes);
+    // 永続カードのAP+ボーナスを初期APに加算
+    const apBonus = s.hand
+      .filter(c => c.persistent?.effect.type === 'ap_bonus')
+      .reduce((sum, c) => sum + (c.persistent!.effect as any).amount, 0);
+    // 拡張版: 層0を自動通過（currentNodeIdをスタートノードに設定し、層1を選択可能に）
+    const startNodeId = isExpanded ? s.map.nodes.find(n => n.row === 0)?.id ?? null : null;
+    return { ...s, actionPoints: s.actionPoints + apBonus, map: { ...s.map, currentNodeId: startNodeId } };
+  })());
   let selectableIds = $derived(getSelectableNodeIds(gameState.map));
 
   // 現在のノード（通常ノード、バトル、ショップ）
@@ -36,12 +62,59 @@
   let draggingCardIndex = $state<number | null>(null);
   let dragOverSlotIndex = $state<number | null>(null);
 
+  // ノード入場時のスロット初期状態を保存（outcomeプレビューのノーチェンジ判定用）
+  let initialSlotState = $state<string[]>([]);
+
+  // 全スロットのword.idが初期状態と一致するか
+  let slotsUnchanged = $derived(
+    initialSlotState.length > 0 &&
+    currentSlots.length === initialSlotState.length &&
+    currentSlots.every((s, i) => (s.word?.id ?? '') === initialSlotState[i])
+  );
+
   // 直前の判定結果
   let lastPlayerDamage = $state(0);
   let lastEnemyDamage = $state(0);
   let lastQuill = $state(0);
   let lastRewardCards = $state<WordCard[]>([]);
   let lastRewardItems = $state<import('./game/engine/types').Item[]>([]);
+
+  // --- outcome プレビュー（既知/未知） ---
+  const SEEN_OUTCOMES_KEY = 'wordmage-seen-outcomes';
+  let seenOutcomes = $state<Set<string>>(new Set(
+    JSON.parse(localStorage.getItem(SEEN_OUTCOMES_KEY) ?? '[]') as string[]
+  ));
+
+  function markOutcomeSeen(outcomeId: string) {
+    seenOutcomes = new Set([...seenOutcomes, outcomeId]);
+    localStorage.setItem(SEEN_OUTCOMES_KEY, JSON.stringify([...seenOutcomes]));
+  }
+
+  // 現在のスロット状態で仮実行し、マッチするoutcomeをプレビュー
+  let currentPreview = $derived.by(() => {
+    if (gameState.phase !== 'playing' || !currentNodeDef) return null;
+    const outcome = evaluateOutcome(currentSlots, currentNodeDef.outcomes);
+    if (outcome) {
+      // outcomeにマッチした
+      return {
+        seen: slotsUnchanged || seenOutcomes.has(outcome.id),
+        resultText: outcome.resultText,
+        damage: outcome.damage,
+        quill: outcome.quill,
+        outcomeId: outcome.id,
+      };
+    }
+    // defaultOutcome（マッチなし）
+    const def = currentNodeDef.defaultOutcome;
+    const defaultId = `${currentNodeDef.id}__default`;
+    return {
+      seen: slotsUnchanged || seenOutcomes.has(defaultId),
+      resultText: def.resultText,
+      damage: def.damage,
+      quill: def.quill,
+      outcomeId: defaultId,
+    };
+  });
 
   // アニメーション
   let isTransitioning = $state(false);
@@ -81,30 +154,38 @@
     if (!hoveredNodeId) return null;
     const mapNode = gameState.map.nodes.find(n => n.id === hoveredNodeId);
     if (!mapNode) return null;
-    const def = nodeDefs[mapNode.nodeDefId] ?? battleNodeDefs[mapNode.nodeDefId] ?? shopNodeDefs[mapNode.nodeDefId] ?? treasureNodeDefs[mapNode.nodeDefId];
+    if (mapNode.nodeDefId === '__start__') {
+      return { title: '旅の始まり', type: '出発', sentencePreview: '' };
+    }
+
+    const def = allNodeDefs[mapNode.nodeDefId] ?? allBattleNodeDefs[mapNode.nodeDefId] ?? shopNodeDefs[mapNode.nodeDefId] ?? treasureNodeDefs[mapNode.nodeDefId]
+      ?? (dynamicShopDef && dynamicShopDef.id === mapNode.nodeDefId ? dynamicShopDef : null)
+      ?? (dynamicTreasureDef && dynamicTreasureDef.id === mapNode.nodeDefId ? dynamicTreasureDef : null);
     if (!def) return null;
 
     const typeLabels: Record<string, string> = {
       puzzle: '探索', elite: '強敵', rest: '休憩', shop: '商人',
-      boss: 'ボス', battle: '戦闘', event: 'イベント', treasure: '宝箱',
+      boss: '大敵', battle: '戦闘', event: 'イベント', treasure: '宝箱',
     };
 
-    let slotInfo = '';
+    // 文の構成プレビュー: スロットから実際の文を組み立てる（助詞付き）
+    let sentencePreview = '';
     if ('slots' in def && def.slots) {
-      const catSymbols: Record<string, string> = {
-        modifier: '■', subject: '◆', object: '▲', object_ni: '▲',
-        object_de: '▲', object_kara: '▲', adverb: '★', predicate: '●',
+      const particles: Record<string, string> = {
+        subject: 'が', object: 'を', object_ni: 'に',
+        object_de: 'で', object_kara: 'から',
       };
-      slotInfo = def.slots.map((s: any) => catSymbols[s.category] ?? '?').join(' ');
+      sentencePreview = (def as NodeDef).slots.map((s: any) => {
+        const word = s.locked ? (s.word?.text ?? '') : '___';
+        const particle = particles[s.category] ?? '';
+        return word + particle;
+      }).filter(Boolean).join(' ');
     }
     if ('enemyActions' in def) {
-      slotInfo = '⚔ 複数ターン戦闘';
+      sentencePreview = '複数ターン戦闘';
     }
 
-    let apInfo = '';
-    if ('actionPoints' in def) apInfo = `AP: ${def.actionPoints}`;
-
-    return { title: def.title, type: typeLabels[def.nodeType] ?? def.nodeType, slotInfo, apInfo };
+    return { title: def.title, type: typeLabels[def.nodeType] ?? def.nodeType, sentencePreview };
   });
 
   // --- マップ ---
@@ -112,15 +193,29 @@
     const mapNode = gameState.map.nodes.find(n => n.id === mapNodeId);
     if (!mapNode) return;
 
+    // スタートノード（__start__）はイベントなし。訪問済みにして次を選ばせる
+    if (mapNode.nodeDefId === '__start__') {
+      const updatedNodes = gameState.map.nodes.map(n =>
+        n.id === mapNodeId ? { ...n, visited: true } : n
+      );
+      gameState = {
+        ...gameState,
+        map: { nodes: updatedNodes, currentNodeId: mapNodeId },
+      };
+      return;
+    }
+
     const updatedNodes = gameState.map.nodes.map(n =>
       n.id === mapNodeId ? { ...n, visited: true } : n
     );
 
-    // ノードタイプ判定
-    const battleDef = battleNodeDefs[mapNode.nodeDefId];
-    const shopDef = shopNodeDefs[mapNode.nodeDefId];
-    const treasureDef = treasureNodeDefs[mapNode.nodeDefId];
-    const normalDef = nodeDefs[mapNode.nodeDefId];
+    // ノードタイプ判定（動的に生成されたshop/treasureも検索）
+    const battleDef = allBattleNodeDefs[mapNode.nodeDefId];
+    const shopDef = shopNodeDefs[mapNode.nodeDefId]
+      ?? (dynamicShopDef && dynamicShopDef.id === mapNode.nodeDefId ? dynamicShopDef : undefined);
+    const treasureDef = treasureNodeDefs[mapNode.nodeDefId]
+      ?? (dynamicTreasureDef && dynamicTreasureDef.id === mapNode.nodeDefId ? dynamicTreasureDef : undefined);
+    const normalDef = allNodeDefs[mapNode.nodeDefId];
 
     if (treasureDef) {
       // 宝箱
@@ -162,7 +257,6 @@
 
       gameState = {
         ...gameState,
-        actionPoints: battleDef.actionPoints + getPersistentBonus('ap_bonus'),
         phase: 'battle',
         lastResult: null,
         map: { nodes: updatedNodes, currentNodeId: mapNodeId },
@@ -175,10 +269,10 @@
       currentShopNode = null;
       currentTreasureNode = null;
       currentSlots = normalDef.slots.map(s => ({ ...s, word: s.word ? { ...s.word } : null }));
+      initialSlotState = currentSlots.map(s => s.word?.id ?? '');
 
       gameState = {
         ...gameState,
-        actionPoints: normalDef.actionPoints + getPersistentBonus('ap_bonus'),
         phase: 'playing',
         lastResult: null,
         map: { nodes: updatedNodes, currentNodeId: mapNodeId },
@@ -291,6 +385,11 @@
     if (!currentNodeDef) return;
     const result = resolveNode(currentNodeDef, currentSlots);
 
+    // outcome IDをseenに追加
+    if (currentPreview) {
+      markOutcomeSeen(currentPreview.outcomeId);
+    }
+
     lastPlayerDamage = result.damage;
     lastQuill = result.quill;
     lastRewardCards = result.rewardCards ?? [];
@@ -379,7 +478,6 @@
 
     gameState = {
       ...gameState,
-      actionPoints: currentBattleNode.actionPoints + getPersistentBonus('ap_bonus'),
       battle: nextBattle,
       lastResult: null,
     };
@@ -407,21 +505,39 @@
       currentShopNode = null;
       currentTreasureNode = null;
       currentSlots = [];
+      initialSlotState = [];
       allBattleSlots = [];
       isTransitioning = false;
     }, 500);
   }
 
   function handleRestart() {
-    gameState = createInitialState([...initialHand], mapNodes);
+    const newHand = isExpanded ? generateRandomHand() : [...initialHand];
+    const generated = isExpanded ? generateMap() : null;
+    const newMap = isExpanded ? generated!.nodes : mapNodes;
+    // expanded版: 動的shop/treasure定義を更新
+    dynamicShopDef = generated?.shopDef ?? null;
+    dynamicTreasureDef = generated?.treasureDef ?? null;
+    const freshState = createInitialState(newHand, newMap);
+    // 永続カードのAP+ボーナスを初期APに加算
+    const apBonus = freshState.hand
+      .filter(c => c.persistent?.effect.type === 'ap_bonus')
+      .reduce((sum, c) => sum + (c.persistent!.effect as any).amount, 0);
+    // 拡張版: 層0を自動通過
+    const startNodeId = isExpanded ? freshState.map.nodes.find(n => n.row === 0)?.id ?? null : null;
+    gameState = { ...freshState, actionPoints: freshState.actionPoints + apBonus, map: { ...freshState.map, currentNodeId: startNodeId } };
     currentNodeDef = null;
     currentBattleNode = null;
     currentShopNode = null;
+    currentTreasureNode = null;
     currentSlots = [];
+    initialSlotState = [];
     allBattleSlots = [];
     lastPlayerDamage = 0;
     lastEnemyDamage = 0;
     lastQuill = 0;
+    lastRewardCards = [];
+    lastRewardItems = [];
   }
 
   function getSlotIndex(slotId: string): number {
@@ -501,7 +617,7 @@
     <BookSpread pageNumber={1}>
       {#snippet leftContent()}
         <div class="map-page">
-          <NodeMap map={gameState.map} {selectableIds} onSelect={handleSelectNode} onHover={handleNodeHover} />
+          <NodeMap map={gameState.map} {selectableIds} onSelect={handleSelectNode} onHover={handleNodeHover} {dynamicShopDef} {dynamicTreasureDef} />
         </div>
       {/snippet}
       {#snippet rightContent()}
@@ -510,11 +626,8 @@
             <div class="preview-card">
               <div class="preview-type">{hoveredNodeInfo.type}</div>
               <div class="preview-title">{hoveredNodeInfo.title}</div>
-              {#if hoveredNodeInfo.slotInfo}
-                <div class="preview-slots">{hoveredNodeInfo.slotInfo}</div>
-              {/if}
-              {#if hoveredNodeInfo.apInfo}
-                <div class="preview-ap">{hoveredNodeInfo.apInfo}</div>
+              {#if hoveredNodeInfo.sentencePreview}
+                <div class="preview-sentence">{hoveredNodeInfo.sentencePreview}</div>
               {/if}
             </div>
           {:else}
@@ -839,10 +952,26 @@
             </button>
           {/if}
         {:else}
-          <div class="right-placeholder">
-            <p>左の文章を書き換え、</p>
-            <p>確定すると結果が現れる</p>
-          </div>
+          {#if currentPreview}
+            {#if currentPreview.seen}
+              <div class="preview-known">
+                <p class="preview-result-text">{currentPreview.resultText}</p>
+                <div class="preview-stats">
+                  <span class="preview-damage">{currentPreview.damage > 0 ? '♥ -' + currentPreview.damage : '♥ +' + Math.abs(currentPreview.damage)}</span>
+                  <span class="preview-quill">Q +{currentPreview.quill}</span>
+                </div>
+              </div>
+            {:else}
+              <div class="preview-unknown">
+                <p>？？？</p>
+              </div>
+            {/if}
+          {:else}
+            <div class="right-placeholder">
+              <p>左の文章を書き換え、</p>
+              <p>確定すると結果が現れる</p>
+            </div>
+          {/if}
         {/if}
       {/snippet}
     </BookSpread>
@@ -975,8 +1104,8 @@
   }
   .preview-type { font-size: 0.7rem; color: var(--gold-accent); letter-spacing: 0.15em; text-transform: uppercase; }
   .preview-title { font-size: 1.1rem; color: var(--ink-dark); font-family: var(--font-story); }
-  .preview-slots { font-size: 0.9rem; color: var(--ink-medium); letter-spacing: 0.3em; }
-  .preview-ap { font-size: 0.75rem; color: var(--ink-light); }
+  .preview-sentence { font-size: 0.85rem; color: var(--ink-medium); font-family: var(--font-story); margin-top: 8px; line-height: 1.6; }
+
   .map-status { display: flex; gap: 16px; color: var(--ink-light); font-size: 0.8rem; font-family: var(--font-story); margin-top: 16px; }
 
   /* --- 宝箱 --- */
@@ -1023,4 +1152,24 @@
   .hand-area { width: 100%; max-width: 960px; padding: 12px 24px; background: linear-gradient(180deg, rgba(61,43,31,0.9) 0%, rgba(26,20,16,0.95) 100%); border-radius: 8px; border: 1px solid rgba(196,162,101,0.2); box-shadow: inset 0 2px 8px rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.4); }
   .hand-cards { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; min-height: 56px; align-items: center; }
   .empty-hand { color: var(--ink-light); font-family: var(--font-story); font-size: 0.85rem; font-style: italic; }
+
+  /* --- outcomeプレビュー --- */
+  .preview-known {
+    flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+    opacity: 0.6;
+  }
+  .preview-result-text {
+    font-family: var(--font-story); font-size: 0.95rem; line-height: 1.9;
+    color: var(--ink-medium); text-align: center;
+  }
+  .preview-stats {
+    display: flex; gap: 16px; font-family: var(--font-story); font-size: 0.85rem;
+  }
+  .preview-damage { color: #a73b3b; }
+  .preview-quill { color: var(--gold-accent); }
+  .preview-unknown {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-story); font-size: 1.3rem;
+    color: var(--ink-light); opacity: 0.6; letter-spacing: 0.3em;
+  }
 </style>

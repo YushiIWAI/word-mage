@@ -1,0 +1,1089 @@
+# ノードP08「暗い洞窟」Outcome一覧
+
+- **文構成**: [mod*]影が 洞窟に [pred*]
+- **可変スロット**: mod + pred
+- **固定**: 主語「影」(subj_shadow) + 目的語「洞窟」(に格)
+- **ノードの文脈**: 暗い洞窟の入口。影が棲んでいるらしい。修飾語で影の性質を変え、述語で影の行動を変える
+- **プール**: 中盤 | AP: 3
+- **有効121パターン**: 11 mod × 11 pred（に格で有効な述語）
+- **歪み66パターン**: 11 mod × 6 pred（に格+他動詞で歪み）→ defaultOutcomeで一括処理
+
+---
+
+## 塞いでいる — 歪み
+
+（に格+他動詞のため歪み。「洞窟に塞いでいる」は非文。defaultOutcomeで処理）
+該当: mod_small / mod_gentle / mod_fire / mod_hard / mod_sharp / mod_broken / mod_mighty / mod_frozen / mod_clear / mod_cursed / mod_sleepy × pred_block = 11パターン
+
+---
+
+## 守っている — 歪み
+
+（に格+他動詞のため歪み。「洞窟に守っている」は非文。defaultOutcomeで処理）
+該当: mod_small / mod_gentle / mod_fire / mod_hard / mod_sharp / mod_broken / mod_mighty / mod_frozen / mod_clear / mod_cursed / mod_sleepy × pred_guard = 11パターン
+
+---
+
+## 追いかけてくる — 歪み
+
+（に格+他動詞のため歪み。「洞窟に追いかけてくる」は非文。defaultOutcomeで処理）
+該当: mod_small / mod_gentle / mod_fire / mod_hard / mod_sharp / mod_broken / mod_mighty / mod_frozen / mod_clear / mod_cursed / mod_sleepy × pred_chase = 11パターン
+
+---
+
+## 隠している — 歪み
+
+（に格+他動詞のため歪み。「洞窟に隠している」は非文。defaultOutcomeで処理）
+該当: mod_small / mod_gentle / mod_fire / mod_hard / mod_sharp / mod_broken / mod_mighty / mod_frozen / mod_clear / mod_cursed / mod_sleepy × pred_hide = 11パターン
+
+---
+
+## 砕く — 歪み
+
+（に格+他動詞のため歪み。「洞窟に砕く」は非文。defaultOutcomeで処理）
+該当: mod_small / mod_gentle / mod_fire / mod_hard / mod_sharp / mod_broken / mod_mighty / mod_frozen / mod_clear / mod_cursed / mod_sleepy × pred_crush = 11パターン
+
+---
+
+## 見つめている — 歪み
+
+（に格+他動詞のため歪み。「洞窟に見つめている」は非文。defaultOutcomeで処理）
+該当: mod_small / mod_gentle / mod_fire / mod_hard / mod_sharp / mod_broken / mod_mighty / mod_frozen / mod_clear / mod_cursed / mod_sleepy × pred_gaze = 11パターン
+
+---
+
+## 待っている
+
+### 小さな × 待っている
+- **ID**: p08_small_wait
+- **conditions**: { s1: 'mod_small', s4: 'pred_wait' }
+- **text**: 足元に小さな黒い染みがある。洞窟の暗がりで何かを待っている。跨いで進む。
+- **damage**: 0
+- **quill**: 4
+- **reward**: なし
+
+### 優しい × 待っている
+- **ID**: p08_gentle_wait
+- **conditions**: { s1: 'mod_gentle', s4: 'pred_wait' }
+- **text**: 木陰のような影が洞窟の入口で待っている。寄り添うように覆ってくれた。涼しい。
+- **damage**: 0
+- **quill**: 6
+- **reward**: { name: '涼やかな影', description: '触れると涼しい影の欠片', sellPrice: 8 }
+
+### 燃え盛る × 待っている
+- **ID**: p08_fire_wait
+- **conditions**: { s1: 'mod_fire', s4: 'pred_wait' }
+- **text**: 黒い炎で燃える影が洞窟に待っている。壁が焦げ臭い。近づくと肌がひりつく。
+- **damage**: 4
+- **quill**: 2
+- **reward**: なし
+
+### 堅い × 待っている
+- **ID**: p08_hard_wait
+- **conditions**: { s1: 'mod_hard', s4: 'pred_wait' }
+- **text**: 地面に貼りついた影が洞窟で待っている。壁のように立ち上がり、通さない。
+- **damage**: 3
+- **quill**: 3
+- **reward**: なし
+
+### 鋭い × 待っている
+- **ID**: p08_sharp_wait
+- **conditions**: { s1: 'mod_sharp', s4: 'pred_wait' }
+- **text**: 輪郭のくっきりした影が洞窟で待っている。うっかり縁に触れた。指先が切れている。
+- **damage**: 3
+- **quill**: 3
+- **reward**: なし
+
+### 壊れた × 待っている
+- **ID**: p08_broken_wait
+- **conditions**: { s1: 'mod_broken', s4: 'pred_wait' }
+- **text**: めくれ上がった影が洞窟で待っている。平面に戻りたいのか、足元をうろうろしている。
+- **damage**: 1
+- **quill**: 5
+- **reward**: なし
+
+### 屈強な × 待っている
+- **ID**: p08_mighty_wait
+- **conditions**: { s1: 'mod_mighty', s4: 'pred_wait' }
+- **text**: 本体より遥かに大きな影が洞窟で待っている。影のほうが洞窟の主に見える。
+- **damage**: 3
+- **quill**: 4
+- **reward**: なし
+
+### 凍てついた × 待っている
+- **ID**: p08_frozen_wait
+- **conditions**: { s1: 'mod_frozen', s4: 'pred_wait' }
+- **text**: 凍りついた影が洞窟の地面に張りついている。主人が去った後も、ここでずっと待っている。
+- **damage**: 1
+- **quill**: 5
+- **reward**: { name: '凍った影', description: '地面から剥がした影の破片。冷たい', sellPrice: 10 }
+
+### 透き通った × 待っている
+- **ID**: p08_clear_wait
+- **conditions**: { s1: 'mod_clear', s4: 'pred_wait' }
+- **text**: 半透明の影が洞窟で待っている。薄すぎて踏んでも気づかなかった。
+- **damage**: 0
+- **quill**: 4
+- **reward**: なし
+
+### 呪われた × 待っている
+- **ID**: p08_cursed_wait
+- **conditions**: { s1: 'mod_cursed', s4: 'pred_wait' }
+- **text**: 呪われた影が洞窟で待っている。足が影に触れた瞬間、自分の影が一回り大きくなった。
+- **damage**: 3
+- **quill**: 5
+- **reward**: なし
+
+### 眠い × 待っている
+- **ID**: p08_sleepy_wait
+- **conditions**: { s1: 'mod_sleepy', s4: 'pred_wait' }
+- **text**: 正午の影のように縮んだ影が洞窟で待っている。待っているが、半分眠っている。
+- **damage**: 0
+- **quill**: 4
+- **reward**: なし
+
+---
+
+## 眠っている
+
+### 小さな × 眠っている
+- **ID**: p08_small_sleep
+- **conditions**: { s1: 'mod_small', s4: 'pred_sleep' }
+- **text**: 小さな影が洞窟の隅で眠っている。指ほどの影だ。起こさないよう足音を殺して通る。
+- **damage**: 0
+- **quill**: 5
+- **reward**: なし
+
+### 優しい × 眠っている
+- **ID**: p08_gentle_sleep
+- **conditions**: { s1: 'mod_gentle', s4: 'pred_sleep' }
+- **text**: 心地よい影が洞窟に眠っている。そばに座ると木陰にいるような安らぎがある。少し休んだ。
+- **damage**: -1
+- **quill**: 7
+- **reward**: { name: '安らぎの影', description: '持っていると日陰にいるような心地よさがある', sellPrice: 12 }
+
+### 燃え盛る × 眠っている
+- **ID**: p08_fire_sleep
+- **conditions**: { s1: 'mod_fire', s4: 'pred_sleep' }
+- **text**: 黒い炎で燃える影が洞窟に眠っている。寝息のたびに炎が揺れる。起こしてはいけない。
+- **damage**: 2
+- **quill**: 5
+- **reward**: なし
+
+### 堅い × 眠っている
+- **ID**: p08_hard_sleep
+- **conditions**: { s1: 'mod_hard', s4: 'pred_sleep' }
+- **text**: 固まった影が洞窟に眠っている。踏むと石のように硬い。眠っているのではなく、死んでいるのかもしれない。
+- **damage**: 1
+- **quill**: 4
+- **reward**: なし
+
+### 鋭い × 眠っている
+- **ID**: p08_sharp_sleep
+- **conditions**: { s1: 'mod_sharp', s4: 'pred_sleep' }
+- **text**: 鋭い影が洞窟に眠っている。輪郭が刃のようだ。そっと迂回する。
+- **damage**: 1
+- **quill**: 4
+- **reward**: なし
+
+### 壊れた × 眠っている
+- **ID**: p08_broken_sleep
+- **conditions**: { s1: 'mod_broken', s4: 'pred_sleep' }
+- **text**: めくれ上がった影が洞窟に眠っている。夢の中でも平面に戻れないらしい。少し哀れだ。
+- **damage**: 0
+- **quill**: 6
+- **reward**: { name: '影の寝息', description: 'めくれた影が眠るときに零す黒い靄', sellPrice: 8 }
+
+### 屈強な × 眠っている
+- **ID**: p08_mighty_sleep
+- **conditions**: { s1: 'mod_mighty', s4: 'pred_sleep' }
+- **text**: 巨大な影が洞窟に眠っている。いびきが壁を震わせる。天井から砂が落ちてくる。
+- **damage**: 2
+- **quill**: 4
+- **reward**: なし
+
+### 凍てついた × 眠っている
+- **ID**: p08_frozen_sleep
+- **conditions**: { s1: 'mod_frozen', s4: 'pred_sleep' }
+- **text**: 霜のような影が洞窟に眠っている。そばの空気が冷たい。息が白くなる。
+- **damage**: 2
+- **quill**: 3
+- **reward**: なし
+
+### 透き通った × 眠っている
+- **ID**: p08_clear_sleep
+- **conditions**: { s1: 'mod_clear', s4: 'pred_sleep' }
+- **text**: 透き通った影が洞窟に眠っている。岩の模様が影越しに透けている。存在が薄い。
+- **damage**: 0
+- **quill**: 5
+- **reward**: なし
+
+### 呪われた × 眠っている
+- **ID**: p08_cursed_sleep
+- **conditions**: { s1: 'mod_cursed', s4: 'pred_sleep' }
+- **text**: 呪われた影が洞窟に眠っている。近寄ると、自分の影が勝手に引き寄せられる。足元が暗くなる。
+- **damage**: 3
+- **quill**: 4
+- **reward**: なし
+
+### 眠い × 眠っている
+- **ID**: p08_sleepy_sleep
+- **conditions**: { s1: 'mod_sleepy', s4: 'pred_sleep' }
+- **text**: 眠い影が洞窟に眠っている。正午の影そのものだ。夕方まで起きる気配がない。安全に通れる。
+- **damage**: 0
+- **quill**: 5
+- **reward**: なし
+
+---
+
+## 絡みついている
+
+### 小さな × 絡みついている
+- **ID**: p08_small_entangle
+- **conditions**: { s1: 'mod_small', s4: 'pred_entangle' }
+- **text**: 小さな影が洞窟の壁に絡みついている。蔦のように細い。手で払うと散った。
+- **damage**: 0
+- **quill**: 5
+- **reward**: なし
+
+### 優しい × 絡みついている
+- **ID**: p08_gentle_entangle
+- **conditions**: { s1: 'mod_gentle', s4: 'pred_entangle' }
+- **text**: 優しい影が洞窟に絡みついている。毛布のように包まれる。温かくはないが、安心する。
+- **damage**: 0
+- **quill**: 6
+- **reward**: { name: '影の毛布', description: '巻きつくと安心する黒い布のような影', sellPrice: 10 }
+
+### 燃え盛る × 絡みついている
+- **ID**: p08_fire_entangle
+- **conditions**: { s1: 'mod_fire', s4: 'pred_entangle' }
+- **text**: 黒い炎の影が洞窟に絡みついている。壁が灼けて赤い。触れれば火傷する。
+- **damage**: 4
+- **quill**: 2
+- **reward**: なし
+
+### 堅い × 絡みついている
+- **ID**: p08_hard_entangle
+- **conditions**: { s1: 'mod_hard', s4: 'pred_entangle' }
+- **text**: 固まった影が洞窟に絡みついている。鋳型のように壁を覆っている。中に何かを閉じ込めているようだ。
+- **damage**: 2
+- **quill**: 4
+- **reward**: なし
+
+### 鋭い × 絡みついている
+- **ID**: p08_sharp_entangle
+- **conditions**: { s1: 'mod_sharp', s4: 'pred_entangle' }
+- **text**: 鋭い影が洞窟に絡みついている。茨のようだ。壁を伝おうとした手に切り傷ができた。
+- **damage**: 3
+- **quill**: 3
+- **reward**: なし
+
+### 壊れた × 絡みついている
+- **ID**: p08_broken_entangle
+- **conditions**: { s1: 'mod_broken', s4: 'pred_entangle' }
+- **text**: めくれ上がった影が洞窟に絡みついている。平面でいられないから、立体のまま壁にしがみついている。
+- **damage**: 1
+- **quill**: 5
+- **reward**: なし
+
+### 屈強な × 絡みついている
+- **ID**: p08_mighty_entangle
+- **conditions**: { s1: 'mod_mighty', s4: 'pred_entangle' }
+- **text**: 巨大な影が洞窟に絡みついている。洞窟全体が影に飲まれている。一歩も先が見えない。
+- **damage**: 4
+- **quill**: 3
+- **reward**: なし
+
+### 凍てついた × 絡みついている
+- **ID**: p08_frozen_entangle
+- **conditions**: { s1: 'mod_frozen', s4: 'pred_entangle' }
+- **text**: 凍りついた影が洞窟に絡みついている。黒い霜が壁を覆い、触れると指が張りつく。
+- **damage**: 3
+- **quill**: 3
+- **reward**: なし
+
+### 透き通った × 絡みついている
+- **ID**: p08_clear_entangle
+- **conditions**: { s1: 'mod_clear', s4: 'pred_entangle' }
+- **text**: 透き通った影が洞窟に絡みついている。半透明の網のようだ。通り抜けられた。
+- **damage**: 0
+- **quill**: 5
+- **reward**: なし
+
+### 呪われた × 絡みついている
+- **ID**: p08_cursed_entangle
+- **conditions**: { s1: 'mod_cursed', s4: 'pred_entangle' }
+- **text**: 呪われた影が洞窟に絡みついている。触れた壁が黒く染まっていく。影が増殖している。
+- **damage**: 4
+- **quill**: 4
+- **reward**: なし
+
+### 眠い × 絡みついている
+- **ID**: p08_sleepy_entangle
+- **conditions**: { s1: 'mod_sleepy', s4: 'pred_entangle' }
+- **text**: 眠い影が洞窟にだらしなく絡みついている。力がない。軽く押しのけて通った。
+- **damage**: 0
+- **quill**: 4
+- **reward**: なし
+
+---
+
+## 降り注いでいる
+
+### 小さな × 降り注いでいる
+- **ID**: p08_small_rain_pred
+- **conditions**: { s1: 'mod_small', s4: 'pred_rain' }
+- **text**: 小さな影の粒が洞窟に降り注いでいる。黒い粉雪のようだ。手のひらに受けると消える。
+- **damage**: 0
+- **quill**: 6
+- **reward**: { name: '影の粉雪', description: '手のひらで消えてしまう黒い粒', sellPrice: 7 }
+
+### 優しい × 降り注いでいる
+- **ID**: p08_gentle_rain_pred
+- **conditions**: { s1: 'mod_gentle', s4: 'pred_rain' }
+- **text**: 木漏れ日の逆だ。優しい影が洞窟に降り注いでいる。目が休まる。
+- **damage**: 0
+- **quill**: 7
+- **reward**: { name: '逆さの木漏れ日', description: '影でできた木漏れ日。涼しくて心地よい', sellPrice: 12 }
+
+### 燃え盛る × 降り注いでいる
+- **ID**: p08_fire_rain_pred
+- **conditions**: { s1: 'mod_fire', s4: 'pred_rain' }
+- **text**: 黒い炎の影が洞窟に降り注いでいる。天井から灼熱が降る。駆け抜けるしかない。
+- **damage**: 5
+- **quill**: 1
+- **reward**: なし
+
+### 堅い × 降り注いでいる
+- **ID**: p08_hard_rain_pred
+- **conditions**: { s1: 'mod_hard', s4: 'pred_rain' }
+- **text**: 固まった影が洞窟に降り注いでいる。黒い礫だ。頭を覆って走る。
+- **damage**: 3
+- **quill**: 3
+- **reward**: なし
+
+### 鋭い × 降り注いでいる
+- **ID**: p08_sharp_rain_pred
+- **conditions**: { s1: 'mod_sharp', s4: 'pred_rain' }
+- **text**: 鋭い影が洞窟に降り注いでいる。黒い針の雨だ。腕に無数の切り傷ができた。
+- **damage**: 4
+- **quill**: 2
+- **reward**: なし
+
+### 壊れた × 降り注いでいる
+- **ID**: p08_broken_rain_pred
+- **conditions**: { s1: 'mod_broken', s4: 'pred_rain' }
+- **text**: めくれ上がった影が洞窟に降り注いでいる。紙切れのようにひらひら舞う。痛くはない。
+- **damage**: 0
+- **quill**: 5
+- **reward**: なし
+
+### 屈強な × 降り注いでいる
+- **ID**: p08_mighty_rain_pred
+- **conditions**: { s1: 'mod_mighty', s4: 'pred_rain' }
+- **text**: 巨大な影が洞窟に降り注いでいる。豪雨のようだ。視界が真っ暗になる。
+- **damage**: 4
+- **quill**: 2
+- **reward**: なし
+
+### 凍てついた × 降り注いでいる
+- **ID**: p08_frozen_rain_pred
+- **conditions**: { s1: 'mod_frozen', s4: 'pred_rain' }
+- **text**: 凍てついた影が洞窟に降り注いでいる。黒い霰だ。当たると冷たい痛みが走る。
+- **damage**: 3
+- **quill**: 3
+- **reward**: なし
+
+### 透き通った × 降り注いでいる
+- **ID**: p08_clear_rain_pred
+- **conditions**: { s1: 'mod_clear', s4: 'pred_rain' }
+- **text**: 透き通った影が洞窟に降り注いでいる。光と影の境が曖昧な雨だ。不思議と明るい。
+- **damage**: 0
+- **quill**: 6
+- **reward**: なし
+
+### 呪われた × 降り注いでいる
+- **ID**: p08_cursed_rain_pred
+- **conditions**: { s1: 'mod_cursed', s4: 'pred_rain' }
+- **text**: 呪われた影が洞窟に降り注いでいる。触れたものが次々と影に変わる。足元の石が黒く沈んだ。
+- **damage**: 4
+- **quill**: 4
+- **reward**: なし
+
+### 眠い × 降り注いでいる
+- **ID**: p08_sleepy_rain_pred
+- **conditions**: { s1: 'mod_sleepy', s4: 'pred_rain' }
+- **text**: 眠い影が洞窟にゆっくり降り注いでいる。あくびが出る。洞窟全体が午睡の気配だ。
+- **damage**: 1
+- **quill**: 4
+- **reward**: なし
+
+---
+
+## 囁いている
+
+### 小さな × 囁いている
+- **ID**: p08_small_whisper
+- **conditions**: { s1: 'mod_small', s4: 'pred_whisper' }
+- **text**: 小さな影が洞窟で囁いている。虫の声ほどの小さな声だ。耳を澄ますと聞こえなくなる。
+- **damage**: 0
+- **quill**: 5
+- **reward**: なし
+
+### 優しい × 囁いている
+- **ID**: p08_gentle_whisper
+- **conditions**: { s1: 'mod_gentle', s4: 'pred_whisper' }
+- **text**: 優しい影が洞窟で囁いている。道案内をしてくれているようだ。声の方へ歩くと出口に着いた。
+- **damage**: 0
+- **quill**: 7
+- **reward**: { name: '影の道標', description: '囁いて正しい道を教えてくれる影の欠片', sellPrice: 12 }
+
+### 燃え盛る × 囁いている
+- **ID**: p08_fire_whisper
+- **conditions**: { s1: 'mod_fire', s4: 'pred_whisper' }
+- **text**: 黒い炎の影が洞窟で囁いている。言葉が熱い。耳が焼けるようだ。
+- **damage**: 3
+- **quill**: 3
+- **reward**: なし
+
+### 堅い × 囁いている
+- **ID**: p08_hard_whisper
+- **conditions**: { s1: 'mod_hard', s4: 'pred_whisper' }
+- **text**: 固まった影が洞窟で囁いている。同じ言葉を延々と繰り返している。意味はわからない。
+- **damage**: 1
+- **quill**: 4
+- **reward**: なし
+
+### 鋭い × 囁いている
+- **ID**: p08_sharp_whisper
+- **conditions**: { s1: 'mod_sharp', s4: 'pred_whisper' }
+- **text**: 鋭い影が洞窟で囁いている。声が耳の奥まで刺さる。頭痛がする。
+- **damage**: 3
+- **quill**: 3
+- **reward**: なし
+
+### 壊れた × 囁いている
+- **ID**: p08_broken_whisper
+- **conditions**: { s1: 'mod_broken', s4: 'pred_whisper' }
+- **text**: めくれ上がった影が洞窟で囁いている。言葉が途切れ途切れだ。「たす……もど……」。何かを訴えている。
+- **damage**: 1
+- **quill**: 6
+- **reward**: { name: '壊れた声', description: '途切れた影の囁きを閉じ込めた小瓶', sellPrice: 10 }
+
+### 屈強な × 囁いている
+- **ID**: p08_mighty_whisper
+- **conditions**: { s1: 'mod_mighty', s4: 'pred_whisper' }
+- **text**: 巨大な影が洞窟で囁いている。囁きのつもりだろうが声が大きい。壁が振動する。
+- **damage**: 2
+- **quill**: 5
+- **reward**: なし
+
+### 凍てついた × 囁いている
+- **ID**: p08_frozen_whisper
+- **conditions**: { s1: 'mod_frozen', s4: 'pred_whisper' }
+- **text**: 凍てついた影が洞窟で囁いている。声が白い息のように見える。言葉が凍って落ちた。
+- **damage**: 2
+- **quill**: 5
+- **reward**: { name: '凍った言葉', description: '影が囁いた言葉が凍ったもの。溶けると声が聞こえる', sellPrice: 10 }
+
+### 透き通った × 囁いている
+- **ID**: p08_clear_whisper
+- **conditions**: { s1: 'mod_clear', s4: 'pred_whisper' }
+- **text**: 透き通った影が洞窟で囁いている。声だけが聞こえて姿が見えない。空気が歌っているようだ。
+- **damage**: 0
+- **quill**: 5
+- **reward**: なし
+
+### 呪われた × 囁いている
+- **ID**: p08_cursed_whisper
+- **conditions**: { s1: 'mod_cursed', s4: 'pred_whisper' }
+- **text**: 呪われた影が洞窟で囁いている。聞いてしまった。頭の中に影の声が棲みついた。
+- **damage**: 4
+- **quill**: 3
+- **reward**: なし
+
+### 眠い × 囁いている
+- **ID**: p08_sleepy_whisper
+- **conditions**: { s1: 'mod_sleepy', s4: 'pred_whisper' }
+- **text**: 眠い影が洞窟で囁いている。寝言だ。「……もう少し……」。放っておく。
+- **damage**: 0
+- **quill**: 5
+- **reward**: なし
+
+---
+
+## 溶けている
+
+### 小さな × 溶けている
+- **ID**: p08_small_melt
+- **conditions**: { s1: 'mod_small', s4: 'pred_melt' }
+- **text**: 小さな影が洞窟に溶けている。暗闇と区別がつかない。もう影でもないのかもしれない。
+- **damage**: 0
+- **quill**: 5
+- **reward**: なし
+
+### 優しい × 溶けている
+- **ID**: p08_gentle_melt
+- **conditions**: { s1: 'mod_gentle', s4: 'pred_melt' }
+- **text**: 優しい影が洞窟に溶けている。闇が柔らかくなった。洞窟の暗がりが怖くない。
+- **damage**: 0
+- **quill**: 6
+- **reward**: なし
+
+### 燃え盛る × 溶けている
+- **ID**: p08_fire_melt
+- **conditions**: { s1: 'mod_fire', s4: 'pred_melt' }
+- **text**: 黒い炎の影が洞窟に溶けている。壁が熱を帯びている。闇自体が熱い。
+- **damage**: 3
+- **quill**: 4
+- **reward**: なし
+
+### 堅い × 溶けている
+- **ID**: p08_hard_melt
+- **conditions**: { s1: 'mod_hard', s4: 'pred_melt' }
+- **text**: 固まった影が洞窟に溶けている。溶けかけのタールのようだ。足を取られないよう慎重に進む。
+- **damage**: 2
+- **quill**: 4
+- **reward**: なし
+
+### 鋭い × 溶けている
+- **ID**: p08_sharp_melt
+- **conditions**: { s1: 'mod_sharp', s4: 'pred_melt' }
+- **text**: 鋭い影が洞窟に溶けている。闇の中に刃が紛れている。足の裏に切り傷ができた。
+- **damage**: 3
+- **quill**: 4
+- **reward**: なし
+
+### 壊れた × 溶けている
+- **ID**: p08_broken_melt
+- **conditions**: { s1: 'mod_broken', s4: 'pred_melt' }
+- **text**: めくれ上がった影が洞窟に溶けている。ようやく平面に戻れたのだろうか。安らかに見える。
+- **damage**: 0
+- **quill**: 7
+- **reward**: { name: '溶けた影', description: '平面に戻った影の残滓。温かい', sellPrice: 12 }
+
+### 屈強な × 溶けている
+- **ID**: p08_mighty_melt
+- **conditions**: { s1: 'mod_mighty', s4: 'pred_melt' }
+- **text**: 巨大な影が洞窟に溶けている。闇が濃すぎる。松明をかざしても光が飲まれる。
+- **damage**: 3
+- **quill**: 3
+- **reward**: なし
+
+### 凍てついた × 溶けている
+- **ID**: p08_frozen_melt
+- **conditions**: { s1: 'mod_frozen', s4: 'pred_melt' }
+- **text**: 凍てついた影が洞窟に溶けている。溶けながら冷気を放っている。矛盾しているが、寒い。
+- **damage**: 2
+- **quill**: 5
+- **reward**: なし
+
+### 透き通った × 溶けている
+- **ID**: p08_clear_melt
+- **conditions**: { s1: 'mod_clear', s4: 'pred_melt' }
+- **text**: 透き通った影が洞窟に溶けている。闇が透明になった。岩の奥の鉱脈が見える。
+- **damage**: 0
+- **quill**: 7
+- **reward**: { name: '透明な闇', description: '影が溶けて透明になった闇の欠片。かざすと奥が見える', sellPrice: 15 }
+
+### 呪われた × 溶けている
+- **ID**: p08_cursed_melt
+- **conditions**: { s1: 'mod_cursed', s4: 'pred_melt' }
+- **text**: 呪われた影が洞窟に溶けている。洞窟そのものが影になった。入ったら出られないかもしれない。
+- **damage**: 4
+- **quill**: 4
+- **reward**: なし
+
+### 眠い × 溶けている
+- **ID**: p08_sleepy_melt
+- **conditions**: { s1: 'mod_sleepy', s4: 'pred_melt' }
+- **text**: 眠い影が洞窟に溶けている。闇がぬるい。うとうとしそうになるのを堪えて歩く。
+- **damage**: 1
+- **quill**: 4
+- **reward**: なし
+
+---
+
+## 輝く
+
+### 小さな × 輝く
+- **ID**: p08_small_shine
+- **conditions**: { s1: 'mod_small', s4: 'pred_shine' }
+- **text**: 小さな影が洞窟で輝いている。蛍のように黒く光る。矛盾しているが美しい。
+- **damage**: 0
+- **quill**: 6
+- **reward**: { name: '影蛍', description: '黒く光る小さな影。矛盾した存在', sellPrice: 10 }
+
+### 優しい × 輝く
+- **ID**: p08_gentle_shine
+- **conditions**: { s1: 'mod_gentle', s4: 'pred_shine' }
+- **text**: 優しい影が洞窟で輝いている。夜の月のような柔らかい光だ。足元がほのかに見える。
+- **damage**: 0
+- **quill**: 6
+- **reward**: なし
+
+### 燃え盛る × 輝く
+- **ID**: p08_fire_shine
+- **conditions**: { s1: 'mod_fire', s4: 'pred_shine' }
+- **text**: 黒い炎の影が洞窟で輝いている。闇を照らす黒い光。見えるのに目が痛い。
+- **damage**: 3
+- **quill**: 4
+- **reward**: なし
+
+### 堅い × 輝く
+- **ID**: p08_hard_shine
+- **conditions**: { s1: 'mod_hard', s4: 'pred_shine' }
+- **text**: 固まった影が洞窟で輝いている。黒曜石のような光沢だ。叩くと澄んだ音がする。
+- **damage**: 0
+- **quill**: 5
+- **reward**: なし
+
+### 鋭い × 輝く
+- **ID**: p08_sharp_shine
+- **conditions**: { s1: 'mod_sharp', s4: 'pred_shine' }
+- **text**: 鋭い影が洞窟で輝いている。まっすぐ伸びた一筋の黒い光。目がくらむ。
+- **damage**: 2
+- **quill**: 4
+- **reward**: なし
+
+### 壊れた × 輝く
+- **ID**: p08_broken_shine
+- **conditions**: { s1: 'mod_broken', s4: 'pred_shine' }
+- **text**: めくれ上がった影が洞窟で輝いている。立体になったぶん光を受ける面が増えたのだ。壊れて初めて輝ける。
+- **damage**: 0
+- **quill**: 8
+- **reward**: { name: '立体の影', description: 'めくれ上がって輝いた影の破片。角度によって光る', sellPrice: 15 }
+
+### 屈強な × 輝く
+- **ID**: p08_mighty_shine
+- **conditions**: { s1: 'mod_mighty', s4: 'pred_shine' }
+- **text**: 巨大な影が洞窟で輝いている。黒い太陽だ。洞窟全体が暗い光に満ちている。
+- **damage**: 2
+- **quill**: 5
+- **reward**: なし
+
+### 凍てついた × 輝く
+- **ID**: p08_frozen_shine
+- **conditions**: { s1: 'mod_frozen', s4: 'pred_shine' }
+- **text**: 凍てついた影が洞窟で輝いている。黒い氷の結晶だ。壁に黒い虹が映っている。
+- **damage**: 1
+- **quill**: 6
+- **reward**: { name: '黒い虹', description: '凍った影が映す漆黒の虹。美しいが冷たい', sellPrice: 12 }
+
+### 透き通った × 輝く
+- **ID**: p08_clear_shine
+- **conditions**: { s1: 'mod_clear', s4: 'pred_shine' }
+- **text**: 透き通った影が洞窟で輝いている。影なのに透明で、透明なのに光っている。何もかもが矛盾している。
+- **damage**: 0
+- **quill**: 7
+- **reward**: なし
+
+### 呪われた × 輝く
+- **ID**: p08_cursed_shine
+- **conditions**: { s1: 'mod_cursed', s4: 'pred_shine' }
+- **text**: 呪われた影が洞窟で輝いている。見た者の影がその光に引き寄せられる。目を逸らせない。
+- **damage**: 3
+- **quill**: 4
+- **reward**: なし
+
+### 眠い × 輝く
+- **ID**: p08_sleepy_shine
+- **conditions**: { s1: 'mod_sleepy', s4: 'pred_shine' }
+- **text**: 眠い影が洞窟で弱く輝いている。常夜灯のようだ。少しだけ安心する。
+- **damage**: 0
+- **quill**: 5
+- **reward**: なし
+
+---
+
+## 歌っている
+
+### 小さな × 歌っている
+- **ID**: p08_small_sing
+- **conditions**: { s1: 'mod_small', s4: 'pred_sing' }
+- **text**: 小さな影が洞窟で歌っている。鼻歌だ。壁に反響して二重に聞こえる。
+- **damage**: 0
+- **quill**: 4
+- **reward**: なし
+
+### 優しい × 歌っている
+- **ID**: p08_gentle_sing
+- **conditions**: { s1: 'mod_gentle', s4: 'pred_sing' }
+- **text**: 優しい影が洞窟で歌っている。子守唄だ。旅の疲れが少し癒えた。
+- **damage**: -1
+- **quill**: 6
+- **reward**: なし
+
+### 燃え盛る × 歌っている
+- **ID**: p08_fire_sing
+- **conditions**: { s1: 'mod_fire', s4: 'pred_sing' }
+- **text**: 黒い炎の影が洞窟で歌っている。軍歌だ。血が熱くなる。壁が焦げるほどの声量。
+- **damage**: 3
+- **quill**: 3
+- **reward**: なし
+
+### 堅い × 歌っている
+- **ID**: p08_hard_sing
+- **conditions**: { s1: 'mod_hard', s4: 'pred_sing' }
+- **text**: 固まった影が洞窟で歌っている。同じ旋律が止まらない。耳を塞いでも骨に響く。
+- **damage**: 2
+- **quill**: 3
+- **reward**: なし
+
+### 鋭い × 歌っている
+- **ID**: p08_sharp_sing
+- **conditions**: { s1: 'mod_sharp', s4: 'pred_sing' }
+- **text**: 鋭い影が洞窟で歌っている。高音が壁を裂く。天井に亀裂が走った。
+- **damage**: 3
+- **quill**: 4
+- **reward**: なし
+
+### 壊れた × 歌っている
+- **ID**: p08_broken_sing
+- **conditions**: { s1: 'mod_broken', s4: 'pred_sing' }
+- **text**: めくれ上がった影が洞窟で歌っている。途切れ途切れの旋律だ。続きを知りたい。
+- **damage**: 0
+- **quill**: 5
+- **reward**: なし
+
+### 屈強な × 歌っている
+- **ID**: p08_mighty_sing
+- **conditions**: { s1: 'mod_mighty', s4: 'pred_sing' }
+- **text**: 巨大な影が洞窟で歌っている。地鳴りのような低音。足元が震える。小石が跳ねる。
+- **damage**: 2
+- **quill**: 4
+- **reward**: なし
+
+### 凍てついた × 歌っている
+- **ID**: p08_frozen_sing
+- **conditions**: { s1: 'mod_frozen', s4: 'pred_sing' }
+- **text**: 凍てついた影が洞窟で歌っている。声が凍って結晶になる。洞窟が鍾乳洞のようだ。
+- **damage**: 1
+- **quill**: 6
+- **reward**: { name: '歌の鍾乳石', description: '影の歌声が凍った黒い結晶', sellPrice: 10 }
+
+### 透き通った × 歌っている
+- **ID**: p08_clear_sing
+- **conditions**: { s1: 'mod_clear', s4: 'pred_sing' }
+- **text**: 透き通った影が洞窟で歌っている。どこにいるかわからない。洞窟自体が歌っているようだ。
+- **damage**: 0
+- **quill**: 5
+- **reward**: なし
+
+### 呪われた × 歌っている
+- **ID**: p08_cursed_sing
+- **conditions**: { s1: 'mod_cursed', s4: 'pred_sing' }
+- **text**: 呪われた影が洞窟で歌っている。頭にこびりつく旋律だ。洞窟を出ても耳の奥で鳴り続ける。
+- **damage**: 3
+- **quill**: 4
+- **reward**: なし
+
+### 眠い × 歌っている
+- **ID**: p08_sleepy_sing
+- **conditions**: { s1: 'mod_sleepy', s4: 'pred_sing' }
+- **text**: 眠い影が洞窟で歌っている。あくびまじりの子守唄だ。自分で自分を寝かしつけている。
+- **damage**: 0
+- **quill**: 5
+- **reward**: なし
+
+---
+
+## 踊っている
+
+### 小さな × 踊っている
+- **ID**: p08_small_dance
+- **conditions**: { s1: 'mod_small', s4: 'pred_dance' }
+- **text**: 小さな影が洞窟で踊っている。松明の光に揺れているだけかもしれない。でも楽しそうだ。
+- **damage**: 0
+- **quill**: 5
+- **reward**: なし
+
+### 優しい × 踊っている
+- **ID**: p08_gentle_dance
+- **conditions**: { s1: 'mod_gentle', s4: 'pred_dance' }
+- **text**: 優しい影が洞窟で踊っている。旅人を誘うようにゆるやかに揺れている。つい足が動く。
+- **damage**: 0
+- **quill**: 5
+- **reward**: なし
+
+### 燃え盛る × 踊っている
+- **ID**: p08_fire_dance
+- **conditions**: { s1: 'mod_fire', s4: 'pred_dance' }
+- **text**: 黒い炎の影が洞窟で踊っている。狂ったように壁を駆け回る。避けきれず火傷した。
+- **damage**: 4
+- **quill**: 3
+- **reward**: なし
+
+### 堅い × 踊っている
+- **ID**: p08_hard_dance
+- **conditions**: { s1: 'mod_hard', s4: 'pred_dance' }
+- **text**: 固まった影が洞窟で踊っている。踊りのポーズのまま固まっている。動いてはいない。
+- **damage**: 0
+- **quill**: 4
+- **reward**: なし
+
+### 鋭い × 踊っている
+- **ID**: p08_sharp_dance
+- **conditions**: { s1: 'mod_sharp', s4: 'pred_dance' }
+- **text**: 鋭い影が洞窟で踊っている。回転するたび壁に切り傷が走る。近づけない。
+- **damage**: 3
+- **quill**: 4
+- **reward**: なし
+
+### 壊れた × 踊っている
+- **ID**: p08_broken_dance
+- **conditions**: { s1: 'mod_broken', s4: 'pred_dance' }
+- **text**: めくれ上がった影が洞窟で踊っている。ぎこちない。平面に戻れないまま踊り続けている。
+- **damage**: 0
+- **quill**: 6
+- **reward**: { name: 'めくれた踊り手', description: '踊る影の切れ端。風がなくても揺れている', sellPrice: 8 }
+
+### 屈強な × 踊っている
+- **ID**: p08_mighty_dance
+- **conditions**: { s1: 'mod_mighty', s4: 'pred_dance' }
+- **text**: 巨大な影が洞窟で踊っている。地面が揺れる。天井から石が落ちてきた。
+- **damage**: 3
+- **quill**: 3
+- **reward**: なし
+
+### 凍てついた × 踊っている
+- **ID**: p08_frozen_dance
+- **conditions**: { s1: 'mod_frozen', s4: 'pred_dance' }
+- **text**: 凍てついた影が洞窟で踊っている。踊るたび足元が凍る。氷の舞台ができていく。
+- **damage**: 2
+- **quill**: 5
+- **reward**: なし
+
+### 透き通った × 踊っている
+- **ID**: p08_clear_dance
+- **conditions**: { s1: 'mod_clear', s4: 'pred_dance' }
+- **text**: 透き通った影が洞窟で踊っている。見えたり消えたりする。幻かもしれない。
+- **damage**: 0
+- **quill**: 4
+- **reward**: なし
+
+### 呪われた × 踊っている
+- **ID**: p08_cursed_dance
+- **conditions**: { s1: 'mod_cursed', s4: 'pred_dance' }
+- **text**: 呪われた影が洞窟で踊っている。見た者の影も勝手に踊り出す。足が止まらない。
+- **damage**: 3
+- **quill**: 5
+- **reward**: { name: '踊る呪い', description: '影が踊り出す呪いの欠片。売ってしまいたい', sellPrice: 7 }
+
+### 眠い × 踊っている
+- **ID**: p08_sleepy_dance
+- **conditions**: { s1: 'mod_sleepy', s4: 'pred_dance' }
+- **text**: 眠い影が洞窟で踊っている。夢遊病のような踊りだ。ふらふらと壁にぶつかっている。
+- **damage**: 0
+- **quill**: 5
+- **reward**: なし
+
+---
+
+## 笑っている
+
+### 小さな × 笑っている
+- **ID**: p08_small_laugh
+- **conditions**: { s1: 'mod_small', s4: 'pred_laugh' }
+- **text**: 小さな影が洞窟で笑っている。くすくす笑い。反響して四方から聞こえる。
+- **damage**: 1
+- **quill**: 4
+- **reward**: なし
+
+### 優しい × 笑っている
+- **ID**: p08_gentle_laugh
+- **conditions**: { s1: 'mod_gentle', s4: 'pred_laugh' }
+- **text**: 優しい影が洞窟で笑っている。穏やかな笑い声だ。怖い洞窟が少し明るく見える。
+- **damage**: 0
+- **quill**: 5
+- **reward**: なし
+
+### 燃え盛る × 笑っている
+- **ID**: p08_fire_laugh
+- **conditions**: { s1: 'mod_fire', s4: 'pred_laugh' }
+- **text**: 黒い炎の影が洞窟で笑っている。嘲笑だ。笑い声のたびに炎が揺れ、壁が焦げる。
+- **damage**: 3
+- **quill**: 3
+- **reward**: なし
+
+### 堅い × 笑っている
+- **ID**: p08_hard_laugh
+- **conditions**: { s1: 'mod_hard', s4: 'pred_laugh' }
+- **text**: 固まった影が洞窟で笑っている。笑顔のまま固まっている。笑っているのか、笑っていたのか。
+- **damage**: 1
+- **quill**: 5
+- **reward**: なし
+
+### 鋭い × 笑っている
+- **ID**: p08_sharp_laugh
+- **conditions**: { s1: 'mod_sharp', s4: 'pred_laugh' }
+- **text**: 鋭い影が洞窟で笑っている。甲高い笑い声が壁に傷をつける。耳障りだ。
+- **damage**: 2
+- **quill**: 3
+- **reward**: なし
+
+### 壊れた × 笑っている
+- **ID**: p08_broken_laugh
+- **conditions**: { s1: 'mod_broken', s4: 'pred_laugh' }
+- **text**: めくれ上がった影が洞窟で笑っている。自嘲だろうか。平面に戻れない自分を笑っている。
+- **damage**: 0
+- **quill**: 6
+- **reward**: なし
+
+### 屈強な × 笑っている
+- **ID**: p08_mighty_laugh
+- **conditions**: { s1: 'mod_mighty', s4: 'pred_laugh' }
+- **text**: 巨大な影が洞窟で笑っている。哄笑が洞窟を揺らす。落石が起きた。
+- **damage**: 4
+- **quill**: 2
+- **reward**: なし
+
+### 凍てついた × 笑っている
+- **ID**: p08_frozen_laugh
+- **conditions**: { s1: 'mod_frozen', s4: 'pred_laugh' }
+- **text**: 凍てついた影が洞窟で笑っている。声が凍って氷片になって飛んでくる。冷たい。
+- **damage**: 2
+- **quill**: 4
+- **reward**: なし
+
+### 透き通った × 笑っている
+- **ID**: p08_clear_laugh
+- **conditions**: { s1: 'mod_clear', s4: 'pred_laugh' }
+- **text**: 透き通った影が洞窟で笑っている。姿は見えない。笑い声だけが澄んで響く。
+- **damage**: 0
+- **quill**: 5
+- **reward**: なし
+
+### 呪われた × 笑っている
+- **ID**: p08_cursed_laugh
+- **conditions**: { s1: 'mod_cursed', s4: 'pred_laugh' }
+- **text**: 呪われた影が洞窟で笑っている。聞いた者の影も笑い出す。自分の足元が笑っている。不気味だ。
+- **damage**: 3
+- **quill**: 4
+- **reward**: なし
+
+### 眠い × 笑っている
+- **ID**: p08_sleepy_laugh
+- **conditions**: { s1: 'mod_sleepy', s4: 'pred_laugh' }
+- **text**: 眠い影が洞窟で笑っている。寝笑いだ。楽しい夢でも見ているのだろう。
+- **damage**: 0
+- **quill**: 5
+- **reward**: なし
+
+---
+
+## 逃げていく
+
+### 小さな × 逃げていく
+- **ID**: p08_small_flee
+- **conditions**: { s1: 'mod_small', s4: 'pred_flee' }
+- **text**: 小さな影が洞窟から逃げていく。足元の黒い染みがちょろちょろと走った。
+- **damage**: 0
+- **quill**: 4
+- **reward**: なし
+
+### 優しい × 逃げていく
+- **ID**: p08_gentle_flee
+- **conditions**: { s1: 'mod_gentle', s4: 'pred_flee' }
+- **text**: 優しい影が洞窟から逃げていく。名残惜しそうに振り返り、消えた。涼しさが去った。
+- **damage**: 0
+- **quill**: 6
+- **reward**: { name: '去った影の余韻', description: '優しい影が残した涼しさの名残', sellPrice: 8 }
+
+### 燃え盛る × 逃げていく
+- **ID**: p08_fire_flee
+- **conditions**: { s1: 'mod_fire', s4: 'pred_flee' }
+- **text**: 黒い炎の影が洞窟から逃げていく。焦げ跡が道のように残った。助かった。
+- **damage**: 1
+- **quill**: 5
+- **reward**: なし
+
+### 堅い × 逃げていく
+- **ID**: p08_hard_flee
+- **conditions**: { s1: 'mod_hard', s4: 'pred_flee' }
+- **text**: 固まった影が洞窟から逃げていく。地面を引きずる重い音がする。ゆっくりだが確実に去っていく。
+- **damage**: 0
+- **quill**: 4
+- **reward**: なし
+
+### 鋭い × 逃げていく
+- **ID**: p08_sharp_flee
+- **conditions**: { s1: 'mod_sharp', s4: 'pred_flee' }
+- **text**: 鋭い影が洞窟から逃げていく。去り際に壁を切った。細い光が差し込む穴ができた。
+- **damage**: 1
+- **quill**: 6
+- **reward**: { name: '影の切り口', description: '鋭い影が壁に残した切り傷。光が漏れている', sellPrice: 10 }
+
+### 壊れた × 逃げていく
+- **ID**: p08_broken_flee
+- **conditions**: { s1: 'mod_broken', s4: 'pred_flee' }
+- **text**: めくれ上がった影が洞窟から逃げていく。立体のまま転がるように去る。欠片が散らばった。
+- **damage**: 0
+- **quill**: 5
+- **reward**: なし
+
+### 屈強な × 逃げていく
+- **ID**: p08_mighty_flee
+- **conditions**: { s1: 'mod_mighty', s4: 'pred_flee' }
+- **text**: 巨大な影が洞窟から逃げていく。あの図体で何を恐れているのか。洞窟が急に広く見えた。
+- **damage**: 0
+- **quill**: 5
+- **reward**: なし
+
+### 凍てついた × 逃げていく
+- **ID**: p08_frozen_flee
+- **conditions**: { s1: 'mod_frozen', s4: 'pred_flee' }
+- **text**: 凍てついた影が洞窟から逃げていく。地面に霜の道を残して去った。
+- **damage**: 0
+- **quill**: 4
+- **reward**: なし
+
+### 透き通った × 逃げていく
+- **ID**: p08_clear_flee
+- **conditions**: { s1: 'mod_clear', s4: 'pred_flee' }
+- **text**: 透き通った影が洞窟から逃げていく。薄すぎて、逃げているのかそもそもいなかったのかわからない。
+- **damage**: 0
+- **quill**: 5
+- **reward**: なし
+
+### 呪われた × 逃げていく
+- **ID**: p08_cursed_flee
+- **conditions**: { s1: 'mod_cursed', s4: 'pred_flee' }
+- **text**: 呪われた影が洞窟から逃げていく。通った場所の色が抜けている。呪いの痕跡だ。
+- **damage**: 2
+- **quill**: 4
+- **reward**: なし
+
+### 眠い × 逃げていく
+- **ID**: p08_sleepy_flee
+- **conditions**: { s1: 'mod_sleepy', s4: 'pred_flee' }
+- **text**: 眠い影が洞窟から逃げていく。欠伸をしながらのろのろと。追う気にもならない。
+- **damage**: 0
+- **quill**: 4
+- **reward**: なし
+
+---
+
+## defaultOutcome（格歪み一括処理）
+
+に格+他動詞の組み合わせ全66パターン（11 mod × 6 pred: 塞いでいる/守っている/追いかけてくる/隠している/砕く/見つめている）に適用。
+
+- **defaultOutcome**:
+  - text: 文が歪んだ。言葉が世界に馴染まず、宙に散る。体に鈍い痛みが走る。
+  - damage: 4
+  - quill: 0
+
+---
+
+# 統計レポート
+
+| 項目 | 値 |
+|------|---|
+| 有効outcome数 | 121 |
+| rewardItem数 | 20 |
+| reward率 | 16.5% |
+| damage平均 | 1.37 |
+| quill平均 | 4.50 |
+| damage=0の割合 | 43.0% (52/121) |
+| damage≥4の割合 | 9.9% (12/121) |
+| quill≥6の割合 | 19.0% (23/121) |

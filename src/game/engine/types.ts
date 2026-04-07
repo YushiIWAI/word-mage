@@ -72,6 +72,8 @@ export interface Slot {
   id: string;
   category: SlotCategory;
   word: WordCard | null;
+  /** trueの場合、このスロットは書き換え不可（不変スロット） */
+  locked?: boolean;
 }
 
 /** 固定テキスト（「槍を持って」のような操作不可部分） */

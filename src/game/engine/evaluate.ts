@@ -34,8 +34,31 @@ function matchesCondition(slots: Slot[], outcome: Outcome): boolean {
 }
 
 /**
+ * 副詞のdamage/quill補正値
+ * テキストは変えず、数値のみ影響する
+ */
+const ADVERB_EFFECTS: Record<string, { damage: number; quill: number }> = {
+  adv_quiet:  { damage: -1, quill: 0 },  // 静かに → 穏やかになる
+  adv_fierce: { damage: 1,  quill: 1 },  // 激しく → 激化するが見応え
+  adv_slow:   { damage: -1, quill: 0 },  // ゆっくり → 緩やかに
+  adv_weak:   { damage: -1, quill: 0 },  // 力なく → 弱まる
+  adv_sudden: { damage: 0,  quill: 2 },  // 突然 → 意外性ボーナス
+};
+
+/**
+ * スロット内の副詞カードからdamage/quill補正を取得する。
+ */
+function getAdverbEffect(slots: Slot[]): { damage: number; quill: number } {
+  const adverbSlot = slots.find(s => s.category === 'adverb' && s.word);
+  if (!adverbSlot?.word) return { damage: 0, quill: 0 };
+  return ADVERB_EFFECTS[adverbSlot.word.id] ?? { damage: 0, quill: 0 };
+}
+
+/**
  * ノードを解決する。
  * 返り値: { resultText, damage, quill, rewardCards }
+ *
+ * 副詞はテキストに影響せず、damage/quillの数値を補正する。
  */
 export function resolveNode(node: NodeDef, currentSlots: Slot[]): {
   resultText: string;
@@ -44,17 +67,19 @@ export function resolveNode(node: NodeDef, currentSlots: Slot[]): {
   rewardCards?: import('./types').WordCard[];
 } {
   const outcome = evaluateOutcome(currentSlots, node.outcomes);
+  const adverb = getAdverbEffect(currentSlots);
+
   if (outcome) {
     return {
       resultText: outcome.resultText,
-      damage: outcome.damage,
-      quill: outcome.quill,
+      damage: Math.max(0, outcome.damage + adverb.damage),
+      quill: Math.max(0, outcome.quill + adverb.quill),
       rewardCards: outcome.rewardCards,
     };
   }
   return {
     resultText: node.defaultOutcome.resultText,
-    damage: node.defaultOutcome.damage,
-    quill: node.defaultOutcome.quill,
+    damage: Math.max(0, node.defaultOutcome.damage + adverb.damage),
+    quill: Math.max(0, node.defaultOutcome.quill + adverb.quill),
   };
 }

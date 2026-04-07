@@ -1,0 +1,858 @@
+// Auto-generated from node-p10-outcomes.md
+import type { Outcome } from '../../../engine/types';
+
+export const nodeP10Outcomes: Outcome[] = [
+  {
+    id: 'p10_kitten_block',
+    conditions: { s2: 'subj_kitten', s4: 'pred_block' },
+    resultText: '凍てついた子猫が鐘を塞いでいる。氷の彫刻が鐘の口に嵌まり込んでいる。中でまだ息をしている。溶かそうとすると指先が痺れた。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p10_snake_block',
+    conditions: { s2: 'subj_snake', s4: 'pred_block' },
+    resultText: '凍てついた蛇が鐘を塞いでいる。霜に覆われた螺旋が鐘の内壁にびっしり張りついている。撞木が触れない。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'p10_dragon_block',
+    conditions: { s2: 'subj_dragon', s4: 'pred_block' },
+    resultText: '凍てついた竜が鐘を塞いでいる。氷をまとった白い竜が鐘楼の天井から垂れ下がり、鐘を丸ごと抱え込んでいる。吐息が吹雪。近づけない。',
+    damage: 5,
+    quill: 1
+  },
+  {
+    id: 'p10_butterfly_block',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_block' },
+    resultText: '凍てついた蝶が鐘を塞いでいる。霜の結晶でできた蝶の群れが、鐘の表面に張りついて模様のようだ。払うと手が凍る。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p10_wind_block',
+    conditions: { s2: 'subj_wind', s4: 'pred_block' },
+    resultText: '凍てついた風が鐘を塞いでいる。鐘の内側で凍風が渦を巻き、空気の壁になっている。手を差し込むとまつ毛が凍る。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p10_flame_block',
+    conditions: { s2: 'subj_flame', s4: 'pred_block' },
+    resultText: '凍てついた炎が鐘を塞いでいる。青白い炎が鐘の口を覆っている。燃えているのに冷たく、触れると霜がつく。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p10_ice_block',
+    conditions: { s2: 'subj_ice', s4: 'pred_block' },
+    resultText: '凍てついた氷が鐘を塞いでいる。氷のさらに冷たい塊が鐘の中に詰まっている。触れた空気が結晶化して散る。叩いても鐘は鳴らない。',
+    damage: 4,
+    quill: 2
+  },
+  {
+    id: 'p10_shadow_block',
+    conditions: { s2: 'subj_shadow', s4: 'pred_block' },
+    resultText: '凍てついた影が鐘を塞いでいる。鐘の内壁に影が凍りついて、黒い氷のように固まっている。本体はとうに去ったらしい。',
+    damage: 2,
+    quill: 5,
+    rewardItems: [{ id: 'item_p10_shadow_block', name: '凍った影の欠片', description: '黒い氷。握ると手が暗くなる', sellPrice: 8 }]
+  },
+  {
+    id: 'p10_song_block',
+    conditions: { s2: 'subj_song', s4: 'pred_block' },
+    resultText: '凍てついた歌が鐘を塞いでいる。鐘の内側で旋律が凍りつき、音が出ない。鐘を叩くと沈黙が返ってくる。',
+    damage: 2,
+    quill: 6,
+    rewardItems: [{ id: 'item_p10_song_block', name: '凍った旋律', description: '氷の中に音符が閉じ込められている。耳に当てると微かに聞こえる', sellPrice: 12 }]
+  },
+  {
+    id: 'p10_silence_block',
+    conditions: { s2: 'subj_silence', s4: 'pred_block' },
+    resultText: '凍てついた沈黙が鐘を塞いでいる。鐘を叩いても音が凍って落ちる。足元に音の結晶が積もっている。',
+    damage: 2,
+    quill: 6
+  },
+  {
+    id: 'p10_knight_block',
+    conditions: { s2: 'subj_knight', s4: 'pred_block' },
+    resultText: '凍てついた騎士が鐘を塞いでいる。氷に閉じ込められた騎士が、剣を振り上げた姿勢のまま鐘の前に立つ。どかすには氷ごと動かすしかない。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p10_witch_block',
+    conditions: { s2: 'subj_witch', s4: 'pred_block' },
+    resultText: '凍てついた魔女が鐘を塞いでいる。氷の魔女が鐘を抱きしめている。周囲に霜が広がり、鐘綱も凍りついている。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p10_king_block',
+    conditions: { s2: 'subj_king', s4: 'pred_block' },
+    resultText: '凍てついた王が鐘を塞いでいる。氷の玉座ごと鐘の前に鎮座している。吐く言葉が白い。「鳴らすことは許さぬ」。',
+    damage: 4,
+    quill: 3
+  },
+  {
+    id: 'p10_ghost_block',
+    conditions: { s2: 'subj_ghost', s4: 'pred_block' },
+    resultText: '凍てついた亡霊が鐘を塞いでいる。冷気をまとった霊が鐘の中に佇んでいる。通った跡に霜。追い払おうとすると体の芯が冷える。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'p10_mirror_block',
+    conditions: { s2: 'subj_mirror', s4: 'pred_block' },
+    resultText: '凍てついた鏡が鐘を塞いでいる。鐘の口に霜の張った鏡が嵌まっている。覗き込むと、凍った自分の顔が映る。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p10_doll_block',
+    conditions: { s2: 'subj_doll', s4: 'pred_block' },
+    resultText: '凍てついた人形が鐘を塞いでいる。氷でできた人形が鐘の中にぶら下がっている。繊細な造形。揺らすと鐘に当たって澄んだ音が鳴った。',
+    damage: 0,
+    quill: 6,
+    rewardItems: [{ id: 'item_p10_doll_block', name: '氷の人形', description: '溶けたら二度と作れない。手のひらで冷たく光る', sellPrice: 12 }]
+  },
+  {
+    id: 'p10_rain_block',
+    conditions: { s2: 'subj_rain', s4: 'pred_block' },
+    resultText: '凍てついた雨が鐘を塞いでいる。凍雨が鐘の外側を何層にも氷の膜で覆っている。叩いても鈍い音しかしない。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'p10_kitten_guard',
+    conditions: { s2: 'subj_kitten', s4: 'pred_guard' },
+    resultText: '凍てついた子猫が鐘を守っている。氷の彫刻の猫が鐘の真下に座り、番をしている。近づくと耳だけが動いた。',
+    damage: 0,
+    quill: 6,
+    rewardItems: [{ id: 'item_p10_kitten_guard', name: '氷猫の鈴', description: '振ると鐘の音に似た澄んだ音がする', sellPrice: 10 }]
+  },
+  {
+    id: 'p10_snake_guard',
+    conditions: { s2: 'subj_snake', s4: 'pred_guard' },
+    resultText: '凍てついた蛇が鐘を守っている。霜の鱗の蛇が鐘綱に巻きつき、触れる者を拒んでいる。手を伸ばすと鎌首をもたげた。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'p10_dragon_guard',
+    conditions: { s2: 'subj_dragon', s4: 'pred_guard' },
+    resultText: '凍てついた竜が鐘を守っている。氷の竜が翼を広げて鐘を背にしている。番人としてはこれ以上ない。凍える吐息が壁を作る。',
+    damage: 5,
+    quill: 2
+  },
+  {
+    id: 'p10_butterfly_guard',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_guard' },
+    resultText: '凍てついた蝶が鐘を守っている。霜の結晶の蝶が鐘の周囲を旋回している。手を近づけると翅が指を切る。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p10_wind_guard',
+    conditions: { s2: 'subj_wind', s4: 'pred_guard' },
+    resultText: '凍てついた風が鐘を守っている。鐘の周りだけ猛烈な凍風が吹いている。番人というより結界だ。',
+    damage: 3,
+    quill: 5
+  },
+  {
+    id: 'p10_flame_guard',
+    conditions: { s2: 'subj_flame', s4: 'pred_guard' },
+    resultText: '凍てついた炎が鐘を守っている。青白い炎が鐘を取り囲んでいる。冷たい火。触れると凍傷する。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p10_ice_guard',
+    conditions: { s2: 'subj_ice', s4: 'pred_guard' },
+    resultText: '凍てついた氷が鐘を守っている。鐘が巨大な氷の繭に包まれている。叩いても割れない。何世紀分の冷気が凝っている。',
+    damage: 4,
+    quill: 3
+  },
+  {
+    id: 'p10_shadow_guard',
+    conditions: { s2: 'subj_shadow', s4: 'pred_guard' },
+    resultText: '凍てついた影が鐘を守っている。凍りついた影が鐘の周囲に立ち並び、柵のように道を阻んでいる。影の隙間から鐘が見える。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p10_song_guard',
+    conditions: { s2: 'subj_song', s4: 'pred_guard' },
+    resultText: '凍てついた歌が鐘を守っている。聴いた者の動きが止まる旋律が、鐘楼に響き続けている。足が凍りつく。耳を塞いでも骨に届く。',
+    damage: 3,
+    quill: 5
+  },
+  {
+    id: 'p10_silence_guard',
+    conditions: { s2: 'subj_silence', s4: 'pred_guard' },
+    resultText: '凍てついた沈黙が鐘を守っている。鐘楼に近づくほど音が消えていく。心臓の音も聞こえない。鐘を鳴らしても沈黙が音を呑む。',
+    damage: 3,
+    quill: 6,
+    rewardItems: [{ id: 'item_p10_silence_guard', name: '無音の鐘片', description: '叩いても音がしない金属の欠片。握ると静けさが広がる', sellPrice: 12 }]
+  },
+  {
+    id: 'p10_knight_guard',
+    conditions: { s2: 'subj_knight', s4: 'pred_guard' },
+    resultText: '凍てついた騎士が鐘を守っている。鎧に霜がおり、吐息が白い。剣を振り上げた姿勢のまま立ち塞がる。命令がなければ動けないのだ。',
+    damage: 3,
+    quill: 5
+  },
+  {
+    id: 'p10_witch_guard',
+    conditions: { s2: 'subj_witch', s4: 'pred_guard' },
+    resultText: '凍てついた魔女が鐘を守っている。氷の魔法で鐘を封じている。目が合うと周囲の温度がさらに下がる。交渉の余地はある。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p10_king_guard',
+    conditions: { s2: 'subj_king', s4: 'pred_guard' },
+    resultText: '凍てついた王が鐘を守っている。北の王が鐘楼の主だ。「この鐘は我のもの。鳴らす者には冬を与える」。本気らしい。',
+    damage: 4,
+    quill: 4
+  },
+  {
+    id: 'p10_ghost_guard',
+    conditions: { s2: 'subj_ghost', s4: 'pred_guard' },
+    resultText: '凍てついた亡霊が鐘を守っている。凍死者の霊が鐘番を続けている。永遠に寒がりながら、それでも持ち場を離れない。',
+    damage: 2,
+    quill: 6,
+    rewardItems: [{ id: 'item_p10_ghost_guard', name: '霊の鐘守符', description: '死んでも持ち場を離れなかった者の矜持が宿る', sellPrice: 10 }]
+  },
+  {
+    id: 'p10_mirror_guard',
+    conditions: { s2: 'subj_mirror', s4: 'pred_guard' },
+    resultText: '凍てついた鏡が鐘を守っている。鐘の前に霜の張った鏡が立っている。近づくと鏡の中の自分が首を横に振る。',
+    damage: 1,
+    quill: 6
+  },
+  {
+    id: 'p10_doll_guard',
+    conditions: { s2: 'subj_doll', s4: 'pred_guard' },
+    resultText: '凍てついた人形が鐘を守っている。氷の人形が鐘の前に立ち、両腕を広げている。表情は凍りついた微笑み。近づくと腕が掴もうとする。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p10_rain_guard',
+    conditions: { s2: 'subj_rain', s4: 'pred_guard' },
+    resultText: '凍てついた雨が鐘を守っている。鐘楼の周りだけ凍雨が降り続いている。近づく者の体を氷で覆い、動けなくする。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p10_kitten_chase',
+    conditions: { s2: 'subj_kitten', s4: 'pred_chase' },
+    resultText: '凍てついた子猫が鐘を追いかけてくる。鐘綱を引いて鐘を揺らすと、氷の猫が滑るように追ってきた。鐘が揺れるたびに嬉しそうに耳が動く。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p10_snake_chase',
+    conditions: { s2: 'subj_snake', s4: 'pred_chase' },
+    resultText: '凍てついた蛇が鐘を追いかけてくる。鐘の振動に反応して霜の蛇が壁を這い降りてくる。鐘の音が蛇を呼ぶらしい。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p10_dragon_chase',
+    conditions: { s2: 'subj_dragon', s4: 'pred_chase' },
+    resultText: '凍てついた竜が鐘を追いかけてくる。鐘を鳴らした瞬間、氷の竜が目を開けた。吹雪の吐息が鐘楼を白く塗りつぶす。',
+    damage: 5,
+    quill: 2
+  },
+  {
+    id: 'p10_butterfly_chase',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_chase' },
+    resultText: '凍てついた蝶が鐘を追いかけてくる。鐘の余韻に引き寄せられ、霜の蝶が次々と舞い上がる。音を追って鐘に群がり、翅の音が鳴り止まない。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p10_wind_chase',
+    conditions: { s2: 'subj_wind', s4: 'pred_chase' },
+    resultText: '凍てついた風が鐘を追いかけてくる。鐘を鳴らすと凍風が鐘の音を追って吹き荒れる。音が遠ざかるほど風も強くなる。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p10_flame_chase',
+    conditions: { s2: 'subj_flame', s4: 'pred_chase' },
+    resultText: '凍てついた炎が鐘を追いかけてくる。鐘が揺れるたび、青白い炎が鐘の表面を舐めるように走る。冷たい火が音を食っている。',
+    damage: 2,
+    quill: 5,
+    rewardItems: [{ id: 'item_p10_flame_chase', name: '凍火の燐', description: '燃えているのに冷たい粉。振りかけると一瞬だけ青い光', sellPrice: 8 }]
+  },
+  {
+    id: 'p10_ice_chase',
+    conditions: { s2: 'subj_ice', s4: 'pred_chase' },
+    resultText: '凍てついた氷が鐘を追いかけてくる。鐘を打つたび、鐘の表面に氷が広がっていく。三度打ったら鐘が完全に凍りついた。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p10_shadow_chase',
+    conditions: { s2: 'subj_shadow', s4: 'pred_chase' },
+    resultText: '凍てついた影が鐘を追いかけてくる。鐘の振動で壁に張りついた影が剥がれ、鐘に向かって滑ってくる。影に触れると体が冷たくなる。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p10_song_chase',
+    conditions: { s2: 'subj_song', s4: 'pred_chase' },
+    resultText: '凍てついた歌が鐘を追いかけてくる。鐘を鳴らすと凍った旋律が目を覚まし、鐘の音に絡みついてくる。聴いているうちに指先の感覚がなくなる。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p10_silence_chase',
+    conditions: { s2: 'subj_silence', s4: 'pred_chase' },
+    resultText: '凍てついた沈黙が鐘を追いかけてくる。鐘を鳴らした直後、音が凍りつくように消える。沈黙が鐘の音を追いかけて呑み込んでいる。',
+    damage: 2,
+    quill: 6
+  },
+  {
+    id: 'p10_knight_chase',
+    conditions: { s2: 'subj_knight', s4: 'pred_chase' },
+    resultText: '凍てついた騎士が鐘を追いかけてくる。鐘を鳴らした途端、氷漬けの騎士が動き出す。ぎしぎしと氷を軋ませながら鐘に向かって歩いてくる。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p10_witch_chase',
+    conditions: { s2: 'subj_witch', s4: 'pred_chase' },
+    resultText: '凍てついた魔女が鐘を追いかけてくる。鐘の音で目覚めた氷の魔女が杖を向ける。鐘楼の空気が一段と冷える。交渉の余地はなさそうだ。',
+    damage: 4,
+    quill: 3
+  },
+  {
+    id: 'p10_king_chase',
+    conditions: { s2: 'subj_king', s4: 'pred_chase' },
+    resultText: '凍てついた王が鐘を追いかけてくる。鐘を鳴らした罪を問うように、北の王がゆっくりと階段を上ってくる。一歩ごとに霜が広がる。',
+    damage: 4,
+    quill: 4
+  },
+  {
+    id: 'p10_ghost_chase',
+    conditions: { s2: 'subj_ghost', s4: 'pred_chase' },
+    resultText: '凍てついた亡霊が鐘を追いかけてくる。鐘の音に引き寄せられた凍死者の霊が、壁をすり抜けて迫ってくる。通った跡が白い。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'p10_mirror_chase',
+    conditions: { s2: 'subj_mirror', s4: 'pred_chase' },
+    resultText: '凍てついた鏡が鐘を追いかけてくる。鐘を鳴らすたびに、霜の鏡が振動で床を滑り、鐘のほうへ寄ってくる。鏡面に鐘の姿が映っている。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p10_doll_chase',
+    conditions: { s2: 'subj_doll', s4: 'pred_chase' },
+    resultText: '凍てついた人形が鐘を追いかけてくる。鐘の音に反応して氷の人形が首を回す。ぎこちない足取りで鐘に近づき、抱きつこうとする。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p10_rain_chase',
+    conditions: { s2: 'subj_rain', s4: 'pred_chase' },
+    resultText: '凍てついた雨が鐘を追いかけてくる。鐘を鳴らすと凍雨が鐘楼の窓から吹き込んでくる。鐘の余韻が消えるまで降り止まない。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'p10_kitten_gaze',
+    conditions: { s2: 'subj_kitten', s4: 'pred_gaze' },
+    resultText: '凍てついた子猫が鐘を見つめている。氷の猫が鐘をじっと見上げている。鐘を鳴らしたいのかもしれない。手が届かないだけだ。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p10_snake_gaze',
+    conditions: { s2: 'subj_snake', s4: 'pred_gaze' },
+    resultText: '凍てついた蛇が鐘を見つめている。霜の鱗の蛇が鎌首をもたげ、鐘に目を据えている。何を待っているのか分からない。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p10_dragon_gaze',
+    conditions: { s2: 'subj_dragon', s4: 'pred_gaze' },
+    resultText: '凍てついた竜が鐘を見つめている。白い竜が首を伸ばし、鐘の表面に映る自分の姿を見ている。近づくと片目だけがこちらを追う。',
+    damage: 3,
+    quill: 5
+  },
+  {
+    id: 'p10_butterfly_gaze',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_gaze' },
+    resultText: '凍てついた蝶が鐘を見つめている。霜の蝶が鐘の縁に止まり、複眼に鐘が映っている。風が吹いても飛ばない。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p10_wind_gaze',
+    conditions: { s2: 'subj_wind', s4: 'pred_gaze' },
+    resultText: '凍てついた風が鐘を見つめている。鐘の周りだけ風が止まっている。見つめているというより、息を殺しているのだ。',
+    damage: 1,
+    quill: 6,
+    rewardItems: [{ id: 'item_p10_wind_gaze', name: '風の静寂', description: '瓶に詰めた凪。蓋を開けると周囲が一瞬無風になる', sellPrice: 10 }]
+  },
+  {
+    id: 'p10_flame_gaze',
+    conditions: { s2: 'subj_flame', s4: 'pred_gaze' },
+    resultText: '凍てついた炎が鐘を見つめている。青白い火が鐘の表面に映り込んで揺れている。鐘が炎の瞳のようだ。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p10_ice_gaze',
+    conditions: { s2: 'subj_ice', s4: 'pred_gaze' },
+    resultText: '凍てついた氷が鐘を見つめている。鐘の表面に薄い氷が張り、刻一刻と厚くなっている。見つめるとは、こういうことか。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p10_shadow_gaze',
+    conditions: { s2: 'subj_shadow', s4: 'pred_gaze' },
+    resultText: '凍てついた影が鐘を見つめている。壁に張りついた影の顔が、鐘のほうを向いて動かない。影に目があるとすれば、瞬きもしていない。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p10_song_gaze',
+    conditions: { s2: 'subj_song', s4: 'pred_gaze' },
+    resultText: '凍てついた歌が鐘を見つめている。旋律が凍って音にならないまま、鐘の周りを漂っている。音になりたくて鐘を見ているのだ。',
+    damage: 1,
+    quill: 7,
+    rewardItems: [{ id: 'item_p10_song_gaze', name: '声なき歌の粒', description: '音になれなかった旋律。鐘に当てると微かに震える', sellPrice: 10 }]
+  },
+  {
+    id: 'p10_silence_gaze',
+    conditions: { s2: 'subj_silence', s4: 'pred_gaze' },
+    resultText: '凍てついた沈黙が鐘を見つめている。鐘楼が完全に静まり返っている。沈黙が鐘を睨んでいるのだ。鳴らしたらどうなるか、試す勇気がない。',
+    damage: 1,
+    quill: 6
+  },
+  {
+    id: 'p10_knight_gaze',
+    conditions: { s2: 'subj_knight', s4: 'pred_gaze' },
+    resultText: '凍てついた騎士が鐘を見つめている。兜の奥から白い息が漏れる。鐘を鳴らすべきか迷っている騎士だ。命令が来ないまま凍りついた。',
+    damage: 1,
+    quill: 6
+  },
+  {
+    id: 'p10_witch_gaze',
+    conditions: { s2: 'subj_witch', s4: 'pred_gaze' },
+    resultText: '凍てついた魔女が鐘を見つめている。氷の瞳で鐘を観察している。何かを計算している目だ。こちらには興味がないらしい。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p10_king_gaze',
+    conditions: { s2: 'subj_king', s4: 'pred_gaze' },
+    resultText: '凍てついた王が鐘を見つめている。氷の玉座から鐘を睥睨している。所有者の目だ。触れることは許されていない。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p10_ghost_gaze',
+    conditions: { s2: 'subj_ghost', s4: 'pred_gaze' },
+    resultText: '凍てついた亡霊が鐘を見つめている。凍死者の霊が鐘をぼんやり見上げている。生きていた頃、この鐘を鳴らしていたのかもしれない。',
+    damage: 1,
+    quill: 6
+  },
+  {
+    id: 'p10_mirror_gaze',
+    conditions: { s2: 'subj_mirror', s4: 'pred_gaze' },
+    resultText: '凍てついた鏡が鐘を見つめている。鏡面に鐘だけが映り、他のものは映らない。鏡が鐘に魅入られている。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p10_doll_gaze',
+    conditions: { s2: 'subj_doll', s4: 'pred_gaze' },
+    resultText: '凍てついた人形が鐘を見つめている。氷の人形が首を傾げて鐘を見上げている。凍りついた微笑みのまま。何を考えているか分からない。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p10_rain_gaze',
+    conditions: { s2: 'subj_rain', s4: 'pred_gaze' },
+    resultText: '凍てついた雨が鐘を見つめている。凍雨が鐘の表面をゆっくり伝い落ちていく。雨粒の一つ一つが鐘に映る景色を運んでいる。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p10_kitten_hide',
+    conditions: { s2: 'subj_kitten', s4: 'pred_hide' },
+    resultText: '凍てついた子猫が鐘を隠している。氷の猫が鐘の上に丸くなり、体で鐘を覆っている。小さな体では隠しきれていない。',
+    damage: 0,
+    quill: 6,
+    rewardItems: [{ id: 'item_p10_kitten_hide', name: '猫氷の結晶', description: '猫の体温が残る氷。なぜか溶けない', sellPrice: 8 }]
+  },
+  {
+    id: 'p10_snake_hide',
+    conditions: { s2: 'subj_snake', s4: 'pred_hide' },
+    resultText: '凍てついた蛇が鐘を隠している。霜の蛇が鐘に何重にも巻きついて覆い隠している。鐘の形だけが分かる。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p10_dragon_hide',
+    conditions: { s2: 'subj_dragon', s4: 'pred_hide' },
+    resultText: '凍てついた竜が鐘を隠している。氷の竜が翼で鐘を包み込んでいる。竜にとって鐘は宝のようだ。触れさせる気はない。',
+    damage: 4,
+    quill: 4
+  },
+  {
+    id: 'p10_butterfly_hide',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_hide' },
+    resultText: '凍てついた蝶が鐘を隠している。数え切れない霜の蝶が鐘に張りつき、白い繭のようになっている。美しい隠し方だ。',
+    damage: 1,
+    quill: 6,
+    rewardItems: [{ id: 'item_p10_butterfly_hide', name: '霜蝶の繭', description: '蝶の翅が織り重なった白い布。広げると冷気がこぼれる', sellPrice: 12 }]
+  },
+  {
+    id: 'p10_wind_hide',
+    conditions: { s2: 'subj_wind', s4: 'pred_hide' },
+    resultText: '凍てついた風が鐘を隠している。吹雪が鐘楼を包み、鐘がどこにあるか見えない。風が止んだ一瞬に鐘の輪郭が見えた。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p10_flame_hide',
+    conditions: { s2: 'subj_flame', s4: 'pred_hide' },
+    resultText: '凍てついた炎が鐘を隠している。青白い火が鐘を覆い、形を見えなくしている。冷たい炎の中に手を突っ込む覚悟が要る。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p10_ice_hide',
+    conditions: { s2: 'subj_ice', s4: 'pred_hide' },
+    resultText: '凍てついた氷が鐘を隠している。透明な氷に完全に閉じ込められた鐘。見えているのに触れない。溶かすには何日かかるか。',
+    damage: 4,
+    quill: 3
+  },
+  {
+    id: 'p10_shadow_hide',
+    conditions: { s2: 'subj_shadow', s4: 'pred_hide' },
+    resultText: '凍てついた影が鐘を隠している。凍った影が鐘を黒く塗りつぶし、闇の塊に見せている。手探りで鐘の縁を探り当てた。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p10_song_hide',
+    conditions: { s2: 'subj_song', s4: 'pred_hide' },
+    resultText: '凍てついた歌が鐘を隠している。旋律が鐘の周囲で凍り、音の壁を作っている。鐘が見えているのに、近づくと方向が分からなくなる。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p10_silence_hide',
+    conditions: { s2: 'subj_silence', s4: 'pred_hide' },
+    resultText: '凍てついた沈黙が鐘を隠している。鐘の存在を忘れさせる静けさが漂う。鐘楼にいるのに、何を探しに来たか思い出せない。',
+    damage: 2,
+    quill: 7,
+    rewardItems: [{ id: 'item_p10_silence_hide', name: '忘却の霜', description: '触れると何か一つ忘れる。何を忘れたかも忘れる', sellPrice: 15 }]
+  },
+  {
+    id: 'p10_knight_hide',
+    conditions: { s2: 'subj_knight', s4: 'pred_hide' },
+    resultText: '凍てついた騎士が鐘を隠している。氷の騎士が鐘の前に立ち、背中で隠している。命令通りに鐘を守っているのだ。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p10_witch_hide',
+    conditions: { s2: 'subj_witch', s4: 'pred_hide' },
+    resultText: '凍てついた魔女が鐘を隠している。氷の魔法で鐘を透明にしている。鐘楼に鐘がない。しかし紐を引くと確かに何かに触れる。',
+    damage: 1,
+    quill: 7,
+    rewardItems: [{ id: 'item_p10_witch_hide', name: '透明な鐘片', description: '見えないが確かにある金属。鳴らすと空気だけが震える', sellPrice: 15 }]
+  },
+  {
+    id: 'p10_king_hide',
+    conditions: { s2: 'subj_king', s4: 'pred_hide' },
+    resultText: '凍てついた王が鐘を隠している。北の王が鐘を自分の宝としてどこかへ運ばせた。空の鐘楼に、氷の玉座だけが残っている。',
+    damage: 3,
+    quill: 5
+  },
+  {
+    id: 'p10_ghost_hide',
+    conditions: { s2: 'subj_ghost', s4: 'pred_hide' },
+    resultText: '凍てついた亡霊が鐘を隠している。冷気の中で鐘が見えなくなっている。亡霊が鐘を抱えて消えたのだ。探すと、壁の向こうに鐘の影がある。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p10_mirror_hide',
+    conditions: { s2: 'subj_mirror', s4: 'pred_hide' },
+    resultText: '凍てついた鏡が鐘を隠している。鏡が鐘の前に立ち、鐘楼の壁を映して鐘を見えなくしている。鏡の裏に回ると鐘がある。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p10_doll_hide',
+    conditions: { s2: 'subj_doll', s4: 'pred_hide' },
+    resultText: '凍てついた人形が鐘を隠している。たくさんの氷の人形が鐘の周りに積み重なり、鐘を見えなくしている。どけるたびに指が凍える。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p10_rain_hide',
+    conditions: { s2: 'subj_rain', s4: 'pred_hide' },
+    resultText: '凍てついた雨が鐘を隠している。凍雨の白い幕が鐘楼全体を覆い、何も見えない。手探りで歩くと鐘の冷たい縁に指が触れた。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p10_kitten_crush',
+    conditions: { s2: 'subj_kitten', s4: 'pred_crush' },
+    resultText: '凍てついた子猫が鐘を砕く。氷の猫が鐘を叩いている。小さな前足で叩くたびに、鐘に亀裂が走る。冷たすぎて金属が脆くなっているのだ。',
+    damage: 1,
+    quill: 6
+  },
+  {
+    id: 'p10_snake_crush',
+    conditions: { s2: 'subj_snake', s4: 'pred_crush' },
+    resultText: '凍てついた蛇が鐘を砕く。霜の蛇が鐘に締め上げるように巻きつく。金属が軋み、冷気で脆くなった鐘にひびが入る。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p10_dragon_crush',
+    conditions: { s2: 'subj_dragon', s4: 'pred_crush' },
+    resultText: '凍てついた竜が鐘を砕く。氷の竜の一撃で鐘が粉々になる。破片が吹雪に混じって舞う。鐘楼に鐘はもうない。',
+    damage: 5,
+    quill: 2
+  },
+  {
+    id: 'p10_butterfly_crush',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_crush' },
+    resultText: '凍てついた蝶が鐘を砕く。霜の蝶が一匹ずつ鐘に止まる。翅が触れるたびに鐘が凍り、脆くなっていく。やがてひとりでに崩れた。',
+    damage: 2,
+    quill: 6,
+    rewardItems: [{ id: 'item_p10_butterfly_crush', name: '砕けた鐘の音', description: '破片を振ると、かつての音の欠片が微かに鳴る', sellPrice: 10 }]
+  },
+  {
+    id: 'p10_wind_crush',
+    conditions: { s2: 'subj_wind', s4: 'pred_crush' },
+    resultText: '凍てついた風が鐘を砕く。凍風が鐘に何度もぶつかり、金属が凍り、割れていく。風が鐘の代わりに唸っている。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p10_flame_crush',
+    conditions: { s2: 'subj_flame', s4: 'pred_crush' },
+    resultText: '凍てついた炎が鐘を砕く。青白い炎が鐘を包み、急激な冷却で金属が収縮する。甲高い音を立てて鐘が裂けた。',
+    damage: 3,
+    quill: 5,
+    rewardItems: [{ id: 'item_p10_flame_crush', name: '凍裂の鐘片', description: '冷たい炎で裂けた金属片。触ると指先が青く光る', sellPrice: 10 }]
+  },
+  {
+    id: 'p10_ice_crush',
+    conditions: { s2: 'subj_ice', s4: 'pred_crush' },
+    resultText: '凍てついた氷が鐘を砕く。極限の冷気が鐘を凍らせ、氷が膨張して鐘を内側から割る。静かに、確実に。',
+    damage: 4,
+    quill: 4
+  },
+  {
+    id: 'p10_shadow_crush',
+    conditions: { s2: 'subj_shadow', s4: 'pred_crush' },
+    resultText: '凍てついた影が鐘を砕く。凍った影が鐘に張りつき、鐘の形に沿って亀裂を走らせる。影の力で砕けるわけがない。しかし鐘は割れた。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p10_song_crush',
+    conditions: { s2: 'subj_song', s4: 'pred_crush' },
+    resultText: '凍てついた歌が鐘を砕く。凍った旋律が共鳴周波数で鐘を震わせる。鐘が自ら揺れ始め、限界を超えて砕けた。',
+    damage: 2,
+    quill: 7,
+    rewardItems: [{ id: 'item_p10_song_crush', name: '共鳴の破片', description: '歌えば震える鐘の欠片。音に生きている', sellPrice: 12 }]
+  },
+  {
+    id: 'p10_silence_crush',
+    conditions: { s2: 'subj_silence', s4: 'pred_crush' },
+    resultText: '凍てついた沈黙が鐘を砕く。音を呑み込む沈黙が鐘の振動を奪い、金属が内側から崩れる。音のない崩壊だ。',
+    damage: 2,
+    quill: 6
+  },
+  {
+    id: 'p10_knight_crush',
+    conditions: { s2: 'subj_knight', s4: 'pred_crush' },
+    resultText: '凍てついた騎士が鐘を砕く。氷漬けの騎士が凍った剣を振り下ろす。鐘が甲高く鳴り、そして割れた。命令を果たしたか、騎士は動かなくなった。',
+    damage: 3,
+    quill: 5
+  },
+  {
+    id: 'p10_witch_crush',
+    conditions: { s2: 'subj_witch', s4: 'pred_crush' },
+    resultText: '凍てついた魔女が鐘を砕く。氷の魔女が杖を一振りする。鐘が芯から凍り、花のように砕け散った。美しい破壊だ。',
+    damage: 3,
+    quill: 6
+  },
+  {
+    id: 'p10_king_crush',
+    conditions: { s2: 'subj_king', s4: 'pred_crush' },
+    resultText: '凍てついた王が鐘を砕く。北の王が拳で鐘を打つ。一撃で鐘が割れ、冬が溢れ出す。王は満足そうだ。',
+    damage: 5,
+    quill: 3
+  },
+  {
+    id: 'p10_ghost_crush',
+    conditions: { s2: 'subj_ghost', s4: 'pred_crush' },
+    resultText: '凍てついた亡霊が鐘を砕く。凍死者の霊が鐘をすり抜ける。すり抜けるたびに鐘が冷え、ついに罅割れた。恨みが鐘を壊したのだ。',
+    damage: 3,
+    quill: 5
+  },
+  {
+    id: 'p10_mirror_crush',
+    conditions: { s2: 'subj_mirror', s4: 'pred_crush' },
+    resultText: '凍てついた鏡が鐘を砕く。鏡が鐘の振動を反射し、増幅する。鐘が自分の音で共鳴し、砕けた。鏡も一緒に割れた。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p10_doll_crush',
+    conditions: { s2: 'subj_doll', s4: 'pred_crush' },
+    resultText: '凍てついた人形が鐘を砕く。氷の人形が鐘に体当たりする。人形が砕けて、鐘にも罅が入る。残った破片が笑っている顔をしている。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p10_rain_crush',
+    conditions: { s2: 'subj_rain', s4: 'pred_crush' },
+    resultText: '凍てついた雨が鐘を砕く。凍雨が鐘を叩き続ける。一滴ずつ、氷の膜が厚くなり、重さで鐘が歪み、やがて裂けた。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p10_kitten_flee',
+    conditions: { s2: 'subj_kitten', s4: 'pred_flee' },
+    resultText: '凍てついた子猫が鐘を逃げていく。氷の猫が鐘綱を伝って降りていく。足跡に小さな霜が残る。追う理由はない。',
+    damage: 0,
+    quill: 5,
+    rewardItems: [{ id: 'item_p10_kitten_flee', name: '霜の足跡', description: '子猫の足跡が凍って残った石片。温めると消える', sellPrice: 5 }]
+  },
+  {
+    id: 'p10_snake_flee',
+    conditions: { s2: 'subj_snake', s4: 'pred_flee' },
+    resultText: '凍てついた蛇が鐘を逃げていく。霜の蛇が鐘から解け、壁を這って闇の中へ消える。鐘に巻きついていた跡が白く残る。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p10_dragon_flee',
+    conditions: { s2: 'subj_dragon', s4: 'pred_flee' },
+    resultText: '凍てついた竜が鐘を逃げていく。氷の竜が翼を広げ、鐘楼の天井を突き破って飛び去る。吹雪が一瞬で止む。鐘だけが揺れている。',
+    damage: 0,
+    quill: 7,
+    rewardItems: [{ id: 'item_p10_dragon_flee', name: '氷竜の鱗', description: '竜が飛び去った跡に落ちていた一枚。溶けない', sellPrice: 15 }]
+  },
+  {
+    id: 'p10_butterfly_flee',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_flee' },
+    resultText: '凍てついた蝶が鐘を逃げていく。霜の蝶が一斉に鐘を離れ、窓から吹雪の中へ飛んでいく。鐘が温度を取り戻し始める。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p10_wind_flee',
+    conditions: { s2: 'subj_wind', s4: 'pred_flee' },
+    resultText: '凍てついた風が鐘を逃げていく。凍風が鐘楼から吹き抜け、去っていく。風が通り過ぎた後、鐘が微かに鳴った。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p10_flame_flee',
+    conditions: { s2: 'subj_flame', s4: 'pred_flee' },
+    resultText: '凍てついた炎が鐘を逃げていく。青白い炎が鐘の表面を滑り落ち、床に散って消える。鐘に薄い霜だけが残った。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p10_ice_flee',
+    conditions: { s2: 'subj_ice', s4: 'pred_flee' },
+    resultText: '凍てついた氷が鐘を逃げていく。鐘を覆っていた氷がひとりでに溶け始め、水になって流れ落ちる。凍っていた氷が溶けるとき、鐘が低く鳴った。',
+    damage: -1,
+    quill: 6
+  },
+  {
+    id: 'p10_shadow_flee',
+    conditions: { s2: 'subj_shadow', s4: 'pred_flee' },
+    resultText: '凍てついた影が鐘を逃げていく。壁に張りついていた影が剥がれ、階段を下りて消える。鐘楼が明るくなった。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p10_song_flee',
+    conditions: { s2: 'subj_song', s4: 'pred_flee' },
+    resultText: '凍てついた歌が鐘を逃げていく。凍った旋律が溶けて音になり、鐘楼から風に乗って去っていく。最後に一節だけ聞こえた。',
+    damage: 0,
+    quill: 6,
+    rewardItems: [{ id: 'item_p10_song_flee', name: '溶けた一節', description: '凍っていた旋律が最後に残した音。耳に近づけると聞こえる', sellPrice: 10 }]
+  },
+  {
+    id: 'p10_silence_flee',
+    conditions: { s2: 'subj_silence', s4: 'pred_flee' },
+    resultText: '凍てついた沈黙が鐘を逃げていく。沈黙が鐘楼から退いていく。音が戻ってくる。風の音、自分の息。鐘を鳴らせるようになった。',
+    damage: -1,
+    quill: 7
+  },
+  {
+    id: 'p10_knight_flee',
+    conditions: { s2: 'subj_knight', s4: 'pred_flee' },
+    resultText: '凍てついた騎士が鐘を逃げていく。氷の騎士が剣を収め、階段を下りていく。任務を終えたのか、放棄したのか。霜の足跡が溶けていく。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p10_witch_flee',
+    conditions: { s2: 'subj_witch', s4: 'pred_flee' },
+    resultText: '凍てついた魔女が鐘を逃げていく。氷の魔女が箒に跨がり、鐘楼の窓から飛び去る。霜が溶け始める。鐘が自由になった。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p10_king_flee',
+    conditions: { s2: 'subj_king', s4: 'pred_flee' },
+    resultText: '凍てついた王が鐘を逃げていく。北の王が玉座ごと立ち去る。「この鐘にはもう用はない」。冬が少しだけ緩んだ。',
+    damage: 0,
+    quill: 6
+  },
+  {
+    id: 'p10_ghost_flee',
+    conditions: { s2: 'subj_ghost', s4: 'pred_flee' },
+    resultText: '凍てついた亡霊が鐘を逃げていく。凍死者の霊がふっと消える。持ち場を捨てたのではない。鐘の音を聞いて成仏したのだ。',
+    damage: 0,
+    quill: 7,
+    rewardItems: [{ id: 'item_p10_ghost_flee', name: '成仏の霜', description: '亡霊が消えた跡に残った白い結晶。温かい', sellPrice: 8 }]
+  },
+  {
+    id: 'p10_mirror_flee',
+    conditions: { s2: 'subj_mirror', s4: 'pred_flee' },
+    resultText: '凍てついた鏡が鐘を逃げていく。鏡面の霜が溶け、鏡が鐘の前からずり落ちる。鏡の中の冬景色も消えた。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p10_doll_flee',
+    conditions: { s2: 'subj_doll', s4: 'pred_flee' },
+    resultText: '凍てついた人形が鐘を逃げていく。氷の人形がよろよろと階段を下りていく。繊細な造形が一段ごとに少しずつ溶ける。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p10_rain_flee',
+    conditions: { s2: 'subj_rain', s4: 'pred_flee' },
+    resultText: '凍てついた雨が鐘を逃げていく。凍雨が止み、氷の膜が薄くなっていく。鐘が軽くなり、風で揺れ始めた。',
+    damage: 0,
+    quill: 4
+  },
+];

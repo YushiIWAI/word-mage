@@ -29,11 +29,13 @@
   let particle = $derived(getParticle(slot.category));
 
   function handleDragOver(e: DragEvent) {
+    if (slot.locked) return; // 固定スロットはドロップ不可
     e.preventDefault();
     if (e.dataTransfer) e.dataTransfer.dropEffect = 'move';
   }
 
   function handleDrop(e: DragEvent) {
+    if (slot.locked) return; // 固定スロットはドロップ不可
     e.preventDefault();
     onDrop(index);
   }
@@ -57,14 +59,17 @@
     <button
       class="slot-word"
       class:empty={!slot.word}
-      class:drag-over={isDragOver}
-      class:drag-ready={isDragging && !isDragOver}
+      class:locked={slot.locked}
+      class:drag-over={isDragOver && !slot.locked}
+      class:drag-ready={isDragging && !isDragOver && !slot.locked}
       style:--slot-color={categoryColors[slot.category] ?? 'var(--ink-light)'}
       onclick={handleClick}
-      title={slot.word ? `クリックで抜き取り` : `空スロット`}
+      title={slot.locked ? slot.word?.text ?? '' : slot.word ? `クリックで抜き取り` : `空スロット`}
     >
       {#if slot.word}
         <span class="word-text">{slot.word.text}</span>
+      {:else if slot.category === 'adverb'}
+        <span class="empty-mark empty-adverb">···</span>
       {:else}
         <span class="empty-mark">████</span>
       {/if}
@@ -130,6 +135,17 @@
     transform: scale(1.1);
   }
 
+  .slot-word.locked {
+    border-color: transparent;
+    background: transparent;
+    cursor: default;
+    opacity: 0.85;
+  }
+  .slot-word.locked:hover {
+    background: transparent;
+    box-shadow: none;
+  }
+
   .slot-word.empty {
     border-style: dashed;
     opacity: 0.7;
@@ -148,6 +164,10 @@
     color: var(--ink-light);
     letter-spacing: 2px;
     font-size: 0.95rem;
+  }
+  .empty-adverb {
+    font-size: 0.8rem;
+    opacity: 0.5;
   }
 
   .slot-indicator {
