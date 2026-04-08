@@ -1,25 +1,105 @@
 /**
- * 半ランダムマップ生成エンジン
- * 一本道8ノード: start → puzzle → treasure → puzzle → battle → shop → puzzle → boss
+ * 5面構成マップ生成エンジン
+ * 各面9ノードの一本道。面ごとにHP/AP/手札リセット。
+ * puzzleノードは5面分まとめてシャッフルし重複なし配分。
  */
 import type { MapNode, ShopNodeDef, TreasureNodeDef } from './types';
 import { generateShop, generateTreasure } from '../data/expanded-nodes/shops';
 
-// --- 層構成定義（一本道） ---
+// --- 面構成定義 ---
+
+type NodeType = 'start' | 'puzzle' | 'treasure' | 'shop' | 'boss' | 'battle' | 'rest' | 'elite';
 
 interface LayerConfig {
-  type: 'start' | 'puzzle' | 'treasure' | 'shop' | 'boss' | 'battle';
+  type: NodeType;
 }
 
-const LAYER_CONFIGS: LayerConfig[] = [
-  { type: 'start' },     // 層0: スタート（自動通過）
-  { type: 'puzzle' },     // 層1: 最初のパズル
-  { type: 'treasure' },   // 層2: トレジャー
-  { type: 'puzzle' },     // 層3: パズル
-  { type: 'battle' },     // 層4: バトル
-  { type: 'shop' },       // 層5: ショップ
-  { type: 'puzzle' },     // 層6: パズル
-  { type: 'boss' },       // 層7: ボス
+interface StageConfig {
+  name: string;
+  theme: string;
+  layers: LayerConfig[];
+  bossId?: string;
+}
+
+const STAGES: StageConfig[] = [
+  {
+    name: '森',
+    theme: '序盤',
+    layers: [
+      { type: 'start' },
+      { type: 'puzzle' },
+      { type: 'puzzle' },
+      { type: 'puzzle' },
+      { type: 'puzzle' },
+      { type: 'puzzle' },
+      { type: 'treasure' },
+      { type: 'battle' },
+      { type: 'shop' },
+    ],
+  },
+  {
+    name: '谷',
+    theme: '中盤',
+    layers: [
+      { type: 'start' },
+      { type: 'puzzle' },
+      { type: 'puzzle' },
+      { type: 'puzzle' },
+      { type: 'puzzle' },
+      { type: 'rest' },
+      { type: 'puzzle' },
+      { type: 'battle' },
+      { type: 'boss' },
+    ],
+    bossId: 'node_boss01',
+  },
+  {
+    name: '山',
+    theme: '中盤',
+    layers: [
+      { type: 'start' },
+      { type: 'puzzle' },
+      { type: 'puzzle' },
+      { type: 'puzzle' },
+      { type: 'puzzle' },
+      { type: 'treasure' },
+      { type: 'elite' },
+      { type: 'battle' },
+      { type: 'shop' },
+    ],
+  },
+  {
+    name: '城',
+    theme: '終盤',
+    layers: [
+      { type: 'start' },
+      { type: 'puzzle' },
+      { type: 'puzzle' },
+      { type: 'puzzle' },
+      { type: 'puzzle' },
+      { type: 'rest' },
+      { type: 'elite' },
+      { type: 'battle' },
+      { type: 'boss' },
+    ],
+    bossId: 'node_boss02',
+  },
+  {
+    name: '塔',
+    theme: '最終',
+    layers: [
+      { type: 'start' },
+      { type: 'puzzle' },
+      { type: 'puzzle' },
+      { type: 'puzzle' },
+      { type: 'puzzle' },
+      { type: 'rest' },
+      { type: 'elite' },
+      { type: 'battle' },
+      { type: 'boss' },
+    ],
+    bossId: 'node_boss03',
+  },
 ];
 
 // --- ノード定義IDプール ---
@@ -36,7 +116,10 @@ const PUZZLE_POOL = [
   'node_r01', 'node_r02', 'node_r03', 'node_r04', 'node_r05',
 ];
 const BATTLE_POOL = ['node_bt01', 'node_bt02', 'node_bt03', 'node_bt04'];
-const BOSS_POOL = ['node_boss01', 'node_boss02', 'node_boss03'];
+
+// --- ノードタイプ判定用IDセット ---
+const REST_IDS = new Set(['node_p06', 'node_p12', 'node_r01', 'node_r02', 'node_r03', 'node_r04', 'node_r05']);
+const ELITE_IDS = new Set(['node_e01', 'node_e02', 'node_e03', 'node_e04', 'node_e05', 'node_e06']);
 
 // --- ユーティリティ ---
 
@@ -51,64 +134,130 @@ function shuffle<T>(arr: T[]): T[] {
 
 // --- 戻り値型 ---
 
+/** 後方互換: 1面分のマップ（旧APIと同構造） */
 export interface GeneratedMap {
   nodes: MapNode[];
   shopDef: ShopNodeDef;
   treasureDef: TreasureNodeDef;
 }
 
+/** 5面構成の1面分 */
+export interface GeneratedStage {
+  stageIndex: number;
+  stageName: string;
+  stageTheme: string;
+  nodes: MapNode[];
+  shopDef?: ShopNodeDef;
+  treasureDef?: TreasureNodeDef;
+}
+
 // --- メイン関数 ---
 
-export function generateMap(): GeneratedMap {
-  const shopDef = generateShop();
-  const treasureDef = generateTreasure();
+/** 5面分のマップをまとめて生成 */
+export function generateAllStages(): GeneratedStage[] {
+  // 1. 全PUZZLE_POOLをシャッフルし、タイプ別に分離
+  const allShuffled = shuffle(PUZZLE_POOL);
+  const restNodes = allShuffled.filter(id => REST_IDS.has(id));
+  const eliteNodes = allShuffled.filter(id => ELITE_IDS.has(id));
+  const normalPuzzles = allShuffled.filter(id => !REST_IDS.has(id) && !ELITE_IDS.has(id));
 
-  // puzzleノードをシャッフル
-  const shuffledPuzzles = shuffle(PUZZLE_POOL);
   let puzzleIdx = 0;
+  let restIdx = 0;
+  let eliteIdx = 0;
+  const battleShuffled = shuffle(BATTLE_POOL);
+  let battleIdx = 0;
 
-  const nodes: MapNode[] = [];
+  return STAGES.map((stage, stageIndex) => {
+    // 面ごとにshop/treasure定義を生成（必要な面のみ）
+    const hasShop = stage.layers.some(l => l.type === 'shop');
+    const hasTreasure = stage.layers.some(l => l.type === 'treasure');
+    const shopDef = hasShop ? generateShop() : undefined;
+    const treasureDef = hasTreasure ? generateTreasure() : undefined;
 
-  for (let layerIdx = 0; layerIdx < LAYER_CONFIGS.length; layerIdx++) {
-    const config = LAYER_CONFIGS[layerIdx];
+    const nodes: MapNode[] = [];
 
-    let nodeDefId: string;
-    switch (config.type) {
-      case 'start':
-        nodeDefId = START_NODE_DEF_ID;
-        break;
-      case 'puzzle':
-        nodeDefId = shuffledPuzzles[puzzleIdx++];
-        break;
-      case 'treasure':
-        nodeDefId = treasureDef.id;
-        break;
-      case 'shop':
-        nodeDefId = shopDef.id;
-        break;
-      case 'battle':
-        nodeDefId = BATTLE_POOL[Math.floor(Math.random() * BATTLE_POOL.length)];
-        break;
-      case 'boss':
-        nodeDefId = BOSS_POOL[Math.floor(Math.random() * BOSS_POOL.length)];
-        break;
+    for (let layerIdx = 0; layerIdx < stage.layers.length; layerIdx++) {
+      const config = stage.layers[layerIdx];
+      let nodeDefId: string;
+
+      switch (config.type) {
+        case 'start':
+          nodeDefId = START_NODE_DEF_ID;
+          break;
+        case 'puzzle':
+          nodeDefId = normalPuzzles[puzzleIdx % normalPuzzles.length];
+          puzzleIdx++;
+          break;
+        case 'rest':
+          nodeDefId = restNodes[restIdx % restNodes.length];
+          restIdx++;
+          break;
+        case 'elite':
+          nodeDefId = eliteNodes[eliteIdx % eliteNodes.length];
+          eliteIdx++;
+          break;
+        case 'treasure':
+          nodeDefId = treasureDef!.id;
+          break;
+        case 'shop':
+          nodeDefId = shopDef!.id;
+          break;
+        case 'battle':
+          nodeDefId = battleShuffled[battleIdx % battleShuffled.length];
+          battleIdx++;
+          break;
+        case 'boss':
+          nodeDefId = stage.bossId!;
+          break;
+      }
+
+      const isLast = layerIdx === stage.layers.length - 1;
+      const nextId = isLast ? [] : [`stage${stageIndex}_${layerIdx + 1}`];
+
+      nodes.push({
+        id: `stage${stageIndex}_${layerIdx}`,
+        nodeDefId,
+        row: layerIdx,
+        col: 1,
+        nextIds: nextId,
+        visited: false,
+      });
     }
 
-    const isLast = layerIdx === LAYER_CONFIGS.length - 1;
-    const nextId = isLast ? [] : [`map_${layerIdx + 1}_0`];
+    // 層0（start）を自動通過済みにする
+    nodes[0].visited = true;
 
-    nodes.push({
-      id: `map_${layerIdx}_0`,
-      nodeDefId,
-      row: layerIdx,
-      col: 1,
-      nextIds: nextId,
-      visited: false,
-    });
-  }
+    return {
+      stageIndex,
+      stageName: stage.name,
+      stageTheme: stage.theme,
+      nodes,
+      shopDef,
+      treasureDef,
+    };
+  });
+}
 
-  // 層0を自動通過済みにする
-  nodes[0].visited = true;
+/** 後方互換: 1面分のマップ生成（旧API） */
+export function generateMap(): GeneratedMap {
+  const stages = generateAllStages();
+  const first = stages[0];
+  return {
+    nodes: first.nodes,
+    shopDef: first.shopDef ?? generateShop(),
+    treasureDef: first.treasureDef ?? generateTreasure(),
+  };
+}
 
-  return { nodes, shopDef, treasureDef };
+/** 面の総数を返す */
+export const TOTAL_STAGES = STAGES.length;
+
+/** 面の名前を返す */
+export function getStageName(stageIndex: number): string {
+  return STAGES[stageIndex]?.name ?? '';
+}
+
+/** 面のテーマを返す */
+export function getStageTheme(stageIndex: number): string {
+  return STAGES[stageIndex]?.theme ?? '';
 }

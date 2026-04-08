@@ -8,10 +8,10 @@
   import { nodeDefs, battleNodeDefs, shopNodeDefs, treasureNodeDefs, initialHand, mapNodes } from './game/data/nodes';
   import { expandedNodeDefs, expandedBattleNodeDefs } from './game/data/expanded-nodes';
   import { expandedInitialHand, generateRandomHand } from './game/data/expanded-game';
-  import { generateMap } from './game/engine/map-generator';
-  import type { GeneratedMap } from './game/engine/map-generator';
+  import { generateMap, generateAllStages, TOTAL_STAGES } from './game/engine/map-generator';
+  import type { GeneratedMap, GeneratedStage } from './game/engine/map-generator';
 
-  // ?mode=expanded で拡張版5ノードゲーム
+  // ?mode=expanded で拡張版ゲーム（5面構成）
   const isExpanded = new URLSearchParams(window.location.search).get('mode') === 'expanded';
   const activeInitialHand = isExpanded ? generateRandomHand() : initialHand;
   const initialGenerated = isExpanded ? generateMap() : null;
@@ -24,13 +24,23 @@
   import { initBattle, resolveBattleTurn, advanceBattleTurn, isEnemyDefeated, getCurrentEnemyAction } from './game/engine/battle';
   import type { Slot, NodeDef, BattleNodeDef, BattleState, ShopNodeDef, ShopItem, TreasureNodeDef, WordCard, PersistentEffect } from './game/engine/types';
 
+  // --- 5面構成ステート ---
+  let currentStage = $state(0);
+  let allStages = $state<GeneratedStage[]>(isExpanded ? generateAllStages() : []);
+
   // expanded版: 動的に生成されたショップ/トレジャー定義を保持
-  let dynamicShopDef = $state<ShopNodeDef | null>(initialGenerated?.shopDef ?? null);
-  let dynamicTreasureDef = $state<TreasureNodeDef | null>(initialGenerated?.treasureDef ?? null);
+  let dynamicShopDef = $state<ShopNodeDef | null>(
+    isExpanded ? (allStages[0]?.shopDef ?? null) : (initialGenerated?.shopDef ?? null)
+  );
+  let dynamicTreasureDef = $state<TreasureNodeDef | null>(
+    isExpanded ? (allStages[0]?.treasureDef ?? null) : (initialGenerated?.treasureDef ?? null)
+  );
 
   // ゲーム状態
   let gameState = $state((() => {
-    const s = createInitialState([...activeInitialHand], activeMapNodes);
+    const startNodes = isExpanded ? allStages[0].nodes : activeMapNodes;
+    const hand = isExpanded ? generateRandomHand() : [...activeInitialHand];
+    const s = createInitialState(hand, startNodes);
     // 永続カードのAP+ボーナスを初期APに加算
     const apBonus = s.hand
       .filter(c => c.persistent?.effect.type === 'ap_bonus')
@@ -39,6 +49,9 @@
     const startNodeId = isExpanded ? s.map.nodes.find(n => n.row === 0)?.id ?? null : null;
     return { ...s, actionPoints: s.actionPoints + apBonus, map: { ...s.map, currentNodeId: startNodeId } };
   })());
+
+  // 面クリア画面表示フラグ
+  let showStageClear = $state(false);
   let selectableIds = $derived(getSelectableNodeIds(gameState.map));
 
   // 現在のノード（通常ノード、バトル、ショップ）
@@ -489,6 +502,17 @@
   function handleReturnToMap() {
     const currentMapNode = gameState.map.nodes.find(n => n.id === gameState.map.currentNodeId);
     if (currentMapNode && currentMapNode.nextIds.length === 0) {
+      // 最終ノード → 面クリア（expanded版のみ）
+      if (isExpanded && allStages.length > 0) {
+        showStageClear = true;
+        currentNodeDef = null;
+        currentBattleNode = null;
+        currentShopNode = null;
+        currentTreasureNode = null;
+        currentSlots = [];
+        return;
+      }
+      // 旧版: ゲームクリア
       currentNodeDef = null;
       currentBattleNode = null;
       currentShopNode = null;
@@ -511,21 +535,66 @@
     }, 500);
   }
 
-  function handleRestart() {
-    const newHand = isExpanded ? generateRandomHand() : [...initialHand];
-    const generated = isExpanded ? generateMap() : null;
-    const newMap = isExpanded ? generated!.nodes : mapNodes;
-    // expanded版: 動的shop/treasure定義を更新
-    dynamicShopDef = generated?.shopDef ?? null;
-    dynamicTreasureDef = generated?.treasureDef ?? null;
-    const freshState = createInitialState(newHand, newMap);
+  // --- 面開始 ---
+  function startStage(stageIndex: number) {
+    const stage = allStages[stageIndex];
+    const hand = generateRandomHand();
+    const s = createInitialState(hand, stage.nodes);
     // 永続カードのAP+ボーナスを初期APに加算
+    const apBonus = s.hand
+      .filter(c => c.persistent?.effect.type === 'ap_bonus')
+      .reduce((sum, c) => sum + (c.persistent!.effect as any).amount, 0);
+    const startNodeId = s.map.nodes.find(n => n.row === 0)?.id ?? null;
+
+    dynamicShopDef = stage.shopDef ?? null;
+    dynamicTreasureDef = stage.treasureDef ?? null;
+
+    gameState = {
+      ...s,
+      actionPoints: s.actionPoints + apBonus,
+      map: { ...s.map, currentNodeId: startNodeId },
+    };
+
+    currentNodeDef = null;
+    currentBattleNode = null;
+    currentShopNode = null;
+    currentTreasureNode = null;
+    currentSlots = [];
+    initialSlotState = [];
+    allBattleSlots = [];
+    lastPlayerDamage = 0;
+    lastEnemyDamage = 0;
+    lastQuill = 0;
+    lastRewardCards = [];
+    lastRewardItems = [];
+    showStageClear = false;
+  }
+
+  // --- 面クリア → 次の面へ ---
+  function handleStageClear() {
+    currentStage++;
+    startStage(currentStage);
+  }
+
+  function handleRestart() {
+    if (isExpanded) {
+      // 5面構成: 全面再生成
+      currentStage = 0;
+      allStages = generateAllStages();
+      showStageClear = false;
+      startStage(0);
+      return;
+    }
+    // 旧版
+    const newHand = [...initialHand];
+    const newMap = mapNodes;
+    dynamicShopDef = null;
+    dynamicTreasureDef = null;
+    const freshState = createInitialState(newHand, newMap);
     const apBonus = freshState.hand
       .filter(c => c.persistent?.effect.type === 'ap_bonus')
       .reduce((sum, c) => sum + (c.persistent!.effect as any).amount, 0);
-    // 拡張版: 層0を自動通過
-    const startNodeId = isExpanded ? freshState.map.nodes.find(n => n.row === 0)?.id ?? null : null;
-    gameState = { ...freshState, actionPoints: freshState.actionPoints + apBonus, map: { ...freshState.map, currentNodeId: startNodeId } };
+    gameState = { ...freshState, actionPoints: freshState.actionPoints + apBonus };
     currentNodeDef = null;
     currentBattleNode = null;
     currentShopNode = null;
@@ -549,7 +618,7 @@
   }
 
   let isGameClear = $derived(
-    gameState.phase === 'resolved' && currentNodeDef === null && currentBattleNode === null && currentShopNode === null && currentTreasureNode === null && gameState.hp > 0
+    !showStageClear && gameState.phase === 'resolved' && currentNodeDef === null && currentBattleNode === null && currentShopNode === null && currentTreasureNode === null && gameState.hp > 0
   );
 
   let isBattleWon = $derived(
@@ -597,6 +666,29 @@
       {/snippet}
     </BookSpread>
 
+  {:else if showStageClear && isExpanded}
+    <!-- ===== 面クリア画面 ===== -->
+    <BookSpread pageNumber={99}>
+      {#snippet leftContent()}
+        <div class="ending-page">
+          <p class="stage-clear-label">第{currentStage + 1}面</p>
+          <p class="ending-main">{allStages[currentStage]?.stageName ?? ''}の旅路を終えた。</p>
+        </div>
+      {/snippet}
+      {#snippet rightContent()}
+        <div class="ending-page">
+          {#if currentStage >= TOTAL_STAGES - 1}
+            <p class="ending-fin">— 了 —</p>
+            <p class="ending-sub">すべての旅路を歩き終えた。</p>
+            <button class="restart-btn" onclick={handleRestart}>もう一度</button>
+          {:else}
+            <p class="stage-clear-next">次の旅路が待っている。</p>
+            <button class="next-btn" onclick={handleStageClear}>第{currentStage + 2}面へ</button>
+          {/if}
+        </div>
+      {/snippet}
+    </BookSpread>
+
   {:else if isGameClear}
     <BookSpread pageNumber={99}>
       {#snippet leftContent()}
@@ -617,7 +709,7 @@
     <BookSpread pageNumber={1}>
       {#snippet leftContent()}
         <div class="map-page">
-          <NodeMap map={gameState.map} {selectableIds} onSelect={handleSelectNode} onHover={handleNodeHover} {dynamicShopDef} {dynamicTreasureDef} />
+          <NodeMap map={gameState.map} {selectableIds} onSelect={handleSelectNode} onHover={handleNodeHover} {dynamicShopDef} {dynamicTreasureDef} stageIndex={isExpanded ? currentStage : undefined} stageName={isExpanded ? (allStages[currentStage]?.stageName ?? '') : ''} />
         </div>
       {/snippet}
       {#snippet rightContent()}
@@ -1089,6 +1181,14 @@
   .next-btn { font-family: var(--font-story); font-size: 0.9rem; padding: 8px 24px; background: none; color: var(--gold-accent); border: 1px solid var(--gold-dim); border-radius: 4px; cursor: pointer; align-self: center; margin-top: 8px; transition: all 0.3s; }
   .next-btn:hover { background: rgba(196,162,101,0.1); box-shadow: 0 0 16px var(--magic-glow); }
 
+  .stage-clear-label {
+    font-family: var(--font-story); font-size: 0.85rem; color: var(--gold-accent);
+    letter-spacing: 0.2em;
+  }
+  .stage-clear-next {
+    font-family: var(--font-story); font-size: 0.95rem; color: var(--ink-medium);
+    line-height: 2; font-style: italic;
+  }
   .ending-page { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
   .ending-main { font-family: var(--font-story); font-size: 1.1rem; color: var(--ink-dark); line-height: 2; }
   .ending-sub { font-family: var(--font-story); font-size: 0.95rem; color: var(--ink-medium); line-height: 2; text-align: center; }

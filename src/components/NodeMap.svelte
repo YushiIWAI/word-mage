@@ -10,9 +10,11 @@
     onHover: (nodeId: string | null) => void;
     dynamicShopDef?: ShopNodeDef | null;
     dynamicTreasureDef?: TreasureNodeDef | null;
+    stageIndex?: number;
+    stageName?: string;
   }
 
-  let { map, selectableIds, onSelect, onHover, dynamicShopDef = null, dynamicTreasureDef = null }: Props = $props();
+  let { map, selectableIds, onSelect, onHover, dynamicShopDef = null, dynamicTreasureDef = null, stageIndex = 0, stageName = '' }: Props = $props();
 
   const allNodeDefs = { ...nodeDefs, ...expandedNodeDefs };
 
@@ -118,7 +120,7 @@
 </script>
 
 <div class="map-container">
-  <h2 class="map-title">旅路を選ぶ</h2>
+  <h2 class="map-title">{stageName ? `第${stageIndex + 1}面: ${stageName}` : '旅路を選ぶ'}</h2>
   <div class="map-viewport">
     <svg class="map-svg"
       viewBox="0 {currentViewY} {VIEW_WIDTH} {VIEW_HEIGHT}"
