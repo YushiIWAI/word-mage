@@ -435,8 +435,8 @@
   }
 
   .witch-sprite {
-    width: 64px;
-    height: 96px;
+    width: 128px;
+    height: 128px;
     image-rendering: pixelated;
     display: block;
   }

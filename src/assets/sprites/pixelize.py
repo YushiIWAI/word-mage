@@ -29,9 +29,9 @@ from sklearn.mixture import GaussianMixture
 
 # ── プリセット定義（ドット絵サイズ、2倍拡大でゲーム表示） ──
 PRESETS = {
-    # キャラ: 32x48ドット → 64x96表示
+    # キャラ: 64x64ドット → 128x128表示（2倍拡大）
     "witch": {
-        "width": 32, "height": 48, "colors": 16,
+        "width": 64, "height": 64, "colors": 32,
         "outline": True, "outline_strength": 0.7,
         "dither": False, "bilateral": True,
     },
