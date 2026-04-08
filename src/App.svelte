@@ -740,7 +740,20 @@
     return currentSlots.findIndex(s => s.id === slotId);
   }
 
-  function getBattleSlotIndex(slotId: string): number {
+  function getBattleSlotIndex(slotId: string, section?: 'enemy' | 'player'): number {
+    if (section === 'enemy') {
+      // 敵文スロットの範囲のみ検索
+      for (let i = 0; i < enemySlotCount; i++) {
+        if (allBattleSlots[i]?.id === slotId) return i;
+      }
+      return -1;
+    } else if (section === 'player') {
+      // プレイヤー文スロットの範囲のみ検索
+      for (let i = enemySlotCount; i < allBattleSlots.length; i++) {
+        if (allBattleSlots[i]?.id === slotId) return i;
+      }
+      return -1;
+    }
     return allBattleSlots.findIndex(s => s.id === slotId);
   }
 
@@ -1005,7 +1018,7 @@
                 {#if part.type === 'fixed'}
                   <span class="fixed-text">{part.text}</span>
                 {:else}
-                  {@const idx = getBattleSlotIndex(part.slotId)}
+                  {@const idx = getBattleSlotIndex(part.slotId, 'enemy')}
                   {#if idx >= 0}
                     <SlotWord
                       slot={allBattleSlots[idx]}
@@ -1031,7 +1044,7 @@
                 {#if part.type === 'fixed'}
                   <span class="fixed-text">{part.text}</span>
                 {:else}
-                  {@const idx = getBattleSlotIndex(part.slotId)}
+                  {@const idx = getBattleSlotIndex(part.slotId, 'player')}
                   {#if idx >= 0}
                     <SlotWord
                       slot={allBattleSlots[idx]}
