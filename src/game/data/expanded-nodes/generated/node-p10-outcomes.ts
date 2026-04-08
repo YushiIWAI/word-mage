@@ -855,4 +855,126 @@ export const nodeP10Outcomes: Outcome[] = [
     damage: 0,
     quill: 4
   },
+
+  // --- 待っている (pred_wait) ---
+  {
+    id: 'p10_kitten_wait',
+    conditions: { s2: 'subj_kitten', s4: 'pred_wait' },
+    resultText: '凍てついた子猫が鐘を待っている。氷の彫刻の子猫が鐘の下に座り、鳴るのを待っている。中でまだ息をしている。鐘は鳴らない。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p10_snake_wait',
+    conditions: { s2: 'subj_snake', s4: 'pred_wait' },
+    resultText: '凍てついた蛇が鐘を待っている。霜に覆われた蛇が鐘楼の柱に巻きつき、じっと動かない。獲物が鐘の音に釣られて来るのを待っている。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p10_dragon_wait',
+    conditions: { s2: 'subj_dragon', s4: 'pred_wait' },
+    resultText: '凍てついた竜が鐘を待っている。氷をまとった白い竜が鐘楼の屋根に蹲り、吹雪の息を吐いている。鐘が鳴れば起き上がるのだろう。鳴らさなければいい。',
+    damage: 4,
+    quill: 4
+  },
+  {
+    id: 'p10_butterfly_wait',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_wait' },
+    resultText: '凍てついた蝶が鐘を待っている。霜の結晶でできた蝶が鐘の表面に止まっている。鐘が鳴れば振動で砕けるだろう。砕けたがっているようにも見える。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p10_wind_wait',
+    conditions: { s2: 'subj_wind', s4: 'pred_wait' },
+    resultText: '凍てついた風が鐘を待っている。凍風が鐘楼の周りで渦を巻いて止まっている。鐘が鳴れば風が吹く。鳴らなければ永遠に凪のままだ。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p10_flame_wait',
+    conditions: { s2: 'subj_flame', s4: 'pred_wait' },
+    resultText: '凍てついた炎が鐘を待っている。青白い鬼火が鐘の内側で揺れている。冷たいが確かに炎だ。鐘を撞けば炎が散る。',
+    damage: 2,
+    quill: 5,
+    rewardItems: [{ id: 'item_p10_flame_wait', name: '鬼火の欠片', description: '冷たくて明るい。暗闇で道を照らせる', sellPrice: 10 }]
+  },
+  {
+    id: 'p10_ice_wait',
+    conditions: { s2: 'subj_ice', s4: 'pred_wait' },
+    resultText: '凍てついた氷が鐘を待っている。鐘の表面が氷で覆われ、撞木が凍りついている。氷が鐘を止めている。氷が溶けるのを待つのは、こちらの方だ。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p10_shadow_wait',
+    conditions: { s2: 'subj_shadow', s4: 'pred_wait' },
+    resultText: '凍てついた影が鐘を待っている。鐘の影が凍りついて地面に張りついている。本体の鐘は動くのに、影だけが動かない。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p10_song_wait',
+    conditions: { s2: 'subj_song', s4: 'pred_wait' },
+    resultText: '凍てついた歌が鐘を待っている。鐘が最後に鳴らした音が氷の結晶になって、鐘楼に残っている。鐘を撞けば溶けて歌が蘇る。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p10_silence_wait',
+    conditions: { s2: 'subj_silence', s4: 'pred_wait' },
+    resultText: '凍てついた沈黙が鐘を待っている。音のない冷気が鐘楼を包んでいる。鐘を鳴らせば破れるのか、それとも鐘の音すら凍るのか。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p10_knight_wait',
+    conditions: { s2: 'subj_knight', s4: 'pred_wait' },
+    resultText: '凍てついた騎士が鐘を待っている。氷に閉じ込められた騎士が、剣を構えた姿勢のまま鐘楼の前に立っている。鐘が鳴れば氷が割れる。割れれば剣が振り下ろされる。',
+    damage: 4,
+    quill: 4
+  },
+  {
+    id: 'p10_witch_wait',
+    conditions: { s2: 'subj_witch', s4: 'pred_wait' },
+    resultText: '凍てついた魔女が鐘を待っている。氷の魔法を使う魔女が鐘楼の階段に座り、霜を纏って旅人を待っている。取引には応じるが、代価は体温だ。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p10_king_wait',
+    conditions: { s2: 'subj_king', s4: 'pred_wait' },
+    resultText: '凍てついた王が鐘を待っている。氷の玉座に座る北の王が、鐘楼の最上階で待っている。鐘は王の号令。旅人は王の客人か、それとも侵入者か。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p10_ghost_wait',
+    conditions: { s2: 'subj_ghost', s4: 'pred_wait' },
+    resultText: '凍てついた亡霊が鐘を待っている。凍死者の霊が鐘楼に立ち、永遠に寒がりながら鐘を見上げている。鐘が鳴れば成仏するのだと、誰かが言っていた。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p10_mirror_wait',
+    conditions: { s2: 'subj_mirror', s4: 'pred_wait' },
+    resultText: '凍てついた鏡が鐘を待っている。霜で覆われた鏡が鐘楼の壁にかかっている。鐘の振動で霜が落ちれば、何が映るのだろう。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p10_doll_wait',
+    conditions: { s2: 'subj_doll', s4: 'pred_wait' },
+    resultText: '凍てついた人形が鐘を待っている。氷でできた人形が鐘の撞木を握っている。溶ければ鐘が鳴る。溶けなければ永遠の番人だ。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p10_rain_wait',
+    conditions: { s2: 'subj_rain', s4: 'pred_wait' },
+    resultText: '凍てついた雨が鐘を待っている。凍雨が鐘楼の上空で停滞している。鐘が鳴れば振動で降り始めるのか。静かにしていよう。',
+    damage: 1,
+    quill: 4
+  },
 ];

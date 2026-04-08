@@ -330,7 +330,7 @@ export const bt03Enemy3Outcomes = [
   { id: 'bt03_enemy3_entangle', conditions: { s1: 'pred_entangle' }, resultText: '呪いが体に絡みつく。黒い糸が手足を縛り、動きが鈍った。', playerDamage: 3, enemyDamage: 0 },
   { id: 'bt03_enemy3_wait', conditions: { s1: 'pred_wait' }, resultText: '呪いが静かに待っている。油断した瞬間、足首を掴まれた。', playerDamage: 2, enemyDamage: 0 },
   { id: 'bt03_enemy3_sleep', conditions: { s1: 'pred_sleep' }, resultText: '呪いが魔女の中で眠っている。目が重い。立っていられない。', playerDamage: 2, enemyDamage: 0 },
-  { id: 'bt03_enemy3_rain', conditions: { s1: 'pred_rain' }, resultText: '呪いの雨が魔女に降り注ぐ。一滴ごとに体が重くなる。', playerDamage: 3, enemyDamage: 0 },
+  { id: 'bt03_enemy3_rain', conditions: { s1: 'pred_rain_down' }, resultText: '呪いの雨が魔女に降り注ぐ。一滴ごとに体が重くなる。', playerDamage: 3, enemyDamage: 0 },
   { id: 'bt03_enemy3_whisper', conditions: { s1: 'pred_whisper' }, resultText: '呪いが耳元で囁く。「もう諦めろ」足が止まりかけた。', playerDamage: 2, enemyDamage: 0 },
   { id: 'bt03_enemy3_melt', conditions: { s1: 'pred_melt' }, resultText: '呪いが体に溶け込んでいく。輪郭がぼやける。自分がどこまでか、わからなくなった。', playerDamage: 3, enemyDamage: 0 },
   { id: 'bt03_enemy3_shine', conditions: { s1: 'pred_shine' }, resultText: '呪いが黒い光を放つ。目が眩み、足元がよろめいた。', playerDamage: 2, enemyDamage: 0 },

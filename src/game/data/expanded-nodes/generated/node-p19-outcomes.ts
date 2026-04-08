@@ -238,14 +238,14 @@ export const nodeP19Outcomes: Outcome[] = [
   },
   {
     id: 'p19_small_rain_pred',
-    conditions: { s1: 'mod_small', s4: 'pred_rain' },
+    conditions: { s1: 'mod_small', s4: 'pred_rain_down' },
     resultText: '小さな人形が祭壇に降り注いでいる。指人形ほどの人形が空から次々と降ってくる。祭壇に積もっていく。何の儀式だ。',
     damage: 0,
     quill: 5
   },
   {
     id: 'p19_gentle_rain_pred',
-    conditions: { s1: 'mod_gentle', s4: 'pred_rain' },
+    conditions: { s1: 'mod_gentle', s4: 'pred_rain_down' },
     resultText: '優しい人形が祭壇に降り注いでいる。笑顔の人形が雨のように降る。祭壇が優しさで埋まっていく。不思議と温かい。',
     damage: -1,
     quill: 6,
@@ -253,42 +253,42 @@ export const nodeP19Outcomes: Outcome[] = [
   },
   {
     id: 'p19_fire_rain_pred',
-    conditions: { s1: 'mod_fire', s4: 'pred_rain' },
+    conditions: { s1: 'mod_fire', s4: 'pred_rain_down' },
     resultText: '燃え盛る人形が祭壇に降り注いでいる。燃える藁人形が空から落ちてくる。祭壇が炎に包まれている。焚き上げの嵐だ。',
     damage: 5,
     quill: 2
   },
   {
     id: 'p19_hard_rain_pred',
-    conditions: { s1: 'mod_hard', s4: 'pred_rain' },
+    conditions: { s1: 'mod_hard', s4: 'pred_rain_down' },
     resultText: '堅い人形が祭壇に降り注いでいる。木彫りの人形が雹のように降る。硬い。当たると痛い。祭壇が削れている。',
     damage: 3,
     quill: 3
   },
   {
     id: 'p19_sharp_rain_pred',
-    conditions: { s1: 'mod_sharp', s4: 'pred_rain' },
+    conditions: { s1: 'mod_sharp', s4: 'pred_rain_down' },
     resultText: '鋭い人形が祭壇に降り注いでいる。刃の関節の人形が空から落ちてくる。祭壇に突き刺さる。針の雨のようだ。',
     damage: 4,
     quill: 3
   },
   {
     id: 'p19_broken_rain_pred',
-    conditions: { s1: 'mod_broken', s4: 'pred_rain' },
+    conditions: { s1: 'mod_broken', s4: 'pred_rain_down' },
     resultText: '壊れた人形が祭壇に降り注いでいる。バラバラの部品が空から散らばってくる。頭、腕、脚。祭壇が人形の墓場になっている。',
     damage: 1,
     quill: 5
   },
   {
     id: 'p19_mighty_rain_pred',
-    conditions: { s1: 'mod_mighty', s4: 'pred_rain' },
+    conditions: { s1: 'mod_mighty', s4: 'pred_rain_down' },
     resultText: '屈強な人形が祭壇に降り注いでいる。等身大のゴーレムが空から落ちてくる。祭壇が砕ける。地面が揺れた。',
     damage: 5,
     quill: 1
   },
   {
     id: 'p19_frozen_rain_pred',
-    conditions: { s1: 'mod_frozen', s4: 'pred_rain' },
+    conditions: { s1: 'mod_frozen', s4: 'pred_rain_down' },
     resultText: '凍てついた人形が祭壇に降り注いでいる。氷の人形が雪のように降っている。祭壇が霜で覆われていく。繊細な造形が積もる。',
     damage: 2,
     quill: 5,
@@ -296,7 +296,7 @@ export const nodeP19Outcomes: Outcome[] = [
   },
   {
     id: 'p19_clear_rain_pred',
-    conditions: { s1: 'mod_clear', s4: 'pred_rain' },
+    conditions: { s1: 'mod_clear', s4: 'pred_rain_down' },
     resultText: '透き通った人形が祭壇に降り注いでいる。硝子の人形が光の雨のように降る。祭壇が虹色に輝いている。美しい儀式だ。',
     damage: 0,
     quill: 7,
@@ -304,14 +304,14 @@ export const nodeP19Outcomes: Outcome[] = [
   },
   {
     id: 'p19_cursed_rain_pred',
-    conditions: { s1: 'mod_cursed', s4: 'pred_rain' },
+    conditions: { s1: 'mod_cursed', s4: 'pred_rain_down' },
     resultText: '呪われた人形が祭壇に降り注いでいる。泣き声と共に呪いの人形が空から降る。拾った者が捨てられなくなる。拾わない。',
     damage: 3,
     quill: 4
   },
   {
     id: 'p19_sleepy_rain_pred',
-    conditions: { s1: 'mod_sleepy', s4: 'pred_rain' },
+    conditions: { s1: 'mod_sleepy', s4: 'pred_rain_down' },
     resultText: '眠い人形が祭壇に降り注いでいる。目を閉じた人形がゆっくり舞い降りてくる。持つと眠くなる人形が積もっていく。',
     damage: 1,
     quill: 4

@@ -865,7 +865,7 @@ export const nodeP07Outcomes: Outcome[] = [
   },
   {
     id: 'p07_kitten_rain_pred',
-    conditions: { s2: 'subj_kitten', s4: 'pred_rain' },
+    conditions: { s2: 'subj_kitten', s4: 'pred_rain_down' },
     resultText: '壊れた子猫が塔から降り注いでいる。ぬいぐるみの綿が雪のように塔から舞い降りてくる。',
     damage: 0,
     quill: 6,
@@ -873,112 +873,112 @@ export const nodeP07Outcomes: Outcome[] = [
   },
   {
     id: 'p07_snake_rain_pred',
-    conditions: { s2: 'subj_snake', s4: 'pred_rain' },
+    conditions: { s2: 'subj_snake', s4: 'pred_rain_down' },
     resultText: '壊れた蛇が塔から降り注いでいる。古い蛇皮が乾いた葉のように塔の上から降ってくる。',
     damage: 1,
     quill: 5
   },
   {
     id: 'p07_dragon_rain_pred',
-    conditions: { s2: 'subj_dragon', s4: 'pred_rain' },
+    conditions: { s2: 'subj_dragon', s4: 'pred_rain_down' },
     resultText: '壊れた竜が塔から降り注いでいる。剥がれた鱗が雨のように降る。一枚一枚が手のひらほどある。',
     damage: 2,
     quill: 5
   },
   {
     id: 'p07_butterfly_rain_pred',
-    conditions: { s2: 'subj_butterfly', s4: 'pred_rain' },
+    conditions: { s2: 'subj_butterfly', s4: 'pred_rain_down' },
     resultText: '壊れた蝶が塔から降り注いでいる。ちぎれた羽が鱗粉ごと舞い降り、地面に色の層を作る。',
     damage: 0,
     quill: 6
   },
   {
     id: 'p07_wind_rain_pred',
-    conditions: { s2: 'subj_wind', s4: 'pred_rain' },
+    conditions: { s2: 'subj_wind', s4: 'pred_rain_down' },
     resultText: '壊れた風が塔から降り注いでいる。乱気流が上から吹き下ろし、立っていられない。',
     damage: 2,
     quill: 3
   },
   {
     id: 'p07_flame_rain_pred',
-    conditions: { s2: 'subj_flame', s4: 'pred_rain' },
+    conditions: { s2: 'subj_flame', s4: 'pred_rain_down' },
     resultText: '壊れた炎が塔から降り注いでいる。紫と緑の火の粉が塔の上から降ってくる。火傷はしないが、触れると冷たい。',
     damage: 1,
     quill: 5
   },
   {
     id: 'p07_ice_rain_pred',
-    conditions: { s2: 'subj_ice', s4: 'pred_rain' },
+    conditions: { s2: 'subj_ice', s4: 'pred_rain_down' },
     resultText: '壊れた氷が塔から降り注いでいる。ひび割れた氷の破片が雹のように降る。頭を庇って走る。',
     damage: 3,
     quill: 2
   },
   {
     id: 'p07_shadow_rain_pred',
-    conditions: { s2: 'subj_shadow', s4: 'pred_rain' },
+    conditions: { s2: 'subj_shadow', s4: 'pred_rain_down' },
     resultText: '壊れた影が塔から降り注いでいる。めくれた影の断片が黒い紙吹雪のように舞い降りる。',
     damage: 1,
     quill: 5
   },
   {
     id: 'p07_song_rain_pred',
-    conditions: { s2: 'subj_song', s4: 'pred_rain' },
+    conditions: { s2: 'subj_song', s4: 'pred_rain_down' },
     resultText: '壊れた歌が塔から降り注いでいる。途切れた音符が雨粒のように塔の上から零れてくる。',
     damage: 0,
     quill: 5
   },
   {
     id: 'p07_silence_rain_pred',
-    conditions: { s2: 'subj_silence', s4: 'pred_rain' },
+    conditions: { s2: 'subj_silence', s4: 'pred_rain_down' },
     resultText: '壊れた沈黙が塔から降り注いでいる。ノイズ混じりの静けさが上から降ってくる。耳鳴りがする。',
     damage: 2,
     quill: 4
   },
   {
     id: 'p07_knight_rain_pred',
-    conditions: { s2: 'subj_knight', s4: 'pred_rain' },
+    conditions: { s2: 'subj_knight', s4: 'pred_rain_down' },
     resultText: '壊れた騎士が塔から降り注いでいる。鎧の破片が降ってくる。剣の柄、盾の欠片、兜の飾り。',
     damage: 3,
     quill: 3
   },
   {
     id: 'p07_witch_rain_pred',
-    conditions: { s2: 'subj_witch', s4: 'pred_rain' },
+    conditions: { s2: 'subj_witch', s4: 'pred_rain_down' },
     resultText: '壊れた魔女が塔から降り注いでいる。暴走した呪文の欠片が火花のように降ってくる。当たると痺れる。',
     damage: 3,
     quill: 3
   },
   {
     id: 'p07_king_rain_pred',
-    conditions: { s2: 'subj_king', s4: 'pred_rain' },
+    conditions: { s2: 'subj_king', s4: 'pred_rain_down' },
     resultText: '壊れた王が塔から降り注いでいる。破れた勅令書が塔の窓から次々と舞い降りてくる。',
     damage: 0,
     quill: 5
   },
   {
     id: 'p07_ghost_rain_pred',
-    conditions: { s2: 'subj_ghost', s4: 'pred_rain' },
+    conditions: { s2: 'subj_ghost', s4: 'pred_rain_down' },
     resultText: '壊れた亡霊が塔から降り注いでいる。輪郭を失った霊が霧のように降りてくる。冷たい。',
     damage: 2,
     quill: 4
   },
   {
     id: 'p07_mirror_rain_pred',
-    conditions: { s2: 'subj_mirror', s4: 'pred_rain' },
+    conditions: { s2: 'subj_mirror', s4: 'pred_rain_down' },
     resultText: '壊れた鏡が塔から降り注いでいる。鏡の破片が雨のように降る。地面に散った欠片が空を映す。',
     damage: 3,
     quill: 4
   },
   {
     id: 'p07_doll_rain_pred',
-    conditions: { s2: 'subj_doll', s4: 'pred_rain' },
+    conditions: { s2: 'subj_doll', s4: 'pred_rain_down' },
     resultText: '壊れた人形が塔から降り注いでいる。人形の部品が降ってくる。腕、脚、頭、目玉。',
     damage: 2,
     quill: 4
   },
   {
     id: 'p07_rain_rain_pred',
-    conditions: { s2: 'subj_rain', s4: 'pred_rain' },
+    conditions: { s2: 'subj_rain', s4: 'pred_rain_down' },
     resultText: '壊れた雨が塔から降り注いでいる。途切れ途切れの雨が、塔の中からだけ降っている。雲はない。',
     damage: 1,
     quill: 5

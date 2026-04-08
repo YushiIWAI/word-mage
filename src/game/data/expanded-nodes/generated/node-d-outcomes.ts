@@ -436,21 +436,21 @@ export const nodeDOutcomes: Outcome[] = [
   },
   {
     id: 'd_orig_rain',
-    conditions: { s1: 'orig_d_mod', s4: 'pred_rain' },
+    conditions: { s1: 'orig_d_mod', s4: 'pred_rain_down' },
     resultText: '澄んだ歌が泉から降り注いでいる。泉から溢れた旋律が、雨のように降ってくる。',
     damage: 0,
     quill: 5
   },
   {
     id: 'd_small_rain',
-    conditions: { s1: 'mod_small', s4: 'pred_rain' },
+    conditions: { s1: 'mod_small', s4: 'pred_rain_down' },
     resultText: '鼻歌が泉から降り注いでいる。霧雨のようだ。肩に小さな旋律が積もる。',
     damage: 0,
     quill: 6
   },
   {
     id: 'd_gentle_rain',
-    conditions: { s1: 'mod_gentle', s4: 'pred_rain' },
+    conditions: { s1: 'mod_gentle', s4: 'pred_rain_down' },
     resultText: '子守唄が泉から降り注いでいる。温かな雨。浴びていると傷が癒えていく。',
     damage: -1,
     quill: 7,
@@ -458,49 +458,49 @@ export const nodeDOutcomes: Outcome[] = [
   },
   {
     id: 'd_fire_rain',
-    conditions: { s1: 'mod_fire', s4: 'pred_rain' },
+    conditions: { s1: 'mod_fire', s4: 'pred_rain_down' },
     resultText: '戦の歌が泉から降り注いでいる。火の雨だ。地面が焦げる。走って逃げた。',
     damage: 4,
     quill: 2
   },
   {
     id: 'd_hard_rain',
-    conditions: { s1: 'mod_hard', s4: 'pred_rain' },
+    conditions: { s1: 'mod_hard', s4: 'pred_rain_down' },
     resultText: '止められない歌が泉から降り注いでいる。雹のように硬い音が体を叩く。痛い。',
     damage: 3,
     quill: 3
   },
   {
     id: 'd_sharp_rain',
-    conditions: { s1: 'mod_sharp', s4: 'pred_rain' },
+    conditions: { s1: 'mod_sharp', s4: 'pred_rain_down' },
     resultText: '鋭い歌が泉から降り注いでいる。針の雨だ。肌を無数に刺す。',
     damage: 4,
     quill: 2
   },
   {
     id: 'd_broken_rain',
-    conditions: { s1: 'mod_broken', s4: 'pred_rain' },
+    conditions: { s1: 'mod_broken', s4: 'pred_rain_down' },
     resultText: '壊れた歌が泉から降り注いでいる。途切れ途切れの雨。不規則なリズムで降る。',
     damage: 1,
     quill: 3
   },
   {
     id: 'd_mighty_rain',
-    conditions: { s1: 'mod_mighty', s4: 'pred_rain' },
+    conditions: { s1: 'mod_mighty', s4: 'pred_rain_down' },
     resultText: '大地を震わせる合唱が泉から降り注いでいる。豪雨のような音圧。立っていられない。',
     damage: 4,
     quill: 2
   },
   {
     id: 'd_frozen_rain',
-    conditions: { s1: 'mod_frozen', s4: 'pred_rain' },
+    conditions: { s1: 'mod_frozen', s4: 'pred_rain_down' },
     resultText: '凍てついた歌が泉から降り注いでいる。みぞれのようだ。体が芯から冷える。',
     damage: 3,
     quill: 3
   },
   {
     id: 'd_clear_rain',
-    conditions: { s1: 'mod_clear', s4: 'pred_rain' },
+    conditions: { s1: 'mod_clear', s4: 'pred_rain_down' },
     resultText: '透き通った歌が泉から降り注いでいる。見えない雨。浴びると思考が澄んでいく。',
     damage: 0,
     quill: 7,
@@ -508,14 +508,14 @@ export const nodeDOutcomes: Outcome[] = [
   },
   {
     id: 'd_cursed_rain',
-    conditions: { s1: 'mod_cursed', s4: 'pred_rain' },
+    conditions: { s1: 'mod_cursed', s4: 'pred_rain_down' },
     resultText: '呪われた歌が泉から降り注いでいる。黒い雨だ。浴びた箇所が痺れる。',
     damage: 4,
     quill: 1
   },
   {
     id: 'd_sleepy_rain',
-    conditions: { s1: 'mod_sleepy', s4: 'pred_rain' },
+    conditions: { s1: 'mod_sleepy', s4: 'pred_rain_down' },
     resultText: '眠い歌が泉から降り注いでいる。ぬるい雨。浴びているうちに意識が遠くなった。',
     damage: 2,
     quill: 3

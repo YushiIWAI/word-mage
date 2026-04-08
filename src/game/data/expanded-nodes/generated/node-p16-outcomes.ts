@@ -851,4 +851,126 @@ export const nodeP16Outcomes: Outcome[] = [
     damage: 0,
     quill: 4
   },
+
+  // --- 待っている (pred_wait) ---
+  {
+    id: 'p16_kitten_wait',
+    conditions: { s2: 'subj_kitten', s4: 'pred_wait' },
+    resultText: '堅い子猫が関所を待っている。陶器の招き猫が関所の門柱の上に鎮座し、目だけが動いて旅人を見ている。手を振っているのは歓迎なのか、それとも止まれの合図か。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p16_snake_wait',
+    conditions: { s2: 'subj_snake', s4: 'pred_wait' },
+    resultText: '堅い蛇が関所を待っている。鉄の鱗を持つ蛇が関所の下でとぐろを巻き、通行人を品定めしている。噛まれたら歯が折れるのはこちらだ。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'p16_dragon_wait',
+    conditions: { s2: 'subj_dragon', s4: 'pred_wait' },
+    resultText: '堅い竜が関所を待っている。鱗が城壁のように厚い竜が関所の門番をしている。通行料は払えるが、竜が納得するかは別の話だ。',
+    damage: 4,
+    quill: 3
+  },
+  {
+    id: 'p16_butterfly_wait',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_wait' },
+    resultText: '堅い蝶が関所を待っている。金属の羽の蝶が関所の梁に止まり、通る者を見下ろしている。飛ぶとき金属音がする。それだけだ。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p16_wind_wait',
+    conditions: { s2: 'subj_wind', s4: 'pred_wait' },
+    resultText: '堅い風が関所を待っている。方向転換を拒む風が、関所の門を通り抜ける隙間で止まっている。通れば押し戻される。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p16_flame_wait',
+    conditions: { s2: 'subj_flame', s4: 'pred_wait' },
+    resultText: '堅い炎が関所を待っている。消えない炎が関所の松明に灯り、何百年も同じ明るさで燃え続けている。番人はいないが、炎が見張っている。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p16_ice_wait',
+    conditions: { s2: 'subj_ice', s4: 'pred_wait' },
+    resultText: '堅い氷が関所を待っている。鋼より硬い万年氷が門扉に張りつき、開閉を拒んでいる。割れる気配はない。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'p16_shadow_wait',
+    conditions: { s2: 'subj_shadow', s4: 'pred_wait' },
+    resultText: '堅い影が関所を待っている。固まった影が関所の門に貼りつき、通行人の影を検めている。影に異常がなければ通してくれる。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p16_song_wait',
+    conditions: { s2: 'subj_song', s4: 'pred_wait' },
+    resultText: '堅い歌が関所を待っている。止められない歌が関所の壁に反響し続けている。耳障りだが、歌が鳴っている間は門が開いている。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p16_silence_wait',
+    conditions: { s2: 'subj_silence', s4: 'pred_wait' },
+    resultText: '堅い沈黙が関所を待っている。何を言っても吸い込まれて消える沈黙が関所を満たしている。通行の許可を求める声も届かない。黙って通るしかない。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p16_knight_wait',
+    conditions: { s2: 'subj_knight', s4: 'pred_wait' },
+    resultText: '堅い騎士が関所を待っている。分厚い鎧の騎士が微動だにせず門前に立ち、表情の読めない兜でこちらを見ている。通行証を出せ、とも言わない。ただ立っている。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'p16_witch_wait',
+    conditions: { s2: 'subj_witch', s4: 'pred_wait' },
+    resultText: '堅い魔女が関所を待っている。石のように頑固な老魔女が関所の小屋に居座り、通行料代わりに謎かけを出してくる。間違えても通してくれるが、嫌味は言われる。',
+    damage: 1,
+    quill: 5,
+    rewardItems: [{ id: 'item_p16_witch_wait', name: '魔女の護符', description: '正解の礼に押しつけられた。何に効くかは教えてくれなかった', sellPrice: 8 }]
+  },
+  {
+    id: 'p16_king_wait',
+    conditions: { s2: 'subj_king', s4: 'pred_wait' },
+    resultText: '堅い王が関所を待っている。石の玉座に座った王が関所の奥で待ち構えている。法を一言で下す王だ。旅人への裁きは「通行可」。だが目は笑っていない。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p16_ghost_wait',
+    conditions: { s2: 'subj_ghost', s4: 'pred_wait' },
+    resultText: '堅い亡霊が関所を待っている。同じ場所から決して動かない霊が、関所の門の真ん中に立っている。何百年もそこにいる。通り抜けると冷気が走った。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p16_mirror_wait',
+    conditions: { s2: 'subj_mirror', s4: 'pred_wait' },
+    resultText: '堅い鏡が関所を待っている。何をしても割れない鏡が門扉に嵌め込まれている。通行人の顔を映して通すか止めるか判断しているらしい。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p16_doll_wait',
+    conditions: { s2: 'subj_doll', s4: 'pred_wait' },
+    resultText: '堅い人形が関所を待っている。木彫りの人形が関所の番台に座っている。関節がなく、表情もない。通行証を見せても反応しない。待っているのか、壊れているのか。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p16_rain_wait',
+    conditions: { s2: 'subj_rain', s4: 'pred_wait' },
+    resultText: '堅い雨が関所を待っている。雹が関所の屋根を叩き続けている。止む気配がない。雹の中を走れば通れるが、石のような粒が肌を打つ。',
+    damage: 2,
+    quill: 3
+  },
 ];

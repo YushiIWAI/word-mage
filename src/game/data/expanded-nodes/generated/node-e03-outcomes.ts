@@ -850,4 +850,126 @@ export const nodeE03Outcomes: Outcome[] = [
     quill: 7,
     rewardItems: [{ id: 'item_e03_rain_flee', name: '呪雨の苗', description: '足に生えかけた根の残り。まだ湿っている', sellPrice: 8 }]
   },
+
+  // --- 待っている (pred_wait) ---
+  {
+    id: 'e03_kitten_wait',
+    conditions: { s1: 'subj_kitten', s2: 'pred_wait' },
+    resultText: '呪われた子猫が森を待っている。木の根元に丸くなって、拾った者を捨てられなくする猫が誰かを待っている。目が合うと鳴いた。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'e03_snake_wait',
+    conditions: { s1: 'subj_snake', s2: 'pred_wait' },
+    resultText: '呪われた蛇が森を待っている。脱皮のたびに大きくなる蛇が、獣道の脇で舌をちろちろ出している。次の獲物を待っている。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'e03_dragon_wait',
+    conditions: { s1: 'subj_dragon', s2: 'pred_wait' },
+    resultText: '呪われた竜が森を待っている。暴走した守護竜が森の奥で蹲っている。理性のない目が木々の隙間からこちらを覗く。',
+    damage: 5,
+    quill: 3
+  },
+  {
+    id: 'e03_butterfly_wait',
+    conditions: { s1: 'subj_butterfly', s2: 'pred_wait' },
+    resultText: '呪われた蝶が森を待っている。追えば迷子になる蝶が、木漏れ日の中でゆらゆら舞っている。ついていかなければ害はない。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'e03_wind_wait',
+    conditions: { s1: 'subj_wind', s2: 'pred_wait' },
+    resultText: '呪われた風が森を待っている。帰り道を忘れさせる風が、森の入口で凪いでいる。奥に進めば吹き始めるだろう。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'e03_flame_wait',
+    conditions: { s1: 'subj_flame', s2: 'pred_wait' },
+    resultText: '呪われた炎が森を待っている。燃やしたものの形を覚える炎が、落ち葉の下で息を潜めている。一歩踏めば靴の形に火がつく。',
+    damage: 4,
+    quill: 4
+  },
+  {
+    id: 'e03_ice_wait',
+    conditions: { s1: 'subj_ice', s2: 'pred_wait' },
+    resultText: '呪われた氷が森を待っている。溶けない氷が根元に積もり、永遠の冬を広げている。木々の葉が一枚ずつ凍っていく。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'e03_shadow_wait',
+    conditions: { s1: 'subj_shadow', s2: 'pred_wait' },
+    resultText: '呪われた影が森を待っている。触れたものを影にする影が、大樹の根元で広がっている。森は影が待つのに都合がいい場所だ。',
+    damage: 4,
+    quill: 4
+  },
+  {
+    id: 'e03_song_wait',
+    conditions: { s1: 'subj_song', s2: 'pred_wait' },
+    resultText: '呪われた歌が森を待っている。頭から離れない旋律が、梢の間からかすかに聞こえる。森に入れば逃げ場はない。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'e03_silence_wait',
+    conditions: { s1: 'subj_silence', s2: 'pred_wait' },
+    resultText: '呪われた沈黙が森を待っている。声を奪う沈黙が森を満たしている。鳥も虫も黙っている。足音だけが響く。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'e03_knight_wait',
+    conditions: { s1: 'subj_knight', s2: 'pred_wait' },
+    resultText: '呪われた騎士が森を待っている。黒い鎧の騎士が木の幹に背を預け、赤い目だけが暗闇で光っている。待ち伏せだ。',
+    damage: 4,
+    quill: 3
+  },
+  {
+    id: 'e03_witch_wait',
+    conditions: { s1: 'subj_witch', s2: 'pred_wait' },
+    resultText: '呪われた魔女が森を待っている。自分の呪いに蝕まれた魔女が、切り株に腰掛けて旅人を待っている。取引を持ちかけてくるだろう。',
+    damage: 2,
+    quill: 5,
+    rewardItems: [{ id: 'item_e03_witch_wait', name: '呪いの触媒', description: '魔女が取引の礼に渡した小瓶。中身は動いている', sellPrice: 12 }]
+  },
+  {
+    id: 'e03_king_wait',
+    conditions: { s1: 'subj_king', s2: 'pred_wait' },
+    resultText: '呪われた王が森を待っている。触れたものが金になる王が、森の奥で一人座っている。周りの木々が金色に輝いている。',
+    damage: 3,
+    quill: 5
+  },
+  {
+    id: 'e03_ghost_wait',
+    conditions: { s1: 'subj_ghost', s2: 'pred_wait' },
+    resultText: '呪われた亡霊が森を待っている。呪いに縛られた霊が、古い道標の前に佇んでいる。指す方角はすべて間違っている。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'e03_mirror_wait',
+    conditions: { s1: 'subj_mirror', s2: 'pred_wait' },
+    resultText: '呪われた鏡が森を待っている。覗いた者の姿を閉じ込める鏡が、苔むした岩に立てかけてある。森の暗さで気づきにくい。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'e03_doll_wait',
+    conditions: { s1: 'subj_doll', s2: 'pred_wait' },
+    resultText: '呪われた人形が森を待っている。夜に動く人形が、昼の森で枝に腰掛けている。首がゆっくりこちらを向いた。まだ昼なのに。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'e03_rain_wait',
+    conditions: { s1: 'subj_rain', s2: 'pred_wait' },
+    resultText: '呪われた雨が森を待っている。浴びると動けなくなる雨雲が、樹冠の上で垂れ込めている。葉の隙間から一滴、二滴。',
+    damage: 2,
+    quill: 5
+  },
 ];

@@ -240,7 +240,7 @@ export const nodeP08Outcomes: Outcome[] = [
   },
   {
     id: 'p08_small_rain_pred',
-    conditions: { s1: 'mod_small', s4: 'pred_rain' },
+    conditions: { s1: 'mod_small', s4: 'pred_rain_down' },
     resultText: '小さな影の粒が洞窟に降り注いでいる。黒い粉雪のようだ。手のひらに受けると消える。',
     damage: 0,
     quill: 6,
@@ -248,7 +248,7 @@ export const nodeP08Outcomes: Outcome[] = [
   },
   {
     id: 'p08_gentle_rain_pred',
-    conditions: { s1: 'mod_gentle', s4: 'pred_rain' },
+    conditions: { s1: 'mod_gentle', s4: 'pred_rain_down' },
     resultText: '木漏れ日の逆だ。優しい影が洞窟に降り注いでいる。目が休まる。',
     damage: 0,
     quill: 7,
@@ -256,63 +256,63 @@ export const nodeP08Outcomes: Outcome[] = [
   },
   {
     id: 'p08_fire_rain_pred',
-    conditions: { s1: 'mod_fire', s4: 'pred_rain' },
+    conditions: { s1: 'mod_fire', s4: 'pred_rain_down' },
     resultText: '黒い炎の影が洞窟に降り注いでいる。天井から灼熱が降る。駆け抜けるしかない。',
     damage: 5,
     quill: 1
   },
   {
     id: 'p08_hard_rain_pred',
-    conditions: { s1: 'mod_hard', s4: 'pred_rain' },
+    conditions: { s1: 'mod_hard', s4: 'pred_rain_down' },
     resultText: '固まった影が洞窟に降り注いでいる。黒い礫だ。頭を覆って走る。',
     damage: 3,
     quill: 3
   },
   {
     id: 'p08_sharp_rain_pred',
-    conditions: { s1: 'mod_sharp', s4: 'pred_rain' },
+    conditions: { s1: 'mod_sharp', s4: 'pred_rain_down' },
     resultText: '鋭い影が洞窟に降り注いでいる。黒い針の雨だ。腕に無数の切り傷ができた。',
     damage: 4,
     quill: 2
   },
   {
     id: 'p08_broken_rain_pred',
-    conditions: { s1: 'mod_broken', s4: 'pred_rain' },
+    conditions: { s1: 'mod_broken', s4: 'pred_rain_down' },
     resultText: 'めくれ上がった影が洞窟に降り注いでいる。紙切れのようにひらひら舞う。痛くはない。',
     damage: 0,
     quill: 5
   },
   {
     id: 'p08_mighty_rain_pred',
-    conditions: { s1: 'mod_mighty', s4: 'pred_rain' },
+    conditions: { s1: 'mod_mighty', s4: 'pred_rain_down' },
     resultText: '巨大な影が洞窟に降り注いでいる。豪雨のようだ。視界が真っ暗になる。',
     damage: 4,
     quill: 2
   },
   {
     id: 'p08_frozen_rain_pred',
-    conditions: { s1: 'mod_frozen', s4: 'pred_rain' },
+    conditions: { s1: 'mod_frozen', s4: 'pred_rain_down' },
     resultText: '凍てついた影が洞窟に降り注いでいる。黒い霰だ。当たると冷たい痛みが走る。',
     damage: 3,
     quill: 3
   },
   {
     id: 'p08_clear_rain_pred',
-    conditions: { s1: 'mod_clear', s4: 'pred_rain' },
+    conditions: { s1: 'mod_clear', s4: 'pred_rain_down' },
     resultText: '透き通った影が洞窟に降り注いでいる。光と影の境が曖昧な雨だ。不思議と明るい。',
     damage: 0,
     quill: 6
   },
   {
     id: 'p08_cursed_rain_pred',
-    conditions: { s1: 'mod_cursed', s4: 'pred_rain' },
+    conditions: { s1: 'mod_cursed', s4: 'pred_rain_down' },
     resultText: '呪われた影が洞窟に降り注いでいる。触れたものが次々と影に変わる。足元の石が黒く沈んだ。',
     damage: 4,
     quill: 4
   },
   {
     id: 'p08_sleepy_rain_pred',
-    conditions: { s1: 'mod_sleepy', s4: 'pred_rain' },
+    conditions: { s1: 'mod_sleepy', s4: 'pred_rain_down' },
     resultText: '眠い影が洞窟にゆっくり降り注いでいる。あくびが出る。洞窟全体が午睡の気配だ。',
     damage: 1,
     quill: 4

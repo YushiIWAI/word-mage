@@ -1037,4 +1037,126 @@ export const nodeCOutcomes: Outcome[] = [
     damage: 3,
     quill: 4
   },
+
+  // --- 待っている (pred_wait) ---
+  {
+    id: 'c_kitten_wait',
+    conditions: { s2: 'subj_kitten', s4: 'pred_wait' },
+    resultText: '呪われた子猫が街道を待っている。石畳の上に座り、通る者を見つめている。拾えば捨てられない。知っているのに足が止まる。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'c_snake_wait',
+    conditions: { s2: 'subj_snake', s4: 'pred_wait' },
+    resultText: '呪われた蛇が街道を待っている。脱皮を繰り返して太くなった蛇が、街道脇の草むらに潜んでいる。次の獲物を待つ目が光る。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'c_dragon_wait',
+    conditions: { s2: 'subj_dragon', s4: 'pred_wait' },
+    resultText: '呪われた竜が街道を待っている。暴走した守護竜が道の先で蹲り、目に理性のないまま何かを待ち続けている。近づけば焼かれる。',
+    damage: 5,
+    quill: 3
+  },
+  {
+    id: 'c_butterfly_wait',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_wait' },
+    resultText: '呪われた蝶が街道を待っている。追いかけると迷子になる蝶が、道の分かれ目でひらひら舞っている。ついていかなければ無害だ。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'c_wind_wait',
+    conditions: { s2: 'subj_wind', s4: 'pred_wait' },
+    resultText: '呪われた風が街道を待っている。帰り道を忘れさせる風が、街道の先で凪いでいる。一歩踏み出した瞬間に吹くだろう。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'c_flame_wait',
+    conditions: { s2: 'subj_flame', s4: 'pred_wait' },
+    resultText: '呪われた炎が街道を待っている。燃やしたものの形を覚える炎が、街道の敷石の隙間で揺れている。踏めば靴の形に燃え移る。',
+    damage: 4,
+    quill: 3
+  },
+  {
+    id: 'c_ice_wait',
+    conditions: { s2: 'subj_ice', s4: 'pred_wait' },
+    resultText: '呪われた氷が街道を待っている。溶けない氷が道の窪みに溜まり、永遠の冬を広げ続ける。近づくと足元から冷気が這い上がる。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'c_shadow_wait',
+    conditions: { s2: 'subj_shadow', s4: 'pred_wait' },
+    resultText: '呪われた影が街道を待っている。触れたものを影にする影が、日向の真ん中で待ち構えている。陽が差すほど影は濃い。',
+    damage: 4,
+    quill: 4
+  },
+  {
+    id: 'c_song_wait',
+    conditions: { s2: 'subj_song', s4: 'pred_wait' },
+    resultText: '呪われた歌が街道を待っている。一度聴くと頭から離れない旋律が、風に乗って流れてくる。まだ遠い。耳を塞ぐ暇はある。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'c_silence_wait',
+    conditions: { s2: 'subj_silence', s4: 'pred_wait' },
+    resultText: '呪われた沈黙が街道を待っている。声を奪う沈黙が、街道の先に溜まっている。入れば叫んでも音が出ない。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'c_knight_wait',
+    conditions: { s2: 'subj_knight', s4: 'pred_wait' },
+    resultText: '呪われた騎士が街道を待っている。黒い鎧の騎士が道の真ん中に立ち、兜の奥の赤い目がこちらを捉えている。逃げても追ってくる類だ。',
+    damage: 4,
+    quill: 3
+  },
+  {
+    id: 'c_witch_wait',
+    conditions: { s2: 'subj_witch', s4: 'pred_wait' },
+    resultText: '呪われた魔女が街道を待っている。自分の呪いに蝕まれた魔女が、道端に座り込んで旅人を待っている。何の用かは聞かない方がいい。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'c_king_wait',
+    conditions: { s2: 'subj_king', s4: 'pred_wait' },
+    resultText: '呪われた王が街道を待っている。触れたものが金になる王が、街道の真ん中で手を広げている。握手を求めているのか。',
+    damage: 3,
+    quill: 5,
+    rewardItems: [{ id: 'item_c_king_wait', name: '黄金の手形', description: '王が街道に残した手のひらの跡。石畳が金に変わっている', sellPrice: 15 }]
+  },
+  {
+    id: 'c_ghost_wait',
+    conditions: { s2: 'subj_ghost', s4: 'pred_wait' },
+    resultText: '呪われた亡霊が街道を待っている。呪いに縛られた霊が、街道の十字路に立ち尽くしている。誰を待っているのか、本人も忘れている。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'c_mirror_wait',
+    conditions: { s2: 'subj_mirror', s4: 'pred_wait' },
+    resultText: '呪われた鏡が街道を待っている。覗いた者の姿を閉じ込める鏡が、道の脇に立てかけてある。親切な罠だ。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'c_doll_wait',
+    conditions: { s2: 'subj_doll', s4: 'pred_wait' },
+    resultText: '呪われた人形が街道を待っている。夜になると動く人形が、昼の街道で座って待っている。まだ昼だ。今なら通れる。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'c_rain_wait',
+    conditions: { s2: 'subj_rain', s4: 'pred_wait' },
+    resultText: '呪われた雨が街道を待っている。浴びた者がその場から動けなくなる雨雲が、街道の上空で停滞している。最初の一滴はまだ落ちていない。',
+    damage: 2,
+    quill: 5
+  },
 ];

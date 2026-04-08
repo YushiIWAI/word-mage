@@ -368,21 +368,21 @@ export const nodeP24Outcomes: Outcome[] = [
   },
   {
     id: 'p24_kitten_rain_pred',
-    conditions: { s2: 'subj_kitten', s4: 'pred_rain' },
+    conditions: { s2: 'subj_kitten', s4: 'pred_rain_down' },
     resultText: '忘れられた子猫が墓場に降り注いでいる。空から子猫の幻が雨のように降ってくる。着地すると消える。',
     damage: 0,
     quill: 5
   },
   {
     id: 'p24_snake_rain_pred',
-    conditions: { s2: 'subj_snake', s4: 'pred_rain' },
+    conditions: { s2: 'subj_snake', s4: 'pred_rain_down' },
     resultText: '忘れられた蛇が墓場に降り注いでいる。空から蛇が落ちてくる。地面に着くと砂に変わる。呪いの雨だ。',
     damage: 3,
     quill: 3
   },
   {
     id: 'p24_dragon_rain_pred',
-    conditions: { s2: 'subj_dragon', s4: 'pred_rain' },
+    conditions: { s2: 'subj_dragon', s4: 'pred_rain_down' },
     resultText: '忘れられた竜が墓場に降り注いでいる。鱗が空から降ってくる。死んだ竜の体が上空で砕けているのだ。',
     damage: 3,
     quill: 5,
@@ -390,42 +390,42 @@ export const nodeP24Outcomes: Outcome[] = [
   },
   {
     id: 'p24_butterfly_rain_pred',
-    conditions: { s2: 'subj_butterfly', s4: 'pred_rain' },
+    conditions: { s2: 'subj_butterfly', s4: 'pred_rain_down' },
     resultText: '忘れられた蝶が墓場に降り注いでいる。蝶の群れが空から舞い降りてくる。鱗粉が墓石を金色に染めていく。',
     damage: 0,
     quill: 6
   },
   {
     id: 'p24_wind_rain_pred',
-    conditions: { s2: 'subj_wind', s4: 'pred_rain' },
+    conditions: { s2: 'subj_wind', s4: 'pred_rain_down' },
     resultText: '忘れられた風が墓場に降り注いでいる。上空から風が滝のように落ちてくる。墓石が揺れる。立っていられない。',
     damage: 3,
     quill: 3
   },
   {
     id: 'p24_flame_rain_pred',
-    conditions: { s2: 'subj_flame', s4: 'pred_rain' },
+    conditions: { s2: 'subj_flame', s4: 'pred_rain_down' },
     resultText: '忘れられた炎が墓場に降り注いでいる。火の粉が空から降っている。死者への弔いの松明か、罰の業火か。',
     damage: 4,
     quill: 3
   },
   {
     id: 'p24_ice_rain_pred',
-    conditions: { s2: 'subj_ice', s4: 'pred_rain' },
+    conditions: { s2: 'subj_ice', s4: 'pred_rain_down' },
     resultText: '忘れられた氷が墓場に降り注いでいる。雹が墓石を叩く。氷の粒が墓碑銘を削っていく。名前がさらに消える。',
     damage: 3,
     quill: 4
   },
   {
     id: 'p24_shadow_rain_pred',
-    conditions: { s2: 'subj_shadow', s4: 'pred_rain' },
+    conditions: { s2: 'subj_shadow', s4: 'pred_rain_down' },
     resultText: '忘れられた影が墓場に降り注いでいる。空から黒い断片が降ってくる。墓地が影に飲まれていく。夜より暗い。',
     damage: 3,
     quill: 4
   },
   {
     id: 'p24_song_rain_pred',
-    conditions: { s2: 'subj_song', s4: 'pred_rain' },
+    conditions: { s2: 'subj_song', s4: 'pred_rain_down' },
     resultText: '忘れられた歌が墓場に降り注いでいる。上空から旋律が降ってくる。レクイエムだ。墓地全体が祈りに包まれる。',
     damage: 0,
     quill: 7,
@@ -433,56 +433,56 @@ export const nodeP24Outcomes: Outcome[] = [
   },
   {
     id: 'p24_silence_rain_pred',
-    conditions: { s2: 'subj_silence', s4: 'pred_rain' },
+    conditions: { s2: 'subj_silence', s4: 'pred_rain_down' },
     resultText: '忘れられた沈黙が墓場に降り注いでいる。上空から無音が降ってくる。音が一つずつ消えていく。心臓の音さえ。',
     damage: 2,
     quill: 5
   },
   {
     id: 'p24_knight_rain_pred',
-    conditions: { s2: 'subj_knight', s4: 'pred_rain' },
+    conditions: { s2: 'subj_knight', s4: 'pred_rain_down' },
     resultText: '忘れられた騎士が墓場に降り注いでいる。甲冑の破片が空から落ちてくる。天の戦場で敗れた騎士たちの残骸だ。',
     damage: 3,
     quill: 4
   },
   {
     id: 'p24_witch_rain_pred',
-    conditions: { s2: 'subj_witch', s4: 'pred_rain' },
+    conditions: { s2: 'subj_witch', s4: 'pred_rain_down' },
     resultText: '忘れられた魔女が墓場に降り注いでいる。薬草が空から降ってくる。魔女の調合の残りかすか。墓の花が急に咲いた。',
     damage: 0,
     quill: 5
   },
   {
     id: 'p24_king_rain_pred',
-    conditions: { s2: 'subj_king', s4: 'pred_rain' },
+    conditions: { s2: 'subj_king', s4: 'pred_rain_down' },
     resultText: '忘れられた王が墓場に降り注いでいる。王冠の破片が空から降る。砕けた王権が墓地に降り積もっている。',
     damage: 2,
     quill: 5
   },
   {
     id: 'p24_ghost_rain_pred',
-    conditions: { s2: 'subj_ghost', s4: 'pred_rain' },
+    conditions: { s2: 'subj_ghost', s4: 'pred_rain_down' },
     resultText: '忘れられた亡霊が墓場に降り注いでいる。透明な霊が空から降ってくる。地面に触れると消える。魂の雨だ。',
     damage: 1,
     quill: 6
   },
   {
     id: 'p24_mirror_rain_pred',
-    conditions: { s2: 'subj_mirror', s4: 'pred_rain' },
+    conditions: { s2: 'subj_mirror', s4: 'pred_rain_down' },
     resultText: '忘れられた鏡が墓場に降り注いでいる。鏡の破片が空から降ってくる。地面に散らばった破片に死者たちの顔が映る。',
     damage: 3,
     quill: 5
   },
   {
     id: 'p24_doll_rain_pred',
-    conditions: { s2: 'subj_doll', s4: 'pred_rain' },
+    conditions: { s2: 'subj_doll', s4: 'pred_rain_down' },
     resultText: '忘れられた人形が墓場に降り注いでいる。人形が空から次々と落ちてくる。どれも目を閉じている。',
     damage: 1,
     quill: 5
   },
   {
     id: 'p24_rain_rain_pred',
-    conditions: { s2: 'subj_rain', s4: 'pred_rain' },
+    conditions: { s2: 'subj_rain', s4: 'pred_rain_down' },
     resultText: '忘れられた雨が墓場に降り注いでいる。忘れられた雨粒が何年分もまとめて降ってきた。墓地が水浸しだ。',
     damage: 2,
     quill: 4

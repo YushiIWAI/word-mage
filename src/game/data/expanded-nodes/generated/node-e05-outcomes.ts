@@ -552,77 +552,77 @@ export const nodeE05Outcomes: Outcome[] = [
   },
   {
     id: 'e05_small_rain_pred',
-    conditions: { s1: 'mod_small', s2: 'pred_rain' },
+    conditions: { s1: 'mod_small', s2: 'pred_rain_down' },
     resultText: '小さな封印が祭壇から降り注いでいる。光の粒が細かく散る。霧雨のような封印。',
     damage: 1,
     quill: 5
   },
   {
     id: 'e05_gentle_rain_pred',
-    conditions: { s1: 'mod_gentle', s2: 'pred_rain' },
+    conditions: { s1: 'mod_gentle', s2: 'pred_rain_down' },
     resultText: '優しい封印が祭壇から降り注いでいる。温かい光の雨。傷を洗い清める。',
     damage: -1,
     quill: 7
   },
   {
     id: 'e05_fire_rain_pred',
-    conditions: { s1: 'mod_fire', s2: 'pred_rain' },
+    conditions: { s1: 'mod_fire', s2: 'pred_rain_down' },
     resultText: '燃え盛る封印が祭壇から降り注いでいる。火の雨。封印が解ければこの雨が世界を焼く。',
     damage: 5,
     quill: 5
   },
   {
     id: 'e05_hard_rain_pred',
-    conditions: { s1: 'mod_hard', s2: 'pred_rain' },
+    conditions: { s1: 'mod_hard', s2: 'pred_rain_down' },
     resultText: '堅い封印が祭壇から降り注いでいる。石のように硬い光の粒が叩きつける。痛い。',
     damage: 4,
     quill: 4
   },
   {
     id: 'e05_sharp_rain_pred',
-    conditions: { s1: 'mod_sharp', s2: 'pred_rain' },
+    conditions: { s1: 'mod_sharp', s2: 'pred_rain_down' },
     resultText: '鋭い封印が祭壇から降り注いでいる。針のような光が肌に刺さる。封印の破片だ。',
     damage: 4,
     quill: 4
   },
   {
     id: 'e05_broken_rain_pred',
-    conditions: { s1: 'mod_broken', s2: 'pred_rain' },
+    conditions: { s1: 'mod_broken', s2: 'pred_rain_down' },
     resultText: '壊れた封印が祭壇から降り注いでいる。色のおかしい光が途切れ途切れに降る。封印が崩壊している。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e05_mighty_rain_pred',
-    conditions: { s1: 'mod_mighty', s2: 'pred_rain' },
+    conditions: { s1: 'mod_mighty', s2: 'pred_rain_down' },
     resultText: '屈強な封印が祭壇から降り注いでいる。滝のような光量。封印の間が光に沈む。',
     damage: 4,
     quill: 4
   },
   {
     id: 'e05_frozen_rain_pred',
-    conditions: { s1: 'mod_frozen', s2: 'pred_rain' },
+    conditions: { s1: 'mod_frozen', s2: 'pred_rain_down' },
     resultText: '凍てついた封印が祭壇から降り注いでいる。凍った光の粒が降る。封印の間が白く染まる。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e05_clear_rain_pred',
-    conditions: { s1: 'mod_clear', s2: 'pred_rain' },
+    conditions: { s1: 'mod_clear', s2: 'pred_rain_down' },
     resultText: '透き通った封印が祭壇から降り注いでいる。澄んだ光の雨。浴びると心が清まる。',
     damage: 0,
     quill: 7
   },
   {
     id: 'e05_cursed_rain_pred',
-    conditions: { s1: 'mod_cursed', s2: 'pred_rain' },
+    conditions: { s1: 'mod_cursed', s2: 'pred_rain_down' },
     resultText: '呪われた封印が祭壇から降り注いでいる。黒い光の雨。浴びると体が重くなる。',
     damage: 4,
     quill: 5
   },
   {
     id: 'e05_sleepy_rain_pred',
-    conditions: { s1: 'mod_sleepy', s2: 'pred_rain' },
+    conditions: { s1: 'mod_sleepy', s2: 'pred_rain_down' },
     resultText: '眠い封印が祭壇から降り注いでいる。光の雨が催眠的に揺れる。眠くなる。',
     damage: 2,
     quill: 5

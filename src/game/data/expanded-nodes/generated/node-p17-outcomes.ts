@@ -848,4 +848,126 @@ export const nodeP17Outcomes: Outcome[] = [
     damage: 0,
     quill: 4
   },
+
+  // --- 待っている (pred_wait) ---
+  {
+    id: 'p17_kitten_wait',
+    conditions: { s2: 'subj_kitten', s4: 'pred_wait' },
+    resultText: '鋭い子猫が道を待っている。硝子の破片のような爪を持つ子猫が、茨の隙間からこちらを窺っている。通り過ぎれば引っ掻かないだろう。たぶん。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p17_snake_wait',
+    conditions: { s2: 'subj_snake', s4: 'pred_wait' },
+    resultText: '鋭い蛇が道を待っている。猛毒の牙を持つ蛇が茨に紛れて獲物を待ち伏せている。一噛みで血が黒く変わる。足元に注意が必要だ。',
+    damage: 4,
+    quill: 3
+  },
+  {
+    id: 'p17_dragon_wait',
+    conditions: { s2: 'subj_dragon', s4: 'pred_wait' },
+    resultText: '鋭い竜が道を待っている。金色の目の竜が道の先で旅人を待ち構えている。爪の一振りで岩が裂ける。逃げ場のない茨の道で竜に出会う最悪の展開だ。',
+    damage: 5,
+    quill: 3
+  },
+  {
+    id: 'p17_butterfly_wait',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_wait' },
+    resultText: '鋭い蝶が道を待っている。刃のような羽の蝶が、茨の花に止まっている。すれ違うだけで頬が切れる蝶だが、動かなければ無害だ。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p17_wind_wait',
+    conditions: { s2: 'subj_wind', s4: 'pred_wait' },
+    resultText: '鋭い風が道を待っている。真空の刃が茨の道で凪いでいる。通れば切られる。だが凪はいつまでも続かない。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p17_flame_wait',
+    conditions: { s2: 'subj_flame', s4: 'pred_wait' },
+    resultText: '鋭い炎が道を待っている。形を正確に切り取る炎が、茨の根元で揺れている。踏めば靴底だけ燃え抜ける。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p17_ice_wait',
+    conditions: { s2: 'subj_ice', s4: 'pred_wait' },
+    resultText: '鋭い氷が道を待っている。剣のような氷柱が道の両側から突き出し、通る者を待ち受けている。触れれば切れる。触れずに通る幅はぎりぎりある。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p17_shadow_wait',
+    conditions: { s2: 'subj_shadow', s4: 'pred_wait' },
+    resultText: '鋭い影が道を待っている。くっきりした影が茨の道に長く伸び、縁に触れたものを切る。影が伸びる方向を避けて歩いた。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p17_song_wait',
+    conditions: { s2: 'subj_song', s4: 'pred_wait' },
+    resultText: '鋭い歌が道を待っている。金切り声のような高音が茨の道に響いている。近づくほど音が鋭くなる。耳を塞いで駆け抜けた。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p17_silence_wait',
+    conditions: { s2: 'subj_silence', s4: 'pred_wait' },
+    resultText: '鋭い沈黙が道を待っている。言葉より痛い無言が道を支配している。茨の棘すら音を立てない。足音が消え、呼吸の音だけが耳を刺す。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p17_knight_wait',
+    conditions: { s2: 'subj_knight', s4: 'pred_wait' },
+    resultText: '鋭い騎士が道を待っている。剣の達人が茨の道の先で構えている。無駄のない構え。冷たい目。一太刀で決める気だ。',
+    damage: 4,
+    quill: 3
+  },
+  {
+    id: 'p17_witch_wait',
+    conditions: { s2: 'subj_witch', s4: 'pred_wait' },
+    resultText: '鋭い魔女が道を待っている。鉤鼻に鋭い目の魔女が茨の中に立ち、嘘を見抜く視線を向けてくる。正直に答えれば通してくれる。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p17_king_wait',
+    conditions: { s2: 'subj_king', s4: 'pred_wait' },
+    resultText: '鋭い王が道を待っている。鷹のような目の王が道の先に立ち、旅人を値踏みしている。何も見逃さない目だ。名を名乗れと言われた。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p17_ghost_wait',
+    conditions: { s2: 'subj_ghost', s4: 'pred_wait' },
+    resultText: '鋭い亡霊が道を待っている。こちらの罪を見透かす目の霊が、茨の道の途中に立っている。視線が痛い。やましいことがなければ通れる。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p17_mirror_wait',
+    conditions: { s2: 'subj_mirror', s4: 'pred_wait' },
+    resultText: '鋭い鏡が道を待っている。割れ鏡の破片が茨に引っかかり、刃のような縁が通行人を待ち受けている。反射光が目を灼く。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p17_doll_wait',
+    conditions: { s2: 'subj_doll', s4: 'pred_wait' },
+    resultText: '鋭い人形が道を待っている。刃の関節の操り人形が、糸もなしに茨の道に立っている。通れば斬りかかってくるのか、それとも道案内なのか。',
+    damage: 2,
+    quill: 5,
+    rewardItems: [{ id: 'item_p17_doll_wait', name: '人形の指', description: '刃の関節の一節。小刀代わりに使える', sellPrice: 7 }]
+  },
+  {
+    id: 'p17_rain_wait',
+    conditions: { s2: 'subj_rain', s4: 'pred_wait' },
+    resultText: '鋭い雨が道を待っている。針のような雨粒が雲の中に蓄えられ、茨の道の上空で降り出すのを待っている。雨が降れば茨ごと叩き折れるだろう。自分も叩かれるが。',
+    damage: 3,
+    quill: 4
+  },
 ];
