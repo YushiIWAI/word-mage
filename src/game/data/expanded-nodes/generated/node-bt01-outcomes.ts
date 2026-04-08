@@ -187,7 +187,7 @@ export const bt01PlayerOutcomes = [
   { id: 'bt01_player_frozen_rain', conditions: { s1: 'mod_frozen', s2: 'subj_rain' }, resultText: '凍雨が森番を包む。触れたものを氷の膜で覆い、枝が重みで垂れ下がった。', playerDamage: 0, enemyDamage: 3 },
   { id: 'bt01_player_clear_rain', conditions: { s1: 'mod_clear', s2: 'subj_rain' }, resultText: '澄んだ雨が森番を洗う。穢れが流れ落ちるが、傷はつかない。浄化は攻撃にならない。', playerDamage: 0, enemyDamage: 0 },
   { id: 'bt01_player_cursed_rain', conditions: { s1: 'mod_cursed', s2: 'subj_rain' }, resultText: '呪いの雨が森番に降り注ぐ。浴びた根が動かなくなり、枝が重く垂れ下がった。森番がその場に縫いとめられる。', playerDamage: 0, enemyDamage: 3 },
-  { id: 'bt01_player_sleepy_rain', conditions: { s1: 'mod_sleepy', s2: 'subj_rain' }, resultText: 'しとしとと降る眠い雨。子守唄のような雨音に、森番の瞼が重くなっていく。', playerDamage: 0, enemyDamage: 2 }
+  { id: 'bt01_player_sleepy_rain', conditions: { s1: 'mod_sleepy', s2: 'subj_rain' }, resultText: 'しとしとと降る眠い雨。子守唄のような雨音に、森番の瞼が重くなっていく。', playerDamage: 0, enemyDamage: 2 },
 ];
 
 export const bt01Enemy1Outcomes = [
@@ -201,7 +201,7 @@ export const bt01Enemy1Outcomes = [
   { id: 'bt01_enemy1_frozen', conditions: { s1: 'mod_frozen' }, resultText: '凍りついた森番が軋みながら迫る。動きは遅いが、触れると凍傷を負う。', playerDamage: 2, enemyDamage: 0 },
   { id: 'bt01_enemy1_clear', conditions: { s1: 'mod_clear' }, resultText: '透き通った森番が音もなく近づいてくる。見えにくい分、避けるのが難しい。半透明の腕に掴まれた。', playerDamage: 1, enemyDamage: 0 },
   { id: 'bt01_enemy1_cursed', conditions: { s1: 'mod_cursed' }, resultText: '呪われた森番の目に理性がない。追いかけるというより、暴走している。枝が鞭のように叩きつけられた。', playerDamage: 4, enemyDamage: 0 },
-  { id: 'bt01_enemy1_sleepy', conditions: { s1: 'mod_sleepy' }, resultText: '眠い森番がのろのろと追ってくる。あくびをしている。その隙に距離をとった。', playerDamage: 0, enemyDamage: 0 }
+  { id: 'bt01_enemy1_sleepy', conditions: { s1: 'mod_sleepy' }, resultText: '眠い森番がのろのろと追ってくる。あくびをしている。その隙に距離をとった。', playerDamage: 0, enemyDamage: 0 },
 ];
 
 export const bt01Enemy2Outcomes = [
@@ -215,5 +215,5 @@ export const bt01Enemy2Outcomes = [
   { id: 'bt01_enemy2_frozen', conditions: { s1: 'mod_frozen' }, resultText: '凍りついた根が振り下ろされる。当たった地面に霜が広がり、足が滑った。', playerDamage: 2, enemyDamage: 0 },
   { id: 'bt01_enemy2_clear', conditions: { s1: 'mod_clear' }, resultText: '透き通った根が見えない。振り下ろされたことに気づいたのは、痛みが走った後だった。', playerDamage: 1, enemyDamage: 0 },
   { id: 'bt01_enemy2_cursed', conditions: { s1: 'mod_cursed' }, resultText: '呪われた根が振り下ろされる。当たった場所が黒く変色し、しびれが広がる。', playerDamage: 3, enemyDamage: 0 },
-  { id: 'bt01_enemy2_sleepy', conditions: { s1: 'mod_sleepy' }, resultText: '眠い根がゆっくり振り下ろされる。あまりに遅くて、横に歩いて避けた。', playerDamage: 0, enemyDamage: 0 }
+  { id: 'bt01_enemy2_sleepy', conditions: { s1: 'mod_sleepy' }, resultText: '眠い根がゆっくり振り下ろされる。あまりに遅くて、横に歩いて避けた。', playerDamage: 0, enemyDamage: 0 },
 ];

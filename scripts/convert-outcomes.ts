@@ -23,14 +23,30 @@ interface ParsedOutcome {
   reward: ParsedReward | null;
 }
 
+/** Battle/Boss outcome (playerDamage + enemyDamage) */
+interface ParsedBattleOutcome {
+  id: string;
+  conditions: string;
+  resultText: string;
+  playerDamage: number;
+  enemyDamage: number;
+}
+
+/** A section within a battle/boss MD file */
+interface BattleSection {
+  sectionIndex: number; // 1-based
+  label: string; // e.g. '自文', '敵文①', '敵文②', '敵文③'
+  outcomes: ParsedBattleOutcome[];
+}
+
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
 
-/** Convert node key to camelCase variable name: 'a' -> 'nodeAOutcomes', 'p06' -> 'nodeP06Outcomes' */
+/** Convert node key to camelCase variable name: 'a' -> 'nodeAOutcomes', 'p06' -> 'nodeP06Outcomes', 'e01' -> 'nodeE01Outcomes' */
 function toVarName(key: string): string {
-  if (key.startsWith('p')) {
-    // e.g. 'p06' -> 'nodeP06Outcomes'
+  if (/^[a-z]\d{2}$/.test(key)) {
+    // e.g. 'p06' -> 'nodeP06Outcomes', 'e01' -> 'nodeE01Outcomes', 'r01' -> 'nodeR01Outcomes'
     return `node${key.charAt(0).toUpperCase()}${key.slice(1)}Outcomes`;
   }
   return `node${key.toUpperCase()}Outcomes`;
@@ -240,6 +256,127 @@ function finishOutcome(
 }
 
 // ---------------------------------------------------------------------------
+// Battle/Boss Parser
+// ---------------------------------------------------------------------------
+
+function parseBattleSectionsFromMd(
+  filePath: string,
+  content: string,
+): BattleSection[] {
+  const lines = content.split('\n');
+  const sections: BattleSection[] = [];
+  let currentSection: BattleSection | null = null;
+  let current: Partial<ParsedBattleOutcome> | null = null;
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const lineNum = i + 1;
+
+    // Detect section header: '# N. ...'
+    const sectionMatch = line.match(/^# (\d+)\.\s*(.+)$/);
+    if (sectionMatch) {
+      // Flush previous outcome
+      if (current && current.id && currentSection) {
+        finishBattleOutcome(current, currentSection.outcomes, filePath, lineNum);
+        current = null;
+      }
+      // Save previous section
+      if (currentSection) {
+        sections.push(currentSection);
+      }
+      currentSection = {
+        sectionIndex: parseInt(sectionMatch[1], 10),
+        label: sectionMatch[2].trim(),
+        outcomes: [],
+      };
+      continue;
+    }
+
+    if (!currentSection) continue;
+
+    // '### ' -> new outcome
+    if (/^### /.test(line)) {
+      if (current && current.id) {
+        finishBattleOutcome(current, currentSection.outcomes, filePath, lineNum);
+      }
+      current = {};
+      continue;
+    }
+
+    if (!current) continue;
+
+    // '- **ID**: '
+    const idMatch = line.match(/^- \*\*ID\*\*:\s*(.+)$/);
+    if (idMatch) {
+      current.id = idMatch[1].trim();
+      continue;
+    }
+
+    // '- **conditions**: '
+    const condMatch = line.match(/^- \*\*conditions\*\*:\s*(.+)$/);
+    if (condMatch) {
+      current.conditions = condMatch[1].trim();
+      continue;
+    }
+
+    // '- **text**: '
+    const textMatch = line.match(/^- \*\*text\*\*:\s*(.+)$/);
+    if (textMatch) {
+      current.resultText = textMatch[1].trim();
+      continue;
+    }
+
+    // '- **playerDamage**: '
+    const pdMatch = line.match(/^- \*\*playerDamage\*\*:\s*(.+)$/);
+    if (pdMatch) {
+      current.playerDamage = parseInt(pdMatch[1].trim(), 10);
+      continue;
+    }
+
+    // '- **enemyDamage**: '
+    const edMatch = line.match(/^- \*\*enemyDamage\*\*:\s*(.+)$/);
+    if (edMatch) {
+      current.enemyDamage = parseInt(edMatch[1].trim(), 10);
+      continue;
+    }
+  }
+
+  // Flush last outcome
+  if (current && current.id && currentSection) {
+    finishBattleOutcome(current, currentSection.outcomes, filePath, lines.length);
+  }
+  // Save last section
+  if (currentSection) {
+    sections.push(currentSection);
+  }
+
+  return sections;
+}
+
+function finishBattleOutcome(
+  current: Partial<ParsedBattleOutcome>,
+  outcomes: ParsedBattleOutcome[],
+  filePath: string,
+  lineNum: number,
+): void {
+  const missing: string[] = [];
+  if (!current.id) missing.push('ID');
+  if (!current.conditions) missing.push('conditions');
+  if (current.resultText === undefined) missing.push('text');
+  if (current.playerDamage === undefined) missing.push('playerDamage');
+  if (current.enemyDamage === undefined) missing.push('enemyDamage');
+
+  if (missing.length > 0) {
+    console.error(
+      `[ERROR] ${filePath}:${lineNum} - Incomplete battle outcome "${current.id ?? '???'}": missing ${missing.join(', ')}`,
+    );
+    return;
+  }
+
+  outcomes.push(current as ParsedBattleOutcome);
+}
+
+// ---------------------------------------------------------------------------
 // Code generator
 // ---------------------------------------------------------------------------
 
@@ -286,6 +423,44 @@ function generateTs(
   return lines.join('\n');
 }
 
+/** Generate TS for battle/boss outcomes (multiple exports from sections) */
+function generateBattleTs(
+  key: string,
+  mdFilename: string,
+  sections: BattleSection[],
+): string {
+  const lines: string[] = [];
+  lines.push(`// Auto-generated from ${mdFilename}`);
+  lines.push('');
+
+  // Section label -> export var name mapping
+  const sectionVarNames: string[] = [];
+  for (const section of sections) {
+    let varName: string;
+    if (section.label.includes('自文')) {
+      varName = `${key.replace(/-/g, '')}PlayerOutcomes`;
+    } else {
+      // 敵文①, 敵文②, 敵文③ -> enemy1, enemy2, enemy3
+      const enemyNumMatch = section.label.match(/敵文([①②③④⑤])/);
+      const numMap: Record<string, number> = { '①': 1, '②': 2, '③': 3, '④': 4, '⑤': 5 };
+      const enemyNum = enemyNumMatch ? numMap[enemyNumMatch[1]] : section.sectionIndex - 1;
+      varName = `${key.replace(/-/g, '')}Enemy${enemyNum}Outcomes`;
+    }
+    sectionVarNames.push(varName);
+
+    lines.push(`export const ${varName} = [`);
+
+    for (const o of section.outcomes) {
+      lines.push(`  { id: '${escapeString(o.id)}', conditions: ${o.conditions}, resultText: '${escapeString(o.resultText)}', playerDamage: ${o.playerDamage}, enemyDamage: ${o.enemyDamage} },`);
+    }
+
+    lines.push('];');
+    lines.push('');
+  }
+
+  return lines.join('\n');
+}
+
 // ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
@@ -311,17 +486,28 @@ function main(): void {
   // Ensure output directory exists
   fs.mkdirSync(outputDir, { recursive: true });
 
-  const keys = [
+  // Puzzle/elite/rest keys (standard damage/quill/reward format)
+  const puzzleKeys = [
     'a', 'b', 'c', 'd', 'e',
     'p06', 'p07', 'p08', 'p09', 'p10',
     'p11', 'p12', 'p13', 'p14', 'p15',
     'p16', 'p17', 'p18', 'p19', 'p20',
     'p21', 'p22', 'p23', 'p24', 'p25', 'p26',
+    'e01', 'e02', 'e03', 'e04', 'e05', 'e06',
+    'r01', 'r02', 'r03', 'r04', 'r05',
   ];
+
+  // Battle/boss keys (playerDamage/enemyDamage format, multi-section)
+  const battleKeys = [
+    'bt01', 'bt02', 'bt03', 'bt04',
+    'boss01', 'boss02', 'boss03',
+  ];
+
   let totalOutcomes = 0;
   let totalRewards = 0;
 
-  for (const key of keys) {
+  // --- Process puzzle/elite/rest keys ---
+  for (const key of puzzleKeys) {
     const mdFilename = `node-${key}-outcomes.md`;
     const mdPath = path.join(inputDir, mdFilename);
 
@@ -349,9 +535,46 @@ function main(): void {
     totalRewards += rewardCount;
   }
 
+  // --- Process battle/boss keys ---
+  let totalBattleOutcomes = 0;
+
+  for (const key of battleKeys) {
+    const mdFilename = `node-${key}-outcomes.md`;
+    const mdPath = path.join(inputDir, mdFilename);
+
+    if (!fs.existsSync(mdPath)) {
+      console.error(`[ERROR] Input file not found: ${mdPath}`);
+      continue;
+    }
+
+    const content = fs.readFileSync(mdPath, 'utf-8');
+    const sections = parseBattleSectionsFromMd(mdPath, content);
+
+    const sectionCounts = sections.map(s => `${s.label}: ${s.outcomes.length}`).join(', ');
+    const totalInFile = sections.reduce((sum, s) => sum + s.outcomes.length, 0);
+
+    // Generate TS
+    const tsContent = generateBattleTs(key, mdFilename, sections);
+    const tsFilename = toOutputFilename(key);
+    const tsPath = path.join(outputDir, tsFilename);
+    fs.writeFileSync(tsPath, tsContent, 'utf-8');
+
+    console.log(
+      `${mdFilename} -> ${tsFilename}: ${totalInFile} outcomes (${sectionCounts})`,
+    );
+
+    totalBattleOutcomes += totalInFile;
+  }
+
   console.log('---');
   console.log(
-    `Total: ${totalOutcomes} outcomes (${totalRewards} with rewardItems)`,
+    `Puzzle/Elite/Rest: ${totalOutcomes} outcomes (${totalRewards} with rewardItems)`,
+  );
+  console.log(
+    `Battle/Boss: ${totalBattleOutcomes} outcomes`,
+  );
+  console.log(
+    `Total: ${totalOutcomes + totalBattleOutcomes} outcomes`,
   );
 }
 

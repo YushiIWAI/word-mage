@@ -2,7 +2,6 @@ export { nodeA } from './node-a';
 export { nodeB } from './node-b';
 export { nodeC } from './node-c';
 export { nodeD } from './node-d';
-export { nodeE } from './node-e';
 export { nodeP06 } from './node-p06';
 export { nodeP07 } from './node-p07';
 export { nodeP08 } from './node-p08';
@@ -24,12 +23,22 @@ export { nodeP23 } from './node-p23';
 export { nodeP24 } from './node-p24';
 export { nodeP25 } from './node-p25';
 export { nodeP26 } from './node-p26';
+export { nodeE01 } from './node-e01';
+export { nodeE02 } from './node-e02';
+export { nodeE03 } from './node-e03';
+export { nodeE04 } from './node-e04';
+export { nodeE05 } from './node-e05';
+export { nodeE06 } from './node-e06';
+export { nodeR01 } from './node-r01';
+export { nodeR02 } from './node-r02';
+export { nodeR03 } from './node-r03';
+export { nodeR04 } from './node-r04';
+export { nodeR05 } from './node-r05';
 
 import { nodeA } from './node-a';
 import { nodeB } from './node-b';
 import { nodeC } from './node-c';
 import { nodeD } from './node-d';
-import { nodeE } from './node-e';
 import { nodeP06 } from './node-p06';
 import { nodeP07 } from './node-p07';
 import { nodeP08 } from './node-p08';
@@ -51,13 +60,34 @@ import { nodeP23 } from './node-p23';
 import { nodeP24 } from './node-p24';
 import { nodeP25 } from './node-p25';
 import { nodeP26 } from './node-p26';
+import { nodeE01 } from './node-e01';
+import { nodeE02 } from './node-e02';
+import { nodeE03 } from './node-e03';
+import { nodeE04 } from './node-e04';
+import { nodeE05 } from './node-e05';
+import { nodeE06 } from './node-e06';
+import { nodeR01 } from './node-r01';
+import { nodeR02 } from './node-r02';
+import { nodeR03 } from './node-r03';
+import { nodeR04 } from './node-r04';
+import { nodeR05 } from './node-r05';
 import type { NodeDef, BattleNodeDef } from '../../engine/types';
 import { nodeBT01 } from './node-bt01';
+import { nodeBT02 } from './node-bt02';
+import { nodeBT03 } from './node-bt03';
+import { nodeBT04 } from './node-bt04';
 import { nodeBOSS01 } from './node-boss01';
+import { nodeBOSS02 } from './node-boss02';
+import { nodeBOSS03 } from './node-boss03';
 
 export const expandedBattleNodeDefs: Record<string, BattleNodeDef> = {
   node_bt01: nodeBT01,
+  node_bt02: nodeBT02,
+  node_bt03: nodeBT03,
+  node_bt04: nodeBT04,
   node_boss01: nodeBOSS01,
+  node_boss02: nodeBOSS02,
+  node_boss03: nodeBOSS03,
 };
 
 export const expandedNodeDefs: Record<string, NodeDef> = {
@@ -65,7 +95,6 @@ export const expandedNodeDefs: Record<string, NodeDef> = {
   node_b: nodeB,
   node_c: nodeC,
   node_d: nodeD,
-  node_e: nodeE,
   node_p06: nodeP06,
   node_p07: nodeP07,
   node_p08: nodeP08,
@@ -87,4 +116,15 @@ export const expandedNodeDefs: Record<string, NodeDef> = {
   node_p24: nodeP24,
   node_p25: nodeP25,
   node_p26: nodeP26,
+  node_e01: nodeE01,
+  node_e02: nodeE02,
+  node_e03: nodeE03,
+  node_e04: nodeE04,
+  node_e05: nodeE05,
+  node_e06: nodeE06,
+  node_r01: nodeR01,
+  node_r02: nodeR02,
+  node_r03: nodeR03,
+  node_r04: nodeR04,
+  node_r05: nodeR05,
 };

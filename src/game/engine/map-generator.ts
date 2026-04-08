@@ -32,9 +32,11 @@ const PUZZLE_POOL = [
   'node_p11', 'node_p12', 'node_p13', 'node_p14', 'node_p15',
   'node_p16', 'node_p17', 'node_p18', 'node_p19', 'node_p20',
   'node_p21', 'node_p22', 'node_p23', 'node_p24', 'node_p25', 'node_p26',
+  'node_e01', 'node_e02', 'node_e03', 'node_e04', 'node_e05', 'node_e06',
+  'node_r01', 'node_r02', 'node_r03', 'node_r04', 'node_r05',
 ];
-const BATTLE_POOL = ['node_bt01'];
-const BOSS_POOL = ['node_e', 'node_boss01'];
+const BATTLE_POOL = ['node_bt01', 'node_bt02', 'node_bt03', 'node_bt04'];
+const BOSS_POOL = ['node_boss01', 'node_boss02', 'node_boss03'];
 
 // --- ユーティリティ ---
 

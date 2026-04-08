@@ -187,7 +187,7 @@ export const boss01PlayerOutcomes = [
   { id: 'boss01_player_frozen_rain', conditions: { s1: 'mod_frozen', s2: 'subj_rain' }, resultText: '凍雨が古竜を包む。炎の竜の鱗の上で雨が凍り、氷の鎧が重くのしかかった。', playerDamage: 0, enemyDamage: 3 },
   { id: 'boss01_player_clear_rain', conditions: { s1: 'mod_clear', s2: 'subj_rain' }, resultText: '澄んだ雨が古竜を洗う。炎が少し弱まるが、すぐに燃え上がる。浄化の雨も竜には力不足だ。', playerDamage: 0, enemyDamage: 1 },
   { id: 'boss01_player_cursed_rain', conditions: { s1: 'mod_cursed', s2: 'subj_rain' }, resultText: '呪いの雨が古竜に降り注ぐ。浴びた鱗がその場に縫いとめられ、古竜が身動きできなくなった。', playerDamage: 0, enemyDamage: 3 },
-  { id: 'boss01_player_sleepy_rain', conditions: { s1: 'mod_sleepy', s2: 'subj_rain' }, resultText: 'しとしとと降る眠い雨。子守唄のような雨音に、古竜のまぶたが重くなっていく。', playerDamage: 0, enemyDamage: 2 }
+  { id: 'boss01_player_sleepy_rain', conditions: { s1: 'mod_sleepy', s2: 'subj_rain' }, resultText: 'しとしとと降る眠い雨。子守唄のような雨音に、古竜のまぶたが重くなっていく。', playerDamage: 0, enemyDamage: 2 },
 ];
 
 export const boss01Enemy1Outcomes = [
@@ -201,7 +201,7 @@ export const boss01Enemy1Outcomes = [
   { id: 'boss01_enemy1_frozen', conditions: { s1: 'mod_frozen' }, resultText: '凍てついた古竜が大地を焼いている。矛盾した光景。吐息は炎ではなく吹雪だ。大地が凍土に変わる。', playerDamage: 3, enemyDamage: 0 },
   { id: 'boss01_enemy1_clear', conditions: { s1: 'mod_clear' }, resultText: '透き通った古竜が大地を焼いている。見えない竜の炎。気づいた時にはもう足元が焦げていた。', playerDamage: 2, enemyDamage: 0 },
   { id: 'boss01_enemy1_cursed', conditions: { s1: 'mod_cursed' }, resultText: '呪われた古竜が大地を焼いている。黒い炎が大地を侵す。焼かれた地面から何も生えなくなった。', playerDamage: 4, enemyDamage: 0 },
-  { id: 'boss01_enemy1_sleepy', conditions: { s1: 'mod_sleepy' }, resultText: '眠い古竜が大地を焼いている。半分寝ている。あくびと共に漏れた炎が足元をかすめた。', playerDamage: 0, enemyDamage: 0 }
+  { id: 'boss01_enemy1_sleepy', conditions: { s1: 'mod_sleepy' }, resultText: '眠い古竜が大地を焼いている。半分寝ている。あくびと共に漏れた炎が足元をかすめた。', playerDamage: 0, enemyDamage: 0 },
 ];
 
 export const boss01Enemy2Outcomes = [
@@ -221,7 +221,7 @@ export const boss01Enemy2Outcomes = [
   { id: 'boss01_enemy2_ghost', conditions: { s1: 'subj_ghost' }, resultText: '古竜の亡霊が魔女に降り注いでいる。竜に焼かれた者たちの怨念。冷たい手が腕を掴む。', playerDamage: 2, enemyDamage: 0 },
   { id: 'boss01_enemy2_mirror', conditions: { s1: 'subj_mirror' }, resultText: '古竜の鏡が魔女に降り注いでいる。鱗の一枚一枚が鏡面。自分の怯えた顔が無数に映る。', playerDamage: 1, enemyDamage: 0 },
   { id: 'boss01_enemy2_doll', conditions: { s1: 'subj_doll' }, resultText: '古竜の人形が魔女に降り注いでいる。竜の鱗で作られた人形が空から落ちてくる。硬い。頭に当たった。', playerDamage: 1, enemyDamage: 0 },
-  { id: 'boss01_enemy2_rain', conditions: { s1: 'subj_rain' }, resultText: '古竜の雨が魔女に降り注いでいる。竜の吐息が霧雨となって肌を灼く。じわじわと熱い。', playerDamage: 2, enemyDamage: 0 }
+  { id: 'boss01_enemy2_rain', conditions: { s1: 'subj_rain' }, resultText: '古竜の雨が魔女に降り注いでいる。竜の吐息が霧雨となって肌を灼く。じわじわと熱い。', playerDamage: 2, enemyDamage: 0 },
 ];
 
 export const boss01Enemy3Outcomes = [
@@ -411,5 +411,5 @@ export const boss01Enemy3Outcomes = [
   { id: 'boss01_enemy3_frozen_rain', conditions: { s1: 'mod_frozen', s2: 'subj_rain' }, resultText: '凍てついた雨が古竜に砕かれている。凍雨が砕け、氷の粒と冷水が混ざって降り注ぐ。', playerDamage: 2, enemyDamage: 0 },
   { id: 'boss01_enemy3_clear_rain', conditions: { s1: 'mod_clear', s2: 'subj_rain' }, resultText: '透き通った雨が古竜に砕かれている。澄んだ雨粒が散る。濡れただけで、害はない。', playerDamage: 0, enemyDamage: 0 },
   { id: 'boss01_enemy3_cursed_rain', conditions: { s1: 'mod_cursed', s2: 'subj_rain' }, resultText: '呪われた雨が古竜に砕かれている。呪いの雨滴が飛び散り、浴びた足が動かなくなった。', playerDamage: 3, enemyDamage: 0 },
-  { id: 'boss01_enemy3_sleepy_rain', conditions: { s1: 'mod_sleepy', s2: 'subj_rain' }, resultText: '眠い雨が古竜に砕かれている。眠気を誘う雨が散る。少しだけまぶたが重くなった。', playerDamage: 0, enemyDamage: 0 }
+  { id: 'boss01_enemy3_sleepy_rain', conditions: { s1: 'mod_sleepy', s2: 'subj_rain' }, resultText: '眠い雨が古竜に砕かれている。眠気を誘う雨が散る。少しだけまぶたが重くなった。', playerDamage: 0, enemyDamage: 0 },
 ];
