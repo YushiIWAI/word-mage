@@ -30,13 +30,13 @@
 | 隠している | pred_hide | を | 他 |
 | 砕く | pred_crush | を | 他 |
 | 逃げていく | pred_flee | を(経路) | 自(を格許容) |
-| 待っている | pred_wait | に | 自 |
+| 待っている | pred_wait | に/を | 自(を格も許容) |
 | 眠っている | pred_sleep | に | 自 |
 | 絡みついている | pred_entangle | に | 自 |
 | 囁いている | pred_whisper | に/から | 自 |
 | 溶けている | pred_melt | に | 自 |
 | 輝く | pred_shine | に | 自 |
-| 降り注いでいる | pred_rain | に | 自 |
+| 降り注いでいる | pred_rain_down | に | 自 |
 | 歌っている | pred_sing | なし | 自 |
 | 踊っている | pred_dance | なし | 自 |
 | 笑っている | pred_laugh | なし | 自 |
