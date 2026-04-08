@@ -3,6 +3,7 @@
   import SlotWord from './components/SlotWord.svelte';
   import HandCard from './components/HandCard.svelte';
   import NodeMap from './components/NodeMap.svelte';
+  import StageView from './components/StageView.svelte';
   import MagicEffect from './components/MagicEffect.svelte';
   import classicFrameImg from './assets/ui/classic-frame.png';
   import { nodeDefs, battleNodeDefs, shopNodeDefs, treasureNodeDefs, initialHand, mapNodes } from './game/data/nodes';
@@ -21,8 +22,8 @@
   const allBattleNodeDefs = { ...battleNodeDefs, ...expandedBattleNodeDefs };
   import { createInitialState, swapWord, extractWord, insertWord, getSelectableNodeIds, applyDamage, addQuill, addItems, buyCard, sellCard, sellItem } from './game/engine/state';
   import { resolveNode, evaluateOutcome } from './game/engine/evaluate';
-  import { initBattle, resolveBattleTurn, advanceBattleTurn, isEnemyDefeated, getCurrentEnemyAction } from './game/engine/battle';
-  import type { Slot, NodeDef, BattleNodeDef, BattleState, ShopNodeDef, ShopItem, TreasureNodeDef, WordCard, PersistentEffect } from './game/engine/types';
+  import { initBattle, resolveBattleTurn, advanceBattleTurn, isEnemyDefeated, getCurrentEnemyAction, getAllBattleDefaultCardIds } from './game/engine/battle';
+  import { CATEGORY_COMPAT, type Slot, type NodeDef, type BattleNodeDef, type BattleState, type ShopNodeDef, type ShopItem, type TreasureNodeDef, type WordCard, type PersistentEffect } from './game/engine/types';
 
   // --- 5面構成ステート ---
   let currentStage = $state(0);
@@ -91,6 +92,13 @@
   let lastQuill = $state(0);
   let lastRewardCards = $state<WordCard[]>([]);
   let lastRewardItems = $state<import('./game/engine/types').Item[]>([]);
+
+  // バトル結果の段階表示
+  let battleResultPhase = $state<'none' | 'enemy_result' | 'player_result' | 'done'>('none');
+  let battleEnemyResultText = $state('');
+  let battlePlayerResultText = $state('');
+  let battleEnemyPhaseDamage = $state(0);
+  let battlePlayerPhaseDamage = $state(0);
 
   // --- outcome プレビュー（既知/未知） ---
   const SEEN_OUTCOMES_KEY = 'wordmage-seen-outcomes';
@@ -298,6 +306,7 @@
     lastQuill = 0;
     lastRewardCards = [];
     lastRewardItems = [];
+    battleResultPhase = 'none';
   }
 
   // --- 共通ドラッグ操作 ---
@@ -305,6 +314,71 @@
   function handleDragEnd() { draggingCardIndex = null; dragOverSlotIndex = null; }
   function handleSlotDragEnter(index: number) { dragOverSlotIndex = index; }
   function handleSlotDragLeave() { dragOverSlotIndex = null; }
+
+  // --- カードクリックで即スワップ（同品詞の可変スロットが1つだけの場合） ---
+  function handleCardClick(cardIndex: number) {
+    if (gameState.phase !== 'playing' && gameState.phase !== 'battle') return;
+    const card = gameState.hand[cardIndex];
+    if (!card) return;
+
+    if (gameState.phase === 'battle') {
+      // バトル時: 敵文とプレイヤー文を別々に探索し、合計1箇所だけならクリックスワップ
+      const eSlots = allBattleSlots.slice(0, enemySlotCount);
+      const pSlots = allBattleSlots.slice(enemySlotCount);
+
+      const enemyCompat = eSlots
+        .map((s, i) => ({ slot: s, index: i }))
+        .filter(({ slot }) => !slot.locked && CATEGORY_COMPAT[card.category]?.includes(slot.category));
+
+      const playerCompat = pSlots
+        .map((s, i) => ({ slot: s, index: i + enemySlotCount }))
+        .filter(({ slot }) => !slot.locked && CATEGORY_COMPAT[card.category]?.includes(slot.category));
+
+      const allCompat = [...enemyCompat, ...playerCompat];
+      if (allCompat.length === 1) {
+        const targetIndex = allCompat[0].index;
+        const slot = allBattleSlots[targetIndex];
+        let result;
+        if (slot.word === null) {
+          result = insertWord(gameState, targetIndex, cardIndex, allBattleSlots);
+        } else {
+          result = swapWord(gameState, targetIndex, cardIndex, allBattleSlots);
+        }
+        if (result) {
+          if (currentBattleNode) {
+            const defaultCardIds = getAllBattleDefaultCardIds(currentBattleNode);
+            result.state = {
+              ...result.state,
+              hand: result.state.hand.filter(c => !defaultCardIds.has(c.id)),
+            };
+          }
+          gameState = result.state;
+          allBattleSlots = result.slots;
+        }
+      }
+      // 2つ以上ある場合は何もしない（ドラッグで対応）
+    } else {
+      // 通常ノード
+      const compatSlots = currentSlots
+        .map((s, i) => ({ slot: s, index: i }))
+        .filter(({ slot }) => !slot.locked && CATEGORY_COMPAT[card.category]?.includes(slot.category));
+
+      if (compatSlots.length === 1) {
+        const targetIndex = compatSlots[0].index;
+        const slot = currentSlots[targetIndex];
+        let result;
+        if (slot.word === null) {
+          result = insertWord(gameState, targetIndex, cardIndex, currentSlots);
+        } else {
+          result = swapWord(gameState, targetIndex, cardIndex, currentSlots);
+        }
+        if (result) {
+          gameState = result.state;
+          currentSlots = result.slots;
+        }
+      }
+    }
+  }
 
   // --- 通常ノードのスロット操作 ---
   function handleDropOnSlot(slotIndex: number) {
@@ -347,6 +421,14 @@
       result = swapWord(gameState, slotIndex, draggingCardIndex, allBattleSlots);
     }
     if (result) {
+      // バトルスロットのデフォルトカードが手札に混入した場合は除去
+      if (currentBattleNode) {
+        const defaultCardIds = getAllBattleDefaultCardIds(currentBattleNode);
+        result.state = {
+          ...result.state,
+          hand: result.state.hand.filter(c => !defaultCardIds.has(c.id)),
+        };
+      }
       gameState = result.state;
       allBattleSlots = result.slots;
     }
@@ -447,55 +529,98 @@
 
     const result = resolveBattleTurn(currentBattleNode, battleWithSlots);
 
-    lastPlayerDamage = result.playerDamage;
+    // 段階表示用のデータを保存
+    battleEnemyResultText = result.enemyResultText;
+    battlePlayerResultText = result.playerResultText;
+    battleEnemyPhaseDamage = result.enemyPhasePlayerDamage;
+    battlePlayerPhaseDamage = result.playerPhasePlayerDamage;
     lastEnemyDamage = result.enemyDamage;
 
     const defeated = isEnemyDefeated(battleWithSlots, result.enemyDamage);
+    const capturedBattleNode = currentBattleNode;
+
+    // Phase 1: 敵の攻撃結果を表示
+    battleResultPhase = 'enemy_result';
+    lastPlayerDamage = result.enemyPhasePlayerDamage;
 
     let newState = {
       ...gameState,
-      lastResult: result.resultText,
+      lastResult: result.enemyResultText,
       battle: {
         ...battleWithSlots,
-        enemyHp: Math.max(0, battleWithSlots.enemyHp - result.enemyDamage),
-        turnResult: result.resultText,
+        turnResult: result.enemyResultText,
         turnPhase: 'resolved' as const,
       },
     };
-    newState = applyDamage(newState, result.playerDamage);
-
-    if (defeated) {
-      // 勝利
-      newState = addQuill(newState, currentBattleNode.victoryQuill);
-      lastQuill = currentBattleNode.victoryQuill;
-      newState.phase = 'resolved';
-      newState.lastResult = result.resultText + '\n\n' + currentBattleNode.enemyName + 'は倒れた。';
-    } else {
-      lastQuill = 0;
-    }
-
+    newState = applyDamage(newState, result.enemyPhasePlayerDamage);
     gameState = newState;
 
-    if (defeated) triggerMagicEffect('reward');
-    else if (result.playerDamage > 2) triggerMagicEffect('damage');
+    if (result.enemyPhasePlayerDamage > 2) triggerMagicEffect('damage');
     else triggerMagicEffect('resolve');
+
+    // Phase 2: 2秒後にプレイヤーの攻撃結果を追加表示
+    setTimeout(() => {
+      battleResultPhase = 'player_result';
+      lastPlayerDamage = result.playerDamage;
+
+      let state2 = {
+        ...gameState,
+        lastResult: result.enemyResultText + '\n\n' + result.playerResultText,
+        battle: gameState.battle ? {
+          ...gameState.battle,
+          enemyHp: Math.max(0, battleWithSlots.enemyHp - result.enemyDamage),
+          turnResult: result.enemyResultText + '\n\n' + result.playerResultText,
+        } : null,
+      };
+      state2 = applyDamage(state2, result.playerPhasePlayerDamage);
+
+      if (defeated) {
+        state2 = addQuill(state2, capturedBattleNode.victoryQuill);
+        lastQuill = capturedBattleNode.victoryQuill;
+        state2.phase = 'resolved';
+        state2.lastResult = result.resultText + '\n\n' + capturedBattleNode.enemyName + 'は倒れた。';
+      } else {
+        lastQuill = 0;
+      }
+
+      gameState = state2;
+
+      if (defeated) triggerMagicEffect('reward');
+      else if (result.enemyDamage > 0) triggerMagicEffect('resolve');
+
+      // 1.5秒後に操作可能に
+      setTimeout(() => {
+        battleResultPhase = 'done';
+      }, 1500);
+    }, 2000);
   }
 
   // --- バトル次ターン ---
   function handleBattleNextTurn() {
     if (!currentBattleNode || !gameState.battle) return;
 
-    const nextBattle = advanceBattleTurn(currentBattleNode, gameState.battle, 0); // damageは既に適用済み
+    const { battle: nextBattle, returnedCards } = advanceBattleTurn(currentBattleNode, gameState.battle, 0); // damageは既に適用済み
     allBattleSlots = [...nextBattle.enemySlots, ...nextBattle.playerSlots];
     enemySlotCount = nextBattle.enemySlots.length;
 
+    // プレイヤーがスロットに入れていたカードを手札に返す
+    const effectiveLimit = gameState.handLimit + getPersistentBonus('hand_limit');
+    const newHand = [...gameState.hand];
+    for (const card of returnedCards) {
+      if (newHand.length < effectiveLimit) {
+        newHand.push(card);
+      }
+    }
+
     gameState = {
       ...gameState,
+      hand: newHand,
       battle: nextBattle,
       lastResult: null,
     };
     lastPlayerDamage = 0;
     lastEnemyDamage = 0;
+    battleResultPhase = 'none';
   }
 
   // --- マップに戻る ---
@@ -567,6 +692,7 @@
     lastQuill = 0;
     lastRewardCards = [];
     lastRewardItems = [];
+    battleResultPhase = 'none';
     showStageClear = false;
   }
 
@@ -607,6 +733,7 @@
     lastQuill = 0;
     lastRewardCards = [];
     lastRewardItems = [];
+    battleResultPhase = 'none';
   }
 
   function getSlotIndex(slotId: string): number {
@@ -709,7 +836,11 @@
     <BookSpread pageNumber={1}>
       {#snippet leftContent()}
         <div class="map-page">
-          <NodeMap map={gameState.map} {selectableIds} onSelect={handleSelectNode} onHover={handleNodeHover} {dynamicShopDef} {dynamicTreasureDef} stageIndex={isExpanded ? currentStage : undefined} stageName={isExpanded ? (allStages[currentStage]?.stageName ?? '') : ''} />
+          {#if isExpanded}
+            <StageView map={gameState.map} {selectableIds} onSelect={handleSelectNode} onHover={handleNodeHover} {dynamicShopDef} {dynamicTreasureDef} stageIndex={currentStage} stageName={allStages[currentStage]?.stageName ?? ''} />
+          {:else}
+            <NodeMap map={gameState.map} {selectableIds} onSelect={handleSelectNode} onHover={handleNodeHover} {dynamicShopDef} {dynamicTreasureDef} />
+          {/if}
         </div>
       {/snippet}
       {#snippet rightContent()}
@@ -953,15 +1084,32 @@
           <button class="next-btn" onclick={handleReturnToMap}>
             {gameState.map.nodes.find(n => n.id === gameState.map.currentNodeId)?.nextIds.length ? '次のページへ' : '物語を閉じる'}
           </button>
-        {:else if battle.turnPhase === 'resolved' && battle.turnResult}
-          <div class="result-text appear">
-            <p style="white-space: pre-line">{battle.turnResult}</p>
-          </div>
-          <div class="result-stats">
-            {#if lastPlayerDamage > 0}<span class="stat-damage">-{lastPlayerDamage} HP</span>{/if}
-            {#if lastEnemyDamage > 0}<span class="stat-enemy-damage">敵に {lastEnemyDamage} ダメージ</span>{/if}
-          </div>
-          {#if gameState.hp > 0}
+        {:else if battle.turnPhase === 'resolved' && battleResultPhase !== 'none'}
+          <!-- 段階1: 敵の攻撃結果 -->
+          {#if battleEnemyResultText}
+            <div class="result-text appear">
+              <div class="battle-result-label enemy-label">敵の行動</div>
+              <p style="white-space: pre-line">{battleEnemyResultText}</p>
+            </div>
+            <div class="result-stats">
+              {#if battleEnemyPhaseDamage > 0}<span class="stat-damage">-{battleEnemyPhaseDamage} HP</span>{/if}
+            </div>
+          {/if}
+
+          <!-- 段階2: プレイヤーの攻撃結果（遅延表示） -->
+          {#if battleResultPhase === 'player_result' || battleResultPhase === 'done'}
+            <div class="result-text appear" style="margin-top: 16px;">
+              <div class="battle-result-label player-label">あなたの行動</div>
+              <p style="white-space: pre-line">{battlePlayerResultText}</p>
+            </div>
+            <div class="result-stats">
+              {#if battlePlayerPhaseDamage > 0}<span class="stat-damage">-{battlePlayerPhaseDamage} HP</span>{/if}
+              {#if lastEnemyDamage > 0}<span class="stat-enemy-damage">敵に {lastEnemyDamage} ダメージ</span>{/if}
+            </div>
+          {/if}
+
+          <!-- 操作ボタン（全段階完了後） -->
+          {#if battleResultPhase === 'done' && gameState.hp > 0}
             <button class="next-btn" onclick={handleBattleNextTurn}>次のターンへ</button>
           {/if}
         {:else}
@@ -1073,7 +1221,7 @@
   <div class="hand-area">
     <div class="hand-cards" role="list">
       {#each gameState.hand as card, i}
-        <HandCard {card} index={i} onDragStart={handleDragStartCard} onDragEnd={handleDragEnd} />
+        <HandCard {card} index={i} onDragStart={handleDragStartCard} onDragEnd={handleDragEnd} onClick={handleCardClick} />
       {/each}
       {#if gameState.hand.length === 0}
         <span class="empty-hand">手札なし</span>
@@ -1120,6 +1268,7 @@
   .enemy-section { background: rgba(167, 59, 59, 0.06); border: 1px solid rgba(167, 59, 59, 0.15); }
   .player-section { background: rgba(59, 138, 94, 0.06); border: 1px solid rgba(59, 138, 94, 0.15); }
   .section-label { font-family: var(--font-story); font-size: 0.75rem; margin-bottom: 6px; letter-spacing: 0.1em; }
+  .battle-result-label { font-family: var(--font-story); font-size: 0.75rem; margin-bottom: 4px; letter-spacing: 0.1em; }
   .enemy-label { color: #a73b3b; }
   .player-label { color: #3b8a5e; }
   .player-status-row { display: flex; align-items: center; gap: 12px; margin-top: 8px; padding-top: 6px; border-top: 1px solid rgba(59, 138, 94, 0.15); }

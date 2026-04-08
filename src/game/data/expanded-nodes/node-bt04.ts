@@ -9,7 +9,7 @@ export const nodeBT04: BattleNodeDef = {
   enemyHp: 10,
   actionPoints: 4,
   enemyActions: [
-    // 敵文① (ターン1,4...): [mod*]影が 魔女に 絡みついている
+    // 敵文① (ターン1,5,9...): [mod*]影が 魔女に 絡みついている — mod可変、弱体化:低
     {
       sentence: [
         { type: 'slot', slotId: 's1' },
@@ -27,7 +27,7 @@ export const nodeBT04: BattleNodeDef = {
         enemyDamage: 0,
       },
     },
-    // 敵文② (ターン2,5...): [mod*]影が 魔女を 見つめている
+    // 敵文② (ターン2,6,10...): [mod*]影が 魔女を 見つめている — mod可変、弱体化:低
     {
       sentence: [
         { type: 'slot', slotId: 's1' },
@@ -45,7 +45,7 @@ export const nodeBT04: BattleNodeDef = {
         enemyDamage: 0,
       },
     },
-    // 敵文③ (ターン3,6...): [mod*]影が 足元に 囁いている
+    // 敵文③ (ターン3,7,11...): [mod*]影が 足元に 囁いている — mod可変、弱体化:低
     {
       sentence: [
         { type: 'slot', slotId: 's1' },
@@ -63,13 +63,28 @@ export const nodeBT04: BattleNodeDef = {
         enemyDamage: 0,
       },
     },
+    // 敵文④ (ターン4,8,12...): 影の群れが 一斉に 襲いかかる — 固定攻撃、弱体化:不可
+    {
+      sentence: [
+        { type: 'fixed', text: '影の群れが' },
+        { type: 'fixed', text: '一斉に' },
+        { type: 'fixed', text: '襲いかかる' },
+      ],
+      slots: [],
+      outcomes: [],
+      defaultOutcome: {
+        resultText: '影が四方八方から同時に襲いかかる。一匹一匹は弱いが、数に押される。冷たい手が体中を這い回る。',
+        playerDamage: 3,
+        enemyDamage: 0,
+      },
+    },
   ],
   // プレイヤー行動文: [mod*][subj*]が 影を 払っている
   playerAction: {
     sentence: [
       { type: 'slot', slotId: 's1' },
       { type: 'slot', slotId: 's2' },
-      { type: 'fixed', text: 'が 影を 払っている' },
+      { type: 'fixed', text: '影を 払っている' },
     ],
     slots: [
       { id: 's1', category: 'modifier', word: { id: 'mod_mighty', text: '屈強な', category: 'modifier', tags: ['mighty', 'strong', 'threat:high'] } },

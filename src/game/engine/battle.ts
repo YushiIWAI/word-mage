@@ -1,4 +1,4 @@
-import type { BattleNodeDef, BattleState, Slot, BattleOutcome, EnemyAction, PlayerAction } from './types';
+import type { BattleNodeDef, BattleState, Slot, BattleOutcome, EnemyAction, PlayerAction, WordCard } from './types';
 
 /** バトル開始時の状態を作る */
 export function initBattle(node: BattleNodeDef): BattleState {
@@ -25,8 +25,14 @@ export function resolveBattleTurn(
   battle: BattleState
 ): {
   resultText: string;
+  enemyResultText: string;
+  playerResultText: string;
   playerDamage: number;
   enemyDamage: number;
+  /** 敵文による被ダメージ（フェーズ1で適用） */
+  enemyPhasePlayerDamage: number;
+  /** プレイヤー文による被ダメージ（フェーズ2で適用） */
+  playerPhasePlayerDamage: number;
 } {
   const enemyAction = getCurrentEnemyAction(node, battle.turn);
   const playerAction = node.playerAction;
@@ -54,31 +60,71 @@ export function resolveBattleTurn(
 
   return {
     resultText: resultParts.join('\n'),
+    enemyResultText: enemyResult.resultText,
+    playerResultText: playerResult.resultText,
     playerDamage: totalPlayerDamage,
     enemyDamage: totalEnemyDamage,
+    enemyPhasePlayerDamage: Math.max(0, enemyResult.playerDamage),
+    playerPhasePlayerDamage: Math.max(0, playerResult.playerDamage),
   };
 }
 
-/** 次のターンへ進める */
-export function advanceBattleTurn(node: BattleNodeDef, battle: BattleState, enemyDamage: number): BattleState {
+/** 次のターンへ進める。プレイヤーがスロットに入れたカードを返却リストで返す */
+export function advanceBattleTurn(node: BattleNodeDef, battle: BattleState, enemyDamage: number): { battle: BattleState; returnedCards: WordCard[] } {
   const newEnemyHp = Math.max(0, battle.enemyHp - enemyDamage);
   const nextTurn = battle.turn + 1;
   const nextEnemyAction = getCurrentEnemyAction(node, nextTurn);
+  const defaultCardIds = getAllBattleDefaultCardIds(node);
+
+  // 現在のスロットからプレイヤーが入れたカード（デフォルトと異なるもの）を収集
+  const returnedCards: WordCard[] = [];
+
+  const origEnemyAction = getCurrentEnemyAction(node, battle.turn);
+  for (let i = 0; i < battle.enemySlots.length; i++) {
+    const current = battle.enemySlots[i].word;
+    if (current && !defaultCardIds.has(current.id)) {
+      returnedCards.push(current);
+    }
+  }
+
+  for (let i = 0; i < battle.playerSlots.length; i++) {
+    const current = battle.playerSlots[i].word;
+    if (current && !defaultCardIds.has(current.id)) {
+      returnedCards.push(current);
+    }
+  }
 
   return {
-    ...battle,
-    enemyHp: newEnemyHp,
-    turn: nextTurn,
-    enemySlots: cloneSlots(nextEnemyAction.slots),
-    playerSlots: cloneSlots(node.playerAction.slots),
-    turnResult: null,
-    turnPhase: 'writing',
+    battle: {
+      ...battle,
+      enemyHp: newEnemyHp,
+      turn: nextTurn,
+      enemySlots: cloneSlots(nextEnemyAction.slots),
+      playerSlots: cloneSlots(node.playerAction.slots),
+      turnResult: null,
+      turnPhase: 'writing',
+    },
+    returnedCards,
   };
 }
 
 /** 敵が倒されたか */
 export function isEnemyDefeated(battle: BattleState, enemyDamage: number): boolean {
   return battle.enemyHp - enemyDamage <= 0;
+}
+
+/** バトルノード内の全デフォルトカードIDを収集する */
+export function getAllBattleDefaultCardIds(node: BattleNodeDef): Set<string> {
+  const ids = new Set<string>();
+  for (const action of node.enemyActions) {
+    for (const slot of action.slots) {
+      if (slot.word) ids.add(slot.word.id);
+    }
+  }
+  for (const slot of node.playerAction.slots) {
+    if (slot.word) ids.add(slot.word.id);
+  }
+  return ids;
 }
 
 // --- 内部ヘルパー ---

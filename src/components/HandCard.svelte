@@ -6,9 +6,10 @@
     index: number;
     onDragStart: (index: number) => void;
     onDragEnd: () => void;
+    onClick?: (index: number) => void;
   }
 
-  let { card, index, onDragStart, onDragEnd }: Props = $props();
+  let { card, index, onDragStart, onDragEnd, onClick }: Props = $props();
 
   const categoryColors: Record<string, string> = {
     subject: 'var(--slot-subject)',
@@ -41,6 +42,7 @@
   draggable="true"
   ondragstart={handleDragStart}
   ondragend={onDragEnd}
+  onclick={() => onClick?.(index)}
   role="listitem"
 >
   <span class="category-badge">{categoryLabels[card.category]}</span>

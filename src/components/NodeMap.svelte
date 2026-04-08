@@ -294,16 +294,15 @@
     pointer-events: none;
   }
 
-  /* --- 訪問済み: 通過した感 --- */
+  /* --- 訪問済み: 通過した感（円は不透明、中身だけ薄く） --- */
   .map-node.visited .node-circle {
-    fill: var(--leather-light);
-    stroke: var(--gold-dim);
-    opacity: 0.6;
+    fill: var(--page-aged);
+    stroke: var(--ink-light);
     filter: none;
   }
-  .map-node.visited .node-ring { stroke: var(--gold-dim); opacity: 0.2; }
-  .map-node.visited .node-icon-svg { color: var(--page-cream); opacity: 0.7; }
-  .map-node.visited .node-title { fill: var(--ink-light); opacity: 0.5; }
+  .map-node.visited .node-ring { stroke: var(--ink-light); opacity: 0.1; }
+  .map-node.visited .node-icon-svg { color: var(--ink-light); opacity: 0.4; }
+  .map-node.visited .node-title { fill: var(--ink-light); opacity: 0.35; }
 
   /* --- 現在位置 --- */
   .map-node.current .node-circle { fill: var(--gold-accent); stroke: var(--ink-dark); stroke-width: 2.5; }
@@ -346,8 +345,15 @@
   .map-node.selectable .node-icon-svg { color: var(--ink-dark); }
   .map-node.selectable .node-title { fill: var(--ink-dark); font-weight: 700; }
 
-  /* --- 未到達: やや薄いが見える --- */
-  .map-node:not(.selectable):not(.visited):not(.current) { opacity: 0.5; }
+  /* --- 未到達: 円は不透明のまま、中身だけ薄く --- */
+  .map-node:not(.selectable):not(.visited):not(.current) .node-circle {
+    fill: var(--page-aged);
+    stroke: var(--ink-light);
+    filter: none;
+  }
+  .map-node:not(.selectable):not(.visited):not(.current) .node-ring { opacity: 0.1; }
+  .map-node:not(.selectable):not(.visited):not(.current) .node-icon-svg { opacity: 0.25; }
+  .map-node:not(.selectable):not(.visited):not(.current) .node-title { opacity: 0.25; }
 
   @keyframes pulse {
     0%, 100% { filter: drop-shadow(0 0 4px var(--magic-glow)); }
