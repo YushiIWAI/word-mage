@@ -87,11 +87,12 @@ Character design:
 - Long hair flowing from under the hat
 - Confident, curious expression
 
-Art style — modern indie pixel art aesthetic (like Eastward, Little Witch in the Woods):
+Art style — clean anime cel-shaded illustration (DO NOT render as pixel art):
 - Rich cel-shading with 2-3 levels of shadow per color area
 - Shadows shift toward cool purple/blue tones (NOT just darker versions of base color)
 - Highlights shift toward warm golden/cream tones
 - Strong dark outlines with varied line weight (thicker on outer silhouette, thinner on inner details)
+- Smooth clean lines, NOT pixelated or blocky — pixel conversion is done separately
 - Warm color palette: burgundy/wine red hat, cream/warm beige robe, brown leather boots and belt
 - Hair in rich chestnut brown with auburn highlights
 - Staff in warm wood tones with a soft amber glow at the tip
@@ -104,15 +105,19 @@ No text, no UI elements, no other characters or objects.
 
 **walk frame 1/2:** idle画像を参照画像として渡し、ポーズ変更のみ指示
 
-### 変換パイプライン（pixelize.py内蔵）
+### 変換パイプライン（pixelize.py v3）
 
-1. 緑背景で1体目を自動切り出し → アルファ透過
-2. バイラテラルフィルタ（軽め、陰影を残す）
-3. Cannyエッジ → アウトライン焼き込み（暗紫セピア）
-4. Lanczos4で32×48にリサイズ
-5. LAB色空間でGMM量子化（16色）
-6. パレットスナップ（LAB→BGR丸め誤差除去）
-7. RGBA PNG保存
+1. バイラテラルフィルタ（エッジ保持平滑化）
+2. Area samplingで32×48にリサイズ（大幅縮小に最適）
+3. LAB色空間でGMM量子化（16色）
+4. 近似色マージ（ΔE < 8.0 の色を統合、色面フラット化）
+5. AA除去（全ピクセルをパレット最近傍にスナップ）
+6. 色相シフト（影→青紫、ハイライト→暖色）
+7. Bayer 2×2ディザリング（strength 0.3）
+8. LAB色差ベースでアウトライン検出（縮小後1pxスケール）
+9. セルアウト（アウトライン色をパレット内の暗色近似色に）
+10. インデックスカラーPNG保存
+11. **Asepriteで顔・目を手描き修正**（自動化不可。必須工程）
 
 ---
 
@@ -167,14 +172,17 @@ aspect_ratio: 21:9
 - `solid single-color sky area at top` で透過処理用の単色領域指示
 - `no characters, no text` で不要要素排除
 
-### 変換パイプライン（pixelize.py内蔵）
+### 変換パイプライン（pixelize.py v3）
 
-1. バイラテラルフィルタ（強め、面を均す）
-2. アウトライン焼き込み（中景・前景のみ）
-3. Lanczos4で目標サイズにリサイズ
-4. LAB色空間でGMM量子化
-5. **AA除去**: nearest halfサイズ → nearest元サイズ（ピクセル境界のぼけを潰す）
-6. インデックスカラーPNG保存
+1. バイラテラルフィルタ（エッジ保持平滑化）
+2. Area samplingで目標サイズにリサイズ
+3. LAB色空間でGMM量子化
+4. 近似色マージ（ΔE閾値で統合、色面フラット化）
+5. AA除去（パレットスナップ）
+6. 色相シフト（影→青紫、ハイライト→暖色）
+7. Bayerディザリング（遠景: 4×4、中景/道/前景: 2×2）
+8. アウトライン検出+セルアウト（中景・前景のみ）
+9. インデックスカラーPNG保存
 
 ---
 
@@ -202,23 +210,42 @@ No gradients, no soft shading, no text, no borders.
 
 ---
 
-## pixelize.py プリセット一覧
+## pixelize.py v3 プリセット一覧
 
-| プリセット | ドット絵サイズ | 色数 | アウトライン | AA除去 | ディザ |
-|-----------|-------------|------|------------|--------|------|
-| witch | 32×48 | 16 | ○ (0.7) | パレットスナップ | なし |
-| bg-far | 512×96 | 14 | × | ○ (nearest half→double) | なし |
-| bg-mid | 400×96 | 14 | ○ (0.3) | ○ | なし |
-| road | 400×16 | 8 | × | ○ | なし |
-| bg-near | 480×32 | 10 | ○ (0.4) | ○ | なし |
-| icon | 48×16 | 10 | ○ (0.6) | ○ | なし |
+| プリセット | サイズ | 色数 | アウトライン | セルアウト | ディザ | 色マージΔE | 色相シフト |
+|-----------|-------|------|------------|----------|--------|----------|----------|
+| witch | 32×48 | 16 | ○ (0.7) | ○ | bayer2 (0.3) | 8.0 | ○ |
+| bg-far | 512×96 | 14 | × | × | bayer4 (0.4) | 8.0 | ○ |
+| bg-mid | 400×96 | 14 | ○ (0.5) | ○ | bayer2 (0.35) | 6.0 | ○ |
+| road | 400×16 | 8 | × | × | bayer2 (0.3) | 10.0 | × |
+| bg-near | 480×32 | 10 | ○ (0.5) | ○ | bayer2 (0.35) | 6.0 | ○ |
+| icon | 48×16 | 10 | ○ (0.6) | ○ | × | 6.0 | × |
 
-## Aseprite微調整チェックリスト
+### v2→v3の主な改善
+- **Lanczos4 → Area sampling**: 大幅縮小でのリンギング除去、情報欠落軽減
+- **アウトライン: 縮小前→縮小後**: 1pxスケールで制御、太さの不均一解消
+- **セルアウト追加**: 固定色アウトライン → 隣接色の暗色版で自然な馴染み
+- **Bayerディザ追加**: 写真的グラデ → ドット絵的な規則的パターン遷移
+- **AA除去追加**: 中間色ピクセルをパレットにスナップ、ピクセル境界の明確化
+- **近似色マージ追加**: 色面のフラット化、ドット絵らしい明確な色分け
+- **色相シフト追加**: 影→青紫、ハイライト→暖色のドット絵的シェーディング
 
-- [ ] 魔女: 背景の透過が綺麗か確認
-- [ ] 魔女: 歩行フレーム間でサイズ・位置がブレていないか
-- [ ] 背景: 左右端のタイル接続を確認（2枚並べてつなぎ目チェック）
-- [ ] 背景: パレットがセピア紙面と馴染むか確認
+## Aseprite手動修正チェックリスト
+
+### 魔女（必須・自動化不可）
+- [ ] 顔・目の再描画（目は縦2-3px×横2-3px、白目+黒瞳+1pxハイライト）
+- [ ] アウトライン統一（全周1px、内部境界は省略またはセルアウト色）
+- [ ] 歩行フレーム間でサイズ・位置がブレていないか
+- [ ] 歩行中は顔固定（体のみ1px上下）
+- [ ] 背景の透過が綺麗か確認
+
+### 背景
+- [ ] 左右端のタイル接続を確認（2枚並べてつなぎ目チェック）
+- [ ] パレットがセピア紙面と馴染むか確認
+- [ ] Bayerディザのパターンが不自然な箇所がないか（空の広い面積等）
+
+### 共通
+- [ ] 実寸（100%）表示で確認。拡大時によく見えても実寸でノイズに見えないか
 - [ ] 全素材をpng保存（インデックスカラー推奨）
 
 ## 組み込み時

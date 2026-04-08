@@ -133,9 +133,9 @@ src/
 ### アートスタイル（2026-04-03決定、2026-04-08改訂）
 - **モダンなインディーゲーム風ドット絵**: Little Witch in the Woods, Eastward, Owlboy を参考
 - NES時代のフラットなドット絵ではなく、色相シフトした影・暖色ハイライト・太さにメリハリのあるアウトラインで深みを出す
-- **制作パイプライン**: nano banana pro（イラスト下絵生成）→ pixelize.py（ローカルでドット絵変換）→ Aseprite（微調整）
-  - 下絵は「pixel art」指示を入れない普通のイラスト。ドット絵変換はローカルスクリプトで行う
-  - pixelize.py: バイラテラルフィルタ → Cannyアウトライン焼き込み → Lanczos4リサイズ → LAB空間GMMベイズ量子化 → AA除去
+- **制作パイプライン**: nano banana pro（イラスト下絵生成）→ pixelize.py v3（ローカルでドット絵変換）→ Aseprite（顔・目の手描き修正、微調整）
+  - 下絵は「pixel art」指示を入れないアニメ調セル画イラスト。ドット絵変換はローカルスクリプトで行う
+  - pixelize.py v3: バイラテラルフィルタ → Area samplingリサイズ → LAB空間GMM量子化 → 近似色マージ → AA除去 → 色相シフト → Bayerディザ → セルアウト
 - **歩行シーン（StageView.svelte）実装済み（2026-04-08）**:
   - パララックス4層: 遠景(far, 0.3x) / 中景(mid, 0.5x) / 道(road, 0.8x) / 前景(near, 1.0x)
   - 魔女スプライト: idle/walk-1/walk-2 フレーム切り替え（200ms）
