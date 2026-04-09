@@ -27,14 +27,14 @@ const STAGES: StageConfig[] = [
     theme: '序盤',
     layers: [
       { type: 'start' },
-      { type: 'puzzle' },
+      { type: 'shop' },
       { type: 'puzzle' },
       { type: 'puzzle' },
       { type: 'puzzle' },
       { type: 'puzzle' },
       { type: 'treasure' },
       { type: 'battle' },
-      { type: 'shop' },
+      { type: 'puzzle' },
     ],
   },
   {
@@ -58,14 +58,14 @@ const STAGES: StageConfig[] = [
     theme: '中盤',
     layers: [
       { type: 'start' },
-      { type: 'puzzle' },
+      { type: 'shop' },
       { type: 'puzzle' },
       { type: 'puzzle' },
       { type: 'puzzle' },
       { type: 'treasure' },
       { type: 'elite' },
       { type: 'battle' },
-      { type: 'shop' },
+      { type: 'puzzle' },
     ],
   },
   {
@@ -112,6 +112,7 @@ const NODE_POOL = [
   'node_p11', 'node_p12', 'node_p13', 'node_p14', 'node_p15',
   'node_p16', 'node_p17', 'node_p18', 'node_p19', 'node_p20',
   'node_p21', 'node_p22', 'node_p23', 'node_p24', 'node_p25', 'node_p26',
+  'node_p27', 'node_p28',
   'node_e01', 'node_e02', 'node_e03', 'node_e04', 'node_e05', 'node_e06',
   'node_r01', 'node_r02', 'node_r03', 'node_r04', 'node_r05',
 ];
@@ -171,7 +172,7 @@ export function generateAllStages(): GeneratedStage[] {
     // 面ごとにshop/treasure定義を生成（必要な面のみ）
     const hasShop = stage.layers.some(l => l.type === 'shop');
     const hasTreasure = stage.layers.some(l => l.type === 'treasure');
-    const shopDef = hasShop ? generateShop() : undefined;
+    const shopDef = hasShop ? generateShop(stageIndex) : undefined;
     const treasureDef = hasTreasure ? generateTreasure() : undefined;
 
     const nodes: MapNode[] = [];

@@ -11,6 +11,8 @@
   import { expandedInitialHand, generateRandomHand } from './game/data/expanded-game';
   import { generateMap, generateAllStages, TOTAL_STAGES } from './game/engine/map-generator';
   import type { GeneratedMap, GeneratedStage } from './game/engine/map-generator';
+  import { pickOmen } from './game/data/omens';
+  import type { Omen } from './game/engine/types';
 
   // ?mode=expanded で拡張版ゲーム（5面構成）
   const isExpanded = new URLSearchParams(window.location.search).get('mode') === 'expanded';
@@ -28,6 +30,7 @@
   // --- 5面構成ステート ---
   let currentStage = $state(0);
   let allStages = $state<GeneratedStage[]>(isExpanded ? generateAllStages() : []);
+  let currentOmen = $state<Omen>(pickOmen());
 
   // expanded版: 動的に生成されたショップ/トレジャー定義を保持
   let dynamicShopDef = $state<ShopNodeDef | null>(
@@ -492,7 +495,8 @@
 
     let newState = { ...gameState, phase: 'resolved' as const, lastResult: result.resultText };
     newState = applyDamage(newState, result.damage);
-    newState = addQuill(newState, result.quill);
+    const quillMul = gameState.omen?.quillMultiplier ?? 1.0;
+    newState = addQuill(newState, Math.round(result.quill * quillMul));
     if (result.rewardItems) {
       newState = addItems(newState, result.rewardItems);
     }
@@ -575,8 +579,10 @@
       state2 = applyDamage(state2, result.playerPhasePlayerDamage);
 
       if (defeated) {
-        state2 = addQuill(state2, capturedBattleNode.victoryQuill);
-        lastQuill = capturedBattleNode.victoryQuill;
+        const battleQuillMul = gameState.omen?.quillMultiplier ?? 1.0;
+        const battleQuillReward = Math.round(capturedBattleNode.victoryQuill * battleQuillMul);
+        state2 = addQuill(state2, battleQuillReward);
+        lastQuill = battleQuillReward;
         state2.phase = 'resolved';
         state2.lastResult = result.resultText + '\n\n' + capturedBattleNode.enemyName + 'は倒れた。';
       } else {
@@ -664,19 +670,39 @@
   function startStage(stageIndex: number) {
     const stage = allStages[stageIndex];
     const hand = generateRandomHand();
+    const prevQuill = stageIndex > 0 ? gameState.quill : 0; // Quill持ち越し
     const s = createInitialState(hand, stage.nodes);
     // 永続カードのAP+ボーナスを初期APに加算
     const apBonus = s.hand
       .filter(c => c.persistent?.effect.type === 'ap_bonus')
       .reduce((sum, c) => sum + (c.persistent!.effect as any).amount, 0);
+    // 兆しのAP補正
+    const omenApBonus = currentOmen.apBonus ?? 0;
+    // 兆しのHP補正
+    const omenHpBonus = currentOmen.hpBonus ?? 0;
     const startNodeId = s.map.nodes.find(n => n.row === 0)?.id ?? null;
 
     dynamicShopDef = stage.shopDef ?? null;
     dynamicTreasureDef = stage.treasureDef ?? null;
 
+    // 兆しのショップ価格補正
+    if (dynamicShopDef && currentOmen.shopPriceMultiplier != null) {
+      dynamicShopDef = {
+        ...dynamicShopDef,
+        stock: dynamicShopDef.stock.map(item => ({
+          ...item,
+          price: Math.round(item.price * currentOmen.shopPriceMultiplier!),
+        })),
+      };
+    }
+
     gameState = {
       ...s,
-      actionPoints: s.actionPoints + apBonus,
+      actionPoints: s.actionPoints + apBonus + omenApBonus,
+      hp: Math.max(1, s.hp + omenHpBonus),
+      maxHp: Math.max(1, s.maxHp + omenHpBonus),
+      quill: prevQuill, // 前面のQuillを引き継ぐ
+      omen: currentOmen,
       map: { ...s.map, currentNodeId: startNodeId },
     };
 
@@ -707,6 +733,7 @@
       // 5面構成: 全面再生成
       currentStage = 0;
       allStages = generateAllStages();
+      currentOmen = pickOmen(); // 新しい兆しを選ぶ
       showStageClear = false;
       startStage(0);
       return;
@@ -786,6 +813,9 @@
         </div>
         <span class="hp-text">{gameState.hp}/{gameState.maxHp}</span>
       </div>
+      {#if isExpanded && currentOmen.id !== 'calm_journey'}
+        <div class="omen-display" title={currentOmen.description}>兆: {currentOmen.name}</div>
+      {/if}
       <div class="gold-display">{gameState.quill} Q</div>
     </div>
   {/if}
@@ -1270,6 +1300,7 @@
   .hp-fill.hp-danger { background: #a73b3b; }
   .hp-text { color: var(--page-cream); font-family: var(--font-story); font-size: 0.8rem; min-width: 50px; text-align: right; }
   .gold-display { color: var(--gold-accent); font-family: var(--font-story); font-size: 0.9rem; min-width: 50px; text-align: right; }
+  .omen-display { color: var(--ink-light); font-family: var(--font-story); font-size: 0.75rem; opacity: 0.8; cursor: help; white-space: nowrap; }
 
   .map-page { flex: 1; display: flex; align-items: center; justify-content: center; }
   .map-info { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }

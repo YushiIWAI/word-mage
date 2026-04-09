@@ -12,10 +12,10 @@ export const nodeP21: NodeDef = {
     { type: 'slot', slotId: 's4' },
   ],
   slots: [
-    { id: 's1', category: 'modifier', word: { id: 'mod_mighty', text: '屈強な', category: 'modifier', tags: ['mighty', 'strong', 'threat:high'] } },
+    { id: 's1', category: 'modifier', locked: true, word: { id: 'mod_mighty', text: '屈強な', category: 'modifier', tags: ['mighty', 'strong', 'threat:high'] } },
     { id: 's2', category: 'subject', word: { id: 'subj_witch', text: '魔女', category: 'subject', tags: ['human', 'magic', 'cursed'] } },
     { id: 's3', category: 'object_ni', locked: true, word: { id: 'orig_p21_obj', text: '十字路', category: 'object_ni', tags: ['crossroads', 'night', 'choice'] } },
-    { id: 's4', category: 'predicate', locked: true, word: { id: 'orig_p21_pred', text: '立っている', category: 'predicate', tags: ['stand', 'block', 'presence'] } },
+    { id: 's4', category: 'predicate', word: { id: 'orig_p21_pred', text: '立っている', category: 'predicate', tags: ['stand', 'block', 'presence'] } },
   ],
   outcomes: nodeP21Outcomes,
   defaultOutcome: {

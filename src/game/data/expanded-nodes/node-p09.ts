@@ -13,9 +13,9 @@ export const nodeP09: NodeDef = {
   ],
   slots: [
     { id: 's1', category: 'modifier', word: { id: 'mod_cursed', text: '呪われた', category: 'modifier', tags: ['cursed', 'dark', 'threat:high'] } },
-    { id: 's2', category: 'subject', word: { id: 'subj_mirror', text: '鏡', category: 'subject', tags: ['object', 'reflect', 'fragile'] } },
+    { id: 's2', category: 'subject', locked: true, word: { id: 'subj_mirror', text: '鏡', category: 'subject', tags: ['object', 'reflect', 'fragile'] } },
     { id: 's3', category: 'object_ni', locked: true, word: { id: 'orig_p09_obj', text: '井戸', category: 'object_ni', tags: ['well', 'water', 'depth'] } },
-    { id: 's4', category: 'predicate', locked: true, word: { id: 'orig_p09_pred', text: '沈んでいる', category: 'predicate', tags: ['sink', 'submerge', 'depth'] } },
+    { id: 's4', category: 'predicate', word: { id: 'orig_p09_pred', text: '沈んでいる', category: 'predicate', tags: ['sink', 'submerge', 'depth'] } },
   ],
   outcomes: nodeP09Outcomes,
   defaultOutcome: {

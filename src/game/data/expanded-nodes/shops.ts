@@ -36,18 +36,23 @@ const PERSISTENT_CARDS: WordCard[] = [
 /**
  * ショップノード定義をランダム生成
  * 修飾語2枚 + 主語2枚 + 述語1枚 + 永続カード1枚
+ * stageIndex: 面番号（0始まり）で物価スケーリング
  */
-export function generateShop(): ShopNodeDef {
+export function generateShop(stageIndex: number = 0): ShopNodeDef {
   const mods = shuffle(expandedModifiers.filter(c => !c.persistent)).slice(0, 2);
   const subjs = shuffle(expandedSubjects).slice(0, 2);
   const preds = shuffle(expandedPredicates).slice(0, 1);
   const perm = shuffle(PERSISTENT_CARDS)[0];
 
+  // 面ごとの物価倍率: 1面=1.0, 3面=1.5
+  const priceScale = stageIndex >= 2 ? 1.5 : 1.0;
+  const p = (base: number) => Math.round(base * priceScale);
+
   const stock = [
-    ...mods.map(c => ({ type: 'word' as const, card: c, price: 8 })),
-    ...subjs.map(c => ({ type: 'word' as const, card: c, price: 10 })),
-    ...preds.map(c => ({ type: 'word' as const, card: c, price: 8 })),
-    { type: 'word' as const, card: perm, price: 15 },
+    ...mods.map(c => ({ type: 'word' as const, card: c, price: p(8) })),
+    ...subjs.map(c => ({ type: 'word' as const, card: c, price: p(10) })),
+    ...preds.map(c => ({ type: 'word' as const, card: c, price: p(8) })),
+    { type: 'word' as const, card: perm, price: p(15) },
   ];
 
   return {

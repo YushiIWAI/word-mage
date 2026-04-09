@@ -1,1333 +1,1364 @@
-// Auto-generated from node-p21-outcomes.md
+// 夜の十字路: 屈強な [主語*]が 十字路に [述語*]
 import type { Outcome } from '../../../engine/types';
 
 export const nodeP21Outcomes: Outcome[] = [
+  // ── 元テキスト ──
   {
-    id: 'p21_small_kitten',
-    conditions: { s1: 'mod_small', s2: 'subj_kitten' },
-    resultText: '小さな子猫が十字路に立っている。親指ほどの猫が四つ辻の真ん中で鳴いている。どの道に行くか迷っているのは猫のほうらしい。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p21_gentle_kitten',
-    conditions: { s1: 'mod_gentle', s2: 'subj_kitten' },
-    resultText: '優しい子猫が十字路に立っている。擦り寄ってきて、左の道へ歩き出す。振り返ってこちらを見ている。案内のつもりだ。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p21_fire_kitten',
-    conditions: { s1: 'mod_fire', s2: 'subj_kitten' },
-    resultText: '燃え盛る子猫が十字路に立っている。炎をまとった猫が月明かりの下で毛繕いしている。地面が焦げて四方の道しるべが読めない。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p21_hard_kitten',
-    conditions: { s1: 'mod_hard', s2: 'subj_kitten' },
-    resultText: '堅い子猫が十字路に立っている。陶器の招き猫が道の真ん中に鎮座している。右の前足が一本の道を指している。',
-    damage: 1,
-    quill: 4
-  },
-  {
-    id: 'p21_sharp_kitten',
-    conditions: { s1: 'mod_sharp', s2: 'subj_kitten' },
-    resultText: '鋭い子猫が十字路に立っている。硝子のような爪が月光を反射する。近づくな、と全身で主張している。',
+    id: 'p21_orig',
+    conditions: { s2: 'subj_witch', s4: 'orig_p21_pred' },
+    resultText: '屈強な魔女が十字路に立っている。四つ辻の真ん中に仁王立ちし、どの道も通さないと全身で語っている。交渉の余地はない。',
     damage: 2,
     quill: 3
   },
+
+  // ── 子猫 × 述語 ──
   {
-    id: 'p21_broken_kitten',
-    conditions: { s1: 'mod_broken', s2: 'subj_kitten' },
-    resultText: '壊れた子猫が十字路に立っている。ぬいぐるみだ。誰かが四つ辻に置いていった。綿が月光に白く光っている。',
+    id: 'p21_kitten_whisper',
+    conditions: { s2: 'subj_kitten', s4: 'pred_whisper' },
+    resultText: '屈強な子猫が十字路に囁いている。虎のような体格の猫が、石畳に顔を寄せて何か呟いている。道が一本、微かに光った。',
     damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p21_mighty_kitten',
-    conditions: { s1: 'mod_mighty', s2: 'subj_kitten' },
-    resultText: '屈強な子猫が十字路に立っている。虎のような体格の子猫が、四つ辻の番人のように座っている。通行料を要求する目つきだ。',
-    damage: 2,
-    quill: 5
-  },
-  {
-    id: 'p21_frozen_kitten',
-    conditions: { s1: 'mod_frozen', s2: 'subj_kitten' },
-    resultText: '凍てついた子猫が十字路に立っている。氷の彫刻。四つ辻の中央で凍りついている。視線は北の道を向いている。',
-    damage: 1,
-    quill: 4
-  },
-  {
-    id: 'p21_clear_kitten',
-    conditions: { s1: 'mod_clear', s2: 'subj_kitten' },
-    resultText: '透き通った子猫が十字路に立っている。硝子の猫。月の光を通して、心臓が淡く脈打っているのが見える。',
-    damage: 0,
-    quill: 6,
-    rewardItems: [{ id: 'item_p21_clear_kitten', name: '月光の猫影', description: '硝子猫が月を通して落とした影。切り取れた', sellPrice: 10 }]
-  },
-  {
-    id: 'p21_cursed_kitten',
-    conditions: { s1: 'mod_cursed', s2: 'subj_kitten' },
-    resultText: '呪われた子猫が十字路に立っている。どの道を選んでもこの猫がいる。三度目でようやく諦めて抱き上げた。',
-    damage: 1,
-    quill: 5
-  },
-  {
-    id: 'p21_sleepy_kitten',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_kitten' },
-    resultText: '眠い子猫が十字路に立っている。立ったまま舟を漕いでいる。風が吹くたびに傾いで、また戻る。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p21_small_snake',
-    conditions: { s1: 'mod_small', s2: 'subj_snake' },
-    resultText: '小さな蛇が十字路に立っている。指ほどの蛇が鎌首をもたげて道の分岐を睨んでいる。踏みそうになった。',
-    damage: 0,
-    quill: 3
-  },
-  {
-    id: 'p21_gentle_snake',
-    conditions: { s1: 'mod_gentle', s2: 'subj_snake' },
-    resultText: '優しい蛇が十字路に立っている。腕に巻きついてきた。温かい。そのまま安全な道へ導くように体を伸ばしていく。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p21_fire_snake',
-    conditions: { s1: 'mod_fire', s2: 'subj_snake' },
-    resultText: '燃え盛る蛇が十字路に立っている。炎の軌跡を残しながら四つ辻をのたうつ。通った道が焦げて歩けない。残された道は一本。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p21_hard_snake',
-    conditions: { s1: 'mod_hard', s2: 'subj_snake' },
-    resultText: '堅い蛇が十字路に立っている。鉄の鱗を持つ蛇が道標に巻きついて、道しるべごと動かない。鉄の蛇を避けて通る。',
-    damage: 1,
-    quill: 3
-  },
-  {
-    id: 'p21_sharp_snake',
-    conditions: { s1: 'mod_sharp', s2: 'subj_snake' },
-    resultText: '鋭い蛇が十字路に立っている。猛毒の牙を月に向けて鎌首を上げている。一噛みで終わる。大回りした。',
-    damage: 3,
-    quill: 2
-  },
-  {
-    id: 'p21_broken_snake',
-    conditions: { s1: 'mod_broken', s2: 'subj_snake' },
-    resultText: '壊れた蛇が十字路に立っている。脱皮の途中で力尽きたらしい。古い皮が半分残ったまま、道に横たわっている。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p21_mighty_snake',
-    conditions: { s1: 'mod_mighty', s2: 'subj_snake' },
-    resultText: '屈強な蛇が十字路に立っている。大蛇が四本の道を全て塞いでとぐろを巻いている。胴回りが腰ほどある。交渉の余地がない。',
-    damage: 4,
-    quill: 2
-  },
-  {
-    id: 'p21_frozen_snake',
-    conditions: { s1: 'mod_frozen', s2: 'subj_snake' },
-    resultText: '凍てついた蛇が十字路に立っている。螺旋を描いて凍った蛇が道標の代わりに立っている。鱗に霜がきらめく。',
-    damage: 1,
     quill: 5,
-    rewardItems: [{ id: 'item_p21_frozen_snake', name: '凍蛇の鱗片', description: '霜を纏った蛇の鱗。触ると指先が痺れる', sellPrice: 8 }]
+    rewardItems: [{ id: 'item_p21_kitten_whisper', name: '光る道しるべ', description: '子猫が囁いた石畳の欠片。暗い夜道でほのかに光る', sellPrice: 7 }]
   },
   {
-    id: 'p21_clear_snake',
-    conditions: { s1: 'mod_clear', s2: 'subj_snake' },
-    resultText: '透き通った蛇が十字路に立っている。飲み込んだものが透けて見える。骨格が月に照らされて美しい。じっとこちらを見ている。',
-    damage: 1,
-    quill: 6
-  },
-  {
-    id: 'p21_cursed_snake',
-    conditions: { s1: 'mod_cursed', s2: 'subj_snake' },
-    resultText: '呪われた蛇が十字路に立っている。脱皮するたびに大きくなる蛇。四つ辻に来るたびに一回り太っている。道が狭くなっていく。',
-    damage: 3,
+    id: 'p21_kitten_sleep',
+    conditions: { s2: 'subj_kitten', s4: 'pred_sleep' },
+    resultText: '屈強な子猫が十字路に眠っている。巨大な猫が四つ辻を占領して寝ている。跨いで通るしかない。',
+    damage: 0,
     quill: 4
   },
   {
-    id: 'p21_sleepy_snake',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_snake' },
-    resultText: '眠い蛇が十字路に立っている。とぐろを巻いて眠っている。踏まなければ無害だ。石畳の隙間を慎重に歩いた。',
-    damage: 0,
-    quill: 3
-  },
-  {
-    id: 'p21_small_dragon',
-    conditions: { s1: 'mod_small', s2: 'subj_dragon' },
-    resultText: '小さな竜が十字路に立っている。手のひらサイズの竜が道標の上に座って小さな火を噴いている。灯台のつもりらしい。',
-    damage: 0,
-    quill: 7,
-    rewardItems: [{ id: 'item_p21_small_dragon', name: '竜灯の火種', description: '手のひら竜が噴いた火の粒。ずっと消えない', sellPrice: 12 }]
-  },
-  {
-    id: 'p21_gentle_dragon',
-    conditions: { s1: 'mod_gentle', s2: 'subj_dragon' },
-    resultText: '優しい竜が十字路に立っている。穏やかな老竜が、翼を畳んで道案内をしている。安全な道を尾で示した。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p21_fire_dragon',
-    conditions: { s1: 'mod_fire', s2: 'subj_dragon' },
-    resultText: '燃え盛る竜が十字路に立っている。全身が業火。十字路が溶鉱炉のように赤い。どの道も炎の壁で閉ざされている。',
-    damage: 5,
-    quill: 1
-  },
-  {
-    id: 'p21_hard_dragon',
-    conditions: { s1: 'mod_hard', s2: 'subj_dragon' },
-    resultText: '堅い竜が十字路に立っている。城壁のような鱗。四つ辻の交差点に座り込んで微動だにしない。道を完全に塞いでいる。',
-    damage: 4,
-    quill: 2
-  },
-  {
-    id: 'p21_sharp_dragon',
-    conditions: { s1: 'mod_sharp', s2: 'subj_dragon' },
-    resultText: '鋭い竜が十字路に立っている。金色の目がこちらを射抜く。爪の一振りで石畳が裂ける。値踏みされている。',
-    damage: 4,
-    quill: 3
-  },
-  {
-    id: 'p21_broken_dragon',
-    conditions: { s1: 'mod_broken', s2: 'subj_dragon' },
-    resultText: '壊れた竜が十字路に立っている。翼は折れ、鱗は剥がれている。月明かりの下、傷だらけの竜が行き先を見失ってうずくまっている。',
-    damage: 0,
-    quill: 6,
-    rewardItems: [{ id: 'item_p21_broken_dragon', name: '竜の剥がれ鱗', description: '月光を浴びて鈍く光る。まだ温かい', sellPrice: 10 }]
-  },
-  {
-    id: 'p21_mighty_dragon',
-    conditions: { s1: 'mod_mighty', s2: 'subj_dragon' },
-    resultText: '屈強な竜が十字路に立っている。山のような巨体。翼を広げると月が隠れた。十字路ごと踏み潰されそうだ。',
-    damage: 5,
-    quill: 1
-  },
-  {
-    id: 'p21_frozen_dragon',
-    conditions: { s1: 'mod_frozen', s2: 'subj_dragon' },
-    resultText: '凍てついた竜が十字路に立っている。吐息が吹雪になる白い竜。十字路一帯が霜に覆われ、足が滑る。',
-    damage: 4,
-    quill: 3
-  },
-  {
-    id: 'p21_clear_dragon',
-    conditions: { s1: 'mod_clear', s2: 'subj_dragon' },
-    resultText: '透き通った竜が十字路に立っている。水晶の竜。月光を通して四本の道が歪んで見える。どれが本物の道か。',
-    damage: 2,
-    quill: 6
-  },
-  {
-    id: 'p21_cursed_dragon',
-    conditions: { s1: 'mod_cursed', s2: 'subj_dragon' },
-    resultText: '呪われた竜が十字路に立っている。暴走した守護竜。目に理性がない。四方に火を吐きながら暴れている。',
-    damage: 5,
-    quill: 2
-  },
-  {
-    id: 'p21_sleepy_dragon',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_dragon' },
-    resultText: '眠い竜が十字路に立っている。道の真ん中で立ったまま居眠りしている。いびきが地面を揺らす。起こさず脇を抜けた。',
+    id: 'p21_kitten_sing',
+    conditions: { s2: 'subj_kitten', s4: 'pred_sing' },
+    resultText: '屈強な子猫が十字路に歌っている。太い喉から地鳴りのような歌声が響く。石畳が振動している。',
     damage: 1,
     quill: 5
   },
   {
-    id: 'p21_small_butterfly',
-    conditions: { s1: 'mod_small', s2: 'subj_butterfly' },
-    resultText: '小さな蝶が十字路に立っている。花びらと見間違う蝶が道標の先端に止まっている。羽ばたきに音がない。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p21_gentle_butterfly',
-    conditions: { s1: 'mod_gentle', s2: 'subj_butterfly' },
-    resultText: '優しい蝶が十字路に立っている。指先に止まり、右の道へひらひら飛んでいく。ついておいで、と言わんばかりに。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p21_fire_butterfly',
-    conditions: { s1: 'mod_fire', s2: 'subj_butterfly' },
-    resultText: '燃え盛る蝶が十字路に立っている。炎の羽が夜を照らす。飛んだ跡に火の粉が散り、道しるべを焼いている。',
-    damage: 2,
-    quill: 5
-  },
-  {
-    id: 'p21_hard_butterfly',
-    conditions: { s1: 'mod_hard', s2: 'subj_butterfly' },
-    resultText: '堅い蝶が十字路に立っている。金属の羽。飛ぶたびに金属音が夜に響く。真夜中の鍛冶屋のようだ。',
+    id: 'p21_kitten_entangle',
+    conditions: { s2: 'subj_kitten', s4: 'pred_entangle' },
+    resultText: '屈強な子猫が十字路に絡みついている。四つ辻の道標に巻きついて離れない。爪が柱に深く食い込んでいる。',
     damage: 1,
     quill: 4
   },
   {
-    id: 'p21_sharp_butterfly',
-    conditions: { s1: 'mod_sharp', s2: 'subj_butterfly' },
-    resultText: '鋭い蝶が十字路に立っている。羽の縁が刃。すれ違いざまに外套が切れた。気づかぬほど鋭い。',
-    damage: 2,
-    quill: 4
+    id: 'p21_kitten_flee',
+    conditions: { s2: 'subj_kitten', s4: 'pred_flee' },
+    resultText: '屈強な子猫が十字路に逃げていく。こちらを見た途端、驚いたように北の道へ走り去った。地面に爪痕だけが残る。',
+    damage: 0,
+    quill: 3
   },
   {
-    id: 'p21_broken_butterfly',
-    conditions: { s1: 'mod_broken', s2: 'subj_butterfly' },
-    resultText: '壊れた蝶が十字路に立っている。片羽がちぎれて螺旋を描きながら落ちていく。四つ辻の隅に何度も落ちては、また飛ぼうとする。',
+    id: 'p21_kitten_shine',
+    conditions: { s2: 'subj_kitten', s4: 'pred_shine' },
+    resultText: '屈強な子猫が十字路に輝く。月光を浴びた毛並みが黄金に光る。四つの道すべてが照らされた。',
     damage: 0,
     quill: 5
   },
   {
-    id: 'p21_mighty_butterfly',
-    conditions: { s1: 'mod_mighty', s2: 'subj_butterfly' },
-    resultText: '屈強な蝶が十字路に立っている。羽ばたきが突風を起こす。道しるべが根こそぎ吹き飛ばされた。',
+    id: 'p21_kitten_rain_down',
+    conditions: { s2: 'subj_kitten', s4: 'pred_rain_down' },
+    resultText: '屈強な子猫が十字路に降り注いでいる。空から次々と猫が降ってくる。地面に着地するたび、石畳が割れる。',
     damage: 2,
-    quill: 4
+    quill: 5
   },
   {
-    id: 'p21_frozen_butterfly',
-    conditions: { s1: 'mod_frozen', s2: 'subj_butterfly' },
-    resultText: '凍てついた蝶が十字路に立っている。霜の結晶が蝶の形をして、月光の中で静かに回転している。触れると指先が凍る。',
+    id: 'p21_kitten_dance',
+    conditions: { s2: 'subj_kitten', s4: 'pred_dance' },
+    resultText: '屈強な子猫が十字路に踊っている。筋肉質の猫が四つ辻でステップを踏む。地面が揺れる。',
     damage: 1,
     quill: 5
   },
   {
-    id: 'p21_clear_butterfly',
-    conditions: { s1: 'mod_clear', s2: 'subj_butterfly' },
-    resultText: '透き通った蝶が十字路に立っている。透明な羽。月光を集めて、四つ辻に小さな虹を架けている。',
-    damage: 0,
-    quill: 7,
-    rewardItems: [{ id: 'item_p21_clear_butterfly', name: '月虹の鱗粉', description: '透明な蝶が月光で作った虹の粉。掌で光る', sellPrice: 14 }]
-  },
-  {
-    id: 'p21_cursed_butterfly',
-    conditions: { s1: 'mod_cursed', s2: 'subj_butterfly' },
-    resultText: '呪われた蝶が十字路に立っている。追いかけると道を見失う蝶。十字路で追えば、四方に散らばれる。立ち止まるしかない。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p21_sleepy_butterfly',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_butterfly' },
-    resultText: '眠い蝶が十字路に立っている。道標の上で羽を閉じたまま眠っている。触れても花を変えるように少しずれるだけだ。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p21_small_wind',
-    conditions: { s1: 'mod_small', s2: 'subj_wind' },
-    resultText: '小さな風が十字路に立っている。頬を撫でるそよ風。四つ辻のどこから来たのか、どこへ去るのかわからない。',
-    damage: 0,
-    quill: 3
-  },
-  {
-    id: 'p21_gentle_wind',
-    conditions: { s1: 'mod_gentle', s2: 'subj_wind' },
-    resultText: '優しい風が十字路に立っている。背中を押す温かな追い風。迷いが消える。足が自然と一つの道へ向かった。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p21_fire_wind',
-    conditions: { s1: 'mod_fire', s2: 'subj_wind' },
-    resultText: '燃え盛る風が十字路に立っている。熱風が渦を巻いている。目を開けていられない。手探りで道を選ぶしかない。',
-    damage: 3,
-    quill: 3
-  },
-  {
-    id: 'p21_hard_wind',
-    conditions: { s1: 'mod_hard', s2: 'subj_wind' },
-    resultText: '堅い風が十字路に立っている。一方向にしか吹かない風。押し戻されて、選べる道は風に逆らわない一本だけだ。',
-    damage: 2,
-    quill: 3
-  },
-  {
-    id: 'p21_sharp_wind',
-    conditions: { s1: 'mod_sharp', s2: 'subj_wind' },
-    resultText: '鋭い風が十字路に立っている。真空の刃が十字に吹き抜けている。道の中央を歩くと肌が切れる。壁沿いに這って進んだ。',
-    damage: 3,
-    quill: 3
-  },
-  {
-    id: 'p21_broken_wind',
-    conditions: { s1: 'mod_broken', s2: 'subj_wind' },
-    resultText: '壊れた風が十字路に立っている。乱気流が四方に渦を巻いている。方角がわからなくなる。足跡を頼りに引き返した。',
-    damage: 2,
-    quill: 3
-  },
-  {
-    id: 'p21_mighty_wind',
-    conditions: { s1: 'mod_mighty', s2: 'subj_wind' },
-    resultText: '屈強な風が十字路に立っている。立っていられないほどの暴風。四つ辻が吹き溜まりになっている。這ってやり過ごした。',
-    damage: 4,
-    quill: 2
-  },
-  {
-    id: 'p21_frozen_wind',
-    conditions: { s1: 'mod_frozen', s2: 'subj_wind' },
-    resultText: '凍てついた風が十字路に立っている。吹雪が十字路を覆い、息が白く凍る。まつ毛に霜が降りた。',
-    damage: 3,
-    quill: 3
-  },
-  {
-    id: 'p21_clear_wind',
-    conditions: { s1: 'mod_clear', s2: 'subj_wind' },
-    resultText: '透き通った風が十字路に立っている。空気が澄み渡り、四方の道が果てまで見通せる。月明かりが隅々まで届く。',
-    damage: 0,
-    quill: 6,
-    rewardItems: [{ id: 'item_p21_clear_wind', name: '澄風の欠片', description: '瓶に詰めた夜の十字路の風。蓋を開けると視界が広がる', sellPrice: 10 }]
-  },
-  {
-    id: 'p21_cursed_wind',
-    conditions: { s1: 'mod_cursed', s2: 'subj_wind' },
-    resultText: '呪われた風が十字路に立っている。この風に吹かれると帰り道を忘れる。十字路から出られなくなる。耳を塞いで駆け抜けた。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p21_sleepy_wind',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_wind' },
-    resultText: '眠い風が十字路に立っている。生温い風がふわりと吹く。意識がぼんやりする。十字路のど真ん中で立ち寝しそうになった。',
+    id: 'p21_kitten_melt',
+    conditions: { s2: 'subj_kitten', s4: 'pred_melt' },
+    resultText: '屈強な子猫が十字路に溶けている。巨大な猫の輪郭が崩れ、石畳に広がっていく。温かい。',
     damage: 1,
     quill: 4
   },
   {
-    id: 'p21_small_flame',
-    conditions: { s1: 'mod_small', s2: 'subj_flame' },
-    resultText: '小さな炎が十字路に立っている。蝋燭ほどの火が道の真ん中に灯っている。風が吹いても消えない。',
-    damage: 0,
+    id: 'p21_kitten_laugh',
+    conditions: { s2: 'subj_kitten', s4: 'pred_laugh' },
+    resultText: '屈強な子猫が十字路に笑っている。口を開けて歯を見せている。笑顔に見えるが、牙が太い。',
+    damage: 1,
     quill: 4
   },
   {
-    id: 'p21_gentle_flame',
-    conditions: { s1: 'mod_gentle', s2: 'subj_flame' },
-    resultText: '優しい炎が十字路に立っている。暖炉のような温かさが十字路を包んでいる。冷えた手を温めてから道を選んだ。',
+    id: 'p21_kitten_wait',
+    conditions: { s2: 'subj_kitten', s4: 'pred_wait' },
+    resultText: '屈強な子猫が十字路に待っている。四つ辻の中央にどっしり座り、誰かを待っている。こちらではないらしい。通してくれた。',
     damage: 0,
     quill: 4
   },
+
+  // ── 蛇 × 述語 ──
   {
-    id: 'p21_fire_flame',
-    conditions: { s1: 'mod_fire', s2: 'subj_flame' },
-    resultText: '燃え盛る炎が十字路に立っている。制御不能の大火が十字路を飲み込んでいる。四方の道すべてが火の海だ。',
-    damage: 5,
-    quill: 1
-  },
-  {
-    id: 'p21_hard_flame',
-    conditions: { s1: 'mod_hard', s2: 'subj_flame' },
-    resultText: '堅い炎が十字路に立っている。水をかけても風を当てても消えない炎が道を塞いでいる。仕方なく跨いだ。靴底が焦げた。',
+    id: 'p21_snake_whisper',
+    conditions: { s2: 'subj_snake', s4: 'pred_whisper' },
+    resultText: '屈強な蛇が十字路に囁いている。太い蛇が石畳に腹をつけて振動を送っている。地面が微かに震え、足裏に言葉が伝わる。',
     damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p21_snake_sleep',
+    conditions: { s2: 'subj_snake', s4: 'pred_sleep' },
+    resultText: '屈強な蛇が十字路に眠っている。丸太ほどの蛇がとぐろを巻いている。起こさなければ通れるが、道が狭い。',
+    damage: 1,
     quill: 3
   },
   {
-    id: 'p21_sharp_flame',
-    conditions: { s1: 'mod_sharp', s2: 'subj_flame' },
-    resultText: '鋭い炎が十字路に立っている。炎の輪郭が刃のように鋭い。近づくと外套の裾が正確に切り取られるように焼けた。',
-    damage: 3,
+    id: 'p21_snake_sing',
+    conditions: { s2: 'subj_snake', s4: 'pred_sing' },
+    resultText: '屈強な蛇が十字路に歌っている。鎌首をもたげ、シューシューと旋律を刻む。催眠的な響きだ。足が動かなくなりかけた。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p21_snake_entangle',
+    conditions: { s2: 'subj_snake', s4: 'pred_entangle' },
+    resultText: '屈強な蛇が十字路に絡みついている。四本の道標すべてに蛇が巻きつき、文字が読めない。どの道がどこへ続くかわからない。',
+    damage: 2,
     quill: 4
   },
   {
-    id: 'p21_broken_flame',
-    conditions: { s1: 'mod_broken', s2: 'subj_flame' },
-    resultText: '壊れた炎が十字路に立っている。緑や紫に明滅する炎。温かくない。道標のように立っているが、示す方角が変わり続ける。',
+    id: 'p21_snake_flee',
+    conditions: { s2: 'subj_snake', s4: 'pred_flee' },
+    resultText: '屈強な蛇が十字路に逃げていく。こちらに気づくと、意外な速さで西の道へ滑っていった。鱗の跡が光っている。',
+    damage: 0,
+    quill: 3
+  },
+  {
+    id: 'p21_snake_shine',
+    conditions: { s2: 'subj_snake', s4: 'pred_shine' },
+    resultText: '屈強な蛇が十字路に輝く。鱗が月光を反射し、四方に虹色の光を散らす。美しいが、目が眩む。',
     damage: 1,
     quill: 5
   },
   {
-    id: 'p21_mighty_flame',
-    conditions: { s1: 'mod_mighty', s2: 'subj_flame' },
-    resultText: '屈強な炎が十字路に立っている。火柱が天を衝いている。十字路の上空が昼のように明るい。近づけない。',
-    damage: 5,
-    quill: 1
-  },
-  {
-    id: 'p21_frozen_flame',
-    conditions: { s1: 'mod_frozen', s2: 'subj_flame' },
-    resultText: '凍てついた炎が十字路に立っている。青白い炎が霜を纏い、触れると凍える。鬼火だ。四つ辻に三つ、ちらちら揺れている。',
-    damage: 2,
-    quill: 5
-  },
-  {
-    id: 'p21_clear_flame',
-    conditions: { s1: 'mod_clear', s2: 'subj_flame' },
-    resultText: '透き通った炎が十字路に立っている。ほぼ見えない炎。空気の揺らぎだけで存在がわかる。穢れだけを焼く浄化の火だ。',
-    damage: -1,
-    quill: 7,
-    rewardItems: [{ id: 'item_p21_clear_flame', name: '浄化の灰', description: '透明な炎が焼いた穢れの灰。持つと身が軽くなる', sellPrice: 15 }]
-  },
-  {
-    id: 'p21_cursed_flame',
-    conditions: { s1: 'mod_cursed', s2: 'subj_flame' },
-    resultText: '呪われた炎が十字路に立っている。燃やしたものの形を再現する炎。十字路に立っていた旅人の影が、炎の中に透けている。',
-    damage: 3,
-    quill: 5
-  },
-  {
-    id: 'p21_sleepy_flame',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_flame' },
-    resultText: '眠い炎が十字路に立っている。熾火のように赤く明滅している。道の真ん中で今にも消えそうだ。急いで通り過ぎた。',
-    damage: 0,
-    quill: 3
-  },
-  {
-    id: 'p21_small_ice',
-    conditions: { s1: 'mod_small', s2: 'subj_ice' },
-    resultText: '小さな氷が十字路に立っている。掌に収まる氷の欠片が道の中央にぽつんとある。月光を受けて光っている。',
-    damage: 0,
-    quill: 3
-  },
-  {
-    id: 'p21_gentle_ice',
-    conditions: { s1: 'mod_gentle', s2: 'subj_ice' },
-    resultText: '優しい氷が十字路に立っている。冷たいが痛くない。額に当てると旅の疲れが引いていく。',
-    damage: -1,
-    quill: 5
-  },
-  {
-    id: 'p21_fire_ice',
-    conditions: { s1: 'mod_fire', s2: 'subj_ice' },
-    resultText: '燃え盛る氷が十字路に立っている。炎を放つ氷柱が十字路の中央に立っている。凍傷と火傷を同時に負う。',
+    id: 'p21_snake_rain_down',
+    conditions: { s2: 'subj_snake', s4: 'pred_rain_down' },
+    resultText: '屈強な蛇が十字路に降り注いでいる。空から太い蛇が何匹も落ちてくる。地面に叩きつけられてもすぐ動き出す。',
     damage: 4,
     quill: 3
   },
   {
-    id: 'p21_hard_ice',
-    conditions: { s1: 'mod_hard', s2: 'subj_ice' },
-    resultText: '堅い氷が十字路に立っている。万年氷の壁が道を塞いでいる。叩いても蹴っても欠けない。遠回りした。',
-    damage: 3,
-    quill: 2
-  },
-  {
-    id: 'p21_sharp_ice',
-    conditions: { s1: 'mod_sharp', s2: 'subj_ice' },
-    resultText: '鋭い氷が十字路に立っている。氷柱が剣のように地面から突き出している。月光が刃のように反射する。足元を慎重に選んだ。',
-    damage: 3,
-    quill: 3
-  },
-  {
-    id: 'p21_broken_ice',
-    conditions: { s1: 'mod_broken', s2: 'subj_ice' },
-    resultText: '壊れた氷が十字路に立っている。ひび割れた氷が道に散らばっている。踏むとぱきぱき砕ける。足裏に冷たさが伝わる。',
-    damage: 1,
-    quill: 3
-  },
-  {
-    id: 'p21_mighty_ice',
-    conditions: { s1: 'mod_mighty', s2: 'subj_ice' },
-    resultText: '屈強な氷が十字路に立っている。氷山のような氷塊が十字路を丸ごと覆っている。登るか、戻るか。',
-    damage: 4,
-    quill: 2
-  },
-  {
-    id: 'p21_frozen_ice',
-    conditions: { s1: 'mod_frozen', s2: 'subj_ice' },
-    resultText: '凍てついた氷が十字路に立っている。絶対零度に近い氷。近づくだけで空気が凍って落ちる。遥か手前から引き返した。',
-    damage: 4,
-    quill: 2
-  },
-  {
-    id: 'p21_clear_ice',
-    conditions: { s1: 'mod_clear', s2: 'subj_ice' },
-    resultText: '透き通った氷が十字路に立っている。完全に透明な氷の壁。あることに気づかず顔をぶつけた。鼻が痛い。',
-    damage: 1,
+    id: 'p21_snake_dance',
+    conditions: { s2: 'subj_snake', s4: 'pred_dance' },
+    resultText: '屈強な蛇が十字路に踊っている。鎌首を揺らし、笛もないのに蛇使いの踊りを舞う。見入ると足が止まる。',
+    damage: 2,
     quill: 5
   },
   {
-    id: 'p21_cursed_ice',
-    conditions: { s1: 'mod_cursed', s2: 'subj_ice' },
-    resultText: '呪われた氷が十字路に立っている。溶けない氷が周囲に冬を広げ続けている。十字路が永遠の凍土になりかけている。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p21_sleepy_ice',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_ice' },
-    resultText: '眠い氷が十字路に立っている。ゆっくり溶けていく氷。しずくの音が夜の十字路に響く。眠気を誘う子守唄のようだ。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p21_small_shadow',
-    conditions: { s1: 'mod_small', s2: 'subj_shadow' },
-    resultText: '小さな影が十字路に立っている。足元に黒い染みが一つ。月が出ているのに、何の影だかわからない。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p21_gentle_shadow',
-    conditions: { s1: 'mod_gentle', s2: 'subj_shadow' },
-    resultText: '優しい影が十字路に立っている。木陰のような心地よい影が、月明かりの中で寄り添うように伸びている。安らぐ。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p21_fire_shadow',
-    conditions: { s1: 'mod_fire', s2: 'subj_shadow' },
-    resultText: '燃え盛る影が十字路に立っている。影自体が黒い炎で燃えている。地面に焼印のような跡が残る。触れると灼ける。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p21_hard_shadow',
-    conditions: { s1: 'mod_hard', s2: 'subj_shadow' },
-    resultText: '堅い影が十字路に立っている。地面に貼りついた影が固まって壁になっている。道を一本、完全に塞いでいる。',
+    id: 'p21_snake_melt',
+    conditions: { s2: 'subj_snake', s4: 'pred_melt' },
+    resultText: '屈強な蛇が十字路に溶けている。鱗が液体になり、石畳の隙間に染み込んでいく。どこを踏んでも湿っている。',
     damage: 2,
     quill: 3
   },
   {
-    id: 'p21_sharp_shadow',
-    conditions: { s1: 'mod_sharp', s2: 'subj_shadow' },
-    resultText: '鋭い影が十字路に立っている。輪郭がくっきりした影が長く伸びて、一本の道を指し示している。縁に触れると指が切れた。',
+    id: 'p21_snake_laugh',
+    conditions: { s2: 'subj_snake', s4: 'pred_laugh' },
+    resultText: '屈強な蛇が十字路に笑っている。口を大きく開け、牙を見せている。笑い声はしないが、空気が震えている。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'p21_snake_wait',
+    conditions: { s2: 'subj_snake', s4: 'pred_wait' },
+    resultText: '屈強な蛇が十字路に待っている。とぐろを巻いて微動だにしない。獲物を待つ忍耐。こちらが獲物でないことを祈る。',
     damage: 2,
     quill: 4
   },
+
+  // ── 竜 × 述語 ──
   {
-    id: 'p21_broken_shadow',
-    conditions: { s1: 'mod_broken', s2: 'subj_shadow' },
-    resultText: '壊れた影が十字路に立っている。立体的にめくれ上がった影が、四つ辻でのたうちまわっている。平面に戻れないらしい。',
-    damage: 1,
-    quill: 5
-  },
-  {
-    id: 'p21_mighty_shadow',
-    conditions: { s1: 'mod_mighty', s2: 'subj_shadow' },
-    resultText: '屈強な影が十字路に立っている。月が出ているのに、十字路全体が暗い。影のほうが実体より大きい。',
+    id: 'p21_dragon_whisper',
+    conditions: { s2: 'subj_dragon', s4: 'pred_whisper' },
+    resultText: '屈強な竜が十字路に囁いている。巨体を折りたたみ、地面に顔を寄せている。石畳にひびが入り、そこから声が漏れる。',
     damage: 3,
     quill: 4
   },
   {
-    id: 'p21_frozen_shadow',
-    conditions: { s1: 'mod_frozen', s2: 'subj_shadow' },
-    resultText: '凍てついた影が十字路に立っている。地面に張りついて動かない影。本体はとうに去ったのに、影だけが十字路に残されている。',
-    damage: 1,
-    quill: 5
+    id: 'p21_dragon_sleep',
+    conditions: { s2: 'subj_dragon', s4: 'pred_sleep' },
+    resultText: '屈強な竜が十字路に眠っている。四つの道すべてが竜の体で塞がれている。翼の隙間を這って通る。息を止めて。',
+    damage: 3,
+    quill: 3
   },
   {
-    id: 'p21_clear_shadow',
-    conditions: { s1: 'mod_clear', s2: 'subj_shadow' },
-    resultText: '透き通った影が十字路に立っている。半透明の影。月光を遮らない。地面の石畳が透けて見える。',
+    id: 'p21_dragon_sing',
+    conditions: { s2: 'subj_dragon', s4: 'pred_sing' },
+    resultText: '屈強な竜が十字路に歌っている。大地が共鳴する低音。建物の壁にひびが走る。耳を塞いでも体の芯が揺れる。',
+    damage: 4,
+    quill: 4
+  },
+  {
+    id: 'p21_dragon_entangle',
+    conditions: { s2: 'subj_dragon', s4: 'pred_entangle' },
+    resultText: '屈強な竜が十字路に絡みついている。長い首と尾が四方の道に伸び、街そのものを締め上げている。',
+    damage: 4,
+    quill: 3
+  },
+  {
+    id: 'p21_dragon_flee',
+    conditions: { s2: 'subj_dragon', s4: 'pred_flee' },
+    resultText: '屈強な竜が十字路に逃げていく。こちらを見た途端、翼を広げて飛び去った。竜が恐れるものが近くにいるのか。',
     damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p21_cursed_shadow',
-    conditions: { s1: 'mod_cursed', s2: 'subj_shadow' },
-    resultText: '呪われた影が十字路に立っている。触れたものが影になる。道しるべも、石畳も、黒く平たくなっていく。',
-    damage: 3,
     quill: 5,
-    rewardItems: [{ id: 'item_p21_cursed_shadow', name: '影染めの石畳', description: '影に飲まれかけた石。端が黒く平たい', sellPrice: 7 }]
+    rewardItems: [{ id: 'item_p21_dragon_flee', name: '竜の落とし鱗', description: '飛び去る竜が落とした一枚の鱗。握ると微かに震えている', sellPrice: 8 }]
   },
   {
-    id: 'p21_sleepy_shadow',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_shadow' },
-    resultText: '眠い影が十字路に立っている。正午の影のように足元に縮んで動かない。真夜中なのに。起こす方法がわからない。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p21_small_song',
-    conditions: { s1: 'mod_small', s2: 'subj_song' },
-    resultText: '小さな歌が十字路に立っている。鼻歌が聞こえる。誰が歌っているかわからない。旋律だけが十字路に漂う。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p21_gentle_song',
-    conditions: { s1: 'mod_gentle', s2: 'subj_song' },
-    resultText: '優しい歌が十字路に立っている。子守唄が一本の道から聞こえてくる。その方角だけ空気が温かい。',
-    damage: -1,
-    quill: 6
-  },
-  {
-    id: 'p21_fire_song',
-    conditions: { s1: 'mod_fire', s2: 'subj_song' },
-    resultText: '燃え盛る歌が十字路に立っている。戦の歌が四方から反響する。血が沸く。恐れが消える。だが、冷静さも消える。',
+    id: 'p21_dragon_shine',
+    conditions: { s2: 'subj_dragon', s4: 'pred_shine' },
+    resultText: '屈強な竜が十字路に輝く。鱗が月光を受けて白熱する。十字路が真昼のように明るい。影が四方に長く伸びた。',
     damage: 2,
     quill: 5
   },
   {
-    id: 'p21_hard_song',
-    conditions: { s1: 'mod_hard', s2: 'subj_song' },
-    resultText: '堅い歌が十字路に立っている。一度始まると止められない歌が夜の十字路に響き続けている。他の音が全て消えた。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p21_sharp_song',
-    conditions: { s1: 'mod_sharp', s2: 'subj_song' },
-    resultText: '鋭い歌が十字路に立っている。金切り声のような高音。耳を塞いでも骨に響く。道しるべの硝子が割れた。',
-    damage: 3,
+    id: 'p21_dragon_rain_down',
+    conditions: { s2: 'subj_dragon', s4: 'pred_rain_down' },
+    resultText: '屈強な竜が十字路に降り注いでいる。空を覆い尽くす翼から、鱗が雨のように剥がれ落ちる。一枚一枚が刃物だ。',
+    damage: 5,
     quill: 3
   },
   {
-    id: 'p21_broken_song',
-    conditions: { s1: 'mod_broken', s2: 'subj_song' },
-    resultText: '壊れた歌が十字路に立っている。途中で止まる旋律。続きを誰も知らない。同じ節が何度も繰り返される。',
+    id: 'p21_dragon_dance',
+    conditions: { s2: 'subj_dragon', s4: 'pred_dance' },
+    resultText: '屈強な竜が十字路に踊っている。尾を振り、翼を広げ、四つ辻を舞台にする。踏み潰されないよう壁に張りつく。',
+    damage: 4,
+    quill: 4
+  },
+  {
+    id: 'p21_dragon_melt',
+    conditions: { s2: 'subj_dragon', s4: 'pred_melt' },
+    resultText: '屈強な竜が十字路に溶けている。鱗が蝋のように崩れ、石畳を焦がしながら流れていく。竜の最期だ。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p21_dragon_laugh',
+    conditions: { s2: 'subj_dragon', s4: 'pred_laugh' },
+    resultText: '屈強な竜が十字路に笑っている。喉の奥から轟音が漏れる。笑うたびに炎が零れた。',
+    damage: 4,
+    quill: 3
+  },
+  {
+    id: 'p21_dragon_wait',
+    conditions: { s2: 'subj_dragon', s4: 'pred_wait' },
+    resultText: '屈強な竜が十字路に待っている。黄金の瞳がこちらを見据えている。通行料を求めているのか、挑戦者を待っているのか。',
+    damage: 4,
+    quill: 4
+  },
+
+  // ── 蝶 × 述語 ──
+  {
+    id: 'p21_butterfly_whisper',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_whisper' },
+    resultText: '屈強な蝶が十字路に囁いている。鋼のような翅を震わせ、空気に文様を刻む。読める者にだけ意味がわかる。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p21_butterfly_sleep',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_sleep' },
+    resultText: '屈強な蝶が十字路に眠っている。道標の上で翅を閉じている。触れると硬い。鉄でできているようだ。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p21_butterfly_sing',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_sing' },
+    resultText: '屈強な蝶が十字路に歌っている。翅の振動が高周波の旋律を生む。硝子が割れるような音だ。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p21_butterfly_entangle',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_entangle' },
+    resultText: '屈強な蝶が十字路に絡みついている。道標に翅を巻きつけ、離れない。力ずくで引き剥がそうとしたが、柱のほうが折れた。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p21_butterfly_flee',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_flee' },
+    resultText: '屈強な蝶が十字路に逃げていく。重たい羽音を残して東の道へ飛んでいった。風圧で帽子が飛ぶ。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p21_butterfly_shine',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_shine' },
+    resultText: '屈強な蝶が十字路に輝く。鱗粉が月光を吸い込み、翅全体が灯籠のように光る。四つの道が照らし出された。',
+    damage: 0,
+    quill: 6,
+    rewardItems: [{ id: 'item_p21_butterfly_shine', name: '蝶の鱗粉灯', description: '瓶に集めた光る鱗粉。振ると小さな灯籠のように辺りを照らす', sellPrice: 11 }]
+  },
+  {
+    id: 'p21_butterfly_rain_down',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_rain_down' },
+    resultText: '屈強な蝶が十字路に降り注いでいる。空から鋼の蝶が次々と落ちてくる。翅の縁で石畳が削れていく。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p21_butterfly_dance',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_dance' },
+    resultText: '屈強な蝶が十字路に踊っている。重い翅を打ち鳴らし、空気を叩く。即興の拍子に道標が共鳴する。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p21_butterfly_melt',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_melt' },
+    resultText: '屈強な蝶が十字路に溶けている。鋼の翅が液体になり、石畳に広がる。銀色の水たまりに月が映っている。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p21_butterfly_laugh',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_laugh' },
+    resultText: '屈強な蝶が十字路に笑っている。翅の模様が顔に見える。風が吹くたびに表情が変わり、どれも嘲笑だ。',
     damage: 1,
     quill: 4
   },
   {
-    id: 'p21_mighty_song',
-    conditions: { s1: 'mod_mighty', s2: 'subj_song' },
-    resultText: '屈強な歌が十字路に立っている。大地を震わせる合唱。足元が揺れ、石畳がずれる。立っているのがやっとだ。',
-    damage: 3,
+    id: 'p21_butterfly_wait',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_wait' },
+    resultText: '屈強な蝶が十字路に待っている。道標の天辺に止まり、翅を閉じている。通る者を品定めしている目つきだ。',
+    damage: 1,
     quill: 4
   },
+
+  // ── 風 × 述語 ──
   {
-    id: 'p21_frozen_song',
-    conditions: { s1: 'mod_frozen', s2: 'subj_song' },
-    resultText: '凍てついた歌が十字路に立っている。聴いた瞬間、足が動かなくなる。空気ごと凍りつく歌声が十字路を支配している。',
-    damage: 3,
+    id: 'p21_wind_whisper',
+    conditions: { s2: 'subj_wind', s4: 'pred_whisper' },
+    resultText: '屈強な風が十字路に囁いている。四方から吹き寄せる風が渦を巻き、中心で人の声に聞こえる。道を教えているのか、惑わしているのか。',
+    damage: 1,
     quill: 5
   },
   {
-    id: 'p21_clear_song',
-    conditions: { s1: 'mod_clear', s2: 'subj_song' },
-    resultText: '透き通った歌が十字路に立っている。雑念が消え、思考が澄む。四本の道の先がすべて見通せる気がする。',
-    damage: 0,
-    quill: 7,
-    rewardItems: [{ id: 'item_p21_clear_song', name: '透音の水晶', description: '歌が結晶化したもの。握ると頭が冴える', sellPrice: 12 }]
-  },
-  {
-    id: 'p21_cursed_song',
-    conditions: { s1: 'mod_cursed', s2: 'subj_song' },
-    resultText: '呪われた歌が十字路に立っている。一度聴くと頭から離れない。十字路を離れても旋律が追いかけてくる。',
-    damage: 2,
+    id: 'p21_wind_sleep',
+    conditions: { s2: 'subj_wind', s4: 'pred_sleep' },
+    resultText: '屈強な風が十字路に眠っている。不自然な凪。空気が重く、一歩ごとに抵抗がある。起きたらどうなるか考えたくない。',
+    damage: 1,
     quill: 4
   },
   {
-    id: 'p21_sleepy_song',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_song' },
-    resultText: '眠い歌が十字路に立っている。子守唄が響いている。十字路の石畳に座り込みそうになる。抗えない眠気だ。',
+    id: 'p21_wind_sing',
+    conditions: { s2: 'subj_wind', s4: 'pred_sing' },
+    resultText: '屈強な風が十字路に歌っている。建物の隙間を通り抜ける突風が、低い咆哮のような旋律を奏でる。壁が震えている。',
     damage: 2,
-    quill: 4
+    quill: 5
   },
   {
-    id: 'p21_small_silence',
-    conditions: { s1: 'mod_small', s2: 'subj_silence' },
-    resultText: '小さな沈黙が十字路に立っている。ふと足音が消えた。一瞬の静寂。虫の声も風の音も止まる。すぐに戻った。',
+    id: 'p21_wind_entangle',
+    conditions: { s2: 'subj_wind', s4: 'pred_entangle' },
+    resultText: '屈強な風が十字路に絡みついている。竜巻が道標を軸にして回っている。近づけば巻き込まれる。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'p21_wind_flee',
+    conditions: { s2: 'subj_wind', s4: 'pred_flee' },
+    resultText: '屈強な風が十字路に逃げていく。突然の突風が南の道を駆け抜け、砂埃だけが残った。嵐の前触れか、後始末か。',
     damage: 0,
     quill: 3
   },
   {
-    id: 'p21_gentle_silence',
-    conditions: { s1: 'mod_gentle', s2: 'subj_silence' },
-    resultText: '優しい沈黙が十字路に立っている。言葉のない静けさが十字路を包んでいる。安らぎがある。急ぐ必要がないと思えた。',
-    damage: 0,
+    id: 'p21_wind_shine',
+    conditions: { s2: 'subj_wind', s4: 'pred_shine' },
+    resultText: '屈強な風が十字路に輝く。風に乗った砂粒が月光を反射し、光の渦が四つ辻を包む。美しいが目を開けていられない。',
+    damage: 1,
     quill: 5
   },
   {
-    id: 'p21_fire_silence',
-    conditions: { s1: 'mod_fire', s2: 'subj_silence' },
-    resultText: '燃え盛る沈黙が十字路に立っている。誰も口を開けない。空気が焦げている。何かが爆発する前の静けさだ。',
+    id: 'p21_wind_rain_down',
+    conditions: { s2: 'subj_wind', s4: 'pred_rain_down' },
+    resultText: '屈強な風が十字路に降り注いでいる。上空から叩きつけるような下降気流。地面に押し倒される。這って進む。',
     damage: 3,
-    quill: 5
+    quill: 3
   },
   {
-    id: 'p21_hard_silence',
-    conditions: { s1: 'mod_hard', s2: 'subj_silence' },
-    resultText: '堅い沈黙が十字路に立っている。声を出しても吸い込まれて消える。叫んでも無音。十字路が音の墓場になっている。',
+    id: 'p21_wind_dance',
+    conditions: { s2: 'subj_wind', s4: 'pred_dance' },
+    resultText: '屈強な風が十字路に踊っている。四方から吹く風が組み合い、螺旋を描く。巻き込まれた木の葉が踊り子のように舞う。',
     damage: 2,
     quill: 5
   },
   {
-    id: 'p21_sharp_silence',
-    conditions: { s1: 'mod_sharp', s2: 'subj_silence' },
-    resultText: '鋭い沈黙が十字路に立っている。無言の圧。視線だけが四方から刺さる。誰もいないのに、見られている。',
+    id: 'p21_wind_melt',
+    conditions: { s2: 'subj_wind', s4: 'pred_melt' },
+    resultText: '屈強な風が十字路に溶けている。風が重さを持ち、液体のように地面に溜まっている。膝まで浸かって歩く。息苦しい。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p21_wind_laugh',
+    conditions: { s2: 'subj_wind', s4: 'pred_laugh' },
+    resultText: '屈強な風が十字路に笑っている。突風が吹くたびに、建物の隙間から嘲るような音が響く。風に笑われている。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p21_wind_wait',
+    conditions: { s2: 'subj_wind', s4: 'pred_wait' },
+    resultText: '屈強な風が十字路に待っている。四つ辻だけ無風。一歩踏み出した瞬間、四方から一斉に叩きつけられた。',
+    damage: 3,
+    quill: 3
+  },
+
+  // ── 炎 × 述語 ──
+  {
+    id: 'p21_flame_whisper',
+    conditions: { s2: 'subj_flame', s4: 'pred_whisper' },
+    resultText: '屈強な炎が十字路に囁いている。石畳の隙間から立ち上る炎が、爆ぜる音で何かを語る。聞き取れない。近づくと火傷する。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p21_flame_sleep',
+    conditions: { s2: 'subj_flame', s4: 'pred_sleep' },
+    resultText: '屈強な炎が十字路に眠っている。種火が石畳の割れ目に潜んでいる。踏めば燃え上がる。慎重に避けて通る。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p21_flame_sing',
+    conditions: { s2: 'subj_flame', s4: 'pred_sing' },
+    resultText: '屈強な炎が十字路に歌っている。火柱が律動的に脈打ち、爆ぜる音が旋律になる。熱気で空気が歪む。',
+    damage: 4,
+    quill: 4
+  },
+  {
+    id: 'p21_flame_entangle',
+    conditions: { s2: 'subj_flame', s4: 'pred_entangle' },
+    resultText: '屈強な炎が十字路に絡みついている。道標が炎に包まれ、文字が溶けている。どの道がどこへ行くかわからない。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'p21_flame_flee',
+    conditions: { s2: 'subj_flame', s4: 'pred_flee' },
+    resultText: '屈強な炎が十字路に逃げていく。火の玉が西の道を転がっていった。焦げた石畳の匂いが残る。',
+    damage: 1,
+    quill: 3
+  },
+  {
+    id: 'p21_flame_shine',
+    conditions: { s2: 'subj_flame', s4: 'pred_shine' },
+    resultText: '屈強な炎が十字路に輝く。炎が純白に燃え、十字路を真昼のように照らす。影が一切ない。不気味に明るい。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p21_flame_rain_down',
+    conditions: { s2: 'subj_flame', s4: 'pred_rain_down' },
+    resultText: '屈強な炎が十字路に降り注いでいる。火の雨。空から燃える塊が落ちてくる。走り抜けるしかない。',
+    damage: 5,
+    quill: 2
+  },
+  {
+    id: 'p21_flame_dance',
+    conditions: { s2: 'subj_flame', s4: 'pred_dance' },
+    resultText: '屈強な炎が十字路に踊っている。火柱が人の形をとり、四つ辻で輪になって踊る。近づけば仲間に入れられる。',
+    damage: 3,
+    quill: 5
+  },
+  {
+    id: 'p21_flame_melt',
+    conditions: { s2: 'subj_flame', s4: 'pred_melt' },
+    resultText: '屈強な炎が十字路に溶けている。炎が液体になり、溶岩のように石畳を流れる。靴底が焦げる匂いがする。',
+    damage: 4,
+    quill: 3
+  },
+  {
+    id: 'p21_flame_laugh',
+    conditions: { s2: 'subj_flame', s4: 'pred_laugh' },
+    resultText: '屈強な炎が十字路に笑っている。爆ぜる音が笑い声に聞こえる。火が大きくなるたびに声が高くなる。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'p21_flame_wait',
+    conditions: { s2: 'subj_flame', s4: 'pred_wait' },
+    resultText: '屈強な炎が十字路に待っている。四つ辻の中央で揺らめく炎。近づくと火勢が増し、離れると弱まる。誘っている。',
+    damage: 3,
+    quill: 4
+  },
+
+  // ── 氷 × 述語 ──
+  {
+    id: 'p21_ice_whisper',
+    conditions: { s2: 'subj_ice', s4: 'pred_whisper' },
+    resultText: '屈強な氷が十字路に囁いている。氷柱が風で触れ合い、澄んだ音を立てる。言葉に聞こえるのは気のせいか。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p21_ice_sleep',
+    conditions: { s2: 'subj_ice', s4: 'pred_sleep' },
+    resultText: '屈強な氷が十字路に眠っている。地面が厚い氷に覆われ、滑る。四方の道すべてが凍りついている。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p21_ice_sing',
+    conditions: { s2: 'subj_ice', s4: 'pred_sing' },
+    resultText: '屈強な氷が十字路に歌っている。氷壁が共鳴し、透明な音が四方に広がる。美しいが、聴き続けると体温が奪われる。',
+    damage: 3,
+    quill: 5
+  },
+  {
+    id: 'p21_ice_entangle',
+    conditions: { s2: 'subj_ice', s4: 'pred_entangle' },
+    resultText: '屈強な氷が十字路に絡みついている。氷柱が道標を包み込み、建物の壁にまで伸びている。通路が狭い。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'p21_ice_flee',
+    conditions: { s2: 'subj_ice', s4: 'pred_flee' },
+    resultText: '屈強な氷が十字路に逃げていく。氷が音を立てて砕け、破片が北の道に吸い込まれていく。冷気だけが残る。',
+    damage: 1,
+    quill: 3
+  },
+  {
+    id: 'p21_ice_shine',
+    conditions: { s2: 'subj_ice', s4: 'pred_shine' },
+    resultText: '屈強な氷が十字路に輝く。月光を受けた氷面が鏡のように光る。四方の道が氷の中に映り、どれが本物かわからない。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p21_ice_rain_down',
+    conditions: { s2: 'subj_ice', s4: 'pred_rain_down' },
+    resultText: '屈強な氷が十字路に降り注いでいる。空から氷塊が落ちてくる。石畳が砕け、破片が飛び散る。',
+    damage: 4,
+    quill: 2
+  },
+  {
+    id: 'p21_ice_dance',
+    conditions: { s2: 'subj_ice', s4: 'pred_dance' },
+    resultText: '屈強な氷が十字路に踊っている。氷柱が回転しながら位置を変える。規則的に動いているが、隙間を縫うのは難しい。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p21_ice_melt',
+    conditions: { s2: 'subj_ice', s4: 'pred_melt' },
+    resultText: '屈強な氷が十字路に溶けている。季節外れの雪解け。水が四方の道に流れ、足元が川になっている。',
+    damage: 1,
+    quill: 3
+  },
+  {
+    id: 'p21_ice_laugh',
+    conditions: { s2: 'subj_ice', s4: 'pred_laugh' },
+    resultText: '屈強な氷が十字路に笑っている。氷が軋む音が笑い声に聞こえる。寒さが骨に沁みる。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p21_ice_wait',
+    conditions: { s2: 'subj_ice', s4: 'pred_wait' },
+    resultText: '屈強な氷が十字路に待っている。触れた者を閉じ込める氷が、道の真ん中で静かに佇んでいる。表面に手形がいくつもある。',
+    damage: 3,
+    quill: 4
+  },
+
+  // ── 影 × 述語 ──
+  {
+    id: 'p21_shadow_whisper',
+    conditions: { s2: 'subj_shadow', s4: 'pred_whisper' },
+    resultText: '屈強な影が十字路に囁いている。地面に広がる影が脈動し、耳に直接声が届く。道を教えている。信じていいかはわからない。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p21_shadow_sleep',
+    conditions: { s2: 'subj_shadow', s4: 'pred_sleep' },
+    resultText: '屈強な影が十字路に眠っている。四つ辻全体が深い影に沈んでいる。月が出ているのに暗い。踏むと冷たい。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p21_shadow_sing',
+    conditions: { s2: 'subj_shadow', s4: 'pred_sing' },
+    resultText: '屈強な影が十字路に歌っている。影から低い歌声が湧き上がる。聴いていると自分の影が長く伸びていく。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p21_shadow_entangle',
+    conditions: { s2: 'subj_shadow', s4: 'pred_entangle' },
+    resultText: '屈強な影が十字路に絡みついている。道標に影が巻きつき、触れると自分の影も引き寄せられる。足が動かない。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p21_shadow_flee',
+    conditions: { s2: 'subj_shadow', s4: 'pred_flee' },
+    resultText: '屈強な影が十字路に逃げていく。月が雲に隠れた瞬間、影が滑るように南の道へ消えた。自分の影だけが残った。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p21_shadow_shine',
+    conditions: { s2: 'subj_shadow', s4: 'pred_shine' },
+    resultText: '屈強な影が十字路に輝く。影なのに光っている。黒い光。見つめると目の奥が痛む。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p21_shadow_rain_down',
+    conditions: { s2: 'subj_shadow', s4: 'pred_rain_down' },
+    resultText: '屈強な影が十字路に降り注いでいる。上から闇が降ってくる。月が見えなくなり、手元すら見えない。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'p21_shadow_dance',
+    conditions: { s2: 'subj_shadow', s4: 'pred_dance' },
+    resultText: '屈強な影が十字路に踊っている。月光の下、主のない影が四つ辻で輪舞する。自分の影が引きずられるように動き始めた。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p21_shadow_melt',
+    conditions: { s2: 'subj_shadow', s4: 'pred_melt' },
+    resultText: '屈強な影が十字路に溶けている。影が液体のように地面に広がり、四方の道を黒く染めている。底が見えない。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p21_shadow_laugh',
+    conditions: { s2: 'subj_shadow', s4: 'pred_laugh' },
+    resultText: '屈強な影が十字路に笑っている。影が震えている。笑い声はしないが、嘲りが伝わる。自分の影も震え始めた。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p21_shadow_wait',
+    conditions: { s2: 'subj_shadow', s4: 'pred_wait' },
+    resultText: '屈強な影が十字路に待っている。四つ辻の中央に濃い影が溜まっている。踏み入れた者の影を奪うつもりだ。',
+    damage: 3,
+    quill: 4
+  },
+
+  // ── 歌 × 述語 ──
+  {
+    id: 'p21_song_whisper',
+    conditions: { s2: 'subj_song', s4: 'pred_whisper' },
+    resultText: '屈強な歌が十字路に囁いている。力強い旋律が小声で奏でられる。抑えた声量が逆に圧迫感を生む。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p21_song_sleep',
+    conditions: { s2: 'subj_song', s4: 'pred_sleep' },
+    resultText: '屈強な歌が十字路に眠っている。かつて誰かが歌った旋律が、石畳に染みついて眠っている。足音で微かに共鳴する。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p21_song_sing',
+    conditions: { s2: 'subj_song', s4: 'pred_sing' },
+    resultText: '屈強な歌が十字路に歌っている。歌自身が歌っている。壁を揺らし、石を震わせる。旋律に逆らって歩くのが難しい。',
     damage: 2,
     quill: 5,
-    rewardItems: [{ id: 'item_p21_sharp_silence', name: '沈黙の視線', description: '瓶に詰めた十字路の圧。開けると背筋が伸びる', sellPrice: 8 }]
+    rewardItems: [{ id: 'item_p21_song_sing', name: '十字路の旋律', description: '四方に響く歌の断片。口ずさむと方角がわかる', sellPrice: 8 }]
   },
   {
-    id: 'p21_broken_silence',
-    conditions: { s1: 'mod_broken', s2: 'subj_silence' },
-    resultText: '壊れた沈黙が十字路に立っている。静寂のはずなのにノイズが混じる。耳鳴りのような不協和音が四つ辻を満たしている。',
-    damage: 1,
-    quill: 4
-  },
-  {
-    id: 'p21_mighty_silence',
-    conditions: { s1: 'mod_mighty', s2: 'subj_silence' },
-    resultText: '屈強な沈黙が十字路に立っている。圧倒的な無音が場を支配している。足音すら飲み込まれる。声が出せない。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p21_frozen_silence',
-    conditions: { s1: 'mod_frozen', s2: 'subj_silence' },
-    resultText: '凍てついた沈黙が十字路に立っている。息も凍る。時間が止まったかのような静けさ。月光だけが動いている。',
-    damage: 2,
-    quill: 5
-  },
-  {
-    id: 'p21_clear_silence',
-    conditions: { s1: 'mod_clear', s2: 'subj_silence' },
-    resultText: '透き通った沈黙が十字路に立っている。泉のように澄んだ無音。雑念が消える。四つの道の先が、静寂の中にくっきり浮かぶ。',
-    damage: 0,
-    quill: 6
-  },
-  {
-    id: 'p21_cursed_silence',
-    conditions: { s1: 'mod_cursed', s2: 'subj_silence' },
-    resultText: '呪われた沈黙が十字路に立っている。声を奪われた。口は動くが音が出ない。十字路を離れるまで言葉が戻らない。',
+    id: 'p21_song_entangle',
+    conditions: { s2: 'subj_song', s4: 'pred_entangle' },
+    resultText: '屈強な歌が十字路に絡みついている。旋律が耳から離れない。頭の中で繰り返され、他のことが考えられなくなる。',
     damage: 2,
     quill: 4
   },
   {
-    id: 'p21_sleepy_silence',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_silence' },
-    resultText: '眠い沈黙が十字路に立っている。午後の図書館のような静けさ。月明かりの下で意識が遠のいていく。',
-    damage: 1,
+    id: 'p21_song_flee',
+    conditions: { s2: 'subj_song', s4: 'pred_flee' },
+    resultText: '屈強な歌が十字路に逃げていく。旋律が北の道に吸い込まれていく。追いかけたくなるが、足を止めた。',
+    damage: 0,
     quill: 4
   },
   {
-    id: 'p21_small_knight',
-    conditions: { s1: 'mod_small', s2: 'subj_knight' },
-    resultText: '小さな騎士が十字路に立っている。子供の騎士。大きすぎる兜で前が見えていない。「止まれ」と叫んでいるが方向が違う。',
+    id: 'p21_song_shine',
+    conditions: { s2: 'subj_song', s4: 'pred_shine' },
+    resultText: '屈強な歌が十字路に輝く。旋律が光を帯び、音符が目に見える。四つの道がそれぞれ違う色に染まった。',
     damage: 0,
-    quill: 6
+    quill: 6,
+    rewardItems: [{ id: 'item_p21_song_shine', name: '色づいた音符', description: '光る旋律の欠片。耳に近づけると道の色が見える', sellPrice: 10 }]
   },
   {
-    id: 'p21_gentle_knight',
-    conditions: { s1: 'mod_gentle', s2: 'subj_knight' },
-    resultText: '優しい騎士が十字路に立っている。剣を収め、跪いて手を差し出す。「お連れしましょう」。安全な道へ導いてくれた。',
-    damage: 0,
+    id: 'p21_song_rain_down',
+    conditions: { s2: 'subj_song', s4: 'pred_rain_down' },
+    resultText: '屈強な歌が十字路に降り注いでいる。空から旋律が落ちてくる。一音一音が重く、肩にのしかかる。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p21_song_dance',
+    conditions: { s2: 'subj_song', s4: 'pred_dance' },
+    resultText: '屈強な歌が十字路に踊っている。旋律がリズムを変え、弾むように四方に散る。体が勝手に拍子を取り始める。',
+    damage: 1,
     quill: 5
   },
   {
-    id: 'p21_fire_knight',
-    conditions: { s1: 'mod_fire', s2: 'subj_knight' },
-    resultText: '燃え盛る騎士が十字路に立っている。鎧ごと炎に包まれた騎士。それでも直立不動だ。近づくと熱風が頬を焼く。',
-    damage: 4,
+    id: 'p21_song_melt',
+    conditions: { s2: 'subj_song', s4: 'pred_melt' },
+    resultText: '屈強な歌が十字路に溶けている。力強かった旋律が崩れ、不協和音になっていく。聴いていると気分が悪くなる。',
+    damage: 2,
     quill: 3
   },
   {
-    id: 'p21_hard_knight',
-    conditions: { s1: 'mod_hard', s2: 'subj_knight' },
-    resultText: '堅い騎士が十字路に立っている。分厚い鎧で全身を覆った騎士が微動だにせず道を塞いでいる。表情が見えない。通さない構えだ。',
+    id: 'p21_song_laugh',
+    conditions: { s2: 'subj_song', s4: 'pred_laugh' },
+    resultText: '屈強な歌が十字路に笑っている。旋律が跳ね、弾け、笑い声のように響く。陽気だが、少し狂っている。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p21_song_wait',
+    conditions: { s2: 'subj_song', s4: 'pred_wait' },
+    resultText: '屈強な歌が十字路に待っている。最初の一音だけが鳴り、続きを待っている。こちらが歌い継がなければ先に進めない。',
+    damage: 1,
+    quill: 5
+  },
+
+  // ── 沈黙 × 述語 ──
+  {
+    id: 'p21_silence_whisper',
+    conditions: { s2: 'subj_silence', s4: 'pred_whisper' },
+    resultText: '屈強な沈黙が十字路に囁いている。無音なのに声が聞こえる。頭の中に直接響く。耳を塞いでも変わらない。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p21_silence_sleep',
+    conditions: { s2: 'subj_silence', s4: 'pred_sleep' },
+    resultText: '屈強な沈黙が十字路に眠っている。音が完全に消えている。自分の心臓の音すら聞こえない。不安になる。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p21_silence_sing',
+    conditions: { s2: 'subj_silence', s4: 'pred_sing' },
+    resultText: '屈強な沈黙が十字路に歌っている。音のない歌。空気の振動だけが体に伝わる。骨が共鳴する。',
+    damage: 2,
+    quill: 6,
+    rewardItems: [{ id: 'item_p21_silence_sing', name: '無音の共鳴石', description: '握ると骨の奥が震える石。音は聞こえないのに、何かが伝わる', sellPrice: 11 }]
+  },
+  {
+    id: 'p21_silence_entangle',
+    conditions: { s2: 'subj_silence', s4: 'pred_entangle' },
+    resultText: '屈強な沈黙が十字路に絡みついている。声を出そうとすると喉が詰まる。足音も消える。音を奪われたまま歩く。',
     damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p21_silence_flee',
+    conditions: { s2: 'subj_silence', s4: 'pred_flee' },
+    resultText: '屈強な沈黙が十字路に逃げていく。突然、虫の声が戻ってきた。風の音が聞こえる。沈黙がどこかへ去ったのだ。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p21_silence_shine',
+    conditions: { s2: 'subj_silence', s4: 'pred_shine' },
+    resultText: '屈強な沈黙が十字路に輝く。無音の空間が月光を吸い込み、静けさが目に見える光になっている。触れると音が消える。',
+    damage: 1,
+    quill: 6
+  },
+  {
+    id: 'p21_silence_rain_down',
+    conditions: { s2: 'subj_silence', s4: 'pred_rain_down' },
+    resultText: '屈強な沈黙が十字路に降り注いでいる。空から無音が降ってくる。浴びた場所から音が死んでいく。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p21_silence_dance',
+    conditions: { s2: 'subj_silence', s4: 'pred_dance' },
+    resultText: '屈強な沈黙が十字路に踊っている。音もなく空気が揺れる。何かが動いているのに何も聞こえない。不気味だ。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p21_silence_melt',
+    conditions: { s2: 'subj_silence', s4: 'pred_melt' },
+    resultText: '屈強な沈黙が十字路に溶けている。無音が液体になり、足元に溜まっている。浸かった足が痺れる。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p21_silence_laugh',
+    conditions: { s2: 'subj_silence', s4: 'pred_laugh' },
+    resultText: '屈強な沈黙が十字路に笑っている。音がないのに笑いの気配がある。空気が痙攣している。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p21_silence_wait',
+    conditions: { s2: 'subj_silence', s4: 'pred_wait' },
+    resultText: '屈強な沈黙が十字路に待っている。四つ辻に入った瞬間、すべての音が消えた。沈黙が口を開けて待っていた。',
+    damage: 2,
+    quill: 4
+  },
+
+  // ── 騎士 × 述語 ──
+  {
+    id: 'p21_knight_whisper',
+    conditions: { s2: 'subj_knight', s4: 'pred_whisper' },
+    resultText: '屈強な騎士が十字路に囁いている。兜の奥から低い声が漏れる。道を尋ねているのか、警告しているのか。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p21_knight_sleep',
+    conditions: { s2: 'subj_knight', s4: 'pred_sleep' },
+    resultText: '屈強な騎士が十字路に眠っている。甲冑姿のまま道の真ん中で寝ている。鎧が月光を鈍く反射している。起こす勇気はない。',
+    damage: 1,
+    quill: 3
+  },
+  {
+    id: 'p21_knight_sing',
+    conditions: { s2: 'subj_knight', s4: 'pred_sing' },
+    resultText: '屈強な騎士が十字路に歌っている。兜の中で反響する軍歌が、四方の道に響く。士気が上がるような、沈むような歌だ。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p21_knight_entangle',
+    conditions: { s2: 'subj_knight', s4: 'pred_entangle' },
+    resultText: '屈強な騎士が十字路に絡みついている。四本の道標にそれぞれ腕と脚を縛られている。誰かに罰を受けたらしい。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p21_knight_flee',
+    conditions: { s2: 'subj_knight', s4: 'pred_flee' },
+    resultText: '屈強な騎士が十字路に逃げていく。重い甲冑を鳴らしながら東の道に消えた。何から逃げているのか。背後を見た。何もいない。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p21_knight_shine',
+    conditions: { s2: 'subj_knight', s4: 'pred_shine' },
+    resultText: '屈強な騎士が十字路に輝く。磨き上げられた甲冑が月光を跳ね返す。四つの道に光の筋が走った。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p21_knight_rain_down',
+    conditions: { s2: 'subj_knight', s4: 'pred_rain_down' },
+    resultText: '屈強な騎士が十字路に降り注いでいる。空から鎧武者が降ってくる。着地のたびに石畳が砕ける。戦場が空から来た。',
+    damage: 4,
+    quill: 4
+  },
+  {
+    id: 'p21_knight_dance',
+    conditions: { s2: 'subj_knight', s4: 'pred_dance' },
+    resultText: '屈強な騎士が十字路に踊っている。剣を振り回しながら舞う。型稽古のようでもあり、狂気のようでもある。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p21_knight_melt',
+    conditions: { s2: 'subj_knight', s4: 'pred_melt' },
+    resultText: '屈強な騎士が十字路に溶けている。甲冑の中身が液体になって流れ出している。兜だけが残り、空を見上げている。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p21_knight_laugh',
+    conditions: { s2: 'subj_knight', s4: 'pred_laugh' },
+    resultText: '屈強な騎士が十字路に笑っている。兜の中で反響する笑い声が不気味に響く。目のスリットの奥が見えない。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p21_knight_wait',
+    conditions: { s2: 'subj_knight', s4: 'pred_wait' },
+    resultText: '屈強な騎士が十字路に待っている。剣を地面に突き立て、通行者を待っている。一騎打ちを申し込む気配がある。',
+    damage: 3,
+    quill: 4
+  },
+
+  // ── 魔女 × 述語（元テキストの述語以外） ──
+  {
+    id: 'p21_witch_whisper',
+    conditions: { s2: 'subj_witch', s4: 'pred_whisper' },
+    resultText: '屈強な魔女が十字路に囁いている。四つ辻にしゃがみ込み、石畳に呪文を刻んでいる。聞こえた一節が頭から離れない。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p21_witch_sleep',
+    conditions: { s2: 'subj_witch', s4: 'pred_sleep' },
+    resultText: '屈強な魔女が十字路に眠っている。道の真ん中で大の字になっている。近づくと呪いの寝言が聞こえた。急いで通り過ぎる。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p21_witch_sing',
+    conditions: { s2: 'subj_witch', s4: 'pred_sing' },
+    resultText: '屈強な魔女が十字路に歌っている。太い声で呪歌を唱えている。石畳に模様が浮かび上がり、道が変わっていく。',
+    damage: 3,
+    quill: 5
+  },
+  {
+    id: 'p21_witch_entangle',
+    conditions: { s2: 'subj_witch', s4: 'pred_entangle' },
+    resultText: '屈強な魔女が十字路に絡みついている。道標を抱え込んで離さない。魔女ごと引き倒さないと通れない。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p21_witch_flee',
+    conditions: { s2: 'subj_witch', s4: 'pred_flee' },
+    resultText: '屈強な魔女が十字路に逃げていく。箒もなしに走っている。あの体格で速い。何かを落としていった。',
+    damage: 0,
+    quill: 4,
+    rewardItems: [{ id: 'item_p21_witch_flee', name: '魔女の落とし物', description: '急いで逃げた魔女が落とした小瓶。中身が光っている', sellPrice: 9 }]
+  },
+  {
+    id: 'p21_witch_shine',
+    conditions: { s2: 'subj_witch', s4: 'pred_shine' },
+    resultText: '屈強な魔女が十字路に輝く。全身が魔力で光っている。四つの道に魔女の影が四つ伸び、それぞれが違う方向を指す。',
+    damage: 1,
+    quill: 6
+  },
+  {
+    id: 'p21_witch_rain_down',
+    conditions: { s2: 'subj_witch', s4: 'pred_rain_down' },
+    resultText: '屈強な魔女が十字路に降り注いでいる。空から次々と魔女が降ってくる。全員同じ顔だ。着地するなり四方に散っていく。',
+    damage: 3,
+    quill: 5
+  },
+  {
+    id: 'p21_witch_dance',
+    conditions: { s2: 'subj_witch', s4: 'pred_dance' },
+    resultText: '屈強な魔女が十字路に踊っている。ワルプルギスの夜のように、ひとりで輪を描いて踊る。地面に魔法陣が刻まれていく。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p21_witch_melt',
+    conditions: { s2: 'subj_witch', s4: 'pred_melt' },
+    resultText: '屈強な魔女が十字路に溶けている。水をかけられたように崩れていく。帽子だけが石畳に残った。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p21_witch_laugh',
+    conditions: { s2: 'subj_witch', s4: 'pred_laugh' },
+    resultText: '屈強な魔女が十字路に笑っている。腹の底から響く哄笑。四つの道が震え、どの道も危険に聞こえる。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p21_witch_wait',
+    conditions: { s2: 'subj_witch', s4: 'pred_wait' },
+    resultText: '屈強な魔女が十字路に待っている。腕組みをして立っている。迷い人に道を教える趣味があるらしい。代わりに何かを要求する目つきだ。',
+    damage: 1,
+    quill: 4
+  },
+
+  // ── 王 × 述語 ──
+  {
+    id: 'p21_king_whisper',
+    conditions: { s2: 'subj_king', s4: 'pred_whisper' },
+    resultText: '屈強な王が十字路に囁いている。王冠を被ったまま膝をつき、石畳に耳を当てている。地下から何か聞こえるらしい。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p21_king_sleep',
+    conditions: { s2: 'subj_king', s4: 'pred_sleep' },
+    resultText: '屈強な王が十字路に眠っている。玉座もなしに道の真ん中で寝ている。王冠が転がっている。拾うべきか迷う。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p21_king_sing',
+    conditions: { s2: 'subj_king', s4: 'pred_sing' },
+    resultText: '屈強な王が十字路に歌っている。朗々と軍歌を歌い上げる。声に力があり、四方から兵士が集まりそうな響きだ。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p21_king_entangle',
+    conditions: { s2: 'subj_king', s4: 'pred_entangle' },
+    resultText: '屈強な王が十字路に絡みついている。自らの紫のマントが道標に絡まり、身動きが取れない。威厳を保とうとしている。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p21_king_flee',
+    conditions: { s2: 'subj_king', s4: 'pred_flee' },
+    resultText: '屈強な王が十字路に逃げていく。王冠を落としながら北の道に消えた。反乱か、それとも。',
+    damage: 0,
+    quill: 4,
+    rewardItems: [{ id: 'item_p21_king_flee', name: '落とされた王冠', description: '逃げる王が落とした王冠。軽い。中が空洞だ', sellPrice: 12 }]
+  },
+  {
+    id: 'p21_king_shine',
+    conditions: { s2: 'subj_king', s4: 'pred_shine' },
+    resultText: '屈強な王が十字路に輝く。王冠と甲冑が黄金の光を放つ。四つの道すべてに王の影が落ちる。威厳がある。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p21_king_rain_down',
+    conditions: { s2: 'subj_king', s4: 'pred_rain_down' },
+    resultText: '屈強な王が十字路に降り注いでいる。空から王冠が降ってくる。地面に突き刺さり、どれも本物に見える。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p21_king_dance',
+    conditions: { s2: 'subj_king', s4: 'pred_dance' },
+    resultText: '屈強な王が十字路に踊っている。宮廷舞踏のステップだが、相手がいない。ひとりで優雅に回っている。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p21_king_melt',
+    conditions: { s2: 'subj_king', s4: 'pred_melt' },
+    resultText: '屈強な王が十字路に溶けている。黄金の甲冑から王が流れ出している。王冠だけが形を保ち、空を見上げている。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p21_king_laugh',
+    conditions: { s2: 'subj_king', s4: 'pred_laugh' },
+    resultText: '屈強な王が十字路に笑っている。見下ろすような笑い。何がおかしいのかわからないが、笑われているのは確かだ。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p21_king_wait',
+    conditions: { s2: 'subj_king', s4: 'pred_wait' },
+    resultText: '屈強な王が十字路に待っている。道の中央に立ち、腕を組んでいる。謁見を求めるように通行者を見下ろす。',
+    damage: 2,
+    quill: 4
+  },
+
+  // ── 亡霊 × 述語 ──
+  {
+    id: 'p21_ghost_whisper',
+    conditions: { s2: 'subj_ghost', s4: 'pred_whisper' },
+    resultText: '屈強な亡霊が十字路に囁いている。透けた体から低い声が漏れる。道を間違えるなと言っている。どの道が正しいかは教えてくれない。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p21_ghost_sleep',
+    conditions: { s2: 'subj_ghost', s4: 'pred_sleep' },
+    resultText: '屈強な亡霊が十字路に眠っている。宙に浮いたまま目を閉じている。成仏しきれないまま眠りについたのだろう。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p21_ghost_sing',
+    conditions: { s2: 'subj_ghost', s4: 'pred_sing' },
+    resultText: '屈強な亡霊が十字路に歌っている。生前の軍歌だろうか。力強い声だが、どこか遠い。涙が出そうになる。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p21_ghost_entangle',
+    conditions: { s2: 'subj_ghost', s4: 'pred_entangle' },
+    resultText: '屈強な亡霊が十字路に絡みついている。道標に抱きついて離れない。生前の記憶がこの場所に縛りつけているのだろう。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p21_ghost_flee',
+    conditions: { s2: 'subj_ghost', s4: 'pred_flee' },
+    resultText: '屈強な亡霊が十字路に逃げていく。こちらを見た瞬間、怯えた顔で西の道に消えた。亡霊が怖がるとは。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p21_ghost_shine',
+    conditions: { s2: 'subj_ghost', s4: 'pred_shine' },
+    resultText: '屈強な亡霊が十字路に輝く。透き通った体が青白く発光する。四つの道に幽かな光が差した。道案内にはなる。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p21_ghost_rain_down',
+    conditions: { s2: 'subj_ghost', s4: 'pred_rain_down' },
+    resultText: '屈強な亡霊が十字路に降り注いでいる。空から無数の亡霊が降ってくる。地面を通り抜けて消えていく。冷たい。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p21_ghost_dance',
+    conditions: { s2: 'subj_ghost', s4: 'pred_dance' },
+    resultText: '屈強な亡霊が十字路に踊っている。生前の宴の記憶だろうか。宙に浮いたまま、相手のいないダンスを続けている。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p21_ghost_melt',
+    conditions: { s2: 'subj_ghost', s4: 'pred_melt' },
+    resultText: '屈強な亡霊が十字路に溶けている。輪郭がぼやけ、霧になっていく。成仏ではない。拡散だ。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p21_ghost_laugh',
+    conditions: { s2: 'subj_ghost', s4: 'pred_laugh' },
+    resultText: '屈強な亡霊が十字路に笑っている。透けた体を震わせて笑う。何が面白いのか。死者のユーモアはわからない。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p21_ghost_wait',
+    conditions: { s2: 'subj_ghost', s4: 'pred_wait' },
+    resultText: '屈強な亡霊が十字路に待っている。何百年も同じ場所に立ち続けている気配がある。待ち人はもう来ないだろう。',
+    damage: 2,
+    quill: 5
+  },
+
+  // ── 鏡 × 述語 ──
+  {
+    id: 'p21_mirror_whisper',
+    conditions: { s2: 'subj_mirror', s4: 'pred_whisper' },
+    resultText: '屈強な鏡が十字路に囁いている。鏡面が震え、映った像の口が動いている。自分の姿が何か言っている。聞こえない。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p21_mirror_sleep',
+    conditions: { s2: 'subj_mirror', s4: 'pred_sleep' },
+    resultText: '屈強な鏡が十字路に眠っている。曇った鏡面に何も映らない。覗き込むと、自分の顔が一瞬遅れて現れた。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p21_mirror_sing',
+    conditions: { s2: 'subj_mirror', s4: 'pred_sing' },
+    resultText: '屈強な鏡が十字路に歌っている。鏡面が振動し、澄んだ高音を発する。映った景色が歪んでいく。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p21_mirror_entangle',
+    conditions: { s2: 'subj_mirror', s4: 'pred_entangle' },
+    resultText: '屈強な鏡が十字路に絡みついている。割れた鏡の破片が道標に食い込んでいる。触れると映り込んだ指が動かない。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p21_mirror_flee',
+    conditions: { s2: 'subj_mirror', s4: 'pred_flee' },
+    resultText: '屈強な鏡が十字路に逃げていく。鏡が滑るように南の道に消えた。映っていた自分の顔が置き去りにされた気がする。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p21_mirror_shine',
+    conditions: { s2: 'subj_mirror', s4: 'pred_shine' },
+    resultText: '屈強な鏡が十字路に輝く。月光を集めて四方に撒き散らす。道が四本とも白く光っている。どれも正しく見える。',
+    damage: 0,
+    quill: 6
+  },
+  {
+    id: 'p21_mirror_rain_down',
+    conditions: { s2: 'subj_mirror', s4: 'pred_rain_down' },
+    resultText: '屈強な鏡が十字路に降り注いでいる。空から鏡の破片が降ってくる。全部に自分の目が映っている。',
+    damage: 3,
+    quill: 5
+  },
+  {
+    id: 'p21_mirror_dance',
+    conditions: { s2: 'subj_mirror', s4: 'pred_dance' },
+    resultText: '屈強な鏡が十字路に踊っている。鏡が回転し、映った景色が万華鏡のように変わる。目が回る。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p21_mirror_melt',
+    conditions: { s2: 'subj_mirror', s4: 'pred_melt' },
+    resultText: '屈強な鏡が十字路に溶けている。水銀のように流れ、石畳を銀色に染めている。覗き込むと底に自分の顔がある。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p21_mirror_laugh',
+    conditions: { s2: 'subj_mirror', s4: 'pred_laugh' },
+    resultText: '屈強な鏡が十字路に笑っている。映った自分の顔が笑っている。こちらは笑っていないのに。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p21_mirror_wait',
+    conditions: { s2: 'subj_mirror', s4: 'pred_wait' },
+    resultText: '屈強な鏡が十字路に待っている。道の真ん中に立つ全身鏡。覗き込まずには通れない配置だ。映った自分が首を振った。',
+    damage: 2,
+    quill: 5
+  },
+
+  // ── 人形 × 述語 ──
+  {
+    id: 'p21_doll_whisper',
+    conditions: { s2: 'subj_doll', s4: 'pred_whisper' },
+    resultText: '屈強な人形が十字路に囁いている。等身大の人形が口を動かしている。聞き取れない。耳を近づける気にはなれない。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p21_doll_sleep',
+    conditions: { s2: 'subj_doll', s4: 'pred_sleep' },
+    resultText: '屈強な人形が十字路に眠っている。目を閉じた大きな人形が道の真ん中に横たわっている。寝ているだけだと思いたい。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p21_doll_sing',
+    conditions: { s2: 'subj_doll', s4: 'pred_sing' },
+    resultText: '屈強な人形が十字路に歌っている。ぎこちない口の動きから子守歌が漏れる。誰に聞かせているのか。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p21_doll_entangle',
+    conditions: { s2: 'subj_doll', s4: 'pred_entangle' },
+    resultText: '屈強な人形が十字路に絡みついている。操り糸が道標に巻きつき、人形が宙吊りになっている。糸を辿ると空に消えている。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p21_doll_flee',
+    conditions: { s2: 'subj_doll', s4: 'pred_flee' },
+    resultText: '屈強な人形が十字路に逃げていく。ぎくしゃくした動きで北の道に走っていった。操り主はどこにいる。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p21_doll_shine',
+    conditions: { s2: 'subj_doll', s4: 'pred_shine' },
+    resultText: '屈強な人形が十字路に輝く。硝子の目が月光を反射し、四方に光を放つ。美しいが、目が合うと動けなくなる。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p21_doll_rain_down',
+    conditions: { s2: 'subj_doll', s4: 'pred_rain_down' },
+    resultText: '屈強な人形が十字路に降り注いでいる。空から人形が落ちてくる。地面に叩きつけられても壊れず、ゆっくり起き上がる。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p21_doll_dance',
+    conditions: { s2: 'subj_doll', s4: 'pred_dance' },
+    resultText: '屈強な人形が十字路に踊っている。糸に操られるように四肢を振る。踊りは上手いが、関節が軋む音がする。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p21_doll_melt',
+    conditions: { s2: 'subj_doll', s4: 'pred_melt' },
+    resultText: '屈強な人形が十字路に溶けている。蝋でできていたらしい。夜なのに溶けている。表情が崩れていく。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p21_doll_laugh',
+    conditions: { s2: 'subj_doll', s4: 'pred_laugh' },
+    resultText: '屈強な人形が十字路に笑っている。ぜんまい仕掛けのように首を傾げて笑う。笑い声が止まらない。耳を塞いで通る。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'p21_doll_wait',
+    conditions: { s2: 'subj_doll', s4: 'pred_wait' },
+    resultText: '屈強な人形が十字路に待っている。道の真ん中に座っている。目がこちらを追っている。近づくと腕を伸ばしてきた。',
+    damage: 2,
+    quill: 4
+  },
+
+  // ── 雨 × 述語 ──
+  {
+    id: 'p21_rain_whisper',
+    conditions: { s2: 'subj_rain', s4: 'pred_whisper' },
+    resultText: '屈強な雨が十字路に囁いている。豪雨の音の中に声が混じっている。雨粒の一つ一つが言葉を運んでいる。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p21_rain_sleep',
+    conditions: { s2: 'subj_rain', s4: 'pred_sleep' },
+    resultText: '屈強な雨が十字路に眠っている。雨粒が空中で止まっている。時間が止まったような四つ辻。触れると冷たい。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p21_rain_sing',
+    conditions: { s2: 'subj_rain', s4: 'pred_sing' },
+    resultText: '屈強な雨が十字路に歌っている。石畳を叩く雨音がリズムを刻み、旋律になる。ずぶ濡れだが、聴き入ってしまう。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p21_rain_entangle',
+    conditions: { s2: 'subj_rain', s4: 'pred_entangle' },
+    resultText: '屈強な雨が十字路に絡みついている。雨が糸のように道標に巻きつき、水の檻を作っている。突っ切るしかない。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p21_rain_flee',
+    conditions: { s2: 'subj_rain', s4: 'pred_flee' },
+    resultText: '屈強な雨が十字路に逃げていく。雨雲が急に東へ流れた。四つ辻だけ晴れ間が覗く。水たまりが光っている。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p21_rain_shine',
+    conditions: { s2: 'subj_rain', s4: 'pred_shine' },
+    resultText: '屈強な雨が十字路に輝く。雨粒が月光を受けて銀の粒になる。四つの道に光の雨が降り注ぐ。',
+    damage: 1,
+    quill: 6
+  },
+  {
+    id: 'p21_rain_rain_down',
+    conditions: { s2: 'subj_rain', s4: 'pred_rain_down' },
+    resultText: '屈強な雨が十字路に降り注いでいる。豪雨。前が見えない。石畳が川になり、足を取られる。這うように進む。',
+    damage: 4,
     quill: 2
   },
   {
-    id: 'p21_sharp_knight',
-    conditions: { s1: 'mod_sharp', s2: 'subj_knight' },
-    resultText: '鋭い騎士が十字路に立っている。構えに無駄がない。冷たい目がこちらを見定めている。通過の許可を問うている目だ。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p21_broken_knight',
-    conditions: { s1: 'mod_broken', s2: 'subj_knight' },
-    resultText: '壊れた騎士が十字路に立っている。鎧はへこみ、剣は折れている。それでも立っている。どの道も守れないのに、ここを離れない。',
-    damage: 0,
-    quill: 6,
-    rewardItems: [{ id: 'item_p21_broken_knight', name: '折れた騎士の紋章', description: '壊れた鎧から剥がれた紋章。誓いだけが残っている', sellPrice: 8 }]
-  },
-  {
-    id: 'p21_mighty_knight',
-    conditions: { s1: 'mod_mighty', s2: 'subj_knight' },
-    resultText: '屈強な騎士が十字路に立っている。巨体の重装騎士。地面が軋む。四つ辻の門番として、全ての道を通せんぼしている。',
-    damage: 4,
-    quill: 2
-  },
-  {
-    id: 'p21_frozen_knight',
-    conditions: { s1: 'mod_frozen', s2: 'subj_knight' },
-    resultText: '凍てついた騎士が十字路に立っている。剣を振り上げた姿勢のまま氷に閉じ込められている。誰と戦っていたのか。',
-    damage: 1,
-    quill: 5
-  },
-  {
-    id: 'p21_clear_knight',
-    conditions: { s1: 'mod_clear', s2: 'subj_knight' },
-    resultText: '透き通った騎士が十字路に立っている。影の薄い騎士。いるのに気づかなかった。会釈して通り過ぎた後、振り向くともういない。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p21_cursed_knight',
-    conditions: { s1: 'mod_cursed', s2: 'subj_knight' },
-    resultText: '呪われた騎士が十字路に立っている。黒い鎧の奥で赤い目が光る。この十字路を永遠に守り続ける呪いを受けている。',
-    damage: 3,
-    quill: 5,
-    rewardItems: [{ id: 'item_p21_cursed_knight', name: '呪縛の鎖片', description: '呪われた騎士の鎧から落ちた鎖の一節。冷たい', sellPrice: 10 }]
-  },
-  {
-    id: 'p21_sleepy_knight',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_knight' },
-    resultText: '眠い騎士が十字路に立っている。見張り番のはずが舟を漕いでいる。槍が傾いている。こっそり脇を通り抜けた。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p21_small_witch',
-    conditions: { s1: 'mod_small', s2: 'subj_witch' },
-    resultText: '小さな魔女が十字路に立っている。少女の魔女。大きな帽子の下から「通行料は秘密一つ」と囁いている。',
-    damage: 1,
-    quill: 6
-  },
-  {
-    id: 'p21_gentle_witch',
-    conditions: { s1: 'mod_gentle', s2: 'subj_witch' },
-    resultText: '優しい魔女が十字路に立っている。薬草を煎じてくれる森の魔女。怖い顔だが「迷っているなら茶でも飲め」と杖で小屋を指した。',
-    damage: -1,
-    quill: 6
-  },
-  {
-    id: 'p21_fire_witch',
-    conditions: { s1: 'mod_fire', s2: 'subj_witch' },
-    resultText: '燃え盛る魔女が十字路に立っている。炎の魔法で全身を包んだ魔女が、怒りの形相で四つ辻に立ち塞がっている。',
-    damage: 4,
-    quill: 3
-  },
-  {
-    id: 'p21_hard_witch',
-    conditions: { s1: 'mod_hard', s2: 'subj_witch' },
-    resultText: '堅い魔女が十字路に立っている。石のように頑固な老魔女。取引以外では一言も話さない。通行料を払わなければ通さない。',
-    damage: 2,
-    quill: 3
-  },
-  {
-    id: 'p21_sharp_witch',
-    conditions: { s1: 'mod_sharp', s2: 'subj_witch' },
-    resultText: '鋭い魔女が十字路に立っている。鉤鼻に鋭い目。「嘘をつくな」。嘘をついた覚えはないが、背筋が凍った。',
+    id: 'p21_rain_dance',
+    conditions: { s2: 'subj_rain', s4: 'pred_dance' },
+    resultText: '屈強な雨が十字路に踊っている。雨粒が跳ね、水柱が人の形を取って踊る。水の舞踏会だ。',
     damage: 2,
     quill: 5
   },
   {
-    id: 'p21_broken_witch',
-    conditions: { s1: 'mod_broken', s2: 'subj_witch' },
-    resultText: '壊れた魔女が十字路に立っている。途切れ途切れの呪文を唱えている。同じ呪文を繰り返すたびに十字路の道が入れ替わる。',
-    damage: 2,
-    quill: 5
-  },
-  {
-    id: 'p21_mighty_witch',
-    conditions: { s1: 'mod_mighty', s2: 'subj_witch' },
-    resultText: '屈強な魔女が十字路に立っている。杖の代わりに拳を構える魔女。腕が太い。「通りたくば腕相撲だ」。負けた。',
-    damage: 3,
-    quill: 5
-  },
-  {
-    id: 'p21_frozen_witch',
-    conditions: { s1: 'mod_frozen', s2: 'subj_witch' },
-    resultText: '凍てついた魔女が十字路に立っている。氷の魔女。周囲に霜が広がっている。十字路の石畳が凍りついて滑る。',
+    id: 'p21_rain_melt',
+    conditions: { s2: 'subj_rain', s4: 'pred_melt' },
+    resultText: '屈強な雨が十字路に溶けている。雨が石畳を侵食し、道の形が崩れていく。足元が柔らかい。沈みそうだ。',
     damage: 3,
     quill: 3
   },
   {
-    id: 'p21_clear_witch',
-    conditions: { s1: 'mod_clear', s2: 'subj_witch' },
-    resultText: '透き通った魔女が十字路に立っている。老いて存在が希薄な魔女。向こうが透けて見える。声だけが「左だよ」と言った。',
-    damage: 0,
-    quill: 6,
-    rewardItems: [{ id: 'item_p21_clear_witch', name: '透き魔女の助言', description: '左の道がいい、と言った声の残響。正しいかはわからない', sellPrice: 5 }]
-  },
-  {
-    id: 'p21_cursed_witch',
-    conditions: { s1: 'mod_cursed', s2: 'subj_witch' },
-    resultText: '呪われた魔女が十字路に立っている。自分の呪いに蝕まれた魔女。体の一部が変異して、影が四本の道に分裂している。',
-    damage: 3,
-    quill: 5
-  },
-  {
-    id: 'p21_sleepy_witch',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_witch' },
-    resultText: '眠い魔女が十字路に立っている。杖にもたれてうとうとしている。大釜が十字路の隅でぐつぐつ煮えている。薬の匂いがする。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p21_small_king',
-    conditions: { s1: 'mod_small', s2: 'subj_king' },
-    resultText: '小さな王が十字路に立っている。子供が王冠をかぶっている。「この先はわしの領地じゃ」。足元は玉座に届かない。',
-    damage: 0,
-    quill: 6
-  },
-  {
-    id: 'p21_gentle_king',
-    conditions: { s1: 'mod_gentle', s2: 'subj_king' },
-    resultText: '優しい王が十字路に立っている。質素な衣の王。「旅人よ、夜道は危ない」。松明を分けてくれた。',
-    damage: -1,
-    quill: 5
-  },
-  {
-    id: 'p21_fire_king',
-    conditions: { s1: 'mod_fire', s2: 'subj_king' },
-    resultText: '燃え盛る王が十字路に立っている。炎の冠を戴く王。怒りで十字路が赤く照らされている。通行は許されない。',
-    damage: 4,
-    quill: 3
-  },
-  {
-    id: 'p21_hard_king',
-    conditions: { s1: 'mod_hard', s2: 'subj_king' },
-    resultText: '堅い王が十字路に立っている。石の玉座を十字路に持ち出して微動だにしない。法を一言で下す。「通行禁止」。',
-    damage: 3,
-    quill: 3
-  },
-  {
-    id: 'p21_sharp_king',
-    conditions: { s1: 'mod_sharp', s2: 'subj_king' },
-    resultText: '鋭い王が十字路に立っている。鷹のような目で値踏みされる。何も見逃さない目だ。「北へ行くのはやめておけ」と言われた。',
-    damage: 1,
-    quill: 5
-  },
-  {
-    id: 'p21_broken_king',
-    conditions: { s1: 'mod_broken', s2: 'subj_king' },
-    resultText: '壊れた王が十字路に立っている。王冠が歪み、目は虚ろ。四つ辻で崩れるように座り込んでいる。国を失った王だ。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p21_mighty_king',
-    conditions: { s1: 'mod_mighty', s2: 'subj_king' },
-    resultText: '屈強な王が十字路に立っている。戦士王。背中に傷がない。「道を開けるか、試すか」。選択を迫られている。',
-    damage: 4,
-    quill: 3
-  },
-  {
-    id: 'p21_frozen_king',
-    conditions: { s1: 'mod_frozen', s2: 'subj_king' },
-    resultText: '凍てついた王が十字路に立っている。氷の玉座に座る北の王。吐く言葉が白い。十字路一帯が凍土に変わる。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p21_clear_king',
-    conditions: { s1: 'mod_clear', s2: 'subj_king' },
-    resultText: '透き通った王が十字路に立っている。存在が希薄な王。月光が体を透過する。臣下の誰にも見えていない。ただ立っている。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p21_cursed_king',
-    conditions: { s1: 'mod_cursed', s2: 'subj_king' },
-    resultText: '呪われた王が十字路に立っている。触れたものが金になる王。道しるべも石畳も金色に変わっている。握手を求めてくる。',
-    damage: 3,
-    quill: 6,
-    rewardItems: [{ id: 'item_p21_cursed_king', name: '金の道しるべ片', description: '王が触れて金になった道しるべの破片', sellPrice: 20 }]
-  },
-  {
-    id: 'p21_sleepy_king',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_king' },
-    resultText: '眠い王が十字路に立っている。玉座ごと居眠りしている。側近がいないから政が止まっている。道は空いている。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p21_small_ghost',
-    conditions: { s1: 'mod_small', s2: 'subj_ghost' },
-    resultText: '小さな亡霊が十字路に立っている。子供の亡霊。笑い声だけが四つ辻に響く。姿は月明かりに紛れて見えない。',
-    damage: 1,
-    quill: 5
-  },
-  {
-    id: 'p21_gentle_ghost',
-    conditions: { s1: 'mod_gentle', s2: 'subj_ghost' },
-    resultText: '優しい亡霊が十字路に立っている。生前の面影を残した穏やかな霊が、安全な道を指さして微笑み、消えた。',
-    damage: 0,
-    quill: 6,
-    rewardItems: [{ id: 'item_p21_gentle_ghost', name: '亡霊の道標', description: '消える間際に亡霊が残した光。正しい道を示す', sellPrice: 10 }]
-  },
-  {
-    id: 'p21_fire_ghost',
-    conditions: { s1: 'mod_fire', s2: 'subj_ghost' },
-    resultText: '燃え盛る亡霊が十字路に立っている。火に焼かれた死に方の霊。炎をまとって彷徨い、十字路が赤く揺れている。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p21_hard_ghost',
-    conditions: { s1: 'mod_hard', s2: 'subj_ghost' },
-    resultText: '堅い亡霊が十字路に立っている。何百年もこの四つ辻に立っている霊。成仏を頑なに拒んでいる。動かない。どかせない。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p21_sharp_ghost',
-    conditions: { s1: 'mod_sharp', s2: 'subj_ghost' },
-    resultText: '鋭い亡霊が十字路に立っている。罪を見透かす目。視線が痛い。何も悪いことはしていないはずなのに、足がすくんだ。',
-    damage: 2,
-    quill: 5
-  },
-  {
-    id: 'p21_broken_ghost',
-    conditions: { s1: 'mod_broken', s2: 'subj_ghost' },
-    resultText: '壊れた亡霊が十字路に立っている。記憶を失った霊。自分が何者か思い出せない。十字路で立ち尽くして、何を待っているのかも忘れている。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p21_mighty_ghost',
-    conditions: { s1: 'mod_mighty', s2: 'subj_ghost' },
-    resultText: '屈強な亡霊が十字路に立っている。鎧武者の亡霊。生前より強い。死んで枷が外れた目でこちらを見据えている。',
-    damage: 4,
-    quill: 3
-  },
-  {
-    id: 'p21_frozen_ghost',
-    conditions: { s1: 'mod_frozen', s2: 'subj_ghost' },
-    resultText: '凍てついた亡霊が十字路に立っている。冷気を纏った霊。通った跡に霜が残る。十字路の石畳が白く凍りついている。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p21_clear_ghost',
-    conditions: { s1: 'mod_clear', s2: 'subj_ghost' },
-    resultText: '透き通った亡霊が十字路に立っている。成仏しかけている。輪郭が月光に溶けている。あと一言何か伝えたそうだ。',
-    damage: 0,
-    quill: 6
-  },
-  {
-    id: 'p21_cursed_ghost',
-    conditions: { s1: 'mod_cursed', s2: 'subj_ghost' },
-    resultText: '呪われた亡霊が十字路に立っている。呪いに縛られて成仏できない霊。苦しみの表情で十字路を永遠に彷徨っている。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p21_sleepy_ghost',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_ghost' },
-    resultText: '眠い亡霊が十字路に立っている。うつらうつらしている霊。存在感が薄れたり戻ったりする。見えたり消えたり。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p21_small_mirror',
-    conditions: { s1: 'mod_small', s2: 'subj_mirror' },
-    resultText: '小さな鏡が十字路に立っている。手鏡が道の真ん中に落ちている。覗くと自分の目だけが映る。どの道が正しいかは教えてくれない。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p21_gentle_mirror',
-    conditions: { s1: 'mod_gentle', s2: 'subj_mirror' },
-    resultText: '優しい鏡が十字路に立っている。映った自分が少しだけ勇ましく見える。迷いが消えた。まっすぐ前へ歩いた。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p21_fire_mirror',
-    conditions: { s1: 'mod_fire', s2: 'subj_mirror' },
-    resultText: '燃え盛る鏡が十字路に立っている。鏡面が炎を映しているが、周囲に火はない。鏡の中の十字路が燃えている。',
-    damage: 2,
-    quill: 5
-  },
-  {
-    id: 'p21_hard_mirror',
-    conditions: { s1: 'mod_hard', s2: 'subj_mirror' },
-    resultText: '堅い鏡が十字路に立っている。何をしても割れない鏡が道の真ん中に立っている。押してもどかせない。映り込んだ自分が嗤っている。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p21_sharp_mirror',
-    conditions: { s1: 'mod_sharp', s2: 'subj_mirror' },
-    resultText: '鋭い鏡が十字路に立っている。割れ鏡の破片が道に散らばっている。月光を反射して刃のように光る。裸足では歩けない。',
+    id: 'p21_rain_laugh',
+    conditions: { s2: 'subj_rain', s4: 'pred_laugh' },
+    resultText: '屈強な雨が十字路に笑っている。雨音が笑い声に聞こえる。叩きつけるように降る雨が、嘲っているようだ。',
     damage: 2,
     quill: 3
   },
   {
-    id: 'p21_broken_mirror',
-    conditions: { s1: 'mod_broken', s2: 'subj_mirror' },
-    resultText: '壊れた鏡が十字路に立っている。ひび割れた鏡。映る顔が何人にも分裂して、四つの道それぞれに別の自分が歩いていくように見える。',
-    damage: 1,
-    quill: 6,
-    rewardItems: [{ id: 'item_p21_broken_mirror', name: '分裂鏡の破片', description: '覗くと自分が四人に見える。どれが本物か', sellPrice: 10 }]
-  },
-  {
-    id: 'p21_mighty_mirror',
-    conditions: { s1: 'mod_mighty', s2: 'subj_mirror' },
-    resultText: '屈強な鏡が十字路に立っている。人の背丈を超える巨大な姿見。四つ辻の中央に聳え立ち、道を丸ごと映して反転させている。',
-    damage: 2,
-    quill: 5
-  },
-  {
-    id: 'p21_frozen_mirror',
-    conditions: { s1: 'mod_frozen', s2: 'subj_mirror' },
-    resultText: '凍てついた鏡が十字路に立っている。霜に覆われた鏡面にかろうじて影が映る。覗くと冬の十字路が見えた。ここより寒い場所だ。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p21_clear_mirror',
-    conditions: { s1: 'mod_clear', s2: 'subj_mirror' },
-    resultText: '透き通った鏡が十字路に立っている。鏡なのに向こうが透けている。窓のようだ。しかし通り抜けようとすると硬い壁だ。',
-    damage: 1,
-    quill: 5
-  },
-  {
-    id: 'p21_cursed_mirror',
-    conditions: { s1: 'mod_cursed', s2: 'subj_mirror' },
-    resultText: '呪われた鏡が十字路に立っている。覗くと自分の姿が鏡に残る。鏡の中で影たちが蠢いている。振り返ってはいけない。',
-    damage: 3,
-    quill: 5
-  },
-  {
-    id: 'p21_sleepy_mirror',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_mirror' },
-    resultText: '眠い鏡が十字路に立っている。鏡面がぼんやり曇って映像が遅れて映る。覗き込むと、自分の寝顔が映っている。',
-    damage: 1,
-    quill: 4
-  },
-  {
-    id: 'p21_small_doll',
-    conditions: { s1: 'mod_small', s2: 'subj_doll' },
-    resultText: '小さな人形が十字路に立っている。指人形ほどの大きさ。道の分岐点にぽつんと置かれている。誰が、何のために。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p21_gentle_doll',
-    conditions: { s1: 'mod_gentle', s2: 'subj_doll' },
-    resultText: '優しい人形が十字路に立っている。くたくたの人形が笑顔で立っている。子供に抱きしめられすぎて柔らかくなった体。温かい。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p21_fire_doll',
-    conditions: { s1: 'mod_fire', s2: 'subj_doll' },
-    resultText: '燃え盛る人形が十字路に立っている。藁人形が燃えている。祭りの焚き上げか、それとも呪いか。近づくと火の粉が飛ぶ。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p21_hard_doll',
-    conditions: { s1: 'mod_hard', s2: 'subj_doll' },
-    resultText: '堅い人形が十字路に立っている。木彫りの人形。関節がない。道の真ん中に直立して、表情なく月を見上げている。',
-    damage: 1,
-    quill: 3
-  },
-  {
-    id: 'p21_sharp_doll',
-    conditions: { s1: 'mod_sharp', s2: 'subj_doll' },
-    resultText: '鋭い人形が十字路に立っている。関節が刃になった操り人形。糸は見えない。月明かりの下で不意に腕が動いた。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p21_broken_doll',
-    conditions: { s1: 'mod_broken', s2: 'subj_doll' },
-    resultText: '壊れた人形が十字路に立っている。首がもげかけた人形。残った片目でこちらを見ている。月光の下では一層不気味だ。',
-    damage: 1,
-    quill: 4
-  },
-  {
-    id: 'p21_mighty_doll',
-    conditions: { s1: 'mod_mighty', s2: 'subj_doll' },
-    resultText: '屈強な人形が十字路に立っている。等身大の木彫り人形。腕が丸太のように太い。番人として置かれたゴーレムのようだ。',
+    id: 'p21_rain_wait',
+    conditions: { s2: 'subj_rain', s4: 'pred_wait' },
+    resultText: '屈強な雨が十字路に待っている。四つ辻の上空にだけ雨雲が停滞している。足を踏み入れた瞬間、土砂降りが始まった。',
     damage: 3,
     quill: 3
-  },
-  {
-    id: 'p21_frozen_doll',
-    conditions: { s1: 'mod_frozen', s2: 'subj_doll' },
-    resultText: '凍てついた人形が十字路に立っている。氷でできた人形。繊細な造形が月光で輝いている。溶けたら二度と作れない。',
-    damage: 1,
-    quill: 5
-  },
-  {
-    id: 'p21_clear_doll',
-    conditions: { s1: 'mod_clear', s2: 'subj_doll' },
-    resultText: '透き通った人形が十字路に立っている。硝子の人形。中に何かの液体が揺れている。月光を受けて淡く光る。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p21_cursed_doll',
-    conditions: { s1: 'mod_cursed', s2: 'subj_doll' },
-    resultText: '呪われた人形が十字路に立っている。目を離すと位置が変わる。さっき左の道にいたのに、今は正面にいる。',
-    damage: 2,
-    quill: 5,
-    rewardItems: [{ id: 'item_p21_cursed_doll', name: '動く人形の髪', description: '切り取ったはずなのに翌朝伸びている', sellPrice: 7 }]
-  },
-  {
-    id: 'p21_sleepy_doll',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_doll' },
-    resultText: '眠い人形が十字路に立っている。目を閉じた人形。横にすると目が閉じるあの仕掛け。月明かりの下、立ったまま眠っている。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p21_small_rain',
-    conditions: { s1: 'mod_small', s2: 'subj_rain' },
-    resultText: '小さな雨が十字路に立っている。霧雨が四つ辻にだけ降っている。一歩外に出れば乾いている。不思議な天気だ。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p21_gentle_rain',
-    conditions: { s1: 'mod_gentle', s2: 'subj_rain' },
-    resultText: '優しい雨が十字路に立っている。温かい慈雨が十字路を洗っている。旅の埃が流れ落ちる。身が軽くなった。',
-    damage: -1,
-    quill: 5
-  },
-  {
-    id: 'p21_fire_rain',
-    conditions: { s1: 'mod_fire', s2: 'subj_rain' },
-    resultText: '燃え盛る雨が十字路に立っている。火の雨が降っている。空から降る灼熱の滴。四つ辻の地面が焦げている。',
-    damage: 4,
-    quill: 3
-  },
-  {
-    id: 'p21_hard_rain',
-    conditions: { s1: 'mod_hard', s2: 'subj_rain' },
-    resultText: '堅い雨が十字路に立っている。雹だ。石のような氷の粒が叩きつけてくる。頭を庇いながら走り抜けた。',
-    damage: 3,
-    quill: 2
-  },
-  {
-    id: 'p21_sharp_rain',
-    conditions: { s1: 'mod_sharp', s2: 'subj_rain' },
-    resultText: '鋭い雨が十字路に立っている。針のような雨粒が肌に刺さる。外套がずぶ濡れになり、肩に赤い点がいくつも残った。',
-    damage: 2,
-    quill: 3
-  },
-  {
-    id: 'p21_broken_rain',
-    conditions: { s1: 'mod_broken', s2: 'subj_rain' },
-    resultText: '壊れた雨が十字路に立っている。上に向かって降っている雨。地面から空へ水滴が昇っていく。重力が壊れている。',
-    damage: 1,
-    quill: 6,
-    rewardItems: [{ id: 'item_p21_broken_rain', name: '逆さ雨の雫', description: '下から上へ昇る水滴。瓶を逆さにしても落ちない', sellPrice: 12 }]
-  },
-  {
-    id: 'p21_mighty_rain',
-    conditions: { s1: 'mod_mighty', s2: 'subj_rain' },
-    resultText: '屈強な雨が十字路に立っている。滝のような豪雨。地面が川になっている。四本の道が全て濁流に沈んだ。',
-    damage: 4,
-    quill: 2
-  },
-  {
-    id: 'p21_frozen_rain',
-    conditions: { s1: 'mod_frozen', s2: 'subj_rain' },
-    resultText: '凍てついた雨が十字路に立っている。凍雨。触れたものを氷の膜で覆う。石畳が氷の鏡になって、月を二つ映している。',
-    damage: 2,
-    quill: 5
-  },
-  {
-    id: 'p21_clear_rain',
-    conditions: { s1: 'mod_clear', s2: 'subj_rain' },
-    resultText: '透き通った雨が十字路に立っている。異常なほど澄んだ雨。濡れた跡が光って見える。穢れが洗い流される。',
-    damage: -1,
-    quill: 6,
-    rewardItems: [{ id: 'item_p21_clear_rain', name: '澄雨の露', description: '透き通った雨の一滴。瓶の中でまだ光っている', sellPrice: 10 }]
-  },
-  {
-    id: 'p21_cursed_rain',
-    conditions: { s1: 'mod_cursed', s2: 'subj_rain' },
-    resultText: '呪われた雨が十字路に立っている。浴びた瞬間、足が動かなくなった。根が生えたように十字路から出られない。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p21_sleepy_rain',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_rain' },
-    resultText: '眠い雨が十字路に立っている。静かな雨音が四つ辻に響く。子守唄のようだ。道端で眠り込みそうになった。',
-    damage: 1,
-    quill: 4
   },
 ];

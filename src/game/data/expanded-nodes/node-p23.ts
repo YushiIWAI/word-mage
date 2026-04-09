@@ -13,9 +13,9 @@ export const nodeP23: NodeDef = {
   ],
   slots: [
     { id: 's1', category: 'modifier', word: { id: 'mod_gentle', text: '優しい', category: 'modifier', tags: ['gentle', 'weaken', 'positive'] } },
-    { id: 's2', category: 'subject', word: { id: 'subj_flame', text: '炎', category: 'subject', tags: ['fire', 'nature', 'destructive'] } },
+    { id: 's2', category: 'subject', locked: true, word: { id: 'subj_flame', text: '炎', category: 'subject', tags: ['fire', 'nature', 'destructive'] } },
     { id: 's3', category: 'object_ni', locked: true, word: { id: 'orig_p23_obj', text: '書庫', category: 'object_ni', tags: ['library', 'books', 'old'] } },
-    { id: 's4', category: 'predicate', locked: true, word: { id: 'orig_p23_pred', text: '隠れている', category: 'predicate', tags: ['hide', 'lurk', 'secret'] } },
+    { id: 's4', category: 'predicate', word: { id: 'orig_p23_pred', text: '隠れている', category: 'predicate', tags: ['hide', 'lurk', 'secret'] } },
   ],
   outcomes: nodeP23Outcomes,
   defaultOutcome: {

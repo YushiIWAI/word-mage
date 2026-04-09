@@ -259,6 +259,21 @@ export interface GameMap {
   currentNodeId: string | null;
 }
 
+/** 旅の兆し（ラン修飾子） */
+export interface Omen {
+  id: string;
+  name: string;
+  description: string;
+  /** AP補正（全面） */
+  apBonus?: number;
+  /** Quill報酬倍率（1.0 = 変更なし） */
+  quillMultiplier?: number;
+  /** 初期HP補正 */
+  hpBonus?: number;
+  /** ショップ価格倍率（1.0 = 変更なし） */
+  shopPriceMultiplier?: number;
+}
+
 /** ゲーム全体の状態 */
 export interface GameState {
   hand: WordCard[];
@@ -276,4 +291,6 @@ export interface GameState {
   battle: BattleState | null;
   /** アイテムインベントリ */
   items: Item[];
+  /** 今回のランの兆し */
+  omen?: Omen;
 }

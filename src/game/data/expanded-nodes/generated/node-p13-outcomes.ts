@@ -1,1346 +1,1129 @@
-// Auto-generated from node-p13-outcomes.md
+// 裂け目: 鋭い [主語*]が 裂け目から [述語*]
+// 可変: s2(subject), s4(predicate) — 17×9=153通り + 元テキスト
 import type { Outcome } from '../../../engine/types';
 
 export const nodeP13Outcomes: Outcome[] = [
+  // === 元テキスト ===
   {
-    id: 'p13_small_kitten',
-    conditions: { s1: 'mod_small', s2: 'subj_kitten' },
-    resultText: '裂け目の底から、鈴のような鳴き声が響く。親指ほどの子猫が暗闇の縁にいる。助けを求めているらしい。手を伸ばすと爪先に乗った。',
-    damage: 0,
-    quill: 5,
-    rewardItems: [{ id: 'item_p13_small_kitten', name: '裂け目の子猫', description: '親指ほど。ポケットの中で鳴いている', sellPrice: 8 }]
-  },
-  {
-    id: 'p13_gentle_kitten',
-    conditions: { s1: 'mod_gentle', s2: 'subj_kitten' },
-    resultText: '優しい子猫が裂け目から囁いている。「こっちに来ちゃだめ」と言いたげに、鳴き声で足を引き止める。裂け目の先は崩落していた。',
-    damage: 0,
-    quill: 6,
-    rewardItems: [{ id: 'item_p13_gentle_kitten', name: '猫の警告', description: '耳に残る鳴き声。進むべき道を思い出させる', sellPrice: 8 }]
-  },
-  {
-    id: 'p13_fire_kitten',
-    conditions: { s1: 'mod_fire', s2: 'subj_kitten' },
-    resultText: '裂け目の底が赤く光っている。炎をまとった子猫が暗闇の中で欠伸をしている。囁きに聞こえたのは火の爆ぜる音だった。',
+    id: 'p13_orig',
+    conditions: { s2: 'subj_song', s4: 'orig_p13_pred' },
+    resultText: '鋭い歌が裂け目から囁いている。旋律に似た何かが岩の隙間から漏れ出し、耳の奥を引っ掻く。意味はないが、足が止まる。',
     damage: 2,
-    quill: 4
+    quill: 3
   },
+
+  // === 子猫 × 各述語 ===
   {
-    id: 'p13_hard_kitten',
-    conditions: { s1: 'mod_hard', s2: 'subj_kitten' },
-    resultText: '裂け目の縁に陶器の招き猫が置いてある。目だけが動き、口が微かに開閉している。かちかちと磁器の音が反響する。',
+    id: 'p13_kitten_gaze',
+    conditions: { s2: 'subj_kitten', s4: 'pred_gaze' },
+    resultText: '鋭い子猫が裂け目から見つめている。闇の底に金色の双眸だけが浮かんでいる。瞬きしない。こちらが先に目を逸らした。',
     damage: 1,
     quill: 4
   },
   {
-    id: 'p13_sharp_kitten',
-    conditions: { s1: 'mod_sharp', s2: 'subj_kitten' },
-    resultText: '裂け目から甲高い声が響く。鋭い子猫が暗闇から飛び出し、頬を掠めて走り去った。血が一筋、裂け目に滴り落ちる。',
+    id: 'p13_kitten_whisper',
+    conditions: { s2: 'subj_kitten', s4: 'pred_whisper' },
+    resultText: '鋭い子猫が裂け目から囁いている。甲高い鳴き声が反響し、人語に聞こえる。「降りてこい」と言ったように思えた。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p13_kitten_sing',
+    conditions: { s2: 'subj_kitten', s4: 'pred_sing' },
+    resultText: '鋭い子猫が裂け目から歌っている。喉を震わせる細い声が岩壁に反響し、和音のように聞こえる。野生の子猫がする声ではない。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p13_kitten_flee',
+    conditions: { s2: 'subj_kitten', s4: 'pred_flee' },
+    resultText: '鋭い子猫が裂け目から逃げていく。暗闇の中を爪音だけが遠ざかる。何かから逃げているらしい。追いかける気にはならない。',
+    damage: 0,
+    quill: 3
+  },
+  {
+    id: 'p13_kitten_shine',
+    conditions: { s2: 'subj_kitten', s4: 'pred_shine' },
+    resultText: '鋭い子猫が裂け目から輝く。毛並みが光を帯び、裂け目の底を照らしている。光源はない。子猫自身が発光している。',
+    damage: 0,
+    quill: 5,
+    rewardItems: [{ id: 'item_p13_kitten_shine', name: '猫の残光', description: '暗闇で微かに光る毛玉', sellPrice: 7 }]
+  },
+  {
+    id: 'p13_kitten_rain_down',
+    conditions: { s2: 'subj_kitten', s4: 'pred_rain_down' },
+    resultText: '鋭い子猫が裂け目から降り注いでいる。無数の小さな影が上から落ちてくる。着地した子猫が一斉にこちらを見た。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p13_kitten_dance',
+    conditions: { s2: 'subj_kitten', s4: 'pred_dance' },
+    resultText: '鋭い子猫が裂け目から踊っている。岩の縁を軽やかに跳ね回り、爪が火花を散らす。楽しんでいるのか、威嚇しているのか。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p13_kitten_melt',
+    conditions: { s2: 'subj_kitten', s4: 'pred_melt' },
+    resultText: '鋭い子猫が裂け目から溶けている。輪郭が滲んで闇に混ざっていく。最後に残ったのは、宙に浮く二つの目だけだった。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p13_kitten_laugh',
+    conditions: { s2: 'subj_kitten', s4: 'pred_laugh' },
+    resultText: '鋭い子猫が裂け目から笑っている。口角が上がり、犬歯が覗く。猫の表情にしては人間じみている。背筋が冷えた。',
+    damage: 2,
+    quill: 4
+  },
+
+  // === 蛇 × 各述語 ===
+  {
+    id: 'p13_snake_gaze',
+    conditions: { s2: 'subj_snake', s4: 'pred_gaze' },
+    resultText: '鋭い蛇が裂け目から見つめている。縦長の瞳孔が暗闇に浮かび、瞬きを知らない。見つめ返すと体が硬直する。',
     damage: 2,
     quill: 3
   },
   {
-    id: 'p13_broken_kitten',
-    conditions: { s1: 'mod_broken', s2: 'subj_kitten' },
-    resultText: '裂け目の底にぬいぐるみが落ちている。風が通るたびに綿の隙間から音が漏れる。囁きの正体はそれだった。',
+    id: 'p13_snake_whisper',
+    conditions: { s2: 'subj_snake', s4: 'pred_whisper' },
+    resultText: '鋭い蛇が裂け目から囁いている。舌が空気を割る音が言葉に聞こえる。何を言っているかは分からないが、耳が離せない。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p13_snake_sing',
+    conditions: { s2: 'subj_snake', s4: 'pred_sing' },
+    resultText: '鋭い蛇が裂け目から歌っている。喉のない体が振動し、岩を楽器にして低い旋律を奏でている。蛇笛の逆だ。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p13_snake_flee',
+    conditions: { s2: 'subj_snake', s4: 'pred_flee' },
+    resultText: '鋭い蛇が裂け目から逃げていく。鱗が岩肌を擦る乾いた音が遠ざかる。裂け目の底に脱ぎ捨てた皮だけが残った。',
+    damage: 0,
+    quill: 3,
+    rewardItems: [{ id: 'item_p13_snake_flee', name: '蛇の抜け殻', description: '鋭い鱗の跡が残る薄い皮', sellPrice: 5 }]
+  },
+  {
+    id: 'p13_snake_shine',
+    conditions: { s2: 'subj_snake', s4: 'pred_shine' },
+    resultText: '鋭い蛇が裂け目から輝く。鱗の一枚一枚が光を反射し、裂け目の壁に無数の光点を投げかけている。宝石のように美しく、毒のように鮮やか。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p13_snake_rain_down',
+    conditions: { s2: 'subj_snake', s4: 'pred_rain_down' },
+    resultText: '鋭い蛇が裂け目から降り注いでいる。天井の亀裂から細い体が次々と落ちてくる。地面が鱗で覆われていく。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'p13_snake_dance',
+    conditions: { s2: 'subj_snake', s4: 'pred_dance' },
+    resultText: '鋭い蛇が裂け目から踊っている。鎌首をもたげ、左右に揺れる動きが催眠術のようだ。目が離せなくなる前に走った。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p13_snake_melt',
+    conditions: { s2: 'subj_snake', s4: 'pred_melt' },
+    resultText: '鋭い蛇が裂け目から溶けている。鱗が液体になり、岩壁を伝って底へ流れ落ちる。毒なのか体液なのか。触れない方がいい。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p13_snake_laugh',
+    conditions: { s2: 'subj_snake', s4: 'pred_laugh' },
+    resultText: '鋭い蛇が裂け目から笑っている。口を大きく開き、牙の間から空気が漏れる。笑い声には聞こえない。だが笑っている。',
+    damage: 3,
+    quill: 3
+  },
+
+  // === 竜 × 各述語 ===
+  {
+    id: 'p13_dragon_gaze',
+    conditions: { s2: 'subj_dragon', s4: 'pred_gaze' },
+    resultText: '鋭い竜が裂け目から見つめている。巨大な瞳が裂け目いっぱいに広がり、虹彩の奥に炎が揺れている。値踏みされている。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p13_dragon_whisper',
+    conditions: { s2: 'subj_dragon', s4: 'pred_whisper' },
+    resultText: '鋭い竜が裂け目から囁いている。低い声が地面を振動させ、足裏から骨に伝わる。「去れ」と聞こえたが、竜語かもしれない。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p13_dragon_sing',
+    conditions: { s2: 'subj_dragon', s4: 'pred_sing' },
+    resultText: '鋭い竜が裂け目から歌っている。地鳴りのような低音が旋律を持ち、岩壁に共鳴して裂け目全体が楽器になっている。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p13_dragon_flee',
+    conditions: { s2: 'subj_dragon', s4: 'pred_flee' },
+    resultText: '鋭い竜が裂け目から逃げていく。地の底へ向かって翼をたたみ、落下していく。竜が逃げるほどのものが、この先にある。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p13_dragon_shine',
+    conditions: { s2: 'subj_dragon', s4: 'pred_shine' },
+    resultText: '鋭い竜が裂け目から輝く。鱗が溶岩のように赤く発光し、裂け目が火口に変わる。熱風が顔を焼く。',
+    damage: 4,
+    quill: 3
+  },
+  {
+    id: 'p13_dragon_rain_down',
+    conditions: { s2: 'subj_dragon', s4: 'pred_rain_down' },
+    resultText: '鋭い竜が裂け目から降り注いでいる。鱗の破片が上空から落下し、地面に突き刺さる。竜そのものではなく、竜の残骸だ。',
+    damage: 4,
+    quill: 3
+  },
+  {
+    id: 'p13_dragon_dance',
+    conditions: { s2: 'subj_dragon', s4: 'pred_dance' },
+    resultText: '鋭い竜が裂け目から踊っている。巨体が岩壁を削りながら旋回し、裂け目が広がっていく。地形が変わるほどの踊り。',
+    damage: 4,
+    quill: 4
+  },
+  {
+    id: 'p13_dragon_melt',
+    conditions: { s2: 'subj_dragon', s4: 'pred_melt' },
+    resultText: '鋭い竜が裂け目から溶けている。鱗が一枚ずつ剥がれ落ち、赤い液体になって底へ流れる。竜の終わりを見ている。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p13_dragon_laugh',
+    conditions: { s2: 'subj_dragon', s4: 'pred_laugh' },
+    resultText: '鋭い竜が裂け目から笑っている。腹の底から湧く笑い声が地震のように地面を揺らす。何がおかしいのかは、人間には分からない。',
+    damage: 3,
+    quill: 4
+  },
+
+  // === 蝶 × 各述語 ===
+  {
+    id: 'p13_butterfly_gaze',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_gaze' },
+    resultText: '鋭い蝶が裂け目から見つめている。翅の模様が目玉に見え、瞬きもせずこちらを捉えている。風に揺れるたび視線が動く。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p13_butterfly_whisper',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_whisper' },
+    resultText: '鋭い蝶が裂け目から囁いている。翅が擦れる音が言葉に聞こえる。耳を近づけると翅が頬を切った。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p13_butterfly_sing',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_sing' },
+    resultText: '鋭い蝶が裂け目から歌っている。翅の振動が超音波のような高音を生み、岩の表面に細かい亀裂が走る。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p13_butterfly_flee',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_flee' },
+    resultText: '鋭い蝶が裂け目から逃げていく。刃のような翅が光を反射しながら遠ざかる。通り過ぎた草の葉が切れて落ちた。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p13_butterfly_shine',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_shine' },
+    resultText: '鋭い蝶が裂け目から輝く。翅の鱗粉が光を帯び、裂け目の暗闇にステンドグラスのような模様を映し出す。',
+    damage: 0,
+    quill: 6,
+    rewardItems: [{ id: 'item_p13_butterfly_shine', name: '蝶の鱗粉', description: '指先で光る粉。見る角度で色が変わる', sellPrice: 8 }]
+  },
+  {
+    id: 'p13_butterfly_rain_down',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_rain_down' },
+    resultText: '鋭い蝶が裂け目から降り注いでいる。翅の切れ端が紙吹雪のように舞い落ちる。触れると指先が切れた。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p13_butterfly_dance',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_dance' },
+    resultText: '鋭い蝶が裂け目から踊っている。螺旋を描く飛行が刃の軌道に見える。近づいた虫が真っ二つに落ちた。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p13_butterfly_melt',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_melt' },
+    resultText: '鋭い蝶が裂け目から溶けている。翅が液体になり、虹色の水滴が岩壁を伝う。美しいが、触れた苔が枯れている。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p13_butterfly_laugh',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_laugh' },
+    resultText: '鋭い蝶が裂け目から笑っている。翅の紋様が歪んで笑顔に見える。風が吹くたび表情が変わる。気味が悪い。',
+    damage: 1,
+    quill: 3
+  },
+
+  // === 風 × 各述語 ===
+  {
+    id: 'p13_wind_gaze',
+    conditions: { s2: 'subj_wind', s4: 'pred_gaze' },
+    resultText: '鋭い風が裂け目から見つめている。吹き抜ける風に意志がある。顔に当たる空気の圧力が、視線のように一点に集中する。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p13_wind_whisper',
+    conditions: { s2: 'subj_wind', s4: 'pred_whisper' },
+    resultText: '鋭い風が裂け目から囁いている。細い隙間を通る風が笛のような音を立てる。方角を教えているのか、誘い込んでいるのか。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p13_wind_sing',
+    conditions: { s2: 'subj_wind', s4: 'pred_sing' },
+    resultText: '鋭い風が裂け目から歌っている。岩の形が管楽器のように共鳴し、荒々しい旋律が谷間に響く。耳が痛い。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p13_wind_flee',
+    conditions: { s2: 'subj_wind', s4: 'pred_flee' },
+    resultText: '鋭い風が裂け目から逃げていく。突然の無風。裂け目が息を止めたように静まり返る。嵐の前の静けさかもしれない。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p13_wind_shine',
+    conditions: { s2: 'subj_wind', s4: 'pred_shine' },
+    resultText: '鋭い風が裂け目から輝く。風に乗った砂粒が光を反射し、裂け目の中が金色の霧に包まれている。吸い込むと肺が焼ける。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p13_wind_rain_down',
+    conditions: { s2: 'subj_wind', s4: 'pred_rain_down' },
+    resultText: '鋭い風が裂け目から降り注いでいる。上空の裂け目から刃のような下降気流が叩きつける。立っていられない。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'p13_wind_dance',
+    conditions: { s2: 'subj_wind', s4: 'pred_dance' },
+    resultText: '鋭い風が裂け目から踊っている。乱気流が渦を巻き、小石や砂が螺旋を描いて舞い上がる。近づくと切り傷だらけになる。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p13_wind_melt',
+    conditions: { s2: 'subj_wind', s4: 'pred_melt' },
+    resultText: '鋭い風が裂け目から溶けている。風が勢いを失い、空気が重くなっていく。裂け目の底から湿った匂いが立ち上る。',
+    damage: 0,
+    quill: 3
+  },
+  {
+    id: 'p13_wind_laugh',
+    conditions: { s2: 'subj_wind', s4: 'pred_laugh' },
+    resultText: '鋭い風が裂け目から笑っている。ひゅうひゅうと鳴る風の音が笑い声にしか聞こえない。何がおかしいのか、風に聞いても答えない。',
+    damage: 1,
+    quill: 3
+  },
+
+  // === 炎 × 各述語 ===
+  {
+    id: 'p13_flame_gaze',
+    conditions: { s2: 'subj_flame', s4: 'pred_gaze' },
+    resultText: '鋭い炎が裂け目から見つめている。揺れる炎の芯が瞳のように動き、こちらの動きを追っている。火に意識がある。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p13_flame_whisper',
+    conditions: { s2: 'subj_flame', s4: 'pred_whisper' },
+    resultText: '鋭い炎が裂け目から囁いている。爆ぜる音の合間に声が混じる。火に近づくと言葉が聞こえ、離れると消える。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p13_flame_sing',
+    conditions: { s2: 'subj_flame', s4: 'pred_sing' },
+    resultText: '鋭い炎が裂け目から歌っている。炎が大小に脈打ち、リズムを持って燃えている。燃料がないのに消えない。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p13_flame_flee',
+    conditions: { s2: 'subj_flame', s4: 'pred_flee' },
+    resultText: '鋭い炎が裂け目から逃げていく。火の玉が岩壁を転がるように裂け目の底へ消えた。焦げ跡だけが道しるべのように残っている。',
     damage: 0,
     quill: 4,
-    rewardItems: [{ id: 'item_p13_broken_kitten', name: '裂け目のぬいぐるみ', description: '綿が減って軽い。風を通すと微かに鳴る', sellPrice: 5 }]
+    rewardItems: [{ id: 'item_p13_flame_flee', name: '炎の焦げ跡', description: '触るとまだ温かい岩の欠片', sellPrice: 5 }]
   },
   {
-    id: 'p13_mighty_kitten',
-    conditions: { s1: 'mod_mighty', s2: 'subj_kitten' },
-    resultText: '屈強な子猫が裂け目の底から唸っている。虎のような体格の猫が、暗闇を縄張りにしている。近づくなという警告だ。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p13_frozen_kitten',
-    conditions: { s1: 'mod_frozen', s2: 'subj_kitten' },
-    resultText: '裂け目から冷気が吹き上がる。底に凍りついた子猫がいる。息はある。氷越しに口が動いている。何かを伝えようとしている。',
-    damage: 0,
-    quill: 6,
-    rewardItems: [{ id: 'item_p13_frozen_kitten', name: '氷の囁き', description: '耳に当てると微かに猫の声が聞こえる氷の欠片', sellPrice: 10 }]
-  },
-  {
-    id: 'p13_clear_kitten',
-    conditions: { s1: 'mod_clear', s2: 'subj_kitten' },
-    resultText: '硝子の子猫が裂け目の縁に座っている。透明な体の中で心臓が脈打つたび、裂け目に小さな振動が伝わる。それが囁きに聞こえていた。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p13_cursed_kitten',
-    conditions: { s1: 'mod_cursed', s2: 'subj_kitten' },
-    resultText: '呪われた子猫が裂け目から囁いている。「拾って」。手を出すと腕に巻きつき、二度と離れない。裂け目に捨てても朝には腕にいる。',
-    damage: 2,
-    quill: 5
-  },
-  {
-    id: 'p13_sleepy_kitten',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_kitten' },
-    resultText: '裂け目の縁で子猫が丸くなっている。寝息が裂け目に反響し、囁き声に聞こえていた。起こす気にならない。',
-    damage: 0,
-    quill: 5,
-    rewardItems: [{ id: 'item_p13_sleepy_kitten', name: '子猫の寝息', description: '耳に当てると安らぐ小石。寝息が聞こえる', sellPrice: 6 }]
-  },
-  {
-    id: 'p13_small_snake',
-    conditions: { s1: 'mod_small', s2: 'subj_snake' },
-    resultText: '指ほどの蛇が裂け目の縁を這っている。舌をちろちろ出しながら、岩の隙間に消えた。囁きは舌が空気を切る音だった。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p13_gentle_snake',
-    conditions: { s1: 'mod_gentle', s2: 'subj_snake' },
-    resultText: '温かい蛇が裂け目から這い上がり、腕に巻きついてくる。体温を分けるように温かい。裂け目には近づくなと、体で道を塞ぐ。',
-    damage: 0,
-    quill: 6,
-    rewardItems: [{ id: 'item_p13_gentle_snake', name: '蛇の温もり', description: '巻きついた跡がほんのり温かい', sellPrice: 7 }]
-  },
-  {
-    id: 'p13_fire_snake',
-    conditions: { s1: 'mod_fire', s2: 'subj_snake' },
-    resultText: '裂け目の壁面を炎の蛇が這い上がっている。通った跡が焦げ、岩が赤く脈打つ。囁きは岩の罅が鳴る音だ。',
-    damage: 3,
-    quill: 3
-  },
-  {
-    id: 'p13_hard_snake',
-    conditions: { s1: 'mod_hard', s2: 'subj_snake' },
-    resultText: '鉄の鱗を持つ蛇が裂け目に横たわっている。鱗が擦れる金属音が反響し、囁き声に聞こえる。噛まれたら歯が折れるのはこちらだ。',
-    damage: 2,
-    quill: 3
-  },
-  {
-    id: 'p13_sharp_snake',
-    conditions: { s1: 'mod_sharp', s2: 'subj_snake' },
-    resultText: '裂け目の暗闇に目が光る。鋭い蛇が牙を見せて囁く。一噛みで血が黒く変わると知っている。耳を塞いで走り抜けた。',
-    damage: 3,
-    quill: 3
-  },
-  {
-    id: 'p13_broken_snake',
-    conditions: { s1: 'mod_broken', s2: 'subj_snake' },
-    resultText: '脱皮の途中で力尽きた蛇が裂け目の底にいる。古い皮が風に擦れ、囁くような音を立てている。蛇自身は動かない。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p13_mighty_snake',
-    conditions: { s1: 'mod_mighty', s2: 'subj_snake' },
-    resultText: '裂け目の底から太い胴体が覗いている。大蛇だ。裂け目そのものが蛇の巣穴らしい。低い唸りが地面を震わせる。',
+    id: 'p13_flame_shine',
+    conditions: { s2: 'subj_flame', s4: 'pred_shine' },
+    resultText: '鋭い炎が裂け目から輝く。白熱した火柱が裂け目を貫き、昼のように明るくなる。目を開けていられない。',
     damage: 4,
     quill: 2
   },
   {
-    id: 'p13_frozen_snake',
-    conditions: { s1: 'mod_frozen', s2: 'subj_snake' },
-    resultText: '裂け目の壁に凍りついた蛇が螺旋を描いている。氷が軋むたびに、閉じ込められた声が漏れる。',
-    damage: 1,
-    quill: 5,
-    rewardItems: [{ id: 'item_p13_frozen_snake', name: '氷の螺旋', description: '蛇の形に凍った氷片。美しい曲線', sellPrice: 7 }]
-  },
-  {
-    id: 'p13_clear_snake',
-    conditions: { s1: 'mod_clear', s2: 'subj_snake' },
-    resultText: '透明な蛇が裂け目の縁を滑っている。飲み込んだものが体内に透けて見える——小石、虫、それから小さな骨。骨格が美しい。',
-    damage: 1,
-    quill: 5
-  },
-  {
-    id: 'p13_cursed_snake',
-    conditions: { s1: 'mod_cursed', s2: 'subj_snake' },
-    resultText: '呪われた蛇が裂け目から囁いている。脱皮するたびに大きくなる蛇だ。前に来た時より明らかに太い。裂け目がきつそうだ。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p13_sleepy_snake',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_snake' },
-    resultText: '裂け目の日陰でとぐろを巻いた蛇が眠っている。寝言のように舌が動く。踏まなければ無害だ。静かに通り過ぎた。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p13_small_dragon',
-    conditions: { s1: 'mod_small', s2: 'subj_dragon' },
-    resultText: '裂け目の縁に手のひらサイズの竜が座っている。小さな口で懸命に囁いている。翼を広げても雀ほど。何を言っているのか聞き取れない。',
-    damage: 0,
-    quill: 6,
-    rewardItems: [{ id: 'item_p13_small_dragon', name: '竜の囁き', description: '耳を近づけると聞こえる。内容はわからない', sellPrice: 10 }]
-  },
-  {
-    id: 'p13_gentle_dragon',
-    conditions: { s1: 'mod_gentle', s2: 'subj_dragon' },
-    resultText: '穏やかな老竜が裂け目の底から語りかけてくる。「この先の道は崩れている。迂回しなさい」。翼を畳んだまま暗闇に戻っていった。',
-    damage: 0,
-    quill: 7,
-    rewardItems: [{ id: 'item_p13_gentle_dragon', name: '老竜の忠告', description: '正しい道を示す低い声が耳に残っている', sellPrice: 12 }]
-  },
-  {
-    id: 'p13_fire_dragon',
-    conditions: { s1: 'mod_fire', s2: 'subj_dragon' },
-    resultText: '裂け目の底が業火に照らされている。燃え盛る竜が蠢いている。近づくだけで髪が焦げる。囁きではない。熱気の唸りだ。',
-    damage: 5,
-    quill: 1
-  },
-  {
-    id: 'p13_hard_dragon',
-    conditions: { s1: 'mod_hard', s2: 'subj_dragon' },
-    resultText: '裂け目の壁面に竜の鱗が埋まっている。城壁のように厚い。風が鱗の隙間を通り、低い唸りを上げている。竜本体は地中深くにいるらしい。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p13_sharp_dragon',
-    conditions: { s1: 'mod_sharp', s2: 'subj_dragon' },
-    resultText: '金色の目が裂け目の底から光る。鋭い竜が見上げている。「嘘をつくな」と囁く。嘘を見抜く目だ。正直に道を尋ねると、爪で方角を示した。',
-    damage: 1,
-    quill: 6,
-    rewardItems: [{ id: 'item_p13_sharp_dragon', name: '竜の金眼石', description: '金色に光る小石。嘘をつくと熱くなる', sellPrice: 12 }]
-  },
-  {
-    id: 'p13_broken_dragon',
-    conditions: { s1: 'mod_broken', s2: 'subj_dragon' },
-    resultText: '壊れた竜が裂け目の底に横たわっている。翼は折れ、火も吐けない。囁きは呼吸の音だった。傷薬を落としてやると、瞬きで応えた。',
-    damage: 0,
-    quill: 5,
-    rewardItems: [{ id: 'item_p13_broken_dragon', name: '剥がれた竜鱗', description: '壊れて薄い。それでもまだ硬い', sellPrice: 7 }]
-  },
-  {
-    id: 'p13_mighty_dragon',
-    conditions: { s1: 'mod_mighty', s2: 'subj_dragon' },
-    resultText: '大地が震えている。裂け目は竜の寝床だ。山のような巨体が身じろぎするだけで地面が割れる。囁きは寝息。起こしてはならない。',
-    damage: 4,
-    quill: 2
-  },
-  {
-    id: 'p13_frozen_dragon',
-    conditions: { s1: 'mod_frozen', s2: 'subj_dragon' },
-    resultText: '裂け目から凍てつく吐息が吹き上がる。白い竜が底にいる。吹雪のような囁きが肌を刺す。長居は凍傷になる。',
-    damage: 3,
-    quill: 3
-  },
-  {
-    id: 'p13_clear_dragon',
-    conditions: { s1: 'mod_clear', s2: 'subj_dragon' },
-    resultText: '水晶の竜が裂け目の壁に張りついている。透明な体越しに地層が歪んで見える。囁きは水晶が共鳴する音だ。美しい。',
-    damage: 0,
-    quill: 6,
-    rewardItems: [{ id: 'item_p13_clear_dragon', name: '水晶の共鳴', description: '振ると竜の声がする水晶の欠片', sellPrice: 12 }]
-  },
-  {
-    id: 'p13_cursed_dragon',
-    conditions: { s1: 'mod_cursed', s2: 'subj_dragon' },
-    resultText: '裂け目の底で呪われた竜が蠢いている。目に理性がない。囁きは呪詛だ。聴き続けると足が裂け目に向かって動き出す。耳を塞いで逃げた。',
-    damage: 4,
-    quill: 2
-  },
-  {
-    id: 'p13_sleepy_dragon',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_dragon' },
-    resultText: '裂け目の底で竜が居眠りしている。いびきが地鳴りのように響く。寝言が囁きに聞こえていたらしい。宝の山が微かに光っている。',
-    damage: 0,
-    quill: 5,
-    rewardItems: [{ id: 'item_p13_sleepy_dragon', name: '竜の寝床の金貨', description: '宝の山からこぼれ落ちた一枚', sellPrice: 15 }]
-  },
-  {
-    id: 'p13_small_butterfly',
-    conditions: { s1: 'mod_small', s2: 'subj_butterfly' },
-    resultText: '花びらほどの蝶が裂け目から舞い上がる。羽ばたきに音はないが、空気が微かに震える。囁きはそれだった。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p13_gentle_butterfly',
-    conditions: { s1: 'mod_gentle', s2: 'subj_butterfly' },
-    resultText: '優しい蝶が裂け目の縁をひらひら飛んでいる。指先に止まっては離れ、安全な道へ導くように先を行く。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p13_fire_butterfly',
-    conditions: { s1: 'mod_fire', s2: 'subj_butterfly' },
-    resultText: '炎の羽を持つ蝶が裂け目から飛び立つ。火の粉が暗闇を照らし、底の深さが一瞬だけ見えた。見なければよかった。',
-    damage: 2,
-    quill: 5
-  },
-  {
-    id: 'p13_hard_butterfly',
-    conditions: { s1: 'mod_hard', s2: 'subj_butterfly' },
-    resultText: '金属の蝶が裂け目の壁に張りついている。羽が風で揺れるたびに金属音が反響する。囁きの正体はこの音だった。',
-    damage: 1,
-    quill: 4
-  },
-  {
-    id: 'p13_sharp_butterfly',
-    conditions: { s1: 'mod_sharp', s2: 'subj_butterfly' },
-    resultText: '裂け目から蝶が噴き出す。羽の縁が刃だ。すれ違うだけで頬が切れる。囁きに聞こえたのは羽が空気を切る音だった。',
-    damage: 3,
-    quill: 3
-  },
-  {
-    id: 'p13_broken_butterfly',
-    conditions: { s1: 'mod_broken', s2: 'subj_butterfly' },
-    resultText: '片羽のちぎれた蝶が裂け目の縁で螺旋を描いている。落ちては這い上がり、また落ちる。囁きは羽が岩を擦る音だった。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p13_mighty_butterfly',
-    conditions: { s1: 'mod_mighty', s2: 'subj_butterfly' },
-    resultText: '屈強な蝶が裂け目から飛び立った。羽ばたきが風を起こし、砂利が舞い上がる。蝶のくせに裂け目全体を震わせている。',
-    damage: 1,
-    quill: 5
-  },
-  {
-    id: 'p13_frozen_butterfly',
-    conditions: { s1: 'mod_frozen', s2: 'subj_butterfly' },
-    resultText: '霜の結晶が蝶の形をしている。裂け目の冷気に乗って舞い上がり、触れると砕ける。砕ける音が囁きに聞こえる。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p13_clear_butterfly',
-    conditions: { s1: 'mod_clear', s2: 'subj_butterfly' },
-    resultText: '透明な蝶が裂け目を漂っている。止まると景色に溶けて消える。見えないが、羽ばたきの気配だけが囁きのように残る。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p13_cursed_butterfly',
-    conditions: { s1: 'mod_cursed', s2: 'subj_butterfly' },
-    resultText: '呪われた蝶が裂け目から湧いて出る。追いかけると裂け目の淵に立っている。いつの間にか足元が崩れかけていた。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p13_sleepy_butterfly',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_butterfly' },
-    resultText: '眠い蝶が裂け目の縁の花に止まったまま動かない。鱗粉が風に乗って漂う。吸い込むと、意識が一瞬遠のいた。',
-    damage: 1,
-    quill: 4
-  },
-  {
-    id: 'p13_small_wind',
-    conditions: { s1: 'mod_small', s2: 'subj_wind' },
-    resultText: '裂け目からそよ風が吹き上がる。頬を撫でるように通り過ぎた。囁きはこの風だった。何も言っていない。ただの風だ。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p13_gentle_wind',
-    conditions: { s1: 'mod_gentle', s2: 'subj_wind' },
-    resultText: '裂け目から温かい追い風が吹いている。花の匂いがする。底に花畑でもあるのだろうか。背中を押すように先へ進ませてくれる。',
-    damage: 0,
-    quill: 5,
-    rewardItems: [{ id: 'item_p13_gentle_wind', name: '裂け目の花弁', description: '風に乗って飛んできた花びら。まだ匂う', sellPrice: 6 }]
-  },
-  {
-    id: 'p13_fire_wind',
-    conditions: { s1: 'mod_fire', s2: 'subj_wind' },
-    resultText: '裂け目から熱風が噴き出す。砂漠の嵐のような温度。肌が焼けるように痛い。囁きではなく、地の底の怒号だ。',
-    damage: 4,
-    quill: 1
-  },
-  {
-    id: 'p13_hard_wind',
-    conditions: { s1: 'mod_hard', s2: 'subj_wind' },
-    resultText: '裂け目から吹く風は何百年も同じ方向に吹いている。岩肌が片側だけ削れている。風の囁きは岩に刻まれた年月の音だ。',
-    damage: 1,
-    quill: 4
-  },
-  {
-    id: 'p13_sharp_wind',
-    conditions: { s1: 'mod_sharp', s2: 'subj_wind' },
-    resultText: '裂け目から真空の刃が吹き上がる。通り過ぎた跡の岩が切れている。耳元を風切り音がかすめた。',
-    damage: 3,
-    quill: 3
-  },
-  {
-    id: 'p13_broken_wind',
-    conditions: { s1: 'mod_broken', s2: 'subj_wind' },
-    resultText: '方向の定まらない乱気流が裂け目から噴き出している。渦を巻いては散り、また渦を巻く。声に聞こえるが言葉にならない。',
-    damage: 1,
-    quill: 3
-  },
-  {
-    id: 'p13_mighty_wind',
-    conditions: { s1: 'mod_mighty', s2: 'subj_wind' },
-    resultText: '裂け目から暴風が吹き上がる。すべてを一方向に押し流す。足を踏ん張っても体が浮きそうだ。囁きどころの話ではない。',
-    damage: 4,
-    quill: 2
-  },
-  {
-    id: 'p13_frozen_wind',
-    conditions: { s1: 'mod_frozen', s2: 'subj_wind' },
-    resultText: '裂け目から吹雪が吹き上がる。まつ毛が凍る。底から聞こえる声は凍った空気の軋みだ。長居すると凍傷になる。',
-    damage: 3,
-    quill: 2
-  },
-  {
-    id: 'p13_clear_wind',
-    conditions: { s1: 'mod_clear', s2: 'subj_wind' },
-    resultText: '裂け目から澄み切った風が吹く。視界が遠くまで晴れ、思考が冴える。風が嘘を吹き払ったかのようだ。正しい道が見えた。',
-    damage: 0,
-    quill: 7,
-    rewardItems: [{ id: 'item_p13_clear_wind', name: '真実の風', description: '瓶に閉じ込めた澄んだ風。開けると迷いが消える', sellPrice: 12 }]
-  },
-  {
-    id: 'p13_cursed_wind',
-    conditions: { s1: 'mod_cursed', s2: 'subj_wind' },
-    resultText: '呪われた風が裂け目から吹いている。浴びた途端、来た道がわからなくなった。帰り道を忘れさせる風だ。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p13_sleepy_wind',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_wind' },
-    resultText: '裂け目から生温い風が漂う。春風のような心地よさ。意識がぼんやりし、裂け目の縁に座り込みそうになった。危ない。',
-    damage: 2,
-    quill: 3
-  },
-  {
-    id: 'p13_small_flame',
-    conditions: { s1: 'mod_small', s2: 'subj_flame' },
-    resultText: '裂け目の底に蝋燭ほどの火が灯っている。指で摘めそうなほど頼りない。囁きは炎が揺れる音だった。誰が灯したのだろう。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p13_gentle_flame',
-    conditions: { s1: 'mod_gentle', s2: 'subj_flame' },
-    resultText: '裂け目の底で暖炉のような火が揺れている。温もりが立ち上ってくる。囁きは火の爆ぜる音。不思議と安心する。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p13_fire_flame',
-    conditions: { s1: 'mod_fire', s2: 'subj_flame' },
-    resultText: '裂け目が火口になっている。大火が底から吹き上がり、空気が歪む。囁きではない。轟音だ。近づいた眉毛が縮れた。',
-    damage: 5,
-    quill: 1
-  },
-  {
-    id: 'p13_hard_flame',
-    conditions: { s1: 'mod_hard', s2: 'subj_flame' },
-    resultText: '裂け目の底に消えない炎がある。水をかけても風を吹いても揺らがない。何百年もここで燃え続けているらしい。囁きは永遠の独り言だ。',
-    damage: 1,
-    quill: 5,
-    rewardItems: [{ id: 'item_p13_hard_flame', name: '不滅の灯', description: '瓶に入れた消えない火。揺らぎもしない', sellPrice: 10 }]
-  },
-  {
-    id: 'p13_sharp_flame',
-    conditions: { s1: 'mod_sharp', s2: 'subj_flame' },
-    resultText: '裂け目から一条の炎が槍のように噴き出した。触れたものの形を正確に切り取る炎だ。外套の裾が綺麗に焼き抜かれた。',
-    damage: 3,
-    quill: 3
-  },
-  {
-    id: 'p13_broken_flame',
-    conditions: { s1: 'mod_broken', s2: 'subj_flame' },
-    resultText: '裂け目の底で色のおかしい炎が明滅している。緑、紫、また緑。温かくない。囁きは炎が自分の異常に気づいて発する呻きだ。',
-    damage: 1,
-    quill: 4
-  },
-  {
-    id: 'p13_mighty_flame',
-    conditions: { s1: 'mod_mighty', s2: 'subj_flame' },
-    resultText: '火柱が裂け目から天を衝く。周囲の空気が渦を巻き、地面が熱い。囁きは火が空気を喰う音だ。遥か遠回りを強いられた。',
-    damage: 5,
-    quill: 1
-  },
-  {
-    id: 'p13_frozen_flame',
-    conditions: { s1: 'mod_frozen', s2: 'subj_flame' },
-    resultText: '裂け目の底で青白い炎が燃えている。燃えているのに冷たい。手をかざすと霜が張った。鬼火だ。冷たい光で誘っている。',
-    damage: 2,
-    quill: 5,
-    rewardItems: [{ id: 'item_p13_frozen_flame', name: '鬼火の欠片', description: '青白く光る氷。冷たいのに灯りになる', sellPrice: 8 }]
-  },
-  {
-    id: 'p13_clear_flame',
-    conditions: { s1: 'mod_clear', s2: 'subj_flame' },
-    resultText: '裂け目の底に炎がある。ほぼ見えない。空気の揺らぎだけで存在がわかる。近づくと温かい。穢れだけを焼く浄化の火だ。',
-    damage: 0,
-    quill: 6,
-    rewardItems: [{ id: 'item_p13_clear_flame', name: '浄火の欠片', description: '見えないが温かい。手の汚れが綺麗に落ちた', sellPrice: 10 }]
-  },
-  {
-    id: 'p13_cursed_flame',
-    conditions: { s1: 'mod_cursed', s2: 'subj_flame' },
-    resultText: '裂け目から呪われた炎が舐めるように這い出す。燃やしたものの形を覚える炎だ。裂け目の壁に焼けた町の幻が浮かんでいる。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p13_sleepy_flame',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_flame' },
-    resultText: '裂け目の底に熾火が赤く明滅している。今にも消えそうだ。囁きは最後の息。見つめていると意識が引きずられる。',
-    damage: 1,
-    quill: 4
-  },
-  {
-    id: 'p13_small_ice',
-    conditions: { s1: 'mod_small', s2: 'subj_ice' },
-    resultText: '裂け目の縁に小さな氷の欠片が張りついている。溶けかけて滴る音が反響し、囁きに聞こえていた。すぐに溶けた。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p13_gentle_ice',
-    conditions: { s1: 'mod_gentle', s2: 'subj_ice' },
-    resultText: '裂け目の底に優しい氷がある。冷たいが痛くない。額に当てると熱を引いてくれる。花が一輪、氷の中に閉じ込められている。',
-    damage: 0,
-    quill: 5,
-    rewardItems: [{ id: 'item_p13_gentle_ice', name: '氷の花', description: '氷に閉じ込められた花。冷たくて気持ちいい', sellPrice: 8 }]
-  },
-  {
-    id: 'p13_fire_ice',
-    conditions: { s1: 'mod_fire', s2: 'subj_ice' },
-    resultText: '裂け目の壁面に炎を放つ氷が張りついている。触れると凍傷と火傷を同時に負う。矛盾が囁きになって反響している。',
+    id: 'p13_flame_rain_down',
+    conditions: { s2: 'subj_flame', s4: 'pred_rain_down' },
+    resultText: '鋭い炎が裂け目から降り注いでいる。火の粉が雨のように降り、地面の草が焼ける。裂け目が火山口に変わった。',
     damage: 4,
     quill: 3
   },
   {
-    id: 'p13_hard_ice',
-    conditions: { s1: 'mod_hard', s2: 'subj_ice' },
-    resultText: '裂け目が万年氷で塞がれている。鋼より硬い。叩くと鉄の刃が欠けた。氷が軋む低い音が囁きの正体だ。通れない。',
-    damage: 2,
-    quill: 3
-  },
-  {
-    id: 'p13_sharp_ice',
-    conditions: { s1: 'mod_sharp', s2: 'subj_ice' },
-    resultText: '裂け目の底から氷柱が剣のように突き出している。風が吹くと氷柱同士が擦れ、金属のような音が鳴る。',
-    damage: 3,
-    quill: 3
-  },
-  {
-    id: 'p13_broken_ice',
-    conditions: { s1: 'mod_broken', s2: 'subj_ice' },
-    resultText: 'ひび割れた氷が裂け目の底に散らばっている。踏めば崩れる。下は暗い水だ。氷同士が擦れる音が囁きに聞こえる。',
-    damage: 2,
-    quill: 3
-  },
-  {
-    id: 'p13_mighty_ice',
-    conditions: { s1: 'mod_mighty', s2: 'subj_ice' },
-    resultText: '裂け目が巨大な氷塊で満たされている。数百年溶けていない。圧倒的な冷気が壁のように押し寄せ、近づけない。',
-    damage: 3,
-    quill: 2
-  },
-  {
-    id: 'p13_frozen_ice',
-    conditions: { s1: 'mod_frozen', s2: 'subj_ice' },
-    resultText: '氷のさらに冷たい氷が裂け目の底にある。触れた空気が結晶化して落ちる。絶対零度に近い。囁きは空気が凍る音だ。近づくだけで動けなくなる。',
-    damage: 4,
-    quill: 2
-  },
-  {
-    id: 'p13_clear_ice',
-    conditions: { s1: 'mod_clear', s2: 'subj_ice' },
-    resultText: '裂け目を透明な氷が覆っている。完全に透き通り、底が見える。レンズのように光を集め、虹が裂け目の壁に映っている。',
-    damage: 0,
-    quill: 6,
-    rewardItems: [{ id: 'item_p13_clear_ice', name: '虹の映る氷', description: '光に当てると虹を作る透明な氷片', sellPrice: 10 }]
-  },
-  {
-    id: 'p13_cursed_ice',
-    conditions: { s1: 'mod_cursed', s2: 'subj_ice' },
-    resultText: '裂け目の壁に呪いの氷が広がっている。溶けない。周囲にも永遠の冬を広げ続けている。囁きは氷に閉じ込められた者たちの声だ。',
+    id: 'p13_flame_dance',
+    conditions: { s2: 'subj_flame', s4: 'pred_dance' },
+    resultText: '鋭い炎が裂け目から踊っている。炎の舌が左右に揺れ、岩壁に影絵を映す。影は人の形をしている。',
     damage: 3,
     quill: 4
   },
   {
-    id: 'p13_sleepy_ice',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_ice' },
-    resultText: '裂け目の底で氷がゆっくり溶けている。雫の音が規則的に響く。子守唄のようだ。うとうとしそうになり、慌てて離れた。',
+    id: 'p13_flame_melt',
+    conditions: { s2: 'subj_flame', s4: 'pred_melt' },
+    resultText: '鋭い炎が裂け目から溶けている。火が液体のように岩壁を伝い落ちる。溶岩ではない。炎そのものが溶けている。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p13_flame_laugh',
+    conditions: { s2: 'subj_flame', s4: 'pred_laugh' },
+    resultText: '鋭い炎が裂け目から笑っている。爆ぜる音がけたたましく響き、炎が明滅する。火事場の笑い声だ。',
+    damage: 3,
+    quill: 3
+  },
+
+  // === 氷 × 各述語 ===
+  {
+    id: 'p13_ice_gaze',
+    conditions: { s2: 'subj_ice', s4: 'pred_gaze' },
+    resultText: '鋭い氷が裂け目から見つめている。氷柱の表面に映り込んだ自分の顔が、微かに違う表情をしている。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p13_ice_whisper',
+    conditions: { s2: 'subj_ice', s4: 'pred_whisper' },
+    resultText: '鋭い氷が裂け目から囁いている。氷が軋む音が人語に聞こえる。気温が下がるにつれ、声が大きくなる。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p13_ice_sing',
+    conditions: { s2: 'subj_ice', s4: 'pred_sing' },
+    resultText: '鋭い氷が裂け目から歌っている。風が氷柱の隙間を通り、グラスハープのような音色を奏でる。美しいが、指先が痺れ始めた。',
     damage: 1,
-    quill: 4
-  },
-  {
-    id: 'p13_small_shadow',
-    conditions: { s1: 'mod_small', s2: 'subj_shadow' },
-    resultText: '裂け目の底に小さな黒い染みがある。何の影かわからない。耳を近づけると、微かに何か囁いている。聞き取れない。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p13_gentle_shadow',
-    conditions: { s1: 'mod_gentle', s2: 'subj_shadow' },
-    resultText: '裂け目から涼しい影が伸びてくる。木陰のような心地よさだ。影が囁く。「休んでいきなさい」。日差しから守るように覆ってくれる。',
-    damage: -1,
     quill: 6
   },
   {
-    id: 'p13_fire_shadow',
-    conditions: { s1: 'mod_fire', s2: 'subj_shadow' },
-    resultText: '裂け目の底で影自体が黒い炎で燃えている。触れると灼ける。囁きは怒りに満ちている。何に怒っているのかはわからない。',
-    damage: 3,
+    id: 'p13_ice_flee',
+    conditions: { s2: 'subj_ice', s4: 'pred_flee' },
+    resultText: '鋭い氷が裂け目から逃げていく。氷柱が次々と砕け落ち、裂け目の底へ滑り落ちていく。溶けているのではなく、退いている。',
+    damage: 0,
     quill: 3
   },
   {
-    id: 'p13_hard_shadow',
-    conditions: { s1: 'mod_hard', s2: 'subj_shadow' },
-    resultText: '裂け目の底に影が固まって壁を作っている。叩くと硬い。中に何かを閉じ込めているらしい。こもった声が漏れ聞こえる。',
-    damage: 1,
-    quill: 4
+    id: 'p13_ice_shine',
+    conditions: { s2: 'subj_ice', s4: 'pred_shine' },
+    resultText: '鋭い氷が裂け目から輝く。結晶が光を分解し、裂け目の中に虹が架かっている。手を伸ばすと凍傷した。',
+    damage: 2,
+    quill: 5
   },
   {
-    id: 'p13_sharp_shadow',
-    conditions: { s1: 'mod_sharp', s2: 'subj_shadow' },
-    resultText: '裂け目から鋭い影が伸びてくる。輪郭がくっきりしていて、縁に触れると指が切れた。影は何かを指し示している。',
+    id: 'p13_ice_rain_down',
+    conditions: { s2: 'subj_ice', s4: 'pred_rain_down' },
+    resultText: '鋭い氷が裂け目から降り注いでいる。針のような氷片が雨のように降る。地面が白く覆われ、血が点々と混じる。',
+    damage: 4,
+    quill: 2
+  },
+  {
+    id: 'p13_ice_dance',
+    conditions: { s2: 'subj_ice', s4: 'pred_dance' },
+    resultText: '鋭い氷が裂け目から踊っている。氷片が宙を舞い、ぶつかり合って高い音を立てる。風鈴のような音が不釣り合いに美しい。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p13_ice_melt',
+    conditions: { s2: 'subj_ice', s4: 'pred_melt' },
+    resultText: '鋭い氷が裂け目から溶けている。水滴が岩肌を伝い、底に水溜まりを作っている。映り込む空は裂け目の向こう側の空だ。',
+    damage: 0,
+    quill: 4,
+    rewardItems: [{ id: 'item_p13_ice_melt', name: '裂け目の雫', description: '溶けない水滴。中に空が映っている', sellPrice: 9 }]
+  },
+  {
+    id: 'p13_ice_laugh',
+    conditions: { s2: 'subj_ice', s4: 'pred_laugh' },
+    resultText: '鋭い氷が裂け目から笑っている。亀裂が走るたびにきしむ音が上がる。割れる寸前の氷が、笑い声を上げている。',
+    damage: 2,
+    quill: 3
+  },
+
+  // === 影 × 各述語 ===
+  {
+    id: 'p13_shadow_gaze',
+    conditions: { s2: 'subj_shadow', s4: 'pred_gaze' },
+    resultText: '鋭い影が裂け目から見つめている。暗闇の中に暗闇より濃い部分がある。目を凝らすと、輪郭が人の形をしていた。',
     damage: 2,
     quill: 4
   },
   {
-    id: 'p13_broken_shadow',
-    conditions: { s1: 'mod_broken', s2: 'subj_shadow' },
-    resultText: '裂け目の壁に影がめくれ上がっている。平面に戻れないらしい。立体的な影が口を動かしているが、言葉にならない。',
+    id: 'p13_shadow_whisper',
+    conditions: { s2: 'subj_shadow', s4: 'pred_whisper' },
+    resultText: '鋭い影が裂け目から囁いている。声の出どころが分からない。自分の影が裂け目に向かって伸びているのに気づいた。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p13_shadow_sing',
+    conditions: { s2: 'subj_shadow', s4: 'pred_sing' },
+    resultText: '鋭い影が裂け目から歌っている。声はない。だが暗闇が律動的に脈打ち、体の中に旋律が直接流れ込む。',
     damage: 1,
+    quill: 6
+  },
+  {
+    id: 'p13_shadow_flee',
+    conditions: { s2: 'subj_shadow', s4: 'pred_flee' },
+    resultText: '鋭い影が裂け目から逃げていく。闇が薄くなり、裂け目の底が見えるようになった。何もない。影だけが住んでいた。',
+    damage: 0,
     quill: 4
   },
   {
-    id: 'p13_mighty_shadow',
-    conditions: { s1: 'mod_mighty', s2: 'subj_shadow' },
-    resultText: '裂け目から巨大な影が這い出してくる。影のほうが本体に見える。囁きは地響きのように低い。圧倒的な存在感に足がすくむ。',
+    id: 'p13_shadow_shine',
+    conditions: { s2: 'subj_shadow', s4: 'pred_shine' },
+    resultText: '鋭い影が裂け目から輝く。影が光るという矛盾が目を眩ませる。黒い光が視界を焼き、しばらく何も見えなくなった。',
+    damage: 3,
+    quill: 5
+  },
+  {
+    id: 'p13_shadow_rain_down',
+    conditions: { s2: 'subj_shadow', s4: 'pred_rain_down' },
+    resultText: '鋭い影が裂け目から降り注いでいる。暗闇の切れ端が雪のように降り、触れた場所の色が消えていく。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p13_shadow_dance',
+    conditions: { s2: 'subj_shadow', s4: 'pred_dance' },
+    resultText: '鋭い影が裂け目から踊っている。壁に映る影が音もなく跳ね回る。光源がないのに影だけが動いている。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p13_shadow_melt',
+    conditions: { s2: 'subj_shadow', s4: 'pred_melt' },
+    resultText: '鋭い影が裂け目から溶けている。闇が滴り落ち、黒い水溜まりを作っている。覗き込むと底がない。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p13_shadow_laugh',
+    conditions: { s2: 'subj_shadow', s4: 'pred_laugh' },
+    resultText: '鋭い影が裂け目から笑っている。笑い声は自分のものに似ている。振り返ると、自分の影がない。',
+    damage: 3,
+    quill: 5
+  },
+
+  // === 歌 × 各述語 ===
+  {
+    id: 'p13_song_gaze',
+    conditions: { s2: 'subj_song', s4: 'pred_gaze' },
+    resultText: '鋭い歌が裂け目から見つめている。旋律が耳に届くたび、裂け目の奥に目があるような感覚がする。歌に見られている。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p13_song_whisper',
+    conditions: { s2: 'subj_song', s4: 'pred_whisper' },
+    resultText: '鋭い歌が裂け目から囁いている。旋律に似た何かが岩の隙間から漏れ出し、耳の奥を引っ掻く。意味はないが、足が止まる。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p13_song_sing',
+    conditions: { s2: 'subj_song', s4: 'pred_sing' },
+    resultText: '鋭い歌が裂け目から歌っている。歌が歌う。裂け目が共鳴箱になり、自己増殖する旋律が空気を満たす。頭の中まで占領される。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p13_song_flee',
+    conditions: { s2: 'subj_song', s4: 'pred_flee' },
+    resultText: '鋭い歌が裂け目から逃げていく。旋律が徐々に小さくなり、岩の奥へ消えた。静寂が戻ると耳鳴りだけが残った。',
+    damage: 0,
+    quill: 3
+  },
+  {
+    id: 'p13_song_shine',
+    conditions: { s2: 'subj_song', s4: 'pred_shine' },
+    resultText: '鋭い歌が裂け目から輝く。音が光に変わり、旋律の形が目に見える。高音は白く、低音は赤い。裂け目がオーロラのように染まった。',
+    damage: 0,
+    quill: 6,
+    rewardItems: [{ id: 'item_p13_song_shine', name: '歌の光', description: '瓶に閉じ込めた旋律。振ると光る', sellPrice: 10 }]
+  },
+  {
+    id: 'p13_song_rain_down',
+    conditions: { s2: 'subj_song', s4: 'pred_rain_down' },
+    resultText: '鋭い歌が裂け目から降り注いでいる。音の粒が上から落ちてくる。一粒一粒が違う音程で、着地すると弾ける。頭が割れそうだ。',
     damage: 3,
     quill: 3
   },
   {
-    id: 'p13_frozen_shadow',
-    conditions: { s1: 'mod_frozen', s2: 'subj_shadow' },
-    resultText: '裂け目の底に影が凍りついている。本体はとうに去ったのに、影だけが取り残されている。氷越しに口が動いている。',
+    id: 'p13_song_dance',
+    conditions: { s2: 'subj_song', s4: 'pred_dance' },
+    resultText: '鋭い歌が裂け目から踊っている。旋律がリズムを変え、テンポを上げ、体が勝手に動き出す。足が裂け目の縁に向かっている。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p13_song_melt',
+    conditions: { s2: 'subj_song', s4: 'pred_melt' },
+    resultText: '鋭い歌が裂け目から溶けている。旋律が崩れ、音が不協和音に変わっていく。美しかった歌の残骸が、耳の中でざらつく。',
     damage: 1,
+    quill: 3
+  },
+  {
+    id: 'p13_song_laugh',
+    conditions: { s2: 'subj_song', s4: 'pred_laugh' },
+    resultText: '鋭い歌が裂け目から笑っている。旋律が歪み、笑い声のフレーズが繰り返される。陽気な曲なのに寒気がする。',
+    damage: 2,
+    quill: 3
+  },
+
+  // === 沈黙 × 各述語 ===
+  {
+    id: 'p13_silence_gaze',
+    conditions: { s2: 'subj_silence', s4: 'pred_gaze' },
+    resultText: '鋭い沈黙が裂け目から見つめている。音が消えた空間が視線の重さを持つ。何もないのに、何かがいる。',
+    damage: 2,
     quill: 5
   },
   {
-    id: 'p13_clear_shadow',
-    conditions: { s1: 'mod_clear', s2: 'subj_shadow' },
-    resultText: '裂け目の壁に半透明の影が揺れている。薄すぎてほとんど見えない。消えかけた存在の最後の囁きだ。',
+    id: 'p13_silence_whisper',
+    conditions: { s2: 'subj_silence', s4: 'pred_whisper' },
+    resultText: '鋭い沈黙が裂け目から囁いている。音がないのに言葉が届く。鼓膜を介さず直接頭に入ってくる。止め方が分からない。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p13_silence_sing',
+    conditions: { s2: 'subj_silence', s4: 'pred_sing' },
+    resultText: '鋭い沈黙が裂け目から歌っている。無音の歌。だが体が旋律を感じている。骨が振動し、血が拍子を刻む。',
+    damage: 1,
+    quill: 6
+  },
+  {
+    id: 'p13_silence_flee',
+    conditions: { s2: 'subj_silence', s4: 'pred_flee' },
+    resultText: '鋭い沈黙が裂け目から逃げていく。音が戻ってくる。風の音、虫の声、自分の呼吸。沈黙がいた間、全てが止まっていた。',
     damage: 0,
     quill: 5
   },
   {
-    id: 'p13_cursed_shadow',
-    conditions: { s1: 'mod_cursed', s2: 'subj_shadow' },
-    resultText: '呪われた影が裂け目から囁いている。「触れろ」。触れた瞬間、自分の影が二重になった。もう一つの影が勝手に動き始める。',
+    id: 'p13_silence_shine',
+    conditions: { s2: 'subj_silence', s4: 'pred_shine' },
+    resultText: '鋭い沈黙が裂け目から輝く。無音の空間が透明な光を放つ。光の中では声が出ない。叫んでも音にならない。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p13_silence_rain_down',
+    conditions: { s2: 'subj_silence', s4: 'pred_rain_down' },
+    resultText: '鋭い沈黙が裂け目から降り注いでいる。音が一つずつ消えていく。鳥の声、風の音、足音。最後に心臓の音が消えかけて、走った。',
     damage: 3,
+    quill: 5
+  },
+  {
+    id: 'p13_silence_dance',
+    conditions: { s2: 'subj_silence', s4: 'pred_dance' },
+    resultText: '鋭い沈黙が裂け目から踊っている。音のない空間が脈動し、広がったり縮んだりする。無音の波に酔う。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p13_silence_melt',
+    conditions: { s2: 'subj_silence', s4: 'pred_melt' },
+    resultText: '鋭い沈黙が裂け目から溶けている。静けさが薄れ、遠い音が少しずつ聞こえてくる。どこかで鐘が鳴っている。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p13_silence_laugh',
+    conditions: { s2: 'subj_silence', s4: 'pred_laugh' },
+    resultText: '鋭い沈黙が裂け目から笑っている。音のない笑い。横隔膜だけが動く感覚が体に伝わる。自分が笑っているのか、沈黙が笑わせているのか。',
+    damage: 2,
+    quill: 5
+  },
+
+  // === 騎士 × 各述語 ===
+  {
+    id: 'p13_knight_gaze',
+    conditions: { s2: 'subj_knight', s4: 'pred_gaze' },
+    resultText: '鋭い騎士が裂け目から見つめている。兜の隙間から光る目が、こちらの装備を値踏みしている。通行料を取る気だ。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p13_knight_whisper',
+    conditions: { s2: 'subj_knight', s4: 'pred_whisper' },
+    resultText: '鋭い騎士が裂け目から囁いている。「引き返せ」。兜の奥から漏れる声は錆びている。忠告なのか脅迫なのか判断がつかない。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p13_knight_sing',
+    conditions: { s2: 'subj_knight', s4: 'pred_sing' },
+    resultText: '鋭い騎士が裂け目から歌っている。軍歌の断片が金属の反響を伴って聞こえる。一人きりの騎士が、誰に聞かせるでもなく歌い続けている。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p13_knight_flee',
+    conditions: { s2: 'subj_knight', s4: 'pred_flee' },
+    resultText: '鋭い騎士が裂け目から逃げていく。甲冑が岩に擦れる音が遠ざかる。騎士が逃げるとは。裂け目の底に何があるのか。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p13_knight_shine',
+    conditions: { s2: 'subj_knight', s4: 'pred_shine' },
+    resultText: '鋭い騎士が裂け目から輝く。磨かれた甲冑が光を反射し、裂け目を照らす。眩しさが武器になっている。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p13_knight_rain_down',
+    conditions: { s2: 'subj_knight', s4: 'pred_rain_down' },
+    resultText: '鋭い騎士が裂け目から降り注いでいる。甲冑の破片が上から落ちてくる。剣、兜、胸当て。騎士は一人だったはずだが、装備は数十人分ある。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p13_knight_dance',
+    conditions: { s2: 'subj_knight', s4: 'pred_dance' },
+    resultText: '鋭い騎士が裂け目から踊っている。剣を振り回す型稽古が、暗闘の中で踊りに見える。刃が空気を切る音だけが聞こえる。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p13_knight_melt',
+    conditions: { s2: 'subj_knight', s4: 'pred_melt' },
+    resultText: '鋭い騎士が裂け目から溶けている。甲冑が錆びを通り越して液化し、岩壁を伝い落ちる。中身はとうにない。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p13_knight_laugh',
+    conditions: { s2: 'subj_knight', s4: 'pred_laugh' },
+    resultText: '鋭い騎士が裂け目から笑っている。兜の中で反響する笑い声が金属音に変わり、不気味に長く続く。狂っている。',
+    damage: 3,
+    quill: 3
+  },
+
+  // === 魔女 × 各述語 ===
+  {
+    id: 'p13_witch_gaze',
+    conditions: { s2: 'subj_witch', s4: 'pred_gaze' },
+    resultText: '鋭い魔女が裂け目から見つめている。暗闇の中で目だけが光る。品定めする視線。こちらの手札を数えているようだ。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p13_witch_whisper',
+    conditions: { s2: 'subj_witch', s4: 'pred_whisper' },
+    resultText: '鋭い魔女が裂け目から囁いている。呪文の切れ端が耳に入り、頭の中で勝手に組み上がる。振り払うのに全力を使った。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p13_witch_sing',
+    conditions: { s2: 'subj_witch', s4: 'pred_sing' },
+    resultText: '鋭い魔女が裂け目から歌っている。子守唄のような旋律が裂け目を満たす。聞いていると瞼が重くなる。危ない。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p13_witch_flee',
+    conditions: { s2: 'subj_witch', s4: 'pred_flee' },
+    resultText: '鋭い魔女が裂け目から逃げていく。ローブの裾が暗闇に消える瞬間、何かが地面に落ちた。小さな薬瓶だ。',
+    damage: 0,
+    quill: 4,
+    rewardItems: [{ id: 'item_p13_witch_flee', name: '魔女の落とし物', description: '中身不明の薬瓶。ラベルが擦れて読めない', sellPrice: 8 }]
+  },
+  {
+    id: 'p13_witch_shine',
+    conditions: { s2: 'subj_witch', s4: 'pred_shine' },
+    resultText: '鋭い魔女が裂け目から輝く。杖の先が青白く発光し、裂け目の壁に古代文字が浮かび上がる。読めないが、意味が体に染みる。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p13_witch_rain_down',
+    conditions: { s2: 'subj_witch', s4: 'pred_rain_down' },
+    resultText: '鋭い魔女が裂け目から降り注いでいる。分裂した影が上から落ちてくる。どれが本体か分からない。全部が笑っている。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p13_witch_dance',
+    conditions: { s2: 'subj_witch', s4: 'pred_dance' },
+    resultText: '鋭い魔女が裂け目から踊っている。足元に魔法陣が浮かび、踊るたびに紋様が変わる。何を召喚しようとしているのか。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p13_witch_melt',
+    conditions: { s2: 'subj_witch', s4: 'pred_melt' },
+    resultText: '鋭い魔女が裂け目から溶けている。体が蝋のように崩れ、ローブだけが岩に張りつく。呪いの代償か、寿命か。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p13_witch_laugh',
+    conditions: { s2: 'subj_witch', s4: 'pred_laugh' },
+    resultText: '鋭い魔女が裂け目から笑っている。甲高い笑い声が裂け目に反響し、十人分の声に聞こえる。一人のはずなのに。',
+    damage: 2,
+    quill: 3
+  },
+
+  // === 王 × 各述語 ===
+  {
+    id: 'p13_king_gaze',
+    conditions: { s2: 'subj_king', s4: 'pred_gaze' },
+    resultText: '鋭い王が裂け目から見つめている。威厳のある眼差しが暗闇から突き刺さる。膝をつきたくなる衝動を堪えた。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p13_king_whisper',
+    conditions: { s2: 'subj_king', s4: 'pred_whisper' },
+    resultText: '鋭い王が裂け目から囁いている。勅命のような声が岩に反響する。「ここは余の領土だ」。裂け目の底に王座があるらしい。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p13_king_sing',
+    conditions: { s2: 'subj_king', s4: 'pred_sing' },
+    resultText: '鋭い王が裂け目から歌っている。国歌のような荘厳な旋律が響く。聴衆は岩壁だけ。亡国の王が一人で歌い続けている。',
+    damage: 1,
+    quill: 6
+  },
+  {
+    id: 'p13_king_flee',
+    conditions: { s2: 'subj_king', s4: 'pred_flee' },
+    resultText: '鋭い王が裂け目から逃げていく。マントを翻し、暗闇の底へ消えた。王冠だけが裂け目の縁に転がっている。',
+    damage: 0,
     quill: 5,
-    rewardItems: [{ id: 'item_p13_cursed_shadow', name: '二重の影', description: '足元の影が二つになった。たまに勝手に動く', sellPrice: 5 }]
+    rewardItems: [{ id: 'item_p13_king_flee', name: '捨てられた王冠', description: '軽い。権威だけが重かったらしい', sellPrice: 12 }]
   },
   {
-    id: 'p13_sleepy_shadow',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_shadow' },
-    resultText: '正午の影のように小さく縮んだ影が裂け目の底にある。動かない。存在感が薄れたり戻ったりしている。寝息のような気配だけが漂う。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p13_small_song',
-    conditions: { s1: 'mod_small', s2: 'subj_song' },
-    resultText: '裂け目の底から鼻歌が聞こえる。耳を澄まさないと聞こえないほど小さい。誰が歌っているのか、底は暗くて見えない。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p13_gentle_song',
-    conditions: { s1: 'mod_gentle', s2: 'subj_song' },
-    resultText: '裂け目から子守唄が響いてくる。聴いていると傷が楽になる。母の声に似ている。記憶の奥から引っ張り出されたような旋律だ。',
-    damage: -1,
-    quill: 7,
-    rewardItems: [{ id: 'item_p13_gentle_song', name: '子守唄の残響', description: '耳の奥に残る旋律。眠れない夜に聴こえる', sellPrice: 8 }]
-  },
-  {
-    id: 'p13_fire_song',
-    conditions: { s1: 'mod_fire', s2: 'subj_song' },
-    resultText: '裂け目から戦の歌が響く。聴くと血が沸き、恐れが消え、裂け目に飛び込みたくなる。耳を塞いだ。危険な歌だ。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p13_hard_song',
-    conditions: { s1: 'mod_hard', s2: 'subj_song' },
-    resultText: '一度始まると止まらない歌が裂け目から響いている。他のすべての音を上書きする。自分の足音すら聞こえない。',
-    damage: 2,
-    quill: 3
-  },
-  {
-    id: 'p13_sharp_song',
-    conditions: { s1: 'mod_sharp', s2: 'subj_song' },
-    resultText: '裂け目から金切り声のような高音が響く。岩壁にひびが入った。耳を押さえても頭蓋に響く。',
-    damage: 3,
-    quill: 3
-  },
-  {
-    id: 'p13_broken_song',
-    conditions: { s1: 'mod_broken', s2: 'subj_song' },
-    resultText: '途中で止まる旋律が裂け目から聞こえる。同じ節を繰り返し、先に進めない。レコードが擦り切れたような歌だ。続きを誰も知らない。',
+    id: 'p13_king_shine',
+    conditions: { s2: 'subj_king', s4: 'pred_shine' },
+    resultText: '鋭い王が裂け目から輝く。金糸の衣が光を放ち、裂け目が玉座の間のように照らされる。権威の残照だ。',
     damage: 1,
     quill: 4
   },
   {
-    id: 'p13_mighty_song',
-    conditions: { s1: 'mod_mighty', s2: 'subj_song' },
-    resultText: '裂け目から大地を震わせる合唱が響く。足元が揺れる。声量が凄まじく、体に力がみなぎってくる。鼓舞の歌だ。',
-    damage: 0,
-    quill: 6,
-    rewardItems: [{ id: 'item_p13_mighty_song', name: '大地の合唱', description: '裂け目で聴いた合唱の残響。足取りが軽くなる', sellPrice: 8 }]
-  },
-  {
-    id: 'p13_frozen_song',
-    conditions: { s1: 'mod_frozen', s2: 'subj_song' },
-    resultText: '裂け目から凍てついた歌が響く。聴いた瞬間、足が止まる。体が動かない。空気ごと凍らせる歌だ。必死に耳を塞いで逃げた。',
-    damage: 3,
-    quill: 3
-  },
-  {
-    id: 'p13_clear_song',
-    conditions: { s1: 'mod_clear', s2: 'subj_song' },
-    resultText: '裂け目から透き通った旋律が昇ってくる。雑念が消え、思考が澄む。言葉のない歌だ。意味はないが、響きだけが心に残る。',
-    damage: 0,
-    quill: 7,
-    rewardItems: [{ id: 'item_p13_clear_song', name: '無言の旋律', description: '言葉のない歌。聴くと頭が冴える', sellPrice: 10 }]
-  },
-  {
-    id: 'p13_cursed_song',
-    conditions: { s1: 'mod_cursed', s2: 'subj_song' },
-    resultText: '裂け目から呪われた歌が聞こえる。一度聴くと頭から離れない。歩きながらも口ずさんでいる自分に気づき、唇を噛んだ。',
-    damage: 2,
-    quill: 5
-  },
-  {
-    id: 'p13_sleepy_song',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_song' },
-    resultText: '裂け目から眠い子守唄が漂ってくる。抗えない眠気に包まれる。裂け目の縁で膝を抱えて眠ってしまった。目覚めたら日が暮れていた。',
-    damage: 2,
-    quill: 3
-  },
-  {
-    id: 'p13_small_silence',
-    conditions: { s1: 'mod_small', s2: 'subj_silence' },
-    resultText: '裂け目のそばだけ音が途切れる。風も虫も黙る。小さな沈黙が、裂け目の縁に居座っている。囁きは沈黙そのものだった。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p13_gentle_silence',
-    conditions: { s1: 'mod_gentle', s2: 'subj_silence' },
-    resultText: '裂け目から優しい沈黙が満ちてくる。言葉がなくても安らぐ静けさだ。疲れた体が少し楽になった。',
-    damage: -1,
-    quill: 5
-  },
-  {
-    id: 'p13_fire_silence',
-    conditions: { s1: 'mod_fire', s2: 'subj_silence' },
-    resultText: '裂け目から無音の圧力が押し寄せる。怒りで誰も口を開けない。空気が焦げている。囁きではない。爆発寸前の静寂だ。',
+    id: 'p13_king_rain_down',
+    conditions: { s2: 'subj_king', s4: 'pred_rain_down' },
+    resultText: '鋭い王が裂け目から降り注いでいる。王の分身が上から次々と落ちてくる。全員が同じ顔で命令を叫んでいる。矛盾する勅令が交差する。',
     damage: 3,
     quill: 4
   },
   {
-    id: 'p13_hard_silence',
-    conditions: { s1: 'mod_hard', s2: 'subj_silence' },
-    resultText: '裂け目に向かって叫んでみた。声が吸い込まれて消えた。何を言っても返ってこない。音の墓場だ。',
+    id: 'p13_king_dance',
+    conditions: { s2: 'subj_king', s4: 'pred_dance' },
+    resultText: '鋭い王が裂け目から踊っている。宮廷舞踏の型を一人で踏んでいる。相手のいない踊りが、裂け目の中で永遠に続く。',
     damage: 1,
-    quill: 4
-  },
-  {
-    id: 'p13_sharp_silence',
-    conditions: { s1: 'mod_sharp', s2: 'subj_silence' },
-    resultText: '裂け目から鋭い沈黙が這い出す。言葉より痛い無言。視線のような圧力が胸を刺す。後ろめたいことを見透かされている。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p13_broken_silence',
-    conditions: { s1: 'mod_broken', s2: 'subj_silence' },
-    resultText: '裂け目は静かなはずだが、どこかからノイズが混じる。壊れた沈黙だ。静寂の隙間から何かが漏れ出している。',
-    damage: 1,
-    quill: 4
-  },
-  {
-    id: 'p13_mighty_silence',
-    conditions: { s1: 'mod_mighty', s2: 'subj_silence' },
-    resultText: '裂け目から圧倒的な沈黙が広がる。自分の心臓の音すら消える。耳鳴りだけが残った。沈黙に場を支配された。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p13_frozen_silence',
-    conditions: { s1: 'mod_frozen', s2: 'subj_silence' },
-    resultText: '裂け目から凍てついた沈黙が立ち上る。息も凍る。時間が止まったように静かだ。動けなくなる前に離れた。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p13_clear_silence',
-    conditions: { s1: 'mod_clear', s2: 'subj_silence' },
-    resultText: '裂け目から透き通った沈黙が湧く。泉のように澄んだ無音。雑念が洗い流される。しばらく佇んで、静けさを浴びた。',
-    damage: 0,
-    quill: 7,
-    rewardItems: [{ id: 'item_p13_clear_silence', name: '澄んだ沈黙', description: '瓶に詰めた無音。開けると周囲が静かになる', sellPrice: 10 }]
-  },
-  {
-    id: 'p13_cursed_silence',
-    conditions: { s1: 'mod_cursed', s2: 'subj_silence' },
-    resultText: '呪われた沈黙が裂け目から広がる。口を開いても声が出ない。声を奪う沈黙だ。裂け目から離れるまで一言も発せなかった。',
-    damage: 2,
     quill: 5
   },
   {
-    id: 'p13_sleepy_silence',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_silence' },
-    resultText: '裂け目のそばは午後の図書館のように静かだ。眠気を誘う沈黙。意識が遠のいて、裂け目の縁で膝を折りそうになった。',
+    id: 'p13_king_melt',
+    conditions: { s2: 'subj_king', s4: 'pred_melt' },
+    resultText: '鋭い王が裂け目から溶けている。王の体が蝋人形のように崩れ、金の装飾だけが岩に残る。王とは器だった。',
     damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p13_king_laugh',
+    conditions: { s2: 'subj_king', s4: 'pred_laugh' },
+    resultText: '鋭い王が裂け目から笑っている。哄笑が岩壁に跳ね返り、嘲りの声に変わる。何もかもが可笑しいらしい。',
+    damage: 2,
     quill: 3
   },
+
+  // === 亡霊 × 各述語 ===
   {
-    id: 'p13_small_knight',
-    conditions: { s1: 'mod_small', s2: 'subj_knight' },
-    resultText: '裂け目の縁に子供の騎士が立っている。大きすぎる兜で前が見えていない。「この先は危ないぞ」と一生懸命囁いている。声が裂け目に反響する。',
-    damage: 0,
-    quill: 6,
-    rewardItems: [{ id: 'item_p13_small_knight', name: '小さな兜', description: '子供用。中から励ましの声が聞こえる気がする', sellPrice: 8 }]
-  },
-  {
-    id: 'p13_gentle_knight',
-    conditions: { s1: 'mod_gentle', s2: 'subj_knight' },
-    resultText: '優しい騎士が裂け目の底から語りかけてくる。剣を収め、手を差し出している。「降りてこい」ではなく「離れなさい」と。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p13_fire_knight',
-    conditions: { s1: 'mod_fire', s2: 'subj_knight' },
-    resultText: '裂け目の底で鎧ごと燃えている騎士がいる。それでも歩みを止めない。囁きは呻きだ。怒りで燃える復讐の騎士。近づけない。',
-    damage: 4,
-    quill: 2
-  },
-  {
-    id: 'p13_hard_knight',
-    conditions: { s1: 'mod_hard', s2: 'subj_knight' },
-    resultText: '分厚い鎧の騎士が裂け目の底に立っている。微動だにしない。表情は見えない。鎧の隙間から風が通り、呼吸のような音が漏れる。',
-    damage: 1,
-    quill: 4
-  },
-  {
-    id: 'p13_sharp_knight',
-    conditions: { s1: 'mod_sharp', s2: 'subj_knight' },
-    resultText: '裂け目の底から冷たい目の騎士が見上げている。構えに無駄がない。「名を名乗れ」。答えないと剣が飛んできそうだ。',
+    id: 'p13_ghost_gaze',
+    conditions: { s2: 'subj_ghost', s4: 'pred_gaze' },
+    resultText: '鋭い亡霊が裂け目から見つめている。半透明の眼窩にまだ視線が宿っている。死んでなお、何かを探し続けている。',
     damage: 2,
     quill: 4
   },
   {
-    id: 'p13_broken_knight',
-    conditions: { s1: 'mod_broken', s2: 'subj_knight' },
-    resultText: '壊れた騎士が裂け目の底にいる。鎧はへこみ、剣は折れている。それでも立っている。囁きは「まだ、終わっていない」。',
-    damage: 0,
-    quill: 6,
-    rewardItems: [{ id: 'item_p13_broken_knight', name: '折れた剣の欠片', description: '刃こぼれだらけだが、まだ光っている', sellPrice: 7 }]
+    id: 'p13_ghost_whisper',
+    conditions: { s2: 'subj_ghost', s4: 'pred_whisper' },
+    resultText: '鋭い亡霊が裂け目から囁いている。生前の声の残滓が岩に染みついている。名前を呼ばれた気がしたが、聞き間違いだと思いたい。',
+    damage: 2,
+    quill: 5
   },
   {
-    id: 'p13_mighty_knight',
-    conditions: { s1: 'mod_mighty', s2: 'subj_knight' },
-    resultText: '裂け目の底から重装騎士が見上げている。巨体。地面が軋む。「降りてこい」と低い声で囁く。挑戦か招待か判断がつかない。',
-    damage: 3,
-    quill: 3
-  },
-  {
-    id: 'p13_frozen_knight',
-    conditions: { s1: 'mod_frozen', s2: 'subj_knight' },
-    resultText: '裂け目の壁に氷漬けの騎士がいる。剣を振り上げた姿勢のまま凍っている。氷が軋むたびに、止められた声が漏れる。',
+    id: 'p13_ghost_sing',
+    conditions: { s2: 'subj_ghost', s4: 'pred_sing' },
+    resultText: '鋭い亡霊が裂け目から歌っている。生きていた頃の歌が輪郭を失い、旋律だけが空気に漂う。悲しくはない。ただ遠い。',
     damage: 1,
-    quill: 5
-  },
-  {
-    id: 'p13_clear_knight',
-    conditions: { s1: 'mod_clear', s2: 'subj_knight' },
-    resultText: '透き通った騎士が裂け目の底に立っている。影の薄い騎士だ。囁いているが、声も薄い。耳を凝らすと「気をつけて」と聞こえた気がする。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p13_cursed_knight',
-    conditions: { s1: 'mod_cursed', s2: 'subj_knight' },
-    resultText: '裂け目の底で黒い鎧の騎士が蠢いている。兜の奥の目が赤く光る。「仲間になれ」と囁く。呪いに縛られた騎士だ。断って走った。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p13_sleepy_knight',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_knight' },
-    resultText: '裂け目の縁で騎士が壁にもたれて眠っている。見張り番らしいが、槍が傾いている。寝言が裂け目に反響して囁きになっていた。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p13_small_witch',
-    conditions: { s1: 'mod_small', s2: 'subj_witch' },
-    resultText: '裂け目の縁に少女の魔女が座っている。大きな帽子で顔が隠れている。裂け目に向かって呪文を囁いているが、見習いらしく効果は微妙だ。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p13_gentle_witch',
-    conditions: { s1: 'mod_gentle', s2: 'subj_witch' },
-    resultText: '裂け目の底から薬草の匂いがする。優しい魔女が煎じ薬を作っている。「飲みなさい」と囁く。怖い顔だが声は温かい。傷が楽になった。',
-    damage: -1,
     quill: 6
   },
   {
-    id: 'p13_fire_witch',
-    conditions: { s1: 'mod_fire', s2: 'subj_witch' },
-    resultText: '裂け目の底で炎に包まれた魔女が叫んでいる。火刑に処された者の残響だ。怨みの声が壁に反響する。熱気が肌を焼く。',
-    damage: 4,
+    id: 'p13_ghost_flee',
+    conditions: { s2: 'subj_ghost', s4: 'pred_flee' },
+    resultText: '鋭い亡霊が裂け目から逃げていく。透明な体が岩壁をすり抜けて消えた。冷気だけが残っている。',
+    damage: 0,
     quill: 3
   },
   {
-    id: 'p13_hard_witch',
-    conditions: { s1: 'mod_hard', s2: 'subj_witch' },
-    resultText: '裂け目の底に石のように頑固な老魔女がいる。「取引しに来たのか」と囁く。取引以外では一言も話さないらしい。差し出すものがない。',
+    id: 'p13_ghost_shine',
+    conditions: { s2: 'subj_ghost', s4: 'pred_shine' },
+    resultText: '鋭い亡霊が裂け目から輝く。燐光が半透明の体を照らし、骨格が透けて見える。光源は胸の中にある。まだ燃えている。',
     damage: 1,
+    quill: 6
+  },
+  {
+    id: 'p13_ghost_rain_down',
+    conditions: { s2: 'subj_ghost', s4: 'pred_rain_down' },
+    resultText: '鋭い亡霊が裂け目から降り注いでいる。無数の亡霊が雨のように落ちてくる。地面に触れると消え、また降ってくる。終わらない。',
+    damage: 3,
     quill: 4
   },
   {
-    id: 'p13_sharp_witch',
-    conditions: { s1: 'mod_sharp', s2: 'subj_witch' },
-    resultText: '鉤鼻の魔女が裂け目の底から見上げている。「嘘つきの匂いがする」と囁いた。嘘を一言で見抜く目だ。嘘はついていないが、冷や汗が出た。',
+    id: 'p13_ghost_dance',
+    conditions: { s2: 'subj_ghost', s4: 'pred_dance' },
+    resultText: '鋭い亡霊が裂け目から踊っている。体が透けるたびに動きが途切れ、また現れて続きを踊る。生前の記憶を繰り返している。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p13_ghost_melt',
+    conditions: { s2: 'subj_ghost', s4: 'pred_melt' },
+    resultText: '鋭い亡霊が裂け目から溶けている。すでに曖昧だった輪郭がさらに薄れ、空気に混ざっていく。二度目の死だ。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p13_ghost_laugh',
+    conditions: { s2: 'subj_ghost', s4: 'pred_laugh' },
+    resultText: '鋭い亡霊が裂け目から笑っている。空洞の口から声のない笑いが漏れる。何十年も同じことを繰り返しているらしい。',
     damage: 2,
     quill: 4
   },
+
+  // === 鏡 × 各述語 ===
   {
-    id: 'p13_broken_witch',
-    conditions: { s1: 'mod_broken', s2: 'subj_witch' },
-    resultText: '壊れた魔女が裂け目の底で呪文を繰り返している。同じ詠唱が途切れ途切れに反響する。魔力が暴走して制御できないらしい。',
-    damage: 2,
-    quill: 3
-  },
-  {
-    id: 'p13_mighty_witch',
-    conditions: { s1: 'mod_mighty', s2: 'subj_witch' },
-    resultText: '裂け目の底から太い腕の魔女が顔を出した。杖の代わりに拳を握っている。「道を訊きたいなら腕相撲で勝て」と囁く。',
+    id: 'p13_mirror_gaze',
+    conditions: { s2: 'subj_mirror', s4: 'pred_gaze' },
+    resultText: '鋭い鏡が裂け目から見つめている。裂け目の壁面が鏡になり、自分の姿が映っている。映っている自分は、微かに首を傾げた。',
     damage: 2,
     quill: 5
   },
   {
-    id: 'p13_frozen_witch',
-    conditions: { s1: 'mod_frozen', s2: 'subj_witch' },
-    resultText: '裂け目の壁に氷の魔女が張りついている。周囲に霜が広がる。凍った唇が動き、呪文を囁いている。近づくほど寒くなる。',
-    damage: 3,
-    quill: 3
-  },
-  {
-    id: 'p13_clear_witch',
-    conditions: { s1: 'mod_clear', s2: 'subj_witch' },
-    resultText: '裂け目の底に透き通った老魔女がいる。向こうが透けて見える。存在が希薄だ。囁きも薄く、消えかけている。最後の言葉を伝えたいらしい。',
-    damage: 0,
-    quill: 6,
-    rewardItems: [{ id: 'item_p13_clear_witch', name: '消えかけた呪文', description: '透き通った声の残響。微かに魔力を帯びている', sellPrice: 10 }]
-  },
-  {
-    id: 'p13_cursed_witch',
-    conditions: { s1: 'mod_cursed', s2: 'subj_witch' },
-    resultText: '呪われた魔女が裂け目から囁いている。自分の呪いに蝕まれ、体の一部が変異している。「逃げなさい。私のようになる前に」。',
+    id: 'p13_mirror_whisper',
+    conditions: { s2: 'subj_mirror', s4: 'pred_whisper' },
+    resultText: '鋭い鏡が裂け目から囁いている。鏡面が微振動し、映り込んだ景色が歪むたびに音が漏れる。自分の声に似ている。',
     damage: 2,
-    quill: 6
+    quill: 5
   },
   {
-    id: 'p13_sleepy_witch',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_witch' },
-    resultText: '裂け目の底で魔女が大釜の前でうとうとしている。囁きは寝言の呪文だ。薬がぐつぐつ煮えている。いい匂いがする。',
+    id: 'p13_mirror_sing',
+    conditions: { s2: 'subj_mirror', s4: 'pred_sing' },
+    resultText: '鋭い鏡が裂け目から歌っている。鏡面が空気を震わせ、こちらの声を歪めて返す。反響が旋律になり、裂け目が合唱している。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p13_mirror_flee',
+    conditions: { s2: 'subj_mirror', s4: 'pred_flee' },
+    resultText: '鋭い鏡が裂け目から逃げていく。鏡面が奥へ後退し、映っていた自分の姿が小さくなっていく。手を伸ばしても届かない。',
     damage: 0,
     quill: 4
   },
   {
-    id: 'p13_small_king',
-    conditions: { s1: 'mod_small', s2: 'subj_king' },
-    resultText: '裂け目の底に子供が王冠をかぶって座っている。「朕の国を見よ」と囁くが、裂け目の底は暗い穴でしかない。足が届いていない。',
-    damage: 0,
+    id: 'p13_mirror_shine',
+    conditions: { s2: 'subj_mirror', s4: 'pred_shine' },
+    resultText: '鋭い鏡が裂け目から輝く。光源のない光を反射し、裂け目の中が白く飛ぶ。目が慣れると、鏡の中に別の裂け目が見えた。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p13_mirror_rain_down',
+    conditions: { s2: 'subj_mirror', s4: 'pred_rain_down' },
+    resultText: '鋭い鏡が裂け目から降り注いでいる。鏡の破片が降り注ぎ、一片一片に違う自分が映っている。踏むと割れ、七年分の不運が降り積もる。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p13_mirror_dance',
+    conditions: { s2: 'subj_mirror', s4: 'pred_dance' },
+    resultText: '鋭い鏡が裂け目から踊っている。回転する鏡面が光を乱反射させ、万華鏡のように景色が崩れる。酔いそうだ。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p13_mirror_melt',
+    conditions: { s2: 'subj_mirror', s4: 'pred_melt' },
+    resultText: '鋭い鏡が裂け目から溶けている。鏡面が水銀のように流れ落ち、銀色の水溜まりを作る。覗き込むと、鏡の中の世界が沈んでいくのが見えた。',
+    damage: 1,
     quill: 6
   },
   {
-    id: 'p13_gentle_king',
-    conditions: { s1: 'mod_gentle', s2: 'subj_king' },
-    resultText: '裂け目の底から穏やかな声が響く。優しい王が語りかけてくる。「旅人よ、この先は険しい。食料を持っていきなさい」。',
+    id: 'p13_mirror_laugh',
+    conditions: { s2: 'subj_mirror', s4: 'pred_laugh' },
+    resultText: '鋭い鏡が裂け目から笑っている。映り込んだ自分の顔が笑っている。こちらは笑っていないのに。鏡が自分の意志で動いている。',
+    damage: 2,
+    quill: 5
+  },
+
+  // === 人形 × 各述語 ===
+  {
+    id: 'p13_doll_gaze',
+    conditions: { s2: 'subj_doll', s4: 'pred_gaze' },
+    resultText: '鋭い人形が裂け目から見つめている。硝子の目が光を拾い、暗闇の中で二点だけが光る。首が微かに動いた気がした。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p13_doll_whisper',
+    conditions: { s2: 'subj_doll', s4: 'pred_whisper' },
+    resultText: '鋭い人形が裂け目から囁いている。紐を引くと喋る人形の仕掛けが、風で勝手に動いている。同じ言葉を繰り返す。「あそぼ」。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p13_doll_sing',
+    conditions: { s2: 'subj_doll', s4: 'pred_sing' },
+    resultText: '鋭い人形が裂け目から歌っている。オルゴールのような旋律が陶器の体から響く。蓋を開けた覚えはない。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p13_doll_flee',
+    conditions: { s2: 'subj_doll', s4: 'pred_flee' },
+    resultText: '鋭い人形が裂け目から逃げていく。関節がぎこちなく動き、岩壁を這い降りていく。誰かの手で動かされているように見えるが、糸はない。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p13_doll_shine',
+    conditions: { s2: 'subj_doll', s4: 'pred_shine' },
+    resultText: '鋭い人形が裂け目から輝く。磁器の肌が内側から発光し、ひび割れた箇所から光が漏れている。中に何かが入っている。',
+    damage: 1,
+    quill: 5,
+    rewardItems: [{ id: 'item_p13_doll_shine', name: '人形の光', description: '人形の欠片。握ると温かく光る', sellPrice: 7 }]
+  },
+  {
+    id: 'p13_doll_rain_down',
+    conditions: { s2: 'subj_doll', s4: 'pred_rain_down' },
+    resultText: '鋭い人形が裂け目から降り注いでいる。大小さまざまな人形が落ちてくる。着地した人形が一斉に首をこちらに向けた。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p13_doll_dance',
+    conditions: { s2: 'subj_doll', s4: 'pred_dance' },
+    resultText: '鋭い人形が裂け目から踊っている。バレエのように足を上げ、回転する。関節が軋む音がリズムを刻む。拍手を求めている。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p13_doll_melt',
+    conditions: { s2: 'subj_doll', s4: 'pred_melt' },
+    resultText: '鋭い人形が裂け目から溶けている。蝋で出来ていたらしい。顔が崩れ、目と口が混ざり合う。最後まで笑顔を保とうとしていた。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p13_doll_laugh',
+    conditions: { s2: 'subj_doll', s4: 'pred_laugh' },
+    resultText: '鋭い人形が裂け目から笑っている。口が動かないのに笑い声が聞こえる。腹話術の相方が、どこかに隠れている。',
+    damage: 2,
+    quill: 4
+  },
+
+  // === 雨 × 各述語 ===
+  {
+    id: 'p13_rain_gaze',
+    conditions: { s2: 'subj_rain', s4: 'pred_gaze' },
+    resultText: '鋭い雨が裂け目から見つめている。雨粒の一つ一つがレンズのように光を集め、無数の小さな目になっている。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p13_rain_whisper',
+    conditions: { s2: 'subj_rain', s4: 'pred_whisper' },
+    resultText: '鋭い雨が裂け目から囁いている。雨音に声が混じる。水が岩を打つ音の合間に、聞き取れない言語が走る。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p13_rain_sing',
+    conditions: { s2: 'subj_rain', s4: 'pred_sing' },
+    resultText: '鋭い雨が裂け目から歌っている。水滴が岩肌を叩くリズムが旋律を成している。裂け目全体が打楽器になっている。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p13_rain_flee',
+    conditions: { s2: 'subj_rain', s4: 'pred_flee' },
+    resultText: '鋭い雨が裂け目から逃げていく。雨が上向きに降り始め、裂け目から空へ吸い上げられていく。逆さまの雨。裂け目が乾いた。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p13_rain_shine',
+    conditions: { s2: 'subj_rain', s4: 'pred_shine' },
+    resultText: '鋭い雨が裂け目から輝く。雨粒が光を含み、落下する軌跡が光の線になる。裂け目に虹が架かっている。',
     damage: 0,
     quill: 5,
-    rewardItems: [{ id: 'item_p13_gentle_king', name: '王の施し', description: '質素だが腹に溜まる干し肉と堅パン', sellPrice: 7 }]
+    rewardItems: [{ id: 'item_p13_rain_shine', name: '裂け目の虹', description: '水滴に閉じ込めた虹。傾けると色が変わる', sellPrice: 9 }]
   },
   {
-    id: 'p13_fire_king',
-    conditions: { s1: 'mod_fire', s2: 'subj_king' },
-    resultText: '炎の冠を戴く王が裂け目の底にいる。怒りで玉座が燃えている。「この国に火を放て」と囁く。狂王の命令だ。耳を塞いだ。',
+    id: 'p13_rain_rain_down',
+    conditions: { s2: 'subj_rain', s4: 'pred_rain_down' },
+    resultText: '鋭い雨が裂け目から降り注いでいる。針のような雨粒が岩を穿つ。水溜まりが赤い。雨自体が凶器になっている。',
     damage: 4,
     quill: 2
   },
   {
-    id: 'p13_hard_king',
-    conditions: { s1: 'mod_hard', s2: 'subj_king' },
-    resultText: '裂け目の底に石の玉座がある。堅い王が微動だにせず座っている。「法に従え」と一言だけ囁いた。何の法かは言わない。',
-    damage: 1,
-    quill: 4
-  },
-  {
-    id: 'p13_sharp_king',
-    conditions: { s1: 'mod_sharp', s2: 'subj_king' },
-    resultText: '裂け目の底から鷹のような目が光る。鋭い王が見上げている。「お前の目的を言え」と囁く。一言で核心を突かれ、言葉に詰まった。',
-    damage: 1,
-    quill: 5
-  },
-  {
-    id: 'p13_broken_king',
-    conditions: { s1: 'mod_broken', s2: 'subj_king' },
-    resultText: '壊れた王が裂け目の底に崩れている。王冠は歪み、目は虚ろだ。「国はどこだ」と囁いている。国はもうない。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p13_mighty_king',
-    conditions: { s1: 'mod_mighty', s2: 'subj_king' },
-    resultText: '裂け目の底に戦士王が立っている。背中に傷がない男だ。「降りて来い。話がある」と囁く。命令口調だが、悪意はない。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p13_frozen_king',
-    conditions: { s1: 'mod_frozen', s2: 'subj_king' },
-    resultText: '氷の玉座に座る王が裂け目の底にいる。吐く言葉が白い。「北の果てを知っているか」と囁く。凍てつく声だ。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p13_clear_king',
-    conditions: { s1: 'mod_clear', s2: 'subj_king' },
-    resultText: '裂け目の底に透き通った王がいる。臣下の姿はない。存在が希薄で、声も消えかけている。「誰か……いるのか」と囁いた。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p13_cursed_king',
-    conditions: { s1: 'mod_cursed', s2: 'subj_king' },
-    resultText: '呪われた王が裂け目の底から囁いている。触れたものが金になる手を伸ばしている。「助けてくれ。食事もできない」。手を出せない。',
-    damage: 2,
-    quill: 6,
-    rewardItems: [{ id: 'item_p13_cursed_king', name: '黄金の涙', description: '王が流した涙が金に変わったもの', sellPrice: 15 }]
-  },
-  {
-    id: 'p13_sleepy_king',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_king' },
-    resultText: '裂け目の底で王が玉座に居眠りしている。寝言が反響して囁きに聞こえていた。側近がいないので誰も起こさない。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p13_small_ghost',
-    conditions: { s1: 'mod_small', s2: 'subj_ghost' },
-    resultText: '裂け目の底から子供の笑い声が聞こえる。小さな亡霊だ。姿は見えないが、笑い声だけが昇ってくる。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p13_gentle_ghost',
-    conditions: { s1: 'mod_gentle', s2: 'subj_ghost' },
-    resultText: '優しい亡霊が裂け目から囁いている。「もう少し先に泉がある」。生前の面影を残した穏やかな霊だ。微笑んで消えた。',
-    damage: 0,
-    quill: 6,
-    rewardItems: [{ id: 'item_p13_gentle_ghost', name: '亡霊の道標', description: '霊が示した方角が頭に残っている', sellPrice: 8 }]
-  },
-  {
-    id: 'p13_fire_ghost',
-    conditions: { s1: 'mod_fire', s2: 'subj_ghost' },
-    resultText: '炎に焼かれた亡霊が裂け目から這い上がろうとしている。怨念が炎になって揺れている。囁きは恨み言だ。近づくと火傷する。',
-    damage: 4,
-    quill: 2
-  },
-  {
-    id: 'p13_hard_ghost',
-    conditions: { s1: 'mod_hard', s2: 'subj_ghost' },
-    resultText: '裂け目の底に亡霊が立っている。何百年もそこにいるらしい。成仏を頑なに拒んでいる。同じ言葉を繰り返し囁く。「ここは通さぬ」。',
-    damage: 2,
-    quill: 3
-  },
-  {
-    id: 'p13_sharp_ghost',
-    conditions: { s1: 'mod_sharp', s2: 'subj_ghost' },
-    resultText: '裂け目からこちらの罪を見透かす目の霊が見上げている。「お前が隠していることを知っている」と囁く。視線が痛い。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p13_broken_ghost',
-    conditions: { s1: 'mod_broken', s2: 'subj_ghost' },
-    resultText: '壊れた亡霊が裂け目の底を彷徨っている。自分が何者か思い出せない。「私は……誰だ」と繰り返し囁く。輪郭が溶けかけている。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p13_mighty_ghost',
-    conditions: { s1: 'mod_mighty', s2: 'subj_ghost' },
-    resultText: '鎧武者の亡霊が裂け目の底から見上げている。死んで枷が外れ、生前より強い。「勝負せよ」と囁く。丁重に断って走った。',
-    damage: 3,
-    quill: 3
-  },
-  {
-    id: 'p13_frozen_ghost',
-    conditions: { s1: 'mod_frozen', s2: 'subj_ghost' },
-    resultText: '凍死者の亡霊が裂け目にいる。触れると凍傷する冷気を纏っている。「寒い」と囁く。永遠に寒がっている。通った跡に霜が残る。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p13_clear_ghost',
-    conditions: { s1: 'mod_clear', s2: 'subj_ghost' },
-    resultText: '透き通った亡霊が裂け目の縁に佇んでいる。成仏しかけている。あと一言だけ伝えたいらしい。声は微かで、聞き取れなかった。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p13_cursed_ghost',
-    conditions: { s1: 'mod_cursed', s2: 'subj_ghost' },
-    resultText: '呪いに縛られた亡霊が裂け目の底で苦しんでいる。成仏できない。「呪いを……解いてくれ」と囁く。解き方がわからない。',
+    id: 'p13_rain_dance',
+    conditions: { s2: 'subj_rain', s4: 'pred_dance' },
+    resultText: '鋭い雨が裂け目から踊っている。雨粒が重力を無視して螺旋を描き、水の彫刻を作っては崩す。美しいが、触れると切れる。',
     damage: 2,
     quill: 5
   },
   {
-    id: 'p13_sleepy_ghost',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_ghost' },
-    resultText: 'うとうとしている亡霊が裂け目の底に漂っている。存在感が薄れたり戻ったりする。寝ぼけた声で「おやすみ」と囁いた。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p13_small_mirror',
-    conditions: { s1: 'mod_small', s2: 'subj_mirror' },
-    resultText: '裂け目の底に手鏡が落ちている。覗き込むと自分の目だけが映った。鏡面が振動し、微かな音を立てている。囁きはこれか。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p13_gentle_mirror',
-    conditions: { s1: 'mod_gentle', s2: 'subj_mirror' },
-    resultText: '裂け目の壁面に鏡がある。覗くと自分が少しだけ美しく映った。「大丈夫」と鏡面が囁いている。自信のない者に勇気を与える鏡だ。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p13_fire_mirror',
-    conditions: { s1: 'mod_fire', s2: 'subj_mirror' },
-    resultText: '裂け目の壁に鏡が嵌まっている。鏡面の中が燃えている。周囲に火はない。鏡の向こうの世界が燃え落ちている。囁きは向こう側の悲鳴だ。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p13_hard_mirror',
-    conditions: { s1: 'mod_hard', s2: 'subj_mirror' },
-    resultText: '裂け目の壁に割れない鏡が嵌まっている。叩いても傷もつかない。鏡面が揺れるたびに低い音が響く。真実しか映さない鏡らしい。',
-    damage: 1,
-    quill: 4
-  },
-  {
-    id: 'p13_sharp_mirror',
-    conditions: { s1: 'mod_sharp', s2: 'subj_mirror' },
-    resultText: '裂け目に割れ鏡の破片が散らばっている。縁が刃物のように鋭い。反射光が目を刺す。映る自分の欠点ばかりが目につく。',
-    damage: 2,
-    quill: 3
-  },
-  {
-    id: 'p13_broken_mirror',
-    conditions: { s1: 'mod_broken', s2: 'subj_mirror' },
-    resultText: 'ひび割れた鏡が裂け目の底にある。映る顔が何人にも分裂している。どれが本当の自分かわからない。囁きも多重に反響する。',
-    damage: 1,
-    quill: 4
-  },
-  {
-    id: 'p13_mighty_mirror',
-    conditions: { s1: 'mod_mighty', s2: 'subj_mirror' },
-    resultText: '裂け目の壁に人の背丈を超える巨大な姿見が立っている。覗くと理想の自分が映った。鏡の中から何かが出てきそうだ。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p13_frozen_mirror',
-    conditions: { s1: 'mod_frozen', s2: 'subj_mirror' },
-    resultText: '裂け目の壁に凍った鏡がある。霜に覆われ、かろうじて影が映る。覗くと冬の世界が見えた。手を触れたら張りついた。慌てて引き剥がした。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p13_clear_mirror',
-    conditions: { s1: 'mod_clear', s2: 'subj_mirror' },
-    resultText: '透き通った鏡が裂け目の壁にある。鏡なのに向こうが透けている。窓のようだが、通り抜けられない。向こう側で誰かが囁いている。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p13_cursed_mirror',
-    conditions: { s1: 'mod_cursed', s2: 'subj_mirror' },
-    resultText: '呪われた鏡が裂け目の壁にある。覗いた者の姿が鏡に残る。すでに何人もの影が蠢いている。「覗け」と囁く。覗かなかった。',
-    damage: 2,
-    quill: 5
-  },
-  {
-    id: 'p13_sleepy_mirror',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_mirror' },
-    resultText: '裂け目の壁に曇った鏡がある。映像がゆっくり遅れて映る。覗くと自分の寝顔が映った。急に眠くなった。',
-    damage: 1,
-    quill: 4
-  },
-  {
-    id: 'p13_small_doll',
-    conditions: { s1: 'mod_small', s2: 'subj_doll' },
-    resultText: '裂け目の縁に指人形が置いてある。誰かが落としたものだ。風が通ると口が動くように見える。囁きの正体。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p13_gentle_doll',
-    conditions: { s1: 'mod_gentle', s2: 'subj_doll' },
-    resultText: 'くたくたの人形が裂け目の縁にいる。笑顔が縫ってある。風で揺れるたびに「だいじょうぶ」と聞こえる気がする。持ち主を慰めるために作られた人形だ。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p13_fire_doll',
-    conditions: { s1: 'mod_fire', s2: 'subj_doll' },
-    resultText: '裂け目の底で藁人形が燃えている。祭りの焚き上げか、呪詛か。炎に包まれているのに燃え尽きない。囁きは藁が爆ぜる音だ。',
-    damage: 3,
-    quill: 3
-  },
-  {
-    id: 'p13_hard_doll',
-    conditions: { s1: 'mod_hard', s2: 'subj_doll' },
-    resultText: '木彫りの人形が裂け目の底に立っている。関節がない。表情もない。風が通るたびに木の軋む音がする。それが囁き。',
+    id: 'p13_rain_melt',
+    conditions: { s2: 'subj_rain', s4: 'pred_melt' },
+    resultText: '鋭い雨が裂け目から溶けている。雨粒が空中で蒸発し、裂け目が霧に包まれる。視界がなくなり、足元が分からない。',
     damage: 1,
     quill: 3
   },
   {
-    id: 'p13_sharp_doll',
-    conditions: { s1: 'mod_sharp', s2: 'subj_doll' },
-    resultText: '裂け目の底に操り人形がいる。関節が刃になっている。糸が見えない。「遊ぼう」と囁く。針のように細い指が招いている。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p13_broken_doll',
-    conditions: { s1: 'mod_broken', s2: 'subj_doll' },
-    resultText: '首がもげかけた人形が裂け目の底にある。残った目でこちらを見ている。風で口が動き、壊れた声が漏れる。何を言っているかわからない。',
+    id: 'p13_rain_laugh',
+    conditions: { s2: 'subj_rain', s4: 'pred_laugh' },
+    resultText: '鋭い雨が裂け目から笑っている。雨音がけらけらと弾ける。天気雨のような明るさと、裂け目の暗さが噛み合わない。',
     damage: 1,
     quill: 4
-  },
-  {
-    id: 'p13_mighty_doll',
-    conditions: { s1: 'mod_mighty', s2: 'subj_doll' },
-    resultText: '裂け目の底に等身大の木彫り人形が立っている。腕が丸太のように太い。ゴーレムだ。「命令を」と囁く。命令する気にはなれない。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p13_frozen_doll',
-    conditions: { s1: 'mod_frozen', s2: 'subj_doll' },
-    resultText: '氷でできた人形が裂け目の壁に張りついている。繊細な造形だ。恐怖の瞬間を閉じ込めたような表情。溶けたら二度と作れない。',
-    damage: 1,
-    quill: 5
-  },
-  {
-    id: 'p13_clear_doll',
-    conditions: { s1: 'mod_clear', s2: 'subj_doll' },
-    resultText: '硝子の人形が裂け目の底にある。中に何かの液体が入っている。振ると音がする。魂の容器として作られたが、まだ空だ。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p13_cursed_doll',
-    conditions: { s1: 'mod_cursed', s2: 'subj_doll' },
-    resultText: '呪われた人形が裂け目の底にいる。夜になると位置が変わるらしい。「連れて行って」と囁く。嫌な予感がする。置いてきた。',
-    damage: 2,
-    quill: 5
-  },
-  {
-    id: 'p13_sleepy_doll',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_doll' },
-    resultText: '目を閉じた人形が裂け目の縁に横たわっている。横にすると目が閉じるあの仕掛けだ。持つと眠くなる。子供の寝かしつけに使われていたのだろう。',
-    damage: 1,
-    quill: 4
-  },
-  {
-    id: 'p13_small_rain',
-    conditions: { s1: 'mod_small', s2: 'subj_rain' },
-    resultText: '裂け目の底から霧雨が吹き上がっている。傘がなくても濡れない程度だ。囁きは水滴が岩壁を伝う音だった。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p13_gentle_rain',
-    conditions: { s1: 'mod_gentle', s2: 'subj_rain' },
-    resultText: '裂け目から温かい雨が湧き上がる。慈雨だ。渇いた大地を潤すように、傷を洗い清めてくれる。囁きは雫が岩を打つ音。',
-    damage: -1,
-    quill: 6
-  },
-  {
-    id: 'p13_fire_rain',
-    conditions: { s1: 'mod_fire', s2: 'subj_rain' },
-    resultText: '裂け目から灼熱の水滴が噴き上がる。火の雨だ。地面が焦げる。空から降るのではなく、地の底から昇ってくる。',
-    damage: 4,
-    quill: 2
-  },
-  {
-    id: 'p13_hard_rain',
-    conditions: { s1: 'mod_hard', s2: 'subj_rain' },
-    resultText: '裂け目から雹が吹き上がっている。石のような氷の粒が肌を打つ。囁きに聞こえたのは雹が岩壁に当たる音だ。痛い。',
-    damage: 3,
-    quill: 2
-  },
-  {
-    id: 'p13_sharp_rain',
-    conditions: { s1: 'mod_sharp', s2: 'subj_rain' },
-    resultText: '裂け目から針のような雨が噴き出す。肌に刺さる。一滴が岩に穴を開ける雨だ。囁きは岩が侵食される音。',
-    damage: 3,
-    quill: 3
-  },
-  {
-    id: 'p13_broken_rain',
-    conditions: { s1: 'mod_broken', s2: 'subj_rain' },
-    resultText: '裂け目から雨が吹き上がっている。途切れ途切れに降る。リズムがおかしい。色も赤黒い。壊れた雨だ。触れたくない。',
-    damage: 2,
-    quill: 3
-  },
-  {
-    id: 'p13_mighty_rain',
-    conditions: { s1: 'mod_mighty', s2: 'subj_rain' },
-    resultText: '裂け目から豪雨が吹き上がる。滝のような水量だ。地面が川になり、足を取られる。囁きではない。轟音だ。',
-    damage: 4,
-    quill: 1
-  },
-  {
-    id: 'p13_frozen_rain',
-    conditions: { s1: 'mod_frozen', s2: 'subj_rain' },
-    resultText: '裂け目から凍雨が噴き出している。触れたものを氷の膜で覆う。外套が凍りつき、動きが鈍くなった。',
-    damage: 3,
-    quill: 2
-  },
-  {
-    id: 'p13_clear_rain',
-    conditions: { s1: 'mod_clear', s2: 'subj_rain' },
-    resultText: '裂け目から異常なほど澄んだ雨が湧き出ている。浴びると穢れが洗い流される。濡れた跡が光って見える。浄化の雨だ。',
-    damage: 0,
-    quill: 7,
-    rewardItems: [{ id: 'item_p13_clear_rain', name: '浄化の雫', description: '光る水滴。手の汚れが落ち、傷口が清められる', sellPrice: 12 }]
-  },
-  {
-    id: 'p13_cursed_rain',
-    conditions: { s1: 'mod_cursed', s2: 'subj_rain' },
-    resultText: '呪われた雨が裂け目から吹き上がる。浴びた瞬間、足が動かなくなった。根が生えたように。裂け目から離れるまで呪いが解けなかった。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p13_sleepy_rain',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_rain' },
-    resultText: '裂け目からしとしとと雨が漂う。静かな雨音が子守唄のように響く。世界が微睡んでいる。裂け目の縁で座り込みそうになった。',
-    damage: 1,
-    quill: 3
   },
 ];

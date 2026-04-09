@@ -67,7 +67,14 @@ export function resolveNode(node: NodeDef, currentSlots: Slot[]): {
   rewardCards?: import('./types').WordCard[];
 } {
   const outcome = evaluateOutcome(currentSlots, node.outcomes);
-  const adverb = getAdverbEffect(currentSlots);
+
+  // 副詞の自動数値補正: outcomeのconditionsに副詞スロットが含まれている場合はスキップ
+  // （固有テキスト方式のノードでは、damage/quillがOutcome自体に含まれているため）
+  const outcomeHasAdverbCondition = outcome && Object.keys(outcome.conditions).some(slotId => {
+    const slot = currentSlots.find(s => s.id === slotId);
+    return slot?.category === 'adverb';
+  });
+  const adverb = outcomeHasAdverbCondition ? { damage: 0, quill: 0 } : getAdverbEffect(currentSlots);
 
   if (outcome) {
     return {

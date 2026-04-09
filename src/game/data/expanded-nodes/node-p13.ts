@@ -12,10 +12,10 @@ export const nodeP13: NodeDef = {
     { type: 'slot', slotId: 's4' },
   ],
   slots: [
-    { id: 's1', category: 'modifier', word: { id: 'mod_sharp', text: '鋭い', category: 'modifier', tags: ['sharp', 'weapon', 'threat:high'] } },
+    { id: 's1', category: 'modifier', locked: true, word: { id: 'mod_sharp', text: '鋭い', category: 'modifier', tags: ['sharp', 'weapon', 'threat:high'] } },
     { id: 's2', category: 'subject', word: { id: 'subj_song', text: '歌', category: 'subject', tags: ['song', 'sound', 'intangible'] } },
     { id: 's3', category: 'object_kara', locked: true, word: { id: 'orig_p13_obj', text: '裂け目', category: 'object_kara', tags: ['crack', 'gap', 'void'] } },
-    { id: 's4', category: 'predicate', locked: true, word: { id: 'orig_p13_pred', text: '囁いている', category: 'predicate', tags: ['whisper', 'secret', 'lure'] } },
+    { id: 's4', category: 'predicate', word: { id: 'orig_p13_pred', text: '囁いている', category: 'predicate', tags: ['whisper', 'secret', 'lure'] } },
   ],
   outcomes: nodeP13Outcomes,
   defaultOutcome: {

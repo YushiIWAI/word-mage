@@ -12,10 +12,10 @@ export const nodeP25: NodeDef = {
     { type: 'slot', slotId: 's4' },
   ],
   slots: [
-    { id: 's1', category: 'modifier', word: { id: 'mod_clear', text: '透き通った', category: 'modifier', tags: ['clear', 'transparent', 'fragile'] } },
+    { id: 's1', category: 'modifier', locked: true, word: { id: 'mod_clear', text: '透き通った', category: 'modifier', tags: ['clear', 'transparent', 'fragile'] } },
     { id: 's2', category: 'subject', word: { id: 'subj_ghost', text: '亡霊', category: 'subject', tags: ['spirit', 'dead', 'intangible'] } },
     { id: 's3', category: 'object_de', locked: true, word: { id: 'orig_p25_obj', text: '渡し場', category: 'object_de', tags: ['ferry', 'crossing', 'river'] } },
-    { id: 's4', category: 'predicate', locked: true, word: { id: 'orig_p25_pred', text: '待っている', category: 'predicate', tags: ['wait', 'ambush', 'patience'] } },
+    { id: 's4', category: 'predicate', word: { id: 'orig_p25_pred', text: '待っている', category: 'predicate', tags: ['wait', 'ambush', 'patience'] } },
   ],
   outcomes: nodeP25Outcomes,
   defaultOutcome: {

@@ -1,1326 +1,1244 @@
-// Auto-generated from node-p25-outcomes.md
+// 渡し場: 透き通った [主語*]が 渡し場で [述語*]
 import type { Outcome } from '../../../engine/types';
 
 export const nodeP25Outcomes: Outcome[] = [
+  // === 元テキスト ===
   {
-    id: 'p25_small_kitten',
-    conditions: { s1: 'mod_small', s2: 'subj_kitten' },
-    resultText: '小さな子猫が渡し場で待っている。親指ほどの猫が桟橋に座っている。渡し守ではないだろう。一緒に待つことにした。',
+    id: 'p25_orig',
+    conditions: { s2: 'subj_ghost', s4: 'orig_p25_pred' },
+    resultText: '透き通った亡霊が渡し場で待っている。桟橋の端に腰を下ろし、水面を見つめている。舟はまだ来ない。ずっと来ない。',
+    damage: 2,
+    quill: 3
+  },
+
+  // === 子猫 × 述語 ===
+  {
+    id: 'p25_kitten_gaze',
+    conditions: { s2: 'subj_kitten', s4: 'pred_gaze' },
+    resultText: '透き通った子猫が渡し場で見つめている。硝子の瞳が対岸を映している。何が見えているのか、生きている者にはわからない。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p25_kitten_whisper',
+    conditions: { s2: 'subj_kitten', s4: 'pred_whisper' },
+    resultText: '透き通った子猫が渡し場で囁いている。鳴き声のような、祈りのような音が桟橋を這う。渡し守はうなずいた。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p25_kitten_sleep',
+    conditions: { s2: 'subj_kitten', s4: 'pred_sleep' },
+    resultText: '透き通った子猫が渡し場で眠っている。桟橋の板の上で丸くなっている。体を通して川底の石が見える。',
     damage: 0,
     quill: 4
   },
   {
-    id: 'p25_gentle_kitten',
-    conditions: { s1: 'mod_gentle', s2: 'subj_kitten' },
-    resultText: '優しい子猫が渡し場で待っている。擦り寄ってきて、舟の方へ歩いていく。猫について乗り込むと舟が動き出した。',
+    id: 'p25_kitten_sing',
+    conditions: { s2: 'subj_kitten', s4: 'pred_sing' },
+    resultText: '透き通った子猫が渡し場で歌っている。水の流れに合わせた旋律。舟が一艘、岸に寄ってきた。',
     damage: 0,
     quill: 5
   },
   {
-    id: 'p25_fire_kitten',
-    conditions: { s1: 'mod_fire', s2: 'subj_kitten' },
-    resultText: '燃え盛る子猫が渡し場で待っている。炎をまとった猫が桟橋に座っている。木の桟橋が焦げ始めている。急いで舟を出した。',
+    id: 'p25_kitten_flee',
+    conditions: { s2: 'subj_kitten', s4: 'pred_flee' },
+    resultText: '透き通った子猫が渡し場で逃げていく。水面を駆け、対岸へ消えた。足跡が波紋になって広がる。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p25_kitten_shine',
+    conditions: { s2: 'subj_kitten', s4: 'pred_shine' },
+    resultText: '透き通った子猫が渡し場で輝く。朝日を浴びてプリズムになった。桟橋が虹色に染まる。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p25_kitten_dance',
+    conditions: { s2: 'subj_kitten', s4: 'pred_dance' },
+    resultText: '透き通った子猫が渡し場で踊っている。桟橋の板をリズミカルに叩く足音。渡し守が手拍子を打つ。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p25_kitten_melt',
+    conditions: { s2: 'subj_kitten', s4: 'pred_melt' },
+    resultText: '透き通った子猫が渡し場で溶けている。水たまりになって桟橋の隙間から川に落ちていく。渡し賃は払えたのか。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p25_kitten_laugh',
+    conditions: { s2: 'subj_kitten', s4: 'pred_laugh' },
+    resultText: '透き通った子猫が渡し場で笑っている。口が三日月になっている。猫は笑わない。これは猫ではない。',
     damage: 2,
     quill: 4
   },
   {
-    id: 'p25_hard_kitten',
-    conditions: { s1: 'mod_hard', s2: 'subj_kitten' },
-    resultText: '堅い子猫が渡し場で待っている。陶器の招き猫が桟橋に鎮座している。右足が対岸を指している。行けということか。',
+    id: 'p25_kitten_wait',
+    conditions: { s2: 'subj_kitten', s4: 'pred_wait' },
+    resultText: '透き通った子猫が渡し場で待っている。桟橋の端で尻尾を揺らしている。舟が来ても乗らない。迎えを待っている。',
     damage: 0,
     quill: 4
   },
+
+  // === 蛇 × 述語 ===
   {
-    id: 'p25_sharp_kitten',
-    conditions: { s1: 'mod_sharp', s2: 'subj_kitten' },
-    resultText: '鋭い子猫が渡し場で待っている。硝子の爪。舟に乗ろうとしたら飛びかかってきた。渡し賃は血で払えということか。',
+    id: 'p25_snake_gaze',
+    conditions: { s2: 'subj_snake', s4: 'pred_gaze' },
+    resultText: '透き通った蛇が渡し場で見つめている。水中から硝子の眼がこちらを追う。渡るべきか、戻るべきか。',
     damage: 2,
-    quill: 4
+    quill: 3
   },
   {
-    id: 'p25_broken_kitten',
-    conditions: { s1: 'mod_broken', s2: 'subj_kitten' },
-    resultText: '壊れた子猫が渡し場で待っている。ぬいぐるみが桟橋に落ちている。綿が出ている。誰かが対岸で待っているのか。',
-    damage: 0,
-    quill: 4
+    id: 'p25_snake_whisper',
+    conditions: { s2: 'subj_snake', s4: 'pred_whisper' },
+    resultText: '透き通った蛇が渡し場で囁いている。舌が空気を舐めるたび、渡し賃の額が聞こえる。高い。',
+    damage: 2,
+    quill: 3
   },
   {
-    id: 'p25_mighty_kitten',
-    conditions: { s1: 'mod_mighty', s2: 'subj_kitten' },
-    resultText: '屈強な子猫が渡し場で待っている。虎のような体格の子猫が舟の上で堂々と座っている。渡し守を名乗っている。',
+    id: 'p25_snake_sleep',
+    conditions: { s2: 'subj_snake', s4: 'pred_sleep' },
+    resultText: '透き通った蛇が渡し場で眠っている。とぐろを巻いて桟橋を塞いでいる。踏めば起きる。迂回する道はない。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p25_snake_sing',
+    conditions: { s2: 'subj_snake', s4: 'pred_sing' },
+    resultText: '透き通った蛇が渡し場で歌っている。骨のない体が波打ち、水面に波紋を刻む。笛の音に似た歌だ。',
     damage: 1,
-    quill: 5
-  },
-  {
-    id: 'p25_frozen_kitten',
-    conditions: { s1: 'mod_frozen', s2: 'subj_kitten' },
-    resultText: '凍てついた子猫が渡し場で待っている。氷の彫刻。桟橋の上で凍りついている。周りの川面が薄氷を張り始めている。',
-    damage: 1,
     quill: 4
   },
   {
-    id: 'p25_clear_kitten',
-    conditions: { s1: 'mod_clear', s2: 'subj_kitten' },
-    resultText: '透き通った子猫が渡し場で待っている。硝子の猫。川面に映って二匹に見える。どちらが本物か、水面が教えてくれない。',
-    damage: 0,
-    quill: 6,
-    rewardItems: [{ id: 'item_p25_clear_kitten', name: '水鏡猫の欠片', description: '水面に映った硝子猫の破片。裏表で違うものが見える', sellPrice: 10 }]
-  },
-  {
-    id: 'p25_cursed_kitten',
-    conditions: { s1: 'mod_cursed', s2: 'subj_kitten' },
-    resultText: '呪われた子猫が渡し場で待っている。舟に乗せても対岸に置いてきてもここに戻っている。渡し場を離れられない猫だ。',
-    damage: 1,
-    quill: 5
-  },
-  {
-    id: 'p25_sleepy_kitten',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_kitten' },
-    resultText: '眠い子猫が渡し場で待っている。舟の上で丸くなって寝ている。揺れが心地よいらしい。起こさず隣に座った。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p25_small_snake',
-    conditions: { s1: 'mod_small', s2: 'subj_snake' },
-    resultText: '小さな蛇が渡し場で待っている。指ほどの蛇が舟の縁に巻きついている。乗り込むと膝の上に落ちてきた。',
+    id: 'p25_snake_flee',
+    conditions: { s2: 'subj_snake', s4: 'pred_flee' },
+    resultText: '透き通った蛇が渡し場で逃げていく。水中に滑り込み、透明なまま消えた。道が開いた。',
     damage: 0,
     quill: 3
   },
   {
-    id: 'p25_gentle_snake',
-    conditions: { s1: 'mod_gentle', s2: 'subj_snake' },
-    resultText: '優しい蛇が渡し場で待っている。腕に巻きついて温かい。水の上は冷えるから、と体温を分けてくれるのか。',
+    id: 'p25_snake_shine',
+    conditions: { s2: 'subj_snake', s4: 'pred_shine' },
+    resultText: '透き通った蛇が渡し場で輝く。鱗が光を集め、川面に光の道を作った。あれが渡し場の案内か。',
     damage: 0,
     quill: 5
   },
   {
-    id: 'p25_fire_snake',
-    conditions: { s1: 'mod_fire', s2: 'subj_snake' },
-    resultText: '燃え盛る蛇が渡し場で待っている。炎の軌跡を残す蛇が桟橋をのたうっている。木の桟橋が燃え落ちる前に飛び乗った。',
+    id: 'p25_snake_dance',
+    conditions: { s2: 'subj_snake', s4: 'pred_dance' },
+    resultText: '透き通った蛇が渡し場で踊っている。コブラのように鎌首をもたげ、左右に揺れる。目を逸らせない。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p25_snake_melt',
+    conditions: { s2: 'subj_snake', s4: 'pred_melt' },
+    resultText: '透き通った蛇が渡し場で溶けている。長い体が水飴のように桟橋に広がる。蛇だった水が川に流れていく。',
+    damage: 1,
+    quill: 3
+  },
+  {
+    id: 'p25_snake_laugh',
+    conditions: { s2: 'subj_snake', s4: 'pred_laugh' },
+    resultText: '透き通った蛇が渡し場で笑っている。口が裂けるほど開いている。牙はないが、笑い声が骨に響く。',
+    damage: 3,
+    quill: 2
+  },
+  {
+    id: 'p25_snake_wait',
+    conditions: { s2: 'subj_snake', s4: 'pred_wait' },
+    resultText: '透き通った蛇が渡し場で待っている。獲物を待つ目。だが体が透明では、待ち伏せにならない。',
+    damage: 2,
+    quill: 3
+  },
+
+  // === 竜 × 述語 ===
+  {
+    id: 'p25_dragon_gaze',
+    conditions: { s2: 'subj_dragon', s4: 'pred_gaze' },
+    resultText: '透き通った竜が渡し場で見つめている。水晶の瞳に映る対岸。竜が見つめる先に、渡る価値があるのかもしれない。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p25_dragon_whisper',
+    conditions: { s2: 'subj_dragon', s4: 'pred_whisper' },
+    resultText: '透き通った竜が渡し場で囁いている。大きな体から小さな声。川の名前を教えてくれた。忘却の川だと。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p25_dragon_sleep',
+    conditions: { s2: 'subj_dragon', s4: 'pred_sleep' },
+    resultText: '透き通った竜が渡し場で眠っている。体が桟橋からはみ出し、川を堰き止めている。水位が上がり始めた。',
     damage: 3,
     quill: 3
   },
   {
-    id: 'p25_hard_snake',
-    conditions: { s1: 'mod_hard', s2: 'subj_snake' },
-    resultText: '堅い蛇が渡し場で待っている。鉄の鱗の蛇が舟の繋ぎ綱に巻きついている。これでは舟が出せない。',
-    damage: 2,
-    quill: 3
-  },
-  {
-    id: 'p25_sharp_snake',
-    conditions: { s1: 'mod_sharp', s2: 'subj_snake' },
-    resultText: '鋭い蛇が渡し場で待っている。猛毒の牙。水面から鎌首をもたげている。川に入れない。舟を使うしかない。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p25_broken_snake',
-    conditions: { s1: 'mod_broken', s2: 'subj_snake' },
-    resultText: '壊れた蛇が渡し場で待っている。脱皮の途中で力尽きた蛇が桟橋に横たわっている。古い皮が半分残っている。',
-    damage: 0,
-    quill: 3
-  },
-  {
-    id: 'p25_mighty_snake',
-    conditions: { s1: 'mod_mighty', s2: 'subj_snake' },
-    resultText: '屈強な蛇が渡し場で待っている。大蛇が川を横切るように横たわっている。橋になっている。渡れるが、揺れる。',
-    damage: 2,
-    quill: 6,
-    rewardItems: [{ id: 'item_p25_mighty_snake', name: '大蛇の渡し鱗', description: '大蛇の胴を渡ったときに拾った鱗。滑り止めになる', sellPrice: 8 }]
-  },
-  {
-    id: 'p25_frozen_snake',
-    conditions: { s1: 'mod_frozen', s2: 'subj_snake' },
-    resultText: '凍てついた蛇が渡し場で待っている。霜に覆われた蛇が桟橋に巻きついて凍っている。川面にも氷が広がっている。',
-    damage: 2,
-    quill: 3
-  },
-  {
-    id: 'p25_clear_snake',
-    conditions: { s1: 'mod_clear', s2: 'subj_snake' },
-    resultText: '透き通った蛇が渡し場で待っている。水の中を泳ぐと透けて見えない。飲み込んだものだけが水中を漂って見える。',
+    id: 'p25_dragon_sing',
+    conditions: { s2: 'subj_dragon', s4: 'pred_sing' },
+    resultText: '透き通った竜が渡し場で歌っている。低い咆哮が旋律になる。川が共鳴し、舟が自ら岸に寄ってきた。',
     damage: 1,
+    quill: 6
+  },
+  {
+    id: 'p25_dragon_flee',
+    conditions: { s2: 'subj_dragon', s4: 'pred_flee' },
+    resultText: '透き通った竜が渡し場で逃げていく。翼を広げ、空へ飛び立った。硝子の翼が光を散らす。見惚れた。',
+    damage: 0,
     quill: 5
   },
   {
-    id: 'p25_cursed_snake',
-    conditions: { s1: 'mod_cursed', s2: 'subj_snake' },
-    resultText: '呪われた蛇が渡し場で待っている。脱皮するたびに大きくなる蛇。川幅と同じ太さになりつつある。渡し場が沈む。',
+    id: 'p25_dragon_shine',
+    conditions: { s2: 'subj_dragon', s4: 'pred_shine' },
+    resultText: '透き通った竜が渡し場で輝く。全身が灯台になった。対岸への道が光の中に浮かび上がる。',
+    damage: 0,
+    quill: 6,
+    rewardItems: [{ id: 'item_p25_dragon_shine', name: '灯竜の鱗', description: '光を帯びた透明な鱗。暗い水面を照らす', sellPrice: 10 }]
+  },
+  {
+    id: 'p25_dragon_dance',
+    conditions: { s2: 'subj_dragon', s4: 'pred_dance' },
+    resultText: '透き通った竜が渡し場で踊っている。巨体が桟橋を揺らす。板が軋み、釘が飛ぶ。渡る前に壊れそうだ。',
     damage: 3,
-    quill: 4
+    quill: 3
   },
   {
-    id: 'p25_sleepy_snake',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_snake' },
-    resultText: '眠い蛇が渡し場で待っている。舟底でとぐろを巻いて眠っている。同乗するしかない。踏まなければ大丈夫だろう。',
-    damage: 0,
-    quill: 4
+    id: 'p25_dragon_melt',
+    conditions: { s2: 'subj_dragon', s4: 'pred_melt' },
+    resultText: '透き通った竜が渡し場で溶けている。巨大な水の塊が崩れ、川の水位が上がった。渡し場が半分沈んだ。',
+    damage: 3,
+    quill: 3
   },
   {
-    id: 'p25_small_dragon',
-    conditions: { s1: 'mod_small', s2: 'subj_dragon' },
-    resultText: '小さな竜が渡し場で待っている。手のひらサイズの竜が舟の舳先に座っている。小さな火を灯して航海灯の代わりだ。',
-    damage: 0,
-    quill: 7,
-    rewardItems: [{ id: 'item_p25_small_dragon', name: '竜灯の舟飾り', description: '小さな竜が灯した舳先の灯り。水面を金色に照らす', sellPrice: 12 }]
-  },
-  {
-    id: 'p25_gentle_dragon',
-    conditions: { s1: 'mod_gentle', s2: 'subj_dragon' },
-    resultText: '優しい竜が渡し場で待っている。穏やかな老竜が渡し守を務めている。「乗りなさい」。翼の上は舟より安定している。',
-    damage: 0,
-    quill: 6
-  },
-  {
-    id: 'p25_fire_dragon',
-    conditions: { s1: 'mod_fire', s2: 'subj_dragon' },
-    resultText: '燃え盛る竜が渡し場で待っている。全身が業火の竜が川を蒸発させている。渡し場の水が沸騰している。近づけない。',
-    damage: 5,
-    quill: 1
-  },
-  {
-    id: 'p25_hard_dragon',
-    conditions: { s1: 'mod_hard', s2: 'subj_dragon' },
-    resultText: '堅い竜が渡し場で待っている。城壁のような鱗の竜が川に沈んでいる。背中が橋になっている。渡れるが、恐ろしい。',
-    damage: 2,
-    quill: 5
-  },
-  {
-    id: 'p25_sharp_dragon',
-    conditions: { s1: 'mod_sharp', s2: 'subj_dragon' },
-    resultText: '鋭い竜が渡し場で待っている。金色の目。渡し賃を値踏みするように見据えてくる。何も持っていないと知ると興味を失った。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p25_broken_dragon',
-    conditions: { s1: 'mod_broken', s2: 'subj_dragon' },
-    resultText: '壊れた竜が渡し場で待っている。翼は折れ、飛べない。川を渡りたいが泳げもしない。同じ境遇だ。一緒に舟を探した。',
-    damage: 0,
-    quill: 6
-  },
-  {
-    id: 'p25_mighty_dragon',
-    conditions: { s1: 'mod_mighty', s2: 'subj_dragon' },
-    resultText: '屈強な竜が渡し場で待っている。山のような巨体が渡し場を占拠している。舟が踏み潰されている。泳ぐしかない。',
+    id: 'p25_dragon_laugh',
+    conditions: { s2: 'subj_dragon', s4: 'pred_laugh' },
+    resultText: '透き通った竜が渡し場で笑っている。腹の中が見える。最後に渡った者の骨が見えた。',
     damage: 4,
     quill: 2
   },
   {
-    id: 'p25_frozen_dragon',
-    conditions: { s1: 'mod_frozen', s2: 'subj_dragon' },
-    resultText: '凍てついた竜が渡し場で待っている。白い竜の吐息が川を凍らせている。氷の上を歩いて渡れそうだが、割れるかもしれない。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p25_clear_dragon',
-    conditions: { s1: 'mod_clear', s2: 'subj_dragon' },
-    resultText: '透き通った竜が渡し場で待っている。水晶の竜が川に浮かんでいる。体を通して川底が歪んで見える。不思議な舟だ。',
-    damage: 0,
-    quill: 6
-  },
-  {
-    id: 'p25_cursed_dragon',
-    conditions: { s1: 'mod_cursed', s2: 'subj_dragon' },
-    resultText: '呪われた竜が渡し場で待っている。暴走した守護竜が川を荒らしている。波が高い。渡れる状態ではない。',
-    damage: 5,
-    quill: 1
-  },
-  {
-    id: 'p25_sleepy_dragon',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_dragon' },
-    resultText: '眠い竜が渡し場で待っている。舟の上で居眠りしている。いびきで舟が揺れる。そっと乗り込んで、竜の寝息で対岸へ。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p25_small_butterfly',
-    conditions: { s1: 'mod_small', s2: 'subj_butterfly' },
-    resultText: '小さな蝶が渡し場で待っている。花びらほどの蝶が舟の舳先に止まっている。風を待つように羽を広げている。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p25_gentle_butterfly',
-    conditions: { s1: 'mod_gentle', s2: 'subj_butterfly' },
-    resultText: '優しい蝶が渡し場で待っている。対岸へひらひら飛んでいく。道を示しているのか。蝶の軌跡を追って舟を漕いだ。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p25_fire_butterfly',
-    conditions: { s1: 'mod_fire', s2: 'subj_butterfly' },
-    resultText: '燃え盛る蝶が渡し場で待っている。炎の羽が水面を照らす。飛んだ跡の火の粉が川に落ちて消える。幻想的だが舟が燃えそうだ。',
+    id: 'p25_dragon_wait',
+    conditions: { s2: 'subj_dragon', s4: 'pred_wait' },
+    resultText: '透き通った竜が渡し場で待っている。千年前から待っている。約束した相手はもういない。それでも待つ。',
     damage: 2,
     quill: 5
   },
+
+  // === 蝶 × 述語 ===
   {
-    id: 'p25_hard_butterfly',
-    conditions: { s1: 'mod_hard', s2: 'subj_butterfly' },
-    resultText: '堅い蝶が渡し場で待っている。金属の羽の蝶が桟橋の杭に止まっている。金属音が川面に反響する。',
-    damage: 1,
-    quill: 3
-  },
-  {
-    id: 'p25_sharp_butterfly',
-    conditions: { s1: 'mod_sharp', s2: 'subj_butterfly' },
-    resultText: '鋭い蝶が渡し場で待っている。刃の縁の羽が水面すれすれを飛ぶ。川面に細い切り筋が走る。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p25_broken_butterfly',
-    conditions: { s1: 'mod_broken', s2: 'subj_butterfly' },
-    resultText: '壊れた蝶が渡し場で待っている。片羽がちぎれた蝶が桟橋に止まっている。対岸へ飛べない。同じだ。舟に乗せた。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p25_mighty_butterfly',
-    conditions: { s1: 'mod_mighty', s2: 'subj_butterfly' },
-    resultText: '屈強な蝶が渡し場で待っている。羽ばたきが水面に波を立てる。舟が揺れる。この蝶なら自力で対岸へ行けるだろうに。',
+    id: 'p25_butterfly_gaze',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_gaze' },
+    resultText: '透き通った蝶が渡し場で見つめている。翅の模様が目のように開閉する。川を渡る資格を審査している。',
     damage: 1,
     quill: 4
   },
   {
-    id: 'p25_frozen_butterfly',
-    conditions: { s1: 'mod_frozen', s2: 'subj_butterfly' },
-    resultText: '凍てついた蝶が渡し場で待っている。霜の蝶。止まった水面が少しずつ凍っている。氷の上を歩けるかもしれない。',
-    damage: 1,
+    id: 'p25_butterfly_whisper',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_whisper' },
+    resultText: '透き通った蝶が渡し場で囁いている。翅を震わせて音を出す。対岸に花が咲いていると告げている。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p25_butterfly_sleep',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_sleep' },
+    resultText: '透き通った蝶が渡し場で眠っている。翅を閉じて杭に止まっている。硝子の標本のように動かない。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p25_butterfly_sing',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_sing' },
+    resultText: '透き通った蝶が渡し場で歌っている。翅の振動が旋律になる。蝶が歌うと、舟が岸を離れる。乗らねば。',
+    damage: 0,
     quill: 5
   },
   {
-    id: 'p25_clear_butterfly',
-    conditions: { s1: 'mod_clear', s2: 'subj_butterfly' },
-    resultText: '透き通った蝶が渡し場で待っている。透明な羽が川面と混ざって消える。蝶が飛んだ軌跡だけが光の筋として残る。',
-    damage: 0,
-    quill: 6
-  },
-  {
-    id: 'p25_cursed_butterfly',
-    conditions: { s1: 'mod_cursed', s2: 'subj_butterfly' },
-    resultText: '呪われた蝶が渡し場で待っている。追いかけると必ず迷子になる蝶。川の上で追いかけたら、どちらの岸かわからなくなった。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p25_sleepy_butterfly',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_butterfly' },
-    resultText: '眠い蝶が渡し場で待っている。舟の縁で羽を閉じて眠っている。川の揺れが心地よいらしい。',
+    id: 'p25_butterfly_flee',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_flee' },
+    resultText: '透き通った蝶が渡し場で逃げていく。川面すれすれを飛び、対岸の森に消えた。道案内だったのか。',
     damage: 0,
     quill: 3
   },
   {
-    id: 'p25_small_wind',
-    conditions: { s1: 'mod_small', s2: 'subj_wind' },
-    resultText: '小さな風が渡し場で待っている。そよ風が川面を撫でている。帆に風を受けて、ゆっくり対岸へ。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p25_gentle_wind',
-    conditions: { s1: 'mod_gentle', s2: 'subj_wind' },
-    resultText: '優しい風が渡し場で待っている。温かい追い風。帆を張ると舟がすいすい進む。背中を押す風だ。',
-    damage: -1,
-    quill: 5
-  },
-  {
-    id: 'p25_fire_wind',
-    conditions: { s1: 'mod_fire', s2: 'subj_wind' },
-    resultText: '燃え盛る風が渡し場で待っている。熱風が川面から蒸気を上げている。舟の帆が焦げる。漕いで渡るしかない。',
-    damage: 3,
-    quill: 3
-  },
-  {
-    id: 'p25_hard_wind',
-    conditions: { s1: 'mod_hard', s2: 'subj_wind' },
-    resultText: '堅い風が渡し場で待っている。対岸から吹く向かい風。舟が進まない。何度漕いでも押し戻される。',
-    damage: 2,
-    quill: 3
-  },
-  {
-    id: 'p25_sharp_wind',
-    conditions: { s1: 'mod_sharp', s2: 'subj_wind' },
-    resultText: '鋭い風が渡し場で待っている。真空の刃が川の上を吹いている。帆が切り裂かれた。手漕ぎで渡るしかない。',
-    damage: 2,
-    quill: 3
-  },
-  {
-    id: 'p25_broken_wind',
-    conditions: { s1: 'mod_broken', s2: 'subj_wind' },
-    resultText: '壊れた風が渡し場で待っている。乱気流で舟がくるくる回る。方向が定まらない。漕いでも漕いでも同じ場所にいる。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p25_mighty_wind',
-    conditions: { s1: 'mod_mighty', s2: 'subj_wind' },
-    resultText: '屈強な風が渡し場で待っている。暴風で川面が荒れている。舟が転覆しそうだ。岸にしがみついてやり過ごした。',
-    damage: 4,
-    quill: 2
-  },
-  {
-    id: 'p25_frozen_wind',
-    conditions: { s1: 'mod_frozen', s2: 'subj_wind' },
-    resultText: '凍てついた風が渡し場で待っている。凍風が川面を凍らせていく。舟ではなく氷の上を歩いて渡った。滑った。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p25_clear_wind',
-    conditions: { s1: 'mod_clear', s2: 'subj_wind' },
-    resultText: '透き通った風が渡し場で待っている。澄んだ風が川面を渡る。対岸の景色が果てまで見える。帆に受けて、一気に渡った。',
+    id: 'p25_butterfly_shine',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_shine' },
+    resultText: '透き通った蝶が渡し場で輝く。翅が万華鏡になり、水面に色を散らす。渡し場が一瞬だけ美しい。',
     damage: 0,
     quill: 6,
-    rewardItems: [{ id: 'item_p25_clear_wind', name: '渡し場の清風', description: '瓶に詰めた川を渡る風。帆を膨らませてくれる', sellPrice: 10 }]
+    rewardItems: [{ id: 'item_p25_butterfly_shine', name: '万華鏡の翅', description: '水に触れると色が変わる蝶の翅', sellPrice: 10 }]
   },
   {
-    id: 'p25_cursed_wind',
-    conditions: { s1: 'mod_cursed', s2: 'subj_wind' },
-    resultText: '呪われた風が渡し場で待っている。吹かれると帰り道を忘れる風。渡った後、どちらから来たのかわからなくなった。',
-    damage: 2,
+    id: 'p25_butterfly_dance',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_dance' },
+    resultText: '透き通った蝶が渡し場で踊っている。数十匹に見える。一匹が残像を引いているだけだ。',
+    damage: 0,
     quill: 4
   },
   {
-    id: 'p25_sleepy_wind',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_wind' },
-    resultText: '眠い風が渡し場で待っている。凪に近い。帆が膨らまない。生温い空気に包まれて、舟の上で眠ってしまった。',
+    id: 'p25_butterfly_melt',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_melt' },
+    resultText: '透き通った蝶が渡し場で溶けている。翅から鱗粉が落ち、水面に虹の膜を作る。蝶は骨組みだけになった。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p25_butterfly_laugh',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_laugh' },
+    resultText: '透き通った蝶が渡し場で笑っている。翅の模様が笑顔に変わった。裏返すと泣き顔になる。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p25_butterfly_wait',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_wait' },
+    resultText: '透き通った蝶が渡し場で待っている。花のない桟橋で、何を待つのか。渡し守の肩に止まった。',
+    damage: 0,
+    quill: 4
+  },
+
+  // === 風 × 述語 ===
+  {
+    id: 'p25_wind_gaze',
+    conditions: { s2: 'subj_wind', s4: 'pred_gaze' },
+    resultText: '透き通った風が渡し場で見つめている。空気が渦を巻き、視線のように肌を撫でる。風に見られている。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p25_wind_whisper',
+    conditions: { s2: 'subj_wind', s4: 'pred_whisper' },
+    resultText: '透き通った風が渡し場で囁いている。桟橋の隙間を通り抜ける音が言葉に聞こえる。「渡れ」と。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p25_wind_sleep',
+    conditions: { s2: 'subj_wind', s4: 'pred_sleep' },
+    resultText: '透き通った風が渡し場で眠っている。無風。水面が鏡のように静まり返っている。帆は動かない。',
     damage: 1,
     quill: 3
   },
   {
-    id: 'p25_small_flame',
-    conditions: { s1: 'mod_small', s2: 'subj_flame' },
-    resultText: '小さな炎が渡し場で待っている。舟の舳先に蝋燭ほどの火が灯っている。暗い川面を照らす灯台代わりだ。',
+    id: 'p25_wind_sing',
+    conditions: { s2: 'subj_wind', s4: 'pred_sing' },
+    resultText: '透き通った風が渡し場で歌っている。桟橋の柱が笛になり、川全体が楽器になった。舟が風に乗って滑り出す。',
     damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p25_gentle_flame',
-    conditions: { s1: 'mod_gentle', s2: 'subj_flame' },
-    resultText: '優しい炎が渡し場で待っている。松明が桟橋に灯されている。暖かい光が夜の渡し場を照らしている。道標のようだ。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p25_fire_flame',
-    conditions: { s1: 'mod_fire', s2: 'subj_flame' },
-    resultText: '燃え盛る炎が渡し場で待っている。大火が桟橋を飲み込んでいる。舟も燃えている。川に飛び込むしかなかった。',
-    damage: 5,
-    quill: 1
-  },
-  {
-    id: 'p25_hard_flame',
-    conditions: { s1: 'mod_hard', s2: 'subj_flame' },
-    resultText: '堅い炎が渡し場で待っている。消えない炎が桟橋の先端で燃え続けている。水をかけても消えない。灯台のつもりか。',
-    damage: 1,
-    quill: 4
-  },
-  {
-    id: 'p25_sharp_flame',
-    conditions: { s1: 'mod_sharp', s2: 'subj_flame' },
-    resultText: '鋭い炎が渡し場で待っている。舟の繋ぎ綱を正確に焼き切った。舟が流れ出す。飛び乗って、流されるまま渡った。',
-    damage: 2,
     quill: 5
   },
   {
-    id: 'p25_broken_flame',
-    conditions: { s1: 'mod_broken', s2: 'subj_flame' },
-    resultText: '壊れた炎が渡し場で待っている。緑や紫に明滅する火。温かくない。鬼火のように川面を漂っている。不気味だ。',
+    id: 'p25_wind_flee',
+    conditions: { s2: 'subj_wind', s4: 'pred_flee' },
+    resultText: '透き通った風が渡し場で逃げていく。突風が一瞬で去り、帽子だけ対岸に飛ばされた。取りに行かねば。',
+    damage: 1,
+    quill: 3
+  },
+  {
+    id: 'p25_wind_shine',
+    conditions: { s2: 'subj_wind', s4: 'pred_shine' },
+    resultText: '透き通った風が渡し場で輝く。大気が光を帯び、川面が銀色に染まる。渡し場が神域のように見えた。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p25_wind_dance',
+    conditions: { s2: 'subj_wind', s4: 'pred_dance' },
+    resultText: '透き通った風が渡し場で踊っている。砂埃が舞い上がり、旅人の形を作っては崩れる。風の記憶だ。',
     damage: 1,
     quill: 4
   },
   {
-    id: 'p25_mighty_flame',
-    conditions: { s1: 'mod_mighty', s2: 'subj_flame' },
-    resultText: '屈強な炎が渡し場で待っている。火柱が渡し場を照らしている。川が蒸気で煙っている。熱すぎて近づけない。',
-    damage: 4,
+    id: 'p25_wind_melt',
+    conditions: { s2: 'subj_wind', s4: 'pred_melt' },
+    resultText: '透き通った風が渡し場で溶けている。風が空気に溶ける。無風になり、川霧が立ち込めた。前が見えない。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p25_wind_laugh',
+    conditions: { s2: 'subj_wind', s4: 'pred_laugh' },
+    resultText: '透き通った風が渡し場で笑っている。突風が桟橋を揺らし、板が笑い声のように軋む。不吉な音だ。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p25_wind_wait',
+    conditions: { s2: 'subj_wind', s4: 'pred_wait' },
+    resultText: '透き通った風が渡し場で待っている。帆を膨らませる準備ができている。あとは乗り手を待つだけだ。',
+    damage: 0,
+    quill: 4
+  },
+
+  // === 炎 × 述語 ===
+  {
+    id: 'p25_flame_gaze',
+    conditions: { s2: 'subj_flame', s4: 'pred_gaze' },
+    resultText: '透き通った炎が渡し場で見つめている。青白い火が桟橋の先端で揺れている。近づくと大きくなる。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p25_flame_whisper',
+    conditions: { s2: 'subj_flame', s4: 'pred_whisper' },
+    resultText: '透き通った炎が渡し場で囁いている。燃える音が言葉に聞こえる。渡し賃を値切ろうとしている。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p25_flame_sleep',
+    conditions: { s2: 'subj_flame', s4: 'pred_sleep' },
+    resultText: '透き通った炎が渡し場で眠っている。灯籠の中で小さくなった火。風が吹いても揺れない。深い眠りだ。',
+    damage: 1,
+    quill: 3
+  },
+  {
+    id: 'p25_flame_sing',
+    conditions: { s2: 'subj_flame', s4: 'pred_sing' },
+    resultText: '透き通った炎が渡し場で歌っている。薪が爆ぜる音がリズムを刻む。篝火の歌に舟が引き寄せられてくる。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p25_flame_flee',
+    conditions: { s2: 'subj_flame', s4: 'pred_flee' },
+    resultText: '透き通った炎が渡し場で逃げていく。火の玉が水面を跳ね、対岸で消えた。暗闇が戻った。',
+    damage: 1,
+    quill: 3
+  },
+  {
+    id: 'p25_flame_shine',
+    conditions: { s2: 'subj_flame', s4: 'pred_shine' },
+    resultText: '透き通った炎が渡し場で輝く。桟橋全体が青白い光に包まれた。熱はない。渡し場が幽世の門に見える。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p25_flame_dance',
+    conditions: { s2: 'subj_flame', s4: 'pred_dance' },
+    resultText: '透き通った炎が渡し場で踊っている。桟橋の板を焦がしながら飛び跳ねる。木造の渡し場が燃え始めた。',
+    damage: 3,
     quill: 2
   },
   {
-    id: 'p25_frozen_flame',
-    conditions: { s1: 'mod_frozen', s2: 'subj_flame' },
-    resultText: '凍てついた炎が渡し場で待っている。青白い鬼火が川面を漂っている。触れると凍る。川を渡る者を惑わす灯りだ。',
-    damage: 2,
-    quill: 5
-  },
-  {
-    id: 'p25_clear_flame',
-    conditions: { s1: 'mod_clear', s2: 'subj_flame' },
-    resultText: '透き通った炎が渡し場で待っている。ほぼ見えない炎。しかし確かに温かい。この灯りに導かれて対岸に辿り着いた。',
-    damage: 0,
-    quill: 6,
-    rewardItems: [{ id: 'item_p25_clear_flame', name: '渡し火の欠片', description: '透明な炎の残り火。握ると手が温かく、道に迷わない', sellPrice: 12 }]
-  },
-  {
-    id: 'p25_cursed_flame',
-    conditions: { s1: 'mod_cursed', s2: 'subj_flame' },
-    resultText: '呪われた炎が渡し場で待っている。燃やしたものの形を覚える炎。川面に過去の舟の幻が燃えている。どれが本物の舟か。',
-    damage: 3,
-    quill: 5
-  },
-  {
-    id: 'p25_sleepy_flame',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_flame' },
-    resultText: '眠い炎が渡し場で待っている。熾火が桟橋の隅で赤く明滅している。催眠的な揺れ。舟の上で意識を失いそうだ。',
-    damage: 1,
-    quill: 3
-  },
-  {
-    id: 'p25_small_ice',
-    conditions: { s1: 'mod_small', s2: 'subj_ice' },
-    resultText: '小さな氷が渡し場で待っている。掌に収まる氷の欠片が川面を流れている。もう春が近いのか。',
-    damage: 0,
-    quill: 3
-  },
-  {
-    id: 'p25_gentle_ice',
-    conditions: { s1: 'mod_gentle', s2: 'subj_ice' },
-    resultText: '優しい氷が渡し場で待っている。冷たいが痛くない。川の水で額を冷やすと旅の熱が引いた。',
-    damage: -1,
-    quill: 4
-  },
-  {
-    id: 'p25_fire_ice',
-    conditions: { s1: 'mod_fire', s2: 'subj_ice' },
-    resultText: '燃え盛る氷が渡し場で待っている。炎を放つ氷が川面に浮いている。触れると凍傷と火傷を同時に負う。舟の底が焦げて凍る。',
-    damage: 4,
-    quill: 3
-  },
-  {
-    id: 'p25_hard_ice',
-    conditions: { s1: 'mod_hard', s2: 'subj_ice' },
-    resultText: '堅い氷が渡し場で待っている。万年氷が川を完全に塞いでいる。舟は使えない。氷の上を歩いて渡った。',
-    damage: 1,
-    quill: 4
-  },
-  {
-    id: 'p25_sharp_ice',
-    conditions: { s1: 'mod_sharp', s2: 'subj_ice' },
-    resultText: '鋭い氷が渡し場で待っている。氷柱が川面から突き出している。舟の底を割りそうだ。氷を避けながら漕いだ。',
+    id: 'p25_flame_melt',
+    conditions: { s2: 'subj_flame', s4: 'pred_melt' },
+    resultText: '透き通った炎が渡し場で溶けている。火が液体になって桟橋を流れる。触れても熱くない。冷たい火だ。',
     damage: 2,
     quill: 4
   },
   {
-    id: 'p25_broken_ice',
-    conditions: { s1: 'mod_broken', s2: 'subj_ice' },
-    resultText: '壊れた氷が渡し場で待っている。ひび割れた氷が川を流れている。舟がぶつかってきしむ。慎重に漕いだ。',
-    damage: 1,
-    quill: 3
-  },
-  {
-    id: 'p25_mighty_ice',
-    conditions: { s1: 'mod_mighty', s2: 'subj_ice' },
-    resultText: '屈強な氷が渡し場で待っている。氷山が川を丸ごと塞いでいる。渡し場が無意味になっている。登って越えた。',
+    id: 'p25_flame_laugh',
+    conditions: { s2: 'subj_flame', s4: 'pred_laugh' },
+    resultText: '透き通った炎が渡し場で笑っている。炎が大きく揺れ、人の顔に見える。口を開けて笑っている。逃げた。',
     damage: 3,
-    quill: 3
-  },
-  {
-    id: 'p25_frozen_ice',
-    conditions: { s1: 'mod_frozen', s2: 'subj_ice' },
-    resultText: '凍てついた氷が渡し場で待っている。川全体が凍りついている。絶対零度の氷。近づくだけで手足の感覚がなくなる。',
-    damage: 4,
     quill: 2
   },
   {
-    id: 'p25_clear_ice',
-    conditions: { s1: 'mod_clear', s2: 'subj_ice' },
-    resultText: '透き通った氷が渡し場で待っている。完全に透明な氷が川面を覆っている。下の魚が泳いでいるのが見える。歩いて渡った。',
-    damage: 0,
-    quill: 5
+    id: 'p25_flame_wait',
+    conditions: { s2: 'subj_flame', s4: 'pred_wait' },
+    resultText: '透き通った炎が渡し場で待っている。灯台の火が消えずにいる。誰かが帰ってくるのを待っている。',
+    damage: 1,
+    quill: 4
   },
+
+  // === 氷 × 述語 ===
   {
-    id: 'p25_cursed_ice',
-    conditions: { s1: 'mod_cursed', s2: 'subj_ice' },
-    resultText: '呪われた氷が渡し場で待っている。溶けない氷が川を永遠に凍らせている。舟は出せない。氷の上を渡るしかない。',
+    id: 'p25_ice_gaze',
+    conditions: { s2: 'subj_ice', s4: 'pred_gaze' },
+    resultText: '透き通った氷が渡し場で見つめている。氷柱の中に目がある。瞬きもせず、渡る者を数えている。',
     damage: 2,
     quill: 3
   },
   {
-    id: 'p25_sleepy_ice',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_ice' },
-    resultText: '眠い氷が渡し場で待っている。ゆっくり溶ける氷が川に流れている。雫の音が子守唄のようだ。舟の上でうとうとした。',
-    damage: 0,
-    quill: 4
+    id: 'p25_ice_whisper',
+    conditions: { s2: 'subj_ice', s4: 'pred_whisper' },
+    resultText: '透き通った氷が渡し場で囁いている。氷が軋む音が言葉になる。川が凍る前に渡れと言っている。',
+    damage: 2,
+    quill: 3
   },
   {
-    id: 'p25_small_shadow',
-    conditions: { s1: 'mod_small', s2: 'subj_shadow' },
-    resultText: '小さな影が渡し場で待っている。桟橋に小さな黒い染みがある。何の影かわからない。舟に乗ると影もついてきた。',
-    damage: 0,
-    quill: 4
+    id: 'p25_ice_sleep',
+    conditions: { s2: 'subj_ice', s4: 'pred_sleep' },
+    resultText: '透き通った氷が渡し場で眠っている。川面が凍りつき、渡し場ごと氷に閉じ込められている。舟も動かない。',
+    damage: 2,
+    quill: 3
   },
   {
-    id: 'p25_gentle_shadow',
-    conditions: { s1: 'mod_gentle', s2: 'subj_shadow' },
-    resultText: '優しい影が渡し場で待っている。木陰のような心地よい影が舟を覆っている。日差しを遮ってくれる。安らぐ船旅だ。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p25_fire_shadow',
-    conditions: { s1: 'mod_fire', s2: 'subj_shadow' },
-    resultText: '燃え盛る影が渡し場で待っている。黒い炎で燃える影が川面に映っている。水に映った影が水中を燃やしている。',
-    damage: 3,
+    id: 'p25_ice_sing',
+    conditions: { s2: 'subj_ice', s4: 'pred_sing' },
+    resultText: '透き通った氷が渡し場で歌っている。氷が割れる音が和音になる。春が近い。氷の渡し場はもうすぐ終わる。',
+    damage: 1,
     quill: 5
   },
   {
-    id: 'p25_hard_shadow',
-    conditions: { s1: 'mod_hard', s2: 'subj_shadow' },
-    resultText: '堅い影が渡し場で待っている。固まった影が桟橋と舟を繋いでいる。影の鎖。切れない。舟が出せない。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p25_sharp_shadow',
-    conditions: { s1: 'mod_sharp', s2: 'subj_shadow' },
-    resultText: '鋭い影が渡し場で待っている。くっきりした影が長く対岸まで伸びている。影の上を歩けば渡れそうだが、縁で足が切れた。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p25_broken_shadow',
-    conditions: { s1: 'mod_broken', s2: 'subj_shadow' },
-    resultText: '壊れた影が渡し場で待っている。立体的にめくれ上がった影が水面でばたついている。舟の影と混ざって方向がわからない。',
+    id: 'p25_ice_flee',
+    conditions: { s2: 'subj_ice', s4: 'pred_flee' },
+    resultText: '透き通った氷が渡し場で逃げていく。氷が割れて流氷になり、下流へ去った。渡し場に水が戻る。',
     damage: 1,
+    quill: 3
+  },
+  {
+    id: 'p25_ice_shine',
+    conditions: { s2: 'subj_ice', s4: 'pred_shine' },
+    resultText: '透き通った氷が渡し場で輝く。凍った川面が鏡になり、空を映している。歩いて渡れそうだ。美しい罠かもしれない。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p25_ice_dance',
+    conditions: { s2: 'subj_ice', s4: 'pred_dance' },
+    resultText: '透き通った氷が渡し場で踊っている。氷柱が風に揺れ、ぶつかり合う。硝子の風鈴のような音がする。',
+    damage: 2,
     quill: 4
   },
   {
-    id: 'p25_mighty_shadow',
-    conditions: { s1: 'mod_mighty', s2: 'subj_shadow' },
-    resultText: '屈強な影が渡し場で待っている。巨大な影が川面を覆っている。日が差しているのに川が暗い。何の影なのか見上げても空は晴れている。',
-    damage: 3,
+    id: 'p25_ice_melt',
+    conditions: { s2: 'subj_ice', s4: 'pred_melt' },
+    resultText: '透き通った氷が渡し場で溶けている。桟橋に水溜まりが広がる。氷の中に閉じ込められていた花が現れた。',
+    damage: 0,
     quill: 5,
-    rewardItems: [{ id: 'item_p25_mighty_shadow', name: '川影の帳', description: '渡し場の川を覆った巨大な影の端切れ。広げると日陰ができる', sellPrice: 8 }]
+    rewardItems: [{ id: 'item_p25_ice_melt', name: '氷中花', description: '溶けない氷に閉じ込められた小さな花', sellPrice: 7 }]
   },
   {
-    id: 'p25_frozen_shadow',
-    conditions: { s1: 'mod_frozen', s2: 'subj_shadow' },
-    resultText: '凍てついた影が渡し場で待っている。影が地面に張りついて凍っている。影を踏むと足が冷える。',
+    id: 'p25_ice_laugh',
+    conditions: { s2: 'subj_ice', s4: 'pred_laugh' },
+    resultText: '透き通った氷が渡し場で笑っている。ひび割れが笑顔の形に走った。踏むと割れそうだ。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p25_ice_wait',
+    conditions: { s2: 'subj_ice', s4: 'pred_wait' },
+    resultText: '透き通った氷が渡し場で待っている。冬が来るのを待っている。川が完全に凍れば、渡し場はいらなくなる。',
     damage: 1,
-    quill: 3
-  },
-  {
-    id: 'p25_clear_shadow',
-    conditions: { s1: 'mod_clear', s2: 'subj_shadow' },
-    resultText: '透き通った影が渡し場で待っている。半透明の影が水面に溶けている。影なのか水面の揺らぎなのか、区別がつかない。',
-    damage: 0,
     quill: 4
   },
+
+  // === 影 × 述語 ===
   {
-    id: 'p25_cursed_shadow',
-    conditions: { s1: 'mod_cursed', s2: 'subj_shadow' },
-    resultText: '呪われた影が渡し場で待っている。触れたものが影になる。桟橋の板が一枚ずつ黒く平たくなっていく。急いで舟に乗った。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p25_sleepy_shadow',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_shadow' },
-    resultText: '眠い影が渡し場で待っている。縮んだ影が舟底で動かない。光が動いても影は動かない。眠っている影だ。',
-    damage: 0,
-    quill: 3
-  },
-  {
-    id: 'p25_small_song',
-    conditions: { s1: 'mod_small', s2: 'subj_song' },
-    resultText: '小さな歌が渡し場で待っている。鼻歌が川面を渡ってくる。誰が歌っているのか。対岸か、水の中か。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p25_gentle_song',
-    conditions: { s1: 'mod_gentle', s2: 'subj_song' },
-    resultText: '優しい歌が渡し場で待っている。子守唄が川面を渡ってくる。舟を漕ぐ手が軽くなる。傷が癒える気がする。',
-    damage: -1,
-    quill: 6
-  },
-  {
-    id: 'p25_fire_song',
-    conditions: { s1: 'mod_fire', s2: 'subj_song' },
-    resultText: '燃え盛る歌が渡し場で待っている。戦の歌が川を渡って響く。漕ぐ腕に力が入る。だが舟が速すぎて制御できない。',
+    id: 'p25_shadow_gaze',
+    conditions: { s2: 'subj_shadow', s4: 'pred_gaze' },
+    resultText: '透き通った影が渡し場で見つめている。透明な影。矛盾しているが、確かにそこにいる。視線だけが濃い。',
     damage: 2,
     quill: 4
   },
   {
-    id: 'p25_hard_song',
-    conditions: { s1: 'mod_hard', s2: 'subj_song' },
-    resultText: '堅い歌が渡し場で待っている。止まらない歌が渡し場に響いている。他の音が聞こえない。水音も風の音も消えている。',
-    damage: 2,
-    quill: 3
-  },
-  {
-    id: 'p25_sharp_song',
-    conditions: { s1: 'mod_sharp', s2: 'subj_song' },
-    resultText: '鋭い歌が渡し場で待っている。金切り声が川面に反響する。水面が振動する。耳を塞いで漕いだ。',
-    damage: 2,
-    quill: 3
-  },
-  {
-    id: 'p25_broken_song',
-    conditions: { s1: 'mod_broken', s2: 'subj_song' },
-    resultText: '壊れた歌が渡し場で待っている。途中で止まる旋律が川面を漂う。続きは対岸にあるのかもしれない。漕いだ。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p25_mighty_song',
-    conditions: { s1: 'mod_mighty', s2: 'subj_song' },
-    resultText: '屈強な歌が渡し場で待っている。大合唱が川を揺らす。波が高い。舟が揺れて水が入ってきた。',
+    id: 'p25_shadow_whisper',
+    conditions: { s2: 'subj_shadow', s4: 'pred_whisper' },
+    resultText: '透き通った影が渡し場で囁いている。自分の影が口を動かしている。渡るなと言っている。自分の影が。',
     damage: 3,
     quill: 3
   },
   {
-    id: 'p25_frozen_song',
-    conditions: { s1: 'mod_frozen', s2: 'subj_song' },
-    resultText: '凍てついた歌が渡し場で待っている。聴くと体が動かなくなる歌。舟の上で凍りついた。流されるまま対岸に着いた。',
-    damage: 2,
-    quill: 5
+    id: 'p25_shadow_sleep',
+    conditions: { s2: 'subj_shadow', s4: 'pred_sleep' },
+    resultText: '透き通った影が渡し場で眠っている。本体のない影が桟橋に横たわっている。踏んでも起きなかった。',
+    damage: 1,
+    quill: 3
   },
   {
-    id: 'p25_clear_song',
-    conditions: { s1: 'mod_clear', s2: 'subj_song' },
-    resultText: '透き通った歌が渡し場で待っている。純粋な旋律が川面を渡る。雑念が消え、漕ぐリズムと歌が一つになる。',
-    damage: 0,
-    quill: 7,
-    rewardItems: [{ id: 'item_p25_clear_song', name: '渡し歌の音叉', description: '透き通った歌の周波数を記録した音叉。弾くと心が澄む', sellPrice: 12 }]
-  },
-  {
-    id: 'p25_cursed_song',
-    conditions: { s1: 'mod_cursed', s2: 'subj_song' },
-    resultText: '呪われた歌が渡し場で待っている。一度聴くと頭から離れない。漕ぎながら歌が頭を占領していく。対岸に着く頃には自分が何をしていたか忘れた。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p25_sleepy_song',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_song' },
-    resultText: '眠い歌が渡し場で待っている。子守唄が川の揺れに混ざる。舟の上で意識が溶ける。気づいたら対岸にいた。',
+    id: 'p25_shadow_sing',
+    conditions: { s2: 'subj_shadow', s4: 'pred_sing' },
+    resultText: '透き通った影が渡し場で歌っている。歌声の出どころがわからない。影が歌うたびに水面が揺れる。',
     damage: 1,
     quill: 4
   },
   {
-    id: 'p25_small_silence',
-    conditions: { s1: 'mod_small', s2: 'subj_silence' },
-    resultText: '小さな沈黙が渡し場で待っている。水音が一瞬だけ消えた。すぐに戻った。何だったのか。',
+    id: 'p25_shadow_flee',
+    conditions: { s2: 'subj_shadow', s4: 'pred_flee' },
+    resultText: '透き通った影が渡し場で逃げていく。日が差した途端、消えた。影が光から逃げた。当然だ。',
     damage: 0,
     quill: 3
   },
   {
-    id: 'p25_gentle_silence',
-    conditions: { s1: 'mod_gentle', s2: 'subj_silence' },
-    resultText: '優しい沈黙が渡し場で待っている。静かな渡し場。言葉がなくても安らぐ。ゆっくり舟を漕いだ。',
-    damage: 0,
-    quill: 4
+    id: 'p25_shadow_shine',
+    conditions: { s2: 'subj_shadow', s4: 'pred_shine' },
+    resultText: '透き通った影が渡し場で輝く。影が光る。あり得ないことが起きている。渡し場の法則が乱れている。',
+    damage: 2,
+    quill: 5
   },
   {
-    id: 'p25_fire_silence',
-    conditions: { s1: 'mod_fire', s2: 'subj_silence' },
-    resultText: '燃え盛る沈黙が渡し場で待っている。空気が焦げている。何かが爆発する前の静けさだ。急いで舟を出した。',
+    id: 'p25_shadow_dance',
+    conditions: { s2: 'subj_shadow', s4: 'pred_dance' },
+    resultText: '透き通った影が渡し場で踊っている。誰もいないのに影だけが踊る。足音はしない。拍手もない。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p25_shadow_melt',
+    conditions: { s2: 'subj_shadow', s4: 'pred_melt' },
+    resultText: '透き通った影が渡し場で溶けている。影が地面に染み込んでいく。桟橋の板が黒く染まった。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p25_shadow_laugh',
+    conditions: { s2: 'subj_shadow', s4: 'pred_laugh' },
+    resultText: '透き通った影が渡し場で笑っている。こちらの影が勝手に笑っている。自分は笑っていないのに。',
     damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p25_hard_silence',
-    conditions: { s1: 'mod_hard', s2: 'subj_silence' },
-    resultText: '堅い沈黙が渡し場で待っている。声を出しても水音さえ消える。漕ぐ音もしない。無音の中で舟が進む。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p25_sharp_silence',
-    conditions: { s1: 'mod_sharp', s2: 'subj_silence' },
-    resultText: '鋭い沈黙が渡し場で待っている。無言の圧。川の向こうから視線だけが突き刺さる。渡し守がいないのに、誰かが見ている。',
-    damage: 2,
-    quill: 5
-  },
-  {
-    id: 'p25_broken_silence',
-    conditions: { s1: 'mod_broken', s2: 'subj_silence' },
-    resultText: '壊れた沈黙が渡し場で待っている。静寂に亀裂が入っている。どこかから微かなノイズが漏れている。水の下から。',
-    damage: 1,
-    quill: 5
-  },
-  {
-    id: 'p25_mighty_silence',
-    conditions: { s1: 'mod_mighty', s2: 'subj_silence' },
-    resultText: '屈強な沈黙が渡し場で待っている。圧倒的な無音が川を覆っている。水も風も黙っている。声を上げることすらできない。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p25_frozen_silence',
-    conditions: { s1: 'mod_frozen', s2: 'subj_silence' },
-    resultText: '凍てついた沈黙が渡し場で待っている。息も凍る静けさ。川面が鏡のように静止している。時間が止まったかのようだ。',
-    damage: 2,
-    quill: 5
-  },
-  {
-    id: 'p25_clear_silence',
-    conditions: { s1: 'mod_clear', s2: 'subj_silence' },
-    resultText: '透き通った沈黙が渡し場で待っている。完全な静寂の中で、川底まで透けて見える。水も空気も澄み渡っている。',
-    damage: 0,
-    quill: 6
-  },
-  {
-    id: 'p25_cursed_silence',
-    conditions: { s1: 'mod_cursed', s2: 'subj_silence' },
-    resultText: '呪われた沈黙が渡し場で待っている。声を奪われた。舟の上で助けを呼べない。対岸に着くまで無言で漕いだ。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p25_sleepy_silence',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_silence' },
-    resultText: '眠い沈黙が渡し場で待っている。静寂が眠気を誘う。舟の揺れと合わさって、意識が遠くなる。',
-    damage: 1,
     quill: 3
   },
   {
-    id: 'p25_small_knight',
-    conditions: { s1: 'mod_small', s2: 'subj_knight' },
-    resultText: '小さな騎士が渡し場で待っている。子供の騎士が舟の上で仁王立ちしている。「わしが渡し守だ」。大きすぎる兜がずれた。',
-    damage: 0,
-    quill: 6
-  },
-  {
-    id: 'p25_gentle_knight',
-    conditions: { s1: 'mod_gentle', s2: 'subj_knight' },
-    resultText: '優しい騎士が渡し場で待っている。剣を収め、「お乗りなさい」と舟に案内してくれた。対岸まで漕いでくれる。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p25_fire_knight',
-    conditions: { s1: 'mod_fire', s2: 'subj_knight' },
-    resultText: '燃え盛る騎士が渡し場で待っている。炎に包まれた騎士が桟橋に立っている。近づけない。舟は騎士の後ろだ。',
-    damage: 4,
-    quill: 2
-  },
-  {
-    id: 'p25_hard_knight',
-    conditions: { s1: 'mod_hard', s2: 'subj_knight' },
-    resultText: '堅い騎士が渡し場で待っている。分厚い鎧の騎士が桟橋の入口を塞いでいる。表情が見えない。無言で通行を拒否している。',
-    damage: 2,
-    quill: 3
-  },
-  {
-    id: 'p25_sharp_knight',
-    conditions: { s1: 'mod_sharp', s2: 'subj_knight' },
-    resultText: '鋭い騎士が渡し場で待っている。冷たい目で渡し賃を査定している。持ち物を全部見られた。値切りは通じそうにない。',
+    id: 'p25_shadow_wait',
+    conditions: { s2: 'subj_shadow', s4: 'pred_wait' },
+    resultText: '透き通った影が渡し場で待っている。夕暮れを待っている。日が沈めば、影は世界を覆える。',
     damage: 2,
     quill: 4
   },
+
+  // === 歌 × 述語 ===
   {
-    id: 'p25_broken_knight',
-    conditions: { s1: 'mod_broken', s2: 'subj_knight' },
-    resultText: '壊れた騎士が渡し場で待っている。鎧はへこみ、剣は折れている。対岸へ帰れないでいる。一緒に舟に乗った。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p25_mighty_knight',
-    conditions: { s1: 'mod_mighty', s2: 'subj_knight' },
-    resultText: '屈強な騎士が渡し場で待っている。巨体の騎士が舟に乗っている。重すぎて舟が沈みかけている。一緒に乗ったら沈んだ。',
-    damage: 3,
+    id: 'p25_song_gaze',
+    conditions: { s2: 'subj_song', s4: 'pred_gaze' },
+    resultText: '透き通った歌が渡し場で見つめている。旋律が空気に漂い、こちらを向いている。歌に見られている。',
+    damage: 1,
     quill: 4
   },
   {
-    id: 'p25_frozen_knight',
-    conditions: { s1: 'mod_frozen', s2: 'subj_knight' },
-    resultText: '凍てついた騎士が渡し場で待っている。氷に閉じ込められた騎士が桟橋に立っている。舟を出そうとした姿勢のまま凍りついている。',
-    damage: 1,
-    quill: 5
-  },
-  {
-    id: 'p25_clear_knight',
-    conditions: { s1: 'mod_clear', s2: 'subj_knight' },
-    resultText: '透き通った騎士が渡し場で待っている。影の薄い騎士。気づかず桟橋を歩いた。背後で「お気をつけて」と聞こえた。',
+    id: 'p25_song_whisper',
+    conditions: { s2: 'subj_song', s4: 'pred_whisper' },
+    resultText: '透き通った歌が渡し場で囁いている。川の流れに混じって聞こえる。渡し守の子守歌の残響だ。',
     damage: 0,
     quill: 5
   },
   {
-    id: 'p25_cursed_knight',
-    conditions: { s1: 'mod_cursed', s2: 'subj_knight' },
-    resultText: '呪われた騎士が渡し場で待っている。黒い鎧の騎士が舟に乗せてくれるが、対岸に着くと元の岸に戻っている。永遠に渡れない。',
-    damage: 3,
-    quill: 5,
-    rewardItems: [{ id: 'item_p25_cursed_knight', name: '永遠の渡し守の指輪', description: '呪われた騎士が落とした指輪。嵌めると帰れなくなりそうだ', sellPrice: 10 }]
-  },
-  {
-    id: 'p25_sleepy_knight',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_knight' },
-    resultText: '眠い騎士が渡し場で待っている。舟の上で居眠りしている。揺れに身を任せている。渡し守としては失格だが、隣に座って一緒に揺られた。',
+    id: 'p25_song_sleep',
+    conditions: { s2: 'subj_song', s4: 'pred_sleep' },
+    resultText: '透き通った歌が渡し場で眠っている。誰かが歌いかけてやめた歌。途切れたまま桟橋に残っている。',
     damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p25_small_witch',
-    conditions: { s1: 'mod_small', s2: 'subj_witch' },
-    resultText: '小さな魔女が渡し場で待っている。少女の魔女が舟の舳先に座っている。「渡し賃は名前だよ」。大きな帽子の下で笑っている。',
-    damage: 1,
-    quill: 6
-  },
-  {
-    id: 'p25_gentle_witch',
-    conditions: { s1: 'mod_gentle', s2: 'subj_witch' },
-    resultText: '優しい魔女が渡し場で待っている。薬草を煎じながら舟を待っている。「お乗り。川向こうに良い薬草がある」。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p25_fire_witch',
-    conditions: { s1: 'mod_fire', s2: 'subj_witch' },
-    resultText: '燃え盛る魔女が渡し場で待っている。炎の魔女が舟に乗っている。舟が燃えている。水面に映る炎が二重に揺れる。',
-    damage: 4,
-    quill: 3
-  },
-  {
-    id: 'p25_hard_witch',
-    conditions: { s1: 'mod_hard', s2: 'subj_witch' },
-    resultText: '堅い魔女が渡し場で待っている。頑固な老魔女。「渡し賃は取引だ」。何かを差し出さなければ通さない。',
-    damage: 2,
-    quill: 3
-  },
-  {
-    id: 'p25_sharp_witch',
-    conditions: { s1: 'mod_sharp', s2: 'subj_witch' },
-    resultText: '鋭い魔女が渡し場で待っている。鉤鼻に鋭い目。「本当に対岸へ行きたいのか」。問い詰められて答えに窮した。',
-    damage: 1,
-    quill: 5
-  },
-  {
-    id: 'p25_broken_witch',
-    conditions: { s1: 'mod_broken', s2: 'subj_witch' },
-    resultText: '壊れた魔女が渡し場で待っている。途切れ途切れの呪文を唱えるたびに舟がくるくる回る。目的地にたどり着けない。',
-    damage: 2,
     quill: 4
   },
   {
-    id: 'p25_mighty_witch',
-    conditions: { s1: 'mod_mighty', s2: 'subj_witch' },
-    resultText: '屈強な魔女が渡し場で待っている。腕の太い魔女が一人で舟を漕いでいる。「乗れ。遅いぞ」。速い。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p25_frozen_witch',
-    conditions: { s1: 'mod_frozen', s2: 'subj_witch' },
-    resultText: '凍てついた魔女が渡し場で待っている。氷の魔女が川を凍らせている。舟は使えないが、氷の上を歩いて渡れる。',
-    damage: 1,
-    quill: 5
-  },
-  {
-    id: 'p25_clear_witch',
-    conditions: { s1: 'mod_clear', s2: 'subj_witch' },
-    resultText: '透き通った魔女が渡し場で待っている。老いた魔女。向こうが透けている。「もう渡し守は引退だよ」と笑って消えた。',
+    id: 'p25_song_sing',
+    conditions: { s2: 'subj_song', s4: 'pred_sing' },
+    resultText: '透き通った歌が渡し場で歌っている。歌が歌を歌う。自己言及の旋律が川面を震わせる。舟が踊り始めた。',
     damage: 0,
     quill: 6,
-    rewardItems: [{ id: 'item_p25_clear_witch', name: '最後の渡し守の杖', description: '透き通った魔女が置いていった杖。水面に触れると舟が動く', sellPrice: 14 }]
+    rewardItems: [{ id: 'item_p25_song_sing', name: '自己言及の楽譜', description: '歌が歌を歌うための譜面。読むと頭が回る', sellPrice: 11 }]
   },
   {
-    id: 'p25_cursed_witch',
-    conditions: { s1: 'mod_cursed', s2: 'subj_witch' },
-    resultText: '呪われた魔女が渡し場で待っている。呪いに蝕まれた魔女が舟を漕いでくれるが、対岸につくたびに記憶が飛ぶ。',
+    id: 'p25_song_flee',
+    conditions: { s2: 'subj_song', s4: 'pred_flee' },
+    resultText: '透き通った歌が渡し場で逃げていく。風に乗って対岸へ流れた。追いかけたければ渡るしかない。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p25_song_shine',
+    conditions: { s2: 'subj_song', s4: 'pred_shine' },
+    resultText: '透き通った歌が渡し場で輝く。音符が光の粒になって川面を照らす。歌に導かれて渡る。',
+    damage: 0,
+    quill: 6,
+    rewardItems: [{ id: 'item_p25_song_shine', name: '光る音符', description: '川面から拾った音符。まだ微かに光っている', sellPrice: 9 }]
+  },
+  {
+    id: 'p25_song_dance',
+    conditions: { s2: 'subj_song', s4: 'pred_dance' },
+    resultText: '透き通った歌が渡し場で踊っている。旋律が跳ね、拍子が弾む。足が勝手に動き出す。踊りながら渡った。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p25_song_melt',
+    conditions: { s2: 'subj_song', s4: 'pred_melt' },
+    resultText: '透き通った歌が渡し場で溶けている。音が水に溶けていく。川が歌を飲み込んだ。もう聞こえない。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p25_song_laugh',
+    conditions: { s2: 'subj_song', s4: 'pred_laugh' },
+    resultText: '透き通った歌が渡し場で笑っている。陽気な旋律が桟橋に響く。渡し守が機嫌よく舟を出した。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p25_song_wait',
+    conditions: { s2: 'subj_song', s4: 'pred_wait' },
+    resultText: '透き通った歌が渡し場で待っている。歌い手を待っている。誰かが口ずさめば完成する歌だ。',
+    damage: 0,
+    quill: 5
+  },
+
+  // === 沈黙 × 述語 ===
+  {
+    id: 'p25_silence_gaze',
+    conditions: { s2: 'subj_silence', s4: 'pred_gaze' },
+    resultText: '透き通った沈黙が渡し場で見つめている。音のない圧力が桟橋を包む。声を出してはいけない気がする。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p25_silence_whisper',
+    conditions: { s2: 'subj_silence', s4: 'pred_whisper' },
+    resultText: '透き通った沈黙が渡し場で囁いている。沈黙が囁く矛盾。だが確かに何か聞こえる。聞こえないはずの声が。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p25_silence_sleep',
+    conditions: { s2: 'subj_silence', s4: 'pred_sleep' },
+    resultText: '透き通った沈黙が渡し場で眠っている。静寂が深まり、川の音すら消えた。自分の心臓の音だけが響く。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p25_silence_sing',
+    conditions: { s2: 'subj_silence', s4: 'pred_sing' },
+    resultText: '透き通った沈黙が渡し場で歌っている。無音の旋律。口を開けているが音がない。だが確かに歌だ。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p25_silence_flee',
+    conditions: { s2: 'subj_silence', s4: 'pred_flee' },
+    resultText: '透き通った沈黙が渡し場で逃げていく。音が戻った。川のせせらぎ、鳥の声、風の音。渡し場が賑やかになった。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p25_silence_shine',
+    conditions: { s2: 'subj_silence', s4: 'pred_shine' },
+    resultText: '透き通った沈黙が渡し場で輝く。静寂が光を帯びた。音のない光。渡し場が聖域のように感じられる。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p25_silence_dance',
+    conditions: { s2: 'subj_silence', s4: 'pred_dance' },
+    resultText: '透き通った沈黙が渡し場で踊っている。音のない踊り。水飛沫も足音も吸い込まれる。不気味な静寂の中の動き。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p25_silence_melt',
+    conditions: { s2: 'subj_silence', s4: 'pred_melt' },
+    resultText: '透き通った沈黙が渡し場で溶けている。少しずつ音が漏れ出す。川のせせらぎが戻ってきた。',
+    damage: 0,
+    quill: 3
+  },
+  {
+    id: 'p25_silence_laugh',
+    conditions: { s2: 'subj_silence', s4: 'pred_laugh' },
+    resultText: '透き通った沈黙が渡し場で笑っている。音のない笑い。空気が震えているのに何も聞こえない。耳がおかしくなる。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'p25_silence_wait',
+    conditions: { s2: 'subj_silence', s4: 'pred_wait' },
+    resultText: '透き通った沈黙が渡し場で待っている。言葉を待っている。誰かが声を発すれば壊れる沈黙だ。',
+    damage: 1,
+    quill: 4
+  },
+
+  // === 騎士 × 述語 ===
+  {
+    id: 'p25_knight_gaze',
+    conditions: { s2: 'subj_knight', s4: 'pred_gaze' },
+    resultText: '透き通った騎士が渡し場で見つめている。硝子の甲冑を着た騎士が桟橋に立っている。通行料を請求された。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p25_knight_whisper',
+    conditions: { s2: 'subj_knight', s4: 'pred_whisper' },
+    resultText: '透き通った騎士が渡し場で囁いている。兜の中から掠れた声。この先に待つものを教えてくれた。忠告だ。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p25_knight_sleep',
+    conditions: { s2: 'subj_knight', s4: 'pred_sleep' },
+    resultText: '透き通った騎士が渡し場で眠っている。剣を杖にして立ったまま眠っている。甲冑の中が空だと気づいた。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p25_knight_sing',
+    conditions: { s2: 'subj_knight', s4: 'pred_sing' },
+    resultText: '透き通った騎士が渡し場で歌っている。軍歌ではない。故郷の子守歌だ。兜の中で声が反響している。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p25_knight_flee',
+    conditions: { s2: 'subj_knight', s4: 'pred_flee' },
+    resultText: '透き通った騎士が渡し場で逃げていく。甲冑を脱ぎ捨てて走り去った。硝子の甲冑だけが桟橋に残った。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p25_knight_shine',
+    conditions: { s2: 'subj_knight', s4: 'pred_shine' },
+    resultText: '透き通った騎士が渡し場で輝く。甲冑が朝日を受けて光の柱になった。渡し場の目印として完璧だ。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p25_knight_dance',
+    conditions: { s2: 'subj_knight', s4: 'pred_dance' },
+    resultText: '透き通った騎士が渡し場で踊っている。剣舞。硝子の剣が弧を描き、光の輪を作る。見事だが危ない。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p25_knight_melt',
+    conditions: { s2: 'subj_knight', s4: 'pred_melt' },
+    resultText: '透き通った騎士が渡し場で溶けている。甲冑が崩れ、中から水があふれ出す。騎士は水でできていた。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p25_knight_laugh',
+    conditions: { s2: 'subj_knight', s4: 'pred_laugh' },
+    resultText: '透き通った騎士が渡し場で笑っている。兜の奥から笑い声。何がおかしいのか。渡し賃を見て笑っている。安すぎると。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p25_knight_wait',
+    conditions: { s2: 'subj_knight', s4: 'pred_wait' },
+    resultText: '透き通った騎士が渡し場で待っている。主君を待っている。もう二百年待っている。忠誠は透明になっても消えない。',
+    damage: 1,
+    quill: 5
+  },
+
+  // === 魔女 × 述語 ===
+  {
+    id: 'p25_witch_gaze',
+    conditions: { s2: 'subj_witch', s4: 'pred_gaze' },
+    resultText: '透き通った魔女が渡し場で見つめている。水面に映る自分を見ている。水面の魔女は透き通っていない。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p25_witch_whisper',
+    conditions: { s2: 'subj_witch', s4: 'pred_whisper' },
+    resultText: '透き通った魔女が渡し場で囁いている。呪文を唱えている。舟が勝手に動き出し、川を渡り始めた。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p25_witch_sleep',
+    conditions: { s2: 'subj_witch', s4: 'pred_sleep' },
+    resultText: '透き通った魔女が渡し場で眠っている。箒を抱いて桟橋に寝転がっている。起こすべきか。関わらぬべきか。',
+    damage: 1,
+    quill: 3
+  },
+  {
+    id: 'p25_witch_sing',
+    conditions: { s2: 'subj_witch', s4: 'pred_sing' },
+    resultText: '透き通った魔女が渡し場で歌っている。呪歌。川の流れが逆転し、対岸から舟がやってきた。便利な魔法だ。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p25_witch_flee',
+    conditions: { s2: 'subj_witch', s4: 'pred_flee' },
+    resultText: '透き通った魔女が渡し場で逃げていく。箒に飛び乗り、川の上を低空で去った。何から逃げているのか。',
+    damage: 0,
+    quill: 3
+  },
+  {
+    id: 'p25_witch_shine',
+    conditions: { s2: 'subj_witch', s4: 'pred_shine' },
+    resultText: '透き通った魔女が渡し場で輝く。杖の先が光り、渡し場全体を照らした。渡し守が目を細める。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p25_witch_dance',
+    conditions: { s2: 'subj_witch', s4: 'pred_dance' },
+    resultText: '透き通った魔女が渡し場で踊っている。箒を相手にワルツを踊る。水面に波紋が広がり、魚が跳ねた。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p25_witch_melt',
+    conditions: { s2: 'subj_witch', s4: 'pred_melt' },
+    resultText: '透き通った魔女が渡し場で溶けている。水を被ったわけではない。自分から溶けている。魔力が尽きたのだ。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p25_witch_laugh',
+    conditions: { s2: 'subj_witch', s4: 'pred_laugh' },
+    resultText: '透き通った魔女が渡し場で笑っている。甲高い笑い声が川に反響する。渡し守が耳を塞いだ。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p25_witch_wait',
+    conditions: { s2: 'subj_witch', s4: 'pred_wait' },
+    resultText: '透き通った魔女が渡し場で待っている。弟子を待っているらしい。透明になる魔法を教えてくれると言う。',
+    damage: 1,
+    quill: 4
+  },
+
+  // === 王 × 述語 ===
+  {
+    id: 'p25_king_gaze',
+    conditions: { s2: 'subj_king', s4: 'pred_gaze' },
+    resultText: '透き通った王が渡し場で見つめている。硝子の冠をかぶった王が対岸を睨んでいる。あちらは元は王の領土だった。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p25_king_whisper',
+    conditions: { s2: 'subj_king', s4: 'pred_whisper' },
+    resultText: '透き通った王が渡し場で囁いている。命令を囁いている。だが透明な王の言葉は誰にも届かない。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p25_king_sleep',
+    conditions: { s2: 'subj_king', s4: 'pred_sleep' },
+    resultText: '透き通った王が渡し場で眠っている。王座を失い、渡し場の板の上で眠る。冠だけが光っている。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p25_king_sing',
+    conditions: { s2: 'subj_king', s4: 'pred_sing' },
+    resultText: '透き通った王が渡し場で歌っている。国歌だ。滅んだ国の国歌を一人で歌っている。川だけが聴いている。',
+    damage: 1,
+    quill: 6,
+    rewardItems: [{ id: 'item_p25_king_sing', name: '亡国の譜', description: '滅んだ国の国歌。聴く者はもういない', sellPrice: 12 }]
+  },
+  {
+    id: 'p25_king_flee',
+    conditions: { s2: 'subj_king', s4: 'pred_flee' },
+    resultText: '透き通った王が渡し場で逃げていく。冠を置いて舟に飛び乗った。亡命だ。渡し守は何も言わなかった。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p25_king_shine',
+    conditions: { s2: 'subj_king', s4: 'pred_shine' },
+    resultText: '透き通った王が渡し場で輝く。失った威厳が光になって戻ってきた。渡し守が頭を下げた。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p25_king_dance',
+    conditions: { s2: 'subj_king', s4: 'pred_dance' },
+    resultText: '透き通った王が渡し場で踊っている。宮廷舞踏。だが相手はいない。一人で踊る王を、川が映している。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p25_king_melt',
+    conditions: { s2: 'subj_king', s4: 'pred_melt' },
+    resultText: '透き通った王が渡し場で溶けている。冠から溶け始め、最後に手が残った。手だけが杖を握っていた。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'p25_king_laugh',
+    conditions: { s2: 'subj_king', s4: 'pred_laugh' },
+    resultText: '透き通った王が渡し場で笑っている。すべてを失った者の笑い。渡し守すら目を逸らした。',
     damage: 3,
     quill: 4
   },
   {
-    id: 'p25_sleepy_witch',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_witch' },
-    resultText: '眠い魔女が渡し場で待っている。舟の上で大釜を抱えてうとうとしている。起こすと不機嫌そうに渡してくれた。',
+    id: 'p25_king_wait',
+    conditions: { s2: 'subj_king', s4: 'pred_wait' },
+    resultText: '透き通った王が渡し場で待っている。迎えの使者を待っている。使者は来ない。王国はもうない。',
+    damage: 2,
+    quill: 5
+  },
+
+  // === 亡霊 × 述語（orig以外） ===
+  {
+    id: 'p25_ghost_gaze',
+    conditions: { s2: 'subj_ghost', s4: 'pred_gaze' },
+    resultText: '透き通った亡霊が渡し場で見つめている。此岸と彼岸の間で、どちらにも属さない目がこちらを見ている。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p25_ghost_whisper',
+    conditions: { s2: 'subj_ghost', s4: 'pred_whisper' },
+    resultText: '透き通った亡霊が渡し場で囁いている。生前の名前を繰り返している。もう誰も覚えていない名前を。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p25_ghost_sleep',
+    conditions: { s2: 'subj_ghost', s4: 'pred_sleep' },
+    resultText: '透き通った亡霊が渡し場で眠っている。死者が眠る。二重の静寂。桟橋が墓標に見えた。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p25_ghost_sing',
+    conditions: { s2: 'subj_ghost', s4: 'pred_sing' },
+    resultText: '透き通った亡霊が渡し場で歌っている。生前に好きだった歌。歌詞はもう思い出せないが、旋律だけが残っている。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p25_ghost_flee',
+    conditions: { s2: 'subj_ghost', s4: 'pred_flee' },
+    resultText: '透き通った亡霊が渡し場で逃げていく。対岸へ渡ることを拒んでいる。あちらに行けば、本当に終わるから。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p25_ghost_shine',
+    conditions: { s2: 'subj_ghost', s4: 'pred_shine' },
+    resultText: '透き通った亡霊が渡し場で輝く。成仏の光だ。穏やかに微笑み、川を渡っていった。舟はいらなかった。',
+    damage: 0,
+    quill: 6,
+    rewardItems: [{ id: 'item_p25_ghost_shine', name: '成仏の残り火', description: '亡霊が渡った後に残った淡い光', sellPrice: 10 }]
+  },
+  {
+    id: 'p25_ghost_dance',
+    conditions: { s2: 'subj_ghost', s4: 'pred_dance' },
+    resultText: '透き通った亡霊が渡し場で踊っている。盆踊りのような輪。一人で輪になれるのは、亡霊だからか。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p25_ghost_melt',
+    conditions: { s2: 'subj_ghost', s4: 'pred_melt' },
+    resultText: '透き通った亡霊が渡し場で溶けている。形を保てなくなっている。忘れられた者は消える。それが法則だ。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p25_ghost_laugh',
+    conditions: { s2: 'subj_ghost', s4: 'pred_laugh' },
+    resultText: '透き通った亡霊が渡し場で笑っている。死者が笑う。何がおかしいのか聞けない。聞きたくもない。',
+    damage: 3,
+    quill: 2
+  },
+  {
+    id: 'p25_ghost_wait',
+    conditions: { s2: 'subj_ghost', s4: 'pred_wait' },
+    resultText: '透き通った亡霊が渡し場で待っている。舟を待っているのか、許しを待っているのか。川だけが知っている。',
+    damage: 2,
+    quill: 4
+  },
+
+  // === 鏡 × 述語 ===
+  {
+    id: 'p25_mirror_gaze',
+    conditions: { s2: 'subj_mirror', s4: 'pred_gaze' },
+    resultText: '透き通った鏡が渡し場で見つめている。鏡に映るのは対岸の景色。だが対岸には何もないはずだ。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p25_mirror_whisper',
+    conditions: { s2: 'subj_mirror', s4: 'pred_whisper' },
+    resultText: '透き通った鏡が渡し場で囁いている。鏡面が波打ち、声を出している。映した者の言葉を繰り返している。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p25_mirror_sleep',
+    conditions: { s2: 'subj_mirror', s4: 'pred_sleep' },
+    resultText: '透き通った鏡が渡し場で眠っている。何も映さない鏡。曇っているのではない。目を閉じている。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p25_mirror_sing',
+    conditions: { s2: 'subj_mirror', s4: 'pred_sing' },
+    resultText: '透き通った鏡が渡し場で歌っている。川の歌を映して反響させている。二重唱になった。',
     damage: 0,
     quill: 5
   },
   {
-    id: 'p25_small_king',
-    conditions: { s1: 'mod_small', s2: 'subj_king' },
-    resultText: '小さな王が渡し場で待っている。子供が王冠をかぶって桟橋に立っている。「この川はわしのものだ。通行料を払え」。',
+    id: 'p25_mirror_flee',
+    conditions: { s2: 'subj_mirror', s4: 'pred_flee' },
+    resultText: '透き通った鏡が渡し場で逃げていく。川に飛び込んだ。水面が鏡になり、区別がつかなくなった。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p25_mirror_shine',
+    conditions: { s2: 'subj_mirror', s4: 'pred_shine' },
+    resultText: '透き通った鏡が渡し場で輝く。太陽を捕まえて渡し場を照らす。眩しくて前が見えない。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p25_mirror_dance',
+    conditions: { s2: 'subj_mirror', s4: 'pred_dance' },
+    resultText: '透き通った鏡が渡し場で踊っている。角度が変わるたびに違う世界が映る。百の渡し場が明滅する。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p25_mirror_melt',
+    conditions: { s2: 'subj_mirror', s4: 'pred_melt' },
+    resultText: '透き通った鏡が渡し場で溶けている。水銀が流れ出し、桟橋が銀色に染まる。映すものを失った鏡の最期。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p25_mirror_laugh',
+    conditions: { s2: 'subj_mirror', s4: 'pred_laugh' },
+    resultText: '透き通った鏡が渡し場で笑っている。映っているのは自分の顔だ。自分は笑っていない。鏡だけが笑っている。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'p25_mirror_wait',
+    conditions: { s2: 'subj_mirror', s4: 'pred_wait' },
+    resultText: '透き通った鏡が渡し場で待っている。覗き込む者を待っている。映した者の姿を永遠に留めるために。',
+    damage: 2,
+    quill: 4
+  },
+
+  // === 人形 × 述語 ===
+  {
+    id: 'p25_doll_gaze',
+    conditions: { s2: 'subj_doll', s4: 'pred_gaze' },
+    resultText: '透き通った人形が渡し場で見つめている。硝子の目が動かない。だが確かにこちらを追っている。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p25_doll_whisper',
+    conditions: { s2: 'subj_doll', s4: 'pred_whisper' },
+    resultText: '透き通った人形が渡し場で囁いている。口が動いていないのに声がする。腹話術の逆だ。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p25_doll_sleep',
+    conditions: { s2: 'subj_doll', s4: 'pred_sleep' },
+    resultText: '透き通った人形が渡し場で眠っている。目を閉じた人形が桟橋に横たわっている。誰かが置いていったのか。',
+    damage: 0,
+    quill: 3
+  },
+  {
+    id: 'p25_doll_sing',
+    conditions: { s2: 'subj_doll', s4: 'pred_sing' },
+    resultText: '透き通った人形が渡し場で歌っている。ぜんまい仕掛けの歌声。同じ旋律が繰り返される。ぜんまいが切れない。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p25_doll_flee',
+    conditions: { s2: 'subj_doll', s4: 'pred_flee' },
+    resultText: '透き通った人形が渡し場で逃げていく。糸で吊られたまま走っている。糸の先は見えない。',
+    damage: 1,
+    quill: 4
+  },
+  {
+    id: 'p25_doll_shine',
+    conditions: { s2: 'subj_doll', s4: 'pred_shine' },
+    resultText: '透き通った人形が渡し場で輝く。硝子の体に光が入り、ランタンのようになった。渡し場を照らしている。',
     damage: 0,
     quill: 5
   },
   {
-    id: 'p25_gentle_king',
-    conditions: { s1: 'mod_gentle', s2: 'subj_king' },
-    resultText: '優しい王が渡し場で待っている。質素な衣の王が自ら舟を漕いでくれた。「旅人を渡すのは王の務めだ」。',
+    id: 'p25_doll_dance',
+    conditions: { s2: 'subj_doll', s4: 'pred_dance' },
+    resultText: '透き通った人形が渡し場で踊っている。糸がない。自分の意志で踊っている。それが一番恐ろしい。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'p25_doll_melt',
+    conditions: { s2: 'subj_doll', s4: 'pred_melt' },
+    resultText: '透き通った人形が渡し場で溶けている。蝋人形だった。川の湿気で少しずつ崩れている。顔が最後まで残った。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p25_doll_laugh',
+    conditions: { s2: 'subj_doll', s4: 'pred_laugh' },
+    resultText: '透き通った人形が渡し場で笑っている。作り笑いではない。本物の笑い。人形は笑わない。これは人形ではない。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'p25_doll_wait',
+    conditions: { s2: 'subj_doll', s4: 'pred_wait' },
+    resultText: '透き通った人形が渡し場で待っている。持ち主を待っている。捨てられたとは思っていない。まだ。',
+    damage: 1,
+    quill: 4
+  },
+
+  // === 雨 × 述語 ===
+  {
+    id: 'p25_rain_gaze',
+    conditions: { s2: 'subj_rain', s4: 'pred_gaze' },
+    resultText: '透き通った雨が渡し場で見つめている。一粒一粒が目のように光る。空から見下ろされている。',
+    damage: 2,
+    quill: 3
+  },
+  {
+    id: 'p25_rain_whisper',
+    conditions: { s2: 'subj_rain', s4: 'pred_whisper' },
+    resultText: '透き通った雨が渡し場で囁いている。雨粒が桟橋を叩く音が言葉に聞こえる。急げと言っている。',
+    damage: 1,
+    quill: 3
+  },
+  {
+    id: 'p25_rain_sleep',
+    conditions: { s2: 'subj_rain', s4: 'pred_sleep' },
+    resultText: '透き通った雨が渡し場で眠っている。雨粒が空中で止まっている。時が凍ったのか。濡れずに渡れた。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p25_rain_sing',
+    conditions: { s2: 'subj_rain', s4: 'pred_sing' },
+    resultText: '透き通った雨が渡し場で歌っている。桟橋が木琴になった。大粒の雨が旋律を奏でる。渡し守が口笛で伴奏した。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p25_rain_flee',
+    conditions: { s2: 'subj_rain', s4: 'pred_flee' },
+    resultText: '透き通った雨が渡し場で逃げていく。上に向かって降る雨。空に帰っていく。晴れ間が広がった。',
+    damage: 0,
+    quill: 4
+  },
+  {
+    id: 'p25_rain_shine',
+    conditions: { s2: 'subj_rain', s4: 'pred_shine' },
+    resultText: '透き通った雨が渡し場で輝く。雨粒が宝石になって降り注ぐ。桟橋が光の粒で覆われた。美しい。',
     damage: 0,
     quill: 6
   },
   {
-    id: 'p25_fire_king',
-    conditions: { s1: 'mod_fire', s2: 'subj_king' },
-    resultText: '燃え盛る王が渡し場で待っている。炎の冠の王が舟に乗っている。舟が燃えている。国もろとも燃えようとしている。',
-    damage: 4,
-    quill: 3
-  },
-  {
-    id: 'p25_hard_king',
-    conditions: { s1: 'mod_hard', s2: 'subj_king' },
-    resultText: '堅い王が渡し場で待っている。石の玉座を舟に載せて微動だにしない。舟は沈みかけている。王は気にしていない。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p25_sharp_king',
-    conditions: { s1: 'mod_sharp', s2: 'subj_king' },
-    resultText: '鋭い王が渡し場で待っている。鷹の目で渡し賃を査定している。「それでは足りぬ。もう一つ出せ」。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p25_broken_king',
-    conditions: { s1: 'mod_broken', s2: 'subj_king' },
-    resultText: '壊れた王が渡し場で待っている。王冠が歪み、目は虚ろ。舟に座って川を眺めている。国を失い、流れる先もない。',
-    damage: 0,
-    quill: 6,
-    rewardItems: [{ id: 'item_p25_broken_king', name: '流浪の王冠片', description: '壊れた王が落とした王冠の破片。まだ微かに輝いている', sellPrice: 10 }]
-  },
-  {
-    id: 'p25_mighty_king',
-    conditions: { s1: 'mod_mighty', s2: 'subj_king' },
-    resultText: '屈強な王が渡し場で待っている。戦士王が舟を占拠している。「余の舟だ」。力ずくで奪い返す気にはなれない。',
-    damage: 3,
-    quill: 3
-  },
-  {
-    id: 'p25_frozen_king',
-    conditions: { s1: 'mod_frozen', s2: 'subj_king' },
-    resultText: '凍てついた王が渡し場で待っている。氷の玉座の王。川が凍っていく。渡し場ごと氷に覆われた。',
-    damage: 3,
-    quill: 3
-  },
-  {
-    id: 'p25_clear_king',
-    conditions: { s1: 'mod_clear', s2: 'subj_king' },
-    resultText: '透き通った王が渡し場で待っている。存在が希薄な王。舟に乗っているのに気づかなかった。一緒に対岸まで渡った。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p25_cursed_king',
-    conditions: { s1: 'mod_cursed', s2: 'subj_king' },
-    resultText: '呪われた王が渡し場で待っている。触れたものが金になる王。舟の縁を握ったら金に変わった。舟が重くなり沈みかけた。',
-    damage: 3,
-    quill: 5
-  },
-  {
-    id: 'p25_sleepy_king',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_king' },
-    resultText: '眠い王が渡し場で待っている。玉座ごと舟に乗って居眠りしている。川に流されているが本人は気づいていない。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p25_small_ghost',
-    conditions: { s1: 'mod_small', s2: 'subj_ghost' },
-    resultText: '小さな亡霊が渡し場で待っている。子供の亡霊が桟橋に座って足をぶらぶらさせている。対岸に帰りたいらしい。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p25_gentle_ghost',
-    conditions: { s1: 'mod_gentle', s2: 'subj_ghost' },
-    resultText: '優しい亡霊が渡し場で待っている。穏やかな霊が舟を漕いでくれる。微笑んだまま、対岸で消えた。渡し守だったのだ。',
-    damage: 0,
-    quill: 7,
-    rewardItems: [{ id: 'item_p25_gentle_ghost', name: '渡し守の霊火', description: '優しい亡霊が残した灯り。暗い水路でも道を示す', sellPrice: 12 }]
-  },
-  {
-    id: 'p25_fire_ghost',
-    conditions: { s1: 'mod_fire', s2: 'subj_ghost' },
-    resultText: '燃え盛る亡霊が渡し場で待っている。火に焼かれた霊が川面を漂っている。水の上で炎が揺れる。近づくと舟が燃える。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p25_hard_ghost',
-    conditions: { s1: 'mod_hard', s2: 'subj_ghost' },
-    resultText: '堅い亡霊が渡し場で待っている。何百年もここに立つ霊。渡し賃を払わなかった旅人を永遠に待っている。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p25_sharp_ghost',
-    conditions: { s1: 'mod_sharp', s2: 'subj_ghost' },
-    resultText: '鋭い亡霊が渡し場で待っている。罪を見透かす目。「渡し賃は懺悔だ」。何を懺悔すればいいのか。',
-    damage: 2,
-    quill: 5
-  },
-  {
-    id: 'p25_broken_ghost',
-    conditions: { s1: 'mod_broken', s2: 'subj_ghost' },
-    resultText: '壊れた亡霊が渡し場で待っている。記憶を失った霊。自分が渡し守だったことも忘れている。ただ立っている。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p25_mighty_ghost',
-    conditions: { s1: 'mod_mighty', s2: 'subj_ghost' },
-    resultText: '屈強な亡霊が渡し場で待っている。鎧武者の亡霊が渡し場を占拠している。生前より強い。対岸は死者の国だ。',
-    damage: 4,
-    quill: 3
-  },
-  {
-    id: 'p25_frozen_ghost',
-    conditions: { s1: 'mod_frozen', s2: 'subj_ghost' },
-    resultText: '凍てついた亡霊が渡し場で待っている。冷気を纏った霊が桟橋に立っている。霜が舟に広がっていく。凍死者の霊だ。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p25_clear_ghost',
-    conditions: { s1: 'mod_clear', s2: 'subj_ghost' },
-    resultText: '透き通った亡霊が渡し場で待っている。成仏しかけている霊。あと一人渡せば成仏できるらしい。乗った。霊は微笑んで消えた。',
-    damage: 0,
-    quill: 7
-  },
-  {
-    id: 'p25_cursed_ghost',
-    conditions: { s1: 'mod_cursed', s2: 'subj_ghost' },
-    resultText: '呪われた亡霊が渡し場で待っている。呪いで成仏できない霊。この渡し場で永遠に旅人を待っている。渡し賃を受け取っても、舟は動かない。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p25_sleepy_ghost',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_ghost' },
-    resultText: '眠い亡霊が渡し場で待っている。うつらうつらしている霊。存在感が薄れたり戻ったりする。舟を漕ぐ手が止まっている。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p25_small_mirror',
-    conditions: { s1: 'mod_small', s2: 'subj_mirror' },
-    resultText: '小さな鏡が渡し場で待っている。手鏡が舟底に落ちていた。覗くと対岸の景色が映っている。もう着いたのかと錯覚した。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p25_gentle_mirror',
-    conditions: { s1: 'mod_gentle', s2: 'subj_mirror' },
-    resultText: '優しい鏡が渡し場で待っている。川面が鏡のように澄んでいる。映った自分が少し逞しく見える。漕ぐ力が湧いた。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p25_fire_mirror',
-    conditions: { s1: 'mod_fire', s2: 'subj_mirror' },
-    resultText: '燃え盛る鏡が渡し場で待っている。鏡の中が燃えている。川面に映る炎が水の上を走る。舟底から熱が上がってくる。',
-    damage: 3,
-    quill: 4
-  },
-  {
-    id: 'p25_hard_mirror',
-    conditions: { s1: 'mod_hard', s2: 'subj_mirror' },
-    resultText: '堅い鏡が渡し場で待っている。割れない鏡が桟橋を塞いでいる。押しても引いても動かない。鏡の横をすり抜けて舟に乗った。',
-    damage: 1,
-    quill: 3
-  },
-  {
-    id: 'p25_sharp_mirror',
-    conditions: { s1: 'mod_sharp', s2: 'subj_mirror' },
-    resultText: '鋭い鏡が渡し場で待っている。割れ鏡の破片が桟橋に散らばっている。裸足で歩いたら足裏を切った。',
+    id: 'p25_rain_dance',
+    conditions: { s2: 'subj_rain', s4: 'pred_dance' },
+    resultText: '透き通った雨が渡し場で踊っている。雨粒が跳ね、水面で二度三度と踊る。桟橋が水浸しになった。',
     damage: 2,
     quill: 3
   },
   {
-    id: 'p25_broken_mirror',
-    conditions: { s1: 'mod_broken', s2: 'subj_mirror' },
-    resultText: '壊れた鏡が渡し場で待っている。ひび割れた鏡に映る川が何本にも分裂して見える。どの川が本物か。舟を出すのが怖い。',
-    damage: 1,
-    quill: 5
-  },
-  {
-    id: 'p25_mighty_mirror',
-    conditions: { s1: 'mod_mighty', s2: 'subj_mirror' },
-    resultText: '屈強な鏡が渡し場で待っている。巨大な姿見が川面に立っている。対岸が鏡に反転して映り、方向感覚を失う。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p25_frozen_mirror',
-    conditions: { s1: 'mod_frozen', s2: 'subj_mirror' },
-    resultText: '凍てついた鏡が渡し場で待っている。霜に覆われた鏡が桟橋に立っている。覗くと凍った川が見えた。別の渡し場の景色だ。',
+    id: 'p25_rain_melt',
+    conditions: { s2: 'subj_rain', s4: 'pred_melt' },
+    resultText: '透き通った雨が渡し場で溶けている。雨が川に溶ける。当たり前のことだ。だが今日は雨が泣いているように見えた。',
     damage: 1,
     quill: 4
   },
   {
-    id: 'p25_clear_mirror',
-    conditions: { s1: 'mod_clear', s2: 'subj_mirror' },
-    resultText: '透き通った鏡が渡し場で待っている。窓のような鏡。向こうに対岸が見える。通り抜けようとしたら硬い壁だった。結局舟で渡った。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p25_cursed_mirror',
-    conditions: { s1: 'mod_cursed', s2: 'subj_mirror' },
-    resultText: '呪われた鏡が渡し場で待っている。覗くと自分の姿が鏡に残る。川面にも映り込む。水の中から自分が手を伸ばしてくる。',
-    damage: 3,
-    quill: 5
-  },
-  {
-    id: 'p25_sleepy_mirror',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_mirror' },
-    resultText: '眠い鏡が渡し場で待っている。鏡面が曇って遅れて映る。自分の寝顔が映っている。川の揺れが催眠術のようだ。',
-    damage: 1,
-    quill: 3
-  },
-  {
-    id: 'p25_small_doll',
-    conditions: { s1: 'mod_small', s2: 'subj_doll' },
-    resultText: '小さな人形が渡し場で待っている。指人形が桟橋の杭に刺さっている。誰かの目印か。対岸にも一つ見える。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p25_gentle_doll',
-    conditions: { s1: 'mod_gentle', s2: 'subj_doll' },
-    resultText: '優しい人形が渡し場で待っている。笑顔の人形が舟に座っている。一人で舟を出すのが寂しかったが、隣に人形がいると安心する。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p25_fire_doll',
-    conditions: { s1: 'mod_fire', s2: 'subj_doll' },
-    resultText: '燃え盛る人形が渡し場で待っている。燃えている藁人形が舟に乗っている。舟に火が移る前に蹴り出した。間一髪。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p25_hard_doll',
-    conditions: { s1: 'mod_hard', s2: 'subj_doll' },
-    resultText: '堅い人形が渡し場で待っている。木彫りの人形が舟の舳先に立っている。船首像のようだ。表情がない。',
-    damage: 0,
-    quill: 3
-  },
-  {
-    id: 'p25_sharp_doll',
-    conditions: { s1: 'mod_sharp', s2: 'subj_doll' },
-    resultText: '鋭い人形が渡し場で待っている。関節が刃の人形が桟橋の上で揺れている。糸が見えない。風で動いたのか。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p25_broken_doll',
-    conditions: { s1: 'mod_broken', s2: 'subj_doll' },
-    resultText: '壊れた人形が渡し場で待っている。首がもげかけた人形が川に浮かんでいる。片目がこちらを見ている。拾い上げて舟に乗せた。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p25_mighty_doll',
-    conditions: { s1: 'mod_mighty', s2: 'subj_doll' },
-    resultText: '屈強な人形が渡し場で待っている。等身大の木彫りゴーレムが舟を漕いでいる。命令を待っている。「対岸へ」と言うと動いた。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p25_frozen_doll',
-    conditions: { s1: 'mod_frozen', s2: 'subj_doll' },
-    resultText: '凍てついた人形が渡し場で待っている。氷の人形が桟橋で凍りついている。溶けたら二度と作れない。触れずに通り過ぎた。',
-    damage: 0,
-    quill: 4
-  },
-  {
-    id: 'p25_clear_doll',
-    conditions: { s1: 'mod_clear', s2: 'subj_doll' },
-    resultText: '透き通った人形が渡し場で待っている。硝子の人形が水面に浮いている。中の液体が川の流れで揺れている。',
-    damage: 0,
-    quill: 5
-  },
-  {
-    id: 'p25_cursed_doll',
-    conditions: { s1: 'mod_cursed', s2: 'subj_doll' },
-    resultText: '呪われた人形が渡し場で待っている。舟に乗せて対岸に置いてきたが、戻ると桟橋にいた。何度でも戻ってくる。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p25_sleepy_doll',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_doll' },
-    resultText: '眠い人形が渡し場で待っている。目を閉じた人形が舟底に横たわっている。揺れて目が開いたり閉じたりする。',
-    damage: 0,
-    quill: 3
-  },
-  {
-    id: 'p25_small_rain',
-    conditions: { s1: 'mod_small', s2: 'subj_rain' },
-    resultText: '小さな雨が渡し場で待っている。霧雨が川面に細かな波紋を作っている。傘がなくても濡れない程度だ。',
-    damage: 0,
-    quill: 3
-  },
-  {
-    id: 'p25_gentle_rain',
-    conditions: { s1: 'mod_gentle', s2: 'subj_rain' },
-    resultText: '優しい雨が渡し場で待っている。温かい慈雨が降っている。旅の汚れが洗い流される。川面が柔らかく揺れている。',
-    damage: -1,
-    quill: 5
-  },
-  {
-    id: 'p25_fire_rain',
-    conditions: { s1: 'mod_fire', s2: 'subj_rain' },
-    resultText: '燃え盛る雨が渡し場で待っている。火の雨が川面に降り注ぐ。蒸気が立ち上る。舟の帆に穴が開いていく。',
-    damage: 4,
-    quill: 2
-  },
-  {
-    id: 'p25_hard_rain',
-    conditions: { s1: 'mod_hard', s2: 'subj_rain' },
-    resultText: '堅い雨が渡し場で待っている。雹が舟を打つ。バケツをひっくり返したような勢いだ。舟底に水が溜まっていく。',
+    id: 'p25_rain_laugh',
+    conditions: { s2: 'subj_rain', s4: 'pred_laugh' },
+    resultText: '透き通った雨が渡し場で笑っている。大粒の雨が弾ける音が笑い声に聞こえる。土砂降りの嘲笑。',
     damage: 3,
     quill: 2
   },
   {
-    id: 'p25_sharp_rain',
-    conditions: { s1: 'mod_sharp', s2: 'subj_rain' },
-    resultText: '鋭い雨が渡し場で待っている。針のような雨が横殴りに吹く。視界がなくなる。対岸が見えないまま漕いだ。',
-    damage: 2,
-    quill: 3
-  },
-  {
-    id: 'p25_broken_rain',
-    conditions: { s1: 'mod_broken', s2: 'subj_rain' },
-    resultText: '壊れた雨が渡し場で待っている。リズムのおかしい雨。降ったり止んだりを繰り返す。水面の波紋が不規則だ。',
+    id: 'p25_rain_wait',
+    conditions: { s2: 'subj_rain', s4: 'pred_wait' },
+    resultText: '透き通った雨が渡し場で待っている。降り始めを待つ雨雲が桟橋の上に垂れ込めている。渡るなら今だ。',
     damage: 1,
     quill: 3
-  },
-  {
-    id: 'p25_mighty_rain',
-    conditions: { s1: 'mod_mighty', s2: 'subj_rain' },
-    resultText: '屈強な雨が渡し場で待っている。豪雨で川が氾濫しかけている。舟が流されそうだ。水位が桟橋を超えた。',
-    damage: 4,
-    quill: 2
-  },
-  {
-    id: 'p25_frozen_rain',
-    conditions: { s1: 'mod_frozen', s2: 'subj_rain' },
-    resultText: '凍てついた雨が渡し場で待っている。凍雨が舟を氷で覆っていく。舟が重くなって沈みかけている。氷を叩き割りながら漕いだ。',
-    damage: 2,
-    quill: 4
-  },
-  {
-    id: 'p25_clear_rain',
-    conditions: { s1: 'mod_clear', s2: 'subj_rain' },
-    resultText: '透き通った雨が渡し場で待っている。澄んだ雨が川を洗い清めている。濡れた跡が光る。穢れが流れていく。',
-    damage: -1,
-    quill: 6,
-    rewardItems: [{ id: 'item_p25_clear_rain', name: '浄雨の川水', description: '澄んだ雨で清められた川の水。飲むと体が軽くなる', sellPrice: 10 }]
-  },
-  {
-    id: 'p25_cursed_rain',
-    conditions: { s1: 'mod_cursed', s2: 'subj_rain' },
-    resultText: '呪われた雨が渡し場で待っている。浴びると動けなくなる雨。桟橋で足が根を張ったように止まった。舟に辿り着けない。',
-    damage: 3,
-    quill: 3
-  },
-  {
-    id: 'p25_sleepy_rain',
-    conditions: { s1: 'mod_sleepy', s2: 'subj_rain' },
-    resultText: '眠い雨が渡し場で待っている。しとしとした雨音と川の揺れが合わさって、意識が遠のく。気づけば舟の上で眠っていた。',
-    damage: 1,
-    quill: 4
-  },
+  }
 ];

@@ -13,9 +13,9 @@ export const nodeP18: NodeDef = {
   ],
   slots: [
     { id: 's1', category: 'modifier', word: { id: 'mod_frozen', text: '凍てついた', category: 'modifier', tags: ['ice', 'cold', 'frozen'] } },
-    { id: 's2', category: 'subject', word: { id: 'subj_kitten', text: '子猫', category: 'subject', tags: ['animal', 'small', 'harmless'] } },
+    { id: 's2', category: 'subject', locked: true, word: { id: 'subj_kitten', text: '子猫', category: 'subject', tags: ['animal', 'small', 'harmless'] } },
     { id: 's3', category: 'object_ni', locked: true, word: { id: 'orig_p18_obj', text: '湖', category: 'object_ni', tags: ['lake', 'water', 'mist'] } },
-    { id: 's4', category: 'predicate', locked: true, word: { id: 'orig_p18_pred', text: '浮かんでいる', category: 'predicate', tags: ['float', 'drift', 'surface'] } },
+    { id: 's4', category: 'predicate', word: { id: 'orig_p18_pred', text: '浮かんでいる', category: 'predicate', tags: ['float', 'drift', 'surface'] } },
   ],
   outcomes: nodeP18Outcomes,
   defaultOutcome: {

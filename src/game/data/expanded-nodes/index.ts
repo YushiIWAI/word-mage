@@ -34,6 +34,8 @@ export { nodeR02 } from './node-r02';
 export { nodeR03 } from './node-r03';
 export { nodeR04 } from './node-r04';
 export { nodeR05 } from './node-r05';
+export { nodeP27 } from './node-p27';
+export { nodeP28 } from './node-p28';
 
 import { nodeA } from './node-a';
 import { nodeB } from './node-b';
@@ -71,6 +73,8 @@ import { nodeR02 } from './node-r02';
 import { nodeR03 } from './node-r03';
 import { nodeR04 } from './node-r04';
 import { nodeR05 } from './node-r05';
+import { nodeP27 } from './node-p27';
+import { nodeP28 } from './node-p28';
 import type { NodeDef, BattleNodeDef } from '../../engine/types';
 import { nodeBT01 } from './node-bt01';
 import { nodeBT02 } from './node-bt02';
@@ -127,4 +131,6 @@ export const expandedNodeDefs: Record<string, NodeDef> = {
   node_r03: nodeR03,
   node_r04: nodeR04,
   node_r05: nodeR05,
+  node_p27: nodeP27,
+  node_p28: nodeP28,
 };
