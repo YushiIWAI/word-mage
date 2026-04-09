@@ -106,7 +106,7 @@ const STAGES: StageConfig[] = [
 
 const START_NODE_DEF_ID = '__start__';
 
-const PUZZLE_POOL = [
+const NODE_POOL = [
   'node_a', 'node_b', 'node_c', 'node_d',
   'node_p06', 'node_p07', 'node_p08', 'node_p09', 'node_p10',
   'node_p11', 'node_p12', 'node_p13', 'node_p14', 'node_p15',
@@ -155,8 +155,8 @@ export interface GeneratedStage {
 
 /** 5面分のマップをまとめて生成 */
 export function generateAllStages(): GeneratedStage[] {
-  // 1. 全PUZZLE_POOLをシャッフルし、タイプ別に分離
-  const allShuffled = shuffle(PUZZLE_POOL);
+  // 1. 全NODE_POOLをシャッフルし、タイプ別に分離
+  const allShuffled = shuffle(NODE_POOL);
   const restNodes = allShuffled.filter(id => REST_IDS.has(id));
   const eliteNodes = allShuffled.filter(id => ELITE_IDS.has(id));
   const normalPuzzles = allShuffled.filter(id => !REST_IDS.has(id) && !ELITE_IDS.has(id));

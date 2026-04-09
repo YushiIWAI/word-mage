@@ -34,6 +34,7 @@ PRESETS = {
         "width": 64, "height": 64, "colors": 32,
         "outline": True, "outline_strength": 0.7,
         "dither": False, "bilateral": True,
+        "chromakey": True, "chromakey_fuzz": 40.0,
     },
     # 背景: ドット感を出すサイズ → 2倍拡大表示
     "bg-far": {
@@ -66,8 +67,9 @@ PRESETS = {
 
 # ── バッチ定義 ──────────────────────────────────────
 BATCH_JOBS = []
-for name in ["witch-idle", "witch-walk-1", "witch-walk-2"]:
-    BATCH_JOBS.append((f"{name}-raw.png", f"{name}.png", "witch"))
+for name in ["witch-idle-v7", "witch-walk-1-v7", "witch-walk-2-v7"]:
+    out_name = name.replace("-v7", "")
+    BATCH_JOBS.append((f"raw/{name}-raw.png", f"{out_name}.png", "witch"))
 for stage in ["forest", "valley", "mountain", "castle", "tower"]:
     BATCH_JOBS.append((f"bg-{stage}-far-raw.png", f"bg-{stage}-far.png", "bg-far"))
     BATCH_JOBS.append((f"bg-{stage}-mid-raw.png", f"bg-{stage}-mid.png", "bg-mid"))
@@ -274,6 +276,23 @@ def floyd_steinberg_dither(
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # メインパイプライン
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+def remove_background(img_cv: np.ndarray, fuzz: float = 40.0) -> np.ndarray:
+    """
+    左上ピクセルの色を基準に背景を除去。
+    HSV空間で距離がfuzz以内のピクセルを透過にする。
+
+    Returns: アルファマスク (h, w) uint8 0-255
+    """
+    hsv = cv2.cvtColor(img_cv, cv2.COLOR_BGR2HSV).astype(np.float32)
+    bg_hsv = hsv[0, 0]
+    h_diff = np.abs(hsv[:, :, 0] - bg_hsv[0])
+    h_diff = np.minimum(h_diff, 180 - h_diff)
+    s_diff = np.abs(hsv[:, :, 1] - bg_hsv[1])
+    v_diff = np.abs(hsv[:, :, 2] - bg_hsv[2])
+    dist = np.sqrt(h_diff ** 2 + (s_diff * 0.5) ** 2 + (v_diff * 0.5) ** 2)
+    return np.where(dist < fuzz, 0, 255).astype(np.uint8)
+
+
 def pixelize(
     input_path: str,
     output_path: str,
@@ -284,6 +303,8 @@ def pixelize(
     outline_strength: float = 0.7,
     dither=False,
     bilateral: bool = True,
+    chromakey: bool = False,
+    chromakey_fuzz: float = 40.0,
 ) -> None:
     # 読み込み（OpenCV BGR）
     img = cv2.imread(input_path, cv2.IMREAD_COLOR)
@@ -292,6 +313,12 @@ def pixelize(
         return
 
     print(f"    入力: {img.shape[1]}x{img.shape[0]}", end="", flush=True)
+
+    # ── Step 0: 背景除去 ──
+    alpha_mask = None
+    if chromakey:
+        alpha_mask = remove_background(img, chromakey_fuzz)
+        print(" → chromakey", end="", flush=True)
 
     # ── Step 1: バイラテラルフィルタ ──
     if bilateral:
@@ -306,6 +333,9 @@ def pixelize(
 
     # ── Step 3: リサイズ ──
     img = resize_cv(img, width, height)
+    if alpha_mask is not None:
+        alpha_mask = cv2.resize(alpha_mask, (width, height), interpolation=cv2.INTER_LANCZOS4)
+        _, alpha_mask = cv2.threshold(alpha_mask, 128, 255, cv2.THRESH_BINARY)
     if outline_map is not None:
         outline_map = cv2.resize(outline_map, (width, height), interpolation=cv2.INTER_LANCZOS4)
         # リサイズ後にアウトラインを二値化して鮮明に
@@ -328,15 +358,20 @@ def pixelize(
         print(f" → dither({dither})", end="", flush=True)
 
     # ── 保存 ──
-    # BGR → RGB → PIL
     rgb = cv2.cvtColor(quantized, cv2.COLOR_BGR2RGB)
-    pil_img = Image.fromarray(rgb)
-    pil_img = pil_img.convert("P", palette=Image.ADAPTIVE, colors=colors)
-    pil_img.save(output_path, "PNG", optimize=True)
-
-    # 実色数を確認
-    actual_colors = len(set(Image.fromarray(rgb).convert("RGB").getdata()))
-    print(f" => {output_path} ({width}x{height}, {actual_colors}色)")
+    if alpha_mask is not None:
+        rgba = np.dstack([rgb, alpha_mask])
+        pil_img = Image.fromarray(rgba, "RGBA")
+        pil_img.save(output_path, "PNG", optimize=True)
+        opaque = rgb[alpha_mask > 0]
+        actual_colors = len(set(map(tuple, opaque))) if len(opaque) > 0 else 0
+        print(f" => {output_path} ({width}x{height}, {actual_colors}色 RGBA)")
+    else:
+        pil_img = Image.fromarray(rgb)
+        pil_img = pil_img.convert("P", palette=Image.ADAPTIVE, colors=colors)
+        pil_img.save(output_path, "PNG", optimize=True)
+        actual_colors = len(set(Image.fromarray(rgb).convert("RGB").getdata()))
+        print(f" => {output_path} ({width}x{height}, {actual_colors}色)")
 
 
 def run_batch(base_dir: str) -> None:
@@ -358,6 +393,7 @@ def run_batch(base_dir: str) -> None:
             preset["width"], preset["height"], preset["colors"],
             preset["outline"], preset["outline_strength"],
             preset["dither"], preset["bilateral"],
+            preset.get("chromakey", False), preset.get("chromakey_fuzz", 40.0),
         )
         success += 1
     print(f"\n完了: {success}件変換, {skip}件スキップ")
@@ -398,13 +434,18 @@ def main():
         args.outline_strength = p["outline_strength"]
         args.dither = p["dither"]
         bilateral = p["bilateral"]
+        chromakey = p.get("chromakey", False)
+        chromakey_fuzz = p.get("chromakey_fuzz", 40.0)
     else:
         bilateral = not args.no_bilateral
+        chromakey = False
+        chromakey_fuzz = 40.0
 
     output = args.output or args.input.replace("-raw", "").replace(".png", "-pixel.png")
 
     pixelize(args.input, output, args.width, args.height, args.colors,
-             args.outline, args.outline_strength, args.dither, bilateral)
+             args.outline, args.outline_strength, args.dither, bilateral,
+             chromakey, chromakey_fuzz)
 
 
 if __name__ == "__main__":

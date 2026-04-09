@@ -155,9 +155,9 @@
       // 背景をスクロール
       bgOffset = startOffset + BG_SCROLL_DISTANCE * eased;
 
-      // 歩行スプライトフレーム切り替え（1→2→1→2…）
+      // 歩行スプライトフレーム切り替え（idle→walk1→idle→walk1…）
       if (elapsed - walkFrameTimer > WALK_FRAME_INTERVAL) {
-        witchFrame = witchFrame === 1 ? 2 : 1;
+        witchFrame = witchFrame === 0 ? 1 : 0;
         walkFrameTimer = elapsed;
       }
 
