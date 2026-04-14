@@ -20,7 +20,7 @@ export const nodeP19Outcomes: Outcome[] = [
     id: 'p19_fire_wait',
     conditions: { s1: 'mod_fire', s4: 'pred_wait' },
     resultText: '燃え盛る人形が祭壇に待っている。藁人形が燃えながら祭壇の上で待っている。焚き上げの儀式。炎の中でもまだ燃え尽きない。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -33,7 +33,7 @@ export const nodeP19Outcomes: Outcome[] = [
   {
     id: 'p19_sharp_wait',
     conditions: { s1: 'mod_sharp', s4: 'pred_wait' },
-    resultText: '鋭い人形が祭壇に待っている。関節が刃になった操り人形が祭壇に吊り下がっている。糸が見えない。近づくと腕が動いた。',
+    resultText: '鋭い人形が祭壇に待っている。関節が刃になった操り人形が祭壇に吊り下がっている。糸が見えない。近づくと腕が動き、振り下ろされた刃が肩を裂いた。',
     damage: 3,
     quill: 4
   },
@@ -70,7 +70,7 @@ export const nodeP19Outcomes: Outcome[] = [
     id: 'p19_cursed_wait',
     conditions: { s1: 'mod_cursed', s4: 'pred_wait' },
     resultText: '呪われた人形が祭壇に待っている。夜になると位置が変わる人形が祭壇の中央に座っている。誰も動かしていない。泣き声がする。',
-    damage: 3,
+    damage: 2,
     quill: 5,
     rewardItems: [{ id: 'item_p19_cursed_wait', name: '呪いの涙', description: '人形が流した涙。瓶に入れると振っても沈まない', sellPrice: 8 }]
   },
@@ -99,7 +99,7 @@ export const nodeP19Outcomes: Outcome[] = [
     id: 'p19_fire_sleep',
     conditions: { s1: 'mod_fire', s4: 'pred_sleep' },
     resultText: '燃え盛る人形が祭壇に眠っている。燃えているのに眠っている。祭壇が焦げている。炎が子守唄のように揺れている。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -175,7 +175,7 @@ export const nodeP19Outcomes: Outcome[] = [
   {
     id: 'p19_fire_entangle',
     conditions: { s1: 'mod_fire', s4: 'pred_entangle' },
-    resultText: '燃え盛る人形が祭壇に絡みついている。燃える藁人形が祭壇に巻きつき、炎が石にまで燃え移っている。祭壇が崩れかけている。',
+    resultText: '燃え盛る人形が祭壇に絡みついている。燃える藁人形が祭壇に巻きつき、炎が石にまで燃え移っている。祭壇が崩れかけ、崩落の下敷きになりかけて全身を打撲した。',
     damage: 4,
     quill: 3
   },
@@ -190,7 +190,7 @@ export const nodeP19Outcomes: Outcome[] = [
     id: 'p19_sharp_entangle',
     conditions: { s1: 'mod_sharp', s4: 'pred_entangle' },
     resultText: '鋭い人形が祭壇に絡みついている。刃の関節で祭壇を掴み、離そうとすると切りつけてくる。外そうとしたら手を切った。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -225,7 +225,7 @@ export const nodeP19Outcomes: Outcome[] = [
     id: 'p19_cursed_entangle',
     conditions: { s1: 'mod_cursed', s4: 'pred_entangle' },
     resultText: '呪われた人形が祭壇に絡みついている。人間の魂が閉じ込められた人形が祭壇から離れまいとしている。泣き声が響く。',
-    damage: 3,
+    damage: 2,
     quill: 5,
     rewardItems: [{ id: 'item_p19_cursed_entangle', name: '祭壇の鎖', description: '人形を繋いでいた見えない鎖の欠片', sellPrice: 8 }]
   },
@@ -254,21 +254,21 @@ export const nodeP19Outcomes: Outcome[] = [
   {
     id: 'p19_fire_rain_pred',
     conditions: { s1: 'mod_fire', s4: 'pred_rain_down' },
-    resultText: '燃え盛る人形が祭壇に降り注いでいる。燃える藁人形が空から落ちてくる。祭壇が炎に包まれている。焚き上げの嵐だ。',
+    resultText: '燃え盛る人形が祭壇に降り注いでいる。燃える藁人形が空から落ちてくる。祭壇が炎に包まれ、肩に落ちた一体が袖に引火、全身を叩いて消した。',
     damage: 5,
     quill: 2
   },
   {
     id: 'p19_hard_rain_pred',
     conditions: { s1: 'mod_hard', s4: 'pred_rain_down' },
-    resultText: '堅い人形が祭壇に降り注いでいる。木彫りの人形が雹のように降る。硬い。当たると痛い。祭壇が削れている。',
+    resultText: '堅い人形が祭壇に降り注いでいる。木彫りの人形が雹のように降る。硬い。頭と肩を打たれ、後頭部に瘤ができた。',
     damage: 3,
     quill: 3
   },
   {
     id: 'p19_sharp_rain_pred',
     conditions: { s1: 'mod_sharp', s4: 'pred_rain_down' },
-    resultText: '鋭い人形が祭壇に降り注いでいる。刃の関節の人形が空から落ちてくる。祭壇に突き刺さる。針の雨のようだ。',
+    resultText: '鋭い人形が祭壇に降り注いでいる。刃の関節の人形が空から落ちてくる。祭壇に突き刺さる。腕と太ももに刃が食い込み、血が溢れた。',
     damage: 4,
     quill: 3
   },
@@ -282,7 +282,7 @@ export const nodeP19Outcomes: Outcome[] = [
   {
     id: 'p19_mighty_rain_pred',
     conditions: { s1: 'mod_mighty', s4: 'pred_rain_down' },
-    resultText: '屈強な人形が祭壇に降り注いでいる。等身大のゴーレムが空から落ちてくる。祭壇が砕ける。地面が揺れた。',
+    resultText: '屈強な人形が祭壇に降り注いでいる。等身大のゴーレムが空から落ちてくる。祭壇が砕け、飛んだ石が胸を直撃し肋骨が軋んだ。意識が遠のく。',
     damage: 5,
     quill: 1
   },
@@ -306,7 +306,7 @@ export const nodeP19Outcomes: Outcome[] = [
     id: 'p19_cursed_rain_pred',
     conditions: { s1: 'mod_cursed', s4: 'pred_rain_down' },
     resultText: '呪われた人形が祭壇に降り注いでいる。泣き声と共に呪いの人形が空から降る。拾った者が捨てられなくなる。拾わない。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -334,7 +334,7 @@ export const nodeP19Outcomes: Outcome[] = [
     id: 'p19_fire_whisper',
     conditions: { s1: 'mod_fire', s4: 'pred_whisper' },
     resultText: '燃え盛る人形が祭壇に囁いている。燃える人形が炎の向こうから囁く。「燃やせ」。祭壇の木部が焦げ始めた。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
@@ -384,7 +384,7 @@ export const nodeP19Outcomes: Outcome[] = [
     id: 'p19_cursed_whisper',
     conditions: { s1: 'mod_cursed', s4: 'pred_whisper' },
     resultText: '呪われた人形が祭壇に囁いている。人間の魂が閉じ込められた人形が泣きながら囁く。「出して」。出せない。出したら何が起きるかわからない。',
-    damage: 3,
+    damage: 2,
     quill: 6,
     rewardItems: [{ id: 'item_p19_cursed_whisper', name: '封じられた声', description: '人形の囁きを閉じ込めた小瓶。開けると声が漏れる', sellPrice: 10 }]
   },
@@ -414,7 +414,7 @@ export const nodeP19Outcomes: Outcome[] = [
     id: 'p19_fire_melt',
     conditions: { s1: 'mod_fire', s4: 'pred_melt' },
     resultText: '燃え盛る人形が祭壇に溶けている。炎で自らを溶かしながら祭壇に染み込んでいく。祭壇が赤く熱い。踏めない。',
-    damage: 4,
+    damage: 2,
     quill: 3
   },
   {
@@ -464,7 +464,7 @@ export const nodeP19Outcomes: Outcome[] = [
     id: 'p19_cursed_melt',
     conditions: { s1: 'mod_cursed', s4: 'pred_melt' },
     resultText: '呪われた人形が祭壇に溶けている。呪いの人形が祭壇に溶け込み、祭壇自体が呪物になっていく。近づくと頭痛がする。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -492,7 +492,7 @@ export const nodeP19Outcomes: Outcome[] = [
     id: 'p19_fire_shine',
     conditions: { s1: 'mod_fire', s4: 'pred_shine' },
     resultText: '燃え盛る人形が祭壇に輝いている。炎そのものが光源だ。祭壇が赤い光に染まっている。影が踊っている。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -544,7 +544,7 @@ export const nodeP19Outcomes: Outcome[] = [
     id: 'p19_cursed_shine',
     conditions: { s1: 'mod_cursed', s4: 'pred_shine' },
     resultText: '呪われた人形が祭壇に輝いている。不吉な赤い光を放っている。目が赤く光る。見つめると目が離せなくなる。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -572,7 +572,7 @@ export const nodeP19Outcomes: Outcome[] = [
     id: 'p19_fire_sing',
     conditions: { s1: 'mod_fire', s4: 'pred_sing' },
     resultText: '燃え盛る人形が祭壇で歌っている。燃えながら歌う。戦の歌だ。聴くと血が沸く。祭壇の炎が激しく揺れる。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
@@ -622,7 +622,7 @@ export const nodeP19Outcomes: Outcome[] = [
     id: 'p19_cursed_sing',
     conditions: { s1: 'mod_cursed', s4: 'pred_sing' },
     resultText: '呪われた人形が祭壇で歌っている。一度聴くと頭から離れない歌。耳を塞いでも遅い。もう鳴っている。ずっと鳴っている。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
@@ -650,7 +650,7 @@ export const nodeP19Outcomes: Outcome[] = [
     id: 'p19_fire_dance',
     conditions: { s1: 'mod_fire', s4: 'pred_dance' },
     resultText: '燃え盛る人形が祭壇で踊っている。炎の中で踊る藁人形。火の粉が舞う。祭壇が炎の舞台になっている。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
@@ -699,7 +699,7 @@ export const nodeP19Outcomes: Outcome[] = [
     id: 'p19_cursed_dance',
     conditions: { s1: 'mod_cursed', s4: 'pred_dance' },
     resultText: '呪われた人形が祭壇で踊っている。夜になると踊り出す人形。止められない。見ていると体が勝手に動き始める。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
@@ -727,7 +727,7 @@ export const nodeP19Outcomes: Outcome[] = [
     id: 'p19_fire_laugh',
     conditions: { s1: 'mod_fire', s4: 'pred_laugh' },
     resultText: '燃え盛る人形が祭壇で笑っている。燃えながら笑う。炎の中の笑い声が響く。狂気の祭壇だ。',
-    damage: 4,
+    damage: 2,
     quill: 3
   },
   {
@@ -776,7 +776,7 @@ export const nodeP19Outcomes: Outcome[] = [
     id: 'p19_cursed_laugh',
     conditions: { s1: 'mod_cursed', s4: 'pred_laugh' },
     resultText: '呪われた人形が祭壇で笑っている。人間の魂が閉じ込められた人形が笑い続けている。笑い泣きだ。助けを求めている。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {

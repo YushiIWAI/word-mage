@@ -399,7 +399,7 @@ export const nodeP24Outcomes: Outcome[] = [
     id: 'p24_wind_rain_pred',
     conditions: { s2: 'subj_wind', s4: 'pred_rain_down' },
     resultText: '忘れられた風が墓場に降り注いでいる。上空から風が滝のように落ちてくる。墓石が揺れる。立っていられない。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -988,7 +988,7 @@ export const nodeP24Outcomes: Outcome[] = [
   {
     id: 'p24_dragon_dance',
     conditions: { s2: 'subj_dragon', s4: 'pred_dance' },
-    resultText: '忘れられた竜が墓場に踊っている。巨体が墓石を踏み砕きながら舞っている。死者への祭りか。地面が揺れる。',
+    resultText: '忘れられた竜が墓場に踊っている。巨体が墓石を踏み砕きながら舞っている。死者への祭りか。地面が揺れ、跳ね飛んだ墓石の破片が脇腹を打った。',
     damage: 4,
     quill: 3
   },
@@ -1172,7 +1172,7 @@ export const nodeP24Outcomes: Outcome[] = [
     id: 'p24_witch_laugh',
     conditions: { s2: 'subj_witch', s4: 'pred_laugh' },
     resultText: '忘れられた魔女が墓場に笑っている。高い笑い声が墓地に反響する。呪いのような笑い。聴くと体が重くなる。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {

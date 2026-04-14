@@ -34,7 +34,7 @@ export const nodeP16Outcomes: Outcome[] = [
     id: 'p16_wind_block',
     conditions: { s2: 'subj_wind', s4: 'pred_block' },
     resultText: '堅い風が関所を塞いでいる。同じ方向にだけ吹き続ける頑固な風が門を閉ざしている。押しても引いても道は開かない。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -62,7 +62,7 @@ export const nodeP16Outcomes: Outcome[] = [
     id: 'p16_song_block',
     conditions: { s2: 'subj_song', s4: 'pred_block' },
     resultText: '堅い歌が関所を塞いでいる。一度始まると止められない旋律が門の周囲を満たし、他のすべての音を上書きしている。声が出せない。',
-    damage: 3,
+    damage: 2,
     quill: 5,
     rewardItems: [{ id: 'item_p16_song_block', name: '不止の旋律', description: '耳を塞いでも聞こえる歌の欠片', sellPrice: 8 }]
   },
@@ -70,7 +70,7 @@ export const nodeP16Outcomes: Outcome[] = [
     id: 'p16_silence_block',
     conditions: { s2: 'subj_silence', s4: 'pred_block' },
     resultText: '堅い沈黙が関所を塞いでいる。音の墓場。足音すら吸い込まれる無音の壁が門を閉ざしている。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -97,7 +97,7 @@ export const nodeP16Outcomes: Outcome[] = [
   {
     id: 'p16_ghost_block',
     conditions: { s2: 'subj_ghost', s4: 'pred_block' },
-    resultText: '堅い亡霊が関所を塞いでいる。何百年もそこに立ち続ける霊。成仏を頑なに拒み、門番を続けている。',
+    resultText: '堅い亡霊が関所を塞いでいる。何百年もそこに立ち続ける霊。通ろうとした者の胸を冷たい手が貫き、心臓が一拍止まった。しばらく息ができない。',
     damage: 3,
     quill: 5,
     rewardItems: [{ id: 'item_p16_ghost_block', name: '亡き門番の証', description: '錆びた通行証。持ち主の名が消えかけている', sellPrice: 7 }]
@@ -154,7 +154,7 @@ export const nodeP16Outcomes: Outcome[] = [
   {
     id: 'p16_wind_guard',
     conditions: { s2: 'subj_wind', s4: 'pred_guard' },
-    resultText: '堅い風が関所を守っている。方向転換を拒む風が、不審者を吹き飛ばす。正しい者だけが通れるらしい。正しさの基準は不明だ。',
+    resultText: '堅い風が関所を守っている。方向転換を拒む風が、不審者を吹き飛ばす。吹かれた途端、石柱に背中から叩きつけられ、息が止まる。',
     damage: 3,
     quill: 5
   },
@@ -176,21 +176,21 @@ export const nodeP16Outcomes: Outcome[] = [
     id: 'p16_shadow_guard',
     conditions: { s2: 'subj_shadow', s4: 'pred_guard' },
     resultText: '堅い影が関所を守っている。壁のように立ち上がった影が門番をしている。何を話しかけても黙ったまま通さない。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
     id: 'p16_song_guard',
     conditions: { s2: 'subj_song', s4: 'pred_guard' },
     resultText: '堅い歌が関所を守っている。旋律が結界のように門を包んでいる。歌に逆らう音を出すと、空気が振動で跳ね返す。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
     id: 'p16_silence_guard',
     conditions: { s2: 'subj_silence', s4: 'pred_guard' },
     resultText: '堅い沈黙が関所を守っている。関所に近づくと音が消える。合言葉を言おうにも声が出ない。沈黙そのものが壁になっている。',
-    damage: 3,
+    damage: 2,
     quill: 6,
     rewardItems: [{ id: 'item_p16_silence_guard', name: '無音の通行証', description: '触れている間だけ沈黙に溶け込める石板', sellPrice: 12 }]
   },
@@ -219,7 +219,7 @@ export const nodeP16Outcomes: Outcome[] = [
   {
     id: 'p16_ghost_guard',
     conditions: { s2: 'subj_ghost', s4: 'pred_guard' },
-    resultText: '堅い亡霊が関所を守っている。どんな祓いも通じない霊が番人をしている。すり抜けようとしても、亡霊の方がすり抜けを許さない。',
+    resultText: '堅い亡霊が関所を守っている。どんな祓いも通じない霊が番人をしている。すり抜けようとした瞬間、霊の腕が胴体を貫き、内臓が凍るような感覚が走った。',
     damage: 3,
     quill: 5
   },
@@ -242,7 +242,7 @@ export const nodeP16Outcomes: Outcome[] = [
     id: 'p16_rain_guard',
     conditions: { s2: 'subj_rain', s4: 'pred_guard' },
     resultText: '堅い雨が関所を守っている。何日も止まない長雨が関所を水浸しにしている。意志があるかのように降り続ける。足元は泥の海だ。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -455,14 +455,14 @@ export const nodeP16Outcomes: Outcome[] = [
     id: 'p16_king_gaze',
     conditions: { s2: 'subj_king', s4: 'pred_gaze' },
     resultText: '堅い王が関所を見つめている。鷹のような目で門を睨む王。何も見逃さない。どんな些細な不正も許さない。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
     id: 'p16_ghost_gaze',
     conditions: { s2: 'subj_ghost', s4: 'pred_gaze' },
     resultText: '堅い亡霊が関所を見つめている。成仏を拒む霊が門番の位置から動かない。こちらの罪を見透かすような目で見つめ続ける。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -577,7 +577,7 @@ export const nodeP16Outcomes: Outcome[] = [
     id: 'p16_king_hide',
     conditions: { s2: 'subj_king', s4: 'pred_hide' },
     resultText: '堅い王が関所を隠している。王の勅命で関所の存在が秘匿されている。地図にもない。偶然見つけた者だけが通れる。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
@@ -927,7 +927,7 @@ export const nodeP16Outcomes: Outcome[] = [
     id: 'p16_knight_wait',
     conditions: { s2: 'subj_knight', s4: 'pred_wait' },
     resultText: '堅い騎士が関所を待っている。分厚い鎧の騎士が微動だにせず門前に立ち、表情の読めない兜でこちらを見ている。通行証を出せ、とも言わない。ただ立っている。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {

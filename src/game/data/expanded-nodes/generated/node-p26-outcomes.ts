@@ -42,7 +42,7 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_flame_shine',
     conditions: { s2: 'subj_flame', s4: 'pred_shine' },
     resultText: '燃え盛る炎が鍛冶場で輝く。制御不能の大火が鍛冶場を白熱させている。逃げ出したが全身に火傷を負った。',
-    damage: 5,
+    damage: 4,
     quill: 2
   },
   {
@@ -92,7 +92,7 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_king_shine',
     conditions: { s2: 'subj_king', s4: 'pred_shine' },
     resultText: '燃え盛る王が鍛冶場で輝く。炎の冠が溶鉄のように輝いている。覇気と熱気に打たれ、鍛冶場を出るまで足が震え続けた。',
-    damage: 3,
+    damage: 2,
     quill: 6
   },
   {
@@ -163,7 +163,7 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_flame_sing',
     conditions: { s2: 'subj_flame', s4: 'pred_sing' },
     resultText: '燃え盛る炎が鍛冶場で歌っている。ぱちぱちと弾ける炎が旋律を刻んでいる。歌に聴き入るうちに距離を詰めすぎ、眉が焦げた。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
@@ -241,7 +241,7 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_rain_sing',
     conditions: { s2: 'subj_rain', s4: 'pred_sing' },
     resultText: '燃え盛る雨が鍛冶場で歌っている。火の雨が金属を叩くリズムが歌になっている。屋根から漏れた火滴が手首を焼いた。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -277,7 +277,7 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_wind_dance',
     conditions: { s2: 'subj_wind', s4: 'pred_dance' },
     resultText: '燃え盛る風が鍛冶場で踊っている。熱風が渦を巻いて炉の炎を煽っている。急上昇した温度に肌が赤く腫れた。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -291,7 +291,7 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_ice_dance',
     conditions: { s2: 'subj_ice', s4: 'pred_dance' },
     resultText: '燃え盛る氷が鍛冶場で踊っている。炎と氷が交互に明滅しながら回転している。蒸気で前が見えず、炉に突っ込みかけた。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
@@ -361,7 +361,7 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_rain_dance',
     conditions: { s2: 'subj_rain', s4: 'pred_dance' },
     resultText: '燃え盛る雨が鍛冶場で踊っている。火の雨が金属の上で跳ね、跳ねた飛沫が首筋を焼いた。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -452,7 +452,7 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_king_laugh',
     conditions: { s2: 'subj_king', s4: 'pred_laugh' },
     resultText: '燃え盛る王が鍛冶場で笑っている。「剣を作れ！ もっと！」。王に従い鍛ち続け、腕が上がらなくなった。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {

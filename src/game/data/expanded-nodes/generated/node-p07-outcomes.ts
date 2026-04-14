@@ -210,7 +210,7 @@ export const nodeP07Outcomes: Outcome[] = [
   {
     id: 'p07_witch_whisper',
     conditions: { s2: 'subj_witch', s4: 'pred_whisper' },
-    resultText: '壊れた魔女が塔から囁いている。制御を失った呪文の断片が、壁に焦げ跡を残しながら降ってくる。',
+    resultText: '壊れた魔女が塔から囁いている。制御を失った呪文の断片が降り、肩に落ちた火花が衣を焦がし皮膚を焼いた。',
     damage: 3,
     quill: 4
   },
@@ -456,7 +456,7 @@ export const nodeP07Outcomes: Outcome[] = [
     id: 'p07_witch_sing',
     conditions: { s2: 'subj_witch', s4: 'pred_sing' },
     resultText: '壊れた魔女が塔から歌っている。呪文と歌の区別がつかない。壁にひびが走る。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -535,7 +535,7 @@ export const nodeP07Outcomes: Outcome[] = [
     id: 'p07_flame_dance',
     conditions: { s2: 'subj_flame', s4: 'pred_dance' },
     resultText: '壊れた炎が塔から踊っている。緑と紫の火が交互に明滅し、壁に不吉な影絵を作る。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -576,7 +576,7 @@ export const nodeP07Outcomes: Outcome[] = [
   {
     id: 'p07_witch_dance',
     conditions: { s2: 'subj_witch', s4: 'pred_dance' },
-    resultText: '壊れた魔女が塔から踊っている。正気を失った魔女が呪文を唱えながら旋回する。火花が散る。',
+    resultText: '壊れた魔女が塔から踊っている。正気を失った魔女が呪文を唱えながら旋回する。飛び散った火花が頬を灼き、水膨れになる。',
     damage: 3,
     quill: 4
   },
@@ -698,7 +698,7 @@ export const nodeP07Outcomes: Outcome[] = [
     id: 'p07_witch_laugh',
     conditions: { s2: 'subj_witch', s4: 'pred_laugh' },
     resultText: '壊れた魔女が塔から笑っている。制御できない呪文が零れるたびに笑い声が高くなる。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -937,7 +937,7 @@ export const nodeP07Outcomes: Outcome[] = [
   {
     id: 'p07_knight_rain_pred',
     conditions: { s2: 'subj_knight', s4: 'pred_rain_down' },
-    resultText: '壊れた騎士が塔から降り注いでいる。鎧の破片が降ってくる。剣の柄、盾の欠片、兜の飾り。',
+    resultText: '壊れた騎士が塔から降り注いでいる。鎧の破片が降ってくる。剣の柄が肩に当たり骨が軋む。盾の欠片が脛を裂いた。',
     damage: 3,
     quill: 3
   },
@@ -965,7 +965,7 @@ export const nodeP07Outcomes: Outcome[] = [
   {
     id: 'p07_mirror_rain_pred',
     conditions: { s2: 'subj_mirror', s4: 'pred_rain_down' },
-    resultText: '壊れた鏡が塔から降り注いでいる。鏡の破片が雨のように降る。地面に散った欠片が空を映す。',
+    resultText: '壊れた鏡が塔から降り注いでいる。鏡の破片が雨のように降る。腕と頬を浅く切られ、血が点々と地面を染めた。',
     damage: 3,
     quill: 4
   },

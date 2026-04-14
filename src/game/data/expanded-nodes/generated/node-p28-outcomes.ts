@@ -92,7 +92,7 @@ export const nodeP28Outcomes: Outcome[] = [
     id: 'p28_fire_fierce',
     conditions: { s1: 'mod_fire', s3: 'adv_fierce' },
     resultText: '燃え盛る篝火が激しく燃えている。火柱が空を焦がす。近づけない。迂回するしかない。',
-    damage: 4,
+    damage: 2,
     quill: 2
   },
   {
@@ -112,7 +112,7 @@ export const nodeP28Outcomes: Outcome[] = [
   {
     id: 'p28_fire_sudden',
     conditions: { s1: 'mod_fire', s3: 'adv_sudden' },
-    resultText: '燃え盛る篝火が突然爆発した。地中の何かに引火したのだ。慌てて飛び退く。',
+    resultText: '燃え盛る篝火が突然爆発した。地中の何かに引火したのだ。飛び退くのが一瞬遅れ、背中を熱波に叩かれ衣服が燻った。',
     damage: 4,
     quill: 4
   },
@@ -167,7 +167,7 @@ export const nodeP28Outcomes: Outcome[] = [
     id: 'p28_sharp_fierce',
     conditions: { s1: 'mod_sharp', s3: 'adv_fierce' },
     resultText: '鋭い篝火が激しく燃えている。炎の先端が剣のように空を切る。近寄れない。',
-    damage: 4,
+    damage: 2,
     quill: 3
   },
   {
@@ -204,7 +204,7 @@ export const nodeP28Outcomes: Outcome[] = [
     id: 'p28_broken_fierce',
     conditions: { s1: 'mod_broken', s3: 'adv_fierce' },
     resultText: '壊れた篝火が激しく燃えている。崩れた石の隙間から炎が吹き出している。地下火だ。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -262,7 +262,7 @@ export const nodeP28Outcomes: Outcome[] = [
     id: 'p28_mighty_sudden',
     conditions: { s1: 'mod_mighty', s3: 'adv_sudden' },
     resultText: '屈強な篝火が突然燃え上がった。火の粉が竜巻のように舞う。壮観だが危険だ。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
 
@@ -279,7 +279,7 @@ export const nodeP28Outcomes: Outcome[] = [
     id: 'p28_frozen_fierce',
     conditions: { s1: 'mod_frozen', s3: 'adv_fierce' },
     resultText: '凍てついた篝火が激しく燃えている。氷の火柱。触れたものを凍らせる逆さまの炎。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -300,7 +300,7 @@ export const nodeP28Outcomes: Outcome[] = [
     id: 'p28_frozen_sudden',
     conditions: { s1: 'mod_frozen', s3: 'adv_sudden' },
     resultText: '凍てついた篝火が突然弾けた。氷の破片が飛び散り、当たった木が凍りついた。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
 
@@ -354,7 +354,7 @@ export const nodeP28Outcomes: Outcome[] = [
     id: 'p28_cursed_fierce',
     conditions: { s1: 'mod_cursed', s3: 'adv_fierce' },
     resultText: '呪われた篝火が激しく燃えている。黒い炎が周囲の草を枯らす。呪いが広がっている。',
-    damage: 5,
+    damage: 2,
     quill: 3
   },
   {
@@ -374,7 +374,7 @@ export const nodeP28Outcomes: Outcome[] = [
   {
     id: 'p28_cursed_sudden',
     conditions: { s1: 'mod_cursed', s3: 'adv_sudden' },
-    resultText: '呪われた篝火が突然燃え上がった。地面に呪文の陣が浮かび上がる。罠だった。',
+    resultText: '呪われた篝火が突然燃え上がった。地面に呪文の陣が浮かび上がる。罠だった。足が陣から離れず、黒い炎に脛を舐められた。',
     damage: 4,
     quill: 4
   },

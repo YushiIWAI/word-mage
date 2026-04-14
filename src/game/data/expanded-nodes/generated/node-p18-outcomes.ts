@@ -176,7 +176,7 @@ export const nodeP18Outcomes: Outcome[] = [
     id: 'p18_fire_whisper',
     conditions: { s1: 'mod_fire', s4: 'pred_whisper' },
     resultText: '燃え盛る子猫が湖に囁いている。炎をまとった猫が水面に顔を近づけている。囁きのたびに蒸気が立つ。湖が煮えかけている。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -190,14 +190,14 @@ export const nodeP18Outcomes: Outcome[] = [
     id: 'p18_fire_sing',
     conditions: { s1: 'mod_fire', s4: 'pred_sing' },
     resultText: '燃え盛る子猫が湖に歌っている。炎の旋律が水面を焦がしていく。歌が高まるたび湖が縮む。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
     id: 'p18_fire_entangle',
     conditions: { s1: 'mod_fire', s4: 'pred_entangle' },
     resultText: '燃え盛る子猫が湖に絡みついている。水草に絡んだ炎の猫が、もがくたびに水中に火の尾を引く。湖がぬるくなっていく。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -211,13 +211,13 @@ export const nodeP18Outcomes: Outcome[] = [
     id: 'p18_fire_shine',
     conditions: { s1: 'mod_fire', s4: 'pred_shine' },
     resultText: '燃え盛る子猫が湖に輝く。炎と湖面が共鳴して、猫が太陽のように見える。目を開けていられない。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
     id: 'p18_fire_rain_down',
     conditions: { s1: 'mod_fire', s4: 'pred_rain_down' },
-    resultText: '燃え盛る子猫が湖に降り注いでいる。火の玉のような猫が空から落ちてくる。着水のたびに爆発的な蒸気が上がる。近づけない。',
+    resultText: '燃え盛る子猫が湖に降り注いでいる。火の玉のような猫が空から落ちてくる。着水のたびに爆発的な蒸気が上がる。熱気に煽られた岩で膝を打ち、衣に火がついた。',
     damage: 4,
     quill: 3
   },
@@ -232,14 +232,14 @@ export const nodeP18Outcomes: Outcome[] = [
     id: 'p18_fire_melt',
     conditions: { s1: 'mod_fire', s4: 'pred_melt' },
     resultText: '燃え盛る子猫が湖に溶けている。炎が湖水と混ざり、湖全体がオレンジ色に染まった。熱い。足を浸けたら火傷した。',
-    damage: 4,
+    damage: 3,
     quill: 2
   },
   {
     id: 'p18_fire_laugh',
     conditions: { s1: 'mod_fire', s4: 'pred_laugh' },
     resultText: '燃え盛る子猫が湖に笑っている。ぱちぱちと弾ける炎が笑い声に聞こえる。愉快そうだ。湖が煮立っている。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -296,7 +296,7 @@ export const nodeP18Outcomes: Outcome[] = [
   {
     id: 'p18_hard_rain_down',
     conditions: { s1: 'mod_hard', s4: 'pred_rain_down' },
-    resultText: '堅い子猫が湖に降り注いでいる。石の猫が空から落ちてくる。着水のたびに湖が揺れ、水柱が上がる。頭に当たったら死ぬ。',
+    resultText: '堅い子猫が湖に降り注いでいる。石の猫が空から落ちてくる。着水のたびに湖が揺れ、水柱が上がる。肩を掠めた一体で骨がきしみ、血が滲んだ。',
     damage: 4,
     quill: 2
   },
@@ -375,7 +375,7 @@ export const nodeP18Outcomes: Outcome[] = [
   {
     id: 'p18_sharp_rain_down',
     conditions: { s1: 'mod_sharp', s4: 'pred_rain_down' },
-    resultText: '鋭い子猫が湖に降り注いでいる。爪を立てた猫が霧の中から降ってくる。湖面が傷だらけになっていく。',
+    resultText: '鋭い子猫が湖に降り注いでいる。爪を立てた猫が霧の中から降ってくる。腕と頬を爪で裂かれ、血がぽたぽた垂れた。',
     damage: 4,
     quill: 2
   },
@@ -535,7 +535,7 @@ export const nodeP18Outcomes: Outcome[] = [
     id: 'p18_mighty_rain_down',
     conditions: { s1: 'mod_mighty', s4: 'pred_rain_down' },
     resultText: '屈強な子猫が湖に降り注いでいる。巨大な猫が空から落ちてくる。着水のたびに湖が溢れる。岸が浸水した。',
-    damage: 4,
+    damage: 2,
     quill: 2
   },
   {
@@ -615,7 +615,7 @@ export const nodeP18Outcomes: Outcome[] = [
     id: 'p18_frozen_rain_down',
     conditions: { s1: 'mod_frozen', s4: 'pred_rain_down' },
     resultText: '凍てついた子猫が湖に降り注いでいる。氷の猫が霰のように降ってくる。湖面が砕けた氷で白く染まっていく。寒い。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -732,7 +732,7 @@ export const nodeP18Outcomes: Outcome[] = [
     id: 'p18_cursed_whisper',
     conditions: { s1: 'mod_cursed', s4: 'pred_whisper' },
     resultText: '呪われた子猫が湖に囁いている。禍々しい猫が水面に呪詛を落としている。湖水が黒く濁っていく。耳を塞いだ。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -746,14 +746,14 @@ export const nodeP18Outcomes: Outcome[] = [
     id: 'p18_cursed_sing',
     conditions: { s1: 'mod_cursed', s4: 'pred_sing' },
     resultText: '呪われた子猫が湖に歌っている。呪いの旋律が水面を這っていく。聴いた魚が腹を見せて浮いた。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
     id: 'p18_cursed_entangle',
     conditions: { s1: 'mod_cursed', s4: 'pred_entangle' },
     resultText: '呪われた子猫が湖に絡みついている。黒い毛が水草のように湖底に根を張っている。猫が湖を呪っている。水が苦い。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -774,7 +774,7 @@ export const nodeP18Outcomes: Outcome[] = [
     id: 'p18_cursed_rain_down',
     conditions: { s1: 'mod_cursed', s4: 'pred_rain_down' },
     resultText: '呪われた子猫が湖に降り注いでいる。呪いの猫が空から降ってくる。湖が穢れていく。水に触れた草が枯れた。',
-    damage: 4,
+    damage: 2,
     quill: 2
   },
   {
@@ -788,21 +788,21 @@ export const nodeP18Outcomes: Outcome[] = [
     id: 'p18_cursed_melt',
     conditions: { s1: 'mod_cursed', s4: 'pred_melt' },
     resultText: '呪われた子猫が湖に溶けている。黒い泥のように溶けていく。湖全体が呪われた。もう飲めない水だ。',
-    damage: 3,
+    damage: 2,
     quill: 2
   },
   {
     id: 'p18_cursed_laugh',
     conditions: { s1: 'mod_cursed', s4: 'pred_laugh' },
     resultText: '呪われた子猫が湖に笑っている。けたけたと笑っている。何がおかしいのか。笑い声が頭に貼りつく。しばらく耳鳴りが止まなかった。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
     id: 'p18_cursed_wait',
     conditions: { s1: 'mod_cursed', s4: 'pred_wait' },
     resultText: '呪われた子猫が湖に待っている。黒い猫がじっとこちらを見ている。目を合わせると動けなくなった。猫が近づいてくる。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
 

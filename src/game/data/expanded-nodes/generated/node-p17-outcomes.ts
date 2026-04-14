@@ -12,7 +12,7 @@ export const nodeP17Outcomes: Outcome[] = [
   {
     id: 'p17_snake_block',
     conditions: { s2: 'subj_snake', s4: 'pred_block' },
-    resultText: '鋭い蛇が道を塞いでいる。猛毒の牙を見せつけ、茨の道にとぐろを巻いている。一噛みで血が黒く変わるという。迂回した。',
+    resultText: '鋭い蛇が道を塞いでいる。猛毒の牙を見せつけ、茨の道にとぐろを巻いている。迂回しようとした脛に茨が絡み、咄嗟に振り払った手に牙が掠めた。傷口が黒く変色する。',
     damage: 3,
     quill: 3
   },
@@ -33,7 +33,7 @@ export const nodeP17Outcomes: Outcome[] = [
   {
     id: 'p17_wind_block',
     conditions: { s2: 'subj_wind', s4: 'pred_block' },
-    resultText: '鋭い風が道を塞いでいる。真空の刃が道を横切っている。通った跡の茨が真横に切れている。体を低くして這い抜けた。',
+    resultText: '鋭い風が道を塞いでいる。真空の刃が道を横切っている。体を低くして這い抜けたが、背中に細い切り傷が何本も走り、服に血が滲む。',
     damage: 3,
     quill: 4
   },
@@ -41,7 +41,7 @@ export const nodeP17Outcomes: Outcome[] = [
     id: 'p17_flame_block',
     conditions: { s2: 'subj_flame', s4: 'pred_block' },
     resultText: '鋭い炎が道を塞いでいる。一点集中の炎が茨を焼いているが、焼け跡がさらに通りにくい。足元の灰が熱い。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -69,7 +69,7 @@ export const nodeP17Outcomes: Outcome[] = [
     id: 'p17_silence_block',
     conditions: { s2: 'subj_silence', s4: 'pred_block' },
     resultText: '鋭い沈黙が道を塞いでいる。視線のように刺さる無音が道を覆っている。茨すら揺れない。息を殺して通った。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -110,7 +110,7 @@ export const nodeP17Outcomes: Outcome[] = [
   {
     id: 'p17_doll_block',
     conditions: { s2: 'subj_doll', s4: 'pred_block' },
-    resultText: '鋭い人形が道を塞いでいる。関節が刃になった操り人形が茨の中にぶら下がっている。糸が見えない。近づくと腕が動いた。',
+    resultText: '鋭い人形が道を塞いでいる。関節が刃になった操り人形が茨の中にぶら下がっている。糸が見えない。近づくと腕が動き、刃の指が肩から胸にかけて深く裂いた。',
     damage: 3,
     quill: 4
   },
@@ -190,7 +190,7 @@ export const nodeP17Outcomes: Outcome[] = [
     id: 'p17_silence_guard',
     conditions: { s2: 'subj_silence', s4: 'pred_guard' },
     resultText: '鋭い沈黙が道を守っている。刃のような無音が空気を裂いている。少しでも音を立てると沈黙が振り向く。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
@@ -211,7 +211,7 @@ export const nodeP17Outcomes: Outcome[] = [
     id: 'p17_king_guard',
     conditions: { s2: 'subj_king', s4: 'pred_guard' },
     resultText: '鋭い王が道を守っている。名裁判官の目で通行者を裁く王が茨の道に座す。心やましいことがあると通れないらしい。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
@@ -273,7 +273,7 @@ export const nodeP17Outcomes: Outcome[] = [
   {
     id: 'p17_wind_chase',
     conditions: { s2: 'subj_wind', s4: 'pred_chase' },
-    resultText: '鋭い風が道を追いかけてくる。背後から真空の刃が迫る。岩が裂ける音がする。振り返らず走った。',
+    resultText: '鋭い風が道を追いかけてくる。背後から真空の刃が迫る。振り返らず走ったが、数度刃が追いつき、脹脛と二の腕に深い切り傷が走った。',
     damage: 3,
     quill: 3
   },
@@ -309,7 +309,7 @@ export const nodeP17Outcomes: Outcome[] = [
     id: 'p17_silence_chase',
     conditions: { s2: 'subj_silence', s4: 'pred_chase' },
     resultText: '鋭い沈黙が道を追いかけてくる。背後から音が消えていく。振り返ると、無音の壁が迫っている。飲み込まれる前に走り抜けた。',
-    damage: 3,
+    damage: 2,
     quill: 5,
     rewardItems: [{ id: 'item_p17_silence_chase', name: '沈黙の棘', description: '音を吸い込む茨の一片。触れると指先が無音になる', sellPrice: 8 }]
   },
@@ -453,7 +453,7 @@ export const nodeP17Outcomes: Outcome[] = [
     id: 'p17_king_gaze',
     conditions: { s2: 'subj_king', s4: 'pred_gaze' },
     resultText: '鋭い王が道を見つめている。鷹の目が茨の道を睥睨している。通行者の一挙手一投足を裁いている。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -574,7 +574,7 @@ export const nodeP17Outcomes: Outcome[] = [
     id: 'p17_king_hide',
     conditions: { s2: 'subj_king', s4: 'pred_hide' },
     resultText: '鋭い王が道を隠している。王の勅命で道が秘匿されている。地図にもない。鷹の目で監視され、見つけても通れない。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -951,7 +951,7 @@ export const nodeP17Outcomes: Outcome[] = [
   {
     id: 'p17_mirror_wait',
     conditions: { s2: 'subj_mirror', s4: 'pred_wait' },
-    resultText: '鋭い鏡が道を待っている。割れ鏡の破片が茨に引っかかり、刃のような縁が通行人を待ち受けている。反射光が目を灼く。',
+    resultText: '鋭い鏡が道を待っている。割れ鏡の破片が茨に引っかかり、刃のような縁が通行人を待ち受けている。避けきれず腕を縁に擦り、深く裂けて血が袖を染めた。',
     damage: 3,
     quill: 4
   },
@@ -967,7 +967,7 @@ export const nodeP17Outcomes: Outcome[] = [
     id: 'p17_rain_wait',
     conditions: { s2: 'subj_rain', s4: 'pred_wait' },
     resultText: '鋭い雨が道を待っている。針のような雨粒が雲の中に蓄えられ、茨の道の上空で降り出すのを待っている。雨が降れば茨ごと叩き折れるだろう。自分も叩かれるが。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
 ];

@@ -411,7 +411,7 @@ export const nodeR04Outcomes: Outcome[] = [
     id: 'r04_fire_melt',
     conditions: { s1: 'mod_fire', s2: 'pred_melt' },
     resultText: '燃え盛る蝶が花畑で溶けている。炎が花畑に溶け広がっていく。裾が炎に舐められ、足首に火傷の跡が残った。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -566,7 +566,7 @@ export const nodeR04Outcomes: Outcome[] = [
     id: 'r04_fire_gaze',
     conditions: { s1: 'mod_fire', s2: 'pred_gaze' },
     resultText: '燃え盛る蝶が花畑で見つめている。炎の視線が肌を焦がすようだ。目が合ったまま動けない。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {

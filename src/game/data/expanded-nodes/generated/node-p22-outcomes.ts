@@ -6,7 +6,7 @@ export const nodeP22Outcomes: Outcome[] = [
     id: 'p22_block',
     conditions: { s4: 'pred_block' },
     resultText: '古い水車が川を塞いでいる。歯車が軋みながら動き、水の流れを完全に堰き止めている。溢れた水が足元を浸し、泥に足を取られて膝を打った。',
-    damage: 3,
+    damage: 2,
     quill: 2
   },
   {

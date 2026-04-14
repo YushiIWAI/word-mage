@@ -144,7 +144,7 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_snake_laugh',
     conditions: { s2: 'subj_snake', s4: 'pred_laugh' },
     resultText: '透き通った蛇が渡し場で笑っている。口が裂けるほど開いている。牙はないが、笑い声が骨に響く。',
-    damage: 3,
+    damage: 2,
     quill: 2
   },
   {
@@ -174,7 +174,7 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_dragon_sleep',
     conditions: { s2: 'subj_dragon', s4: 'pred_sleep' },
     resultText: '透き通った竜が渡し場で眠っている。体が桟橋からはみ出し、川を堰き止めている。水位が上がり始めた。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -202,7 +202,7 @@ export const nodeP25Outcomes: Outcome[] = [
   {
     id: 'p25_dragon_dance',
     conditions: { s2: 'subj_dragon', s4: 'pred_dance' },
-    resultText: '透き通った竜が渡し場で踊っている。巨体が桟橋を揺らす。板が軋み、釘が飛ぶ。渡る前に壊れそうだ。',
+    resultText: '透き通った竜が渡し場で踊っている。巨体が桟橋を揺らす。板が軋み、釘が飛んで膝を裂いた。渡る前に壊れそうだ。',
     damage: 3,
     quill: 3
   },
@@ -210,14 +210,14 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_dragon_melt',
     conditions: { s2: 'subj_dragon', s4: 'pred_melt' },
     resultText: '透き通った竜が渡し場で溶けている。巨大な水の塊が崩れ、川の水位が上がった。渡し場が半分沈んだ。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
     id: 'p25_dragon_laugh',
     conditions: { s2: 'subj_dragon', s4: 'pred_laugh' },
     resultText: '透き通った竜が渡し場で笑っている。腹の中が見える。最後に渡った者の骨が見えた。',
-    damage: 4,
+    damage: 2,
     quill: 2
   },
   {
@@ -420,7 +420,7 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_flame_dance',
     conditions: { s2: 'subj_flame', s4: 'pred_dance' },
     resultText: '透き通った炎が渡し場で踊っている。桟橋の板を焦がしながら飛び跳ねる。木造の渡し場が燃え始めた。',
-    damage: 3,
+    damage: 2,
     quill: 2
   },
   {
@@ -434,7 +434,7 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_flame_laugh',
     conditions: { s2: 'subj_flame', s4: 'pred_laugh' },
     resultText: '透き通った炎が渡し場で笑っている。炎が大きく揺れ、人の顔に見える。口を開けて笑っている。逃げた。',
-    damage: 3,
+    damage: 2,
     quill: 2
   },
   {
@@ -530,7 +530,7 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_shadow_whisper',
     conditions: { s2: 'subj_shadow', s4: 'pred_whisper' },
     resultText: '透き通った影が渡し場で囁いている。自分の影が口を動かしている。渡るなと言っている。自分の影が。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -579,7 +579,7 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_shadow_laugh',
     conditions: { s2: 'subj_shadow', s4: 'pred_laugh' },
     resultText: '透き通った影が渡し場で笑っている。こちらの影が勝手に笑っている。自分は笑っていないのに。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -725,7 +725,7 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_silence_laugh',
     conditions: { s2: 'subj_silence', s4: 'pred_laugh' },
     resultText: '透き通った沈黙が渡し場で笑っている。音のない笑い。空気が震えているのに何も聞こえない。耳がおかしくなる。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -935,14 +935,14 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_king_melt',
     conditions: { s2: 'subj_king', s4: 'pred_melt' },
     resultText: '透き通った王が渡し場で溶けている。冠から溶け始め、最後に手が残った。手だけが杖を握っていた。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
     id: 'p25_king_laugh',
     conditions: { s2: 'subj_king', s4: 'pred_laugh' },
     resultText: '透き通った王が渡し場で笑っている。すべてを失った者の笑い。渡し守すら目を逸らした。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -1015,7 +1015,7 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_ghost_laugh',
     conditions: { s2: 'subj_ghost', s4: 'pred_laugh' },
     resultText: '透き通った亡霊が渡し場で笑っている。死者が笑う。何がおかしいのか聞けない。聞きたくもない。',
-    damage: 3,
+    damage: 2,
     quill: 2
   },
   {
@@ -1087,7 +1087,7 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_mirror_laugh',
     conditions: { s2: 'subj_mirror', s4: 'pred_laugh' },
     resultText: '透き通った鏡が渡し場で笑っている。映っているのは自分の顔だ。自分は笑っていない。鏡だけが笑っている。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -1145,7 +1145,7 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_doll_dance',
     conditions: { s2: 'subj_doll', s4: 'pred_dance' },
     resultText: '透き通った人形が渡し場で踊っている。糸がない。自分の意志で踊っている。それが一番恐ろしい。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -1159,7 +1159,7 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_doll_laugh',
     conditions: { s2: 'subj_doll', s4: 'pred_laugh' },
     resultText: '透き通った人形が渡し場で笑っている。作り笑いではない。本物の笑い。人形は笑わない。これは人形ではない。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -1231,7 +1231,7 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_rain_laugh',
     conditions: { s2: 'subj_rain', s4: 'pred_laugh' },
     resultText: '透き通った雨が渡し場で笑っている。大粒の雨が弾ける音が笑い声に聞こえる。土砂降りの嘲笑。',
-    damage: 3,
+    damage: 2,
     quill: 2
   },
   {

@@ -27,7 +27,7 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_fire_gaze',
     conditions: { s1: 'mod_fire', s4: 'pred_gaze' },
-    resultText: '戦の歌が泉から睨んでいる。挑発だ。目を逸らすと肌が焦げた。',
+    resultText: '戦の歌が泉から睨んでいる。目を逸らした頬が内側から焼け、皮膚がぺろりとめくれた。',
     damage: 3,
     quill: 3
   },
@@ -55,7 +55,7 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_mighty_gaze',
     conditions: { s1: 'mod_mighty', s4: 'pred_gaze' },
-    resultText: '大地を震わせる合唱が泉から見つめている。圧がすさまじい。膝が折れそうになった。',
+    resultText: '大地を震わせる合唱が泉から見つめている。圧に膝が砕け、地面に叩きつけられた額から血が流れた。',
     damage: 3,
     quill: 2
   },
@@ -77,7 +77,7 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_cursed_gaze',
     conditions: { s1: 'mod_cursed', s4: 'pred_gaze' },
-    resultText: '呪われた歌が泉から見つめている。目が合った。頭の中で旋律が回り始める。止まらない。',
+    resultText: '呪われた歌が泉から見つめている。頭の中で旋律が回り続け、鼓膜と鼻腔から血が溢れ、平衡感覚を失って倒れた。',
     damage: 4,
     quill: 1
   },
@@ -113,7 +113,7 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_fire_whisper',
     conditions: { s1: 'mod_fire', s4: 'pred_whisper' },
-    resultText: '戦の歌が泉から囁いている。「戦え」と。泉の水が煮えたぎる。',
+    resultText: '戦の歌が泉から囁いている。「戦え」と。煮えたぎる水飛沫を頬に浴び、火膨れが広がった。',
     damage: 3,
     quill: 3
   },
@@ -163,7 +163,7 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_cursed_whisper',
     conditions: { s1: 'mod_cursed', s4: 'pred_whisper' },
-    resultText: '呪われた歌が泉から囁いている。甘い声だ。水面に手を伸ばしかけて、辛うじて引いた。',
+    resultText: '呪われた歌が泉から囁いている。甘い声。引いた手の指先は既に水に触れており、爪の下が黒く変色した。',
     damage: 3,
     quill: 3
   },
@@ -249,7 +249,7 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_cursed_sing',
     conditions: { s1: 'mod_cursed', s4: 'pred_sing' },
-    resultText: '呪われた歌が泉から歌っている。聴いた者を操る歌。体が勝手に泉へ歩き出す。',
+    resultText: '呪われた歌が泉から歌っている。聴いた者を操る歌。勝手に水中へ沈み、溺れかけたところで我に返り、肺が水で満ちていた。',
     damage: 4,
     quill: 2
   },
@@ -386,7 +386,7 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_sharp_shine',
     conditions: { s1: 'mod_sharp', s4: 'pred_shine' },
-    resultText: '鋭い歌が泉から輝いている。刃のような光線。泉の水面が鏡になっている。直視できない。',
+    resultText: '鋭い歌が泉から輝いている。刃のような光線が頬を掠め、皮膚が紙のように裂けて血が流れた。',
     damage: 3,
     quill: 3
   },
@@ -423,7 +423,7 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_cursed_shine',
     conditions: { s1: 'mod_cursed', s4: 'pred_shine' },
-    resultText: '呪われた歌が泉から輝いている。紫がかった光。美しいが、見つめると頭が痛む。',
+    resultText: '呪われた歌が泉から輝いている。紫の光に見入るうちにこめかみが割れるように痛み、鼻血が止まらなくなった。',
     damage: 3,
     quill: 3
   },
@@ -459,21 +459,21 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_fire_rain',
     conditions: { s1: 'mod_fire', s4: 'pred_rain_down' },
-    resultText: '戦の歌が泉から降り注いでいる。火の雨だ。地面が焦げる。走って逃げた。',
+    resultText: '戦の歌が泉から降り注いでいる。火の雨だ。背中に数滴浴び、外套が燃え、肩甲骨の皮膚が黒く焦げた。',
     damage: 4,
     quill: 2
   },
   {
     id: 'd_hard_rain',
     conditions: { s1: 'mod_hard', s4: 'pred_rain_down' },
-    resultText: '止められない歌が泉から降り注いでいる。雹のように硬い音が体を叩く。痛い。',
+    resultText: '止められない歌が泉から降り注いでいる。雹のように硬い音が全身を打ち、皮下出血が広がって肌が青黒く染まった。',
     damage: 3,
     quill: 3
   },
   {
     id: 'd_sharp_rain',
     conditions: { s1: 'mod_sharp', s4: 'pred_rain_down' },
-    resultText: '鋭い歌が泉から降り注いでいる。針の雨だ。肌を無数に刺す。',
+    resultText: '鋭い歌が泉から降り注いでいる。針の雨が肌を無数に刺し貫き、衣服が血で重く貼りついた。',
     damage: 4,
     quill: 2
   },
@@ -487,14 +487,14 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_mighty_rain',
     conditions: { s1: 'mod_mighty', s4: 'pred_rain_down' },
-    resultText: '大地を震わせる合唱が泉から降り注いでいる。豪雨のような音圧。立っていられない。',
+    resultText: '大地を震わせる合唱が泉から降り注いでいる。音圧で鼓膜が破れ、倒れた先の岩に頭を打ちつけて視界が暗転した。',
     damage: 4,
     quill: 2
   },
   {
     id: 'd_frozen_rain',
     conditions: { s1: 'mod_frozen', s4: 'pred_rain_down' },
-    resultText: '凍てついた歌が泉から降り注いでいる。みぞれのようだ。体が芯から冷える。',
+    resultText: '凍てついた歌が泉から降り注いでいる。みぞれが肌で結晶化し、指先が紫に変色して感覚を失った。',
     damage: 3,
     quill: 3
   },
@@ -509,7 +509,7 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_cursed_rain',
     conditions: { s1: 'mod_cursed', s4: 'pred_rain_down' },
-    resultText: '呪われた歌が泉から降り注いでいる。黒い雨だ。浴びた箇所が痺れる。',
+    resultText: '呪われた歌が泉から降り注いでいる。黒い雨を浴びた箇所から筋肉が麻痺し、やがて呼吸筋が動かなくなりかけた。',
     damage: 4,
     quill: 1
   },
@@ -545,7 +545,7 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_fire_dance',
     conditions: { s1: 'mod_fire', s4: 'pred_dance' },
-    resultText: '戦の歌が泉の上で踊っている。火踊りだ。泉の水が蒸発していく。熱風が顔を打つ。',
+    resultText: '戦の歌が泉の上で踊っている。火踊りの熱風が顔を打ち、睫毛が焼け落ちて眼球が乾き切り痛みで開けられなくなった。',
     damage: 3,
     quill: 4
   },
@@ -573,7 +573,7 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_mighty_dance',
     conditions: { s1: 'mod_mighty', s4: 'pred_dance' },
-    resultText: '大地を震わせる合唱が泉の上で踊っている。水柱が何本も立つ。嵐のような舞踏だ。',
+    resultText: '大地を震わせる合唱が泉の上で踊っている。立った水柱の一本が直撃し、全身を叩きつけられて数本の肋骨が軋んだ。',
     damage: 3,
     quill: 3
   },
@@ -595,7 +595,7 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_cursed_dance',
     conditions: { s1: 'mod_cursed', s4: 'pred_dance' },
-    resultText: '呪われた歌が泉の上で踊っている。狂った踊りだ。足が勝手に動き出す。泉に引き込まれかけた。',
+    resultText: '呪われた歌が泉の上で踊っている。勝手に踊る足を止められず、泉に沈んで水を飲み、意識を失いかけて岸に戻った。',
     damage: 4,
     quill: 2
   },
@@ -681,7 +681,7 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_cursed_melt',
     conditions: { s1: 'mod_cursed', s4: 'pred_melt' },
-    resultText: '呪われた歌が泉に溶けている。泉が黒ずんでいる。一口でも飲めば正気を失う。',
+    resultText: '呪われた歌が泉に溶けている。喉を潤すために手ですくった一滴が唇を溶かし、口の中が焼けただれた。',
     damage: 3,
     quill: 2
   },
@@ -766,7 +766,7 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_cursed_laugh',
     conditions: { s1: 'mod_cursed', s4: 'pred_laugh' },
-    resultText: '呪われた歌が泉から笑っている。不気味な笑い声が頭にこびりつく。耳を塞いでも聞こえる。',
+    resultText: '呪われた歌が泉から笑っている。頭の中で反響する笑声が脳を揺さぶり、耳からも鼻からも血が垂れた。',
     damage: 3,
     quill: 2
   },
@@ -802,7 +802,7 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_fire_orig',
     conditions: { s1: 'mod_fire', s4: 'orig_d_pred' },
-    resultText: '燃え盛る歌が泉から響いている。戦の歌だ。泉の水が沸騰している。近寄れない。',
+    resultText: '燃え盛る歌が泉から響いている。沸騰した水飛沫が顔にかかり、片目の瞼が腫れて開かなくなった。',
     damage: 3,
     quill: 3
   },
@@ -816,7 +816,7 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_sharp_orig',
     conditions: { s1: 'mod_sharp', s4: 'orig_d_pred' },
-    resultText: '鋭い歌が泉から響いている。金切り声だ。泉の水面にひびが走る。耳を押さえた。',
+    resultText: '鋭い歌が泉から響いている。金切り声が耳を貫き、内耳で何かが破れる感覚と共に血が指の間から流れ落ちた。',
     damage: 3,
     quill: 2
   },
@@ -852,7 +852,7 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_cursed_orig',
     conditions: { s1: 'mod_cursed', s4: 'orig_d_pred' },
-    resultText: '呪われた歌が泉から響いている。美しいのに恐ろしい。頭の中に入り込んでくる。',
+    resultText: '呪われた歌が泉から響いている。頭の中に入り込んだ旋律が脳を食い荒らし、記憶が抜け落ち、口から泡が漏れた。',
     damage: 3,
     quill: 3
   },

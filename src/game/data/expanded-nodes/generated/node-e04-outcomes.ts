@@ -19,7 +19,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_fire_kitten',
     conditions: { s1: 'mod_fire', s2: 'subj_kitten' },
-    resultText: '炎をまとった子猫が塔の頂から見つめている。塔の先端が松明のように燃えている。',
+    resultText: '炎をまとった子猫が塔の頂から見つめている。落ちてきた火の粉で髪が燃え、頬と首筋に赤い火傷が点々と残った。',
     damage: 3,
     quill: 5
   },
@@ -48,7 +48,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_mighty_kitten',
     conditions: { s1: 'mod_mighty', s2: 'subj_kitten' },
-    resultText: '子猫サイズで虎の体格をした獣が塔の頂から見つめている。飛び降りてきたら危険だ。',
+    resultText: '子猫サイズで虎の体格をした獣が塔の頂から見つめている。降ってきた小さな塊が肩に激突し、鎖骨にひびが入った。',
     damage: 3,
     quill: 5
   },
@@ -98,21 +98,21 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_fire_snake',
     conditions: { s1: 'mod_fire', s2: 'subj_snake' },
-    resultText: '炎の軌跡を残す蛇が塔の頂から見つめている。塔の壁が焦げている。通った跡が螺旋を描く。',
+    resultText: '炎の軌跡を残す蛇が塔の頂から見つめている。螺旋に滑り降りた炎に追いつかれ、背中の皮膚が旅装と一緒に焼けた。',
     damage: 4,
     quill: 5
   },
   {
     id: 'e04_hard_snake',
     conditions: { s1: 'mod_hard', s2: 'subj_snake' },
-    resultText: '鉄の鱗を持つ蛇が塔の頂から見つめている。塔に巻きついている。塔の一部に見える。',
+    resultText: '鉄の鱗を持つ蛇が塔の頂から見つめている。垂れた尾が階段に落ち、脛を鞭のように叩いて骨にひびが入った。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e04_sharp_snake',
     conditions: { s1: 'mod_sharp', s2: 'subj_snake' },
-    resultText: '猛毒の蛇が塔の頂から見つめている。一噛みで血が黒く変わる。階段を降りられない。',
+    resultText: '猛毒の蛇が塔の頂から見つめている。滑り降りた牙が首筋に食い込み、毒で視界が黒ずんで階段に崩れ落ちた。',
     damage: 5,
     quill: 3
   },
@@ -126,7 +126,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_mighty_snake',
     conditions: { s1: 'mod_mighty', s2: 'subj_snake' },
-    resultText: '胴回りが人の腰ほどある大蛇が塔の頂から見つめている。塔に巻きつき、締め上げている。',
+    resultText: '胴回りが人の腰ほどある大蛇が塔の頂から見つめている。落ちてきた胴に巻き込まれ、肋が軋んで折れ、血を吐いた。',
     damage: 5,
     quill: 3
   },
@@ -148,7 +148,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_cursed_snake',
     conditions: { s1: 'mod_cursed', s2: 'subj_snake' },
-    resultText: '呪われた蛇が塔の頂から見つめている。脱皮するたびに大きくなる。塔に巻きつき、塔が軋む。',
+    resultText: '呪われた蛇が塔の頂から見つめている。崩れた石材が頭上に降り、後頭部が裂けて髪が血で固まった。',
     damage: 4,
     quill: 5
   },
@@ -176,21 +176,21 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_fire_dragon',
     conditions: { s1: 'mod_fire', s2: 'subj_dragon' },
-    resultText: '全身が業火の竜が塔の頂から見つめている。近づくだけで熱い。塔の石が赤く焼けている。',
+    resultText: '全身が業火の竜が塔の頂から見つめている。吐息が階段を下り、浴びた旅装と皮膚が溶けて一体になった。意識が飛ぶ。',
     damage: 5,
     quill: 3
   },
   {
     id: 'e04_hard_dragon',
     conditions: { s1: 'mod_hard', s2: 'subj_dragon' },
-    resultText: '鱗が城壁のように厚い竜が塔の頂から見つめている。塔と竜の区別がつかない。',
+    resultText: '鱗が城壁のように厚い竜が塔の頂から見つめている。崩れ落ちた鱗の一枚が肩に直撃し、鎖骨が砕けて腕が垂れた。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e04_sharp_dragon',
     conditions: { s1: 'mod_sharp', s2: 'subj_dragon' },
-    resultText: '爪の一振りで岩が裂ける竜が塔の頂から見つめている。金色の目が値踏みする。獲物を選んでいる。',
+    resultText: '爪の一振りで岩が裂ける竜が塔の頂から見つめている。急降下した爪が背中を肩から腰まで裂き、骨が見えた。',
     damage: 5,
     quill: 4
   },
@@ -205,14 +205,14 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_mighty_dragon',
     conditions: { s1: 'mod_mighty', s2: 'subj_dragon' },
-    resultText: '山のような巨体の竜が塔の頂から見つめている。翼を広げると空が暗くなる。世界の王だ。',
+    resultText: '山のような巨体の竜が塔の頂から見つめている。翼の一打ちで吹き飛ばされ、塔の外壁に叩きつけられて全身の骨が軋んだ。',
     damage: 5,
     quill: 3
   },
   {
     id: 'e04_frozen_dragon',
     conditions: { s1: 'mod_frozen', s2: 'subj_dragon' },
-    resultText: '氷をまとった白い竜が塔の頂から見つめている。吐息が吹雪になる。塔の周囲が凍りついている。',
+    resultText: '氷をまとった白い竜が塔の頂から見つめている。降りてきた吹雪に曝され、指先が黒く凍え、二本が折れ落ちた。',
     damage: 4,
     quill: 4
   },
@@ -226,7 +226,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_cursed_dragon',
     conditions: { s1: 'mod_cursed', s2: 'subj_dragon' },
-    resultText: '暴走した竜が塔の頂から見つめている。目に理性がない。塔の上から何を狙っているのか。',
+    resultText: '暴走した竜が塔の頂から見つめている。飛び降りた牙が胸を貫き、背まで切先が突き出て血を吐いた。',
     damage: 5,
     quill: 4
   },
@@ -254,7 +254,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_fire_butterfly',
     conditions: { s1: 'mod_fire', s2: 'subj_butterfly' },
-    resultText: '羽が炎の蝶が塔の頂から見つめている。飛んだ跡に火の粉。塔が燈台のように光っている。',
+    resultText: '羽が炎の蝶が塔の頂から見つめている。降りかかった火の粉で旅装が燃え、肩口から腕にかけて火脹れが並んだ。',
     damage: 3,
     quill: 6,
     rewardItems: [{ id: 'item_e04_fire_butterfly', name: '火蝶の残り火', description: '塔の頂で拾った火の粉。まだ燃えている', sellPrice: 8 }]
@@ -283,7 +283,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_mighty_butterfly',
     conditions: { s1: 'mod_mighty', s2: 'subj_butterfly' },
-    resultText: '羽ばたきが風を起こす巨大な蝶が塔の頂から見つめている。風圧で塔の階段を登れない。',
+    resultText: '羽ばたきが風を起こす巨大な蝶が塔の頂から見つめている。風圧で階段から転落し、腰と肘を石段に強打した。',
     damage: 3,
     quill: 5
   },
@@ -304,8 +304,8 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_cursed_butterfly',
     conditions: { s1: 'mod_cursed', s2: 'subj_butterfly' },
-    resultText: '追いかけると迷子になる蝶が塔の頂から見つめている。追って階段を登ったら降りられなくなった。',
-    damage: 3,
+    resultText: '追いかけると迷子になる蝶が塔の頂から見つめている。螺旋階段を上り続けて脚が痙攣し、膝が砕けるように床に崩れた。',
+    damage: 2,
     quill: 6
   },
   {
@@ -332,21 +332,21 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_fire_wind',
     conditions: { s1: 'mod_fire', s2: 'subj_wind' },
-    resultText: '熱風が塔の頂から見つめている。触れたものが焦げる。塔の階段が灼けている。',
+    resultText: '熱風が塔の頂から見つめている。吹き降ろされた熱波に肌が焦げ、顔の半分に深い火脹れが這い広がった。',
     damage: 4,
     quill: 4
   },
   {
     id: 'e04_hard_wind',
     conditions: { s1: 'mod_hard', s2: 'subj_wind' },
-    resultText: '同じ方向に吹き続ける風が塔の頂から吹いている。押し返される。登れない。',
+    resultText: '同じ方向に吹き続ける風が塔の頂から吹いている。逆らって登るうちに膝が砕け、踏ん張った爪が剥がれて血が滲んだ。',
     damage: 3,
     quill: 4
   },
   {
     id: 'e04_sharp_wind',
     conditions: { s1: 'mod_sharp', s2: 'subj_wind' },
-    resultText: '真空の刃が塔の頂から吹き下ろしている。通り過ぎた壁が切れている。',
+    resultText: '真空の刃が塔の頂から吹き下ろしている。見えない刃が胸と腕を薙ぎ、旅装が赤い縞模様に染まった。',
     damage: 4,
     quill: 4
   },
@@ -360,14 +360,14 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_mighty_wind',
     conditions: { s1: 'mod_mighty', s2: 'subj_wind' },
-    resultText: 'すべてを吹き飛ばす暴風が塔の頂から見つめている。塔の頂に立つことすらできない。',
+    resultText: 'すべてを吹き飛ばす暴風が塔の頂から見つめている。階段から投げ出され、岩壁に背を打ちつけて腰骨が軋んだ。',
     damage: 4,
     quill: 4
   },
   {
     id: 'e04_frozen_wind',
     conditions: { s1: 'mod_frozen', s2: 'subj_wind' },
-    resultText: '吹雪が塔の頂から吹き下ろしている。まつ毛が凍る。塔の壁が白く染まっている。',
+    resultText: '吹雪が塔の頂から吹き下ろしている。露出した手と頬が黒く凍り、皮膚が硬直して剥がれ始めた。',
     damage: 4,
     quill: 4
   },
@@ -382,8 +382,8 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_cursed_wind',
     conditions: { s1: 'mod_cursed', s2: 'subj_wind' },
-    resultText: '呪われた風が塔の頂から吹いている。吹かれると帰り道を忘れる。塔を降りたが方角がわからない。',
-    damage: 3,
+    resultText: '呪われた風が塔の頂から吹いている。方角を失って石廊を彷徨い、段差から転落して顔面から血が垂れた。',
+    damage: 2,
     quill: 5
   },
   {
@@ -410,21 +410,21 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_fire_flame',
     conditions: { s1: 'mod_fire', s2: 'subj_flame' },
-    resultText: '制御不能の大火が塔の頂から見つめている。塔が燃えている。すべてを飲み込もうとしている。',
+    resultText: '制御不能の大火が塔の頂から見つめている。崩れてきた火の塊に飲まれ、背中一面が焼け爛れて旅装と一体になった。',
     damage: 5,
     quill: 3
   },
   {
     id: 'e04_hard_flame',
     conditions: { s1: 'mod_hard', s2: 'subj_flame' },
-    resultText: '消えない炎が塔の頂から見つめている。水をかけても風を当てても揺らがない。永遠の灯台だ。',
+    resultText: '消えない炎が塔の頂から見つめている。横をすり抜けた右頬が黒く爛れ、耳の軟骨が焦げて縮んだ。',
     damage: 3,
     quill: 6
   },
   {
     id: 'e04_sharp_flame',
     conditions: { s1: 'mod_sharp', s2: 'subj_flame' },
-    resultText: '鋭い炎が塔の頂から見つめている。触れたものの形を切り取る。塔の壁に何かの輪郭が焼き付いている。',
+    resultText: '鋭い炎が塔の頂から見つめている。かすめた指の三本がきれいに切り取られて焼け落ち、手が半分ない。',
     damage: 4,
     quill: 5
   },
@@ -438,14 +438,14 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_mighty_flame',
     conditions: { s1: 'mod_mighty', s2: 'subj_flame' },
-    resultText: '天を衝く火柱が塔の頂から見つめている。塔が炎の柱になっている。近づけない。',
+    resultText: '天を衝く火柱が塔の頂から見つめている。熱波に打たれて階段から吹き飛ばされ、石壁に背を激突させて肋が折れた。',
     damage: 5,
     quill: 3
   },
   {
     id: 'e04_frozen_flame',
     conditions: { s1: 'mod_frozen', s2: 'subj_flame' },
-    resultText: '燃えているのに冷たい炎が塔の頂から見つめている。青白い鬼火。塔の頂が凍っている。',
+    resultText: '燃えているのに冷たい炎が塔の頂から見つめている。触れた腕が同時に焼けて凍り、皮膚が裂けて黒く変色した。',
     damage: 3,
     quill: 6
   },
@@ -495,14 +495,14 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_hard_ice',
     conditions: { s1: 'mod_hard', s2: 'subj_ice' },
-    resultText: '鋼より硬い万年氷が塔の頂を覆っている。足場が滑る。鉄の刃が欠ける。',
+    resultText: '鋼より硬い万年氷が塔の頂を覆っている。滑って転倒し、頭を石段に強打、額が裂けて視界が赤く染まった。',
     damage: 3,
     quill: 4
   },
   {
     id: 'e04_sharp_ice',
     conditions: { s1: 'mod_sharp', s2: 'subj_ice' },
-    resultText: '氷柱が剣のように塔の頂から突き出している。登ろうとして手を切った。',
+    resultText: '氷柱が剣のように塔の頂から突き出している。掴んだ氷柱が折れて掌を貫き、手首から血がしたたり落ちた。',
     damage: 4,
     quill: 4
   },
@@ -516,7 +516,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_mighty_ice',
     conditions: { s1: 'mod_mighty', s2: 'subj_ice' },
-    resultText: '山のような氷塊が塔の頂を覆っている。塔の上半分が凍りついている。登れない。',
+    resultText: '山のような氷塊が塔の頂を覆っている。削り進むうちに両手の爪が剥がれ、血で氷が赤く塗られていった。',
     damage: 4,
     quill: 4
   },
@@ -537,7 +537,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_cursed_ice',
     conditions: { s1: 'mod_cursed', s2: 'subj_ice' },
-    resultText: '溶けない呪いの氷が塔の頂を覆っている。永遠の冬が塔から広がり続けている。',
+    resultText: '溶けない呪いの氷が塔の頂を覆っている。踏み込んだ両脚が膝まで凍りつき、引き剥がす時に皮膚が氷と一緒に剥がれた。',
     damage: 4,
     quill: 5
   },
@@ -572,7 +572,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_hard_shadow',
     conditions: { s1: 'mod_hard', s2: 'subj_shadow' },
-    resultText: '固まった影が塔の頂から見つめている。壁のように立ち上がっている。階段を塞いでいる。',
+    resultText: '固まった影が塔の頂から見つめている。押し分けた弾みで階段から転落し、段鼻で肋を打って血を吐いた。',
     damage: 3,
     quill: 5
   },
@@ -593,7 +593,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_mighty_shadow',
     conditions: { s1: 'mod_mighty', s2: 'subj_shadow' },
-    resultText: '本体より遥かに大きい影が塔の頂から見つめている。塔から伸びる影が町を覆っている。',
+    resultText: '本体より遥かに大きい影が塔の頂から見つめている。影に触れた腕が黒く変色し、肘から先の感覚が失われた。',
     damage: 4,
     quill: 5
   },
@@ -643,21 +643,21 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_fire_song',
     conditions: { s1: 'mod_fire', s2: 'subj_song' },
-    resultText: '戦の歌が塔の頂から聞こえる。聴くと血が沸く。足が勝手に階段を登り始めた。',
+    resultText: '戦の歌が塔の頂から聞こえる。血が沸き、爪で顔を掻き毟った。気づけば頬から顎まで赤い筋が幾本も走っていた。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e04_hard_song',
     conditions: { s1: 'mod_hard', s2: 'subj_song' },
-    resultText: '止められない歌が塔の頂から聞こえる。すべての音を上書きする。自分の呼吸も聞こえない。',
+    resultText: '止められない歌が塔の頂から聞こえる。鼓膜が破れ、耳から血が垂れて首を濡らした。平衡感覚が消えて倒れた。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e04_sharp_song',
     conditions: { s1: 'mod_sharp', s2: 'subj_song' },
-    resultText: '金切り声が塔の頂から聞こえる。塔の壁にひびが入った。耳を塞いでも響く。',
+    resultText: '金切り声が塔の頂から聞こえる。崩れた石片が頭に落ち、こめかみから血が噴き出し、意識が霞んだ。',
     damage: 4,
     quill: 4
   },
@@ -671,7 +671,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_mighty_song',
     conditions: { s1: 'mod_mighty', s2: 'subj_song' },
-    resultText: '大地を震わせる合唱が塔の頂から聞こえる。塔全体が震えている。崩れるかもしれない。',
+    resultText: '大地を震わせる合唱が塔の頂から聞こえる。崩れた石材が肩を直撃し、鎖骨が砕けて腕が使えなくなった。',
     damage: 4,
     quill: 5
   },
@@ -721,21 +721,21 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_fire_silence',
     conditions: { s1: 'mod_fire', s2: 'subj_silence' },
-    resultText: '爆発寸前の沈黙が塔の頂から見つめている。空気が焦げている。何かが起きる直前だ。',
+    resultText: '爆発寸前の沈黙が塔の頂から見つめている。張り詰めた空気が破れ、衝撃波で鼓膜と肋が同時に裂けた。',
     damage: 4,
     quill: 5
   },
   {
     id: 'e04_hard_silence',
     conditions: { s1: 'mod_hard', s2: 'subj_silence' },
-    resultText: '音を吸い込む沈黙が塔の頂から見つめている。声を出しても消える。音の墓場だ。',
+    resultText: '音を吸い込む沈黙が塔の頂から見つめている。声を絞り出そうとして喉の筋が裂け、血の塊を吐いて膝をついた。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e04_sharp_silence',
     conditions: { s1: 'mod_sharp', s2: 'subj_silence' },
-    resultText: '言葉より痛い沈黙が塔の頂から見つめている。見えない裁き手がこちらを値踏みしている。',
+    resultText: '言葉より痛い沈黙が塔の頂から見つめている。見えない刃のような視線が頬を裂き、血が顎を伝って流れた。',
     damage: 4,
     quill: 6
   },
@@ -749,14 +749,14 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_mighty_silence',
     conditions: { s1: 'mod_mighty', s2: 'subj_silence' },
-    resultText: '圧倒的な沈黙が塔の頂から見つめている。音の存在を許さない。世界が黙っている。',
+    resultText: '圧倒的な沈黙が塔の頂から見つめている。耳の奥が潰れ、鼻と口から同時に血が溢れて石段に散った。',
     damage: 4,
     quill: 5
   },
   {
     id: 'e04_frozen_silence',
     conditions: { s1: 'mod_frozen', s2: 'subj_silence' },
-    resultText: '息も凍る沈黙が塔の頂から見つめている。時間が止まったような塔の頂。',
+    resultText: '息も凍る沈黙が塔の頂から見つめている。吸った空気が肺で凍り、胸の内に氷の棘が走るような激痛が走った。',
     damage: 3,
     quill: 5
   },
@@ -770,7 +770,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_cursed_silence',
     conditions: { s1: 'mod_cursed', s2: 'subj_silence' },
-    resultText: '声を奪う沈黙が塔の頂から見つめている。口は動くが音が出ない。塔の頂で叫んでも世界に届かない。',
+    resultText: '声を奪う沈黙が塔の頂から見つめている。叫ぼうとして喉の筋が裂け、赤い飛沫が唇を濡らし膝から崩れた。',
     damage: 4,
     quill: 6
   },
@@ -798,21 +798,21 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_fire_knight',
     conditions: { s1: 'mod_fire', s2: 'subj_knight' },
-    resultText: '鎧ごと炎に包まれた騎士が塔の頂から見つめている。塔の先端が燃えている。',
+    resultText: '鎧ごと炎に包まれた騎士が塔の頂から見つめている。飛び降りて斬りかかられ、胸と腹が同時に焼かれ裂かれた。',
     damage: 5,
     quill: 4
   },
   {
     id: 'e04_hard_knight',
     conditions: { s1: 'mod_hard', s2: 'subj_knight' },
-    resultText: '分厚い鎧の騎士が塔の頂から見つめている。石像のように微動だにしない。何世紀もこうしている。',
+    resultText: '分厚い鎧の騎士が塔の頂から見つめている。すり抜けざまに小手が腹を打ち、内臓に響く衝撃で胃液が逆流した。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e04_sharp_knight',
     conditions: { s1: 'mod_sharp', s2: 'subj_knight' },
-    resultText: '剣の達人が塔の頂から見つめている。冷たい目で間合いを測っている。塔の階段が戦場になる。',
+    resultText: '剣の達人が塔の頂から見つめている。一瞬の突きで脇腹が深く裂かれ、指先に臓腑の感触があった。意識が遠のく。',
     damage: 5,
     quill: 4
   },
@@ -827,28 +827,28 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_mighty_knight',
     conditions: { s1: 'mod_mighty', s2: 'subj_knight' },
-    resultText: '巨体の重装騎士が塔の頂から見つめている。地面が軋む。塔の最後の砦だ。',
+    resultText: '巨体の重装騎士が塔の頂から見つめている。大剣で胴を横に薙がれ、肋が裂けて内臓が露わになった。',
     damage: 5,
     quill: 3
   },
   {
     id: 'e04_frozen_knight',
     conditions: { s1: 'mod_frozen', s2: 'subj_knight' },
-    resultText: '氷に閉じ込められた騎士が塔の頂から見つめている。剣を構えた姿勢のまま凍っている。',
+    resultText: '氷に閉じ込められた騎士が塔の頂から見つめている。近づいた腕が凍え、指先が黒く変色して動かなくなった。',
     damage: 3,
     quill: 6
   },
   {
     id: 'e04_clear_knight',
     conditions: { s1: 'mod_clear', s2: 'subj_knight' },
-    resultText: '影の薄い騎士が塔の頂から見つめている。いるのに気づかず登り、背後で剣が鳴った。',
+    resultText: '影の薄い騎士が塔の頂から見つめている。背後からの一太刀で肩甲骨が裂け、旅装の背が血で黒く染まった。',
     damage: 3,
     quill: 6
   },
   {
     id: 'e04_cursed_knight',
     conditions: { s1: 'mod_cursed', s2: 'subj_knight' },
-    resultText: '黒い鎧の騎士が塔の頂から見つめている。兜の奥の赤い目。塔の呪いに囚われた番人だ。',
+    resultText: '黒い鎧の騎士が塔の頂から見つめている。振り下ろされた黒い剣が腹を貫き、切先が背まで突き出て血が噴き出した。',
     damage: 5,
     quill: 5
   },
@@ -876,7 +876,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_fire_witch',
     conditions: { s1: 'mod_fire', s2: 'subj_witch' },
-    resultText: '炎の魔法で全身を包む魔女が塔の頂から見つめている。塔が炎に照らされる。',
+    resultText: '炎の魔法で全身を包む魔女が塔の頂から見つめている。指先から放たれた炎球が胸を撃ち抜き、心臓の奥まで焼けた。',
     damage: 5,
     quill: 4
   },
@@ -890,28 +890,28 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_sharp_witch',
     conditions: { s1: 'mod_sharp', s2: 'subj_witch' },
-    resultText: '鉤鼻に鋭い目の魔女が塔の頂から見つめている。嘘を一言で見抜く。すべてお見通しだ。',
+    resultText: '鉤鼻に鋭い目の魔女が塔の頂から見つめている。嘘を見抜かれた罰として、呪言で額に深い裂傷が刻まれた。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e04_broken_witch',
     conditions: { s1: 'mod_broken', s2: 'subj_witch' },
-    resultText: '魔力が暴走した魔女が塔の頂から見つめている。呪文が途切れ途切れ。塔の壁に魔法の痕跡が散る。',
+    resultText: '魔力が暴走した魔女が塔の頂から見つめている。暴発した呪文が脇腹で破裂し、衣と肉が焦げて垂れ下がった。',
     damage: 3,
     quill: 6
   },
   {
     id: 'e04_mighty_witch',
     conditions: { s1: 'mod_mighty', s2: 'subj_witch' },
-    resultText: '腕の太い魔女が塔の頂から見つめている。杖は使わない。拳で殴る。塔の壁に拳の跡がある。',
+    resultText: '腕の太い魔女が塔の頂から見つめている。階段で掴まれ、鈍器のような拳で顎が砕け、歯が口の中で折れた。',
     damage: 4,
     quill: 6
   },
   {
     id: 'e04_frozen_witch',
     conditions: { s1: 'mod_frozen', s2: 'subj_witch' },
-    resultText: '氷の魔法を使う魔女が塔の頂から見つめている。霜が広がる。塔の頂が白く染まっていく。',
+    resultText: '氷の魔法を使う魔女が塔の頂から見つめている。呪文で脚の血が凍り、膝から下の感覚を失って石段に転げ落ちた。',
     damage: 4,
     quill: 4
   },
@@ -926,7 +926,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_cursed_witch',
     conditions: { s1: 'mod_cursed', s2: 'subj_witch' },
-    resultText: '自分の呪いに蝕まれた魔女が塔の頂から見つめている。体が変異している。塔に閉じこもった理由がわかった。',
+    resultText: '自分の呪いに蝕まれた魔女が塔の頂から見つめている。掴まれた腕を伝って呪いが這い上がり、肩まで皮膚が爛れて黒く変色した。',
     damage: 4,
     quill: 6
   },
@@ -954,21 +954,21 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_fire_king',
     conditions: { s1: 'mod_fire', s2: 'subj_king' },
-    resultText: '炎の冠を戴く王が塔の頂から見つめている。怒りで塔が燃えている。何を怒っているのか。',
+    resultText: '炎の冠を戴く王が塔の頂から見つめている。一瞥で旅装が発火し、背と肩の皮膚が溶けて衣と一体になった。',
     damage: 5,
     quill: 4
   },
   {
     id: 'e04_hard_king',
     conditions: { s1: 'mod_hard', s2: 'subj_king' },
-    resultText: '微動だにしない王が塔の頂から見つめている。何世紀もこうして世界を見ている。',
+    resultText: '微動だにしない王が塔の頂から見つめている。下された一言で膝が勝手に折れ、石段に額を打ちつけて前歯が欠けた。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e04_sharp_king',
     conditions: { s1: 'mod_sharp', s2: 'subj_king' },
-    resultText: '鷹のような目で見据える王が塔の頂から見つめている。何も見逃さない。世界を監視している。',
+    resultText: '鷹のような目で見据える王が塔の頂から見つめている。見咎められた瞬間、見えない刃が鎖骨を断ち、肩から血が噴いた。',
     damage: 4,
     quill: 5
   },
@@ -983,14 +983,14 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_mighty_king',
     conditions: { s1: 'mod_mighty', s2: 'subj_king' },
-    resultText: '戦士王が塔の頂から見つめている。背中に傷がない。この王は一度も退いたことがない。',
+    resultText: '戦士王が塔の頂から見つめている。退いたことのない大剣が胴を横に薙ぎ、あばらが裂けて臓腑が露わになった。',
     damage: 5,
     quill: 4
   },
   {
     id: 'e04_frozen_king',
     conditions: { s1: 'mod_frozen', s2: 'subj_king' },
-    resultText: '氷の王が塔の頂から見つめている。吐く言葉が白い。塔の頂が凍りつく。',
+    resultText: '氷の王が塔の頂から見つめている。一言ごとに体の芯が冷え、指と耳が黒く凍って感覚を失った。',
     damage: 4,
     quill: 5
   },
@@ -1004,7 +1004,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_cursed_king',
     conditions: { s1: 'mod_cursed', s2: 'subj_king' },
-    resultText: '触れたものが金になる王が塔の頂から見つめている。塔の壁が金色に光っている。孤独な王だ。',
+    resultText: '触れたものが金になる王が塔の頂から見つめている。掴まれた肩から金が広がり、鎖骨が重みで砕けた。',
     damage: 4,
     quill: 6
   },
@@ -1032,21 +1032,21 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_fire_ghost',
     conditions: { s1: 'mod_fire', s2: 'subj_ghost' },
-    resultText: '炎をまとった亡霊が塔の頂から見つめている。怨念が燃えている。塔が炎に照らされる。',
+    resultText: '炎をまとった亡霊が塔の頂から見つめている。覆いかぶさられ、胸と両腕の皮膚が焼け爛れて衣と一体になった。',
     damage: 4,
     quill: 4
   },
   {
     id: 'e04_hard_ghost',
     conditions: { s1: 'mod_hard', s2: 'subj_ghost' },
-    resultText: '何百年もそこに立つ亡霊が塔の頂から見つめている。動かない。塔と一体化している。',
+    resultText: '何百年もそこに立つ亡霊が塔の頂から見つめている。すり抜けた身体が氷水に浸したように痺れ、鼻から血が流れた。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e04_sharp_ghost',
     conditions: { s1: 'mod_sharp', s2: 'subj_ghost' },
-    resultText: 'こちらの罪を見透かす目の亡霊が塔の頂から見つめている。視線が刺さる。逃げられない。',
+    resultText: 'こちらの罪を見透かす目の亡霊が塔の頂から見つめている。視線に射抜かれた胸の奥で血管が破れ、口に血が広がった。',
     damage: 4,
     quill: 5
   },
@@ -1060,14 +1060,14 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_mighty_ghost',
     conditions: { s1: 'mod_mighty', s2: 'subj_ghost' },
-    resultText: '鎧武者の亡霊が塔の頂から見つめている。生前より強い。塔の最後の番人だ。',
+    resultText: '鎧武者の亡霊が塔の頂から見つめている。実体のない刃が腹を貫き、血の塊を吐きながら石段に倒れ伏した。',
     damage: 5,
     quill: 4
   },
   {
     id: 'e04_frozen_ghost',
     conditions: { s1: 'mod_frozen', s2: 'subj_ghost' },
-    resultText: '触れると凍傷する亡霊が塔の頂から見つめている。通った跡に霜。塔の頂が冷え切っている。',
+    resultText: '触れると凍傷する亡霊が塔の頂から見つめている。掠めた肩の皮膚が白く死に、腕に力が入らず剣を取り落とした。',
     damage: 4,
     quill: 4
   },
@@ -1081,7 +1081,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_cursed_ghost',
     conditions: { s1: 'mod_cursed', s2: 'subj_ghost' },
-    resultText: '呪いに縛られた亡霊が塔の頂から見つめている。苦しみの表情。塔から離れられない。',
+    resultText: '呪いに縛られた亡霊が塔の頂から見つめている。近づくと呪いが肌を這い、胸が締めつけられて血の混じった息が漏れた。',
     damage: 4,
     quill: 6
   },
@@ -1109,21 +1109,21 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_fire_mirror',
     conditions: { s1: 'mod_fire', s2: 'subj_mirror' },
-    resultText: '鏡面に炎が映っている。周囲に火はない。鏡の中の世界が燃え落ちている。',
+    resultText: '鏡面に炎が映っている。覗き込んだ瞬間、鏡の炎が現実に飛び移り、右頬と髪が焼け焦げた。',
     damage: 3,
     quill: 7
   },
   {
     id: 'e04_hard_mirror',
     conditions: { s1: 'mod_hard', s2: 'subj_mirror' },
-    resultText: '何をしても割れない鏡が塔の頂から見つめている。塔の壁に嵌め込まれている。世界を映す盾だ。',
+    resultText: '何をしても割れない鏡が塔の頂から見つめている。殴り続けるうちに拳の骨が折れ、指が三本横を向いた。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e04_sharp_mirror',
     conditions: { s1: 'mod_sharp', s2: 'subj_mirror' },
-    resultText: '割れ鏡の破片が塔の頂に散らばっている。縁が刃のように鋭い。反射光が目を射す。',
+    resultText: '割れ鏡の破片が塔の頂に散らばっている。踏み抜いた破片が足裏から甲まで貫通し、靴が血でぐっしょり濡れた。',
     damage: 4,
     quill: 4
   },
@@ -1137,7 +1137,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_mighty_mirror',
     conditions: { s1: 'mod_mighty', s2: 'subj_mirror' },
-    resultText: '巨大な姿見が塔の頂から見つめている。世界を映している。鏡の中の自分が目を逸らさない。',
+    resultText: '巨大な姿見が塔の頂から見つめている。鏡の中の自分が剣を抜き、現実の胸に同じ深さの刺し傷が開いた。',
     damage: 3,
     quill: 7,
     rewardItems: [{ id: 'item_e04_mighty_mirror', name: '塔の鏡の欠片', description: '覗くと世界が少し違って見える。歪んでいるのはどちらか', sellPrice: 12 }]
@@ -1159,7 +1159,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_cursed_mirror',
     conditions: { s1: 'mod_cursed', s2: 'subj_mirror' },
-    resultText: '覗いた者の姿が残る鏡が塔の頂から見つめている。中に影たちが蠢く。覗いてしまった。',
+    resultText: '覗いた者の姿が残る鏡が塔の頂から見つめている。中の影に腕を掴まれ、引き摺り込まれかけた肩が脱臼した。',
     damage: 4,
     quill: 5
   },
@@ -1187,7 +1187,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_fire_doll',
     conditions: { s1: 'mod_fire', s2: 'subj_doll' },
-    resultText: '火がついた藁人形が塔の頂から見つめている。燃えながら立っている。塔の先端が松明になっている。',
+    resultText: '火がついた藁人形が塔の頂から見つめている。落ちてきた燃え殻が肩に絡みつき、旅装と肩の皮膚が焼け爛れた。',
     damage: 3,
     quill: 5
   },
@@ -1201,7 +1201,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_sharp_doll',
     conditions: { s1: 'mod_sharp', s2: 'subj_doll' },
-    resultText: '関節が刃の操り人形が塔の頂から見つめている。糸が見えない。風に揺れて斬りつけてくる。',
+    resultText: '関節が刃の操り人形が塔の頂から見つめている。振り下ろされた腕で胸から腹まで深く斬られ、血が旅装を染めた。',
     damage: 4,
     quill: 5
   },
@@ -1215,7 +1215,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_mighty_doll',
     conditions: { s1: 'mod_mighty', s2: 'subj_doll' },
-    resultText: '等身大の木彫り人形が塔の頂から見つめている。腕が丸太のように太い。ゴーレムだ。',
+    resultText: '等身大の木彫り人形が塔の頂から見つめている。丸太のような腕の一撃で胸骨が砕け、息を吸うたび肺に棘が刺さる痛みが走る。',
     damage: 4,
     quill: 4
   },
@@ -1236,7 +1236,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_cursed_doll',
     conditions: { s1: 'mod_cursed', s2: 'subj_doll' },
-    resultText: '夜になると位置が変わる人形が塔の頂から見つめている。朝になると一段降りている。',
+    resultText: '夜になると位置が変わる人形が塔の頂から見つめている。背後に回り込んだ小さな手が首を絞め、気道が潰れて視界が暗くなった。',
     damage: 3,
     quill: 6
   },
@@ -1264,14 +1264,14 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_fire_rain',
     conditions: { s1: 'mod_fire', s2: 'subj_rain' },
-    resultText: '火の雨が塔の頂から降っている。灼熱の滴が塔を伝い落ちる。塔が溶けている。',
+    resultText: '火の雨が塔の頂から降っている。灼熱の滴が頭と肩に降り注ぎ、全身に斑の火傷が広がって意識が遠のいた。',
     damage: 5,
     quill: 4
   },
   {
     id: 'e04_hard_rain',
     conditions: { s1: 'mod_hard', s2: 'subj_rain' },
-    resultText: '雹が塔の頂から降っている。石のような氷の粒が叩きつける。塔の階段が削れている。',
+    resultText: '雹が塔の頂から降っている。石のような氷の粒が頭を打ち、血が耳の後ろから滴り、眩暈で膝を折った。',
     damage: 4,
     quill: 4
   },
@@ -1292,14 +1292,14 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_mighty_rain',
     conditions: { s1: 'mod_mighty', s2: 'subj_rain' },
-    resultText: '豪雨が塔の頂から降っている。滝のような水量。塔の階段が滝になっている。',
+    resultText: '豪雨が塔の頂から降っている。滝のような水量に足をさらわれ、石段を滑り落ちて肩と腰を痛打した。',
     damage: 4,
     quill: 4
   },
   {
     id: 'e04_frozen_rain',
     conditions: { s1: 'mod_frozen', s2: 'subj_rain' },
-    resultText: '凍雨が塔の頂から降っている。触れたものを氷の膜で覆う。塔の壁が氷で光っている。',
+    resultText: '凍雨が塔の頂から降っている。浴びた皮膚が氷の膜に覆われ、剥がすと顔の皮が一緒に剥がれて血が滲んだ。',
     damage: 3,
     quill: 5
   },
@@ -1313,7 +1313,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_cursed_rain',
     conditions: { s1: 'mod_cursed', s2: 'subj_rain' },
-    resultText: '浴びると動けなくなる雨が塔の頂から降っている。足に根が生えた。塔の上で立ち往生だ。',
+    resultText: '浴びると動けなくなる雨が塔の頂から降っている。足に根が生え、引き抜く時に足裏の肉が石段に残った。',
     damage: 4,
     quill: 5
   },

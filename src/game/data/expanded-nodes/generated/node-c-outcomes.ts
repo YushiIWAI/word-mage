@@ -5,7 +5,7 @@ export const nodeCOutcomes: Outcome[] = [
   {
     id: 'c_orig_orig',
     conditions: { s2: 'orig_c_subj', s4: 'orig_c_pred' },
-    resultText: '呪われた荊が街道を覆っている。黒い棘が石畳に食い込み、触れた者を離さない。強引にもぎ取って進む。',
+    resultText: '呪われた荊が街道を覆っている。強引にもぎ取る間、黒い棘が手の平と腕に深く食い込み、抜いた後も血が止まらなかった。',
     damage: 3,
     quill: 2
   },
@@ -48,21 +48,21 @@ export const nodeCOutcomes: Outcome[] = [
   {
     id: 'c_flame_cover',
     conditions: { s2: 'subj_flame', s4: 'orig_c_pred' },
-    resultText: '呪われた炎が街道を覆っている。燃やしたものの幻を映す炎が、かつての旅人たちの影を揺らめかせている。',
+    resultText: '呪われた炎が街道を覆っている。旅人たちの影に混じって自分の焼ける姿が映り、同じ箇所に深い火傷が浮かび上がった。',
     damage: 4,
     quill: 3
   },
   {
     id: 'c_ice_cover',
     conditions: { s2: 'subj_ice', s4: 'orig_c_pred' },
-    resultText: '呪われた氷が街道を覆っている。溶けない氷が石畳を呑み込み、永遠の冬を広げている。滑りながら渡る。',
+    resultText: '呪われた氷が街道を覆っている。滑って何度も転び、手を突いた先の氷で掌が裂け、凍傷で指先の感覚が失われた。',
     damage: 3,
     quill: 3
   },
   {
     id: 'c_shadow_cover',
     conditions: { s2: 'subj_shadow', s4: 'orig_c_pred' },
-    resultText: '呪われた影が街道を覆っている。触れたものを影に変える闇が、道を黒く塗りつぶしている。自分の影が引き摺られる感覚がある。',
+    resultText: '呪われた影が街道を覆っている。自分の影が引き摺られ、肉体の一部も連動して伸び、腕の骨が脱臼した。',
     damage: 3,
     quill: 5,
     rewardItems: [{ id: 'item_c_shadow_cover', name: '影の切れ端', description: '誰のものでもない影。灯りに当てると震える', sellPrice: 8 }]
@@ -70,7 +70,7 @@ export const nodeCOutcomes: Outcome[] = [
   {
     id: 'c_song_cover',
     conditions: { s2: 'subj_song', s4: 'orig_c_pred' },
-    resultText: '呪われた歌が街道を覆っている。頭から離れない旋律が霧のように漂い、正気を少しずつ削る。耳を塞いでも骨に響く。',
+    resultText: '呪われた歌が街道を覆っている。骨に響く旋律で頭蓋が内側から押され、鼻血が止まらず、耳からも赤い滴が垂れた。',
     damage: 3,
     quill: 4
   },
@@ -92,7 +92,7 @@ export const nodeCOutcomes: Outcome[] = [
   {
     id: 'c_witch_cover',
     conditions: { s2: 'subj_witch', s4: 'orig_c_pred' },
-    resultText: '呪われた魔女が街道を覆っている。自分の呪いに蝕まれた魔女が、変異した体で道を這っている。触れると呪いが移るという。',
+    resultText: '呪われた魔女が街道を覆っている。すれ違いざまに変異した指が脛を掠め、触れた箇所の皮膚が黒く硬化して感覚を失った。',
     damage: 3,
     quill: 4
   },
@@ -128,14 +128,14 @@ export const nodeCOutcomes: Outcome[] = [
   {
     id: 'c_rain_cover',
     conditions: { s2: 'subj_rain', s4: 'orig_c_pred' },
-    resultText: '呪われた雨が街道を覆っている。浴びた者を動けなくする雨が、低い雲から絶え間なく降り注ぐ。足元に水が溜まり、根が生えたように重い。',
+    resultText: '呪われた雨が街道を覆っている。浴びた箇所から筋肉が麻痺し、引き剥がすように歩くたびに足首の腱が断裂寸前まで伸びた。',
     damage: 3,
     quill: 4
   },
   {
     id: 'c_orig_block',
     conditions: { s2: 'orig_c_subj', s4: 'pred_block' },
-    resultText: '呪われた荊が街道を塞いでいる。黒い蔓が壁のように立ちはだかる。切っても切っても生えてくる。',
+    resultText: '呪われた荊が街道を塞いでいる。切っても生えてくる蔓に抱え込まれ、棘が脇腹を貫通してから引き剥がされた。',
     damage: 3,
     quill: 3
   },
@@ -150,7 +150,7 @@ export const nodeCOutcomes: Outcome[] = [
   {
     id: 'c_snake_block',
     conditions: { s2: 'subj_snake', s4: 'pred_block' },
-    resultText: '呪われた蛇が街道を塞いでいる。脱皮するたびに大きくなる蛇が、とぐろを巻いて道を埋めている。',
+    resultText: '呪われた蛇が街道を塞いでいる。とぐろの隙間を這って抜ける際、鱗の縁で腕を深く切り裂かれ、衣服が血に染まった。',
     damage: 3,
     quill: 3
   },
@@ -171,28 +171,28 @@ export const nodeCOutcomes: Outcome[] = [
   {
     id: 'c_wind_block',
     conditions: { s2: 'subj_wind', s4: 'pred_block' },
-    resultText: '呪われた風が街道を塞いでいる。帰り道を忘れさせる風が壁のように吹きつけ、一歩も前に進めない。',
+    resultText: '呪われた風が街道を塞いでいる。風に弾き飛ばされて街道脇の石壁に叩きつけられ、後頭部から血が流れた。',
     damage: 3,
     quill: 3
   },
   {
     id: 'c_flame_block',
     conditions: { s2: 'subj_flame', s4: 'pred_block' },
-    resultText: '呪われた炎が街道を塞いでいる。燃えた町の幻を映す炎が、街道を横断する火の壁になっている。',
+    resultText: '呪われた炎が街道を塞いでいる。火の壁を突破しようとして全身に炎が燃え移り、転げ回って消すまでに二の腕が炭化した。',
     damage: 4,
     quill: 3
   },
   {
     id: 'c_ice_block',
     conditions: { s2: 'subj_ice', s4: 'pred_block' },
-    resultText: '呪われた氷が街道を塞いでいる。溶けない呪いの氷が街道を壁のように封じている。叩いても罅すら入らない。',
+    resultText: '呪われた氷が街道を塞いでいる。叩き続けた拳が凍傷で紫に腫れ上がり、指の骨にも罅が入った。',
     damage: 4,
     quill: 2
   },
   {
     id: 'c_shadow_block',
     conditions: { s2: 'subj_shadow', s4: 'pred_block' },
-    resultText: '呪われた影が街道を塞いでいる。触れたものを影に変える闇が、壁のように立ち上がっている。足を踏み入れたら戻れない気がする。',
+    resultText: '呪われた影が街道を塞いでいる。踏み込んだ爪先が平面化して薄い影と化し、引き剥がすと爪が数枚剥がれ落ちた。',
     damage: 3,
     quill: 4
   },
@@ -214,7 +214,7 @@ export const nodeCOutcomes: Outcome[] = [
   {
     id: 'c_knight_block',
     conditions: { s2: 'subj_knight', s4: 'pred_block' },
-    resultText: '呪われた騎士が街道を塞いでいる。鎧から出られない騎士が、剣を構えて道に立つ。兜の奥の赤い目は、敵味方の区別がついていない。',
+    resultText: '呪われた騎士が街道を塞いでいる。兜の奥の赤い目が振り下ろす剣の一撃で太腿を深く斬られ、呪いの冷気が傷口を蝕んだ。',
     damage: 4,
     quill: 3
   },
@@ -236,7 +236,7 @@ export const nodeCOutcomes: Outcome[] = [
   {
     id: 'c_ghost_block',
     conditions: { s2: 'subj_ghost', s4: 'pred_block' },
-    resultText: '呪われた亡霊が街道を塞いでいる。成仏できない霊が苦しみの形相で立っている。すり抜けようとすると、冷たい手が服を掴む。',
+    resultText: '呪われた亡霊が街道を塞いでいる。冷たい手が胸板に突き刺さり、心臓を直接掴まれた感覚で血の気が引き、膝から崩れた。',
     damage: 3,
     quill: 3
   },
@@ -286,7 +286,7 @@ export const nodeCOutcomes: Outcome[] = [
   {
     id: 'c_dragon_guard',
     conditions: { s2: 'subj_dragon', s4: 'pred_guard' },
-    resultText: '呪われた竜が街道を守っている。かつての守護竜が呪いで暴走し、守ることと壊すことの区別を失った。街道は安全だが、旅人が危険だ。',
+    resultText: '呪われた竜が街道を守っている。旅人を敵と誤認した鉤爪が背中を掠め、外套ごと皮膚が大きく引き裂かれた。',
     damage: 4,
     quill: 5
   },
@@ -411,7 +411,7 @@ export const nodeCOutcomes: Outcome[] = [
   {
     id: 'c_snake_chase',
     conditions: { s2: 'subj_snake', s4: 'pred_chase' },
-    resultText: '呪われた蛇が街道を追いかけてくる。脱皮しながら巨大化する蛇が、這うたびに太くなりながら迫る。',
+    resultText: '呪われた蛇が街道を追いかけてくる。背後から噛みつかれ、太腿の肉が抉られて毒が血流に回り、視界が霞んだ。',
     damage: 3,
     quill: 4
   },
@@ -432,42 +432,42 @@ export const nodeCOutcomes: Outcome[] = [
   {
     id: 'c_wind_chase',
     conditions: { s2: 'subj_wind', s4: 'pred_chase' },
-    resultText: '呪われた風が街道を追いかけてくる。帰り道を忘れさせる風が背後から迫る。追いつかれたら、もう戻れない。',
+    resultText: '呪われた風が街道を追いかけてくる。追いつかれた瞬間、風が鞭のように全身を打ち、衣服ごと皮膚に無数のみみず腫れが刻まれた。',
     damage: 3,
     quill: 4
   },
   {
     id: 'c_flame_chase',
     conditions: { s2: 'subj_flame', s4: 'pred_chase' },
-    resultText: '呪われた炎が街道を追いかけてくる。燃えた町の幻を映す炎が、新しい記憶を求めて這い寄る。',
+    resultText: '呪われた炎が街道を追いかけてくる。舌が裾に絡み、下半身が紅蓮に飲まれて倒れ込むまで脚の皮膚がずる剥けになった。',
     damage: 4,
     quill: 4
   },
   {
     id: 'c_ice_chase',
     conditions: { s2: 'subj_ice', s4: 'pred_chase' },
-    resultText: '呪われた氷が街道を追いかけてくる。永遠の冬を広げる氷が、足元から這い上がる。走るたびに靴の底が凍る。',
+    resultText: '呪われた氷が街道を追いかけてくる。足元から膝まで凍結し、無理に引き剥がして前進したせいで皮膚と共に爪が剥がれた。',
     damage: 3,
     quill: 4
   },
   {
     id: 'c_shadow_chase',
     conditions: { s2: 'subj_shadow', s4: 'pred_chase' },
-    resultText: '呪われた影が街道を追いかけてくる。触れたものを影に変える闇が、自分の影を伝って迫る。振り返ると影が二つある。',
+    resultText: '呪われた影が街道を追いかけてくる。二つ目の影が踵を掴み、右脚が肩の高さまで引き延ばされて関節が外れた。',
     damage: 3,
     quill: 5
   },
   {
     id: 'c_song_chase',
     conditions: { s2: 'subj_song', s4: 'pred_chase' },
-    resultText: '呪われた歌が街道を追いかけてくる。頭から離れない旋律が、逃げるほど大きくなる。耳を塞いでも骨から響く。',
+    resultText: '呪われた歌が街道を追いかけてくる。骨から響く旋律で肋骨が共鳴して軋み、一本が折れて内側から肺に刺さった。',
     damage: 3,
     quill: 4
   },
   {
     id: 'c_silence_chase',
     conditions: { s2: 'subj_silence', s4: 'pred_chase' },
-    resultText: '呪われた沈黙が街道を追いかけてくる。声を奪う静けさが、背後からじわじわと迫る。足音が消え、息の音が消え、やがて心音だけになる。',
+    resultText: '呪われた沈黙が街道を追いかけてくる。心音すら奪われた瞬間に心臓が数秒止まり、膝から崩れ落ちて意識が遠のいた。',
     damage: 3,
     quill: 6,
     rewardItems: [{ id: 'item_c_silence_chase', name: '追う沈黙の瓶', description: '蓋を開けると周囲が一瞬静まる。閉じないと追いかけてくる', sellPrice: 12 }]
@@ -475,28 +475,28 @@ export const nodeCOutcomes: Outcome[] = [
   {
     id: 'c_knight_chase',
     conditions: { s2: 'subj_knight', s4: 'pred_chase' },
-    resultText: '呪われた騎士が街道を追いかけてくる。鎧から出られない騎士が、がしゃがしゃと音を立てて迫る。速くはないが、止まらない。',
+    resultText: '呪われた騎士が街道を追いかけてくる。追いつかれ、剣の切っ先が背中を深く抉った。鎧の冷気が傷口から染み込む。',
     damage: 3,
     quill: 4
   },
   {
     id: 'c_witch_chase',
     conditions: { s2: 'subj_witch', s4: 'pred_chase' },
-    resultText: '呪われた魔女が街道を追いかけてくる。自分の呪いを誰かに押し付けたい魔女が、必死の形相で走ってくる。',
+    resultText: '呪われた魔女が街道を追いかけてくる。掴まれた肩から呪いが押し込まれ、皮膚の下で黒い筋が這い回るように広がった。',
     damage: 3,
     quill: 4
   },
   {
     id: 'c_king_chase',
     conditions: { s2: 'subj_king', s4: 'pred_chase' },
-    resultText: '呪われた王が街道を追いかけてくる。触れたものが金になる王が、金の靴で重そうに走る。遅いが、触れられたら終わりだ。',
+    resultText: '呪われた王が街道を追いかけてくる。追いつかれ、襟首を掴まれて肩が金に変わり、重みで鎖骨が砕け落ちた。',
     damage: 3,
     quill: 5
   },
   {
     id: 'c_ghost_chase',
     conditions: { s2: 'subj_ghost', s4: 'pred_chase' },
-    resultText: '呪われた亡霊が街道を追いかけてくる。成仏できない霊が、生者の体温を求めて漂ってくる。壁を抜けるので逃げ場がない。',
+    resultText: '呪われた亡霊が街道を追いかけてくる。胸の中に手を突っ込まれて体温を吸われ、心臓が数拍止まりかけた。',
     damage: 3,
     quill: 3
   },
@@ -546,7 +546,7 @@ export const nodeCOutcomes: Outcome[] = [
   {
     id: 'c_dragon_gaze',
     conditions: { s2: 'subj_dragon', s4: 'pred_gaze' },
-    resultText: '呪われた竜が街道を見つめている。暴走した竜が、一瞬だけ正気に戻り、自分が壊した街道を見ている。哀しげな目だ。',
+    resultText: '呪われた竜が街道を見つめている。視線が合った刹那、脳内で竜の記憶が流れ込み、頭が割れるような激痛で鼻血が噴き出した。',
     damage: 3,
     quill: 6,
     rewardItems: [{ id: 'item_c_dragon_gaze', name: '守護竜の鱗', description: '触れると温かい。微かに震えている', sellPrice: 15 }]
@@ -675,7 +675,7 @@ export const nodeCOutcomes: Outcome[] = [
   {
     id: 'c_dragon_hide',
     conditions: { s2: 'subj_dragon', s4: 'pred_hide' },
-    resultText: '呪われた竜が街道を隠している。暴走した竜が翼で道を覆い、何かを守るように伏せている。街道の下に何があるのか。',
+    resultText: '呪われた竜が街道を隠している。翼の下を潜ろうとして気付かれ、鉤爪で背中を引っ掻かれて肋骨が見えるほど裂けた。',
     damage: 4,
     quill: 4
   },
@@ -704,14 +704,14 @@ export const nodeCOutcomes: Outcome[] = [
   {
     id: 'c_ice_hide',
     conditions: { s2: 'subj_ice', s4: 'pred_hide' },
-    resultText: '呪われた氷が街道を隠している。透明な氷が街道の上に張り、道が氷の下に沈んでいる。割ろうとしても罅が入らない。',
+    resultText: '呪われた氷が街道を隠している。滑る氷の上を進むうちに転倒し、頭を強く打ちつけて耳の奥で何かが切れた音がした。',
     damage: 3,
     quill: 4
   },
   {
     id: 'c_shadow_hide',
     conditions: { s2: 'subj_shadow', s4: 'pred_hide' },
-    resultText: '呪われた影が街道を隠している。触れたものを影に変える闇が、道ごと影の中に呑み込んでいる。手探りで進む。',
+    resultText: '呪われた影が街道を隠している。手探りで進む途中、伸ばした左手が影に触れて平面化し、肘まで板のように薄くなった。',
     damage: 3,
     quill: 5
   },
@@ -913,7 +913,7 @@ export const nodeCOutcomes: Outcome[] = [
     id: 'c_orig_crush',
     conditions: { s2: 'orig_c_subj', s4: 'pred_crush' },
     resultText: '呪われた荊が街道を砕く。黒い根が石畳を持ち上げ、道を粉々にする。瓦礫の上を歩く。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -927,13 +927,13 @@ export const nodeCOutcomes: Outcome[] = [
     id: 'c_snake_crush',
     conditions: { s2: 'subj_snake', s4: 'pred_crush' },
     resultText: '呪われた蛇が街道を砕く。際限なく巨大化する蛇が、体重で石畳を割りながら這う。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
     id: 'c_dragon_crush',
     conditions: { s2: 'subj_dragon', s4: 'pred_crush' },
-    resultText: '呪われた竜が街道を砕く。暴走した竜の尾が街道を叩き割る。粉塵で前が見えない。',
+    resultText: '呪われた竜が街道を砕く。尾の一撃で吹き飛ばされ、飛んだ石塊が背中と頭を直撃して意識が途切れかけた。',
     damage: 5,
     quill: 1
   },
@@ -947,35 +947,35 @@ export const nodeCOutcomes: Outcome[] = [
   {
     id: 'c_wind_crush',
     conditions: { s2: 'subj_wind', s4: 'pred_crush' },
-    resultText: '呪われた風が街道を砕く。帰り道を忘れさせる風が、暴風となって石畳を剥がしていく。道を忘れるのではなく、道ごと消す気だ。',
+    resultText: '呪われた風が街道を砕く。暴風に石畳の破片を叩きつけられ、頬と額から血が流れ、目の周りが紫に腫れた。',
     damage: 3,
     quill: 5
   },
   {
     id: 'c_flame_crush',
     conditions: { s2: 'subj_flame', s4: 'pred_crush' },
-    resultText: '呪われた炎が街道を砕く。燃えた町の幻を映す炎が石畳を焼き、膨張と収縮で割っていく。',
+    resultText: '呪われた炎が街道を砕く。割れた石畳から噴き出す炎を正面から浴び、顔の右半分に深い火傷が刻まれた。',
     damage: 4,
     quill: 3
   },
   {
     id: 'c_ice_crush',
     conditions: { s2: 'subj_ice', s4: 'pred_crush' },
-    resultText: '呪われた氷が街道を砕く。溶けない氷が石畳の隙間で膨張し、道を内側から割る。霜柱が牙のように突き出ている。',
+    resultText: '呪われた氷が街道を砕く。突き出た霜柱が靴底を貫通して足裏を深く刺し、引き抜くと血が霜柱の周囲に赤い花を描いた。',
     damage: 3,
     quill: 4
   },
   {
     id: 'c_shadow_crush',
     conditions: { s2: 'subj_shadow', s4: 'pred_crush' },
-    resultText: '呪われた影が街道を砕く。触れたものを影に変える闇が、石畳を黒く侵食して崩していく。影に触れた石が、砂のように散る。',
+    resultText: '呪われた影が街道を砕く。影に触れた石が砂となって散り、裸足で踏んだ足裏が石と共に平面化して歩くたびに剥がれた。',
     damage: 3,
     quill: 5
   },
   {
     id: 'c_song_crush',
     conditions: { s2: 'subj_song', s4: 'pred_crush' },
-    resultText: '呪われた歌が街道を砕く。正気を削る旋律が、共鳴して石畳を振動させる。硝子が割れるように道が砕けていく。',
+    resultText: '呪われた歌が街道を砕く。共鳴が体の内側にも波及し、歯が数本砕けて口の中に血と陶片のような破片が満ちた。',
     damage: 3,
     quill: 5,
     rewardItems: [{ id: 'item_c_song_crush', name: '共鳴石の破片', description: '歌うと震える。周囲のものも微かに揺れる', sellPrice: 10 }]
@@ -983,21 +983,21 @@ export const nodeCOutcomes: Outcome[] = [
   {
     id: 'c_silence_crush',
     conditions: { s2: 'subj_silence', s4: 'pred_crush' },
-    resultText: '呪われた沈黙が街道を砕く。音を飲み込む沈黙が、衝撃波のように道を割る。音がないのに、壊れていく。',
+    resultText: '呪われた沈黙が街道を砕く。音なき衝撃波が肋骨を内側から圧迫し、呼吸が止まり、唇が青白く変色した。',
     damage: 3,
     quill: 5
   },
   {
     id: 'c_knight_crush',
     conditions: { s2: 'subj_knight', s4: 'pred_crush' },
-    resultText: '呪われた騎士が街道を砕く。鎧から出られない騎士が、剣を振り回して道を壊している。呪いの苛立ちを石にぶつけている。',
+    resultText: '呪われた騎士が街道を砕く。振り回された剣が肩を掠め、衣ごと皮膚が削げて骨が白く覗いた。',
     damage: 4,
     quill: 3
   },
   {
     id: 'c_witch_crush',
     conditions: { s2: 'subj_witch', s4: 'pred_crush' },
-    resultText: '呪われた魔女が街道を砕く。暴走した魔力が地面を割る。本人も制御できていない。足元から放射状に罅が走る。',
+    resultText: '呪われた魔女が街道を砕く。暴走した魔力に巻き込まれて体が吹き飛び、落下した石畳で腕と腰を強く打った。',
     damage: 4,
     quill: 3
   },
@@ -1012,14 +1012,14 @@ export const nodeCOutcomes: Outcome[] = [
   {
     id: 'c_ghost_crush',
     conditions: { s2: 'subj_ghost', s4: 'pred_crush' },
-    resultText: '呪われた亡霊が街道を砕く。成仏できない霊の怨念が、足元の石畳に罅を入れる。怒りが実体化しかけている。',
+    resultText: '呪われた亡霊が街道を砕く。実体化した怨念が拳となって胸を打ち、息が詰まって吐いた唾に血が混じった。',
     damage: 3,
     quill: 4
   },
   {
     id: 'c_mirror_crush',
     conditions: { s2: 'subj_mirror', s4: 'pred_crush' },
-    resultText: '呪われた鏡が街道を砕く。道に散らばった鏡の破片が、反射した光で石畳を焼き切る。',
+    resultText: '呪われた鏡が街道を砕く。反射した光線が不意に腕を焼き切り、肘の下に深い熔痕が刻まれた。',
     damage: 3,
     quill: 4
   },
@@ -1033,7 +1033,7 @@ export const nodeCOutcomes: Outcome[] = [
   {
     id: 'c_rain_crush',
     conditions: { s2: 'subj_rain', s4: 'pred_crush' },
-    resultText: '呪われた雨が街道を砕く。一滴が岩に穴を開ける雨。動けなくなる呪いは関係なく、ただ降り続けるだけで道を削り取る。',
+    resultText: '呪われた雨が街道を砕く。岩に穴を開ける雨の一滴が肩を貫通し、腕に力が入らなくなった。',
     damage: 3,
     quill: 4
   },
@@ -1049,14 +1049,14 @@ export const nodeCOutcomes: Outcome[] = [
   {
     id: 'c_snake_wait',
     conditions: { s2: 'subj_snake', s4: 'pred_wait' },
-    resultText: '呪われた蛇が街道を待っている。脱皮を繰り返して太くなった蛇が、街道脇の草むらに潜んでいる。次の獲物を待つ目が光る。',
+    resultText: '呪われた蛇が街道を待っている。草むらから飛び出した大蛇が脹脛に噛みつき、毒が巡って立ち眩みと嘔吐に襲われた。',
     damage: 3,
     quill: 4
   },
   {
     id: 'c_dragon_wait',
     conditions: { s2: 'subj_dragon', s4: 'pred_wait' },
-    resultText: '呪われた竜が街道を待っている。暴走した守護竜が道の先で蹲り、目に理性のないまま何かを待ち続けている。近づけば焼かれる。',
+    resultText: '呪われた竜が街道を待っている。近づいた刹那に放たれた火炎が全身を焼き、衣の炭と混じった肉片が剥がれ落ちた。',
     damage: 5,
     quill: 3
   },
@@ -1070,28 +1070,28 @@ export const nodeCOutcomes: Outcome[] = [
   {
     id: 'c_wind_wait',
     conditions: { s2: 'subj_wind', s4: 'pred_wait' },
-    resultText: '呪われた風が街道を待っている。帰り道を忘れさせる風が、街道の先で凪いでいる。一歩踏み出した瞬間に吹くだろう。',
+    resultText: '呪われた風が街道を待っている。踏み込んだ瞬間に爆発的な突風が吹き、体が宙を舞って石壁に全身から叩きつけられた。',
     damage: 3,
     quill: 4
   },
   {
     id: 'c_flame_wait',
     conditions: { s2: 'subj_flame', s4: 'pred_wait' },
-    resultText: '呪われた炎が街道を待っている。燃やしたものの形を覚える炎が、街道の敷石の隙間で揺れている。踏めば靴の形に燃え移る。',
+    resultText: '呪われた炎が街道を待っている。踏み込んだ足に靴の形そのまま炎が燃え移り、足の皮が靴底に張りついて剥がれ落ちた。',
     damage: 4,
     quill: 3
   },
   {
     id: 'c_ice_wait',
     conditions: { s2: 'subj_ice', s4: 'pred_wait' },
-    resultText: '呪われた氷が街道を待っている。溶けない氷が道の窪みに溜まり、永遠の冬を広げ続ける。近づくと足元から冷気が這い上がる。',
+    resultText: '呪われた氷が街道を待っている。窪みに溜まった氷を踏み抜き、足首まで浸かった間に皮膚が凍結して壊死が始まった。',
     damage: 3,
     quill: 3
   },
   {
     id: 'c_shadow_wait',
     conditions: { s2: 'subj_shadow', s4: 'pred_wait' },
-    resultText: '呪われた影が街道を待っている。触れたものを影にする影が、日向の真ん中で待ち構えている。陽が差すほど影は濃い。',
+    resultText: '呪われた影が街道を待っている。踏み込んだ途端に右半身が平面化し、引き剥がした時に肋骨と肉が一部そのまま影に残った。',
     damage: 4,
     quill: 4
   },
@@ -1105,28 +1105,28 @@ export const nodeCOutcomes: Outcome[] = [
   {
     id: 'c_silence_wait',
     conditions: { s2: 'subj_silence', s4: 'pred_wait' },
-    resultText: '呪われた沈黙が街道を待っている。声を奪う沈黙が、街道の先に溜まっている。入れば叫んでも音が出ない。',
+    resultText: '呪われた沈黙が街道を待っている。踏み込んだ瞬間に声も呼吸音も奪われ、肺が無音のまま痙攣して倒れた。',
     damage: 3,
     quill: 4
   },
   {
     id: 'c_knight_wait',
     conditions: { s2: 'subj_knight', s4: 'pred_wait' },
-    resultText: '呪われた騎士が街道を待っている。黒い鎧の騎士が道の真ん中に立ち、兜の奥の赤い目がこちらを捉えている。逃げても追ってくる類だ。',
+    resultText: '呪われた騎士が街道を待っている。逃げた背中に追い斬りの剣が入り、脇腹から腰まで深く斬られて血が地面を染めた。',
     damage: 4,
     quill: 3
   },
   {
     id: 'c_witch_wait',
     conditions: { s2: 'subj_witch', s4: 'pred_wait' },
-    resultText: '呪われた魔女が街道を待っている。自分の呪いに蝕まれた魔女が、道端に座り込んで旅人を待っている。何の用かは聞かない方がいい。',
+    resultText: '呪われた魔女が街道を待っている。無視して通ろうとした背に呪文が突き刺さり、全身の皮膚に黒い紋様が浮いて激痛が走った。',
     damage: 3,
     quill: 4
   },
   {
     id: 'c_king_wait',
     conditions: { s2: 'subj_king', s4: 'pred_wait' },
-    resultText: '呪われた王が街道を待っている。触れたものが金になる王が、街道の真ん中で手を広げている。握手を求めているのか。',
+    resultText: '呪われた王が街道を待っている。避けきれずに掠った肩が金に変わり、重みで鎖骨が折れ、腕が使い物にならなくなった。',
     damage: 3,
     quill: 5,
     rewardItems: [{ id: 'item_c_king_wait', name: '黄金の手形', description: '王が街道に残した手のひらの跡。石畳が金に変わっている', sellPrice: 15 }]
@@ -1141,7 +1141,7 @@ export const nodeCOutcomes: Outcome[] = [
   {
     id: 'c_mirror_wait',
     conditions: { s2: 'subj_mirror', s4: 'pred_wait' },
-    resultText: '呪われた鏡が街道を待っている。覗いた者の姿を閉じ込める鏡が、道の脇に立てかけてある。親切な罠だ。',
+    resultText: '呪われた鏡が街道を待っている。一瞬視線を投げただけで魂の欠片が吸い出され、胸の中が空洞になったように呼吸が浅くなった。',
     damage: 3,
     quill: 4
   },

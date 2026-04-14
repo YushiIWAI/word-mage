@@ -116,7 +116,7 @@ export const nodeP11Outcomes: Outcome[] = [
     id: 'p11_sharp_sing',
     conditions: { s1: 'mod_sharp', s4: 'pred_sing' },
     resultText: '鋭い炎が灯台で歌っている。高周波の金属音。耳の奥が痛い。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -153,7 +153,7 @@ export const nodeP11Outcomes: Outcome[] = [
     id: 'p11_cursed_sing',
     conditions: { s1: 'mod_cursed', s4: 'pred_sing' },
     resultText: '呪われた炎が灯台で歌っている。一度聴くと頭から離れない歌だ。三日後もまだ口ずさんでいる。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -209,7 +209,7 @@ export const nodeP11Outcomes: Outcome[] = [
     id: 'p11_mighty_dance',
     conditions: { s1: 'mod_mighty', s4: 'pred_dance' },
     resultText: '火柱の炎が灯台で踊っている。灯台が揺れている。熱波が渦を巻き、肌が乾いてひび割れる。踊りに巻き込まれたら焼け死ぬ。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
@@ -231,7 +231,7 @@ export const nodeP11Outcomes: Outcome[] = [
     id: 'p11_cursed_dance',
     conditions: { s1: 'mod_cursed', s4: 'pred_dance' },
     resultText: '呪われた炎が灯台で踊っている。見つめていると体が勝手に動き出す。足が止められない。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
@@ -259,7 +259,7 @@ export const nodeP11Outcomes: Outcome[] = [
     id: 'p11_fire_laugh',
     conditions: { s1: 'mod_fire', s4: 'pred_laugh' },
     resultText: '燃え盛る炎が灯台で笑っている。ゴウゴウと轟く笑い声。灯台そのものを燃やし尽くす気だ。',
-    damage: 5,
+    damage: 2,
     quill: 2
   },
   {
@@ -309,7 +309,7 @@ export const nodeP11Outcomes: Outcome[] = [
     id: 'p11_cursed_laugh',
     conditions: { s1: 'mod_cursed', s4: 'pred_laugh' },
     resultText: '呪われた炎が灯台で笑っている。燃えた町の幻が炎の中で笑っている。笑い声が耳にこびりつく。',
-    damage: 4,
+    damage: 2,
     quill: 4
   },
   {
@@ -366,7 +366,7 @@ export const nodeP11Outcomes: Outcome[] = [
     id: 'p11_mighty_sleep',
     conditions: { s1: 'mod_mighty', s4: 'pred_sleep' },
     resultText: '火柱の炎が灯台で眠っている。いびきのように熱風が吹き出し、肌が乾いて痛む。近くにいるだけで体力を削られる。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
@@ -466,7 +466,7 @@ export const nodeP11Outcomes: Outcome[] = [
     id: 'p11_cursed_melt',
     conditions: { s1: 'mod_cursed', s4: 'pred_melt' },
     resultText: '呪われた炎が灯台で溶けている。溶けたものが二度と冷めない。灯台の床が永遠に熱い。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
@@ -495,7 +495,7 @@ export const nodeP11Outcomes: Outcome[] = [
     id: 'p11_fire_flee',
     conditions: { s1: 'mod_fire', s4: 'pred_flee' },
     resultText: '燃え盛る炎が灯台で逃げていく。逃げた跡が火の道になっている。灯台が燃え上がった。',
-    damage: 5,
+    damage: 2,
     quill: 2
   },
   {
@@ -524,7 +524,7 @@ export const nodeP11Outcomes: Outcome[] = [
     id: 'p11_mighty_flee',
     conditions: { s1: 'mod_mighty', s4: 'pred_flee' },
     resultText: '火柱の炎が灯台で逃げていく。灯台の屋根を突き破って空に昇った。崩れた瓦礫に腕を打たれ、熱風で眉が焦げた。',
-    damage: 3,
+    damage: 2,
     quill: 7,
     rewardItems: [{ id: 'item_p11_mighty_flee', name: '焦げた灯台の石', description: '火柱が抜けた穴の縁の石。まだ熱い', sellPrice: 7 }]
   },
@@ -589,7 +589,7 @@ export const nodeP11Outcomes: Outcome[] = [
     id: 'p11_sharp_gaze',
     conditions: { s1: 'mod_sharp', s4: 'pred_gaze' },
     resultText: '鋭い炎が灯台でこちらを見つめている。光の焦点が自分に合っている。肌がじりじりと焼ける。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -603,7 +603,7 @@ export const nodeP11Outcomes: Outcome[] = [
     id: 'p11_mighty_gaze',
     conditions: { s1: 'mod_mighty', s4: 'pred_gaze' },
     resultText: '火柱の炎が灯台でこちらを見つめている。天を衝く炎の中に巨大な瞳がある。見据えられただけで汗が蒸発し、膝の力が抜ける。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
@@ -688,7 +688,7 @@ export const nodeP11Outcomes: Outcome[] = [
     id: 'p11_frozen_wait',
     conditions: { s1: 'mod_frozen', s4: 'pred_wait' },
     resultText: '青白い炎が灯台で待っている。灯台に近づくほど気温が下がる。誘い込まれている。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -702,7 +702,7 @@ export const nodeP11Outcomes: Outcome[] = [
     id: 'p11_cursed_wait',
     conditions: { s1: 'mod_cursed', s4: 'pred_wait' },
     resultText: '呪われた炎が灯台で待っている。炎を見つめた瞬間、足が竦んで動けなくなった。帰れないのは船だけではない。',
-    damage: 4,
+    damage: 2,
     quill: 5
   },
   {
@@ -781,7 +781,7 @@ export const nodeP11Outcomes: Outcome[] = [
     id: 'p11_cursed_whisper',
     conditions: { s1: 'mod_cursed', s4: 'pred_whisper' },
     resultText: '呪われた炎が灯台で囁いている。「こちらへ」と。従いかけた足が勝手に動く。気づけば窓際に立っていた。崖の下に海が光っている。',
-    damage: 4,
+    damage: 2,
     quill: 5
   },
   {

@@ -131,7 +131,7 @@ export const nodeP06Outcomes: Outcome[] = [
   {
     id: 'p06_mighty_snake',
     conditions: { s1: 'mod_mighty', s2: 'subj_snake' },
-    resultText: '屈強な蛇が森に待っている。大蛇。胴回りが幹ほどある。とぐろの中から、こちらを見下ろしている。',
+    resultText: '屈強な蛇が森に待っている。大蛇。胴回りが幹ほどある。気づく前に胴に巻かれた。肋骨が軋み、息が押し出される。ほどけた時には意識が飛びかけていた。',
     damage: 4,
     quill: 3
   },
@@ -153,7 +153,7 @@ export const nodeP06Outcomes: Outcome[] = [
   {
     id: 'p06_cursed_snake',
     conditions: { s1: 'mod_cursed', s2: 'subj_snake' },
-    resultText: '呪われた蛇が森に待っている。脱皮するたびに大きくなる蛇。森の木を一本ずつ締め上げている。',
+    resultText: '呪われた蛇が森に待っている。脱皮するたびに大きくなる蛇。通りがかりに尾で薙ぎ払われ、木の幹に叩きつけられた。肩の骨が軋む。',
     damage: 3,
     quill: 4
   },
@@ -369,7 +369,7 @@ export const nodeP06Outcomes: Outcome[] = [
   {
     id: 'p06_mighty_wind',
     conditions: { s1: 'mod_mighty', s2: 'subj_wind' },
-    resultText: '屈強な風が森に待っている。すべてを一方向に押し流す暴風。木が軋み、立っていられない。',
+    resultText: '屈強な風が森に待っている。すべてを一方向に押し流す暴風。木の幹ごと薙ぎ倒されるように飛ばされ、岩に背中から叩きつけられた。しばらく息ができない。',
     damage: 4,
     quill: 2
   },
@@ -391,7 +391,7 @@ export const nodeP06Outcomes: Outcome[] = [
   {
     id: 'p06_cursed_wind',
     conditions: { s1: 'mod_cursed', s2: 'subj_wind' },
-    resultText: '呪われた風が森に待っている。吹かれた途端、来た道がわからなくなった。帰り道を忘れる風だ。',
+    resultText: '呪われた風が森に待っている。吹かれた途端、来た道がわからなくなった。半日さまよい、空腹と疲労で足元がもつれ、何度も転んで膝を擦り剥いた。',
     damage: 3,
     quill: 4
   },
@@ -527,7 +527,7 @@ export const nodeP06Outcomes: Outcome[] = [
   {
     id: 'p06_mighty_ice',
     conditions: { s1: 'mod_mighty', s2: 'subj_ice' },
-    resultText: '屈強な氷が森に待っている。山のような氷塊。数百年溶けていない。森の半分を呑み込んでいる。',
+    resultText: '屈強な氷が森に待っている。山のような氷塊。数百年溶けていない。迂回しようとして足を滑らせ、氷面を滑落した。肘と腰を強く打つ。',
     damage: 3,
     quill: 3
   },
@@ -606,7 +606,7 @@ export const nodeP06Outcomes: Outcome[] = [
   {
     id: 'p06_mighty_shadow',
     conditions: { s1: 'mod_mighty', s2: 'subj_shadow' },
-    resultText: '屈強な影が森に待っている。本体より遥かに大きい影が、木々を覆い尽くしている。影のほうが森の主に見える。',
+    resultText: '屈強な影が森に待っている。本体より遥かに大きい影が、木々を覆い尽くしている。踏み込んだ途端、影の重みで膝が折れた。肩に見えない手の圧がのしかかる。',
     damage: 3,
     quill: 4
   },
@@ -764,7 +764,7 @@ export const nodeP06Outcomes: Outcome[] = [
     id: 'p06_mighty_silence',
     conditions: { s1: 'mod_mighty', s2: 'subj_silence' },
     resultText: '屈強な沈黙が森に待っている。圧倒的な無音が場を支配している。声を出すことすら許されない。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -841,7 +841,7 @@ export const nodeP06Outcomes: Outcome[] = [
   {
     id: 'p06_mighty_knight',
     conditions: { s1: 'mod_mighty', s2: 'subj_knight' },
-    resultText: '屈強な騎士が森に待っている。巨体の重装騎士。地面が軋む。森の番人として立っている。通すかどうかはこちら次第らしい。',
+    resultText: '屈強な騎士が森に待っている。巨体の重装騎士。地面が軋む。問答無用で大剣が振り下ろされた。辛うじて避けたが、衝撃で飛ばされて木の根に叩きつけられる。',
     damage: 3,
     quill: 4
   },
@@ -863,7 +863,7 @@ export const nodeP06Outcomes: Outcome[] = [
   {
     id: 'p06_cursed_knight',
     conditions: { s1: 'mod_cursed', s2: 'subj_knight' },
-    resultText: '呪われた騎士が森に待っている。黒い鎧の騎士。兜の奥の目が赤く光っている。この森から出られない呪いにかかっている。',
+    resultText: '呪われた騎士が森に待っている。黒い鎧の騎士。兜の奥の目が赤く光った瞬間、肩を剣の峰で叩き伏せられた。鎖骨が軋み、しびれが腕に広がる。',
     damage: 3,
     quill: 5
   },
@@ -920,7 +920,7 @@ export const nodeP06Outcomes: Outcome[] = [
   {
     id: 'p06_mighty_witch',
     conditions: { s1: 'mod_mighty', s2: 'subj_witch' },
-    resultText: '屈強な魔女が森に待っている。杖の代わりに拳で迎えてきた。腕が太い。森の動物たちが彼女に道を譲っている。',
+    resultText: '屈強な魔女が森に待っている。杖の代わりに拳で迎えてきた。太い腕が頬を掠め、避けきれず脇腹に一発もらった。呼吸が止まり、膝から崩れる。',
     damage: 3,
     quill: 5
   },
@@ -928,7 +928,7 @@ export const nodeP06Outcomes: Outcome[] = [
     id: 'p06_frozen_witch',
     conditions: { s1: 'mod_frozen', s2: 'subj_witch' },
     resultText: '凍てついた魔女が森に待っている。氷の魔法を使う魔女。周囲に霜が広がる。彼女の待つ場所だけ、季節が冬だ。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
@@ -942,7 +942,7 @@ export const nodeP06Outcomes: Outcome[] = [
     id: 'p06_cursed_witch',
     conditions: { s1: 'mod_cursed', s2: 'subj_witch' },
     resultText: '呪われた魔女が森に待っている。自分の呪いに蝕まれた魔女。体の一部が樹皮に変わっている。森に飲まれかけている。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
@@ -998,7 +998,7 @@ export const nodeP06Outcomes: Outcome[] = [
   {
     id: 'p06_mighty_king',
     conditions: { s1: 'mod_mighty', s2: 'subj_king' },
-    resultText: '屈強な王が森に待っている。戦士王。玉座より戦場を好む。背中に傷がない男。森で何を待っているのか、聞く勇気はない。',
+    resultText: '屈強な王が森に待っている。戦士王。挨拶代わりに木剣を突き出され、肋に当たった。加減されたはずなのに息が詰まる。',
     damage: 3,
     quill: 5
   },
@@ -1006,7 +1006,7 @@ export const nodeP06Outcomes: Outcome[] = [
     id: 'p06_frozen_king',
     conditions: { s1: 'mod_frozen', s2: 'subj_king' },
     resultText: '凍てついた王が森に待っている。氷の玉座に座る北の王。吐く言葉が白い。彼が来ると、森に冬が来る。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
@@ -1020,7 +1020,7 @@ export const nodeP06Outcomes: Outcome[] = [
     id: 'p06_cursed_king',
     conditions: { s1: 'mod_cursed', s2: 'subj_king' },
     resultText: '呪われた王が森に待っている。触れたものが金になる王。森の木が一本、金色に凍りついている。',
-    damage: 3,
+    damage: 2,
     quill: 6,
     rewardItems: [{ id: 'item_p06_cursed_king', name: '金の枝', description: '王の呪いで金になった枝。重い', sellPrice: 15 }]
   },
@@ -1176,7 +1176,7 @@ export const nodeP06Outcomes: Outcome[] = [
     id: 'p06_cursed_mirror',
     conditions: { s1: 'mod_cursed', s2: 'subj_mirror' },
     resultText: '呪われた鏡が森に待っている。覗いた者の姿が鏡に残る。鏡の中で、先に覗いた者たちが蠢いている。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
@@ -1233,7 +1233,7 @@ export const nodeP06Outcomes: Outcome[] = [
     id: 'p06_mighty_doll',
     conditions: { s1: 'mod_mighty', s2: 'subj_doll' },
     resultText: '屈強な人形が森に待っている。等身大の木彫り人形。腕が丸太のように太い。番人として森に置かれたゴーレムだ。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -1254,7 +1254,7 @@ export const nodeP06Outcomes: Outcome[] = [
     id: 'p06_cursed_doll',
     conditions: { s1: 'mod_cursed', s2: 'subj_doll' },
     resultText: '呪われた人形が森に待っている。夜になると位置が変わる人形。誰も動かしていない。こちらを追っている。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {

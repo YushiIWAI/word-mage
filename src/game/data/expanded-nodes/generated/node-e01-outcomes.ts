@@ -19,7 +19,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_fire_kitten',
     conditions: { s1: 'mod_fire', s2: 'subj_kitten' },
-    resultText: '炎をまとった子猫が玉座を守っている。本猫は呑気に毛繕いしているが、絨毯が焦げている。近づけない。',
+    resultText: '炎をまとった子猫が玉座を守っている。擦り寄られ、外套の裾が音もなく燃え上がる。腿まで赤い火脹れが走った。',
     damage: 3,
     quill: 5
   },
@@ -48,7 +48,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_mighty_kitten',
     conditions: { s1: 'mod_mighty', s2: 'subj_kitten' },
-    resultText: '子猫サイズで虎の体格をした獣が玉座を守っている。低い唸り声が王の間を満たす。小さな守護獣だ。',
+    resultText: '子猫サイズで虎の体格をした獣が玉座を守っている。低い唸りの後、鉄槌のような一撃が肋を打った。息が詰まる。',
     damage: 3,
     quill: 5
   },
@@ -105,14 +105,14 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_hard_snake',
     conditions: { s1: 'mod_hard', s2: 'subj_snake' },
-    resultText: '鉄の鱗を持つ蛇が玉座に巻きついている。噛まれたら歯が折れるのはこちらだ。掴むことも退かすこともできない。',
+    resultText: '鉄の鱗を持つ蛇が玉座に巻きついている。鞭のように振られた尾が脛を打ち、骨の奥まで響く痛みが走る。',
     damage: 3,
     quill: 4
   },
   {
     id: 'e01_sharp_snake',
     conditions: { s1: 'mod_sharp', s2: 'subj_snake' },
-    resultText: '猛毒の蛇が玉座を守っている。一噛みで血が黒く変わる。目が合った。動けない。',
+    resultText: '猛毒の蛇が玉座を守っている。一噛みで足首の血が黒く変わった。意識が遠のき、玉座の金が滲んで見える。',
     damage: 5,
     quill: 3
   },
@@ -126,7 +126,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_mighty_snake',
     conditions: { s1: 'mod_mighty', s2: 'subj_snake' },
-    resultText: '胴回りが人の腰ほどある大蛇が玉座に巻きついている。玉座ごと締め上げて軋ませている。',
+    resultText: '胴回りが人の腰ほどある大蛇が玉座に巻きついている。巻き添えで胴を締め上げられ、肋が軋んで折れかけた。',
     damage: 5,
     quill: 3
   },
@@ -184,14 +184,14 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_hard_dragon',
     conditions: { s1: 'mod_hard', s2: 'subj_dragon' },
-    resultText: '鱗が城壁のように厚い竜が玉座を守っている。どんな言葉も通じず、どんな刃も通らない。',
+    resultText: '鱗が城壁のように厚い竜が玉座を守っている。退けようと肩で押せば、岩に叩きつけられたように跳ね返された。肩が外れかける。',
     damage: 3,
     quill: 4
   },
   {
     id: 'e01_sharp_dragon',
     conditions: { s1: 'mod_sharp', s2: 'subj_dragon' },
-    resultText: '爪の一振りで床が裂ける竜が玉座を守っている。金色の目が値踏みするようにこちらを見る。',
+    resultText: '爪の一振りで床が裂ける竜が玉座を守っている。よそ見の一瞬に爪が胸を掠め、肋が剥き出しになる。血だまりが広がった。',
     damage: 5,
     quill: 3
   },
@@ -206,14 +206,14 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_mighty_dragon',
     conditions: { s1: 'mod_mighty', s2: 'subj_dragon' },
-    resultText: '山のような巨体の竜が玉座を守っている。翼を広げると王の間が暗くなる。これ以上ない番人だ。',
+    resultText: '山のような巨体の竜が玉座を守っている。翼の一打ちで宙へ吹き飛ばされ、壁に叩きつけられた。口から血が噴く。',
     damage: 5,
     quill: 2
   },
   {
     id: 'e01_frozen_dragon',
     conditions: { s1: 'mod_frozen', s2: 'subj_dragon' },
-    resultText: '氷をまとった白い竜が玉座を守っている。吐息が吹雪になり、王の間が凍り始めている。',
+    resultText: '氷をまとった白い竜が玉座を守っている。吹雪の吐息を浴び、指先が黒く凍り、瞼まで霜に縫い留められた。',
     damage: 4,
     quill: 4
   },
@@ -228,7 +228,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_cursed_dragon',
     conditions: { s1: 'mod_cursed', s2: 'subj_dragon' },
-    resultText: '暴走した守護竜が玉座を守っている。目に理性がない。かつて王に仕えた竜の成れの果てだ。',
+    resultText: '暴走した守護竜が玉座を守っている。狂った爪が肩口から腰まで裂き、旅装が血で重くなった。立っているのがやっとだ。',
     damage: 5,
     quill: 4
   },
@@ -284,7 +284,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_mighty_butterfly',
     conditions: { s1: 'mod_mighty', s2: 'subj_butterfly' },
-    resultText: '蝶のくせに羽ばたきが風を起こす。玉座の前に立つと、壁のような風圧で押し返される。',
+    resultText: '蝶のくせに羽ばたきが風を起こす。壁のような風圧で床に叩き伏せられ、肩と顎が石床に打ちつけられた。',
     damage: 3,
     quill: 6,
     rewardItems: [{ id: 'item_e01_mighty_butterfly', name: '蝶の鱗粉', description: '指につくと離れない。風に乗って渦を巻く', sellPrice: 8 }]
@@ -306,8 +306,8 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_cursed_butterfly',
     conditions: { s1: 'mod_cursed', s2: 'subj_butterfly' },
-    resultText: '追いかけると必ず迷子になる蝶が玉座の前を飛んでいる。追うと王の間の出口がわからなくなった。',
-    damage: 3,
+    resultText: '追いかけると必ず迷子になる蝶が玉座の前を飛んでいる。王の間をさまよううち喉が渇き、力尽きて柱にもたれた。',
+    damage: 2,
     quill: 5
   },
   {
@@ -341,7 +341,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_hard_wind',
     conditions: { s1: 'mod_hard', s2: 'subj_wind' },
-    resultText: '同じ方向に吹き続ける頑固な風が玉座を守っている。何百年も同じ風が吹いている。押し返される。',
+    resultText: '同じ方向に吹き続ける頑固な風が玉座を守っている。逆らって進もうとして、膝が砕けるほど踏ん張るうちに爪が剥がれた。',
     damage: 3,
     quill: 5
   },
@@ -384,8 +384,8 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_cursed_wind',
     conditions: { s1: 'mod_cursed', s2: 'subj_wind' },
-    resultText: '呪われた風が玉座を守っている。吹かれると帰り道を忘れる。王の間を出たが、どこに向かっていたか思い出せない。',
-    damage: 3,
+    resultText: '呪われた風が玉座を守っている。吹かれて帰り道を忘れ、石廊をさまよううち渇きと飢えで倒れ込んだ。',
+    damage: 2,
     quill: 5
   },
   {
@@ -412,14 +412,14 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_fire_flame',
     conditions: { s1: 'mod_fire', s2: 'subj_flame' },
-    resultText: '制御不能の大火が玉座を守っている。すべてを飲み込もうとしている。王の間が炎に沈む。',
+    resultText: '制御不能の大火が玉座を守っている。火の舌に飲まれ、背中の皮膚が溶けて衣と絡み合う。気を失いかけた。',
     damage: 5,
     quill: 3
   },
   {
     id: 'e01_hard_flame',
     conditions: { s1: 'mod_hard', s2: 'subj_flame' },
-    resultText: '消えない炎が玉座を守っている。水をかけても風を当てても揺らがない。永遠の番人だ。',
+    resultText: '消えない炎が玉座を守っている。横をすり抜けるとき頬と耳が赤く爛れ、髪の片側が焼け落ちた。',
     damage: 3,
     quill: 6
   },
@@ -440,14 +440,14 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_mighty_flame',
     conditions: { s1: 'mod_mighty', s2: 'subj_flame' },
-    resultText: '天を衝く火柱が玉座を守っている。周囲の空気が渦を巻く。王の間の天井に焦げ跡がある。',
+    resultText: '天を衝く火柱が玉座を守っている。熱風に巻かれて吹き飛ばされ、背から打ちつけた石床で肺が潰れかけた。',
     damage: 5,
     quill: 3
   },
   {
     id: 'e01_frozen_flame',
     conditions: { s1: 'mod_frozen', s2: 'subj_flame' },
-    resultText: '燃えているのに冷たい青白い炎が玉座を守っている。霜を纏った鬼火だ。王の間が冷え切っている。',
+    resultText: '燃えているのに冷たい青白い炎が玉座を守っている。腕が触れた瞬間、火傷と凍傷が同時に走り、皮膚が裂けた。',
     damage: 3,
     quill: 6,
     rewardItems: [{ id: 'item_e01_frozen_flame', name: '凍える炎', description: '燃えているのに冷たい。瓶の中で青く揺れている', sellPrice: 10 }]
@@ -498,14 +498,14 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_hard_ice',
     conditions: { s1: 'mod_hard', s2: 'subj_ice' },
-    resultText: '鋼より硬い万年氷が玉座を覆っている。鉄の刃が欠けた。この氷は割れない。',
+    resultText: '鋼より硬い万年氷が玉座を覆っている。殴りつけた拳の骨が砕け、手の甲が紫に腫れ上がった。',
     damage: 3,
     quill: 4
   },
   {
     id: 'e01_sharp_ice',
     conditions: { s1: 'mod_sharp', s2: 'subj_ice' },
-    resultText: '氷柱が剣のように玉座の周りから突き出している。一歩間違えば串刺しだ。',
+    resultText: '氷柱が剣のように玉座の周りから突き出している。踏み出した瞬間、太腿を氷の切先が貫き、血が凍りながら滴った。',
     damage: 4,
     quill: 5
   },
@@ -519,7 +519,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_mighty_ice',
     conditions: { s1: 'mod_mighty', s2: 'subj_ice' },
-    resultText: '山のような氷塊が玉座を守っている。王の間ごと凍りついている。通路を削って進むしかない。',
+    resultText: '山のような氷塊が玉座を守っている。削り進むうち指が凍えて爪が剥がれ、両手が血と氷でこわばった。',
     damage: 4,
     quill: 4
   },
@@ -540,7 +540,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_cursed_ice',
     conditions: { s1: 'mod_cursed', s2: 'subj_ice' },
-    resultText: '溶けない呪いの氷が玉座を覆っている。王の間に永遠の冬が広がり続けている。',
+    resultText: '溶けない呪いの氷が玉座を覆っている。踏み込んだ足が膝まで凍りつき、引き抜くとき皮膚が氷と一緒に剥がれた。',
     damage: 4,
     quill: 5
   },
@@ -575,7 +575,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_hard_shadow',
     conditions: { s1: 'mod_hard', s2: 'subj_shadow' },
-    resultText: '地面に貼りついた影が固まって玉座を囲んでいる。壁のように立ち上がって通さない。',
+    resultText: '地面に貼りついた影が固まって玉座を囲んでいる。押し返された弾みで後頭部を柱に打ちつけ、視界が赤く滲んだ。',
     damage: 3,
     quill: 5
   },
@@ -596,7 +596,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_mighty_shadow',
     conditions: { s1: 'mod_mighty', s2: 'subj_shadow' },
-    resultText: '本体より遥かに大きい影が玉座を守っている。影のほうが本体に見える。王の間が暗い。',
+    resultText: '本体より遥かに大きい影が玉座を守っている。影に飲まれた腕が感覚を失い、引き抜いた時には黒く変色していた。',
     damage: 4,
     quill: 4
   },
@@ -646,14 +646,14 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_fire_song',
     conditions: { s1: 'mod_fire', s2: 'subj_song' },
-    resultText: '戦の歌が玉座を守っている。聴くと血が沸く。足が勝手に玉座へ向かう。危険だ。',
+    resultText: '戦の歌が玉座を守っている。血が沸き立ち、自らの爪で腕を掻き毟っていた。正気に戻れば赤い筋が幾本も残っていた。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e01_hard_song',
     conditions: { s1: 'mod_hard', s2: 'subj_song' },
-    resultText: '止められない歌が玉座を守っている。他のすべての音を上書きする。自分の声も聞こえない。',
+    resultText: '止められない歌が玉座を守っている。鼓膜が引き裂かれ、耳から糸のような血が垂れた。平衡感覚が消え、床に膝をついた。',
     damage: 3,
     quill: 5
   },
@@ -674,7 +674,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_mighty_song',
     conditions: { s1: 'mod_mighty', s2: 'subj_song' },
-    resultText: '大地を震わせる合唱が玉座を守っている。足元が揺れる。王の間が震えている。',
+    resultText: '大地を震わせる合唱が玉座を守っている。天井の石が落ち、肩を打ち砕いた。骨が砕ける鈍い音が自分の中で響いた。',
     damage: 4,
     quill: 5
   },
@@ -724,21 +724,21 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_fire_silence',
     conditions: { s1: 'mod_fire', s2: 'subj_silence' },
-    resultText: '怒りで誰も口を開けない沈黙が玉座を守っている。空気が焦げている。爆発寸前だ。',
+    resultText: '怒りで誰も口を開けない沈黙が玉座を守っている。息を吸うたび喉の奥が焼け、血の味が口に広がった。',
     damage: 4,
     quill: 5
   },
   {
     id: 'e01_hard_silence',
     conditions: { s1: 'mod_hard', s2: 'subj_silence' },
-    resultText: '何を言っても吸い込まれて消える沈黙が玉座を守っている。声が出ない。音の墓場だ。',
+    resultText: '何を言っても吸い込まれて消える沈黙が玉座を守っている。叫ぼうとした喉から肉が裂ける音だけが返り、血の塊を吐いた。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e01_sharp_silence',
     conditions: { s1: 'mod_sharp', s2: 'subj_silence' },
-    resultText: '言葉より痛い無言が玉座を守っている。視線だけが刺さる。見えない王がこちらを裁いている。',
+    resultText: '言葉より痛い無言が玉座を守っている。見えない視線が肌を切り、額から頬へ薄い血の筋が走った。',
     damage: 4,
     quill: 6,
     rewardItems: [{ id: 'item_e01_sharp_silence', name: '無言の裁き', description: '王の間で受けた視線の記憶。背筋が寒くなる', sellPrice: 10 }]
@@ -753,14 +753,14 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_mighty_silence',
     conditions: { s1: 'mod_mighty', s2: 'subj_silence' },
-    resultText: '圧倒的な沈黙が玉座を守っている。誰も逆らえない。王の間に音が存在することを許さない。',
+    resultText: '圧倒的な沈黙が玉座を守っている。耳の奥が潰れ、鼻と口から血が溢れた。膝が折れ、石床に額を打ちつけた。',
     damage: 4,
     quill: 5
   },
   {
     id: 'e01_frozen_silence',
     conditions: { s1: 'mod_frozen', s2: 'subj_silence' },
-    resultText: '息も凍る沈黙が玉座を守っている。時間が止まったような王の間。足音だけが永遠に響く。',
+    resultText: '息も凍る沈黙が玉座を守っている。吸った空気がそのまま肺で凍り、胸の内側に霜が走る激痛が走った。',
     damage: 3,
     quill: 6
   },
@@ -774,7 +774,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_cursed_silence',
     conditions: { s1: 'mod_cursed', s2: 'subj_silence' },
-    resultText: '声を奪う沈黙が玉座を守っている。口は動くが音が出ない。助けも呼べない。',
+    resultText: '声を奪う沈黙が玉座を守っている。叫ぼうとして喉の筋が裂け、赤い飛沫が唇を濡らした。膝が床を打つ。',
     damage: 4,
     quill: 5
   },
@@ -803,21 +803,21 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_fire_knight',
     conditions: { s1: 'mod_fire', s2: 'subj_knight' },
-    resultText: '鎧ごと炎に包まれた騎士が玉座を守っている。それでも歩みを止めない。王への忠義が燃えている。',
+    resultText: '鎧ごと炎に包まれた騎士が玉座を守っている。抱き合うように斬りかかられ、胸と腹が同時に焼かれ裂かれた。',
     damage: 5,
     quill: 4
   },
   {
     id: 'e01_hard_knight',
     conditions: { s1: 'mod_hard', s2: 'subj_knight' },
-    resultText: '分厚い鎧で全身を覆った騎士が玉座を守っている。石像のように微動だにしない。表情が読めない。',
+    resultText: '分厚い鎧で全身を覆った騎士が玉座を守っている。すり抜けようとした瞬間、鉄の小手が腹に埋まり、胃液が逆流した。',
     damage: 3,
     quill: 4
   },
   {
     id: 'e01_sharp_knight',
     conditions: { s1: 'mod_sharp', s2: 'subj_knight' },
-    resultText: '剣の達人が玉座を守っている。構えに無駄がない。冷たい目で間合いを測っている。',
+    resultText: '剣の達人が玉座を守っている。見えない一太刀で脇腹が深く裂かれ、内臓の感触が指先に触れた。意識が遠のく。',
     damage: 5,
     quill: 4
   },
@@ -832,28 +832,28 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_mighty_knight',
     conditions: { s1: 'mod_mighty', s2: 'subj_knight' },
-    resultText: '巨体の重装騎士が玉座を守っている。地面が軋む。一歩も通さない構えだ。',
+    resultText: '巨体の重装騎士が玉座を守っている。盾の一振りで吹き飛ばされ、石柱に背を強打した。息ができない。',
     damage: 4,
     quill: 3
   },
   {
     id: 'e01_frozen_knight',
     conditions: { s1: 'mod_frozen', s2: 'subj_knight' },
-    resultText: '氷に閉じ込められた騎士が剣を振り上げた姿勢のまま玉座を守っている。鎧に霜がおりている。',
+    resultText: '氷に閉じ込められた騎士が剣を振り上げた姿勢のまま玉座を守っている。近づくと冷気で指先が黒く凍り、動かなくなった。',
     damage: 3,
     quill: 6
   },
   {
     id: 'e01_clear_knight',
     conditions: { s1: 'mod_clear', s2: 'subj_knight' },
-    resultText: '影の薄い騎士が玉座を守っている。いるのに気づかず通り過ぎた。背後で剣風が鳴った。',
+    resultText: '影の薄い騎士が玉座を守っている。背後からの一太刀が肩甲骨を裂き、血が旅装の背を黒く染めた。',
     damage: 3,
     quill: 6
   },
   {
     id: 'e01_cursed_knight',
     conditions: { s1: 'mod_cursed', s2: 'subj_knight' },
-    resultText: '黒い鎧の騎士が玉座を守っている。兜の奥の目が赤く光る。かつての忠臣が呪いに堕ちた姿だ。',
+    resultText: '黒い鎧の騎士が玉座を守っている。黒い剣が腹を貫き、引き抜かれる時に内臓が絡んで出た。床に倒れ伏す。',
     damage: 5,
     quill: 5
   },
@@ -881,7 +881,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_fire_witch',
     conditions: { s1: 'mod_fire', s2: 'subj_witch' },
-    resultText: '炎の魔法で全身を包む魔女が玉座を守っている。怒りの形相。王の間が炎に照らされる。',
+    resultText: '炎の魔法で全身を包む魔女が玉座を守っている。指先から放たれた炎球が胸に突き刺さり、心臓の奥まで焼けた。',
     damage: 5,
     quill: 4
   },
@@ -895,21 +895,21 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_sharp_witch',
     conditions: { s1: 'mod_sharp', s2: 'subj_witch' },
-    resultText: '鉤鼻に鋭い目の魔女が玉座を守っている。嘘を一言で見抜かれた。この魔女には通じない。',
+    resultText: '鉤鼻に鋭い目の魔女が玉座を守っている。嘘を見抜かれた罰に、呪言で額に裂傷が刻まれた。血が目に入る。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e01_broken_witch',
     conditions: { s1: 'mod_broken', s2: 'subj_witch' },
-    resultText: '魔力が暴走した魔女が玉座を守っている。呪文が途切れ途切れで、何が起きるかわからない。',
+    resultText: '魔力が暴走した魔女が玉座を守っている。暴発した呪文が脇腹で破裂し、衣と肉が同時に焦げて剥がれた。',
     damage: 3,
     quill: 6
   },
   {
     id: 'e01_mighty_witch',
     conditions: { s1: 'mod_mighty', s2: 'subj_witch' },
-    resultText: '杖を振るう代わりに拳で殴る魔女が玉座を守っている。腕が太い。魔法より拳が怖い。',
+    resultText: '杖を振るう代わりに拳で殴る魔女が玉座を守っている。一撃で顎が砕け、歯が数本まとめて口の中で折れた。',
     damage: 4,
     quill: 6,
     rewardItems: [{ id: 'item_e01_mighty_witch', name: '魔女の拳骨', description: '石のように硬い拳の型。握ると力が湧く', sellPrice: 10 }]
@@ -917,7 +917,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_frozen_witch',
     conditions: { s1: 'mod_frozen', s2: 'subj_witch' },
-    resultText: '氷の魔法を使う魔女が玉座を守っている。周囲に霜が広がる。王の間が白く染まっていく。',
+    resultText: '氷の魔法を使う魔女が玉座を守っている。呪文一つで脚の血が凍り、膝から下が感覚を失って崩れ落ちた。',
     damage: 4,
     quill: 4
   },
@@ -931,7 +931,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_cursed_witch',
     conditions: { s1: 'mod_cursed', s2: 'subj_witch' },
-    resultText: '自分の呪いに蝕まれた魔女が玉座を守っている。体の一部が変異している。近づくと呪いがうつる。',
+    resultText: '自分の呪いに蝕まれた魔女が玉座を守っている。触れた指先から呪いが体を這い上がり、腕の皮膚が黒く爛れ始めた。',
     damage: 4,
     quill: 5
   },
@@ -959,21 +959,21 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_fire_king',
     conditions: { s1: 'mod_fire', s2: 'subj_king' },
-    resultText: '炎の冠を戴く王が玉座を守っている。怒りで玉座が燃えている。近づけば焼かれる。',
+    resultText: '炎の冠を戴く王が玉座を守っている。一瞥で旅装が発火し、全身に回った火で皮膚が真っ黒にめくれ上がった。',
     damage: 5,
     quill: 4
   },
   {
     id: 'e01_hard_king',
     conditions: { s1: 'mod_hard', s2: 'subj_king' },
-    resultText: '石の玉座に座り微動だにしない王が玉座を守っている。法を一言で下す。通行は許されない。',
+    resultText: '石の玉座に座り微動だにしない王が玉座を守っている。下された一言で膝が勝手に折れ、石床に額を打ちつけた。歯が欠けた。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e01_sharp_king',
     conditions: { s1: 'mod_sharp', s2: 'subj_king' },
-    resultText: '鷹のような目で見据える王が玉座を守っている。何も見逃さない。嘘を吐けば首が飛ぶ。',
+    resultText: '鷹のような目で見据える王が玉座を守っている。見咎められた刹那、見えない刃が鎖骨を断ち、肩から血が噴き出した。',
     damage: 4,
     quill: 5
   },
@@ -988,14 +988,14 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_mighty_king',
     conditions: { s1: 'mod_mighty', s2: 'subj_king' },
-    resultText: '戦士王が玉座を守っている。背中に傷がない。この王は一度も退いたことがない。',
+    resultText: '戦士王が玉座を守っている。退いたことのない大剣が胴を横に薙ぎ、あばらが裂けて臓腑が見えた。',
     damage: 5,
     quill: 4
   },
   {
     id: 'e01_frozen_king',
     conditions: { s1: 'mod_frozen', s2: 'subj_king' },
-    resultText: '氷の玉座に座る北の王が守っている。吐く言葉が白い。王の間が凍りつく。',
+    resultText: '氷の玉座に座る北の王が守っている。一言放たれるごとに体の芯が冷え、指と耳が黒く凍って感覚を失った。',
     damage: 4,
     quill: 5
   },
@@ -1009,7 +1009,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_cursed_king',
     conditions: { s1: 'mod_cursed', s2: 'subj_king' },
-    resultText: '触れたものが金になる王が玉座を守っている。食事もできない。金の杯が転がっている。',
+    resultText: '触れたものが金になる王が玉座を守っている。肩を掴まれた箇所から金が広がり、鎖骨が重みで砕けた。',
     damage: 4,
     quill: 6,
     rewardItems: [{ id: 'item_e01_cursed_king', name: '金の涙', description: '王が泣いた跡。黄金の雫が頬に張り付いている', sellPrice: 15 }]
@@ -1038,21 +1038,21 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_fire_ghost',
     conditions: { s1: 'mod_fire', s2: 'subj_ghost' },
-    resultText: '炎をまとった亡霊が玉座を守っている。怨念が燃えている。王の間が炎に照らされる。',
+    resultText: '炎をまとった亡霊が玉座を守っている。抱きつくように覆い被さられ、胸と両腕が火膨れで一枚の皮のようになった。',
     damage: 4,
     quill: 4
   },
   {
     id: 'e01_hard_ghost',
     conditions: { s1: 'mod_hard', s2: 'subj_ghost' },
-    resultText: '同じ場所から決して動かない亡霊が玉座を守っている。何百年もそこに立っている。通せんぼだ。',
+    resultText: '同じ場所から決して動かない亡霊が玉座を守っている。すり抜けようとした身体が氷水に浸したように痺れ、鼻から血が流れた。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e01_sharp_ghost',
     conditions: { s1: 'mod_sharp', s2: 'subj_ghost' },
-    resultText: 'こちらの罪を見透かす目の亡霊が玉座を守っている。視線が刺さる。王の間に立つ資格を問われている。',
+    resultText: 'こちらの罪を見透かす目の亡霊が玉座を守っている。視線に射抜かれた瞬間、胸に見えない穴が開き、血が内側へ滲み出した。',
     damage: 4,
     quill: 5
   },
@@ -1067,14 +1067,14 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_mighty_ghost',
     conditions: { s1: 'mod_mighty', s2: 'subj_ghost' },
-    resultText: '鎧武者の亡霊が玉座を守っている。生前より強い。死んで枷が外れたのだ。',
+    resultText: '鎧武者の亡霊が玉座を守っている。実体のない刃が腹を貫き、血を吐きながら膝をついた。死者の剣は痛みだけが残る。',
     damage: 5,
     quill: 4
   },
   {
     id: 'e01_frozen_ghost',
     conditions: { s1: 'mod_frozen', s2: 'subj_ghost' },
-    resultText: '触れると凍傷する亡霊が玉座を守っている。通った跡に霜が降りる。王の間が冷え切っている。',
+    resultText: '触れると凍傷する亡霊が玉座を守っている。肩を掠めた冷気で腕の皮膚が白く死に、力が入らなくなった。',
     damage: 4,
     quill: 4
   },
@@ -1088,7 +1088,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_cursed_ghost',
     conditions: { s1: 'mod_cursed', s2: 'subj_ghost' },
-    resultText: '呪いに縛られて成仏できない亡霊が玉座を守っている。苦しみの表情。解放する方法がわからない。',
+    resultText: '呪いに縛られて成仏できない亡霊が玉座を守っている。苦しみが感染するように胸が締めつけられ、口から血の混じった息が漏れた。',
     damage: 4,
     quill: 6
   },
@@ -1116,7 +1116,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_fire_mirror',
     conditions: { s1: 'mod_fire', s2: 'subj_mirror' },
-    resultText: '鏡面に炎が映っている。だが周囲に火はない。鏡の中の王の間が燃え落ちている。',
+    resultText: '鏡面に炎が映っている。だが周囲に火はない。覗き込んだ瞬間、鏡の炎が現実に飛び移り、髪と右頬を焼いた。',
     damage: 3,
     quill: 7,
     rewardItems: [{ id: 'item_e01_fire_mirror', name: '燃える鏡', description: '覗くと別の王の間が見える。そちらは炎に包まれている', sellPrice: 12 }]
@@ -1124,14 +1124,14 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_hard_mirror',
     conditions: { s1: 'mod_hard', s2: 'subj_mirror' },
-    resultText: '何をしても割れない鏡が玉座を守っている。殴っても蹴っても傷もつかない。通り道を塞いでいる。',
+    resultText: '何をしても割れない鏡が玉座を守っている。殴り続けるうちに拳の骨が折れ、蹴った脛にひびが入った。鏡は無傷のままだ。',
     damage: 3,
     quill: 4
   },
   {
     id: 'e01_sharp_mirror',
     conditions: { s1: 'mod_sharp', s2: 'subj_mirror' },
-    resultText: '割れ鏡の破片が玉座の周りに散らばっている。縁が刃物のように鋭い。素足では通れない。',
+    resultText: '割れ鏡の破片が玉座の周りに散らばっている。踏み抜いた破片が足裏から甲まで貫通し、歩くたび血の足跡が残った。',
     damage: 4,
     quill: 4
   },
@@ -1145,7 +1145,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_mighty_mirror',
     conditions: { s1: 'mod_mighty', s2: 'subj_mirror' },
-    resultText: '人の背丈を超える巨大な姿見が玉座を守っている。映った姿が動かない。鏡の中の自分が睨んでいる。',
+    resultText: '人の背丈を超える巨大な姿見が玉座を守っている。鏡の中の自分が剣を抜き、こちらの胸に一撃を入れた。現実の胸に同じ傷が開く。',
     damage: 3,
     quill: 6
   },
@@ -1166,7 +1166,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_cursed_mirror',
     conditions: { s1: 'mod_cursed', s2: 'subj_mirror' },
-    resultText: '覗いた者の姿が鏡に残る鏡が玉座を守っている。中で影たちが蠢いている。覗いてしまった。',
+    resultText: '覗いた者の姿が鏡に残る鏡が玉座を守っている。中の影が腕を掴み、引き摺り込まれかけた肩が脱臼した。',
     damage: 4,
     quill: 5
   },
@@ -1194,7 +1194,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_fire_doll',
     conditions: { s1: 'mod_fire', s2: 'subj_doll' },
-    resultText: '火がついた藁人形が玉座を守っている。祭りの焚き上げのように燃えている。王の間が煙い。',
+    resultText: '火がついた藁人形が玉座を守っている。倒れ込んだ藁の塊が足に絡み、脛の皮膚が焼け爛れた。煙で視界が利かない。',
     damage: 3,
     quill: 5
   },
@@ -1222,7 +1222,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_mighty_doll',
     conditions: { s1: 'mod_mighty', s2: 'subj_doll' },
-    resultText: '等身大の木彫り人形が玉座を守っている。腕が丸太のように太い。ゴーレムだ。命令を待っている。',
+    resultText: '等身大の木彫り人形が玉座を守っている。丸太のような腕の一振りで胸骨が砕け、息を吸うたび肺に棘が刺さるような痛みが走る。',
     damage: 4,
     quill: 4
   },
@@ -1243,7 +1243,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_cursed_doll',
     conditions: { s1: 'mod_cursed', s2: 'subj_doll' },
-    resultText: '夜になると位置が変わる人形が玉座を守っている。目を離した隙に近づいている。背筋が寒い。',
+    resultText: '夜になると位置が変わる人形が玉座を守っている。背後に回り込んだ小さな手が首を絞め、気道が潰れて血が鼻から逆流した。',
     damage: 3,
     quill: 6,
     rewardItems: [{ id: 'item_e01_cursed_doll', name: '呪いの人形の糸', description: '見えない糸。切っても翌朝繋がっている', sellPrice: 8 }]

@@ -54,7 +54,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_mighty_orig',
     conditions: { s1: 'mod_mighty', s2: 'orig_a_subj' },
-    resultText: '屈強な柱が橋を塞いでいる。城門のように太い。これは柱ではなく、橋の番人なのかもしれない。',
+    resultText: '屈強な柱が橋を塞いでいる。城門のように太い。体当たりで押し退けようとして肩が脱臼しかけた。',
     damage: 3,
     quill: 3
   },
@@ -112,7 +112,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_fire_kitten',
     conditions: { s1: 'mod_fire', s2: 'subj_kitten' },
-    resultText: '燃え盛る子猫が橋を塞いでいる。炎をまとっているが、本猫は気にしていない。橋板が焦げ始めている。',
+    resultText: '燃え盛る子猫が橋を塞いでいる。炎をまとっているが、本猫は気にしていない。撫でようと伸ばした手が火膨れになった。',
     damage: 3,
     quill: 4
   },
@@ -199,7 +199,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_fire_snake',
     conditions: { s1: 'mod_fire', s2: 'subj_snake' },
-    resultText: '燃え盛る蛇が橋を塞いでいる。這った跡が焦げて黒い線を描く。橋が危ない。',
+    resultText: '燃え盛る蛇が橋を塞いでいる。跨ごうとした瞬間、鎌首を擡げて巻きついてきた。足が焼け、皮膚がずる剥けになる。',
     damage: 4,
     quill: 2
   },
@@ -213,7 +213,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_sharp_snake',
     conditions: { s1: 'mod_sharp', s2: 'subj_snake' },
-    resultText: '鋭い蛇が橋を塞いでいる。牙に猛毒。見つめられただけで足が竦む。大きく迂回した。',
+    resultText: '鋭い蛇が橋を塞いでいる。牙に猛毒。迂回しようとした脛に噛みつかれた。視界が黒ずみ、膝から崩れる。',
     damage: 4,
     quill: 2
   },
@@ -227,7 +227,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_mighty_snake',
     conditions: { s1: 'mod_mighty', s2: 'subj_snake' },
-    resultText: '屈強な蛇が橋を塞いでいる。胴回りが人の腰ほどある大蛇。とぐろが橋全体を覆っている。通す気がない。',
+    resultText: '屈強な蛇が橋を塞いでいる。胴回りが人の腰ほどある大蛇。とぐろに弾き飛ばされ、肋骨が軋んだ音を立てた。',
     damage: 4,
     quill: 3
   },
@@ -248,7 +248,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_cursed_snake',
     conditions: { s1: 'mod_cursed', s2: 'subj_snake' },
-    resultText: '呪われた蛇が橋を塞いでいる。脱皮するたび大きくなる蛇。すでに二度脱いだ跡がある。急がねば。',
+    resultText: '呪われた蛇が橋を塞いでいる。脱皮するたび大きくなる蛇。急いで抜けようとして尾に薙ぎ払われ、橋板に叩きつけられた。',
     damage: 3,
     quill: 4
   },
@@ -292,7 +292,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_hard_dragon',
     conditions: { s1: 'mod_hard', s2: 'subj_dragon' },
-    resultText: '堅い竜が橋を塞いでいる。鱗が城壁のように厚い。押しても殴っても微動だにしない。遥か下流まで歩いた。',
+    resultText: '堅い竜が橋を塞いでいる。鱗が城壁のように厚い。下流の浅瀬まで半日歩き、冷水に膝を浸し、足が痺れて感覚を失った。',
     damage: 3,
     quill: 3
   },
@@ -314,7 +314,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_mighty_dragon',
     conditions: { s1: 'mod_mighty', s2: 'subj_dragon' },
-    resultText: '屈強な竜が橋を塞いでいる。山のような巨体。翼の影が橋を覆う。引き返す以外の選択肢がない。',
+    resultText: '屈強な竜が橋を塞いでいる。山のような巨体。翼の一払いで体が宙を舞い、岸に叩きつけられた。意識が遠のく。',
     damage: 5,
     quill: 2
   },
@@ -335,7 +335,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_cursed_dragon',
     conditions: { s1: 'mod_cursed', s2: 'subj_dragon' },
-    resultText: '呪われた竜が橋を塞いでいる。かつて守護竜だったが、目に理性がない。暴れる気配に身を伏せてやり過ごす。',
+    resultText: '呪われた竜が橋を塞いでいる。かつて守護竜だったが、目に理性がない。尾の一撃が橋板を砕き、飛んだ破片が全身に刺さった。',
     damage: 4,
     quill: 3
   },
@@ -372,7 +372,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_fire_butterfly',
     conditions: { s1: 'mod_fire', s2: 'subj_butterfly' },
-    resultText: '燃え盛る蝶が橋を塞いでいる。羽が炎でできている。飛んだ跡に火の粉が散り、橋板に焦げ跡が増えていく。',
+    resultText: '燃え盛る蝶が橋を塞いでいる。羽が炎でできている。群れが顔の周りを舞い、頬と睫毛を焼いた。',
     damage: 3,
     quill: 4
   },
@@ -458,7 +458,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_fire_wind',
     conditions: { s1: 'mod_fire', s2: 'subj_wind' },
-    resultText: '燃え盛る風が橋を塞いでいる。熱風だ。近づくだけで肌が乾く。橋板が炭化し始めている。',
+    resultText: '燃え盛る風が橋を塞いでいる。熱風だ。突っ切ろうとして喉が焼け、吸った空気で肺が悲鳴を上げた。',
     damage: 4,
     quill: 2
   },
@@ -486,7 +486,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_mighty_wind',
     conditions: { s1: 'mod_mighty', s2: 'subj_wind' },
-    resultText: '屈強な風が橋を塞いでいる。一歩も前に進めない。抗うことも引き返すことも許さない暴風。しゃがんで耐えるしかない。',
+    resultText: '屈強な風が橋を塞いでいる。暴風に吹き飛ばされて欄干に背を叩きつけられた。骨が軋む音がした。',
     damage: 3,
     quill: 3
   },
@@ -522,7 +522,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_orig_flame',
     conditions: { s1: 'orig_a_mod', s2: 'subj_flame' },
-    resultText: '忘れられた炎が橋を塞いでいる。いつから燃えているかもわからない。薪もないのに消えない炎だ。',
+    resultText: '忘れられた炎が橋を塞いでいる。薪もないのに消えない炎。飛び越えようとして足裏を焼かれ、踵の皮がめくれた。',
     damage: 3,
     quill: 3
   },
@@ -550,7 +550,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_hard_flame',
     conditions: { s1: 'mod_hard', s2: 'subj_flame' },
-    resultText: '堅い炎が橋を塞いでいる。水をかけても揺らがない。風を当てても消えない。諦めて下流の浅瀬を探した。',
+    resultText: '堅い炎が橋を塞いでいる。水も風も効かない。下流の浅瀬を探す途中で足を滑らせ、石で脛を深く裂いた。',
     damage: 3,
     quill: 3
   },
@@ -593,7 +593,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_cursed_flame',
     conditions: { s1: 'mod_cursed', s2: 'subj_flame' },
-    resultText: '呪われた炎が橋を塞いでいる。燃やしたものの形を覚える炎だ。橋の欄干の幻が炎の中に揺れている。',
+    resultText: '呪われた炎が橋を塞いでいる。燃やしたものの形を覚える炎だ。炎の中に自分の手の幻が浮かび、実際の手の皮膚が同じ形に焼け爛れた。',
     damage: 4,
     quill: 3
   },
@@ -629,7 +629,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_fire_ice',
     conditions: { s1: 'mod_fire', s2: 'subj_ice' },
-    resultText: '燃え盛る氷が橋を塞いでいる。炎を放つ氷。触れると凍傷と火傷を同時に負う。どうしようもない。',
+    resultText: '燃え盛る氷が橋を塞いでいる。炎を放つ氷。退けようとした手が凍傷と火傷を同時に負い、皮が真っ黒になった。',
     damage: 4,
     quill: 4
   },
@@ -657,7 +657,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_mighty_ice',
     conditions: { s1: 'mod_mighty', s2: 'subj_ice' },
-    resultText: '屈強な氷が橋を塞いでいる。数百年溶けていない山のような氷塊。橋ごと飲み込まれかけている。',
+    resultText: '屈強な氷が橋を塞いでいる。数百年溶けていない山のような氷塊。隙間を這って進む途中で落氷が肩を直撃し、腕が上がらなくなった。',
     damage: 4,
     quill: 2
   },
@@ -678,7 +678,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_cursed_ice',
     conditions: { s1: 'mod_cursed', s2: 'subj_ice' },
-    resultText: '呪われた氷が橋を塞いでいる。溶けない呪いの氷だ。周囲にも冬を広げ続けている。橋板の隙間から霜が這い上がってくる。',
+    resultText: '呪われた氷が橋を塞いでいる。溶けない呪いの氷だ。霜が足先に這い上がり、靴の中で指が凍りついた。',
     damage: 3,
     quill: 4
   },
@@ -714,7 +714,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_fire_shadow',
     conditions: { s1: 'mod_fire', s2: 'subj_shadow' },
-    resultText: '燃え盛る影が橋を塞いでいる。黒い炎で燃えている。触れると灼けるが、影に実体はないはずだ。痛みは本物だった。',
+    resultText: '燃え盛る影が橋を塞いでいる。黒い炎で燃えている。抜けるたび腕を撫でられ、影の形に火傷が浮き上がった。',
     damage: 3,
     quill: 4
   },
@@ -742,7 +742,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_mighty_shadow',
     conditions: { s1: 'mod_mighty', s2: 'subj_shadow' },
-    resultText: '屈強な影が橋を塞いでいる。本体より遥かに大きく太い。影のほうが本物に見える。威圧されて足が竦む。',
+    resultText: '屈強な影が橋を塞いでいる。本体より遥かに大きく太い。巨大な影の手に頭を掴まれ、石畳に叩きつけられた。',
     damage: 3,
     quill: 3
   },
@@ -849,7 +849,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_cursed_song',
     conditions: { s1: 'mod_cursed', s2: 'subj_song' },
-    resultText: '呪われた歌が橋を塞いでいる。一度聴くと頭から離れない。橋を渡り終えても旋律が追いかけてくる。',
+    resultText: '呪われた歌が橋を塞いでいる。頭の中で旋律が反響し続け、こめかみが割れるように痛み、鼻血が止まらなくなった。',
     damage: 3,
     quill: 4
   },
@@ -913,7 +913,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_mighty_silence',
     conditions: { s1: 'mod_mighty', s2: 'subj_silence' },
-    resultText: '屈強な沈黙が橋を塞いでいる。圧倒的な存在感で場を支配している。自分の心臓の音すら聴こえない。足が重い。',
+    resultText: '屈強な沈黙が橋を塞いでいる。圧倒的な存在感で場を支配している。耳の奥で何かが破れる感覚。手を離すと血が滲んでいた。',
     damage: 3,
     quill: 4
   },
@@ -935,7 +935,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_cursed_silence',
     conditions: { s1: 'mod_cursed', s2: 'subj_silence' },
-    resultText: '呪われた沈黙が橋を塞いでいる。口は動くが音が出ない。声を奪われた。橋を渡り終えてしばらくして、ようやく声が戻った。',
+    resultText: '呪われた沈黙が橋を塞いでいる。口は動くが音が出ない。声を奪われた代わりに喉が裂けるように痛み、血の味が広がる。',
     damage: 3,
     quill: 4
   },
@@ -972,14 +972,14 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_fire_knight',
     conditions: { s1: 'mod_fire', s2: 'subj_knight' },
-    resultText: '燃え盛る騎士が橋を塞いでいる。鎧ごと炎に包まれているのに歩みを止めない。通り過ぎるのを待つしかない。',
+    resultText: '燃え盛る騎士が橋を塞いでいる。鎧ごと炎に包まれているのに歩みを止めない。剣の一振りを受け流し損ね、脇腹を灼かれた。',
     damage: 4,
     quill: 3
   },
   {
     id: 'a_hard_knight',
     conditions: { s1: 'mod_hard', s2: 'subj_knight' },
-    resultText: '堅い騎士が橋を塞いでいる。分厚い鎧の衛兵だ。微動だにしない。交渉の余地もない。',
+    resultText: '堅い騎士が橋を塞いでいる。分厚い鎧の衛兵だ。強引に押し退けようとして籠手で殴り返され、頬骨が鈍い音を立てた。',
     damage: 3,
     quill: 3
   },
@@ -1001,7 +1001,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_mighty_knight',
     conditions: { s1: 'mod_mighty', s2: 'subj_knight' },
-    resultText: '屈強な騎士が橋を塞いでいる。巨体の重装騎士。地面が軋む。力ずくで通ろうとしたが弾かれた。',
+    resultText: '屈強な騎士が橋を塞いでいる。巨体の重装騎士。力ずくで通ろうとして盾で跳ね返され、欄干に背中から叩きつけられた。',
     damage: 3,
     quill: 3
   },
@@ -1022,7 +1022,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_cursed_knight',
     conditions: { s1: 'mod_cursed', s2: 'subj_knight' },
-    resultText: '呪われた騎士が橋を塞いでいる。黒い鎧の奥、目が赤く光る。呪いに縛られて此処から動けないのだ。憐れみと恐怖の間で立ち尽くす。',
+    resultText: '呪われた騎士が橋を塞いでいる。黒い鎧の奥、目が赤く光る。擦り抜けようとして黒剣が腿を掠め、呪いの冷気が傷口から這い込んだ。',
     damage: 3,
     quill: 5
   },
@@ -1059,7 +1059,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_fire_witch',
     conditions: { s1: 'mod_fire', s2: 'subj_witch' },
-    resultText: '燃え盛る魔女が橋を塞いでいる。炎の魔法で全身を包んでいる。怒りの形相。近づけない。',
+    resultText: '燃え盛る魔女が橋を塞いでいる。炎の魔法で全身を包んでいる。放たれた火球が直撃し、外套が燃え、髪が焦げる匂いがした。',
     damage: 4,
     quill: 3
   },
@@ -1110,7 +1110,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_cursed_witch',
     conditions: { s1: 'mod_cursed', s2: 'subj_witch' },
-    resultText: '呪われた魔女が橋を塞いでいる。自分の呪いに蝕まれた魔女だ。体の一部が変異している。近づくと呪いが移りそうだ。',
+    resultText: '呪われた魔女が橋を塞いでいる。自分の呪いに蝕まれた魔女だ。触れた指が黒く変色し始め、慌てて切り落とすか迷った。',
     damage: 4,
     quill: 3
   },
@@ -1147,14 +1147,14 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_fire_king',
     conditions: { s1: 'mod_fire', s2: 'subj_king' },
-    resultText: '燃え盛る王が橋を塞いでいる。炎の冠を戴く王。怒りで玉座が燃えている。近づく者を許さない。',
+    resultText: '燃え盛る王が橋を塞いでいる。炎の冠を戴く王。「許さぬ」の一言で業火が降り注ぎ、全身を焼かれて橋の下に転げ落ちた。',
     damage: 5,
     quill: 2
   },
   {
     id: 'a_hard_king',
     conditions: { s1: 'mod_hard', s2: 'subj_king' },
-    resultText: '堅い王が橋を塞いでいる。石の玉座に座り微動だにしない。法を一言で下す。「通行を禁ず」。',
+    resultText: '堅い王が橋を塞いでいる。「通行を禁ず」の一言で衛兵が打ちかかってくる。棍棒の一撃で鎖骨に罅が入った。',
     damage: 3,
     quill: 4
   },
@@ -1175,14 +1175,14 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_mighty_king',
     conditions: { s1: 'mod_mighty', s2: 'subj_king' },
-    resultText: '屈強な王が橋を塞いでいる。戦士王だ。背中に傷がない男。腕組みをしてこちらを見ている。力比べを挑まれた。負けた。',
+    resultText: '屈強な王が橋を塞いでいる。戦士王だ。挑まれた力比べで腕を極められ、肩の関節が外れるまで締め上げられた。',
     damage: 3,
     quill: 4
   },
   {
     id: 'a_frozen_king',
     conditions: { s1: 'mod_frozen', s2: 'subj_king' },
-    resultText: '凍てついた王が橋を塞いでいる。氷の玉座に座る北の王。吐く言葉が白い。「冬が終わるまで待て」。',
+    resultText: '凍てついた王が橋を塞いでいる。「冬が終わるまで待て」。従わず横を擦り抜けた代償に、王の吐息が胸に突き刺さり、肺が凍りついた。',
     damage: 3,
     quill: 4
   },
@@ -1197,7 +1197,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_cursed_king',
     conditions: { s1: 'mod_cursed', s2: 'subj_king' },
-    resultText: '呪われた王が橋を塞いでいる。触れたものが金になる王だ。橋の欄干が金色に光っている。手を触れさせずに通る必要がある。',
+    resultText: '呪われた王が橋を塞いでいる。触れたものが金になる王。すれ違いざまに指先を掠られ、中指が硬質な金塊となり、ぽきりと折れた。',
     damage: 3,
     quill: 5
   },
@@ -1233,14 +1233,14 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_fire_ghost',
     conditions: { s1: 'mod_fire', s2: 'subj_ghost' },
-    resultText: '燃え盛る亡霊が橋を塞いでいる。火に焼かれた死に方の霊だ。炎をまとって彷徨う。近づくと皮膚が焼けるような熱さ。',
+    resultText: '燃え盛る亡霊が橋を塞いでいる。火に焼かれた死に方の霊。抜ける際に炎の腕が胸を突き抜け、触れた場所が内側から焼けた。',
     damage: 4,
     quill: 3
   },
   {
     id: 'a_hard_ghost',
     conditions: { s1: 'mod_hard', s2: 'subj_ghost' },
-    resultText: '堅い亡霊が橋を塞いでいる。何百年もこの場所から動かない霊だ。すり抜けることもできない。どんな術も通じない。',
+    resultText: '堅い亡霊が橋を塞いでいる。何百年もこの場所から動かない霊だ。体当たりは岩にぶつかるのと同じで、肩が砕けそうな痛みが走った。',
     damage: 3,
     quill: 3
   },
@@ -1261,7 +1261,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_mighty_ghost',
     conditions: { s1: 'mod_mighty', s2: 'subj_ghost' },
-    resultText: '屈強な亡霊が橋を塞いでいる。鎧武者の霊。生前より強い。死んで枷が外れたのだ。戦って勝てる相手ではない。',
+    resultText: '屈強な亡霊が橋を塞いでいる。鎧武者の霊。幽鬼の薙刀が脇腹を裂き、血が橋板に飛び散った。',
     damage: 4,
     quill: 3
   },
@@ -1283,7 +1283,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_cursed_ghost',
     conditions: { s1: 'mod_cursed', s2: 'subj_ghost' },
-    resultText: '呪われた亡霊が橋を塞いでいる。呪いに縛られて成仏できない霊だ。苦しみの表情が橋に焼きついている。見てしまった。',
+    resultText: '呪われた亡霊が橋を塞いでいる。苦しみの表情を一度見た者は同じ痛みを肌に受ける。全身に見えない鞭の痕が浮かんだ。',
     damage: 3,
     quill: 4
   },
@@ -1319,7 +1319,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_fire_mirror',
     conditions: { s1: 'mod_fire', s2: 'subj_mirror' },
-    resultText: '燃え盛る鏡が橋を塞いでいる。鏡面に炎が映っている。だが周囲に火はない。鏡の中が燃えているのだ。熱気だけは本物だった。',
+    resultText: '燃え盛る鏡が橋を塞いでいる。鏡の中が燃えている。熱気だけは本物で、顔の皮膚が水膨れになり、睫毛が焦げ落ちた。',
     damage: 3,
     quill: 5
   },
@@ -1368,7 +1368,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_cursed_mirror',
     conditions: { s1: 'mod_cursed', s2: 'subj_mirror' },
-    resultText: '呪われた鏡が橋を塞いでいる。覗いた者の姿が鏡に残るという。目を瞑って通った。それでも映った気がする。',
+    resultText: '呪われた鏡が橋を塞いでいる。覗いた者の姿が鏡に残る。目を瞑っても映った代わりに、魂の一片を抜き取られ、全身から力が抜けた。',
     damage: 3,
     quill: 5
   },
@@ -1404,7 +1404,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_fire_doll',
     conditions: { s1: 'mod_fire', s2: 'subj_doll' },
-    resultText: '燃え盛る人形が橋を塞いでいる。藁人形が燃えている。祭りの焚き上げのようだ。だが橋まで燃え広がりそうだ。',
+    resultText: '燃え盛る人形が橋を塞いでいる。藁人形が燃えている。煙を吸い込んで咳が止まらず、肺の奥が焼けるように痛んだ。',
     damage: 3,
     quill: 3
   },
@@ -1418,7 +1418,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_sharp_doll',
     conditions: { s1: 'mod_sharp', s2: 'subj_doll' },
-    resultText: '鋭い人形が橋を塞いでいる。関節が刃になっている操り人形。糸が見えない。近づくと関節が動いた。',
+    resultText: '鋭い人形が橋を塞いでいる。関節が刃になっている操り人形。振り回された腕の刃が二の腕を深く切り裂いた。',
     damage: 3,
     quill: 4
   },
@@ -1432,7 +1432,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_mighty_doll',
     conditions: { s1: 'mod_mighty', s2: 'subj_doll' },
-    resultText: '屈強な人形が橋を塞いでいる。等身大の木彫り。腕が丸太のように太い。ゴーレムのように命令を待っている。押しても動かない。',
+    resultText: '屈強な人形が橋を塞いでいる。等身大の木彫り。押した瞬間、丸太のような腕が振り下ろされ、頭を掠めて肩に直撃した。',
     damage: 3,
     quill: 3
   },
@@ -1489,7 +1489,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_fire_rain',
     conditions: { s1: 'mod_fire', s2: 'subj_rain' },
-    resultText: '燃え盛る雨が橋を塞いでいる。火の雨だ。空から灼熱の滴が降り注ぎ、橋板が焦げる。通れるわけがない。',
+    resultText: '燃え盛る雨が橋を塞いでいる。火の雨だ。逃げる途中で背中に数滴浴び、皮膚が焼け落ちて骨が覗いた。',
     damage: 5,
     quill: 2
   },
@@ -1517,7 +1517,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_mighty_rain',
     conditions: { s1: 'mod_mighty', s2: 'subj_rain' },
-    resultText: '屈強な雨が橋を塞いでいる。豪雨だ。滝のような水量で地面が川になっている。橋が流されかけている。',
+    resultText: '屈強な雨が橋を塞いでいる。豪雨だ。滝のような水量に足を掬われ、岸まで押し流されて岩に全身を打ちつけた。',
     damage: 4,
     quill: 2
   },

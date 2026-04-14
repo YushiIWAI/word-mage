@@ -19,7 +19,7 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_fire_gaze',
     conditions: { s1: 'mod_fire', s2: 'pred_gaze' },
-    resultText: '燃え盛る封印が祭壇から見つめている。封印自体が炎を纏っている。近づくと肌が灼ける。',
+    resultText: '燃え盛る封印が祭壇から見つめている。視線に射抜かれた胸が焼け、旅装の下で皮膚が水ぶくれを並べた。',
     damage: 4,
     quill: 4
   },
@@ -33,7 +33,7 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_sharp_gaze',
     conditions: { s1: 'mod_sharp', s2: 'pred_gaze' },
-    resultText: '鋭い封印が祭壇から見つめている。光が矢のように刺さる。侵入者を裁いている。',
+    resultText: '鋭い封印が祭壇から見つめている。光の矢が肩と腹を貫き、引き抜かれる時に血飛沫が床に散った。',
     damage: 4,
     quill: 5
   },
@@ -47,14 +47,14 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_mighty_gaze',
     conditions: { s1: 'mod_mighty', s2: 'pred_gaze' },
-    resultText: '屈強な封印が祭壇から見つめている。圧倒的な光圧。目を開けていられない。',
+    resultText: '屈強な封印が祭壇から見つめている。光圧に押し潰され、胸郭が歪んで呼吸のたび血の味が口に広がった。',
     damage: 4,
     quill: 4
   },
   {
     id: 'e05_frozen_gaze',
     conditions: { s1: 'mod_frozen', s2: 'pred_gaze' },
-    resultText: '凍てついた封印が祭壇から見つめている。冷たい光が空気を凍らせる。息が白い。',
+    resultText: '凍てついた封印が祭壇から見つめている。吸った息が肺で凍り、胸に氷の棘が走るような激痛で膝をついた。',
     damage: 3,
     quill: 5
   },
@@ -69,7 +69,7 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_cursed_gaze',
     conditions: { s1: 'mod_cursed', s2: 'pred_gaze' },
-    resultText: '呪われた封印が祭壇から見つめている。封じていたものの呪いが封印に移っている。目が赤い。',
+    resultText: '呪われた封印が祭壇から見つめている。赤い視線が胸に入り込み、肋の内側で血管が破れて血を吐いた。',
     damage: 4,
     quill: 5
   },
@@ -98,7 +98,7 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_fire_whisper',
     conditions: { s1: 'mod_fire', s2: 'pred_whisper' },
-    resultText: '燃え盛る封印が祭壇から囁いている。炎の中から聞こえる声。焼けるような言葉だ。',
+    resultText: '燃え盛る封印が祭壇から囁いている。言葉が鼓膜を焼き、耳の内側から血が垂れて頬を伝った。',
     damage: 4,
     quill: 5
   },
@@ -112,28 +112,28 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_sharp_whisper',
     conditions: { s1: 'mod_sharp', s2: 'pred_whisper' },
-    resultText: '鋭い封印が祭壇から囁いている。言葉が刃のように切りつける。真実を突きつけられた。',
+    resultText: '鋭い封印が祭壇から囁いている。言葉が頬と首筋を裂き、幾筋もの血が旅装の襟を染めた。',
     damage: 3,
     quill: 6
   },
   {
     id: 'e05_broken_whisper',
     conditions: { s1: 'mod_broken', s2: 'pred_whisper' },
-    resultText: '壊れた封印が祭壇から囁いている。声が途切れ途切れだ。封印が解けかけている。',
+    resultText: '壊れた封印が祭壇から囁いている。不安定な声の波に頭蓋を揺さぶられ、鼻血が止まらず膝をついた。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e05_mighty_whisper',
     conditions: { s1: 'mod_mighty', s2: 'pred_whisper' },
-    resultText: '屈強な封印が祭壇から囁いている。囁きなのに地鳴りがする。封印の力がまだ健在だ。',
+    resultText: '屈強な封印が祭壇から囁いている。地鳴りのような囁きが内臓を揺らし、口の中が血の味で満たされた。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e05_frozen_whisper',
     conditions: { s1: 'mod_frozen', s2: 'pred_whisper' },
-    resultText: '凍てついた封印が祭壇から囁いている。吐く言葉が白い。聞くと体が冷える。',
+    resultText: '凍てついた封印が祭壇から囁いている。冷たい言葉が耳から胸へ流れ込み、肺が凍るような痛みで咳き込み血を吐いた。',
     damage: 3,
     quill: 5
   },
@@ -148,14 +148,14 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_cursed_whisper',
     conditions: { s1: 'mod_cursed', s2: 'pred_whisper' },
-    resultText: '呪われた封印が祭壇から囁いている。聞くと頭が痛くなる。封じたものの声が混じっている。',
+    resultText: '呪われた封印が祭壇から囁いている。頭蓋の内側で声が暴れ、鼻と耳から血が噴き出して膝から崩れた。',
     damage: 4,
     quill: 5
   },
   {
     id: 'e05_sleepy_whisper',
     conditions: { s1: 'mod_sleepy', s2: 'pred_whisper' },
-    resultText: '眠い封印が祭壇から囁いている。寝言のような声。封印が眠りに落ちかけている。危うい。',
+    resultText: '眠い封印が祭壇から囁いている。抗えない眠気で意識が途切れ、倒れ込んだ拍子に祭壇の角で額を強打した。',
     damage: 3,
     quill: 6
   },
@@ -176,35 +176,35 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_fire_flee',
     conditions: { s1: 'mod_fire', s2: 'pred_flee' },
-    resultText: '燃え盛る封印が祭壇から逃げていく。炎が暴走して封印が崩壊する。熱気が吹き出した。',
+    resultText: '燃え盛る封印が祭壇から逃げていく。崩壊の衝撃波に飲まれ、顔半分が溶けるように焼け爛れ、意識が飛んだ。',
     damage: 5,
     quill: 4
   },
   {
     id: 'e05_hard_flee',
     conditions: { s1: 'mod_hard', s2: 'pred_flee' },
-    resultText: '堅い封印が祭壇から逃げていく。あの堅い封印が解けた。中から何かが出てくる。',
+    resultText: '堅い封印が祭壇から逃げていく。砕け散った封印の石片が肋を叩き、骨にひびが入って息が詰まった。',
     damage: 4,
     quill: 6
   },
   {
     id: 'e05_sharp_flee',
     conditions: { s1: 'mod_sharp', s2: 'pred_flee' },
-    resultText: '鋭い封印が祭壇から逃げていく。散った光の破片が刃のように飛び散る。傷を負った。',
+    resultText: '鋭い封印が祭壇から逃げていく。光の破片が胸と腕を切り裂き、旅装が赤く染まって出血が止まらない。',
     damage: 4,
     quill: 4
   },
   {
     id: 'e05_broken_flee',
     conditions: { s1: 'mod_broken', s2: 'pred_flee' },
-    resultText: '壊れた封印が祭壇から逃げていく。もう保たない。封印が完全に解ける。何が出てくるのか。',
+    resultText: '壊れた封印が祭壇から逃げていく。崩壊と共に解き放たれた圧が胸を潰し、血を吐いて床に崩れた。',
     damage: 4,
     quill: 5
   },
   {
     id: 'e05_mighty_flee',
     conditions: { s1: 'mod_mighty', s2: 'pred_flee' },
-    resultText: '屈強な封印が祭壇から逃げていく。あの強力な封印が解けた。封じていたものの力は想像を超える。',
+    resultText: '屈強な封印が祭壇から逃げていく。解放された力の衝撃波で全身の骨が軋み、口と耳から血が溢れて倒れ伏した。',
     damage: 5,
     quill: 5
   },
@@ -226,15 +226,15 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_cursed_flee',
     conditions: { s1: 'mod_cursed', s2: 'pred_flee' },
-    resultText: '呪われた封印が祭壇から逃げていく。封印と呪いが共に散った。だが呪いの残滓が漂っている。',
+    resultText: '呪われた封印が祭壇から逃げていく。呪いの残滓を吸い込み、胸の内側が焼けるように痛んで血の塊を吐いた。',
     damage: 3,
     quill: 6
   },
   {
     id: 'e05_sleepy_flee',
     conditions: { s1: 'mod_sleepy', s2: 'pred_flee' },
-    resultText: '眠い封印が祭壇から逃げていく。寝ぼけたまま解けてしまった。封印が眠りに勝てなかった。',
-    damage: 3,
+    resultText: '眠い封印が祭壇から逃げていく。緩んだ封印から零れ出た眠気に飲まれ、倒れ込んで祭壇で額を裂いた。',
+    damage: 2,
     quill: 7,
     rewardItems: [{ id: 'item_e05_sleepy_flee', name: '眠る封印の欠片', description: '持つと眠くなる光の欠片。まだ寝ている', sellPrice: 8 }]
   },
@@ -256,42 +256,42 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_fire_sing',
     conditions: { s1: 'mod_fire', s2: 'pred_sing' },
-    resultText: '燃え盛る封印が祭壇から歌っている。戦の歌だ。炎の封印が戦い続けている。',
+    resultText: '燃え盛る封印が祭壇から歌っている。熱を帯びた旋律に肌を焼かれ、顔と腕に火膨れが無数に並んだ。',
     damage: 4,
     quill: 5
   },
   {
     id: 'e05_hard_sing',
     conditions: { s1: 'mod_hard', s2: 'pred_sing' },
-    resultText: '堅い封印が祭壇から歌っている。止められない歌。何千年も同じ旋律を繰り返している。',
+    resultText: '堅い封印が祭壇から歌っている。止まらぬ旋律に鼓膜が圧し潰され、耳から血が垂れて平衡感覚を失った。',
     damage: 3,
     quill: 6
   },
   {
     id: 'e05_sharp_sing',
     conditions: { s1: 'mod_sharp', s2: 'pred_sing' },
-    resultText: '鋭い封印が祭壇から歌っている。金切り声。封印の間の壁にひびが入った。',
+    resultText: '鋭い封印が祭壇から歌っている。金切り声で崩れた石片が頭に降り、こめかみが裂けて血が目に流れ込んだ。',
     damage: 4,
     quill: 4
   },
   {
     id: 'e05_broken_sing',
     conditions: { s1: 'mod_broken', s2: 'pred_sing' },
-    resultText: '壊れた封印が祭壇から歌っている。旋律が途切れ途切れだ。同じ節を繰り返す。綻びかけている。',
+    resultText: '壊れた封印が祭壇から歌っている。不協和音が頭蓋を揺らし、鼻血が止まらず、視界が二重に滲んだ。',
     damage: 3,
     quill: 4
   },
   {
     id: 'e05_mighty_sing',
     conditions: { s1: 'mod_mighty', s2: 'pred_sing' },
-    resultText: '屈強な封印が祭壇から歌っている。大地を震わせる合唱。封印の力は健在だ。',
+    resultText: '屈強な封印が祭壇から歌っている。合唱の震動で崩れた天井の石が肩に落ち、鎖骨が砕けて腕が使えなくなった。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e05_frozen_sing',
     conditions: { s1: 'mod_frozen', s2: 'pred_sing' },
-    resultText: '凍てついた封印が祭壇から歌っている。聴くと体が動かなくなる。封印の歌は凍結の呪文だ。',
+    resultText: '凍てついた封印が祭壇から歌っている。旋律で血が凍り、指と唇が黒く変色、皮膚の下で毛細血管が破れた。',
     damage: 4,
     quill: 5
   },
@@ -305,15 +305,15 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_cursed_sing',
     conditions: { s1: 'mod_cursed', s2: 'pred_sing' },
-    resultText: '呪われた封印が祭壇から歌っている。一度聴くと頭から離れない。封じたものの声が混じる。',
+    resultText: '呪われた封印が祭壇から歌っている。頭蓋で声が暴れ、鼻と耳から血が噴き出して床に滴った。',
     damage: 4,
     quill: 5
   },
   {
     id: 'e05_sleepy_sing',
     conditions: { s1: 'mod_sleepy', s2: 'pred_sing' },
-    resultText: '眠い封印が祭壇から歌っている。子守唄が自分に効いている。封印が眠りかけている。',
-    damage: 3,
+    resultText: '眠い封印が祭壇から歌っている。抗えず意識が切れ、倒れた拍子に祭壇の縁で顎を打ち、奥歯が欠けた。',
+    damage: 2,
     quill: 6
   },
   {
@@ -333,7 +333,7 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_fire_dance',
     conditions: { s1: 'mod_fire', s2: 'pred_dance' },
-    resultText: '燃え盛る封印が祭壇から踊っている。炎の踊り。封印の間が炉のように熱い。',
+    resultText: '燃え盛る封印が祭壇から踊っている。舞う炎に旅装が発火し、肩から背中まで皮膚が黒く焼け爛れた。',
     damage: 4,
     quill: 5
   },
@@ -347,28 +347,28 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_sharp_dance',
     conditions: { s1: 'mod_sharp', s2: 'pred_dance' },
-    resultText: '鋭い封印が祭壇から踊っている。踊りの軌跡が刃のように空を切る。壁に切り傷が走った。',
+    resultText: '鋭い封印が祭壇から踊っている。軌跡の刃が胸と腕を裂き、旅装が深い赤に染まって出血が止まらない。',
     damage: 4,
     quill: 5
   },
   {
     id: 'e05_broken_dance',
     conditions: { s1: 'mod_broken', s2: 'pred_dance' },
-    resultText: '壊れた封印が祭壇から踊っている。痙攣のような動き。封印が制御を失っている。',
+    resultText: '壊れた封印が祭壇から踊っている。暴発した力の欠片が胸に突き刺さり、抜くと黒い血が噴き出した。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e05_mighty_dance',
     conditions: { s1: 'mod_mighty', s2: 'pred_dance' },
-    resultText: '屈強な封印が祭壇から踊っている。地面が揺れる。封印の力で封印の間が震えている。',
+    resultText: '屈強な封印が祭壇から踊っている。揺れで崩れた天井の石が肩と頭を直撃し、鎖骨が砕けて血が流れ出た。',
     damage: 4,
     quill: 5
   },
   {
     id: 'e05_frozen_dance',
     conditions: { s1: 'mod_frozen', s2: 'pred_dance' },
-    resultText: '凍てついた封印が祭壇から踊っている。氷の結晶が舞う。美しいが、触れると凍傷する。',
+    resultText: '凍てついた封印が祭壇から踊っている。舞う結晶に肌を切り裂かれ、手と頬に無数の凍傷と切り傷が並んだ。',
     damage: 3,
     quill: 6,
     rewardItems: [{ id: 'item_e05_frozen_dance', name: '氷の舞の欠片', description: '凍った光が踊る結晶。溶けない', sellPrice: 10 }]
@@ -383,7 +383,7 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_cursed_dance',
     conditions: { s1: 'mod_cursed', s2: 'pred_dance' },
-    resultText: '呪われた封印が祭壇から踊っている。狂った踊り。見ていると体が勝手に動き出す。',
+    resultText: '呪われた封印が祭壇から踊っている。操られた手が自分の胸を切り裂き、気づけば刃が肋の間に食い込んでいた。',
     damage: 4,
     quill: 5
   },
@@ -411,7 +411,7 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_fire_laugh',
     conditions: { s1: 'mod_fire', s2: 'pred_laugh' },
-    resultText: '燃え盛る封印が祭壇から笑っている。炎の中から哄笑。封じたものが封印を嘲っている。',
+    resultText: '燃え盛る封印が祭壇から笑っている。哄笑の衝撃波で熱波が押し寄せ、顔と胸が焼けて皮膚が衣と融け合った。',
     damage: 5,
     quill: 5
   },
@@ -425,28 +425,28 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_sharp_laugh',
     conditions: { s1: 'mod_sharp', s2: 'pred_laugh' },
-    resultText: '鋭い封印が祭壇から笑っている。嘲笑だ。こちらの弱さを見抜いている。',
+    resultText: '鋭い封印が祭壇から笑っている。嘲笑が刃となって頬と首を裂き、襟が血でぐっしょりと染まった。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e05_broken_laugh',
     conditions: { s1: 'mod_broken', s2: 'pred_laugh' },
-    resultText: '壊れた封印が祭壇から笑っている。壊れた笑い声。同じ音を繰り返す。レコードが擦り切れたように。',
+    resultText: '壊れた封印が祭壇から笑っている。割れた笑い声が頭蓋を揺らし、鼻血が止まらず、膝を床につけた。',
     damage: 3,
     quill: 6
   },
   {
     id: 'e05_mighty_laugh',
     conditions: { s1: 'mod_mighty', s2: 'pred_laugh' },
-    resultText: '屈強な封印が祭壇から笑っている。大地を震わせる哄笑。封印の力で笑っている。恐ろしい。',
+    resultText: '屈強な封印が祭壇から笑っている。哄笑の震動で崩れた石片が背に落ち、肋が裂けて血を吐いた。',
     damage: 4,
     quill: 5
   },
   {
     id: 'e05_frozen_laugh',
     conditions: { s1: 'mod_frozen', s2: 'pred_laugh' },
-    resultText: '凍てついた封印が祭壇から笑っている。冷たい笑い声。聞くと背筋が凍る。',
+    resultText: '凍てついた封印が祭壇から笑っている。冷たい声が耳から胸に流れ込み、肺が凍る激痛で血を吐いた。',
     damage: 3,
     quill: 5
   },
@@ -460,7 +460,7 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_cursed_laugh',
     conditions: { s1: 'mod_cursed', s2: 'pred_laugh' },
-    resultText: '呪われた封印が祭壇から笑っている。笑いながら泣いている。封印と呪いが混ざり合っている。',
+    resultText: '呪われた封印が祭壇から笑っている。混濁した声が頭を満たし、鼻と耳から血を噴いて崩れ落ちた。',
     damage: 4,
     quill: 6,
     rewardItems: [{ id: 'item_e05_cursed_laugh', name: '泣き笑いの封', description: '封印の感情が固まったもの。持つと気分が乱れる', sellPrice: 10 }]
@@ -489,7 +489,7 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_fire_shine',
     conditions: { s1: 'mod_fire', s2: 'pred_shine' },
-    resultText: '燃え盛る封印が祭壇から輝く。目が眩む。封印の間が白く焼ける。',
+    resultText: '燃え盛る封印が祭壇から輝く。光の熱波に肌を焼かれ、両目が焦げて視界が白に呑まれた。瞼の裏に痛みが残る。',
     damage: 4,
     quill: 4
   },
@@ -503,7 +503,7 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_sharp_shine',
     conditions: { s1: 'mod_sharp', s2: 'pred_shine' },
-    resultText: '鋭い封印が祭壇から輝く。光が矢のように刺す。目を開けていられない。',
+    resultText: '鋭い封印が祭壇から輝く。光の矢が肩と胸を貫き、抜いた穴から血が吹き出して旅装が赤黒く濡れた。',
     damage: 4,
     quill: 4
   },
@@ -517,14 +517,14 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_mighty_shine',
     conditions: { s1: 'mod_mighty', s2: 'pred_shine' },
-    resultText: '屈強な封印が祭壇から輝く。太陽のような光。封印の間が真昼のように明るい。',
+    resultText: '屈強な封印が祭壇から輝く。強烈な光に両目が焼かれ、視界が真っ白に溶けて瞼を閉じても痛みが消えない。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e05_frozen_shine',
     conditions: { s1: 'mod_frozen', s2: 'pred_shine' },
-    resultText: '凍てついた封印が祭壇から輝く。氷越しに光る。冷たい輝きだ。',
+    resultText: '凍てついた封印が祭壇から輝く。冷たい光に肌が触れると、指先が黒く凍って感覚が失われ、爪が割れた。',
     damage: 3,
     quill: 5
   },
@@ -539,7 +539,7 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_cursed_shine',
     conditions: { s1: 'mod_cursed', s2: 'pred_shine' },
-    resultText: '呪われた封印が祭壇から輝く。黒い光。矛盾した輝きが封印の間を暗くする。',
+    resultText: '呪われた封印が祭壇から輝く。黒い光に晒された皮膚が腐ったように変色し、腕から肩まで黒い筋が走った。',
     damage: 4,
     quill: 5
   },
@@ -567,42 +567,42 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_fire_rain_pred',
     conditions: { s1: 'mod_fire', s2: 'pred_rain_down' },
-    resultText: '燃え盛る封印が祭壇から降り注いでいる。火の雨。封印が解ければこの雨が世界を焼く。',
+    resultText: '燃え盛る封印が祭壇から降り注いでいる。灼熱の滴が頭と肩に降り注ぎ、全身に深い火脹れが広がって意識が飛んだ。',
     damage: 5,
     quill: 5
   },
   {
     id: 'e05_hard_rain_pred',
     conditions: { s1: 'mod_hard', s2: 'pred_rain_down' },
-    resultText: '堅い封印が祭壇から降り注いでいる。石のように硬い光の粒が叩きつける。痛い。',
+    resultText: '堅い封印が祭壇から降り注いでいる。光の粒が頭蓋を打ち、こめかみから血が噴き出して意識が霞んだ。',
     damage: 4,
     quill: 4
   },
   {
     id: 'e05_sharp_rain_pred',
     conditions: { s1: 'mod_sharp', s2: 'pred_rain_down' },
-    resultText: '鋭い封印が祭壇から降り注いでいる。針のような光が肌に刺さる。封印の破片だ。',
+    resultText: '鋭い封印が祭壇から降り注いでいる。針の雨に肌を穿たれ、旅装の下で無数の刺し傷から血が滲み続けた。',
     damage: 4,
     quill: 4
   },
   {
     id: 'e05_broken_rain_pred',
     conditions: { s1: 'mod_broken', s2: 'pred_rain_down' },
-    resultText: '壊れた封印が祭壇から降り注いでいる。色のおかしい光が途切れ途切れに降る。封印が崩壊している。',
+    resultText: '壊れた封印が祭壇から降り注いでいる。歪んだ光の粒が胸に触れるたび皮膚が捻じれるように痛み、血の斑が広がった。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e05_mighty_rain_pred',
     conditions: { s1: 'mod_mighty', s2: 'pred_rain_down' },
-    resultText: '屈強な封印が祭壇から降り注いでいる。滝のような光量。封印の間が光に沈む。',
+    resultText: '屈強な封印が祭壇から降り注いでいる。滝のような光圧に押し潰され、床に叩きつけられて肋が折れた。',
     damage: 4,
     quill: 4
   },
   {
     id: 'e05_frozen_rain_pred',
     conditions: { s1: 'mod_frozen', s2: 'pred_rain_down' },
-    resultText: '凍てついた封印が祭壇から降り注いでいる。凍った光の粒が降る。封印の間が白く染まる。',
+    resultText: '凍てついた封印が祭壇から降り注いでいる。浴びた頬と手が黒く凍り、皮膚の下で毛細血管が破れて紫の斑が広がった。',
     damage: 3,
     quill: 5
   },
@@ -616,7 +616,7 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_cursed_rain_pred',
     conditions: { s1: 'mod_cursed', s2: 'pred_rain_down' },
-    resultText: '呪われた封印が祭壇から降り注いでいる。黒い光の雨。浴びると体が重くなる。',
+    resultText: '呪われた封印が祭壇から降り注いでいる。黒い雨に打たれて膝が砕け、両腕に黒い筋が浮いて感覚が失せた。',
     damage: 4,
     quill: 5
   },
@@ -644,35 +644,35 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_fire_melt',
     conditions: { s1: 'mod_fire', s2: 'pred_melt' },
-    resultText: '燃え盛る封印が祭壇から溶けている。炎で封印が溶ける。中から熱気が噴き出す。',
+    resultText: '燃え盛る封印が祭壇から溶けている。噴き出した熱気に全身を包まれ、皮膚が溶けて衣と一体になった。意識が飛ぶ。',
     damage: 5,
     quill: 4
   },
   {
     id: 'e05_hard_melt',
     conditions: { s1: 'mod_hard', s2: 'pred_melt' },
-    resultText: '堅い封印が祭壇から溶けている。あの堅い封印が溶けるとは。封じたものの力が想像を超える。',
+    resultText: '堅い封印が祭壇から溶けている。流れ出した力の波に胸を打たれ、肋が歪んで呼吸ごとに血の味が上がった。',
     damage: 4,
     quill: 6
   },
   {
     id: 'e05_sharp_melt',
     conditions: { s1: 'mod_sharp', s2: 'pred_melt' },
-    resultText: '鋭い封印が祭壇から溶けている。溶けた跡が鋭い。触れると切れる。',
+    resultText: '鋭い封印が祭壇から溶けている。溶けた縁に触れた掌が深く裂け、手首まで血が流れて固まった。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e05_broken_melt',
     conditions: { s1: 'mod_broken', s2: 'pred_melt' },
-    resultText: '壊れた封印が祭壇から溶けている。もう保たない。封印が泥のように崩れていく。',
+    resultText: '壊れた封印が祭壇から溶けている。零れた力に胸を穿たれ、穴から黒い血が噴き出して旅装を染めた。',
     damage: 4,
     quill: 5
   },
   {
     id: 'e05_mighty_melt',
     conditions: { s1: 'mod_mighty', s2: 'pred_melt' },
-    resultText: '屈強な封印が祭壇から溶けている。あの強大な封印が溶けるのだ。何を封じていたのか。',
+    resultText: '屈強な封印が祭壇から溶けている。解放の波に全身を叩かれ、骨が軋んで折れ、口と耳から血が溢れ出した。',
     damage: 5,
     quill: 5
   },
@@ -694,15 +694,15 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_cursed_melt',
     conditions: { s1: 'mod_cursed', s2: 'pred_melt' },
-    resultText: '呪われた封印が祭壇から溶けている。封印と呪いが混じり合いながら溶ける。黒い水が広がる。',
+    resultText: '呪われた封印が祭壇から溶けている。広がった黒い水に足が浸かり、くるぶしから脛まで皮膚が腐ったように剥がれた。',
     damage: 4,
     quill: 5
   },
   {
     id: 'e05_sleepy_melt',
     conditions: { s1: 'mod_sleepy', s2: 'pred_melt' },
-    resultText: '眠い封印が祭壇から溶けている。ゆっくり溶ける。寝ている間に解けてしまいそうだ。',
-    damage: 3,
+    resultText: '眠い封印が祭壇から溶けている。漂う眠気に意識を奪われ、倒れ込んだ拍子に頭を祭壇の角で強打、血が滴った。',
+    damage: 2,
     quill: 5
   },
 ];

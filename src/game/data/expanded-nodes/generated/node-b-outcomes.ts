@@ -27,7 +27,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_fire_orig',
     conditions: { s1: 'mod_fire', s2: 'orig_b_subj' },
-    resultText: '燃え盛る神像が祠に眠っている。炎の神か。祠が火の粉で満ちている。急いで後退した。',
+    resultText: '燃え盛る神像が祠に眠っている。炎の神か。後退が遅れ、火の粉が外套に燃え移って腕を覆う皮膚が水膨れになった。',
     damage: 3,
     quill: 2
   },
@@ -77,7 +77,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_cursed_orig',
     conditions: { s1: 'mod_cursed', s2: 'orig_b_subj' },
-    resultText: '呪われた神像が祠に眠っている。目が意図的に削られている。近づくと体が重くなった。',
+    resultText: '呪われた神像が祠に眠っている。目が意図的に削られている。近づくと体が鉛のように重くなり、呼吸が浅くなって視界が霞んだ。',
     damage: 3,
     quill: 3
   },
@@ -201,7 +201,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_fire_snake',
     conditions: { s1: 'mod_fire', s2: 'subj_snake' },
-    resultText: '燃え盛る蛇が祠に眠っている。這った跡が黒く焦げている。祠の木材が危ない。急いで出た。',
+    resultText: '燃え盛る蛇が祠に眠っている。這った跡が黒く焦げている。祠の木材が崩れ、落ちた梁が足を直撃して骨に罅が入った。',
     damage: 3,
     quill: 2
   },
@@ -250,7 +250,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_cursed_snake',
     conditions: { s1: 'mod_cursed', s2: 'subj_snake' },
-    resultText: '呪われた蛇が祠に眠っている。脱皮するたびに大きくなる蛇。今も寝ながら少しずつ育っている。',
+    resultText: '呪われた蛇が祠に眠っている。脱皮するたびに大きくなる蛇。寝返りを打った胴体に足を挟まれ、脛骨が軋んだ。',
     damage: 3,
     quill: 4
   },
@@ -286,7 +286,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_fire_dragon',
     conditions: { s1: 'mod_fire', s2: 'subj_dragon' },
-    resultText: '燃え盛る竜が祠に眠っている。全身が炎を纏っている。祠が今にも燃え落ちそうだ。逃げた。',
+    resultText: '燃え盛る竜が祠に眠っている。逃げ出した瞬間に祠が崩落し、燃える梁の下敷きになる。全身を火達磨にして這い出た。',
     damage: 5,
     quill: 1
   },
@@ -322,7 +322,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_frozen_dragon',
     conditions: { s1: 'mod_frozen', s2: 'subj_dragon' },
-    resultText: '凍てついた竜が祠に眠っている。氷をまとった白い竜。吐息が霜になる。祠の中が凍り始めていた。',
+    resultText: '凍てついた竜が祠に眠っている。吐息に包まれて手の指が白く凍り、爪が紫に変色した。数本は感覚が戻らない。',
     damage: 3,
     quill: 3
   },
@@ -458,7 +458,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_fire_wind',
     conditions: { s1: 'mod_fire', s2: 'subj_wind' },
-    resultText: '燃え盛る風が祠に眠っている。空気が熱い。眠っているのに焦げる臭いがする。祠の壁が焦げていた。',
+    resultText: '燃え盛る風が祠に眠っている。眠りの呼吸が熱波となり、肺を吸い込むたびに気管が焼ける。咳が止まらず血が混じった。',
     damage: 3,
     quill: 3
   },
@@ -544,7 +544,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_fire_flame',
     conditions: { s1: 'mod_fire', s2: 'subj_flame' },
-    resultText: '燃え盛る炎が祠に眠っている。「眠っている」にしては激しすぎる。祠が燃えている。',
+    resultText: '燃え盛る炎が祠に眠っている。「眠っている」にしては激しすぎる。逃げ遅れて全身が炎に包まれ、転がって消すまでに意識が遠のいた。',
     damage: 5,
     quill: 1
   },
@@ -573,7 +573,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_mighty_flame',
     conditions: { s1: 'mod_mighty', s2: 'subj_flame' },
-    resultText: '屈強な炎が祠に眠っている。火柱が天を衝く。「眠っている」のか疑わしい。祠が溶けかかっていた。',
+    resultText: '屈強な炎が祠に眠っている。溶けかかった祠の石が頭上から崩れ落ち、熱した石片が肩を砕いた。',
     damage: 4,
     quill: 2
   },
@@ -595,7 +595,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_cursed_flame',
     conditions: { s1: 'mod_cursed', s2: 'subj_flame' },
-    resultText: '呪われた炎が祠に眠っている。燃やしたものの形を幻に映す炎。祠の中に誰かの残像が見えた。',
+    resultText: '呪われた炎が祠に眠っている。燃やしたものの形を幻に映す炎。残像の中に自分の姿が焼かれていく光景が見え、同じ痛みが全身を走った。',
     damage: 3,
     quill: 5
   },
@@ -630,7 +630,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_fire_ice',
     conditions: { s1: 'mod_fire', s2: 'subj_ice' },
-    resultText: '燃え盛る氷が祠に眠っている。炎を放つ氷。触れると凍傷と火傷を同時に負う。近づかなかった。',
+    resultText: '燃え盛る氷が祠に眠っている。炎を放つ氷。覗き込んだ顔半分に凍傷と火傷が同時に走り、皮膚が剥がれ落ちた。',
     damage: 4,
     quill: 3
   },
@@ -665,7 +665,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_frozen_ice',
     conditions: { s1: 'mod_frozen', s2: 'subj_ice' },
-    resultText: '凍てついた氷が祠に眠っている。氷のさらに冷たい状態。触れた空気が結晶化して落ちてくる。',
+    resultText: '凍てついた氷が祠に眠っている。結晶化した空気が針となって顔に降り注ぎ、頬に無数の刺し傷を残した。',
     damage: 3,
     quill: 4
   },
@@ -679,7 +679,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_cursed_ice',
     conditions: { s1: 'mod_cursed', s2: 'subj_ice' },
-    resultText: '呪われた氷が祠に眠っている。溶けない呪いの氷。祠の周りにも永遠の冬が広がっている。',
+    resultText: '呪われた氷が祠に眠っている。溶けない呪いの氷。踏み込んだ足が凍結し、引き剥がすと足裏の皮膚が氷に残った。',
     damage: 3,
     quill: 4
   },
@@ -715,7 +715,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_fire_shadow',
     conditions: { s1: 'mod_fire', s2: 'subj_shadow' },
-    resultText: '燃え盛る影が祠に眠っている。影自体が黒い炎で燃えている。触れると灼けた。',
+    resultText: '燃え盛る影が祠に眠っている。影自体が黒い炎で燃えている。手の甲に触れた瞬間、影の形に肉が抉れるように焼け落ちた。',
     damage: 3,
     quill: 4
   },
@@ -765,7 +765,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_cursed_shadow',
     conditions: { s1: 'mod_cursed', s2: 'subj_shadow' },
-    resultText: '呪われた影が祠に眠っている。触れたものが影になる。眠っているうちに急いで通り過ぎた。',
+    resultText: '呪われた影が祠に眠っている。触れたものが影になる。急ぎすぎて裾を掠らせ、片腕が平面に潰れて元に戻らなくなった。',
     damage: 3,
     quill: 4
   },
@@ -851,7 +851,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_cursed_song',
     conditions: { s1: 'mod_cursed', s2: 'subj_song' },
-    resultText: '呪われた歌が祠に眠っている。一度聴くと頭から離れない歌。もうすでに鳴り止まない。',
+    resultText: '呪われた歌が祠に眠っている。頭の中で旋律が無限に反響し、こめかみの血管が切れて鼻と耳から血が流れた。',
     damage: 3,
     quill: 4
   },
@@ -886,7 +886,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_fire_silence',
     conditions: { s1: 'mod_fire', s2: 'subj_silence' },
-    resultText: '燃え盛る沈黙が祠に眠っている。爆発寸前の空気がここに溜まっている。何もしないのが正解だ。',
+    resultText: '燃え盛る沈黙が祠に眠っている。爆発寸前の空気。足音一つで閃光と衝撃波が走り、鼓膜が破れて片耳が聞こえなくなった。',
     damage: 3,
     quill: 5
   },
@@ -936,7 +936,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_cursed_silence',
     conditions: { s1: 'mod_cursed', s2: 'subj_silence' },
-    resultText: '呪われた沈黙が祠に眠っている。声を奪われた者たちの沈黙。口が動いても音が出なくなった。しばらく続いた。',
+    resultText: '呪われた沈黙が祠に眠っている。声を奪われ、喉の奥で何かが引き千切れる感覚。吐いた唾に血が混じる。',
     damage: 3,
     quill: 4
   },
@@ -972,7 +972,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_fire_knight',
     conditions: { s1: 'mod_fire', s2: 'subj_knight' },
-    resultText: '燃え盛る騎士が祠に眠っている。鎧ごと炎に包まれているが、動きを止めているだけだ。眠っているのかも怪しい。',
+    resultText: '燃え盛る騎士が祠に眠っている。鎧ごと炎に包まれた体から立ち上る熱気で、近づいた頬と腕の肌が赤黒く焼け爛れた。',
     damage: 3,
     quill: 4
   },
@@ -1022,7 +1022,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_cursed_knight',
     conditions: { s1: 'mod_cursed', s2: 'subj_knight' },
-    resultText: '呪われた騎士が祠に眠っている。黒い鎧の騎士が眠っている。兜の奥の目が閉じていた。近づくと体が重くなった。',
+    resultText: '呪われた騎士が祠に眠っている。近づくと体が鉛のように重くなり、呼吸が浅くなって視界が暗転した。',
     damage: 3,
     quill: 4
   },
@@ -1058,7 +1058,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_fire_witch',
     conditions: { s1: 'mod_fire', s2: 'subj_witch' },
-    resultText: '燃え盛る魔女が祠に眠っている。炎の魔法で全身を包んだまま眠っている。眠っていても怒りの形相だ。',
+    resultText: '燃え盛る魔女が祠に眠っている。寝返りで伸ばした腕が火炎を放ち、反射的に腕を上げて防いだ指先が焦げて曲がらなくなった。',
     damage: 3,
     quill: 3
   },
@@ -1107,7 +1107,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_cursed_witch',
     conditions: { s1: 'mod_cursed', s2: 'subj_witch' },
-    resultText: '呪われた魔女が祠に眠っている。体の一部が変異している。呪いと眠りが混じり合っているようだ。関わらなかった。',
+    resultText: '呪われた魔女が祠に眠っている。関わらずに去ろうとしたが、寝息に混じる呪文が追いかけ、背中に赤黒い発疹が広がった。',
     damage: 3,
     quill: 4
   },
@@ -1144,7 +1144,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_fire_king',
     conditions: { s1: 'mod_fire', s2: 'subj_king' },
-    resultText: '燃え盛る王が祠に眠っている。炎の冠を戴いた王が眠っている。玉座が燃えているのに眠っている。近づけない。',
+    resultText: '燃え盛る王が祠に眠っている。炎の冠を戴いた王。熱波に押し退けられて祠の柱に背を叩きつけられ、肋骨が折れた。',
     damage: 4,
     quill: 3
   },
@@ -1230,7 +1230,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_fire_ghost',
     conditions: { s1: 'mod_fire', s2: 'subj_ghost' },
-    resultText: '燃え盛る亡霊が祠に眠っている。炎をまとった怨念の霊が眠っている。熱気が祠の外まで来ている。',
+    resultText: '燃え盛る亡霊が祠に眠っている。怨念の熱気が押し寄せて肺を内側から焼き、血の混じった咳が止まらなくなった。',
     damage: 4,
     quill: 3
   },
@@ -1279,7 +1279,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_cursed_ghost',
     conditions: { s1: 'mod_cursed', s2: 'subj_ghost' },
-    resultText: '呪われた亡霊が祠に眠っている。呪いに縛られて成仏できない霊。苦しみの顔で眠っている。',
+    resultText: '呪われた亡霊が祠に眠っている。苦しみの顔を覗き込んだ瞬間、同じ痛みが自分の体を貫き、全身が痙攣した。',
     damage: 3,
     quill: 4
   },
@@ -1400,7 +1400,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_fire_doll',
     conditions: { s1: 'mod_fire', s2: 'subj_doll' },
-    resultText: '燃え盛る人形が祠に眠っている。火がついた藁人形が眠っている。祭りの焚き上げのようだ。近づけない。',
+    resultText: '燃え盛る人形が祠に眠っている。火がついた藁人形。立ち上る煙を吸い込み、喉が焼けて声が枯れ、しばらく呼吸が苦しくなった。',
     damage: 3,
     quill: 4
   },
@@ -1485,7 +1485,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_fire_rain',
     conditions: { s1: 'mod_fire', s2: 'subj_rain' },
-    resultText: '燃え盛る雨が祠に眠っている。火の雨が祠の中で止まっている。眠っていても熱い。壁が焦げていた。',
+    resultText: '燃え盛る雨が祠に眠っている。止まった火の雨が一瞬ざわめき、一滴が肩に落ちて鎖骨まで焼き貫いた。',
     damage: 4,
     quill: 3
   },

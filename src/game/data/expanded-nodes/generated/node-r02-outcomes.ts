@@ -127,7 +127,7 @@ export const nodeR02Outcomes: Outcome[] = [
     id: 'r02_mighty_snake',
     conditions: { s1: 'mod_mighty', s2: 'subj_snake' },
     resultText: '屈強な蛇が焚き火で温まっている。大蛇がとぐろを巻いて焚き火を囲んでいる。迂回しようとして尾に弾かれ、地面に転がった。',
-    damage: 3,
+    damage: 2,
     quill: 2
   },
   {
@@ -205,7 +205,7 @@ export const nodeR02Outcomes: Outcome[] = [
     id: 'r02_mighty_dragon',
     conditions: { s1: 'mod_mighty', s2: 'subj_dragon' },
     resultText: '屈強な竜が焚き火で温まっている。焚き火が竜の体温に負けている。近づいたら竜の鼻息で吹き飛ばされた。',
-    damage: 4,
+    damage: 2,
     quill: 2
   },
   {
@@ -227,7 +227,7 @@ export const nodeR02Outcomes: Outcome[] = [
     id: 'r02_cursed_dragon',
     conditions: { s1: 'mod_cursed', s2: 'subj_dragon' },
     resultText: '呪われた竜が焚き火で温まっている。目に理性がない。呪いの瘴気を吸い込み、頭が割れるように痛んだ。',
-    damage: 4,
+    damage: 2,
     quill: 2
   },
   {
@@ -361,7 +361,7 @@ export const nodeR02Outcomes: Outcome[] = [
     id: 'r02_mighty_wind',
     conditions: { s1: 'mod_mighty', s2: 'subj_wind' },
     resultText: '屈強な風が焚き火で温まっている。すべてを押し流す風。焚き火が吹き消され、体温を奪われて歯が鳴った。',
-    damage: 3,
+    damage: 2,
     quill: 2
   },
   {
@@ -438,7 +438,7 @@ export const nodeR02Outcomes: Outcome[] = [
     id: 'r02_mighty_flame',
     conditions: { s1: 'mod_mighty', s2: 'subj_flame' },
     resultText: '屈強な炎が焚き火で温まっている。火柱が空を衝く。焚き火が巨大な篝火に化け、熱波で肌が赤く腫れた。',
-    damage: 4,
+    damage: 3,
     quill: 2
   },
   {
@@ -523,7 +523,7 @@ export const nodeR02Outcomes: Outcome[] = [
     id: 'r02_frozen_ice',
     conditions: { s1: 'mod_frozen', s2: 'subj_ice' },
     resultText: '凍てついた氷が焚き火で温まっている。絶対零度に近い氷。冷気が焚き火を圧して、指先の感覚が消えた。',
-    damage: 3,
+    damage: 2,
     quill: 2
   },
   {
@@ -537,7 +537,7 @@ export const nodeR02Outcomes: Outcome[] = [
     id: 'r02_cursed_ice',
     conditions: { s1: 'mod_cursed', s2: 'subj_ice' },
     resultText: '呪われた氷が焚き火で温まっている。溶けない氷が永遠の冬を広げている。体の芯まで凍え、立ち上がれなくなった。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -614,7 +614,7 @@ export const nodeR02Outcomes: Outcome[] = [
     id: 'r02_cursed_shadow',
     conditions: { s1: 'mod_cursed', s2: 'subj_shadow' },
     resultText: '呪われた影が焚き火で温まっている。自分の影が焚き火に引き寄せられていく。影の端を踏んだ足が冷たくなり、しばらく動かせなかった。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -846,7 +846,7 @@ export const nodeR02Outcomes: Outcome[] = [
     id: 'r02_cursed_knight',
     conditions: { s1: 'mod_cursed', s2: 'subj_knight' },
     resultText: '呪われた騎士が焚き火で温まっている。兜の奥の目が赤く光っている。赤黒い炎に当たると、体から力が抜けていく。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -1030,7 +1030,7 @@ export const nodeR02Outcomes: Outcome[] = [
     id: 'r02_fire_ghost',
     conditions: { s1: 'mod_fire', s2: 'subj_ghost' },
     resultText: '燃え盛る亡霊が焚き火で温まっている。火に焼かれた記憶の霊。怨念に染まった炎で、温まるほどに気力が削がれた。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -1079,7 +1079,7 @@ export const nodeR02Outcomes: Outcome[] = [
     id: 'r02_cursed_ghost',
     conditions: { s1: 'mod_cursed', s2: 'subj_ghost' },
     resultText: '呪われた亡霊が焚き火で温まっている。苦しみの表情。霊の呪気が炎に乗って、吸い込むたびに胸が重くなる。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -1290,7 +1290,7 @@ export const nodeR02Outcomes: Outcome[] = [
     id: 'r02_mighty_rain',
     conditions: { s1: 'mod_mighty', s2: 'subj_rain' },
     resultText: '屈強な雨が焚き火で温まっている。豪雨が焚き火を叩き消した。ずぶ濡れで暗闇に取り残された。',
-    damage: 3,
+    damage: 2,
     quill: 2
   },
   {

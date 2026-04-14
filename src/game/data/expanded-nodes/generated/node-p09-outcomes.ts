@@ -225,21 +225,21 @@ export const nodeP09Outcomes: Outcome[] = [
     id: 'p09_fire_dance',
     conditions: { s1: 'mod_fire', s4: 'pred_dance' },
     resultText: '燃え盛る鏡が井戸に踊っている。炎が井戸の中で渦を巻き、鏡面が回転するたびに火の粉が飛ぶ。美しいが、危険だった。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
     id: 'p09_fire_melt',
     conditions: { s1: 'mod_fire', s4: 'pred_melt' },
     resultText: '燃え盛る鏡が井戸に溶けている。自らの炎で溶けた銀が、赤く光りながら井戸の底を満たしている。熱気で顔が痛い。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
     id: 'p09_fire_laugh',
     conditions: { s1: 'mod_fire', s4: 'pred_laugh' },
     resultText: '燃え盛る鏡が井戸に笑っている。炎が弾けるたびに、嘲るような音が響く。覗き込んだ顔が炎に照らされ、鏡の中で燃えていた。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -348,7 +348,7 @@ export const nodeP09Outcomes: Outcome[] = [
     id: 'p09_sharp_sing',
     conditions: { s1: 'mod_sharp', s4: 'pred_sing' },
     resultText: '鋭い鏡が井戸に歌っている。金切り声のような高音が井戸から立ち昇る。美しいと感じた瞬間、鼻血が出た。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -397,7 +397,7 @@ export const nodeP09Outcomes: Outcome[] = [
     id: 'p09_sharp_laugh',
     conditions: { s1: 'mod_sharp', s4: 'pred_laugh' },
     resultText: '鋭い鏡が井戸に笑っている。甲高い笑い声が刃のように空気を切る。耳を塞いでも、頭の中で響いた。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -455,7 +455,7 @@ export const nodeP09Outcomes: Outcome[] = [
   {
     id: 'p09_broken_rain_down',
     conditions: { s1: 'mod_broken', s4: 'pred_rain_down' },
-    resultText: '壊れた鏡が井戸に降り注いでいる。空から砕けた鏡の雨が降っている。もとは一枚の大きな鏡だったのかもしれない。今は粉々だ。',
+    resultText: '壊れた鏡が井戸に降り注いでいる。空から砕けた鏡の雨が降っている。頭を庇った腕が浅く切られ、砂に血が散った。',
     damage: 3,
     quill: 3
   },
@@ -514,7 +514,7 @@ export const nodeP09Outcomes: Outcome[] = [
     id: 'p09_mighty_entangle',
     conditions: { s1: 'mod_mighty', s4: 'pred_entangle' },
     resultText: '屈強な鏡が井戸に絡みついている。太い腕のような鏡面の突起が井戸を締め上げている。石壁が悲鳴を上げて崩れ始めた。',
-    damage: 3,
+    damage: 2,
     quill: 2
   },
   {
@@ -542,7 +542,7 @@ export const nodeP09Outcomes: Outcome[] = [
     id: 'p09_mighty_dance',
     conditions: { s1: 'mod_mighty', s4: 'pred_dance' },
     resultText: '屈強な鏡が井戸に踊っている。地響きを立てて跳ねるたびに、井戸の石組みが崩れていく。豪快で、破壊的だった。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -593,7 +593,7 @@ export const nodeP09Outcomes: Outcome[] = [
     id: 'p09_frozen_entangle',
     conditions: { s1: 'mod_frozen', s4: 'pred_entangle' },
     resultText: '凍てついた鏡が井戸に絡みついている。氷の結晶が鏡面から伸び、井戸の壁を凍りつかせている。触れた指先の感覚がなくなった。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -695,7 +695,7 @@ export const nodeP09Outcomes: Outcome[] = [
     id: 'p09_clear_rain_down',
     conditions: { s1: 'mod_clear', s4: 'pred_rain_down' },
     resultText: '透き通った鏡が井戸に降り注いでいる。見えない破片が空から降ってくる。頬に痛みを感じて初めて、当たったことに気づいた。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -732,7 +732,7 @@ export const nodeP09Outcomes: Outcome[] = [
     id: 'p09_cursed_whisper',
     conditions: { s1: 'mod_cursed', s4: 'pred_whisper' },
     resultText: '呪われた鏡が井戸に囁いている。映る者の秘密を暴く声が、井戸の底から這い上がってくる。聞いてはいけない。だが、足が動かなかった。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -746,7 +746,7 @@ export const nodeP09Outcomes: Outcome[] = [
     id: 'p09_cursed_sing',
     conditions: { s1: 'mod_cursed', s4: 'pred_sing' },
     resultText: '呪われた鏡が井戸に歌っている。聴いた者は三日三晩その旋律が頭から離れなくなる。耳を塞いだが、骨伝導で聞こえた。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -767,7 +767,7 @@ export const nodeP09Outcomes: Outcome[] = [
     id: 'p09_cursed_shine',
     conditions: { s1: 'mod_cursed', s4: 'pred_shine' },
     resultText: '呪われた鏡が井戸に輝く。禍々しい紫の光が井戸から溢れ、見つめた者の目に残像を焼き付ける。しばらく視界の隅に紫が残った。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -781,7 +781,7 @@ export const nodeP09Outcomes: Outcome[] = [
     id: 'p09_cursed_dance',
     conditions: { s1: 'mod_cursed', s4: 'pred_dance' },
     resultText: '呪われた鏡が井戸に踊っている。見た者を踊り狂わせる呪いの舞。目を逸らすのが一瞬遅れ、足が勝手に数歩踏んだ。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -795,7 +795,7 @@ export const nodeP09Outcomes: Outcome[] = [
     id: 'p09_cursed_laugh',
     conditions: { s1: 'mod_cursed', s4: 'pred_laugh' },
     resultText: '呪われた鏡が井戸に笑っている。呪われた者たちの声が混じった笑い声。何十人分もの声が重なり、井戸が震えている。',
-    damage: 4,
+    damage: 2,
     quill: 3
   },
   {

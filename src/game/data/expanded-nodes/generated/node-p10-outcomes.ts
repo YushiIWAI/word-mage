@@ -383,7 +383,7 @@ export const nodeP10Outcomes: Outcome[] = [
   {
     id: 'p10_dragon_gaze',
     conditions: { s2: 'subj_dragon', s4: 'pred_gaze' },
-    resultText: '凍てついた竜が鐘を見つめている。白い竜が首を伸ばし、鐘の表面に映る自分の姿を見ている。近づくと鼻息が吹雪となり、肌を裂く。',
+    resultText: '凍てついた竜が鐘を見つめている。白い竜が首を伸ばし、鐘の表面に映る自分の姿を見ている。鼻息の吹雪を頬に受け、氷の粒で肌がざっくり裂けた。',
     damage: 3,
     quill: 5
   },
@@ -579,7 +579,7 @@ export const nodeP10Outcomes: Outcome[] = [
     id: 'p10_king_hide',
     conditions: { s2: 'subj_king', s4: 'pred_hide' },
     resultText: '凍てついた王が鐘を隠している。北の王が鐘を自分の宝としてどこかへ運ばせた。空の鐘楼に、氷の玉座だけが残っている。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {

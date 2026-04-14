@@ -40,7 +40,7 @@ export const nodeP14Outcomes: Outcome[] = [
   {
     id: 'p14_flame',
     conditions: { s2: 'subj_flame' },
-    resultText: '炎が吊り橋を揺らしている。ロープの一本に火がついている。揺れは燃え進む振動だ。残ったロープを頼りに急いで渡る。足元が熱い。',
+    resultText: '炎が吊り橋を揺らしている。ロープの一本に火がついている。揺れは燃え進む振動だ。残ったロープを頼りに急いで渡り、掌と膝裏に火傷を負った。',
     damage: 3,
     quill: 4
   },

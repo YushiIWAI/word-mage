@@ -20,7 +20,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_fire_kitten',
     conditions: { s1: 'mod_fire', s2: 'subj_kitten' },
-    resultText: '炎をまとった子猫が巣穴に棲みついている。巣穴の壁が焦げている。本猫は涼しい顔だ。',
+    resultText: '炎をまとった子猫が巣穴に棲みついている。擦り寄られて外套に火が回り、肩から胸にかけて赤い火脹れが走った。',
     damage: 3,
     quill: 5
   },
@@ -48,7 +48,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_mighty_kitten',
     conditions: { s1: 'mod_mighty', s2: 'subj_kitten' },
-    resultText: '子猫サイズで虎の体格をした獣が巣穴に棲みついている。低い唸り声が洞窟に反響する。小さな主だ。',
+    resultText: '子猫サイズで虎の体格をした獣が巣穴に棲みついている。鉄槌のような一撃が肋に入り、岩壁まで吹き飛ばされた。',
     damage: 3,
     quill: 5
   },
@@ -105,14 +105,14 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_hard_snake',
     conditions: { s1: 'mod_hard', s2: 'subj_snake' },
-    resultText: '鉄の鱗を持つ蛇が巣穴に棲みついている。入口を塞ぐように横たわっている。退かせようがない。',
+    resultText: '鉄の鱗を持つ蛇が巣穴に棲みついている。跨ごうとした瞬間、尾が鞭のように脛を薙ぎ、骨にひびが入った。',
     damage: 3,
     quill: 4
   },
   {
     id: 'e02_sharp_snake',
     conditions: { s1: 'mod_sharp', s2: 'subj_snake' },
-    resultText: '猛毒の蛇が巣穴に棲みついている。暗闘で踏みかけた。牙が光る。一噛みで終わる。',
+    resultText: '猛毒の蛇が巣穴に棲みついている。踵に食いついた牙から毒が全身を巡り、視界が黄ばんで膝から崩れ落ちた。',
     damage: 5,
     quill: 3
   },
@@ -126,7 +126,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_mighty_snake',
     conditions: { s1: 'mod_mighty', s2: 'subj_snake' },
-    resultText: '胴回りが人の腰ほどある大蛇が巣穴に棲みついている。とぐろが巣穴を埋め尽くしている。',
+    resultText: '胴回りが人の腰ほどある大蛇が巣穴に棲みついている。とぐろに巻き込まれ胴が締め上げられ、肋が折れて肺に刺さった。',
     damage: 5,
     quill: 3
   },
@@ -177,21 +177,21 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_fire_dragon',
     conditions: { s1: 'mod_fire', s2: 'subj_dragon' },
-    resultText: '全身が業火に包まれた竜が巣穴に棲みついている。近づくだけで髪が焦げる。轟音と熱気の正体だ。',
+    resultText: '全身が業火に包まれた竜が巣穴に棲みついている。熱波に打たれて皮膚が蝋のように垂れ、顔の半分が赤黒く焼け爛れた。',
     damage: 5,
     quill: 3
   },
   {
     id: 'e02_hard_dragon',
     conditions: { s1: 'mod_hard', s2: 'subj_dragon' },
-    resultText: '鱗が城壁のように厚い竜が巣穴に棲みついている。入口に頭を向けて寝ている。抜け道はない。',
+    resultText: '鱗が城壁のように厚い竜が巣穴に棲みついている。寝返りの一振りで弾き飛ばされ、岩肌に背を打ちつけて血を吐いた。',
     damage: 4,
     quill: 4
   },
   {
     id: 'e02_sharp_dragon',
     conditions: { s1: 'mod_sharp', s2: 'subj_dragon' },
-    resultText: '爪の一振りで岩が裂ける竜が巣穴に棲みついている。金色の目が暗闇で光る。獲物を見る目だ。',
+    resultText: '爪の一振りで岩が裂ける竜が巣穴に棲みついている。振り下ろされた爪が肩から腰までを裂き、臓腑の色が見えた。',
     damage: 5,
     quill: 3
   },
@@ -206,14 +206,14 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_mighty_dragon',
     conditions: { s1: 'mod_mighty', s2: 'subj_dragon' },
-    resultText: '山のような巨体の竜が巣穴に棲みついている。翼を広げると洞窟が暗くなる。ここは竜の領域だ。',
+    resultText: '山のような巨体の竜が巣穴に棲みついている。身をよじった拍子に岩壁へ押し潰され、胸郭が歪んで息ができない。',
     damage: 5,
     quill: 2
   },
   {
     id: 'e02_frozen_dragon',
     conditions: { s1: 'mod_frozen', s2: 'subj_dragon' },
-    resultText: '氷をまとった白い竜が巣穴に棲みついている。吐息が吹雪になる。熱気ではなく冷気が漏れていた。',
+    resultText: '氷をまとった白い竜が巣穴に棲みついている。吹雪の吐息を浴びた腕の皮膚が黒く凍り、指が一本折れ落ちた。',
     damage: 4,
     quill: 5
   },
@@ -228,7 +228,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_cursed_dragon',
     conditions: { s1: 'mod_cursed', s2: 'subj_dragon' },
-    resultText: '暴走した竜が巣穴に棲みついている。目に理性がない。かつての守護竜が呪いに堕ちた。',
+    resultText: '暴走した竜が巣穴に棲みついている。狂った牙が太腿を引き裂き、骨が露わになった。岩床が血で滑る。',
     damage: 5,
     quill: 4
   },
@@ -285,7 +285,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_mighty_butterfly',
     conditions: { s1: 'mod_mighty', s2: 'subj_butterfly' },
-    resultText: '羽ばたきが風を起こす巨大な蝶が巣穴に棲みついている。洞窟の入口まで風圧で押し戻される。',
+    resultText: '羽ばたきが風を起こす巨大な蝶が巣穴に棲みついている。風圧で岩壁に叩きつけられ、後頭部が裂けて血が肩まで流れた。',
     damage: 3,
     quill: 5
   },
@@ -306,8 +306,8 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_cursed_butterfly',
     conditions: { s1: 'mod_cursed', s2: 'subj_butterfly' },
-    resultText: '追いかけると迷子になる蝶が巣穴に棲みついている。奥へ誘われた。出口がわからない。',
-    damage: 3,
+    resultText: '追いかけると迷子になる蝶が巣穴に棲みついている。奥へ奥へと誘われ、渇きと疲労で倒れ、岩に頭を打った。',
+    damage: 2,
     quill: 5
   },
   {
@@ -341,7 +341,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_hard_wind',
     conditions: { s1: 'mod_hard', s2: 'subj_wind' },
-    resultText: '同じ方向に吹き続ける頑固な風が巣穴に棲みついている。押し返される。入れない。',
+    resultText: '同じ方向に吹き続ける頑固な風が巣穴に棲みついている。逆らって進むうちに鼓膜が圧で破れ、耳から温い血が垂れた。',
     damage: 3,
     quill: 5
   },
@@ -383,8 +383,8 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_cursed_wind',
     conditions: { s1: 'mod_cursed', s2: 'subj_wind' },
-    resultText: '呪われた風が巣穴に棲みついている。吹かれると帰り道を忘れる。巣穴を出たが方角がわからない。',
-    damage: 3,
+    resultText: '呪われた風が巣穴に棲みついている。方角を失って山中を彷徨い、岩に躓いて膝と額を深く切った。',
+    damage: 2,
     quill: 5
   },
   {
@@ -411,14 +411,14 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_fire_flame',
     conditions: { s1: 'mod_fire', s2: 'subj_flame' },
-    resultText: '制御不能の大火が巣穴に棲みついている。すべてを飲み込もうとしている。洞窟が炉と化した。',
+    resultText: '制御不能の大火が巣穴に棲みついている。火の舌に飲まれ、肩口の皮膚が衣と融け合った。肺の奥まで焼けた息が苦しい。',
     damage: 5,
     quill: 3
   },
   {
     id: 'e02_hard_flame',
     conditions: { s1: 'mod_hard', s2: 'subj_flame' },
-    resultText: '消えない炎が巣穴に棲みついている。水をかけても消えない。何百年も燃え続けている。',
+    resultText: '消えない炎が巣穴に棲みついている。すり抜けるとき衣の裾に火がつき、脛の皮膚が黒く焦げ縮んだ。',
     damage: 3,
     quill: 5
   },
@@ -439,14 +439,14 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_mighty_flame',
     conditions: { s1: 'mod_mighty', s2: 'subj_flame' },
-    resultText: '天を衝く火柱が巣穴に棲みついている。洞窟の天井が溶けている。近づけない。',
+    resultText: '天を衝く火柱が巣穴に棲みついている。熱風に打たれて背が吹き飛び、岩に激突して肋骨が何本か折れた。',
     damage: 5,
     quill: 3
   },
   {
     id: 'e02_frozen_flame',
     conditions: { s1: 'mod_frozen', s2: 'subj_flame' },
-    resultText: '燃えているのに冷たい青白い炎が巣穴に棲みついている。鬼火だ。洞窟が冷え切っている。',
+    resultText: '燃えているのに冷たい青白い炎が巣穴に棲みついている。触れた腕が同時に焼けて凍り、皮膚が剥がれ落ちた。',
     damage: 3,
     quill: 6
   },
@@ -496,14 +496,14 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_hard_ice',
     conditions: { s1: 'mod_hard', s2: 'subj_ice' },
-    resultText: '鋼より硬い万年氷が巣穴を塞いでいる。鉄の刃が欠けた。この奥には入れない。',
+    resultText: '鋼より硬い万年氷が巣穴を塞いでいる。殴りつけた拳の関節が砕け、指が三本横を向いた。',
     damage: 3,
     quill: 4
   },
   {
     id: 'e02_sharp_ice',
     conditions: { s1: 'mod_sharp', s2: 'subj_ice' },
-    resultText: '氷柱が剣のように巣穴の天井から突き出している。一歩間違えば串刺しだ。',
+    resultText: '氷柱が剣のように巣穴の天井から突き出している。屈んだ背に切先が刺さり、肩甲骨の間から氷が生えたようになった。',
     damage: 4,
     quill: 5
   },
@@ -517,7 +517,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_mighty_ice',
     conditions: { s1: 'mod_mighty', s2: 'subj_ice' },
-    resultText: '山のような氷塊が巣穴に棲みついている。洞窟ごと凍りついている。削って進むしかない。',
+    resultText: '山のような氷塊が巣穴に棲みついている。削り進むうちに両手が凍え、爪が剥がれて血で手が真っ赤になった。',
     damage: 4,
     quill: 4
   },
@@ -538,7 +538,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_cursed_ice',
     conditions: { s1: 'mod_cursed', s2: 'subj_ice' },
-    resultText: '溶けない呪いの氷が巣穴に棲みついている。永遠の冬を広げ続けている。山腹が白くなり始めた。',
+    resultText: '溶けない呪いの氷が巣穴に棲みついている。踏み込んだ足首が氷に縫いとめられ、引き抜く時に皮が大きく剥がれた。',
     damage: 4,
     quill: 5
   },
@@ -573,7 +573,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_hard_shadow',
     conditions: { s1: 'mod_hard', s2: 'subj_shadow' },
-    resultText: '固まった影が巣穴の入口を塞いでいる。壁のように立ち上がっている。通れない。',
+    resultText: '固まった影が巣穴の入口を塞いでいる。体当たりで押し分けたが、跳ね返った衝撃で肩が脱臼し、腕がぶらんと垂れた。',
     damage: 3,
     quill: 5
   },
@@ -594,7 +594,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_mighty_shadow',
     conditions: { s1: 'mod_mighty', s2: 'subj_shadow' },
-    resultText: '本体より遥かに大きい影が巣穴に棲みついている。洞窟を埋め尽くす暗黒。影のほうが本体だ。',
+    resultText: '本体より遥かに大きい影が巣穴に棲みついている。影に飲まれた足が黒く変色し、ふくらはぎの肉が溶けるように痩せた。',
     damage: 4,
     quill: 5
   },
@@ -643,14 +643,14 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_fire_song',
     conditions: { s1: 'mod_fire', s2: 'subj_song' },
-    resultText: '戦の歌が巣穴に棲みついている。聴くと血が沸く。洞窟が揺れ、壁が崩れ始めた。',
+    resultText: '戦の歌が巣穴に棲みついている。崩れた岩が肩と腰に落ち、下敷きになった身体を血を流しながら這い出した。',
     damage: 4,
     quill: 5
   },
   {
     id: 'e02_hard_song',
     conditions: { s1: 'mod_hard', s2: 'subj_song' },
-    resultText: '止められない歌が巣穴に棲みついている。他のすべての音を上書きする。自分の足音も聞こえない。',
+    resultText: '止められない歌が巣穴に棲みついている。旋律が頭蓋を震わせ、鼻血が止まらず膝をついた。耳の奥が潰れる痛み。',
     damage: 3,
     quill: 5
   },
@@ -671,7 +671,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_mighty_song',
     conditions: { s1: 'mod_mighty', s2: 'subj_song' },
-    resultText: '大地を震わせる合唱が巣穴に棲みついている。轟音の正体はこれだ。洞窟ごと揺れている。',
+    resultText: '大地を震わせる合唱が巣穴に棲みついている。崩れた天井の岩が腿に落ち、骨が砕けて立ち上がれなくなった。',
     damage: 4,
     quill: 5
   },
@@ -720,7 +720,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_fire_silence',
     conditions: { s1: 'mod_fire', s2: 'subj_silence' },
-    resultText: '爆発寸前の沈黙が巣穴に棲みついている。空気が焦げている。何かが起きる直前の静けさだ。',
+    resultText: '爆発寸前の沈黙が巣穴に棲みついている。張り詰めた空気が破れた瞬間、衝撃波が鼓膜と肋を同時に裂いた。',
     damage: 4,
     quill: 5
   },
@@ -734,7 +734,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_sharp_silence',
     conditions: { s1: 'mod_sharp', s2: 'subj_silence' },
-    resultText: '言葉より痛い無言が巣穴に棲みついている。洞窟の闇が値踏みしている。視線のような圧力がある。',
+    resultText: '言葉より痛い無言が巣穴に棲みついている。視線のような圧が胸を貫き、肋の内側から血が滲み出す。',
     damage: 4,
     quill: 5
   },
@@ -748,14 +748,14 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_mighty_silence',
     conditions: { s1: 'mod_mighty', s2: 'subj_silence' },
-    resultText: '圧倒的な沈黙が巣穴に棲みついている。音の存在を許さない。自分の心臓の音だけが聞こえる。',
+    resultText: '圧倒的な沈黙が巣穴に棲みついている。耳の奥が潰れ、鼻と口から同時に血が溢れて岩床に滴った。',
     damage: 4,
     quill: 5
   },
   {
     id: 'e02_frozen_silence',
     conditions: { s1: 'mod_frozen', s2: 'subj_silence' },
-    resultText: '息も凍る沈黙が巣穴に棲みついている。時間が止まったような洞窟。足音だけが永遠に響く。',
+    resultText: '息も凍る沈黙が巣穴に棲みついている。吸った空気が肺の中で凍り、胸の内に氷の棘が生える激痛が走った。',
     damage: 3,
     quill: 5
   },
@@ -769,7 +769,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_cursed_silence',
     conditions: { s1: 'mod_cursed', s2: 'subj_silence' },
-    resultText: '声を奪う沈黙が巣穴に棲みついている。口は動くが音が出ない。叫んでも洞窟は応えない。',
+    resultText: '声を奪う沈黙が巣穴に棲みついている。声を絞り出そうとして喉の筋が裂け、口から血が垂れて顎を伝った。',
     damage: 4,
     quill: 5
   },
@@ -797,21 +797,21 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_fire_knight',
     conditions: { s1: 'mod_fire', s2: 'subj_knight' },
-    resultText: '鎧ごと炎に包まれた騎士が巣穴に棲みついている。竜退治の最中に竜と一体化したのだろうか。',
+    resultText: '鎧ごと炎に包まれた騎士が巣穴に棲みついている。抱きかかえるように斬りかかられ、胸と脇腹が同時に焼かれ裂かれた。',
     damage: 5,
     quill: 5
   },
   {
     id: 'e02_hard_knight',
     conditions: { s1: 'mod_hard', s2: 'subj_knight' },
-    resultText: '分厚い鎧の騎士が巣穴の入口で微動だにしない。石像のようだ。通さない構えだ。',
+    resultText: '分厚い鎧の騎士が巣穴の入口で微動だにしない。小手の一撃が顎を砕き、口の中で折れた歯が血と混ざった。',
     damage: 3,
     quill: 4
   },
   {
     id: 'e02_sharp_knight',
     conditions: { s1: 'mod_sharp', s2: 'subj_knight' },
-    resultText: '剣の達人が巣穴に棲みついている。構えに無駄がない。竜を待ち伏せていたが、来たのはこちらだった。',
+    resultText: '剣の達人が巣穴に棲みついている。見えない一太刀で脇腹が深く裂かれ、指先に自分の臓腑の感触があった。',
     damage: 5,
     quill: 4
   },
@@ -826,7 +826,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_mighty_knight',
     conditions: { s1: 'mod_mighty', s2: 'subj_knight' },
-    resultText: '巨体の重装騎士が巣穴に棲みついている。竜退治の英雄が巣穴の新しい主になっていた。',
+    resultText: '巨体の重装騎士が巣穴に棲みついている。大剣の一振りで鎖骨から胸まで断ち割られ、血が噴き出して岩床を染めた。',
     damage: 5,
     quill: 4
   },
@@ -841,14 +841,14 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_clear_knight',
     conditions: { s1: 'mod_clear', s2: 'subj_knight' },
-    resultText: '影の薄い騎士が巣穴に棲みついている。いるのに気づかず通り過ぎた。背後で剣風が鳴った。',
+    resultText: '影の薄い騎士が巣穴に棲みついている。背後からの一太刀が背中を縦に裂き、旅装が血で重くなった。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e02_cursed_knight',
     conditions: { s1: 'mod_cursed', s2: 'subj_knight' },
-    resultText: '黒い鎧の騎士が巣穴に棲みついている。兜の奥の赤い目。竜と同じ目をしている。',
+    resultText: '黒い鎧の騎士が巣穴に棲みついている。黒い剣が腹を貫通し、背まで切先が突き出た。血を吐いて岩床に伏した。',
     damage: 5,
     quill: 5
   },
@@ -876,7 +876,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_fire_witch',
     conditions: { s1: 'mod_fire', s2: 'subj_witch' },
-    resultText: '炎の魔法で全身を包む魔女が巣穴に棲みついている。竜と火力を競い合っているようだ。',
+    resultText: '炎の魔法で全身を包む魔女が巣穴に棲みついている。指差しの先から炎球が飛び、胸を撃ち抜かれて肺まで焼けた。',
     damage: 5,
     quill: 5
   },
@@ -890,28 +890,28 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_sharp_witch',
     conditions: { s1: 'mod_sharp', s2: 'subj_witch' },
-    resultText: '鉤鼻に鋭い目の魔女が巣穴に棲みついている。嘘を一言で見抜く。この洞窟の真の主は彼女だ。',
+    resultText: '鉤鼻に鋭い目の魔女が巣穴に棲みついている。嘘を見抜かれた罰として、呪言で頬に深い裂傷が走った。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e02_broken_witch',
     conditions: { s1: 'mod_broken', s2: 'subj_witch' },
-    resultText: '魔力が暴走した魔女が巣穴に棲みついている。呪文が途切れ途切れ。洞窟の壁に魔法の痕跡が散る。',
+    resultText: '魔力が暴走した魔女が巣穴に棲みついている。暴発した呪文が脇腹で破裂し、肉が焦げて皮膚が垂れ下がった。',
     damage: 3,
     quill: 6
   },
   {
     id: 'e02_mighty_witch',
     conditions: { s1: 'mod_mighty', s2: 'subj_witch' },
-    resultText: '腕の太い魔女が巣穴に棲みついている。杖は使わない。竜を素手で追い出したらしい。',
+    resultText: '腕の太い魔女が巣穴に棲みついている。拳の一撃で顎が砕け、奥歯が数本血と一緒に口から零れ落ちた。',
     damage: 4,
     quill: 6
   },
   {
     id: 'e02_frozen_witch',
     conditions: { s1: 'mod_frozen', s2: 'subj_witch' },
-    resultText: '氷の魔法を使う魔女が巣穴に棲みついている。洞窟の熱気を凍らせている。寒い。',
+    resultText: '氷の魔法を使う魔女が巣穴に棲みついている。呪文で脚の血が凍り、膝から下が感覚を失って崩れ落ちた。',
     damage: 3,
     quill: 5
   },
@@ -925,7 +925,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_cursed_witch',
     conditions: { s1: 'mod_cursed', s2: 'subj_witch' },
-    resultText: '自分の呪いに蝕まれた魔女が巣穴に棲みついている。竜を呪おうとして返された。体が変異している。',
+    resultText: '自分の呪いに蝕まれた魔女が巣穴に棲みついている。掴まれた腕から呪いが這い上がり、肩まで黒く爛れた。',
     damage: 4,
     quill: 6
   },
@@ -953,21 +953,21 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_fire_king',
     conditions: { s1: 'mod_fire', s2: 'subj_king' },
-    resultText: '炎の冠を戴く王が巣穴に棲みついている。竜と共に火を噴く。区別がつかない。',
+    resultText: '炎の冠を戴く王が巣穴に棲みついている。吐かれた炎に全身を包まれ、皮膚と衣が溶けて一体になった。',
     damage: 5,
     quill: 5
   },
   {
     id: 'e02_hard_king',
     conditions: { s1: 'mod_hard', s2: 'subj_king' },
-    resultText: '石の玉座を巣穴に持ち込んだ王が棲みついている。微動だにしない。ここが新しい王宮らしい。',
+    resultText: '石の玉座を巣穴に持ち込んだ王が棲みついている。一言の命で膝が勝手に砕け、石床に額を打ちつけて歯が欠けた。',
     damage: 3,
     quill: 6
   },
   {
     id: 'e02_sharp_king',
     conditions: { s1: 'mod_sharp', s2: 'subj_king' },
-    resultText: '鷹の目を持つ王が巣穴に棲みついている。何も見逃さない。竜の巣を乗っ取った策士だ。',
+    resultText: '鷹の目を持つ王が巣穴に棲みついている。見咎められた瞬間、見えない刃が鎖骨を断ち、血が肩から胸に噴き出した。',
     damage: 4,
     quill: 5
   },
@@ -982,14 +982,14 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_mighty_king',
     conditions: { s1: 'mod_mighty', s2: 'subj_king' },
-    resultText: '戦士王が巣穴に棲みついている。竜を倒して巣穴を奪った。背中に傷がない。',
+    resultText: '戦士王が巣穴に棲みついている。退いたことのない大剣が胴を横に薙ぎ、あばらが裂けて内臓が露わになった。',
     damage: 5,
     quill: 4
   },
   {
     id: 'e02_frozen_king',
     conditions: { s1: 'mod_frozen', s2: 'subj_king' },
-    resultText: '氷の王が巣穴に棲みついている。吐く言葉が白い。洞窟が凍りつく。',
+    resultText: '氷の王が巣穴に棲みついている。一言ごとに体の芯が冷え、指先と耳が黒く凍って感覚を失った。',
     damage: 4,
     quill: 5
   },
@@ -1003,7 +1003,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_cursed_king',
     conditions: { s1: 'mod_cursed', s2: 'subj_king' },
-    resultText: '触れたものが金になる王が巣穴に棲みついている。洞窟の壁が金色に光る。食事もできない。',
+    resultText: '触れたものが金になる王が巣穴に棲みついている。掴まれた肩から金が広がり、鎖骨が重みで砕け落ちた。',
     damage: 4,
     quill: 6
   },
@@ -1031,21 +1031,21 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_fire_ghost',
     conditions: { s1: 'mod_fire', s2: 'subj_ghost' },
-    resultText: '炎をまとった亡霊が巣穴に棲みついている。竜に焼かれた者の怨念。洞窟が炎に照らされる。',
+    resultText: '炎をまとった亡霊が巣穴に棲みついている。覆いかぶさられ胸と両腕が黒く焼け、旅装が皮膚と一緒に剥がれた。',
     damage: 4,
     quill: 5
   },
   {
     id: 'e02_hard_ghost',
     conditions: { s1: 'mod_hard', s2: 'subj_ghost' },
-    resultText: '何百年もそこに立っている亡霊が巣穴に棲みついている。竜が去っても動かない。通せんぼだ。',
+    resultText: '何百年もそこに立っている亡霊が巣穴に棲みついている。すり抜けた身体が氷水に浸したように痺れ、鼻から血が流れた。',
     damage: 3,
     quill: 5
   },
   {
     id: 'e02_sharp_ghost',
     conditions: { s1: 'mod_sharp', s2: 'subj_ghost' },
-    resultText: 'こちらの罪を見透かす目の亡霊が巣穴に棲みついている。竜退治に来たのかと問われた。違うと答えた。',
+    resultText: 'こちらの罪を見透かす目の亡霊が巣穴に棲みついている。視線が胸に刺さり、肋の内側から血が滲んで息が詰まった。',
     damage: 3,
     quill: 6
   },
@@ -1059,14 +1059,14 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_mighty_ghost',
     conditions: { s1: 'mod_mighty', s2: 'subj_ghost' },
-    resultText: '鎧武者の亡霊が巣穴に棲みついている。竜を倒した後も巣穴を守っている。生前より強い。',
+    resultText: '鎧武者の亡霊が巣穴に棲みついている。実体のない刃が腹を深く抉り、血の塊を吐きながら岩床に倒れ込んだ。',
     damage: 5,
     quill: 4
   },
   {
     id: 'e02_frozen_ghost',
     conditions: { s1: 'mod_frozen', s2: 'subj_ghost' },
-    resultText: '触れると凍傷する亡霊が巣穴に棲みついている。洞窟の熱気を帳消しにする冷気を纏っている。',
+    resultText: '触れると凍傷する亡霊が巣穴に棲みついている。掠めた肩の皮膚が白く死に、腕に力が入らなくなって剣を取り落とした。',
     damage: 4,
     quill: 4
   },
@@ -1080,7 +1080,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_cursed_ghost',
     conditions: { s1: 'mod_cursed', s2: 'subj_ghost' },
-    resultText: '呪いに縛られた亡霊が巣穴に棲みついている。竜に殺され、竜を守る呪いをかけられた。',
+    resultText: '呪いに縛られた亡霊が巣穴に棲みついている。近づくと呪いが肌を這い、胸が締めつけられて血の混じった息が漏れた。',
     damage: 4,
     quill: 7,
     rewardItems: [{ id: 'item_e02_cursed_ghost', name: '呪縛の鎖', description: '亡霊を巣穴に縛る見えない鎖の一片', sellPrice: 10 }]
@@ -1109,14 +1109,14 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_fire_mirror',
     conditions: { s1: 'mod_fire', s2: 'subj_mirror' },
-    resultText: '鏡面に炎が映っている。周囲に火はない。鏡の中の巣穴が燃え落ちている。',
+    resultText: '鏡面に炎が映っている。覗き込んだ瞬間、鏡の炎が現実に飛び移り、髪と右頬が焼けて赤い火脹れが残った。',
     damage: 3,
     quill: 6
   },
   {
     id: 'e02_hard_mirror',
     conditions: { s1: 'mod_hard', s2: 'subj_mirror' },
-    resultText: '何をしても割れない鏡が巣穴の入口を塞いでいる。殴っても傷もつかない。通れない。',
+    resultText: '何をしても割れない鏡が巣穴の入口を塞いでいる。殴り続けるうちに拳の骨が折れ、蹴った脛にひびが入った。',
     damage: 3,
     quill: 4
   },
@@ -1137,7 +1137,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_mighty_mirror',
     conditions: { s1: 'mod_mighty', s2: 'subj_mirror' },
-    resultText: '巨大な姿見が巣穴に棲みついている。映った姿が動かない。鏡の中の自分が竜の目をしている。',
+    resultText: '巨大な姿見が巣穴に棲みついている。鏡の中の自分が牙で胸を噛み、現実の胸にも同じ噛み傷が開いて血が滲んだ。',
     damage: 3,
     quill: 7,
     rewardItems: [{ id: 'item_e02_mighty_mirror', name: '竜の瞳の鏡', description: '覗くと自分の目が竜のように光る。一瞬だけ', sellPrice: 12 }]
@@ -1159,7 +1159,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_cursed_mirror',
     conditions: { s1: 'mod_cursed', s2: 'subj_mirror' },
-    resultText: '覗いた者の姿が鏡に残る鏡が巣穴に棲みついている。中に竜退治の英雄たちの影が蠢いている。',
+    resultText: '覗いた者の姿が鏡に残る鏡が巣穴に棲みついている。中の影に腕を掴まれ引き摺り込まれかけ、肩が脱臼した。',
     damage: 4,
     quill: 6
   },
@@ -1187,7 +1187,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_fire_doll',
     conditions: { s1: 'mod_fire', s2: 'subj_doll' },
-    resultText: '火がついた藁人形が巣穴に棲みついている。祭りの焚き上げのように燃えている。洞窟が煙い。',
+    resultText: '火がついた藁人形が巣穴に棲みついている。倒れ掛かった藁が脚に絡み、脛の皮膚が焼け爛れた。煙で呼吸もままならない。',
     damage: 3,
     quill: 5
   },
@@ -1215,7 +1215,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_mighty_doll',
     conditions: { s1: 'mod_mighty', s2: 'subj_doll' },
-    resultText: '等身大の木彫り人形が巣穴に棲みついている。腕が丸太のように太い。ゴーレムだ。',
+    resultText: '等身大の木彫り人形が巣穴に棲みついている。丸太のような腕の一振りで胸骨が砕け、息を吸うたび肺に棘が刺さる。',
     damage: 4,
     quill: 4
   },
@@ -1236,7 +1236,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_cursed_doll',
     conditions: { s1: 'mod_cursed', s2: 'subj_doll' },
-    resultText: '夜になると位置が変わる人形が巣穴に棲みついている。目を離した隙に入口まで来ていた。',
+    resultText: '夜になると位置が変わる人形が巣穴に棲みついている。振り返った瞬間、小さな手が首を絞め、気道が潰れかけた。',
     damage: 3,
     quill: 6
   },

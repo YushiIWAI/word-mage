@@ -177,20 +177,20 @@ export const nodeP23Outcomes: Outcome[] = [
     id: 'p23_fire_whisper',
     conditions: { s1: 'mod_fire', s4: 'pred_whisper' },
     resultText: '燃え盛る炎が書庫に囁いている。轟音の中に声が混じる。本が灰になる寸前、書かれた言葉が叫んでいる。',
-    damage: 4,
+    damage: 2,
     quill: 4
   },
   {
     id: 'p23_fire_sleep',
     conditions: { s1: 'mod_fire', s4: 'pred_sleep' },
     resultText: '燃え盛る炎が書庫に眠っている。火災の跡。壁は黒く焦げているが、今は静かだ。いつ目覚めるかわからない。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
     id: 'p23_fire_sing',
     conditions: { s1: 'mod_fire', s4: 'pred_sing' },
-    resultText: '燃え盛る炎が書庫に歌っている。業火が吠えるように鳴る。本が次々と燃え上がり、灰が舞い上がる。地獄の合唱だ。',
+    resultText: '燃え盛る炎が書庫に歌っている。業火が吠えるように鳴る。本が次々と燃え上がり、灰が舞い上がる。煙を吸い込み喉が焼け、意識が遠のきかけた。',
     damage: 5,
     quill: 3
   },
@@ -198,27 +198,27 @@ export const nodeP23Outcomes: Outcome[] = [
     id: 'p23_fire_entangle',
     conditions: { s1: 'mod_fire', s4: 'pred_entangle' },
     resultText: '燃え盛る炎が書庫に絡みついている。書架が炎に巻かれている。本の背表紙が一冊ずつ剥がれ落ちる。知識が灰になっていく。',
-    damage: 5,
+    damage: 2,
     quill: 2
   },
   {
     id: 'p23_fire_flee',
     conditions: { s1: 'mod_fire', s4: 'pred_flee' },
     resultText: '燃え盛る炎が書庫を逃げていく。火が窓を突き破って外へ飛び出した。書庫は焦げ跡だらけだが、本は残った。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
     id: 'p23_fire_shine',
     conditions: { s1: 'mod_fire', s4: 'pred_shine' },
     resultText: '燃え盛る炎が書庫に輝いている。書庫全体が松明のように燃えている。遠くからでも見える。もう書庫ではない。灯台だ。',
-    damage: 4,
+    damage: 2,
     quill: 4
   },
   {
     id: 'p23_fire_rain_down',
     conditions: { s1: 'mod_fire', s4: 'pred_rain_down' },
-    resultText: '燃え盛る炎が書庫に降り注いでいる。天井が崩れ、火の塊が落ちてくる。本が一瞬で灰になる。逃げるしかない。',
+    resultText: '燃え盛る炎が書庫に降り注いでいる。天井が崩れ、火の塊が落ちてくる。肩に火の塊を浴び、背中に広範な火傷を負った。',
     damage: 5,
     quill: 1
   },
@@ -226,28 +226,28 @@ export const nodeP23Outcomes: Outcome[] = [
     id: 'p23_fire_dance',
     conditions: { s1: 'mod_fire', s4: 'pred_dance' },
     resultText: '燃え盛る炎が書庫に踊っている。火柱が書架の間を跳ね回る。紙吹雪のように灰が舞う。恐ろしく美しい。',
-    damage: 4,
+    damage: 2,
     quill: 4
   },
   {
     id: 'p23_fire_melt',
     conditions: { s1: 'mod_fire', s4: 'pred_melt' },
     resultText: '燃え盛る炎が書庫に溶けている。石の壁が飴のように歪んでいる。本棚が崩れ、溶けた木と紙が混ざり合う。',
-    damage: 5,
+    damage: 2,
     quill: 2
   },
   {
     id: 'p23_fire_laugh',
     conditions: { s1: 'mod_fire', s4: 'pred_laugh' },
     resultText: '燃え盛る炎が書庫に笑っている。ごうごうと鳴る火の中に哄笑が混じる。本が燃えるのが楽しくて仕方ないらしい。',
-    damage: 4,
+    damage: 2,
     quill: 3
   },
   {
     id: 'p23_fire_wait',
     conditions: { s1: 'mod_fire', s4: 'pred_wait' },
     resultText: '燃え盛る炎が書庫に待っている。入口が炎の壁で塞がれている。中に何かあるのだろうが、取りに行けば焼かれる。',
-    damage: 4,
+    damage: 2,
     quill: 2
   },
 
@@ -299,7 +299,7 @@ export const nodeP23Outcomes: Outcome[] = [
     id: 'p23_hard_rain_down',
     conditions: { s1: 'mod_hard', s4: 'pred_rain_down' },
     resultText: '堅い炎が書庫に降り注いでいる。火の粒が石のように硬く、本の表紙を叩いている。凹みが増えていく。',
-    damage: 3,
+    damage: 2,
     quill: 2
   },
   {
@@ -350,21 +350,21 @@ export const nodeP23Outcomes: Outcome[] = [
     id: 'p23_sharp_sing',
     conditions: { s1: 'mod_sharp', s4: 'pred_sing' },
     resultText: '鋭い炎が書庫に歌っている。甲高い音が書架に響く。ガラスの本棚に罅が入った。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
     id: 'p23_sharp_entangle',
     conditions: { s1: 'mod_sharp', s4: 'pred_entangle' },
     resultText: '鋭い炎が書庫に絡みついている。有刺鉄線のような火の筋が本を縛り上げている。手を出せば切れて焼ける。',
-    damage: 3,
+    damage: 2,
     quill: 2
   },
   {
     id: 'p23_sharp_flee',
     conditions: { s1: 'mod_sharp', s4: 'pred_flee' },
     resultText: '鋭い炎が書庫を逃げていく。一閃。火の刃が棚を切り裂きながら窓から飛び出した。本が真っ二つに割れている。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -377,7 +377,7 @@ export const nodeP23Outcomes: Outcome[] = [
   {
     id: 'p23_sharp_rain_down',
     conditions: { s1: 'mod_sharp', s4: 'pred_rain_down' },
-    resultText: '鋭い炎が書庫に降り注いでいる。火の針が天井から降ってくる。本のページを貫通し、床に突き刺さる。',
+    resultText: '鋭い炎が書庫に降り注いでいる。火の針が天井から降ってくる。本のページを貫通し、腕と肩に刺さって焼けた穴を残した。',
     damage: 4,
     quill: 2
   },
@@ -385,7 +385,7 @@ export const nodeP23Outcomes: Outcome[] = [
     id: 'p23_sharp_dance',
     conditions: { s1: 'mod_sharp', s4: 'pred_dance' },
     resultText: '鋭い炎が書庫に踊っている。剣舞のように火の刃が旋回する。書架の角が削れていく。美しいが近寄れない。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -399,7 +399,7 @@ export const nodeP23Outcomes: Outcome[] = [
     id: 'p23_sharp_laugh',
     conditions: { s1: 'mod_sharp', s4: 'pred_laugh' },
     resultText: '鋭い炎が書庫に笑っている。ぎし、ぎしと金属を擦るような音。本の表紙に焼き傷が走る。嘲笑だ。',
-    damage: 3,
+    damage: 2,
     quill: 2
   },
   {
@@ -509,14 +509,14 @@ export const nodeP23Outcomes: Outcome[] = [
     id: 'p23_mighty_sing',
     conditions: { s1: 'mod_mighty', s4: 'pred_sing' },
     resultText: '屈強な炎が書庫に歌っている。重低音が壁を震わせる。書架が倒れそうだ。本が棚から滑り落ちる。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
     id: 'p23_mighty_entangle',
     conditions: { s1: 'mod_mighty', s4: 'pred_entangle' },
     resultText: '屈強な炎が書庫に絡みついている。太い火の腕が柱を抱き締めている。木材が軋む。書庫の骨組みが歪み始めた。',
-    damage: 4,
+    damage: 2,
     quill: 2
   },
   {
@@ -537,7 +537,7 @@ export const nodeP23Outcomes: Outcome[] = [
   {
     id: 'p23_mighty_rain_down',
     conditions: { s1: 'mod_mighty', s4: 'pred_rain_down' },
-    resultText: '屈強な炎が書庫に降り注いでいる。天井が抜け、火の柱が何本も落ちてくる。書庫が溶鉱炉になった。',
+    resultText: '屈強な炎が書庫に降り注いでいる。天井が抜け、火の柱が何本も落ちてくる。逃げ場はなく、肺が焼けて意識が飛びかけた。',
     damage: 5,
     quill: 1
   },
@@ -545,13 +545,13 @@ export const nodeP23Outcomes: Outcome[] = [
     id: 'p23_mighty_dance',
     conditions: { s1: 'mod_mighty', s4: 'pred_dance' },
     resultText: '屈強な炎が書庫に踊っている。地響きを立てて火柱が跳ねる。書架が薙ぎ倒される。豪快すぎる。',
-    damage: 4,
+    damage: 2,
     quill: 3
   },
   {
     id: 'p23_mighty_melt',
     conditions: { s1: 'mod_mighty', s4: 'pred_melt' },
-    resultText: '屈強な炎が書庫に溶けている。火が重力に負けて床に広がっている。溶岩のような熱が足元を這う。',
+    resultText: '屈強な炎が書庫に溶けている。火が重力に負けて床に広がっている。溶岩のような熱が足元を這い、靴底が溶けて足裏に火傷を負った。',
     damage: 4,
     quill: 2
   },
@@ -559,7 +559,7 @@ export const nodeP23Outcomes: Outcome[] = [
     id: 'p23_mighty_laugh',
     conditions: { s1: 'mod_mighty', s4: 'pred_laugh' },
     resultText: '屈強な炎が書庫に笑っている。ごうごうと炉が哄笑する。窓ガラスが震え、本棚から埃が舞い上がる。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -589,7 +589,7 @@ export const nodeP23Outcomes: Outcome[] = [
     id: 'p23_frozen_sing',
     conditions: { s1: 'mod_frozen', s4: 'pred_sing' },
     resultText: '凍てついた炎が書庫に歌っている。きいん、と耳鳴りのような音。書架のインクが凍り、文字が本から剥がれ落ちる。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -618,7 +618,7 @@ export const nodeP23Outcomes: Outcome[] = [
     id: 'p23_frozen_rain_down',
     conditions: { s1: 'mod_frozen', s4: 'pred_rain_down' },
     resultText: '凍てついた炎が書庫に降り注いでいる。青い火の結晶が霰のように降る。本が凍り、ページが開かなくなる。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -735,7 +735,7 @@ export const nodeP23Outcomes: Outcome[] = [
     id: 'p23_cursed_whisper',
     conditions: { s1: 'mod_cursed', s4: 'pred_whisper' },
     resultText: '呪われた炎が書庫に囁いている。紫の火が禁書の呪文を読み上げている。聞いてはいけない。だが耳を塞いでも聞こえる。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -749,21 +749,21 @@ export const nodeP23Outcomes: Outcome[] = [
     id: 'p23_cursed_sing',
     conditions: { s1: 'mod_cursed', s4: 'pred_sing' },
     resultText: '呪われた炎が書庫に歌っている。不協和音が書架を震わせる。本の文字が書き変わっていく。元に戻せない。',
-    damage: 4,
+    damage: 2,
     quill: 3
   },
   {
     id: 'p23_cursed_entangle',
     conditions: { s1: 'mod_cursed', s4: 'pred_entangle' },
     resultText: '呪われた炎が書庫に絡みついている。黒い火の蔦が書架を締め上げ、本の内容を書き換えている。禁書が増殖している。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
     id: 'p23_cursed_flee',
     conditions: { s1: 'mod_cursed', s4: 'pred_flee' },
     resultText: '呪われた炎が書庫を逃げていく。紫の火が這うように去っていく。通った場所の本が全て白紙になっている。',
-    damage: 3,
+    damage: 2,
     quill: 2
   },
   {
@@ -778,28 +778,28 @@ export const nodeP23Outcomes: Outcome[] = [
     id: 'p23_cursed_rain_down',
     conditions: { s1: 'mod_cursed', s4: 'pred_rain_down' },
     resultText: '呪われた炎が書庫に降り注いでいる。黒い火の雨が本を汚していく。触れた本の題名が消え、代わりに呪詛が浮かぶ。',
-    damage: 4,
+    damage: 2,
     quill: 2
   },
   {
     id: 'p23_cursed_dance',
     conditions: { s1: 'mod_cursed', s4: 'pred_dance' },
     resultText: '呪われた炎が書庫に踊っている。黒い火が円を描いて回る。魔法陣だ。本棚が床から浮き始めた。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
     id: 'p23_cursed_melt',
     conditions: { s1: 'mod_cursed', s4: 'pred_melt' },
     resultText: '呪われた炎が書庫に溶けている。黒い液体が書架を伝い、本に染み込んでいく。汚染された本は二度と読めない。',
-    damage: 3,
+    damage: 2,
     quill: 2
   },
   {
     id: 'p23_cursed_laugh',
     conditions: { s1: 'mod_cursed', s4: 'pred_laugh' },
     resultText: '呪われた炎が書庫に笑っている。嘲るような哄笑。笑い声を聞いた本の文字が震え、紙面から滴り落ちる。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {

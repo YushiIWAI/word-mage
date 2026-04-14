@@ -364,7 +364,7 @@ export const nodeR05Outcomes: Outcome[] = [
     id: 'r05_mighty_wind',
     conditions: { s1: 'mod_mighty', s2: 'subj_wind' },
     resultText: '屈強な風が星空に輝いている。嵐のような風が丘を吹き抜けていく。吹き飛ばされて丘を転がり落ちた。',
-    damage: 3,
+    damage: 2,
     quill: 2
   },
   {
@@ -442,7 +442,7 @@ export const nodeR05Outcomes: Outcome[] = [
     id: 'r05_mighty_flame',
     conditions: { s1: 'mod_mighty', s2: 'subj_flame' },
     resultText: '屈強な炎が星空に輝いている。火柱が天を衝く。放射熱で眉が焦げ、肌が赤く腫れた。休むどころではない。',
-    damage: 5,
+    damage: 3,
     quill: 1
   },
   {
@@ -520,14 +520,14 @@ export const nodeR05Outcomes: Outcome[] = [
     id: 'r05_mighty_ice',
     conditions: { s1: 'mod_mighty', s2: 'subj_ice' },
     resultText: '屈強な氷が星空に輝いている。山のような氷塊が丘を占領している。冷気で足の先から感覚が消えていく。',
-    damage: 3,
+    damage: 2,
     quill: 2
   },
   {
     id: 'r05_frozen_ice',
     conditions: { s1: 'mod_frozen', s2: 'subj_ice' },
     resultText: '凍てついた氷が星空に輝いている。絶対零度に近い氷。空気が結晶化して降り、吸い込んだ肺が凍えた。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -542,7 +542,7 @@ export const nodeR05Outcomes: Outcome[] = [
     id: 'r05_cursed_ice',
     conditions: { s1: 'mod_cursed', s2: 'subj_ice' },
     resultText: '呪われた氷が星空に輝いている。溶けない氷が丘に永遠の冬を広げている。星は綺麗だが、足が凍える。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -1300,7 +1300,7 @@ export const nodeR05Outcomes: Outcome[] = [
     id: 'r05_mighty_rain',
     conditions: { s1: 'mod_mighty', s2: 'subj_rain' },
     resultText: '屈強な雨が星空に輝いている。豪雨が星空を覆い隠した。丘が急流になり、足をすくわれて泥だらけになった。',
-    damage: 3,
+    damage: 2,
     quill: 2
   },
   {

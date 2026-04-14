@@ -113,7 +113,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_sharp_snake',
     conditions: { s1: 'mod_sharp', s2: 'subj_snake' },
     resultText: '鋭い蛇が泉に浮かんでいる。牙から毒が垂れ、泉の水が黒ずんでいく。うっかり口に含んだ水が苦く、舌が痺れた。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -128,7 +128,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_mighty_snake',
     conditions: { s1: 'mod_mighty', s2: 'subj_snake' },
     resultText: '屈強な蛇が泉に浮かんでいる。大蛇がとぐろを巻いて泉を占拠している。威嚇の尾打ちが脛を薙ぎ、転倒した。',
-    damage: 3,
+    damage: 2,
     quill: 2
   },
   {
@@ -179,7 +179,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_fire_dragon',
     conditions: { s1: 'mod_fire', s2: 'subj_dragon' },
     resultText: '燃え盛る竜が泉に浮かんでいる。泉が丸ごと湯気に包まれた。視界がゼロ。熱風で肌がひりつく。',
-    damage: 5,
+    damage: 2,
     quill: 1
   },
   {
@@ -208,14 +208,14 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_mighty_dragon',
     conditions: { s1: 'mod_mighty', s2: 'subj_dragon' },
     resultText: '屈強な竜が泉に浮かんでいる。翼を広げると泉が影に沈む。鼻息の熱風で吹き飛ばされ、岩に背中を打ちつけた。',
-    damage: 4,
+    damage: 3,
     quill: 2
   },
   {
     id: 'r01_frozen_dragon',
     conditions: { s1: 'mod_frozen', s2: 'subj_dragon' },
     resultText: '凍てついた竜が泉に浮かんでいる。白い竜の息が泉を凍らせていく。吐息を浴びた指先が白くなり、感覚が消えた。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -230,7 +230,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_cursed_dragon',
     conditions: { s1: 'mod_cursed', s2: 'subj_dragon' },
     resultText: '呪われた竜が泉に浮かんでいる。目に理性がない。呪いの瘴気を吸い込み、喉の奥が焼けるように痛む。',
-    damage: 4,
+    damage: 2,
     quill: 2
   },
   {
@@ -364,7 +364,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_mighty_wind',
     conditions: { s1: 'mod_mighty', s2: 'subj_wind' },
     resultText: '屈強な風が泉に浮かんでいる。泉の水が巻き上げられている。近づいた途端、体が浮き上がって地面に叩きつけられた。',
-    damage: 3,
+    damage: 2,
     quill: 2
   },
   {
@@ -428,7 +428,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_sharp_flame',
     conditions: { s1: 'mod_sharp', s2: 'subj_flame' },
     resultText: '鋭い炎が泉に浮かんでいる。一点集中の火。手を伸ばした瞬間に袖が燃え、慌てて水に浸した。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -442,7 +442,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_mighty_flame',
     conditions: { s1: 'mod_mighty', s2: 'subj_flame' },
     resultText: '屈強な炎が泉に浮かんでいる。火柱が泉から天を衝く。熱風に焼かれ、全身に水膨れができた。休息どころではない。',
-    damage: 5,
+    damage: 3,
     quill: 1
   },
   {
@@ -619,7 +619,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_cursed_shadow',
     conditions: { s1: 'mod_cursed', s2: 'subj_shadow' },
     resultText: '呪われた影が泉に浮かんでいる。水面に手を入れた瞬間、自分の影が泉に引きずり込まれた。慌てて抜いた。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -662,7 +662,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_sharp_song',
     conditions: { s1: 'mod_sharp', s2: 'subj_song' },
     resultText: '鋭い歌が泉に浮かんでいる。金切り声のような高音。泉の水面に亀裂が走った。耳を塞いだ。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -804,7 +804,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_fire_knight',
     conditions: { s1: 'mod_fire', s2: 'subj_knight' },
     resultText: '燃え盛る騎士が泉に浮かんでいる。鎧ごと炎に包まれた騎士が泉で火を消そうとしている。蒸気で視界を奪われ、岩に頭をぶつけた。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -1287,7 +1287,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_sharp_rain',
     conditions: { s1: 'mod_sharp', s2: 'subj_rain' },
     resultText: '鋭い雨が泉に浮かんでいる。針のような雨粒。泉の水面が無数の穴だらけに見える。肌に刺さる。',
-    damage: 3,
+    damage: 2,
     quill: 2
   },
   {
@@ -1301,7 +1301,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_mighty_rain',
     conditions: { s1: 'mod_mighty', s2: 'subj_rain' },
     resultText: '屈強な雨が泉に浮かんでいる。豪雨。泉が溢れて急流になり、足をすくわれて岩場に転がった。',
-    damage: 3,
+    damage: 2,
     quill: 2
   },
   {

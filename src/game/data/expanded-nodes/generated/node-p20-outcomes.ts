@@ -48,7 +48,7 @@ export const nodeP20Outcomes: Outcome[] = [
     id: 'p20_ice',
     conditions: { s2: 'subj_ice' },
     resultText: '氷が城壁を守っている。壁面が分厚い氷に覆われ、手がかりを掴めばすぐ凍傷する。迂回路を探すしかない。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -70,7 +70,7 @@ export const nodeP20Outcomes: Outcome[] = [
     id: 'p20_silence',
     conditions: { s2: 'subj_silence' },
     resultText: '沈黙が城壁を守っている。音が消える。足音も息遣いも吸い込まれる。圧倒的な無音の中、方向感覚が狂い始めた。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -84,7 +84,7 @@ export const nodeP20Outcomes: Outcome[] = [
     id: 'p20_witch',
     conditions: { s2: 'subj_witch' },
     resultText: '魔女が城壁を守っている。壁の上に座り、下を覗き込んでいる。近づくと呪文が一言。足が一歩だけ動かなくなった。',
-    damage: 3,
+    damage: 2,
     quill: 5,
     rewardItems: [{ id: 'item_p20_witch', name: '魔女の城壁札', description: '壁に貼られていた護符。まだ微かに力がある', sellPrice: 8 }]
   },
@@ -98,7 +98,7 @@ export const nodeP20Outcomes: Outcome[] = [
   {
     id: 'p20_ghost',
     conditions: { s2: 'subj_ghost' },
-    resultText: '亡霊が城壁を守っている。かつてここで死んだ兵士だろうか。壁を通り抜けようとすると、冷たい手が肩を掴む。',
+    resultText: '亡霊が城壁を守っている。かつてここで死んだ兵士だろうか。壁を通り抜けようとすると、冷たい手が肩を掴み、その箇所から体温が一気に失われた。',
     damage: 3,
     quill: 5,
     rewardItems: [{ id: 'item_p20_ghost', name: '番兵の記章', description: '亡霊が落とした錆びた記章。名前が読めない', sellPrice: 7 }]

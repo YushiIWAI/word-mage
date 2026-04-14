@@ -60,7 +60,7 @@ export const nodeP27Outcomes: Outcome[] = [
   {
     id: 'p27_snake_fierce',
     conditions: { s1: 'subj_snake', s4: 'adv_fierce' },
-    resultText: '蛇が鐘楼で激しく鳴り続けている。鐘を揺らし、毒の霧が舞う。耳を塞いで駆け抜ける。',
+    resultText: '蛇が鐘楼で激しく鳴り続けている。鐘を揺らし、毒の霧が舞う。耳を塞いで駆け抜け、吸い込んだ霧で目が霞み脚がもつれた。',
     damage: 4,
     quill: 2
   },
@@ -82,7 +82,7 @@ export const nodeP27Outcomes: Outcome[] = [
     id: 'p27_snake_sudden',
     conditions: { s1: 'subj_snake', s4: 'adv_sudden' },
     resultText: '蛇が鐘楼で突然鳴り出した。鐘を叩く尾が稲妻のように速い。警告だ。獲物がいる。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
 
@@ -91,13 +91,13 @@ export const nodeP27Outcomes: Outcome[] = [
     id: 'p27_dragon_quiet',
     conditions: { s1: 'subj_dragon', s4: 'adv_quiet' },
     resultText: '竜が鐘楼で静かに鳴り続けている。低い咆哮が鐘を震わせる。この鐘楼は竜の寝床だった。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
     id: 'p27_dragon_fierce',
     conditions: { s1: 'subj_dragon', s4: 'adv_fierce' },
-    resultText: '竜が鐘楼で激しく鳴り続けている。鐘が溶け、火の粉が雨のように降る。鐘楼が崩壊していく。',
+    resultText: '竜が鐘楼で激しく鳴り続けている。鐘が溶け、火の粉が雨のように降る。鐘楼が崩壊し、降ってきた石材で脚が潰されかけた。',
     damage: 5,
     quill: 3
   },
@@ -119,7 +119,7 @@ export const nodeP27Outcomes: Outcome[] = [
   {
     id: 'p27_dragon_sudden',
     conditions: { s1: 'subj_dragon', s4: 'adv_sudden' },
-    resultText: '竜が鐘楼で突然咆えた。鐘が粉々に砕け、衝撃波が谷を駆け抜ける。何が竜を怒らせたのか。',
+    resultText: '竜が鐘楼で突然咆えた。鐘が粉々に砕け、衝撃波が谷を駆け抜ける。衝撃波に叩かれ、鼓膜が裂けて血が流れた。',
     damage: 4,
     quill: 5
   },
@@ -167,7 +167,7 @@ export const nodeP27Outcomes: Outcome[] = [
     id: 'p27_wind_fierce',
     conditions: { s1: 'subj_wind', s4: 'adv_fierce' },
     resultText: '風が鐘楼で激しく鳴り続けている。嵐だ。鐘が千切れそうに揺れ、耳をつんざく音が鳴り止まない。',
-    damage: 3,
+    damage: 2,
     quill: 2
   },
   {
@@ -188,7 +188,7 @@ export const nodeP27Outcomes: Outcome[] = [
     id: 'p27_wind_sudden',
     conditions: { s1: 'subj_wind', s4: 'adv_sudden' },
     resultText: '風が鐘楼で突然鳴り出した。竜巻のような突風。鐘が宙に浮きかけ、地面に叩きつけられた。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
 
@@ -204,7 +204,7 @@ export const nodeP27Outcomes: Outcome[] = [
     id: 'p27_flame_fierce',
     conditions: { s1: 'subj_flame', s4: 'adv_fierce' },
     resultText: '炎が鐘楼で激しく鳴り続けている。火柱が鐘を赤く染め、金属が歪む不吉な音がする。',
-    damage: 5,
+    damage: 2,
     quill: 2
   },
   {
@@ -225,7 +225,7 @@ export const nodeP27Outcomes: Outcome[] = [
     id: 'p27_flame_sudden',
     conditions: { s1: 'subj_flame', s4: 'adv_sudden' },
     resultText: '炎が鐘楼で突然燃え上がった。爆発的な火柱。鐘が真っ赤に光り、夜空を照らす。',
-    damage: 4,
+    damage: 2,
     quill: 4
   },
 
@@ -241,7 +241,7 @@ export const nodeP27Outcomes: Outcome[] = [
     id: 'p27_ice_fierce',
     conditions: { s1: 'subj_ice', s4: 'adv_fierce' },
     resultText: '氷が鐘楼で激しく鳴り続けている。吹雪が鐘に氷塊を叩きつける。耳が痛い。',
-    damage: 4,
+    damage: 2,
     quill: 2
   },
   {
@@ -262,7 +262,7 @@ export const nodeP27Outcomes: Outcome[] = [
     id: 'p27_ice_sudden',
     conditions: { s1: 'subj_ice', s4: 'adv_sudden' },
     resultText: '氷が鐘楼で突然砕けた。鐘が氷の破片とともに落下し、地面に突き刺さった。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
 
@@ -278,7 +278,7 @@ export const nodeP27Outcomes: Outcome[] = [
     id: 'p27_shadow_fierce',
     conditions: { s1: 'subj_shadow', s4: 'adv_fierce' },
     resultText: '影が鐘楼で激しく鳴り続けている。鐘の影が実体化し、黒い鐘が本物を打ち鳴らす。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -316,7 +316,7 @@ export const nodeP27Outcomes: Outcome[] = [
     id: 'p27_song_fierce',
     conditions: { s1: 'subj_song', s4: 'adv_fierce' },
     resultText: '歌が鐘楼で激しく鳴り続けている。狂ったような旋律。鐘が割れてもまだ歌っている。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -353,7 +353,7 @@ export const nodeP27Outcomes: Outcome[] = [
     id: 'p27_silence_fierce',
     conditions: { s1: 'subj_silence', s4: 'adv_fierce' },
     resultText: '沈黙が鐘楼で激しく鳴り続けている。音の無い衝撃波が体を貫く。耳鳴りが止まらない。',
-    damage: 4,
+    damage: 2,
     quill: 3
   },
   {
@@ -374,7 +374,7 @@ export const nodeP27Outcomes: Outcome[] = [
     id: 'p27_silence_sudden',
     conditions: { s1: 'subj_silence', s4: 'adv_sudden' },
     resultText: '沈黙が鐘楼で突然鳴り出した。全ての音が一瞬で消え、空白だけが響く。息をするのも怖い。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
 
@@ -390,7 +390,7 @@ export const nodeP27Outcomes: Outcome[] = [
     id: 'p27_knight_fierce',
     conditions: { s1: 'subj_knight', s4: 'adv_fierce' },
     resultText: '騎士が鐘楼で激しく鳴り続けている。警鐘だ。敵が来る。武器を取れと叫んでいる。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -427,7 +427,7 @@ export const nodeP27Outcomes: Outcome[] = [
     id: 'p27_witch_fierce',
     conditions: { s1: 'subj_witch', s4: 'adv_fierce' },
     resultText: '魔女が鐘楼で激しく鳴り続けている。嵐を呼ぶ鐘だ。雷が鐘楼に落ちるが、魔女は笑っている。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
@@ -465,7 +465,7 @@ export const nodeP27Outcomes: Outcome[] = [
     id: 'p27_king_fierce',
     conditions: { s1: 'subj_king', s4: 'adv_fierce' },
     resultText: '王が鐘楼で激しく鳴り続けている。戦争の号令だ。鐘の音で地が震える。',
-    damage: 4,
+    damage: 2,
     quill: 3
   },
   {
@@ -502,7 +502,7 @@ export const nodeP27Outcomes: Outcome[] = [
     id: 'p27_ghost_fierce',
     conditions: { s1: 'subj_ghost', s4: 'adv_fierce' },
     resultText: '亡霊が鐘楼で激しく鳴り続けている。怒りの鐘。この場所で殺されたのだ。恨みが鐘を揺らす。',
-    damage: 4,
+    damage: 2,
     quill: 3
   },
   {
@@ -539,7 +539,7 @@ export const nodeP27Outcomes: Outcome[] = [
     id: 'p27_mirror_fierce',
     conditions: { s1: 'subj_mirror', s4: 'adv_fierce' },
     resultText: '鏡が鐘楼で激しく鳴り続けている。割れた鏡の破片が鐘に当たり、銀色の雨が降る。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -577,7 +577,7 @@ export const nodeP27Outcomes: Outcome[] = [
     id: 'p27_doll_fierce',
     conditions: { s1: 'subj_doll', s4: 'adv_fierce' },
     resultText: '人形が鐘楼で激しく鳴り続けている。何十体もの人形が鐘にしがみつき、揺らしている。不気味だ。',
-    damage: 4,
+    damage: 2,
     quill: 3
   },
   {
@@ -614,7 +614,7 @@ export const nodeP27Outcomes: Outcome[] = [
     id: 'p27_rain_fierce',
     conditions: { s1: 'subj_rain', s4: 'adv_fierce' },
     resultText: '雨が鐘楼で激しく鳴り続けている。豪雨が鐘を打ち鳴らす。雷鳴と鐘の音が混ざり合う。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {

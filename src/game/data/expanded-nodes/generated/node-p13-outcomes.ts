@@ -119,7 +119,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_snake_rain_down',
     conditions: { s2: 'subj_snake', s4: 'pred_rain_down' },
     resultText: '鋭い蛇が裂け目から降り注いでいる。天井の亀裂から細い体が次々と落ちてくる。地面が鱗で覆われていく。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -140,7 +140,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_snake_laugh',
     conditions: { s2: 'subj_snake', s4: 'pred_laugh' },
     resultText: '鋭い蛇が裂け目から笑っている。口を大きく開き、牙の間から空気が漏れる。笑い声には聞こえない。だが笑っている。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
 
@@ -149,14 +149,14 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_dragon_gaze',
     conditions: { s2: 'subj_dragon', s4: 'pred_gaze' },
     resultText: '鋭い竜が裂け目から見つめている。巨大な瞳が裂け目いっぱいに広がり、虹彩の奥に炎が揺れている。値踏みされている。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
     id: 'p13_dragon_whisper',
     conditions: { s2: 'subj_dragon', s4: 'pred_whisper' },
     resultText: '鋭い竜が裂け目から囁いている。低い声が地面を振動させ、足裏から骨に伝わる。「去れ」と聞こえたが、竜語かもしれない。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -176,14 +176,14 @@ export const nodeP13Outcomes: Outcome[] = [
   {
     id: 'p13_dragon_shine',
     conditions: { s2: 'subj_dragon', s4: 'pred_shine' },
-    resultText: '鋭い竜が裂け目から輝く。鱗が溶岩のように赤く発光し、裂け目が火口に変わる。熱風が顔を焼く。',
+    resultText: '鋭い竜が裂け目から輝く。鱗が溶岩のように赤く発光し、裂け目が火口に変わる。熱風が顔を焼き、皮が剥けるほどの火傷を負った。',
     damage: 4,
     quill: 3
   },
   {
     id: 'p13_dragon_rain_down',
     conditions: { s2: 'subj_dragon', s4: 'pred_rain_down' },
-    resultText: '鋭い竜が裂け目から降り注いでいる。鱗の破片が上空から落下し、地面に突き刺さる。竜そのものではなく、竜の残骸だ。',
+    resultText: '鋭い竜が裂け目から降り注いでいる。鱗の破片が上空から落下し、地面に突き刺さる。肩を掠めた一片が腕を深く裂いた。',
     damage: 4,
     quill: 3
   },
@@ -191,7 +191,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_dragon_dance',
     conditions: { s2: 'subj_dragon', s4: 'pred_dance' },
     resultText: '鋭い竜が裂け目から踊っている。巨体が岩壁を削りながら旋回し、裂け目が広がっていく。地形が変わるほどの踊り。',
-    damage: 4,
+    damage: 2,
     quill: 4
   },
   {
@@ -205,7 +205,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_dragon_laugh',
     conditions: { s2: 'subj_dragon', s4: 'pred_laugh' },
     resultText: '鋭い竜が裂け目から笑っている。腹の底から湧く笑い声が地震のように地面を揺らす。何がおかしいのかは、人間には分からない。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
 
@@ -315,7 +315,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_wind_rain_down',
     conditions: { s2: 'subj_wind', s4: 'pred_rain_down' },
     resultText: '鋭い風が裂け目から降り注いでいる。上空の裂け目から刃のような下降気流が叩きつける。立っていられない。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -374,13 +374,13 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_flame_shine',
     conditions: { s2: 'subj_flame', s4: 'pred_shine' },
     resultText: '鋭い炎が裂け目から輝く。白熱した火柱が裂け目を貫き、昼のように明るくなる。目を開けていられない。',
-    damage: 4,
+    damage: 2,
     quill: 2
   },
   {
     id: 'p13_flame_rain_down',
     conditions: { s2: 'subj_flame', s4: 'pred_rain_down' },
-    resultText: '鋭い炎が裂け目から降り注いでいる。火の粉が雨のように降り、地面の草が焼ける。裂け目が火山口に変わった。',
+    resultText: '鋭い炎が裂け目から降り注いでいる。火の粉が雨のように降り、地面の草が焼ける。裂け目が火山口に変わり、首筋と腕に水膨れが並んだ。',
     damage: 4,
     quill: 3
   },
@@ -388,7 +388,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_flame_dance',
     conditions: { s2: 'subj_flame', s4: 'pred_dance' },
     resultText: '鋭い炎が裂け目から踊っている。炎の舌が左右に揺れ、岩壁に影絵を映す。影は人の形をしている。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -402,7 +402,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_flame_laugh',
     conditions: { s2: 'subj_flame', s4: 'pred_laugh' },
     resultText: '鋭い炎が裂け目から笑っている。爆ぜる音がけたたましく響き、炎が明滅する。火事場の笑い声だ。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
 
@@ -445,7 +445,7 @@ export const nodeP13Outcomes: Outcome[] = [
   {
     id: 'p13_ice_rain_down',
     conditions: { s2: 'subj_ice', s4: 'pred_rain_down' },
-    resultText: '鋭い氷が裂け目から降り注いでいる。針のような氷片が雨のように降る。地面が白く覆われ、血が点々と混じる。',
+    resultText: '鋭い氷が裂け目から降り注いでいる。針のような氷片が雨のように降る。地面が白く覆われ、腕を刺した氷片から血が滴った。',
     damage: 4,
     quill: 2
   },
@@ -505,14 +505,14 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_shadow_shine',
     conditions: { s2: 'subj_shadow', s4: 'pred_shine' },
     resultText: '鋭い影が裂け目から輝く。影が光るという矛盾が目を眩ませる。黒い光が視界を焼き、しばらく何も見えなくなった。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
     id: 'p13_shadow_rain_down',
     conditions: { s2: 'subj_shadow', s4: 'pred_rain_down' },
     resultText: '鋭い影が裂け目から降り注いでいる。暗闇の切れ端が雪のように降り、触れた場所の色が消えていく。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -533,7 +533,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_shadow_laugh',
     conditions: { s2: 'subj_shadow', s4: 'pred_laugh' },
     resultText: '鋭い影が裂け目から笑っている。笑い声は自分のものに似ている。振り返ると、自分の影がない。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
 
@@ -578,7 +578,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_song_rain_down',
     conditions: { s2: 'subj_song', s4: 'pred_rain_down' },
     resultText: '鋭い歌が裂け目から降り注いでいる。音の粒が上から落ちてくる。一粒一粒が違う音程で、着地すると弾ける。頭が割れそうだ。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -643,7 +643,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_silence_rain_down',
     conditions: { s2: 'subj_silence', s4: 'pred_rain_down' },
     resultText: '鋭い沈黙が裂け目から降り注いでいる。音が一つずつ消えていく。鳥の声、風の音、足音。最後に心臓の音が消えかけて、走った。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
@@ -707,7 +707,7 @@ export const nodeP13Outcomes: Outcome[] = [
   {
     id: 'p13_knight_rain_down',
     conditions: { s2: 'subj_knight', s4: 'pred_rain_down' },
-    resultText: '鋭い騎士が裂け目から降り注いでいる。甲冑の破片が上から落ちてくる。剣、兜、胸当て。騎士は一人だったはずだが、装備は数十人分ある。',
+    resultText: '鋭い騎士が裂け目から降り注いでいる。甲冑の破片が上から落ちてくる。肩と脛を鈍器のような鎧片で打たれ、骨がきしんだ。',
     damage: 3,
     quill: 4
   },
@@ -729,7 +729,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_knight_laugh',
     conditions: { s2: 'subj_knight', s4: 'pred_laugh' },
     resultText: '鋭い騎士が裂け目から笑っている。兜の中で反響する笑い声が金属音に変わり、不気味に長く続く。狂っている。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
 
@@ -745,7 +745,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_witch_whisper',
     conditions: { s2: 'subj_witch', s4: 'pred_whisper' },
     resultText: '鋭い魔女が裂け目から囁いている。呪文の切れ端が耳に入り、頭の中で勝手に組み上がる。振り払うのに全力を使った。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -774,14 +774,14 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_witch_rain_down',
     conditions: { s2: 'subj_witch', s4: 'pred_rain_down' },
     resultText: '鋭い魔女が裂け目から降り注いでいる。分裂した影が上から落ちてくる。どれが本体か分からない。全部が笑っている。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
     id: 'p13_witch_dance',
     conditions: { s2: 'subj_witch', s4: 'pred_dance' },
     resultText: '鋭い魔女が裂け目から踊っている。足元に魔法陣が浮かび、踊るたびに紋様が変わる。何を召喚しようとしているのか。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -840,7 +840,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_king_rain_down',
     conditions: { s2: 'subj_king', s4: 'pred_rain_down' },
     resultText: '鋭い王が裂け目から降り注いでいる。王の分身が上から次々と落ちてくる。全員が同じ顔で命令を叫んでいる。矛盾する勅令が交差する。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -905,7 +905,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_ghost_rain_down',
     conditions: { s2: 'subj_ghost', s4: 'pred_rain_down' },
     resultText: '鋭い亡霊が裂け目から降り注いでいる。無数の亡霊が雨のように落ちてくる。地面に触れると消え、また降ってくる。終わらない。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -970,7 +970,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_mirror_rain_down',
     conditions: { s2: 'subj_mirror', s4: 'pred_rain_down' },
     resultText: '鋭い鏡が裂け目から降り注いでいる。鏡の破片が降り注ぎ、一片一片に違う自分が映っている。踏むと割れ、七年分の不運が降り積もる。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -1036,7 +1036,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_doll_rain_down',
     conditions: { s2: 'subj_doll', s4: 'pred_rain_down' },
     resultText: '鋭い人形が裂け目から降り注いでいる。大小さまざまな人形が落ちてくる。着地した人形が一斉に首をこちらに向けた。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -1101,7 +1101,7 @@ export const nodeP13Outcomes: Outcome[] = [
   {
     id: 'p13_rain_rain_down',
     conditions: { s2: 'subj_rain', s4: 'pred_rain_down' },
-    resultText: '鋭い雨が裂け目から降り注いでいる。針のような雨粒が岩を穿つ。水溜まりが赤い。雨自体が凶器になっている。',
+    resultText: '鋭い雨が裂け目から降り注いでいる。針のような雨粒が岩を穿つ。頭と肩を叩かれ、無数の小さな穴から血が滲んだ。',
     damage: 4,
     quill: 2
   },

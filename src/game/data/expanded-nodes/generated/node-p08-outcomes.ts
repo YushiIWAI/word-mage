@@ -27,7 +27,7 @@ export const nodeP08Outcomes: Outcome[] = [
   {
     id: 'p08_hard_wait',
     conditions: { s1: 'mod_hard', s4: 'pred_wait' },
-    resultText: '地面に貼りついた影が洞窟で待っている。壁のように立ち上がり、通さない。',
+    resultText: '地面に貼りついた影が洞窟で待っている。壁のように立ち上がり、体当たりで通ろうとした肩を跳ね返す。岩壁に叩きつけられた。',
     damage: 3,
     quill: 3
   },
@@ -48,7 +48,7 @@ export const nodeP08Outcomes: Outcome[] = [
   {
     id: 'p08_mighty_wait',
     conditions: { s1: 'mod_mighty', s4: 'pred_wait' },
-    resultText: '本体より遥かに大きな影が洞窟で待っている。影のほうが洞窟の主に見える。',
+    resultText: '本体より遥かに大きな影が洞窟で待っている。踏み込んだ瞬間、見えない重みが両肩にのしかかり、膝が石床を打った。しばらく立ち上がれない。',
     damage: 3,
     quill: 4
   },
@@ -71,7 +71,7 @@ export const nodeP08Outcomes: Outcome[] = [
     id: 'p08_cursed_wait',
     conditions: { s1: 'mod_cursed', s4: 'pred_wait' },
     resultText: '呪われた影が洞窟で待っている。足が影に触れた瞬間、自分の影が一回り大きくなった。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
@@ -150,7 +150,7 @@ export const nodeP08Outcomes: Outcome[] = [
     id: 'p08_cursed_sleep',
     conditions: { s1: 'mod_cursed', s4: 'pred_sleep' },
     resultText: '呪われた影が洞窟に眠っている。近寄ると、自分の影が勝手に引き寄せられる。足元が暗くなる。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -414,7 +414,7 @@ export const nodeP08Outcomes: Outcome[] = [
   {
     id: 'p08_fire_melt',
     conditions: { s1: 'mod_fire', s4: 'pred_melt' },
-    resultText: '黒い炎の影が洞窟に溶けている。壁が熱を帯びている。闇自体が熱い。',
+    resultText: '黒い炎の影が洞窟に溶けている。壁が熱を帯び、闇自体が熱い。吸い込む空気が喉を焼き、肌から汗が蒸発して塩が残る。',
     damage: 3,
     quill: 4
   },
@@ -443,7 +443,7 @@ export const nodeP08Outcomes: Outcome[] = [
   {
     id: 'p08_mighty_melt',
     conditions: { s1: 'mod_mighty', s4: 'pred_melt' },
-    resultText: '巨大な影が洞窟に溶けている。闇が濃すぎる。松明をかざしても光が飲まれる。',
+    resultText: '巨大な影が洞窟に溶けている。闇が濃すぎる。松明をかざしても光が飲まれる。視界ゼロで壁に何度もぶつかり、額と肘を打った。',
     damage: 3,
     quill: 3
   },
@@ -546,7 +546,7 @@ export const nodeP08Outcomes: Outcome[] = [
     id: 'p08_cursed_shine',
     conditions: { s1: 'mod_cursed', s4: 'pred_shine' },
     resultText: '呪われた影が洞窟で輝いている。見た者の影がその光に引き寄せられる。目を逸らせない。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -701,7 +701,7 @@ export const nodeP08Outcomes: Outcome[] = [
   {
     id: 'p08_cursed_dance',
     conditions: { s1: 'mod_cursed', s4: 'pred_dance' },
-    resultText: '呪われた影が洞窟で踊っている。見た者の影も勝手に踊り出す。足が止まらない。',
+    resultText: '呪われた影が洞窟で踊っている。見た者の影も勝手に踊り出す。足が止まらず岩角に何度も脛をぶつけ、息が上がりきってようやく外に転げ出た。',
     damage: 3,
     quill: 5,
     rewardItems: [{ id: 'item_p08_cursed_dance', name: '踊る呪い', description: '影が踊り出す呪いの欠片。売ってしまいたい', sellPrice: 7 }]
@@ -780,7 +780,7 @@ export const nodeP08Outcomes: Outcome[] = [
     id: 'p08_cursed_laugh',
     conditions: { s1: 'mod_cursed', s4: 'pred_laugh' },
     resultText: '呪われた影が洞窟で笑っている。聞いた者の影も笑い出す。自分の足元が笑っている。不気味だ。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {

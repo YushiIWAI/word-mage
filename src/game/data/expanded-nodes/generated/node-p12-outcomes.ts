@@ -151,7 +151,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_cursed_snake',
     conditions: { s1: 'mod_cursed', s2: 'subj_snake' },
-    resultText: '呪われた蛇が庭を見つめている。脱皮するたびに大きくなる蛇。逃げ場が狭まり、鱗が体に押しつけられる。呪いの鱗に触れた肌が痺れた。',
+    resultText: '呪われた蛇が庭を見つめている。脱皮するたびに大きくなる蛇。逃げ場が狭まり、鱗が体に押しつけられる。呪いの鱗に触れた肌が黒く痺れ、腕の感覚が消えた。',
     damage: 3,
     quill: 4
   },
@@ -389,7 +389,7 @@ export const nodeP12Outcomes: Outcome[] = [
     id: 'p12_cursed_wind',
     conditions: { s1: 'mod_cursed', s2: 'subj_wind' },
     resultText: '呪われた風が庭を見つめている。吹かれると帰り道を忘れる。庭の出口がどこだったか、もうわからない。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -452,7 +452,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_frozen_flame',
     conditions: { s1: 'mod_frozen', s2: 'subj_flame' },
-    resultText: '凍てついた炎が庭を見つめている。燃えているのに冷たい。青白い炎が石畳に霜を広げている。触れると凍傷を負う。',
+    resultText: '凍てついた炎が庭を見つめている。燃えているのに冷たい。青白い炎が石畳に霜を広げ、通り抜けた足が膝まで凍傷に覆われた。歩くたびに皮が剥がれる。',
     damage: 3,
     quill: 5
   },
@@ -468,7 +468,7 @@ export const nodeP12Outcomes: Outcome[] = [
     id: 'p12_cursed_flame',
     conditions: { s1: 'mod_cursed', s2: 'subj_flame' },
     resultText: '呪われた炎が庭を見つめている。燃やしたものの形を覚える火。炎の中にかつての庭が見え、手を伸ばした。指先が焼け、記憶の代価を払わされた。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
@@ -573,7 +573,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_fire_shadow',
     conditions: { s1: 'mod_fire', s2: 'subj_shadow' },
-    resultText: '燃え盛る影が庭を見つめている。影自体が黒い炎で燃えている。石畳の上を這い、触れた雑草が焦げる。',
+    resultText: '燃え盛る影が庭を見つめている。影自体が黒い炎で燃えている。逃げ遅れた足首を影が舐め、皮膚が黒く膨れ上がった。踏むたびに水疱が潰れる。',
     damage: 3,
     quill: 4
   },
@@ -759,7 +759,7 @@ export const nodeP12Outcomes: Outcome[] = [
     id: 'p12_mighty_silence',
     conditions: { s1: 'mod_mighty', s2: 'subj_silence' },
     resultText: '屈強な沈黙が庭を見つめている。圧倒的な無音。石畳も雑草も、庭のすべてが沈黙に押し潰されている。声が出ない。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -781,7 +781,7 @@ export const nodeP12Outcomes: Outcome[] = [
     id: 'p12_cursed_silence',
     conditions: { s1: 'mod_cursed', s2: 'subj_silence' },
     resultText: '呪われた沈黙が庭を見つめている。声が出ない。口は動くが音にならない。石畳の庭が、声を奪う場所になっている。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
@@ -824,7 +824,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_sharp_knight',
     conditions: { s1: 'mod_sharp', s2: 'subj_knight' },
-    resultText: '鋭い騎士が庭を見つめている。構えに無駄がない。一歩踏み出した瞬間、剣の切っ先が喉元に突きつけられた。動くなという意思表示。',
+    resultText: '鋭い騎士が庭を見つめている。構えに無駄がない。一歩踏み出した瞬間、剣の切っ先が喉元に突きつけられた。下がる間に切っ先が顎を裂き、血が首筋を伝う。',
     damage: 3,
     quill: 3
   },
@@ -861,7 +861,7 @@ export const nodeP12Outcomes: Outcome[] = [
     id: 'p12_cursed_knight',
     conditions: { s1: 'mod_cursed', s2: 'subj_knight' },
     resultText: '呪われた騎士が庭を見つめている。兜の奥の赤い目と視線が合った瞬間、呪いが伝染したように体が重くなる。足が石畳に根を張る。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
@@ -939,7 +939,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_cursed_witch',
     conditions: { s1: 'mod_cursed', s2: 'subj_witch' },
-    resultText: '呪われた魔女が庭を見つめている。自分の呪いに蝕まれた魔女。近づいた途端、同じ蔦が足首に絡みついた。呪いが伝染する。',
+    resultText: '呪われた魔女が庭を見つめている。自分の呪いに蝕まれた魔女。近づいた途端、同じ蔦が足首に絡みつき、引き剥がした皮膚ごと血が滲んだ。',
     damage: 3,
     quill: 5
   },
@@ -997,7 +997,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_mighty_king',
     conditions: { s1: 'mod_mighty', s2: 'subj_king' },
-    resultText: '屈強な王が庭を見つめている。戦士王。振り向きざまの拳が風を裂いた。庭の荒廃を許した罪を問われている。逆らえる威圧ではない。',
+    resultText: '屈強な王が庭を見つめている。戦士王。振り向きざまの拳が風を裂き、かすめた頬骨が割れた音を立てた。片目が視界から消える。',
     damage: 3,
     quill: 3
   },
@@ -1177,7 +1177,7 @@ export const nodeP12Outcomes: Outcome[] = [
     id: 'p12_cursed_mirror',
     conditions: { s1: 'mod_cursed', s2: 'subj_mirror' },
     resultText: '呪われた鏡が庭を見つめている。覗くと、自分の姿が鏡の中に残った。鏡の中の庭で、もう一人の自分が歩いている。',
-    damage: 3,
+    damage: 2,
     quill: 5
   },
   {
@@ -1205,7 +1205,7 @@ export const nodeP12Outcomes: Outcome[] = [
     id: 'p12_fire_doll',
     conditions: { s1: 'mod_fire', s2: 'subj_doll' },
     resultText: '燃え盛る人形が庭を見つめている。藁人形が燃えている。近づいた途端、人形の炎が飛び移り、服の裾が焦げた。祭りの火は人を選ばない。',
-    damage: 3,
+    damage: 2,
     quill: 3
   },
   {
@@ -1334,7 +1334,7 @@ export const nodeP12Outcomes: Outcome[] = [
     id: 'p12_cursed_rain',
     conditions: { s1: 'mod_cursed', s2: 'subj_rain' },
     resultText: '呪われた雨が庭を見つめている。浴びるとその場から動けなくなる。石畳の上で立ち尽くしている。根が生えたようだ。',
-    damage: 3,
+    damage: 2,
     quill: 4
   },
   {
