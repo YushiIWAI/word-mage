@@ -26,7 +26,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_hard_kitten',
     conditions: { s1: 'mod_hard', s2: 'subj_kitten' },
-    resultText: '陶器の招き猫が玉座を守っている。目だけが動いてこちらを追う。押しても蹴っても割れない。',
+    resultText: '陶器の招き猫が玉座を守っている。目だけが動いてこちらを追う。退かそうと押したら手首に鈍い痛みが走った。硬い。',
     damage: 2,
     quill: 5
   },
@@ -70,7 +70,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_cursed_kitten',
     conditions: { s1: 'mod_cursed', s2: 'subj_kitten' },
-    resultText: '呪われた子猫が玉座を守っている。追い払ってもすぐ戻る。王の間を出ても、背後に気配がある。',
+    resultText: '呪われた子猫が玉座を守っている。追い払ってもすぐ戻る。王の間を出てもまだ鳴き声がする。耳鳴りのように頭にこびりつく。',
     damage: 2,
     quill: 5
   },
@@ -220,8 +220,8 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_clear_dragon',
     conditions: { s1: 'mod_clear', s2: 'subj_dragon' },
-    resultText: '水晶の竜が玉座を守っている。体を通して玉座が歪んで見える。美しいが、通さない。',
-    damage: 2,
+    resultText: '水晶の竜が玉座を守っている。体を通して玉座が歪んで見える。見惚れるほど美しい番人だ。',
+    damage: 1,
     quill: 7,
     rewardItems: [{ id: 'item_e01_clear_dragon', name: '水晶竜の欠片', description: '光を通すと虹が走る。竜の体の一部', sellPrice: 12 }]
   },
@@ -263,8 +263,8 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_hard_butterfly',
     conditions: { s1: 'mod_hard', s2: 'subj_butterfly' },
-    resultText: '金属の羽を持つ蝶が玉座を守っている。飛ぶとき金属音がする。甲冑のような蝶だ。',
-    damage: 2,
+    resultText: '金属の羽を持つ蝶が玉座を守っている。飛ぶたびに甲冑のような金属音が響く。重そうだ。',
+    damage: 1,
     quill: 5
   },
   {
@@ -355,7 +355,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_broken_wind',
     conditions: { s1: 'mod_broken', s2: 'subj_wind' },
-    resultText: '方向が定まらない乱気流が玉座の周りで渦巻いている。守っているのか壊しているのかわからない。',
+    resultText: '方向が定まらない乱気流が玉座の周りで渦巻いている。巻き込まれて柱に叩きつけられた。風向きが読めない。',
     damage: 2,
     quill: 5
   },
@@ -512,7 +512,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_broken_ice',
     conditions: { s1: 'mod_broken', s2: 'subj_ice' },
-    resultText: 'ひび割れた氷が玉座を覆っている。踏めば崩れる。下に何があるかわからない。',
+    resultText: 'ひび割れた氷が玉座を覆っている。踏み抜いて膝まで沈んだ。氷水が骨まで染みる。',
     damage: 2,
     quill: 5
   },
@@ -589,8 +589,8 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_broken_shadow',
     conditions: { s1: 'mod_broken', s2: 'subj_shadow' },
-    resultText: '立体的にめくれ上がった影が玉座を守っている。平面に戻れない。影なのに厚みがある。',
-    damage: 2,
+    resultText: '立体的にめくれ上がった影が玉座を守っている。平面に戻れない。影なのに厚みがある。不思議だ。',
+    damage: 1,
     quill: 6
   },
   {
@@ -667,7 +667,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_broken_song',
     conditions: { s1: 'mod_broken', s2: 'subj_song' },
-    resultText: '途中で止まる旋律が玉座を守っている。続きを誰も知らない。王の間に不安が漂う。',
+    resultText: '途中で止まる旋律が玉座を守っている。続きを誰も知らない。宙ぶらりんの和音が頭蓋の内側に張り付いて離れない。',
     damage: 2,
     quill: 5
   },
@@ -746,7 +746,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_broken_silence',
     conditions: { s1: 'mod_broken', s2: 'subj_silence' },
-    resultText: '静寂のはずなのにノイズが混じる。何かが漏れ出している。玉座の下から聞こえる。',
+    resultText: '静寂のはずなのにノイズが混じる。玉座の下から聞こえる。耳を近づけた瞬間、鼓膜を叩く衝撃波が走った。',
     damage: 2,
     quill: 6
   },
@@ -825,7 +825,7 @@ export const nodeE01Outcomes: Outcome[] = [
     id: 'e01_broken_knight',
     conditions: { s1: 'mod_broken', s2: 'subj_knight' },
     resultText: '鎧はへこみ、剣は折れ、盾は砕けている。それでも玉座を守って立っている。退かない。',
-    damage: 2,
+    damage: 1,
     quill: 8,
     rewardItems: [{ id: 'item_e01_broken_knight', name: '折れた忠誠', description: '砕けた騎士の盾の破片。誓いの紋章が刻まれている', sellPrice: 12 }]
   },
@@ -889,7 +889,7 @@ export const nodeE01Outcomes: Outcome[] = [
     id: 'e01_hard_witch',
     conditions: { s1: 'mod_hard', s2: 'subj_witch' },
     resultText: '石のように頑固な老魔女が玉座を守っている。取引以外では一言も話さない。通行料を要求された。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -939,7 +939,7 @@ export const nodeE01Outcomes: Outcome[] = [
     id: 'e01_sleepy_witch',
     conditions: { s1: 'mod_sleepy', s2: 'subj_witch' },
     resultText: '大釜の前でうとうとしている魔女が玉座を守っている。薬がぐつぐつ煮えている。何の薬だろう。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1024,7 +1024,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_small_ghost',
     conditions: { s1: 'mod_small', s2: 'subj_ghost' },
-    resultText: '子供の亡霊が玉座を守っている。笑い声だけが聞こえる。王の間に冷たい風が吹く。',
+    resultText: '子供の亡霊が玉座を守っている。笑い声が近づいたり遠ざかったりする。気がつくと足元の体温が奪われていた。',
     damage: 2,
     quill: 5
   },
@@ -1060,7 +1060,7 @@ export const nodeE01Outcomes: Outcome[] = [
     id: 'e01_broken_ghost',
     conditions: { s1: 'mod_broken', s2: 'subj_ghost' },
     resultText: '自分が何者か忘れた亡霊が玉座を守っている。輪郭が溶けている。なぜ守っているかも覚えていない。',
-    damage: 2,
+    damage: 1,
     quill: 7,
     rewardItems: [{ id: 'item_e01_broken_ghost', name: '忘れられた記憶', description: '亡霊が落とした光の欠片。何かの記憶だったもの', sellPrice: 10 }]
   },
@@ -1138,7 +1138,7 @@ export const nodeE01Outcomes: Outcome[] = [
   {
     id: 'e01_broken_mirror',
     conditions: { s1: 'mod_broken', s2: 'subj_mirror' },
-    resultText: 'ひび割れた鏡が玉座を守っている。映る顔が何人にも分裂している。どれが本物かわからない。',
+    resultText: 'ひび割れた鏡が玉座を守っている。映る顔が何人にも分裂している。めまいがする。自分がどこに立っているかわからなくなった。',
     damage: 2,
     quill: 6
   },
@@ -1153,7 +1153,7 @@ export const nodeE01Outcomes: Outcome[] = [
     id: 'e01_frozen_mirror',
     conditions: { s1: 'mod_frozen', s2: 'subj_mirror' },
     resultText: '鏡面が凍って霜で覆われている。かろうじて影が映る。覗くと冬の王の間が見えた。',
-    damage: 2,
+    damage: 1,
     quill: 6
   },
   {
@@ -1202,7 +1202,7 @@ export const nodeE01Outcomes: Outcome[] = [
     id: 'e01_hard_doll',
     conditions: { s1: 'mod_hard', s2: 'subj_doll' },
     resultText: '木彫りの人形が玉座を守っている。関節がなく、表情もない。おもちゃの兵隊のように立っている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1230,7 +1230,7 @@ export const nodeE01Outcomes: Outcome[] = [
     id: 'e01_frozen_doll',
     conditions: { s1: 'mod_frozen', s2: 'subj_doll' },
     resultText: '氷でできた人形が玉座を守っている。繊細な造形。溶けたら二度と作れない。触れるのを躊躇う。',
-    damage: 2,
+    damage: 1,
     quill: 6
   },
   {
@@ -1294,7 +1294,7 @@ export const nodeE01Outcomes: Outcome[] = [
     id: 'e01_broken_rain',
     conditions: { s1: 'mod_broken', s2: 'subj_rain' },
     resultText: '途切れ途切れに降る雨が玉座を守っている。リズムがおかしい。上に向かって降る雫もある。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {

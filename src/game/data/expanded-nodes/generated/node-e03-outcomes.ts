@@ -6,20 +6,20 @@ export const nodeE03Outcomes: Outcome[] = [
     id: 'e03_kitten_block',
     conditions: { s1: 'subj_kitten', s2: 'pred_block' },
     resultText: '呪われた子猫が森を塞いでいる。拾った者が捨てられなくなる猫が、森の入口に座っている。通ると背中に乗ってきた。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'e03_kitten_guard',
     conditions: { s1: 'subj_kitten', s2: 'pred_guard' },
     resultText: '呪われた子猫が森を守っている。この猫を拾うと捨てられない。森ごと持ち帰ることになる。',
-    damage: 2,
+    damage: 1,
     quill: 6
   },
   {
     id: 'e03_kitten_chase',
     conditions: { s1: 'subj_kitten', s2: 'pred_chase' },
-    resultText: '呪われた子猫が森を追いかけてくる。どこに逃げても戻ってくる。捨てられない猫だ。',
+    resultText: '呪われた子猫が森を追いかけてくる。どこに逃げても戻ってくる。走り続けて息が上がる。それでも鳴き声は背後にある。',
     damage: 2,
     quill: 5
   },
@@ -47,7 +47,7 @@ export const nodeE03Outcomes: Outcome[] = [
   {
     id: 'e03_kitten_flee',
     conditions: { s1: 'subj_kitten', s2: 'pred_flee' },
-    resultText: '呪われた子猫が森を逃げていく。捨てられない猫が自分から去る。何かもっと恐ろしいものがいる。',
+    resultText: '呪われた子猫が森を逃げていく。捨てられない猫が自分から去る。安堵の次に、猫が恐れたものの足音が聞こえた。',
     damage: 2,
     quill: 7,
     rewardItems: [{ id: 'item_e03_kitten_flee', name: '呪い猫の毛', description: '触ると指に張り付く。捨てられない', sellPrice: 8 }]
@@ -147,7 +147,7 @@ export const nodeE03Outcomes: Outcome[] = [
   {
     id: 'e03_dragon_flee',
     conditions: { s1: 'subj_dragon', s2: 'pred_flee' },
-    resultText: '呪われた竜が森を逃げていく。暴走した竜が何かから逃げている。竜が恐れるものとは何だ。',
+    resultText: '呪われた竜が森を逃げていく。暴走した竜が何かから逃げている。地鳴りが腹の底に響く。竜より恐ろしいものがすぐそこにいる。',
     damage: 2,
     quill: 7,
     rewardItems: [{ id: 'item_e03_dragon_flee', name: '暴竜の鱗', description: '呪いに蝕まれた黒い鱗。熱い', sellPrice: 15 }]
@@ -176,7 +176,7 @@ export const nodeE03Outcomes: Outcome[] = [
   {
     id: 'e03_butterfly_gaze',
     conditions: { s1: 'subj_butterfly', s2: 'pred_gaze' },
-    resultText: '呪われた蝶が森を見つめている。羽の模様が目のように開閉する。森全体が監視されている。',
+    resultText: '呪われた蝶が森を見つめている。羽の模様が目のように開閉する。視線の圧に息が詰まる。見られ続ける恐怖で足が竦む。',
     damage: 2,
     quill: 6
   },
@@ -225,7 +225,7 @@ export const nodeE03Outcomes: Outcome[] = [
   {
     id: 'e03_wind_gaze',
     conditions: { s1: 'subj_wind', s2: 'pred_gaze' },
-    resultText: '呪われた風が森を見つめている。風に意志がある。木々の隙間から、じっとこちらを見ている。',
+    resultText: '呪われた風が森を見つめている。風に意志がある。立ち止まると体温を舐め取るように肌を撫でる。寒い。',
     damage: 2,
     quill: 6
   },
@@ -297,7 +297,7 @@ export const nodeE03Outcomes: Outcome[] = [
     id: 'e03_flame_flee',
     conditions: { s1: 'subj_flame', s2: 'pred_flee' },
     resultText: '呪われた炎が森を逃げていく。記憶する炎が去った跡に、焦げた形だけが残っている。',
-    damage: 2,
+    damage: 1,
     quill: 6
   },
   {
@@ -575,7 +575,7 @@ export const nodeE03Outcomes: Outcome[] = [
   {
     id: 'e03_witch_gaze',
     conditions: { s1: 'subj_witch', s2: 'pred_gaze' },
-    resultText: '呪われた魔女が森を見つめている。自分の呪いに蝕まれた目で、森の行く末を見ている。',
+    resultText: '呪われた魔女が森を見つめている。目が合った。蝕まれた瞳の奥から、呪いの残滓がこちらに染み出してくる。',
     damage: 2,
     quill: 7,
     rewardItems: [{ id: 'item_e03_witch_gaze', name: '魔女の片目', description: '呪いに蝕まれた硝子の義眼。覗くと森の真の姿が見える', sellPrice: 12 }]
@@ -597,7 +597,7 @@ export const nodeE03Outcomes: Outcome[] = [
   {
     id: 'e03_witch_flee',
     conditions: { s1: 'subj_witch', s2: 'pred_flee' },
-    resultText: '呪われた魔女が森を逃げていく。自分の呪いから逃げている。呪いだけが森に残った。',
+    resultText: '呪われた魔女が森を逃げていく。自分の呪いから逃げている。置き去りにされた呪いが足元に絡みつく。',
     damage: 2,
     quill: 7
   },
@@ -626,7 +626,7 @@ export const nodeE03Outcomes: Outcome[] = [
     id: 'e03_king_gaze',
     conditions: { s1: 'subj_king', s2: 'pred_gaze' },
     resultText: '呪われた王が森を見つめている。食事もできない王が、じっと木々を見ている。触れたいが触れられない。',
-    damage: 2,
+    damage: 1,
     quill: 8,
     rewardItems: [{ id: 'item_e03_king_gaze', name: '黄金の涙', description: '王が泣いた跡。頬に張り付いた金の雫', sellPrice: 15 }]
   },
@@ -676,7 +676,7 @@ export const nodeE03Outcomes: Outcome[] = [
     id: 'e03_ghost_gaze',
     conditions: { s1: 'subj_ghost', s2: 'pred_gaze' },
     resultText: '呪われた亡霊が森を見つめている。苦しみの目。解放を求めている。だが手を出せない。',
-    damage: 2,
+    damage: 1,
     quill: 7
   },
   {
@@ -747,7 +747,7 @@ export const nodeE03Outcomes: Outcome[] = [
     id: 'e03_mirror_flee',
     conditions: { s1: 'subj_mirror', s2: 'pred_flee' },
     resultText: '呪われた鏡が森を逃げていく。鏡が割れて破片が散る。映っていた影たちが解放された。',
-    damage: 2,
+    damage: 1,
     quill: 7
   },
   {
@@ -796,7 +796,7 @@ export const nodeE03Outcomes: Outcome[] = [
   {
     id: 'e03_doll_flee',
     conditions: { s1: 'subj_doll', s2: 'pred_flee' },
-    resultText: '呪われた人形が森を逃げていく。振り返ると、木の幹にぶら下がって揺れている。逃げたのではなかった。',
+    resultText: '呪われた人形が森を逃げていく。振り返ると、木の幹にぶら下がって揺れている。逃げたのではない。待ち伏せだ。背筋が凍る。',
     damage: 2,
     quill: 6
   },
@@ -911,7 +911,7 @@ export const nodeE03Outcomes: Outcome[] = [
   {
     id: 'e03_song_wait',
     conditions: { s1: 'subj_song', s2: 'pred_wait' },
-    resultText: '呪われた歌が森を待っている。頭から離れない旋律が、梢の間からかすかに聞こえる。森に入れば逃げ場はない。',
+    resultText: '呪われた歌が森を待っている。頭から離れない旋律が、梢の間からかすかに聞こえる。一節聴いただけで頭痛が走った。',
     damage: 2,
     quill: 5
   },
@@ -933,7 +933,7 @@ export const nodeE03Outcomes: Outcome[] = [
     id: 'e03_witch_wait',
     conditions: { s1: 'subj_witch', s2: 'pred_wait' },
     resultText: '呪われた魔女が森を待っている。自分の呪いに蝕まれた魔女が、切り株に腰掛けて旅人を待っている。取引を持ちかけてくるだろう。',
-    damage: 2,
+    damage: 1,
     quill: 5,
     rewardItems: [{ id: 'item_e03_witch_wait', name: '呪いの触媒', description: '魔女が取引の礼に渡した小瓶。中身は動いている', sellPrice: 12 }]
   },
@@ -947,7 +947,7 @@ export const nodeE03Outcomes: Outcome[] = [
   {
     id: 'e03_ghost_wait',
     conditions: { s1: 'subj_ghost', s2: 'pred_wait' },
-    resultText: '呪われた亡霊が森を待っている。呪いに縛られた霊が、古い道標の前に佇んでいる。指す方角はすべて間違っている。',
+    resultText: '呪われた亡霊が森を待っている。呪いに縛られた霊が、古い道標の前に佇んでいる。示す方角に従って歩き、同じ場所に戻ってきた。体力だけが減る。',
     damage: 2,
     quill: 5
   },
@@ -968,7 +968,7 @@ export const nodeE03Outcomes: Outcome[] = [
   {
     id: 'e03_rain_wait',
     conditions: { s1: 'subj_rain', s2: 'pred_wait' },
-    resultText: '呪われた雨が森を待っている。浴びると動けなくなる雨雲が、樹冠の上で垂れ込めている。葉の隙間から一滴、二滴。',
+    resultText: '呪われた雨が森を待っている。浴びると動けなくなる雨雲が、樹冠の上で垂れ込めている。一滴が肩に落ち、足が一瞬止まった。',
     damage: 2,
     quill: 5
   },

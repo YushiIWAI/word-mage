@@ -27,7 +27,7 @@ export const nodeE06Outcomes: Outcome[] = [
     id: 'e06_hard_kitten',
     conditions: { s1: 'mod_hard', s2: 'subj_kitten' },
     resultText: '陶器の招き猫が峠を引き裂いている。目だけが動く。招き猫の手が岩を割る。不条理だ。',
-    damage: 2,
+    damage: 1,
     quill: 6
   },
   {
@@ -55,7 +55,7 @@ export const nodeE06Outcomes: Outcome[] = [
   {
     id: 'e06_frozen_kitten',
     conditions: { s1: 'mod_frozen', s2: 'subj_kitten' },
-    resultText: '氷の子猫が峠を引き裂いている。凍った爪で岩が割れる。峠に霜が降りている。',
+    resultText: '氷の子猫が峠を引き裂いている。凍った爪で岩が割れる。砕けた霜の破片が頬を掠めた。',
     damage: 2,
     quill: 6
   },
@@ -140,7 +140,7 @@ export const nodeE06Outcomes: Outcome[] = [
     id: 'e06_clear_snake',
     conditions: { s1: 'mod_clear', s2: 'subj_snake' },
     resultText: '透き通った蛇が峠を引き裂いている。飲み込んだ岩が体内に透けて見える。峠を食べている。',
-    damage: 2,
+    damage: 1,
     quill: 7,
     rewardItems: [{ id: 'item_e06_clear_snake', name: '峠を食む蛇の鱗', description: '透き通った鱗。中に峠の石が見える', sellPrice: 10 }]
   },
@@ -155,7 +155,7 @@ export const nodeE06Outcomes: Outcome[] = [
     id: 'e06_sleepy_snake',
     conditions: { s1: 'mod_sleepy', s2: 'subj_snake' },
     resultText: 'とぐろを巻いた蛇が峠で寝返りを打っている。引き裂くつもりはないが、重い体が岩を割る。',
-    damage: 2,
+    damage: 1,
     quill: 6
   },
   {
@@ -198,7 +198,7 @@ export const nodeE06Outcomes: Outcome[] = [
     id: 'e06_broken_dragon',
     conditions: { s1: 'mod_broken', s2: 'subj_dragon' },
     resultText: '翼は折れ、鱗は剥がれた竜が峠を引き裂いている。やけくそのように岩を掻く。哀れだ。',
-    damage: 2,
+    damage: 1,
     quill: 7,
     rewardItems: [{ id: 'item_e06_broken_dragon', name: '壊れた竜の爪', description: '岩を掻いて欠けた爪。まだ温かい', sellPrice: 10 }]
   },
@@ -262,7 +262,7 @@ export const nodeE06Outcomes: Outcome[] = [
   {
     id: 'e06_hard_butterfly',
     conditions: { s1: 'mod_hard', s2: 'subj_butterfly' },
-    resultText: '金属の羽を持つ蝶が峠を引き裂いている。金属音を響かせながら岩を削る。',
+    resultText: '金属の羽を持つ蝶が峠を引き裂いている。金属音が鼓膜を叩く。岩を削る振動が足裏から骨に伝わる。',
     damage: 2,
     quill: 5
   },
@@ -290,7 +290,7 @@ export const nodeE06Outcomes: Outcome[] = [
   {
     id: 'e06_frozen_butterfly',
     conditions: { s1: 'mod_frozen', s2: 'subj_butterfly' },
-    resultText: '霜の結晶の蝶が峠を引き裂いている。凍った羽で岩を切る。峠に霜が走る。',
+    resultText: '霜の結晶の蝶が峠を引き裂いている。凍った羽が触れた空気ごと凍らせる。息を吸うと肺が痛い。',
     damage: 2,
     quill: 5
   },
@@ -432,7 +432,7 @@ export const nodeE06Outcomes: Outcome[] = [
   {
     id: 'e06_broken_flame',
     conditions: { s1: 'mod_broken', s2: 'subj_flame' },
-    resultText: '色のおかしい炎が峠を引き裂いている。緑や紫に明滅する。温かくないのに岩が割れる。',
+    resultText: '色のおかしい炎が峠を引き裂いている。緑や紫に明滅する。温かくないのに触れた肌が痺れる。感覚がおかしい。',
     damage: 2,
     quill: 6
   },
@@ -586,7 +586,7 @@ export const nodeE06Outcomes: Outcome[] = [
   {
     id: 'e06_broken_shadow',
     conditions: { s1: 'mod_broken', s2: 'subj_shadow' },
-    resultText: '立体的にめくれ上がった影が峠を引き裂いている。影なのに岩を掴んで引き剥がす。',
+    resultText: '立体的にめくれ上がった影が峠を引き裂いている。影を踏んだ足が沈み込み、抜けるまでに息が切れた。',
     damage: 2,
     quill: 6
   },
@@ -664,7 +664,7 @@ export const nodeE06Outcomes: Outcome[] = [
   {
     id: 'e06_broken_song',
     conditions: { s1: 'mod_broken', s2: 'subj_song' },
-    resultText: '途中で止まる旋律が峠を引き裂いている。続きを知らない歌が嵐と共に繰り返される。',
+    resultText: '途中で止まる旋律が峠を引き裂いている。続きが来ない不協和音に歯を食いしばる。頭の奥がずきずき痛む。',
     damage: 2,
     quill: 6
   },
@@ -742,7 +742,7 @@ export const nodeE06Outcomes: Outcome[] = [
   {
     id: 'e06_broken_silence',
     conditions: { s1: 'mod_broken', s2: 'subj_silence' },
-    resultText: '壊れた沈黙が峠を引き裂いている。静寂の中にノイズが混じる。何かが漏れ出している。',
+    resultText: '壊れた沈黙が峠を引き裂いている。静寂のはずの空気がびりびり震え、歯の奥が疼く。何かが漏れ出している。',
     damage: 2,
     quill: 5
   },
@@ -820,8 +820,8 @@ export const nodeE06Outcomes: Outcome[] = [
   {
     id: 'e06_broken_knight',
     conditions: { s1: 'mod_broken', s2: 'subj_knight' },
-    resultText: '鎧はへこみ、剣は折れた騎士が峠を引き裂いている。折れた剣で岩を叩く。それでも止まらない。',
-    damage: 2,
+    resultText: '鎧はへこみ、剣は折れた騎士が峠を引き裂いている。折れた剣で���を叩く。それでも止���らない。',
+    damage: 1,
     quill: 8,
     rewardItems: [{ id: 'item_e06_broken_knight', name: '嵐に砕けた剣', description: '折れた剣。嵐の中で振るわれ続けた', sellPrice: 12 }]
   },
@@ -864,7 +864,7 @@ export const nodeE06Outcomes: Outcome[] = [
     id: 'e06_small_witch',
     conditions: { s1: 'mod_small', s2: 'subj_witch' },
     resultText: '少女の魔女が峠を引き裂いている。大きな帽子が嵐で飛びそうだ。魔法で岩を割る。',
-    damage: 2,
+    damage: 1,
     quill: 6
   },
   {
@@ -885,7 +885,7 @@ export const nodeE06Outcomes: Outcome[] = [
     id: 'e06_hard_witch',
     conditions: { s1: 'mod_hard', s2: 'subj_witch' },
     resultText: '頑固な老魔女が峠を引き裂いている。嵐が来ようが通行料は値引きしない。岩を割って通路を作る。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -920,7 +920,7 @@ export const nodeE06Outcomes: Outcome[] = [
     id: 'e06_clear_witch',
     conditions: { s1: 'mod_clear', s2: 'subj_witch' },
     resultText: '老いて存在が希薄な魔女が峠を引き裂いている。見えない力が岩を動かす。声だけが嵐に響く。',
-    damage: 2,
+    damage: 1,
     quill: 7,
     rewardItems: [{ id: 'item_e06_clear_witch', name: '嵐の魔女の声', description: '嵐の中で聞こえた声。瓶の中で風と共に鳴る', sellPrice: 10 }]
   },
@@ -935,7 +935,7 @@ export const nodeE06Outcomes: Outcome[] = [
     id: 'e06_sleepy_witch',
     conditions: { s1: 'mod_sleepy', s2: 'subj_witch' },
     resultText: '大釜の前でうとうとしている魔女が峠を引き裂いている。寝ぼけた魔法が岩にぶつかる。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1019,7 +1019,7 @@ export const nodeE06Outcomes: Outcome[] = [
   {
     id: 'e06_small_ghost',
     conditions: { s1: 'mod_small', s2: 'subj_ghost' },
-    resultText: '子供の亡霊が峠を引き裂いている。笑い声が嵐に混じる。岩が揺れる。',
+    resultText: '子供の亡霊が峠を引き裂いてい���。笑い声が耳にこびりつき、嵐の音が遠くなる。寒気が骨に染みた。',
     damage: 2,
     quill: 5
   },
@@ -1055,7 +1055,7 @@ export const nodeE06Outcomes: Outcome[] = [
     id: 'e06_broken_ghost',
     conditions: { s1: 'mod_broken', s2: 'subj_ghost' },
     resultText: '自分が何者か忘れた亡霊が峠を引き裂いている。なぜ引き裂くかも覚えていない。',
-    damage: 2,
+    damage: 1,
     quill: 6
   },
   {
@@ -1168,7 +1168,7 @@ export const nodeE06Outcomes: Outcome[] = [
     id: 'e06_sleepy_mirror',
     conditions: { s1: 'mod_sleepy', s2: 'subj_mirror' },
     resultText: 'ぼんやり曇った鏡が峠を引き裂いている。映像が遅れる。嵐の中で反応が鈍い。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1196,7 +1196,7 @@ export const nodeE06Outcomes: Outcome[] = [
     id: 'e06_hard_doll',
     conditions: { s1: 'mod_hard', s2: 'subj_doll' },
     resultText: '木彫りの人形が峠を引き裂いている。硬い体で岩を叩く。おもちゃの兵隊の行進だ。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1209,7 +1209,7 @@ export const nodeE06Outcomes: Outcome[] = [
   {
     id: 'e06_broken_doll',
     conditions: { s1: 'mod_broken', s2: 'subj_doll' },
-    resultText: '首がもげかけた人形が峠を引き裂いている。残った目でこちらを見ながら岩を叩く。',
+    resultText: '首がもげかけた人形が峠を引き裂いている。目が合うと足が竦む。岩を叩く音が心臓の鼓動と重なった。',
     damage: 2,
     quill: 6
   },
@@ -1223,8 +1223,8 @@ export const nodeE06Outcomes: Outcome[] = [
   {
     id: 'e06_frozen_doll',
     conditions: { s1: 'mod_frozen', s2: 'subj_doll' },
-    resultText: '氷の人形が峠を引き裂いている。凍った体で岩を砕く。嵐の雪と混ざっていく。',
-    damage: 2,
+    resultText: '氷の人形が峠を引き裂いている。凍った体で岩を砕く。嵐の雪と混���っていく。',
+    damage: 1,
     quill: 5
   },
   {
@@ -1245,7 +1245,7 @@ export const nodeE06Outcomes: Outcome[] = [
     id: 'e06_sleepy_doll',
     conditions: { s1: 'mod_sleepy', s2: 'subj_doll' },
     resultText: '目を閉じた人形が峠を引き裂いている。寝ながら岩を叩く。仕掛けが壊れている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1286,7 +1286,7 @@ export const nodeE06Outcomes: Outcome[] = [
   {
     id: 'e06_broken_rain',
     conditions: { s1: 'mod_broken', s2: 'subj_rain' },
-    resultText: '途切れ途切れの雨が峠を引き裂いている。リズムがおかしい。上に向かう雫もある。',
+    resultText: '途切れ途切れの雨が峠を引き裂いている。上に向かう雫に触れると重力が狂い、膝が崩れた。',
     damage: 2,
     quill: 5
   },

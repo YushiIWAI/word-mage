@@ -27,7 +27,7 @@ export const nodeE04Outcomes: Outcome[] = [
     id: 'e04_hard_kitten',
     conditions: { s1: 'mod_hard', s2: 'subj_kitten' },
     resultText: '陶器の招き猫が塔の頂から見つめている。目だけが動いてこちらを追う。ガーゴイルのようだ。',
-    damage: 2,
+    damage: 1,
     quill: 6
   },
   {
@@ -55,7 +55,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_frozen_kitten',
     conditions: { s1: 'mod_frozen', s2: 'subj_kitten' },
-    resultText: '氷の子猫が塔の頂から見つめている。中でまだ息をしている。塔の頂が凍っている。',
+    resultText: '氷の子猫が塔の頂から見つめている。近づくと指先から感覚が消える。塔の頂が凍っている。',
     damage: 2,
     quill: 5
   },
@@ -133,7 +133,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_frozen_snake',
     conditions: { s1: 'mod_frozen', s2: 'subj_snake' },
-    resultText: '氷の中で螺旋を描く蛇が塔の頂から見つめている。塔の頂が霜に覆われている。',
+    resultText: '氷の中で螺旋を描く蛇が塔の頂から見つめている。霜が靴底を伝い、足首まで冷えが這い上がる。',
     damage: 2,
     quill: 5
   },
@@ -219,7 +219,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_clear_dragon',
     conditions: { s1: 'mod_clear', s2: 'subj_dragon' },
-    resultText: '水晶の竜が塔の頂から見つめている。体を通して空が歪んで見える。美しい番人だ。',
+    resultText: '水晶の竜が塔の頂から見つめている。体を通して空が歪み、距離感が狂う。階段を踏み外した。',
     damage: 2,
     quill: 7
   },
@@ -263,7 +263,7 @@ export const nodeE04Outcomes: Outcome[] = [
     id: 'e04_hard_butterfly',
     conditions: { s1: 'mod_hard', s2: 'subj_butterfly' },
     resultText: '金属の羽を持つ蝶が塔の頂から見つめている。風見鶏のように塔の先端で回っている。',
-    damage: 2,
+    damage: 1,
     quill: 6
   },
   {
@@ -291,7 +291,7 @@ export const nodeE04Outcomes: Outcome[] = [
     id: 'e04_frozen_butterfly',
     conditions: { s1: 'mod_frozen', s2: 'subj_butterfly' },
     resultText: '霜の結晶が蝶の形をしている。塔の頂で凍りついている。溶ける気配がない。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -586,7 +586,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_broken_shadow',
     conditions: { s1: 'mod_broken', s2: 'subj_shadow' },
-    resultText: '立体的にめくれ上がった影が塔の頂から見つめている。平面に戻れない影が、塔の上で蠢いている。',
+    resultText: '立体的にめくれ上がった影が塔の頂で蠢いている。触れた腕が重くなり、影に引きずり込まれそうになる。',
     damage: 2,
     quill: 6
   },
@@ -601,7 +601,7 @@ export const nodeE04Outcomes: Outcome[] = [
     id: 'e04_frozen_shadow',
     conditions: { s1: 'mod_frozen', s2: 'subj_shadow' },
     resultText: '影が塔の壁に張りついて動けない。本体はとうに去ったのに影だけが見つめ続けている。',
-    damage: 2,
+    damage: 1,
     quill: 7,
     rewardItems: [{ id: 'item_e04_frozen_shadow', name: '凍った影の欠片', description: '塔の壁から剥がした影。冷たい', sellPrice: 8 }]
   },
@@ -742,7 +742,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_broken_silence',
     conditions: { s1: 'mod_broken', s2: 'subj_silence' },
-    resultText: '静寂のはずなのにノイズが混じる。塔の頂から何かが漏れ出している。',
+    resultText: '静寂のはずなのにノイズが混じる。塔の頂から何かが漏れ出している。耳鳴りが止まらなくなった。',
     damage: 2,
     quill: 5
   },
@@ -820,7 +820,7 @@ export const nodeE04Outcomes: Outcome[] = [
     id: 'e04_broken_knight',
     conditions: { s1: 'mod_broken', s2: 'subj_knight' },
     resultText: '鎧はへこみ、剣は折れた騎士が塔の頂から見つめている。それでも持ち場を離れない。',
-    damage: 2,
+    damage: 1,
     quill: 8,
     rewardItems: [{ id: 'item_e04_broken_knight', name: '塔の騎士の誓い', description: '砕けた盾に刻まれた誓いの言葉。読めないが温かい', sellPrice: 12 }]
   },
@@ -883,7 +883,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_hard_witch',
     conditions: { s1: 'mod_hard', s2: 'subj_witch' },
-    resultText: '石のように頑固な老魔女が塔の頂から見つめている。通行料を要求された。払わなければ通さない。',
+    resultText: '石のように頑固な老魔女が塔の頂から見つめている。通行料を払うまで呪いで足が動かない。長い交渉で日が暮れた。',
     damage: 2,
     quill: 5
   },
@@ -934,7 +934,7 @@ export const nodeE04Outcomes: Outcome[] = [
     id: 'e04_sleepy_witch',
     conditions: { s1: 'mod_sleepy', s2: 'subj_witch' },
     resultText: '大釜の前でうとうとしている魔女が塔の頂にいる。塔の上で薬を煮ている。煙が空に昇る。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1018,7 +1018,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_small_ghost',
     conditions: { s1: 'mod_small', s2: 'subj_ghost' },
-    resultText: '子供の亡霊が塔の頂から見つめている。笑い声が風に乗って聞こえる。塔に冷たい風が吹く。',
+    resultText: '子供の亡霊が塔の頂から見つめている。笑い声のたびに体温が奪われる。塔の頂に冷気が渦を巻く。',
     damage: 2,
     quill: 5
   },
@@ -1054,7 +1054,7 @@ export const nodeE04Outcomes: Outcome[] = [
     id: 'e04_broken_ghost',
     conditions: { s1: 'mod_broken', s2: 'subj_ghost' },
     resultText: '自分が何者か忘れた亡霊が塔の頂から見つめている。何を見ているかも覚えていない。',
-    damage: 2,
+    damage: 1,
     quill: 6
   },
   {
@@ -1146,7 +1146,7 @@ export const nodeE04Outcomes: Outcome[] = [
     id: 'e04_frozen_mirror',
     conditions: { s1: 'mod_frozen', s2: 'subj_mirror' },
     resultText: '鏡面が凍った鏡が塔の頂から見つめている。霜越しに影が映る。冬の世界が見える。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1166,7 +1166,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_sleepy_mirror',
     conditions: { s1: 'mod_sleepy', s2: 'subj_mirror' },
-    resultText: '鏡面がぼんやり曇った鏡が塔の頂から見つめている。映像が遅れて映る。眠くなった。',
+    resultText: '鏡面がぼんやり曇った鏡が塔の頂で揺れている。覗き込むと自分の動きが鈍くなり、足が言うことを聞かない。',
     damage: 2,
     quill: 5
   },
@@ -1195,7 +1195,7 @@ export const nodeE04Outcomes: Outcome[] = [
     id: 'e04_hard_doll',
     conditions: { s1: 'mod_hard', s2: 'subj_doll' },
     resultText: '木彫りの人形が塔の頂から見つめている。ガーゴイルのように塔の縁に座っている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1208,7 +1208,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_broken_doll',
     conditions: { s1: 'mod_broken', s2: 'subj_doll' },
-    resultText: '首がもげかけた人形が塔の頂から見つめている。残った目でこちらを見ている。風で首が揺れる。',
+    resultText: '首がもげかけた人形が塔の頂から見つめている。目が合った瞬間、膝から力が抜けた。風で首がゆっくり傾く。',
     damage: 2,
     quill: 6
   },
@@ -1223,7 +1223,7 @@ export const nodeE04Outcomes: Outcome[] = [
     id: 'e04_frozen_doll',
     conditions: { s1: 'mod_frozen', s2: 'subj_doll' },
     resultText: '氷の人形が塔の頂から見つめている。繊細な造形。風に晒されても溶けない。',
-    damage: 2,
+    damage: 1,
     quill: 6
   },
   {
@@ -1285,7 +1285,7 @@ export const nodeE04Outcomes: Outcome[] = [
   {
     id: 'e04_broken_rain',
     conditions: { s1: 'mod_broken', s2: 'subj_rain' },
-    resultText: '途切れ途切れに降る雨が塔の頂から見つめている。リズムがおかしい。上に向かう雫もある。',
+    resultText: '途切れ途切れに降る雨が塔の頂から見つめている。リズムがおかしい。上に向かう雫に触れると、体の感覚が逆さまになる。',
     damage: 2,
     quill: 5
   },

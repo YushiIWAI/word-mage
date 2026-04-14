@@ -55,7 +55,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_frozen_kitten',
     conditions: { s1: 'mod_frozen', s2: 'subj_kitten' },
-    resultText: '氷の子猫が巣穴に棲みついている。熱気が漏れてくるはずの巣穴が、冷え切っている。',
+    resultText: '氷の子猫が巣穴に棲みついている。熱気が漏れてくるはずの巣穴が冷え切っている。指先の感覚が消えていく。',
     damage: 2,
     quill: 6
   },
@@ -70,7 +70,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_cursed_kitten',
     conditions: { s1: 'mod_cursed', s2: 'subj_kitten' },
-    resultText: '呪われた子猫が巣穴に棲みついている。追い払っても巣穴から出てこない。出ても戻る。',
+    resultText: '呪われた子猫が巣穴に棲みついている。追い払っても巣穴から出てこない。鳴き声が脳に巣くう。洞窟を出ても聞こえる。',
     damage: 2,
     quill: 5
   },
@@ -133,7 +133,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_frozen_snake',
     conditions: { s1: 'mod_frozen', s2: 'subj_snake' },
-    resultText: '氷の中で螺旋を描く蛇が巣穴に棲みついている。霜に覆われた鱗。巣穴の熱気が消えている。',
+    resultText: '氷の中で螺旋を描く蛇が巣穴に棲みついている。霜に覆われた鱗。巣穴の熱気が奪われ、足が重くなる。',
     damage: 2,
     quill: 5
   },
@@ -220,8 +220,8 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_clear_dragon',
     conditions: { s1: 'mod_clear', s2: 'subj_dragon' },
-    resultText: '水晶でできた竜が巣穴に棲みついている。体を通して巣穴の壁が歪んで見える。美しく、恐ろしい。',
-    damage: 2,
+    resultText: '水晶でできた竜が巣穴に棲みついている。体を通して巣穴の壁が歪んで見える。虹色の光が洞窟を満たしている。',
+    damage: 1,
     quill: 7,
     rewardItems: [{ id: 'item_e02_clear_dragon', name: '水晶竜の涙', description: '竜の目から落ちた透明な雫。硬い', sellPrice: 15 }]
   },
@@ -265,7 +265,7 @@ export const nodeE02Outcomes: Outcome[] = [
     id: 'e02_hard_butterfly',
     conditions: { s1: 'mod_hard', s2: 'subj_butterfly' },
     resultText: '金属の羽を持つ蝶が巣穴に棲みついている。飛ぶたびに金属音が反響する。轟音の正体だ。',
-    damage: 2,
+    damage: 1,
     quill: 6
   },
   {
@@ -292,7 +292,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_frozen_butterfly',
     conditions: { s1: 'mod_frozen', s2: 'subj_butterfly' },
-    resultText: '霜の結晶が蝶の形をしている。巣穴の壁に張り付いて動かない。冷たい洞窟だ。',
+    resultText: '霜の結晶が蝶の形をしている。巣穴の壁に張り付いて動かない。近づくと肌が粟立ち、吐く息が白くなった。',
     damage: 2,
     quill: 5
   },
@@ -355,7 +355,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_broken_wind',
     conditions: { s1: 'mod_broken', s2: 'subj_wind' },
-    resultText: '方向が定まらない乱気流が巣穴に棲みついている。渦を巻いては散る。前に進めない。',
+    resultText: '方向が定まらない乱気流が巣穴に棲みついている。渦に巻かれて洞窟の壁に打ちつけられた。肩が痛む。',
     damage: 2,
     quill: 5
   },
@@ -510,7 +510,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_broken_ice',
     conditions: { s1: 'mod_broken', s2: 'subj_ice' },
-    resultText: 'ひび割れた氷が巣穴に棲みついている。踏めば崩れる。下に暗い水が溜まっている。',
+    resultText: 'ひび割れた氷が巣穴に棲みついている。踏み抜いて腰まで暗い水に沈んだ。這い上がるのに体力を使い果たす。',
     damage: 2,
     quill: 5
   },
@@ -588,7 +588,7 @@ export const nodeE02Outcomes: Outcome[] = [
     id: 'e02_broken_shadow',
     conditions: { s1: 'mod_broken', s2: 'subj_shadow' },
     resultText: '立体的にめくれ上がった影が巣穴に棲みついている。平面に戻れない。洞窟の中で影だけが浮いている。',
-    damage: 2,
+    damage: 1,
     quill: 6
   },
   {
@@ -601,7 +601,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_frozen_shadow',
     conditions: { s1: 'mod_frozen', s2: 'subj_shadow' },
-    resultText: '影が巣穴の壁に張りついて動けない。本体は去ったのに影だけが残っている。冷たい。',
+    resultText: '影が巣穴の壁に張りついて動けない。本体は去ったのに影だけが残っている。触れると体温が吸われる。指が白くなった。',
     damage: 2,
     quill: 6
   },
@@ -664,7 +664,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_broken_song',
     conditions: { s1: 'mod_broken', s2: 'subj_song' },
-    resultText: '途中で止まる旋律が巣穴に棲みついている。続きを誰も知らない。同じ節が繰り返される。',
+    resultText: '途中で止まる旋律が巣穴に棲みついている。続きを誰も知らない。未完の和音が頭の奥で回り続け、思考がまとまらない。',
     damage: 2,
     quill: 5
   },
@@ -834,7 +834,7 @@ export const nodeE02Outcomes: Outcome[] = [
     id: 'e02_frozen_knight',
     conditions: { s1: 'mod_frozen', s2: 'subj_knight' },
     resultText: '氷に閉じ込められた騎士が巣穴にいる。剣を振り上げた姿勢のまま凍っている。竜の返り討ちだ。',
-    damage: 2,
+    damage: 1,
     quill: 7,
     rewardItems: [{ id: 'item_e02_frozen_knight', name: '凍った勇者の剣', description: '氷の中で光る刃。溶かす方法がない', sellPrice: 15 }]
   },
@@ -884,7 +884,7 @@ export const nodeE02Outcomes: Outcome[] = [
     id: 'e02_hard_witch',
     conditions: { s1: 'mod_hard', s2: 'subj_witch' },
     resultText: '石のように頑固な老魔女が巣穴に棲みついている。通行料を要求される。値切れそうにない。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -933,7 +933,7 @@ export const nodeE02Outcomes: Outcome[] = [
     id: 'e02_sleepy_witch',
     conditions: { s1: 'mod_sleepy', s2: 'subj_witch' },
     resultText: '大釜の前でうとうとしている魔女が巣穴に棲みついている。竜の骨でスープを作っていたらしい。',
-    damage: 2,
+    damage: 1,
     quill: 6
   },
   {
@@ -1017,7 +1017,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_small_ghost',
     conditions: { s1: 'mod_small', s2: 'subj_ghost' },
-    resultText: '子供の亡霊が巣穴に棲みついている。笑い声が洞窟に反響する。竜に食われたのだろうか。',
+    resultText: '子供の亡霊が巣穴に棲みついている。笑い声が洞窟に反響する。手を引かれた。冷たい指の感触がいつまでも残る。',
     damage: 2,
     quill: 6
   },
@@ -1053,7 +1053,7 @@ export const nodeE02Outcomes: Outcome[] = [
     id: 'e02_broken_ghost',
     conditions: { s1: 'mod_broken', s2: 'subj_ghost' },
     resultText: '自分が何者か忘れた亡霊が巣穴に棲みついている。竜退治の英雄だったのか、竜の餌だったのか。',
-    damage: 2,
+    damage: 1,
     quill: 7
   },
   {
@@ -1130,7 +1130,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_broken_mirror',
     conditions: { s1: 'mod_broken', s2: 'subj_mirror' },
-    resultText: 'ひび割れた鏡が巣穴に棲みついている。映る顔が何人にも分裂する。洞窟で見ると恐ろしい。',
+    resultText: 'ひび割れた鏡が巣穴に棲みついている。映る顔が何人にも分裂する。目が回り、壁に手をついた。吐き気がする。',
     damage: 2,
     quill: 5
   },
@@ -1145,8 +1145,8 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_frozen_mirror',
     conditions: { s1: 'mod_frozen', s2: 'subj_mirror' },
-    resultText: '凍った鏡が巣穴に棲みついている。霜越しにかろうじて影が映る。冷たい洞窟だ。',
-    damage: 2,
+    resultText: '凍った鏡が巣穴に棲みついている。霜越しにかろうじて影が映る。静かな洞窟だ。',
+    damage: 1,
     quill: 5
   },
   {
@@ -1195,7 +1195,7 @@ export const nodeE02Outcomes: Outcome[] = [
     id: 'e02_hard_doll',
     conditions: { s1: 'mod_hard', s2: 'subj_doll' },
     resultText: '木彫りの人形が巣穴の入口に立っている。関節がなく表情もない。番人のように見える。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1208,7 +1208,7 @@ export const nodeE02Outcomes: Outcome[] = [
   {
     id: 'e02_broken_doll',
     conditions: { s1: 'mod_broken', s2: 'subj_doll' },
-    resultText: '首がもげかけた人形が巣穴の奥にいる。残った目でこちらを見ている。竜の玩具だったのか。',
+    resultText: '首がもげかけた人形が巣穴の奥にいる。残った片目がこちらを追う。振り払えない悪寒が背を走った。',
     damage: 2,
     quill: 6
   },
@@ -1223,7 +1223,7 @@ export const nodeE02Outcomes: Outcome[] = [
     id: 'e02_frozen_doll',
     conditions: { s1: 'mod_frozen', s2: 'subj_doll' },
     resultText: '氷の人形が巣穴に棲みついている。繊細な造形。竜の炎でも溶けなかったのだろうか。',
-    damage: 2,
+    damage: 1,
     quill: 6
   },
   {
@@ -1286,7 +1286,7 @@ export const nodeE02Outcomes: Outcome[] = [
     id: 'e02_broken_rain',
     conditions: { s1: 'mod_broken', s2: 'subj_rain' },
     resultText: '途切れ途切れに降る雨が巣穴に棲みついている。リズムがおかしい。上に向かう雫もある。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {

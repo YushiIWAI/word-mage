@@ -6,7 +6,7 @@ export const nodeBOutcomes: Outcome[] = [
     id: 'b_orig_orig',
     conditions: { s1: 'orig_b_mod', s2: 'orig_b_subj' },
     resultText: '古い神像が祠に眠っている。何の神を祀ったものか、もう誰も知らない。頭を下げて通り過ぎた。',
-    damage: 2,
+    damage: 1,
     quill: 2
   },
   {
@@ -62,7 +62,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_frozen_orig',
     conditions: { s1: 'mod_frozen', s2: 'orig_b_subj' },
-    resultText: '凍てついた神像が祠に眠っている。冬の神でも祀っているのか、祠の内部が外より冷たい。',
+    resultText: '凍てついた神像が祠に眠っている。冬の神でも祀っているのか、祠の内部が外より冷たい。吐く息が白い。指先の感覚が遠のいた。',
     damage: 2,
     quill: 4
   },
@@ -166,7 +166,7 @@ export const nodeBOutcomes: Outcome[] = [
     id: 'b_cursed_kitten',
     conditions: { s1: 'mod_cursed', s2: 'subj_kitten' },
     resultText: '呪われた子猫が祠に眠っている。外に出ると、同じ子猫がまた眠っていた。三度繰り返して諦めた。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -316,7 +316,7 @@ export const nodeBOutcomes: Outcome[] = [
     id: 'b_mighty_dragon',
     conditions: { s1: 'mod_mighty', s2: 'subj_dragon' },
     resultText: '屈強な竜が祠に眠っている。山のような巨体が翼を畳んでいる。息を殺して通った。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -337,7 +337,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_cursed_dragon',
     conditions: { s1: 'mod_cursed', s2: 'subj_dragon' },
-    resultText: '呪われた竜が祠に眠っている。目に理性のない竜が今は眠っている。起こした者の末路を想像した。',
+    resultText: '呪われた竜が祠に眠っている。目に理性のない竜が今は眠っている。寝息の熱風で肌がひりつく。一刻も早く立ち去った。',
     damage: 2,
     quill: 5
   },
@@ -373,7 +373,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_fire_butterfly',
     conditions: { s1: 'mod_fire', s2: 'subj_butterfly' },
-    resultText: '燃え盛る蝶が祠に眠っている。羽が炎でできている。眠っても飛んだ跡に火の粉が残る。祠が心配だ。',
+    resultText: '燃え盛る蝶が祠に眠っている。羽が炎でできている。眠っても飛んだ跡に火の粉が残る。出口に向かう途中で袖口が焦げた。',
     damage: 2,
     quill: 4
   },
@@ -402,7 +402,7 @@ export const nodeBOutcomes: Outcome[] = [
     id: 'b_mighty_butterfly',
     conditions: { s1: 'mod_mighty', s2: 'subj_butterfly' },
     resultText: '屈強な蝶が祠に眠っている。眠るとき羽ばたいた一振りで、祠の扉が吹き飛んだ。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -487,7 +487,7 @@ export const nodeBOutcomes: Outcome[] = [
     id: 'b_mighty_wind',
     conditions: { s1: 'mod_mighty', s2: 'subj_wind' },
     resultText: '屈強な風が祠に眠っている。すべてを押し流してきた風が止まっている。起こしてはならないと直感した。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -508,7 +508,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_cursed_wind',
     conditions: { s1: 'mod_cursed', s2: 'subj_wind' },
-    resultText: '呪われた風が祠に眠っている。帰り道を忘れさせる風が眠っている。通り過ぎる前に道を記憶した。',
+    resultText: '呪われた風が祠に眠っている。帰り道を忘れさせる風が眠っている。出たとき、入口がどちらだったか一瞬わからなくなった。記憶の端が欠けている。',
     damage: 2,
     quill: 5
   },
@@ -558,7 +558,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_sharp_flame',
     conditions: { s1: 'mod_sharp', s2: 'subj_flame' },
-    resultText: '鋭い炎が祠に眠っている。触れたものの形を正確に切り取る炎。眠っていても近づくと危ない。',
+    resultText: '鋭い炎が祠に眠っている。触れたものの形を正確に切り取る炎。眠っていても熱が鋭い。外套の裾が手のひらの形に焼き抜かれていた。',
     damage: 2,
     quill: 4
   },
@@ -638,13 +638,13 @@ export const nodeBOutcomes: Outcome[] = [
     id: 'b_hard_ice',
     conditions: { s1: 'mod_hard', s2: 'subj_ice' },
     resultText: '堅い氷が祠に眠っている。鋼より硬い万年氷。祠の床をゆっくり、しかし確実に押しつぶしている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'b_sharp_ice',
     conditions: { s1: 'mod_sharp', s2: 'subj_ice' },
-    resultText: '鋭い氷が祠に眠っている。氷柱が剣のように床から突き出している。踏んだら足が刺さるところだった。',
+    resultText: '鋭い氷が祠に眠っている。氷柱が剣のように床から突き出している。避けて通ったが、肘がかすめて薄く切れた。冷たさと痛みが同時に走る。',
     damage: 2,
     quill: 4
   },
@@ -658,7 +658,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_mighty_ice',
     conditions: { s1: 'mod_mighty', s2: 'subj_ice' },
-    resultText: '屈強な氷が祠に眠っている。山のような氷塊が祠を満たしている。数百年溶けていない。',
+    resultText: '屈強な氷が祠に眠っている。山のような氷塊が祠を満たしている。隙間を這って通ったら、体温を根こそぎ持っていかれた。',
     damage: 2,
     quill: 3
   },
@@ -745,7 +745,7 @@ export const nodeBOutcomes: Outcome[] = [
     id: 'b_mighty_shadow',
     conditions: { s1: 'mod_mighty', s2: 'subj_shadow' },
     resultText: '屈強な影が祠に眠っている。本体より遥かに大きく太い。影のほうが本体に見える。起こしたくなかった。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -801,7 +801,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_fire_song',
     conditions: { s1: 'mod_fire', s2: 'subj_song' },
-    resultText: '燃え盛る歌が祠に眠っている。戦の歌が眠っている。眠っていても血が沸く。頭が熱くなった。',
+    resultText: '燃え盛る歌が祠に眠っている。戦の歌が眠っている。旋律が耳に入った途端、拳を握りしめて爪が手のひらに食い込んだ。怒りの出所がわからない。',
     damage: 2,
     quill: 5
   },
@@ -809,7 +809,7 @@ export const nodeBOutcomes: Outcome[] = [
     id: 'b_hard_song',
     conditions: { s1: 'mod_hard', s2: 'subj_song' },
     resultText: '堅い歌が祠に眠っている。一度始まったら止められない歌。眠っているだけで、起こしてはならない。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -830,7 +830,7 @@ export const nodeBOutcomes: Outcome[] = [
     id: 'b_mighty_song',
     conditions: { s1: 'mod_mighty', s2: 'subj_song' },
     resultText: '屈強な歌が祠に眠っている。大地を震わせる合唱の残響が眠っている。起こさなくてよかった。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -986,7 +986,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_sharp_knight',
     conditions: { s1: 'mod_sharp', s2: 'subj_knight' },
-    resultText: '鋭い騎士が祠に眠っている。剣士が眠っている。構えのまま眠っているので、近づくと切られそうだ。',
+    resultText: '鋭い騎士が祠に眠っている。剣士が眠っている。構えのまま眠っているので、近づくと切られそうだ。案の定、袖が裂けた。',
     damage: 2,
     quill: 4
   },
@@ -1009,7 +1009,7 @@ export const nodeBOutcomes: Outcome[] = [
     id: 'b_frozen_knight',
     conditions: { s1: 'mod_frozen', s2: 'subj_knight' },
     resultText: '凍てついた騎士が祠に眠っている。氷に閉じ込められた騎士が剣を振り上げた姿勢のまま眠っている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1073,7 +1073,7 @@ export const nodeBOutcomes: Outcome[] = [
     id: 'b_sharp_witch',
     conditions: { s1: 'mod_sharp', s2: 'subj_witch' },
     resultText: '鋭い魔女が祠に眠っている。半開きの目がこちらを追う。眠っているのに見透かされている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -1093,7 +1093,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_frozen_witch',
     conditions: { s1: 'mod_frozen', s2: 'subj_witch' },
-    resultText: '凍てついた魔女が祠に眠っている。感情を失った魔女が氷のような表情のまま眠っている。周囲に霜が広がる。',
+    resultText: '凍てついた魔女が祠に眠っている。感情を失った魔女が氷のような表情のまま眠っている。周囲に霜が広がり、靴底が凍りつく。剥がすのに力が要った。',
     damage: 2,
     quill: 5
   },
@@ -1159,7 +1159,7 @@ export const nodeBOutcomes: Outcome[] = [
     id: 'b_sharp_king',
     conditions: { s1: 'mod_sharp', s2: 'subj_king' },
     resultText: '鋭い王が祠に眠っている。鷹のような目の王。眠っていても視線を感じた。何も見逃さない。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1174,13 +1174,13 @@ export const nodeBOutcomes: Outcome[] = [
     id: 'b_mighty_king',
     conditions: { s1: 'mod_mighty', s2: 'subj_king' },
     resultText: '屈強な王が祠に眠っている。戦士王が武器を手放さずに眠っている。玉座より戦場が似合う王だ。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'b_frozen_king',
     conditions: { s1: 'mod_frozen', s2: 'subj_king' },
-    resultText: '凍てついた王が祠に眠っている。北の王が吐く息が白い。眠っていても冷気が漏れている。',
+    resultText: '凍てついた王が祠に眠っている。北の王が吐く息が白い。眠っていても冷気が漏れている。手がかじかんで動かしにくい。',
     damage: 2,
     quill: 4
   },
@@ -1244,7 +1244,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_sharp_ghost',
     conditions: { s1: 'mod_sharp', s2: 'subj_ghost' },
-    resultText: '鋭い亡霊が祠に眠っている。罪を見透かす目の霊が眠っている。眠っていても視線が痛い。',
+    resultText: '鋭い亡霊が祠に眠っている。罪を見透かす目の霊が眠っている。視線が胸の奥を刺す。古傷がじくじく疼き始めた。',
     damage: 2,
     quill: 5
   },
@@ -1259,13 +1259,13 @@ export const nodeBOutcomes: Outcome[] = [
     id: 'b_mighty_ghost',
     conditions: { s1: 'mod_mighty', s2: 'subj_ghost' },
     resultText: '屈強な亡霊が祠に眠っている。死んで枷が外れた鎧武者の霊が眠っている。眠っていてよかった。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'b_frozen_ghost',
     conditions: { s1: 'mod_frozen', s2: 'subj_ghost' },
-    resultText: '凍てついた亡霊が祠に眠っている。凍死者の霊が眠っている。通った跡に霜が残る。永遠に寒がっている。',
+    resultText: '凍てついた亡霊が祠に眠っている。凍死者の霊が眠っている。近くを通ると骨の髄まで冷える。外に出ても震えが止まらなかった。',
     damage: 2,
     quill: 5
   },
@@ -1365,7 +1365,7 @@ export const nodeBOutcomes: Outcome[] = [
     id: 'b_cursed_mirror',
     conditions: { s1: 'mod_cursed', s2: 'subj_mirror' },
     resultText: '呪われた鏡が祠に眠っている。覗いた者の姿が残る鏡。中で誰かの影が動いていた。覗かなかった。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1414,7 +1414,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_sharp_doll',
     conditions: { s1: 'mod_sharp', s2: 'subj_doll' },
-    resultText: '鋭い人形が祠に眠っている。関節が刃になった操り人形が眠っている。糸が見えない。踏まなくてよかった。',
+    resultText: '鋭い人形が祠に眠っている。関節が刃になった操り人形が眠っている。糸が見えない。指が触れて、爪の間から血が滲んだ。',
     damage: 2,
     quill: 5
   },
@@ -1451,7 +1451,7 @@ export const nodeBOutcomes: Outcome[] = [
     id: 'b_cursed_doll',
     conditions: { s1: 'mod_cursed', s2: 'subj_doll' },
     resultText: '呪われた人形が祠に眠っている。夜になると位置が変わる人形。眠る前にいた場所と違う所にいた。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1492,7 +1492,7 @@ export const nodeBOutcomes: Outcome[] = [
   {
     id: 'b_hard_rain',
     conditions: { s1: 'mod_hard', s2: 'subj_rain' },
-    resultText: '堅い雨が祠に眠っている。雹が眠っている。宙に浮いて止まった氷の粒。踏まないよう気をつけた。',
+    resultText: '堅い雨が祠に眠っている。雹が眠っている。宙に浮いて止まった氷の粒。一つが目覚めて額に当たった。石のように硬い。',
     damage: 2,
     quill: 4
   },
@@ -1514,14 +1514,14 @@ export const nodeBOutcomes: Outcome[] = [
     id: 'b_mighty_rain',
     conditions: { s1: 'mod_mighty', s2: 'subj_rain' },
     resultText: '屈強な雨が祠に眠っている。豪雨が眠っている。滝のような水量が宙で止まっている。起こしたら洪水だ。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'b_frozen_rain',
     conditions: { s1: 'mod_frozen', s2: 'subj_rain' },
     resultText: '凍てついた雨が祠に眠っている。触れたものを氷の膜で覆う凍雨が止まっている。どこも触れずに通った。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -1536,7 +1536,7 @@ export const nodeBOutcomes: Outcome[] = [
     id: 'b_cursed_rain',
     conditions: { s1: 'mod_cursed', s2: 'subj_rain' },
     resultText: '呪われた雨が祠に眠っている。浴びると根が生えて動けなくなる雨。眠っていてくれていた。急いで出た。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {

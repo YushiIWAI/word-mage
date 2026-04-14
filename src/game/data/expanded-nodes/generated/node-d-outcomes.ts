@@ -42,7 +42,7 @@ export const nodeDOutcomes: Outcome[] = [
     id: 'd_sharp_gaze',
     conditions: { s1: 'mod_sharp', s4: 'pred_gaze' },
     resultText: '鋭い歌が泉の底からこちらを見つめている。真実を暴くような視線。嘘がつけなくなる。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -120,7 +120,7 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_hard_whisper',
     conditions: { s1: 'mod_hard', s4: 'pred_whisper' },
-    resultText: '止められない歌が泉から囁いている。一度耳に入ると、歩き去っても聞こえ続ける。',
+    resultText: '止められない歌が泉から囁いている。一度耳に入ると、歩き去っても聞こえ続ける。頭の芯が重い。',
     damage: 2,
     quill: 3
   },
@@ -141,7 +141,7 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_mighty_whisper',
     conditions: { s1: 'mod_mighty', s4: 'pred_whisper' },
-    resultText: '大地を震わせる合唱が泉から囁いている。囁いているのに地面が揺れる。声を抑えきれていない。',
+    resultText: '大地を震わせる合唱が泉から囁いている。囁いているのに地面が揺れる。足を取られて膝をついた。',
     damage: 2,
     quill: 5
   },
@@ -149,7 +149,7 @@ export const nodeDOutcomes: Outcome[] = [
     id: 'd_frozen_whisper',
     conditions: { s1: 'mod_frozen', s4: 'pred_whisper' },
     resultText: '凍てついた歌が泉から囁いている。吐息が白い。泉の水面に薄氷が張った。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -199,7 +199,7 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_fire_sing',
     conditions: { s1: 'mod_fire', s4: 'pred_sing' },
-    resultText: '戦の歌が泉から歌っている。水面が赤く染まる。血が熱い。泉の水は飲めそうにない。',
+    resultText: '戦の歌が泉から歌っている。水面が赤く染まる。胸の奥で何かが焦げる。息が荒い。',
     damage: 2,
     quill: 4
   },
@@ -214,7 +214,7 @@ export const nodeDOutcomes: Outcome[] = [
     id: 'd_sharp_sing',
     conditions: { s1: 'mod_sharp', s4: 'pred_sing' },
     resultText: '鋭い歌が泉から歌っている。高音が泉の水面を切り裂く。水しぶきが顔にかかった。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -227,7 +227,7 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_mighty_sing',
     conditions: { s1: 'mod_mighty', s4: 'pred_sing' },
-    resultText: '大地を震わせる合唱が泉から歌っている。水柱が立つ。全身が水浸しになった。',
+    resultText: '大地を震わせる合唱が泉から歌っている。水柱が立ち、全身を叩きつける。耳鳴りが止まらない。',
     damage: 2,
     quill: 4
   },
@@ -235,7 +235,7 @@ export const nodeDOutcomes: Outcome[] = [
     id: 'd_frozen_sing',
     conditions: { s1: 'mod_frozen', s4: 'pred_sing' },
     resultText: '凍てついた歌が泉から歌っている。氷の結晶が旋律を奏でている。美しいが、冷たい。',
-    damage: 2,
+    damage: 1,
     quill: 5,
     rewardItems: [{ id: 'item_d_frozen_sing', name: '氷の音符', description: '旋律の形に凍った水の結晶', sellPrice: 10 }]
   },
@@ -285,7 +285,7 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_fire_flee',
     conditions: { s1: 'mod_fire', s4: 'pred_flee' },
-    resultText: '戦の歌が泉から逃げていく。燃えながら。通り道の草が焦げている。',
+    resultText: '戦の歌が泉から逃げていく。燃えながら。足元をかすめ、靴底が溶けた。',
     damage: 2,
     quill: 4
   },
@@ -373,7 +373,7 @@ export const nodeDOutcomes: Outcome[] = [
     id: 'd_fire_shine',
     conditions: { s1: 'mod_fire', s4: 'pred_shine' },
     resultText: '戦の歌が泉から輝いている。赤い光だ。見ていると血が騒ぐ。目を逸らした。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -559,7 +559,7 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_sharp_dance',
     conditions: { s1: 'mod_sharp', s4: 'pred_dance' },
-    resultText: '鋭い歌が泉の上で踊っている。剣舞のようだ。水面が斬り裂かれて飛沫が散る。',
+    resultText: '鋭い歌が泉の上で踊っている。剣舞だ。旋回のたびに風圧が肌を裂く。',
     damage: 2,
     quill: 5
   },
@@ -581,7 +581,7 @@ export const nodeDOutcomes: Outcome[] = [
     id: 'd_frozen_dance',
     conditions: { s1: 'mod_frozen', s4: 'pred_dance' },
     resultText: '凍てついた歌が泉の上で踊っている。踏んだ水面が次々に凍る。氷の舞台が広がっていく。',
-    damage: 2,
+    damage: 1,
     quill: 5,
     rewardItems: [{ id: 'item_d_frozen_dance', name: '氷の舞台', description: '凍った泉の欠片。踏むと音が鳴る', sellPrice: 10 }]
   },
@@ -632,7 +632,7 @@ export const nodeDOutcomes: Outcome[] = [
     id: 'd_fire_melt',
     conditions: { s1: 'mod_fire', s4: 'pred_melt' },
     resultText: '戦の歌が泉に溶けている。泉が温泉のように煮えている。飲んだら大変なことになりそうだ。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -716,7 +716,7 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_fire_laugh',
     conditions: { s1: 'mod_fire', s4: 'pred_laugh' },
-    resultText: '戦の歌が泉から笑っている。高笑いだ。泉が煮えたぎる。挑発されている。',
+    resultText: '戦の歌が泉から笑っている。高笑いだ。泉が煮えたぎり、蒸気が肌を灼く。',
     damage: 2,
     quill: 3
   },
@@ -745,7 +745,7 @@ export const nodeDOutcomes: Outcome[] = [
     id: 'd_mighty_laugh',
     conditions: { s1: 'mod_mighty', s4: 'pred_laugh' },
     resultText: '大地を震わせる合唱が泉から笑っている。哄笑が空に響く。泉の水が跳ねた。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
@@ -781,7 +781,7 @@ export const nodeDOutcomes: Outcome[] = [
     id: 'd_orig_orig',
     conditions: { s1: 'orig_d_mod', s4: 'orig_d_pred' },
     resultText: '澄んだ歌が泉から響いている。美しい。しかし、書き換えなければこのままだ。',
-    damage: 2,
+    damage: 1,
     quill: 2
   },
   {
@@ -830,7 +830,7 @@ export const nodeDOutcomes: Outcome[] = [
   {
     id: 'd_mighty_orig',
     conditions: { s1: 'mod_mighty', s4: 'orig_d_pred' },
-    resultText: '屈強な歌が泉から響いている。大合唱だ。足元が揺れる。泉の水が波立っている。',
+    resultText: '屈強な歌が泉から響いている。大合唱だ。足元が揺れ、内臓まで震わされる。吐き気がする。',
     damage: 2,
     quill: 3
   },
@@ -838,7 +838,7 @@ export const nodeDOutcomes: Outcome[] = [
     id: 'd_frozen_orig',
     conditions: { s1: 'mod_frozen', s4: 'orig_d_pred' },
     resultText: '凍てついた歌が泉から響いている。空気が凍る歌声だ。泉の縁に霜が降りている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {

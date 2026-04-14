@@ -6,7 +6,7 @@ export const nodeAOutcomes: Outcome[] = [
     id: 'a_orig_orig',
     conditions: { s1: 'orig_a_mod', s2: 'orig_a_subj' },
     resultText: '忘れられた柱が橋を塞いでいる。誰が建てたかも覚えていない。押しても引いても動かない。',
-    damage: 2,
+    damage: 1,
     quill: 2
   },
   {
@@ -33,7 +33,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_hard_orig',
     conditions: { s1: 'mod_hard', s2: 'orig_a_subj' },
-    resultText: '堅い柱が橋を塞いでいる。鉄のように硬い石柱。びくともしない。仕方なく川を渡る。',
+    resultText: '堅い柱が橋を塞いでいる。鉄のように硬い石柱。びくともしない。仕方なく川を渡る。水が胸まで来て、体が芯まで冷えた。',
     damage: 2,
     quill: 3
   },
@@ -178,7 +178,7 @@ export const nodeAOutcomes: Outcome[] = [
     id: 'a_orig_snake',
     conditions: { s1: 'orig_a_mod', s2: 'subj_snake' },
     resultText: '忘れられた蛇が橋を塞いでいる。ずっとここにいるのに誰も気づかなかった蛇だ。音を立てずに迂回する。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
@@ -206,7 +206,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_hard_snake',
     conditions: { s1: 'mod_hard', s2: 'subj_snake' },
-    resultText: '堅い蛇が橋を塞いでいる。鉄の鱗が橋板に食い込んでいる。鎖のように動かない。',
+    resultText: '堅い蛇が橋を塞いでいる。鉄の鱗が橋板に食い込んでいる。鎖のように動かない。乗り越えようとして脛を打った。鱗が硬い。',
     damage: 2,
     quill: 4
   },
@@ -263,7 +263,7 @@ export const nodeAOutcomes: Outcome[] = [
     id: 'a_orig_dragon',
     conditions: { s1: 'orig_a_mod', s2: 'subj_dragon' },
     resultText: '忘れられた竜が橋を塞いでいる。人に忘れられ、自分も忘れかけている。寂しげな目で通すかどうか迷っている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -329,7 +329,7 @@ export const nodeAOutcomes: Outcome[] = [
     id: 'a_clear_dragon',
     conditions: { s1: 'mod_clear', s2: 'subj_dragon' },
     resultText: '透き通った竜が橋を塞いでいる。水晶でできた竜だ。体を通して向こう岸が歪んで見える。すり抜けられそうだが、できない。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -423,7 +423,7 @@ export const nodeAOutcomes: Outcome[] = [
     id: 'a_cursed_butterfly',
     conditions: { s1: 'mod_cursed', s2: 'subj_butterfly' },
     resultText: '呪われた蝶が橋を塞いでいる。追いかけると迷子になる蝶だ。目を逸らして、蝶を見ないまま橋を渡った。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -465,7 +465,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_hard_wind',
     conditions: { s1: 'mod_hard', s2: 'subj_wind' },
-    resultText: '堅い風が橋を塞いでいる。同じ方向だけに吹く頑固な風。何百年も変わらないらしい。壁のようで押し通れない。',
+    resultText: '堅い風が橋を塞いでいる。同じ方向だけに吹く頑固な風。何百年も変わらないらしい。押し通ろうとして半日かかった。膝が笑う。',
     damage: 2,
     quill: 4
   },
@@ -508,7 +508,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_cursed_wind',
     conditions: { s1: 'mod_cursed', s2: 'subj_wind' },
-    resultText: '呪われた風が橋を塞いでいる。吹かれた者が帰り道を忘れるという。目を閉じて、来た道を唱えながら渡った。',
+    resultText: '呪われた風が橋を塞いでいる。吹かれた者が帰り道を忘れるという。渡り終えたとき、故郷の名が思い出せなくなっていた。',
     damage: 2,
     quill: 5
   },
@@ -608,7 +608,7 @@ export const nodeAOutcomes: Outcome[] = [
     id: 'a_orig_ice',
     conditions: { s1: 'orig_a_mod', s2: 'subj_ice' },
     resultText: '忘れられた氷が橋を塞いでいる。真夏でも溶けないまま放置された氷塊。存在自体が忘れられている。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
@@ -636,7 +636,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_hard_ice',
     conditions: { s1: 'mod_hard', s2: 'subj_ice' },
-    resultText: '堅い氷が橋を塞いでいる。万年氷だ。鉄の刃も欠ける硬さ。砕くのは諦めて、上を這って越えた。',
+    resultText: '堅い氷が橋を塞いでいる。万年氷だ。鉄の刃も欠ける硬さ。砕くのは諦めて、上を這って越えた。手のひらの皮が剥ける。',
     damage: 2,
     quill: 3
   },
@@ -722,7 +722,7 @@ export const nodeAOutcomes: Outcome[] = [
     id: 'a_hard_shadow',
     conditions: { s1: 'mod_hard', s2: 'subj_shadow' },
     resultText: '堅い影が橋を塞いでいる。地面に貼りついた影が固まっている。壁のように立ちはだかり、通れない。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -799,14 +799,14 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_fire_song',
     conditions: { s1: 'mod_fire', s2: 'subj_song' },
-    resultText: '燃え盛る歌が橋を塞いでいる。戦の歌だ。血が沸き、恐れが消える。だが橋板が振動で軋んでいる。',
+    resultText: '燃え盛る歌が橋を塞いでいる。戦の歌だ。血が沸き、恐れが消え、足が勝手に駆け出す。橋を渡り終えたとき、体中に殴られたような筋肉痛が走った。',
     damage: 2,
     quill: 5
   },
   {
     id: 'a_hard_song',
     conditions: { s1: 'mod_hard', s2: 'subj_song' },
-    resultText: '堅い歌が橋を塞いでいる。一度始まると止められない旋律。他のすべての音を上書きする。耳を塞いでも響く。',
+    resultText: '堅い歌が橋を塞いでいる。一度始まると止められない旋律。他のすべての音を上書きする。渡り終えても耳鳴りが止まらず、平衡感覚が狂った。',
     damage: 2,
     quill: 4
   },
@@ -900,7 +900,7 @@ export const nodeAOutcomes: Outcome[] = [
     id: 'a_sharp_silence',
     conditions: { s1: 'mod_sharp', s2: 'subj_silence' },
     resultText: '鋭い沈黙が橋を塞いでいる。言葉より痛い無言。視線だけが刺さるような静けさだ。居心地が悪い。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -950,7 +950,7 @@ export const nodeAOutcomes: Outcome[] = [
     id: 'a_orig_knight',
     conditions: { s1: 'orig_a_mod', s2: 'subj_knight' },
     resultText: '忘れられた騎士が橋を塞いでいる。誰の命令で立っているかも忘れた騎士だ。それでも退かない。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -1038,7 +1038,7 @@ export const nodeAOutcomes: Outcome[] = [
     id: 'a_orig_witch',
     conditions: { s1: 'orig_a_mod', s2: 'subj_witch' },
     resultText: '忘れられた魔女が橋を塞いでいる。かつては名のある魔女だったらしい。今は誰も覚えていない。ぶつぶつと何か唱えている。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
@@ -1067,7 +1067,7 @@ export const nodeAOutcomes: Outcome[] = [
     id: 'a_hard_witch',
     conditions: { s1: 'mod_hard', s2: 'subj_witch' },
     resultText: '堅い魔女が橋を塞いでいる。石のように頑固な老魔女だ。取引を持ちかけない限り一言も話さない。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -1080,7 +1080,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_broken_witch',
     conditions: { s1: 'mod_broken', s2: 'subj_witch' },
-    resultText: '壊れた魔女が橋を塞いでいる。同じ呪文を途切れ途切れに繰り返している。魔力が暴走して、橋板がときどき震える。',
+    resultText: '壊れた魔女が橋を塞いでいる。同じ呪文を途切れ途切れに繰り返している。魔力が暴走して、こちらの皮膚がぴりぴり痺れる。足元がおぼつかない。',
     damage: 2,
     quill: 4
   },
@@ -1125,7 +1125,7 @@ export const nodeAOutcomes: Outcome[] = [
     id: 'a_orig_king',
     conditions: { s1: 'orig_a_mod', s2: 'subj_king' },
     resultText: '忘れられた王が橋を塞いでいる。臣下も民もいない。名すら忘れられた王が、橋の上に玉座を据えている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -1211,7 +1211,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_orig_ghost',
     conditions: { s1: 'orig_a_mod', s2: 'subj_ghost' },
-    resultText: '忘れられた亡霊が橋を塞いでいる。名前も顔も忘れられた霊だ。ただ此処に立っている。忘れられることが一番の呪い。',
+    resultText: '忘れられた亡霊が橋を塞いでいる。名前も顔も忘れられた霊だ。ただ此処に立っている。すれ違ったとき、体の奥が一瞬ぞくりと冷えた。',
     damage: 2,
     quill: 4
   },
@@ -1327,7 +1327,7 @@ export const nodeAOutcomes: Outcome[] = [
     id: 'a_hard_mirror',
     conditions: { s1: 'mod_hard', s2: 'subj_mirror' },
     resultText: '堅い鏡が橋を塞いでいる。何をしても割れない。傷もつかない。盾のように道を阻む。映り込んだ自分が邪魔をしているようだ。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1348,7 +1348,7 @@ export const nodeAOutcomes: Outcome[] = [
     id: 'a_mighty_mirror',
     conditions: { s1: 'mod_mighty', s2: 'subj_mirror' },
     resultText: '屈強な鏡が橋を塞いでいる。人の背丈を超える巨大な姿見だ。映った自分が実物より大きく見える。圧倒されて一歩退いた。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -1453,7 +1453,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_cursed_doll',
     conditions: { s1: 'mod_cursed', s2: 'subj_doll' },
-    resultText: '呪われた人形が橋を塞いでいる。通り過ぎた後、振り返ると位置が変わっている。誰も動かしていないのに。早足で去った。',
+    resultText: '呪われた人形が橋を塞いでいる。通り過ぎた後、振り返ると位置が変わっている。三度目に振り向いたとき、足がもつれて欄干に打ちつけた。',
     damage: 2,
     quill: 5
   },
@@ -1467,7 +1467,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_orig_rain',
     conditions: { s1: 'orig_a_mod', s2: 'subj_rain' },
-    resultText: '忘れられた雨が橋を塞いでいる。いつから降っているかもわからない雨だ。橋の上だけ水が溜まって渡れない。',
+    resultText: '忘れられた雨が橋を塞いでいる。いつから降っているかもわからない雨だ。橋の上だけ水が溜まって渡れない。膝まで浸かって渡ったら、足が冷たさで痺れた。',
     damage: 2,
     quill: 3
   },
@@ -1524,7 +1524,7 @@ export const nodeAOutcomes: Outcome[] = [
   {
     id: 'a_frozen_rain',
     conditions: { s1: 'mod_frozen', s2: 'subj_rain' },
-    resultText: '凍てついた雨が橋を塞いでいる。凍雨だ。橋板が氷の膜に覆われ、鏡のように光る。一歩ごとに滑りながら渡った。',
+    resultText: '凍てついた雨が橋を塞いでいる。凍雨だ。橋板が氷の膜に覆われ、鏡のように光る。三度転んで、膝が腫れた。',
     damage: 2,
     quill: 4
   },

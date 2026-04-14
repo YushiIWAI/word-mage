@@ -47,7 +47,7 @@ export const nodeEOutcomes: Outcome[] = [
   {
     id: 'e_mighty_kitten',
     conditions: { s1: 'mod_mighty', s2: 'subj_kitten' },
-    resultText: '子猫サイズで虎の体格をした獣が玉座を守っている。小さな守護獣だ。牙を剥く。',
+    resultText: '子猫サイズで虎の体格をした獣が玉座を守っている。小さいくせに体当たりが重い。脛に青あざが残った。',
     damage: 2,
     quill: 5
   },
@@ -112,7 +112,7 @@ export const nodeEOutcomes: Outcome[] = [
     id: 'e_hard_snake',
     conditions: { s1: 'mod_hard', s2: 'subj_snake' },
     resultText: '鉄の鱗を持つ蛇が玉座に巻きついている。噛まれたら歯が折れるのはこちらだ。掴めない。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -168,7 +168,7 @@ export const nodeEOutcomes: Outcome[] = [
   {
     id: 'e_orig_snake',
     conditions: { s1: 'orig_e_mod', s2: 'subj_snake' },
-    resultText: '忠実な蛇が玉座を守っている。近づく者に鎌首をもたげる。王の不在を知ってなお、持ち場を離れない。',
+    resultText: '忠実な蛇が玉座を守っている。近づくと腕に噛みついた。毒はないが、歯が深い。',
     damage: 2,
     quill: 5
   },
@@ -370,7 +370,7 @@ export const nodeEOutcomes: Outcome[] = [
     id: 'e_hard_wind',
     conditions: { s1: 'mod_hard', s2: 'subj_wind' },
     resultText: '同じ方向に吹き続ける風が玉座を守っている。何百年も変わらない。押し戻されて近づけない。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -513,7 +513,7 @@ export const nodeEOutcomes: Outcome[] = [
     id: 'e_orig_flame',
     conditions: { s1: 'orig_e_mod', s2: 'subj_flame' },
     resultText: '忠実な炎が玉座を守っている。王がいなくなった後も、一度も消えていない。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -597,7 +597,7 @@ export const nodeEOutcomes: Outcome[] = [
     id: 'e_orig_ice',
     conditions: { s1: 'orig_e_mod', s2: 'subj_ice' },
     resultText: '忠実な氷が玉座を守っている。溶けては凍り、凍っては守る。王が戻るまで。',
-    damage: 2,
+    damage: 1,
     quill: 6,
     rewardItems: [{ id: 'item_e_orig_ice', name: '不溶の氷片', description: '忠誠を宿した氷。手の中で溶けない', sellPrice: 10 }]
   },
@@ -706,14 +706,14 @@ export const nodeEOutcomes: Outcome[] = [
   {
     id: 'e_fire_song',
     conditions: { s1: 'mod_fire', s2: 'subj_song' },
-    resultText: '戦の歌が王の間に轟く。血が沸き、恐れが消える。玉座に近づく足が止められない。',
+    resultText: '戦の歌が王の間に轟く。血が沸き、体が勝手に前へ出る。我に返った時、足が震えている。',
     damage: 2,
     quill: 5
   },
   {
     id: 'e_hard_song',
     conditions: { s1: 'mod_hard', s2: 'subj_song' },
-    resultText: '一度始まると止められない歌が玉座を守っている。他のすべての音が消される。',
+    resultText: '一度始まると止められない歌が玉座を守っている。鼓膜が圧される。自分の呼吸さえ聞こえない。',
     damage: 2,
     quill: 4
   },
@@ -792,13 +792,13 @@ export const nodeEOutcomes: Outcome[] = [
     id: 'e_fire_silence',
     conditions: { s1: 'mod_fire', s2: 'subj_silence' },
     resultText: '怒りで誰も口を開けない沈黙が王の間を満たす。空気が焦げている。玉座が震えている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'e_hard_silence',
     conditions: { s1: 'mod_hard', s2: 'subj_silence' },
-    resultText: '何を言っても吸い込まれる沈黙が玉座を守っている。声が消える。音の墓場だ。',
+    resultText: '何を言っても吸い込まれる沈黙が玉座を守っている。叫んでも音がない。喉が潰れるまで声を出していた。',
     damage: 2,
     quill: 5
   },
@@ -971,14 +971,14 @@ export const nodeEOutcomes: Outcome[] = [
   {
     id: 'e_hard_witch',
     conditions: { s1: 'mod_hard', s2: 'subj_witch' },
-    resultText: '頑固な老魔女が玉座を守っている。取引以外では口を開かない。交渉の余地すらない。',
+    resultText: '頑固な老魔女が玉座を守っている。杖で地面を叩くと衝撃波が走る。膝から崩れた。',
     damage: 2,
     quill: 4
   },
   {
     id: 'e_sharp_witch',
     conditions: { s1: 'mod_sharp', s2: 'subj_witch' },
-    resultText: '鉤鼻に鋭い目の魔女が玉座を守っている。嘘を一言で見抜く。言い訳は通じない。',
+    resultText: '鉤鼻に鋭い目の魔女が玉座を守っている。指を鳴らすと体が金縛りになった。動けない。',
     damage: 2,
     quill: 5
   },
@@ -1028,7 +1028,7 @@ export const nodeEOutcomes: Outcome[] = [
   {
     id: 'e_orig_witch',
     conditions: { s1: 'orig_e_mod', s2: 'subj_witch' },
-    resultText: '忠実な魔女が玉座を守っている。王に仕えた宮廷魔術師だ。主がいなくても呪いは解かない。',
+    resultText: '忠実な魔女が玉座を守っている。結界が張られている。触れた手の甲に紋様が焼きついた。',
     damage: 2,
     quill: 5
   },
@@ -1116,7 +1116,7 @@ export const nodeEOutcomes: Outcome[] = [
     id: 'e_orig_king',
     conditions: { s1: 'orig_e_mod', s2: 'subj_king' },
     resultText: '忠実な王が自ら玉座を守っている。衛兵はもういない。王は最後の番人だ。',
-    damage: 2,
+    damage: 1,
     quill: 7,
     rewardItems: [{ id: 'item_e_orig_king', name: '王の覚悟', description: '王が置いていった手紙。一言だけ書いてある', sellPrice: 14 }]
   },
@@ -1144,7 +1144,7 @@ export const nodeEOutcomes: Outcome[] = [
   {
     id: 'e_hard_ghost',
     conditions: { s1: 'mod_hard', s2: 'subj_ghost' },
-    resultText: '同じ場所から動かない亡霊が玉座を守っている。何百年もそこに立っている。祓えない。',
+    resultText: '同じ場所から動かない亡霊が玉座を守っている。すり抜けようとした腕が凍えた。死者の冷気だ。',
     damage: 2,
     quill: 4
   },
@@ -1225,14 +1225,14 @@ export const nodeEOutcomes: Outcome[] = [
     id: 'e_fire_mirror',
     conditions: { s1: 'mod_fire', s2: 'subj_mirror' },
     resultText: '鏡面に炎が映っている。だが周囲に火はない。鏡の中が燃えている。玉座も鏡の中で燃えている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'e_hard_mirror',
     conditions: { s1: 'mod_hard', s2: 'subj_mirror' },
     resultText: '何をしても割れない鏡が玉座の前に立つ。盾のように玉座を守っている。傷もつかない。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1260,7 +1260,7 @@ export const nodeEOutcomes: Outcome[] = [
     id: 'e_frozen_mirror',
     conditions: { s1: 'mod_frozen', s2: 'subj_mirror' },
     resultText: '霜に覆われた鏡が玉座を守っている。かろうじて映る影が動いている。こちらの動きではない。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1360,7 +1360,7 @@ export const nodeEOutcomes: Outcome[] = [
     id: 'e_cursed_doll',
     conditions: { s1: 'mod_cursed', s2: 'subj_doll' },
     resultText: '呪われた人形が玉座を守っている。夜になると位置が変わるらしい。今は朝だ。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -1466,7 +1466,7 @@ export const nodeEOutcomes: Outcome[] = [
   {
     id: 'e_orig_orig',
     conditions: { s1: 'orig_e_mod', s2: 'orig_e_subj' },
-    resultText: '忠実な衛兵が玉座を守っている。王がいなくても、持ち場を離れない。いつか王は戻ると信じている。',
+    resultText: '忠実な衛兵が玉座を守っている。槍の一突きで退けられた。背中を石畳に打ちつけた。',
     damage: 2,
     quill: 2
   },

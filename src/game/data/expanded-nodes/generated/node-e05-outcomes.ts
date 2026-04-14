@@ -26,7 +26,7 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_hard_gaze',
     conditions: { s1: 'mod_hard', s2: 'pred_gaze' },
-    resultText: '堅い封印が祭壇から見つめている。揺るがない光。何千年もこうして世界を見てきた。',
+    resultText: '堅い封印が祭壇から見つめている。揺るがない光圧に押し返される。一歩も近づけないまま体力だけが削れていく。',
     damage: 2,
     quill: 6
   },
@@ -41,7 +41,7 @@ export const nodeE05Outcomes: Outcome[] = [
     id: 'e05_broken_gaze',
     conditions: { s1: 'mod_broken', s2: 'pred_gaze' },
     resultText: '壊れた封印が祭壇から見つめている。光が明滅している。もう長くは保たない。',
-    damage: 2,
+    damage: 1,
     quill: 6
   },
   {
@@ -77,7 +77,7 @@ export const nodeE05Outcomes: Outcome[] = [
     id: 'e05_sleepy_gaze',
     conditions: { s1: 'mod_sleepy', s2: 'pred_gaze' },
     resultText: '眠い封印が祭壇から見つめている。光がぼんやりしている。封印も眠りかけている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -105,7 +105,7 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_hard_whisper',
     conditions: { s1: 'mod_hard', s2: 'pred_whisper' },
-    resultText: '堅い封印が祭壇から囁いている。石に刻まれた呪文が声に出して読まれている。自動的に。',
+    resultText: '堅い封印が祭壇から囁いている。石に刻まれた呪文が読み上げられ、聞いた者の足が石のように重くなる。',
     damage: 2,
     quill: 6
   },
@@ -163,7 +163,7 @@ export const nodeE05Outcomes: Outcome[] = [
     id: 'e05_small_flee',
     conditions: { s1: 'mod_small', s2: 'pred_flee' },
     resultText: '小さな封印が祭壇から逃げていく。指先ほどの光が浮き上がって消えた。ほんの一片が解けた。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -212,7 +212,7 @@ export const nodeE05Outcomes: Outcome[] = [
     id: 'e05_frozen_flee',
     conditions: { s1: 'mod_frozen', s2: 'pred_flee' },
     resultText: '凍てついた封印が祭壇から逃げていく。氷が溶けるように消えていく。封印の間が温かくなった。',
-    damage: 2,
+    damage: 1,
     quill: 6
   },
   {
@@ -320,7 +320,7 @@ export const nodeE05Outcomes: Outcome[] = [
     id: 'e05_small_dance',
     conditions: { s1: 'mod_small', s2: 'pred_dance' },
     resultText: '小さな封印が祭壇から踊っている。指先ほどの光がくるくる回っている。微笑ましいが、封印がそんなことをしていていいのか。',
-    damage: 2,
+    damage: 1,
     quill: 6
   },
   {
@@ -341,7 +341,7 @@ export const nodeE05Outcomes: Outcome[] = [
     id: 'e05_hard_dance',
     conditions: { s1: 'mod_hard', s2: 'pred_dance' },
     resultText: '堅い封印が祭壇から踊っている。ぎこちない動き。何千年ぶりに動いたのだろう。',
-    damage: 2,
+    damage: 1,
     quill: 6
   },
   {
@@ -391,7 +391,7 @@ export const nodeE05Outcomes: Outcome[] = [
     id: 'e05_sleepy_dance',
     conditions: { s1: 'mod_sleepy', s2: 'pred_dance' },
     resultText: '眠い封印が祭壇から踊っている。ゆらゆらと揺れている。踊りというより、寝ぼけている。',
-    damage: 2,
+    damage: 1,
     quill: 6
   },
   {
@@ -418,7 +418,7 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_hard_laugh',
     conditions: { s1: 'mod_hard', s2: 'pred_laugh' },
-    resultText: '堅い封印が祭壇から笑っている。石の中から低い笑い声。何千年もかけた冗談だ。',
+    resultText: '堅い封印が祭壇から笑っている。低い笑い声が骨まで響く。笑われている意味がわからず、正気が軋む。',
     damage: 2,
     quill: 6
   },
@@ -469,7 +469,7 @@ export const nodeE05Outcomes: Outcome[] = [
     id: 'e05_sleepy_laugh',
     conditions: { s1: 'mod_sleepy', s2: 'pred_laugh' },
     resultText: '眠い封印が祭壇から笑っている。寝笑いだ。夢の中で何が面白いのだろう。',
-    damage: 2,
+    damage: 1,
     quill: 6
   },
   {
@@ -496,7 +496,7 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_hard_shine',
     conditions: { s1: 'mod_hard', s2: 'pred_shine' },
-    resultText: '堅い封印が祭壇から輝く。揺るがない光。何千年も変わらず光り続けている。',
+    resultText: '堅い封印が祭壇から輝く。揺るがない光が瞼を貫く。しばらく視界が白く焼け、壁に手をついた。',
     damage: 2,
     quill: 6
   },
@@ -510,7 +510,7 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_broken_shine',
     conditions: { s1: 'mod_broken', s2: 'pred_shine' },
-    resultText: '壊れた封印が祭壇から輝く。光が明滅する。点いたり消えたり。もう長くない。',
+    resultText: '壊れた封印が祭壇から輝く。光が明滅するたび平衡感覚が揺さぶられる。吐き気がこみ上げた。',
     damage: 2,
     quill: 5
   },
@@ -630,7 +630,7 @@ export const nodeE05Outcomes: Outcome[] = [
   {
     id: 'e05_small_melt',
     conditions: { s1: 'mod_small', s2: 'pred_melt' },
-    resultText: '小さな封印が祭壇から溶けている。指先ほどの封印が水のように溶ける。もう止められない。',
+    resultText: '小さな封印が祭壇から溶けている。溶けた光が足元に広がり、踏むと肌が焼ける。小さくても封印は封印だ。',
     damage: 2,
     quill: 5
   },
