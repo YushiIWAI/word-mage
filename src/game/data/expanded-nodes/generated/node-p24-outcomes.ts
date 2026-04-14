@@ -21,7 +21,7 @@ export const nodeP24Outcomes: Outcome[] = [
     id: 'p24_dragon_wait',
     conditions: { s2: 'subj_dragon', s4: 'pred_wait' },
     resultText: '忘れられた竜が墓場に待っている。かつての英雄の相棒だった竜。英雄の墓を千年守り続けている。名前は忘れた。',
-    damage: 2,
+    damage: 1,
     quill: 7,
     rewardItems: [{ id: 'item_p24_dragon_wait', name: '忘れられた竜の涙', description: '英雄の墓を守り続けた竜の涙。石になりかけている', sellPrice: 18 }]
   },
@@ -263,7 +263,7 @@ export const nodeP24Outcomes: Outcome[] = [
   {
     id: 'p24_dragon_entangle',
     conditions: { s2: 'subj_dragon', s4: 'pred_entangle' },
-    resultText: '忘れられた竜が墓場に絡みついている。巨体が墓地全体を覆っている。竜が墓場を抱きしめて守っている。',
+    resultText: '忘れられた竜が墓場に絡みついている。巨体が墓地全体を覆い、尾が道を塞いでいる。乗り越えようとして鱗に肌を裂かれた。',
     damage: 3,
     quill: 5
   },
@@ -285,7 +285,7 @@ export const nodeP24Outcomes: Outcome[] = [
     id: 'p24_flame_entangle',
     conditions: { s2: 'subj_flame', s4: 'pred_entangle' },
     resultText: '忘れられた炎が墓場に絡みついている。蝋燭の残り火が墓石の文字に沿って這っている。名前を辿るように燃えている。',
-    damage: 2,
+    damage: 1,
     quill: 6,
     rewardItems: [{ id: 'item_p24_flame_entangle', name: '名を辿る炎', description: '忘れられた名前に沿って燃える小さな炎。消えない', sellPrice: 12 }]
   },
@@ -327,7 +327,7 @@ export const nodeP24Outcomes: Outcome[] = [
   {
     id: 'p24_witch_entangle',
     conditions: { s2: 'subj_witch', s4: 'pred_entangle' },
-    resultText: '忘れられた魔女が墓場に絡みついている。魔力の糸が墓石を蜘蛛の巣のように覆っている。触れると呪われそうだ。',
+    resultText: '忘れられた魔女が墓場に絡みついている。魔力の糸が墓石を蜘蛛の巣のように覆っている。腕に巻きついた糸が肌を灼き、紫の痣が浮いた。',
     damage: 2,
     quill: 4
   },
@@ -377,13 +377,13 @@ export const nodeP24Outcomes: Outcome[] = [
     id: 'p24_snake_rain_pred',
     conditions: { s2: 'subj_snake', s4: 'pred_rain_down' },
     resultText: '忘れられた蛇が墓場に降り注いでいる。空から蛇が落ちてくる。地面に着くと砂に変わる。呪いの雨だ。',
-    damage: 3,
+    damage: 1,
     quill: 3
   },
   {
     id: 'p24_dragon_rain_pred',
     conditions: { s2: 'subj_dragon', s4: 'pred_rain_down' },
-    resultText: '忘れられた竜が墓場に降り注いでいる。鱗が空から降ってくる。死んだ竜の体が上空で砕けているのだ。',
+    resultText: '忘れられた竜が墓場に降り注いでいる。鱗が空から降ってくる。死んだ竜の体が上空で砕けているのだ。石のように硬い鱗片が肩を打ち、膝をついた。',
     damage: 3,
     quill: 5,
     rewardItems: [{ id: 'item_p24_dragon_rain_pred', name: '墜落竜の鱗片', description: '空から降ってきた竜の鱗。まだ微かに温かい', sellPrice: 12 }]
@@ -405,7 +405,7 @@ export const nodeP24Outcomes: Outcome[] = [
   {
     id: 'p24_flame_rain_pred',
     conditions: { s2: 'subj_flame', s4: 'pred_rain_down' },
-    resultText: '忘れられた炎が墓場に降り注いでいる。火の粉が空から降っている。死者への弔いの松明か、罰の業火か。',
+    resultText: '忘れられた炎が墓場に降り注いでいる。火の粉が空から降っている。服の裾が燻り、腕に水膨れができた。弔いの松明か、罰の業火か。',
     damage: 4,
     quill: 3
   },
@@ -413,14 +413,14 @@ export const nodeP24Outcomes: Outcome[] = [
     id: 'p24_ice_rain_pred',
     conditions: { s2: 'subj_ice', s4: 'pred_rain_down' },
     resultText: '忘れられた氷が墓場に降り注いでいる。雹が墓石を叩く。氷の粒が墓碑銘を削っていく。名前がさらに消える。',
-    damage: 3,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p24_shadow_rain_pred',
     conditions: { s2: 'subj_shadow', s4: 'pred_rain_down' },
     resultText: '忘れられた影が墓場に降り注いでいる。空から黒い断片が降ってくる。墓地が影に飲まれていく。夜より暗い。',
-    damage: 3,
+    damage: 1,
     quill: 4
   },
   {
@@ -442,7 +442,7 @@ export const nodeP24Outcomes: Outcome[] = [
     id: 'p24_knight_rain_pred',
     conditions: { s2: 'subj_knight', s4: 'pred_rain_down' },
     resultText: '忘れられた騎士が墓場に降り注いでいる。甲冑の破片が空から落ちてくる。天の戦場で敗れた騎士たちの残骸だ。',
-    damage: 3,
+    damage: 1,
     quill: 4
   },
   {
@@ -456,7 +456,7 @@ export const nodeP24Outcomes: Outcome[] = [
     id: 'p24_king_rain_pred',
     conditions: { s2: 'subj_king', s4: 'pred_rain_down' },
     resultText: '忘れられた王が墓場に降り注いでいる。王冠の破片が空から降る。砕けた王権が墓地に降り積もっている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -470,7 +470,7 @@ export const nodeP24Outcomes: Outcome[] = [
     id: 'p24_mirror_rain_pred',
     conditions: { s2: 'subj_mirror', s4: 'pred_rain_down' },
     resultText: '忘れられた鏡が墓場に降り注いでいる。鏡の破片が空から降ってくる。地面に散らばった破片に死者たちの顔が映る。',
-    damage: 3,
+    damage: 1,
     quill: 5
   },
   {
@@ -484,7 +484,7 @@ export const nodeP24Outcomes: Outcome[] = [
     id: 'p24_rain_rain_pred',
     conditions: { s2: 'subj_rain', s4: 'pred_rain_down' },
     resultText: '忘れられた雨が墓場に降り注いでいる。忘れられた雨粒が何年分もまとめて降ってきた。墓地が水浸しだ。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -505,7 +505,7 @@ export const nodeP24Outcomes: Outcome[] = [
     id: 'p24_dragon_whisper',
     conditions: { s2: 'subj_dragon', s4: 'pred_whisper' },
     resultText: '忘れられた竜が墓場に囁いている。低い唸りが地面を通して伝わってくる。地下の竜が死者に何かを語っている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -540,7 +540,7 @@ export const nodeP24Outcomes: Outcome[] = [
   {
     id: 'p24_shadow_whisper',
     conditions: { s2: 'subj_shadow', s4: 'pred_whisper' },
-    resultText: '忘れられた影が墓場に囁いている。足元の影が口を動かしている。声は聞こえないが、唇の形が読める。「忘れるな」。',
+    resultText: '忘れられた影が墓場に囁いている。足元の影が口を動かしている。「忘れるな」。その言葉が頭の奥に巣食い、一歩ごとに体が重くなる。',
     damage: 2,
     quill: 6
   },
@@ -568,7 +568,7 @@ export const nodeP24Outcomes: Outcome[] = [
   {
     id: 'p24_witch_whisper',
     conditions: { s2: 'subj_witch', s4: 'pred_whisper' },
-    resultText: '忘れられた魔女が墓場に囁いている。呪文のような囁き。死者を起こすのか、鎮めるのか。聴いてはいけない気がする。',
+    resultText: '忘れられた魔女が墓場に囁いている。呪文のような囁き。耳に入った途端、指先の感覚が消えた。聴いてはいけなかった。',
     damage: 2,
     quill: 5
   },
@@ -590,7 +590,7 @@ export const nodeP24Outcomes: Outcome[] = [
     id: 'p24_mirror_whisper',
     conditions: { s2: 'subj_mirror', s4: 'pred_whisper' },
     resultText: '忘れられた鏡が墓場に囁いている。鏡面から声が聞こえる。覗くと、鏡の中の自分が何か囁いている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -648,7 +648,7 @@ export const nodeP24Outcomes: Outcome[] = [
     id: 'p24_flame_melt',
     conditions: { s2: 'subj_flame', s4: 'pred_melt' },
     resultText: '忘れられた炎が墓場に溶けている。炎が石に溶け込んでいく。墓石の中が赤く脈打っている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1009,7 +1009,7 @@ export const nodeP24Outcomes: Outcome[] = [
   {
     id: 'p24_flame_dance',
     conditions: { s2: 'subj_flame', s4: 'pred_dance' },
-    resultText: '忘れられた炎が墓場に踊っている。鬼火が墓石の間を跳ねるように移動している。導いているのか。惑わしているのか。',
+    resultText: '忘れられた炎が墓場に踊っている。鬼火が墓石の間を跳ねている。追いかけて足を踏み外し、開いた穴に落ちかけた。惑わされた。',
     damage: 2,
     quill: 5
   },
@@ -1046,13 +1046,13 @@ export const nodeP24Outcomes: Outcome[] = [
     id: 'p24_knight_dance',
     conditions: { s2: 'subj_knight', s4: 'pred_dance' },
     resultText: '忘れられた騎士が墓場に踊っている。錆びた鎧がきしみながら剣舞を舞っている。誰も見ていないのに。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'p24_witch_dance',
     conditions: { s2: 'subj_witch', s4: 'pred_dance' },
-    resultText: '忘れられた魔女が墓場に踊っている。サバトだ。一人だけの魔女の集会。杖を振り回しながら墓石の間を巡っている。',
+    resultText: '忘れられた魔女が墓場に踊っている。サバトだ。一人だけの魔女の集会。杖が振り回され、撒き散らされた呪粉を吸い込んだ。喉が焼ける。',
     damage: 2,
     quill: 5
   },
@@ -1060,7 +1060,7 @@ export const nodeP24Outcomes: Outcome[] = [
     id: 'p24_king_dance',
     conditions: { s2: 'subj_king', s4: 'pred_dance' },
     resultText: '忘れられた王が墓場に踊っている。死の舞踏。王冠をかぶったまま狂ったように踊っている。臣下は墓の中だ。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1080,7 +1080,7 @@ export const nodeP24Outcomes: Outcome[] = [
   {
     id: 'p24_doll_dance',
     conditions: { s2: 'subj_doll', s4: 'pred_dance' },
-    resultText: '忘れられた人形が墓場に踊っている。操り人形が糸なしで踊っている。関節がかたかた鳴る。誰が操っているのか。',
+    resultText: '忘れられた人形が墓場に踊っている。操り人形が糸なしで踊っている。見ていると指が勝手に動き出す。糸はこちらに繋がっていた。',
     damage: 2,
     quill: 5
   },
@@ -1102,14 +1102,14 @@ export const nodeP24Outcomes: Outcome[] = [
     id: 'p24_snake_laugh',
     conditions: { s2: 'subj_snake', s4: 'pred_laugh' },
     resultText: '忘れられた蛇が墓場に笑っている。口が裂けて笑っているように見える。しゅうしゅうという音が嘲笑に聞こえる。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p24_dragon_laugh',
     conditions: { s2: 'subj_dragon', s4: 'pred_laugh' },
     resultText: '忘れられた竜が墓場に笑っている。地面を揺るがす笑い声。死者も起きるほどの大声だ。何がおかしいのか。',
-    damage: 3,
+    damage: 1,
     quill: 4
   },
   {
@@ -1130,7 +1130,7 @@ export const nodeP24Outcomes: Outcome[] = [
     id: 'p24_flame_laugh',
     conditions: { s2: 'subj_flame', s4: 'pred_laugh' },
     resultText: '忘れられた炎が墓場に笑っている。ぱちぱちと弾ける炎の音が笑い声のようだ。不気味に揺れている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -1144,7 +1144,7 @@ export const nodeP24Outcomes: Outcome[] = [
     id: 'p24_shadow_laugh',
     conditions: { s2: 'subj_shadow', s4: 'pred_laugh' },
     resultText: '忘れられた影が墓場に笑っている。影の口が大きく開いている。声は聞こえないが、笑っている。不気味だ。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -1158,7 +1158,7 @@ export const nodeP24Outcomes: Outcome[] = [
     id: 'p24_silence_laugh',
     conditions: { s2: 'subj_silence', s4: 'pred_laugh' },
     resultText: '忘れられた沈黙が墓場に笑っている。無音の笑い。口だけが動く。世界で一番怖い笑い声だ。',
-    damage: 3,
+    damage: 1,
     quill: 5
   },
   {
@@ -1178,7 +1178,7 @@ export const nodeP24Outcomes: Outcome[] = [
   {
     id: 'p24_king_laugh',
     conditions: { s2: 'subj_king', s4: 'pred_laugh' },
-    resultText: '忘れられた王が墓場に笑っている。狂った王が墓石の上で笑い転げている。国を失ったことが、ようやくおかしくなったのか。',
+    resultText: '忘れられた王が墓場に笑っている。狂った王が墓石の上で笑い転げている。その笑いが伝染し、こちらも笑いが止まらない。息が苦しい。',
     damage: 2,
     quill: 5
   },
@@ -1192,7 +1192,7 @@ export const nodeP24Outcomes: Outcome[] = [
   {
     id: 'p24_mirror_laugh',
     conditions: { s2: 'subj_mirror', s4: 'pred_laugh' },
-    resultText: '忘れられた鏡が墓場に笑っている。鏡の中の自分が笑っている。こちらは笑っていないのに。',
+    resultText: '忘れられた鏡が墓場に笑っている。鏡の中の自分が笑っている。こちらは笑っていないのに。視線を外せず、頭痛がこめかみに食い込んだ。',
     damage: 2,
     quill: 5
   },
@@ -1277,7 +1277,7 @@ export const nodeP24Outcomes: Outcome[] = [
   {
     id: 'p24_silence_flee',
     conditions: { s2: 'subj_silence', s4: 'pred_flee' },
-    resultText: '忘れられた沈黙が墓場に逃げていく。沈黙が去ると、死者たちの声が聞こえ始めた。囁きが墓地を満たす。',
+    resultText: '忘れられた沈黙が墓場に逃げていく。沈黙が去ると、死者たちの声が一斉に押し寄せた。何千もの囁きで耳が塞がり、しばらく自分の声が聞こえなかった。',
     damage: 2,
     quill: 5
   },

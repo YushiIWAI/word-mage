@@ -84,7 +84,7 @@ export const nodeP16Outcomes: Outcome[] = [
     id: 'p16_witch_block',
     conditions: { s2: 'subj_witch', s4: 'pred_block' },
     resultText: '堅い魔女が関所を塞いでいる。石のように頑固な老魔女が門に座り込んでいる。取引以外では一言も話さない。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -106,13 +106,13 @@ export const nodeP16Outcomes: Outcome[] = [
     id: 'p16_mirror_block',
     conditions: { s2: 'subj_mirror', s4: 'pred_block' },
     resultText: '堅い鏡が関所を塞いでいる。割れない鏡が門扉に嵌まっている。自分の顔が映るだけで、向こう側が見えない。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'p16_doll_block',
     conditions: { s2: 'subj_doll', s4: 'pred_block' },
-    resultText: '堅い人形が関所を塞いでいる。木彫りの人形が門の前に並んでいる。関節がなく、表情もない。押しのけようとしたが、石のように重い。',
+    resultText: '堅い人形が関所を塞いでいる。木彫りの人形が門の前に並んでいる。押しのけようとしたが石のように重い。腰を痛めた。',
     damage: 2,
     quill: 3
   },
@@ -147,7 +147,7 @@ export const nodeP16Outcomes: Outcome[] = [
   {
     id: 'p16_butterfly_guard',
     conditions: { s2: 'subj_butterfly', s4: 'pred_guard' },
-    resultText: '堅い蝶が関所を守っている。金属の蝶が門の上を旋回している。近づくと金属音を立てて急降下してくる。',
+    resultText: '堅い蝶が関所を守っている。金属の蝶が門の上を旋回している。近づくと金属音を立てて急降下し、額を切った。',
     damage: 2,
     quill: 4
   },
@@ -205,7 +205,7 @@ export const nodeP16Outcomes: Outcome[] = [
     id: 'p16_witch_guard',
     conditions: { s2: 'subj_witch', s4: 'pred_guard' },
     resultText: '堅い魔女が関所を守っている。防護魔法を何重にも纏った老魔女が門を管理している。通りたければ謎を解けと言う。',
-    damage: 2,
+    damage: 1,
     quill: 6,
     rewardItems: [{ id: 'item_p16_witch_guard', name: '魔女の関門符', description: '謎を解いた証。次は別の謎になるらしい', sellPrice: 10 }]
   },
@@ -227,7 +227,7 @@ export const nodeP16Outcomes: Outcome[] = [
     id: 'p16_mirror_guard',
     conditions: { s2: 'subj_mirror', s4: 'pred_guard' },
     resultText: '堅い鏡が関所を守っている。傷ひとつない鏡が門に嵌まり、通る者の姿を映す。やましいところがあると映像が歪むらしい。',
-    damage: 2,
+    damage: 1,
     quill: 6,
     rewardItems: [{ id: 'item_p16_mirror_guard', name: '清廉の鏡片', description: '持ち主の嘘が映る鏡の欠片。小さいのが救い', sellPrice: 10 }]
   },
@@ -235,7 +235,7 @@ export const nodeP16Outcomes: Outcome[] = [
     id: 'p16_doll_guard',
     conditions: { s2: 'subj_doll', s4: 'pred_guard' },
     resultText: '堅い人形が関所を守っている。木彫りのおもちゃの兵隊が門の前に整列している。動かないが、目を離すと配置が変わっている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -276,7 +276,7 @@ export const nodeP16Outcomes: Outcome[] = [
   {
     id: 'p16_wind_chase',
     conditions: { s2: 'subj_wind', s4: 'pred_chase' },
-    resultText: '堅い風が関所を追いかけてくる。方向転換を拒む風が背後から一直線に吹きつける。関所の中を走り抜けたが、出口でも追ってきた。',
+    resultText: '堅い風が関所を追いかけてくる。方向転換を拒む風が背後から一直線に吹きつける。壁に叩きつけられ、肩を打った。出口でもまだ追ってくる。',
     damage: 2,
     quill: 4
   },
@@ -348,7 +348,7 @@ export const nodeP16Outcomes: Outcome[] = [
     id: 'p16_mirror_chase',
     conditions: { s2: 'subj_mirror', s4: 'pred_chase' },
     resultText: '堅い鏡が関所を追いかけてくる。割れない鏡が滑るように床を追ってくる。映った自分がこちらを指差している。',
-    damage: 2,
+    damage: 1,
     quill: 6,
     rewardItems: [{ id: 'item_p16_mirror_chase', name: '追跡鏡の破片', description: '持ち主の居場所が常に映る鏡片。便利だが不気味', sellPrice: 12 }]
   },
@@ -356,7 +356,7 @@ export const nodeP16Outcomes: Outcome[] = [
     id: 'p16_doll_chase',
     conditions: { s2: 'subj_doll', s4: 'pred_chase' },
     resultText: '堅い人形が関所を追いかけてくる。関節のない木彫りの人形が、倒れては起き上がりながら追ってくる。どういう原理で動いているのか。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -398,7 +398,7 @@ export const nodeP16Outcomes: Outcome[] = [
     id: 'p16_wind_gaze',
     conditions: { s2: 'subj_wind', s4: 'pred_gaze' },
     resultText: '堅い風が関所を見つめている。風に見つめられている。説明できないが、空気の圧が視線のようにこちらを追っている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -419,7 +419,7 @@ export const nodeP16Outcomes: Outcome[] = [
   {
     id: 'p16_shadow_gaze',
     conditions: { s2: 'subj_shadow', s4: 'pred_gaze' },
-    resultText: '堅い影が関所を見つめている。地面に固まった影の中に、二つの白い点がある。目だ。',
+    resultText: '堅い影が関所を見つめている。地面に固まった影の中に、二つの白い点がある。目だ。見つめ返すと足が冷え、力が吸われていく。',
     damage: 2,
     quill: 5
   },
@@ -427,7 +427,7 @@ export const nodeP16Outcomes: Outcome[] = [
     id: 'p16_song_gaze',
     conditions: { s2: 'subj_song', s4: 'pred_gaze' },
     resultText: '堅い歌が関所を見つめている。旋律がこちらの動きに合わせて変化する。歌に監視されている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -448,7 +448,7 @@ export const nodeP16Outcomes: Outcome[] = [
     id: 'p16_witch_gaze',
     conditions: { s2: 'subj_witch', s4: 'pred_gaze' },
     resultText: '堅い魔女が関所を見つめている。鉤鼻の老魔女が門の上から見下ろしている。嘘を見抜く目。何も隠せない。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -469,20 +469,20 @@ export const nodeP16Outcomes: Outcome[] = [
     id: 'p16_mirror_gaze',
     conditions: { s2: 'subj_mirror', s4: 'pred_gaze' },
     resultText: '堅い鏡が関所を見つめている。鏡に映った自分の目と目が合う。瞬きをしたのはこちらだけだった。',
-    damage: 2,
+    damage: 1,
     quill: 6
   },
   {
     id: 'p16_doll_gaze',
     conditions: { s2: 'subj_doll', s4: 'pred_gaze' },
     resultText: '堅い人形が関所を見つめている。木彫りの人形が棚の上からこちらを見ている。表情はないのに、不快感だけが伝わってくる。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p16_rain_gaze',
     conditions: { s2: 'subj_rain', s4: 'pred_gaze' },
-    resultText: '堅い雨が関所を見つめている。雹の一粒一粒がこちらを向いている。氷の目が空から降ってくるようだ。',
+    resultText: '堅い雨が関所を見つめている。雹の一粒一粒がこちらを向いている。氷の粒が額を打ち、視界が滲んだ。',
     damage: 2,
     quill: 5
   },
@@ -498,7 +498,7 @@ export const nodeP16Outcomes: Outcome[] = [
     id: 'p16_snake_hide',
     conditions: { s2: 'subj_snake', s4: 'pred_hide' },
     resultText: '堅い蛇が関所を隠している。鉄の鱗の蛇がとぐろで門を覆い、関所の存在自体を隠している。蛇を見つけなければ関所も見つからない。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -511,14 +511,14 @@ export const nodeP16Outcomes: Outcome[] = [
   {
     id: 'p16_butterfly_hide',
     conditions: { s2: 'subj_butterfly', s4: 'pred_hide' },
-    resultText: '堅い蝶が関所を隠している。金属の蝶が無数に集まって壁を作り、関所を覆い隠している。一匹払っても隙間はすぐ埋まる。',
+    resultText: '堅い蝶が関所を隠している。金属の蝶が無数に集まって壁を作り、関所を覆い隠している。払おうとするたびに羽で手を切られた。',
     damage: 2,
     quill: 4
   },
   {
     id: 'p16_wind_hide',
     conditions: { s2: 'subj_wind', s4: 'pred_hide' },
-    resultText: '堅い風が関所を隠している。同じ方向に吹き続ける風が砂塵を巻き上げ、関所を見えなくしている。風に逆らって歩くと門が現れた。',
+    resultText: '堅い風が関所を隠している。同じ方向に吹き続ける風が砂塵を巻き上げ、関所を見えなくしている。砂塵に目を焼かれながら風に逆らって歩く。やっと門が現れた。',
     damage: 2,
     quill: 5
   },
@@ -540,14 +540,14 @@ export const nodeP16Outcomes: Outcome[] = [
   {
     id: 'p16_shadow_hide',
     conditions: { s2: 'subj_shadow', s4: 'pred_hide' },
-    resultText: '堅い影が関所を隠している。固まった影が門を覆い、関所を暗闇に沈めている。手探りで壁を伝い、門を見つけた。',
+    resultText: '堅い影が関所を隠している。固まった影が門を覆い、関所を暗闘に沈めている。闇の中で壁に何度もぶつかり、額に青痣を作った。',
     damage: 2,
     quill: 4
   },
   {
     id: 'p16_song_hide',
     conditions: { s2: 'subj_song', s4: 'pred_hide' },
-    resultText: '堅い歌が関所を隠している。旋律が聴く者の方向感覚を狂わせ、関所を見つけられなくしている。歌に逆らって歩くと門が見えた。',
+    resultText: '堅い歌が関所を隠している。旋律が方向感覚を狂わせ、同じ道を何度も歩かされた。足が擦り切れた頃、ようやく門が見えた。',
     damage: 2,
     quill: 5
   },
@@ -555,7 +555,7 @@ export const nodeP16Outcomes: Outcome[] = [
     id: 'p16_silence_hide',
     conditions: { s2: 'subj_silence', s4: 'pred_hide' },
     resultText: '堅い沈黙が関所を隠している。音の墓場が関所を包み、存在感ごと消している。足音が消えた場所を頼りに進むと、門に辿り着いた。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -584,7 +584,7 @@ export const nodeP16Outcomes: Outcome[] = [
     id: 'p16_ghost_hide',
     conditions: { s2: 'subj_ghost', s4: 'pred_hide' },
     resultText: '堅い亡霊が関所を隠している。死んでも持ち場を離れない霊が、生者の目から関所を隠している。霊に許しを請うと道が見えた。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -597,7 +597,7 @@ export const nodeP16Outcomes: Outcome[] = [
   {
     id: 'p16_doll_hide',
     conditions: { s2: 'subj_doll', s4: 'pred_hide' },
-    resultText: '堅い人形が関所を隠している。木彫りの人形が大量に積み上げられ、門が見えない。一体ずつ退かすと、目が合うたびに嫌な気分になる。',
+    resultText: '堅い人形が関所を隠している。木彫りの人形が大量に積み上げられ、門が見えない。退かすたびに腕が重くなる。人形の呪いか、疲労か。',
     damage: 2,
     quill: 4
   },
@@ -884,14 +884,14 @@ export const nodeP16Outcomes: Outcome[] = [
   {
     id: 'p16_wind_wait',
     conditions: { s2: 'subj_wind', s4: 'pred_wait' },
-    resultText: '堅い風が関所を待っている。方向転換を拒む風が、関所の門を通り抜ける隙間で止まっている。通れば押し戻される。',
+    resultText: '堅い風が関所を待っている。方向転換を拒む風が、関所の門で止まっている。通ろうとしたが、吹き戻されて地面に叩きつけられた。',
     damage: 2,
     quill: 3
   },
   {
     id: 'p16_flame_wait',
     conditions: { s2: 'subj_flame', s4: 'pred_wait' },
-    resultText: '堅い炎が関所を待っている。消えない炎が関所の松明に灯り、何百年も同じ明るさで燃え続けている。番人はいないが、炎が見張っている。',
+    resultText: '堅い炎が関所を待っている。消えない炎が関所の松明に灯り、何百年も同じ明るさで燃え続けている。通路が狭く、炎に袖を焼かれた。',
     damage: 2,
     quill: 4
   },
@@ -919,7 +919,7 @@ export const nodeP16Outcomes: Outcome[] = [
   {
     id: 'p16_silence_wait',
     conditions: { s2: 'subj_silence', s4: 'pred_wait' },
-    resultText: '堅い沈黙が関所を待っている。何を言っても吸い込まれて消える沈黙が関所を満たしている。通行の許可を求める声も届かない。黙って通るしかない。',
+    resultText: '堅い沈黙が関所を待っている。何を言っても吸い込まれて消える沈黙が関所を満たしている。無音の圧に耳が痛み、鼻血が出た。黙って通るしかない。',
     damage: 2,
     quill: 4
   },
@@ -942,7 +942,7 @@ export const nodeP16Outcomes: Outcome[] = [
     id: 'p16_king_wait',
     conditions: { s2: 'subj_king', s4: 'pred_wait' },
     resultText: '堅い王が関所を待っている。石の玉座に座った王が関所の奥で待ち構えている。法を一言で下す王だ。旅人への裁きは「通行可」。だが目は笑っていない。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {

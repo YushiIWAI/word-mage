@@ -13,13 +13,13 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_snake_shine',
     conditions: { s2: 'subj_snake', s4: 'pred_shine' },
     resultText: '燃え盛る蛇が鍛冶場で輝く。赤熱した鱗が鍛冶場を照らしている。這った跡が金属のように光る。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'p26_dragon_shine',
     conditions: { s2: 'subj_dragon', s4: 'pred_shine' },
-    resultText: '燃え盛る竜が鍛冶場で輝く。全身が業火の竜が鍛冶場の炉そのものになっている。これ以上ない炉だ。',
+    resultText: '燃え盛る竜が鍛冶場で輝く。全身が業火の竜が鍛冶場の炉そのものになっている。熱気で髪が焦げ、肺が焼けるように痛む。',
     damage: 3,
     quill: 6,
     rewardItems: [{ id: 'item_p26_dragon_shine', name: '竜炉の火種', description: '竜が炉になった鍛冶場から持ち出した火種。消えない', sellPrice: 18 }]
@@ -35,20 +35,20 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_wind_shine',
     conditions: { s2: 'subj_wind', s4: 'pred_shine' },
     resultText: '燃え盛る風が鍛冶場で輝く。熱風が光の粒を運んでいる。火花が風に乗って鍛冶場中を照らす。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p26_flame_shine',
     conditions: { s2: 'subj_flame', s4: 'pred_shine' },
-    resultText: '燃え盛る炎が鍛冶場で輝く。制御不能の大火が鍛冶場を白熱させている。鉄も石も溶ける温度だ。',
+    resultText: '燃え盛る炎が鍛冶場で輝く。制御不能の大火が鍛冶場を白熱させている。逃げ出したが全身に火傷を負った。',
     damage: 5,
     quill: 2
   },
   {
     id: 'p26_ice_shine',
     conditions: { s2: 'subj_ice', s4: 'pred_shine' },
-    resultText: '燃え盛る氷が鍛冶場で輝く。炎を放つ氷が炉の中で矛盾した光を放っている。凍傷と火傷が同時に来る色だ。',
+    resultText: '燃え盛る氷が鍛冶場で輝く。炎を放つ氷が炉の中で矛盾した光を放っている。近づくと凍傷と火傷が同時に手を襲った。',
     damage: 3,
     quill: 5
   },
@@ -56,7 +56,7 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_shadow_shine',
     conditions: { s2: 'subj_shadow', s4: 'pred_shine' },
     resultText: '燃え盛る影が鍛冶場で輝く。黒い炎の影が壁面に映って、鍛冶場が黒と赤の縞模様になっている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -70,28 +70,28 @@ export const nodeP26Outcomes: Outcome[] = [
   {
     id: 'p26_silence_shine',
     conditions: { s2: 'subj_silence', s4: 'pred_shine' },
-    resultText: '燃え盛る沈黙が鍛冶場で輝く。無音の炎が白く発光している。音がないのに目が眩む。矛盾した光景だ。',
+    resultText: '燃え盛る沈黙が鍛冶場で輝く。無音の炎が白く発光している。見つめた目に焼き付いて、しばらく何も見えなくなった。',
     damage: 2,
     quill: 5
   },
   {
     id: 'p26_knight_shine',
     conditions: { s2: 'subj_knight', s4: 'pred_shine' },
-    resultText: '燃え盛る騎士が鍛冶場で輝く。炎に包まれた鎧が赤熱して白く光っている。鎧を脱がずに鍛え直しているのか。',
+    resultText: '燃え盛る騎士が鍛冶場で輝く。炎に包まれた鎧が赤熱して白く光っている。放射される熱で壁際まで退いたが、背中に水膨れができた。',
     damage: 3,
     quill: 5
   },
   {
     id: 'p26_witch_shine',
     conditions: { s2: 'subj_witch', s4: 'pred_shine' },
-    resultText: '燃え盛る魔女が鍛冶場で輝く。炎の魔法と鍛冶の炎が共鳴して、魔女が太陽のように輝いている。',
+    resultText: '燃え盛る魔女が鍛冶場で輝く。炎の魔法と鍛冶の炎が共鳴し、光の奔流が鍛冶場を焼いた。目を覆ったが手の甲が焦げた。',
     damage: 3,
     quill: 5
   },
   {
     id: 'p26_king_shine',
     conditions: { s2: 'subj_king', s4: 'pred_shine' },
-    resultText: '燃え盛る王が鍛冶場で輝く。炎の冠が溶鉄のように輝いている。王自ら剣を鍛えている。恐ろしい覇気だ。',
+    resultText: '燃え盛る王が鍛冶場で輝く。炎の冠が溶鉄のように輝いている。覇気と熱気に打たれ、鍛冶場を出るまで足が震え続けた。',
     damage: 3,
     quill: 6
   },
@@ -99,27 +99,27 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_ghost_shine',
     conditions: { s2: 'subj_ghost', s4: 'pred_shine' },
     resultText: '燃え盛る亡霊が鍛冶場で輝く。火に焼かれた霊が炉の中で輝いている。成仏の光か、怨念の炎か。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'p26_mirror_shine',
     conditions: { s2: 'subj_mirror', s4: 'pred_shine' },
     resultText: '燃え盛る鏡が鍛冶場で輝く。炎を映した鏡が鍛冶場を二重に照らしている。どちらが本物の炎かわからない。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'p26_doll_shine',
     conditions: { s2: 'subj_doll', s4: 'pred_shine' },
-    resultText: '燃え盛る人形が鍛冶場で輝く。燃えている藁人形が炉の上で光っている。なぜか燃え尽きない。',
+    resultText: '燃え盛る人形が鍛冶場で輝く。燃えている藁人形が炉の上で光っている。近づくと輻射熱で肌が焼け、慌てて退いた。',
     damage: 2,
     quill: 4
   },
   {
     id: 'p26_rain_shine',
     conditions: { s2: 'subj_rain', s4: 'pred_shine' },
-    resultText: '燃え盛る雨が鍛冶場で輝く。火の雨が鍛冶場に降り注ぎ、すべてが赤く光っている。灼熱の滴が金属を照らす。',
+    resultText: '燃え盛る雨が鍛冶場で輝く。火の雨が鍛冶場に降り注いでいる。灼熱の滴が肩と腕を灼き、逃げ場がない。',
     damage: 4,
     quill: 3
   },
@@ -141,7 +141,7 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_dragon_sing',
     conditions: { s2: 'subj_dragon', s4: 'pred_sing' },
     resultText: '燃え盛る竜が鍛冶場で歌っている。低く轟く声が鍛冶場全体を共鳴させる。この歌で鍛えた鉄は折れないという。',
-    damage: 2,
+    damage: 1,
     quill: 7,
     rewardItems: [{ id: 'item_p26_dragon_sing', name: '竜歌の鉄片', description: '竜の歌で鍛えられた鉄の欠片。叩くと低く唸る', sellPrice: 15 }]
   },
@@ -156,13 +156,13 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_wind_sing',
     conditions: { s2: 'subj_wind', s4: 'pred_sing' },
     resultText: '燃え盛る風が鍛冶場で歌っている。鞴のように炉に風を送りながら歌う。炎が歌に合わせて揺れる。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'p26_flame_sing',
     conditions: { s2: 'subj_flame', s4: 'pred_sing' },
-    resultText: '燃え盛る炎が鍛冶場で歌っている。ぱちぱちと弾ける炎が旋律を刻んでいる。鍛冶場の歌だ。鉄を叩くリズムと一つになる。',
+    resultText: '燃え盛る炎が鍛冶場で歌っている。ぱちぱちと弾ける炎が旋律を刻んでいる。歌に聴き入るうちに距離を詰めすぎ、眉が焦げた。',
     damage: 3,
     quill: 5
   },
@@ -170,14 +170,14 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_ice_sing',
     conditions: { s2: 'subj_ice', s4: 'pred_sing' },
     resultText: '燃え盛る氷が鍛冶場で歌っている。溶けながら高い音を出す氷。蒸気が笛のように鳴る。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'p26_shadow_sing',
     conditions: { s2: 'subj_shadow', s4: 'pred_sing' },
     resultText: '燃え盛る影が鍛冶場で歌っている。炎で揺れる影が壁面で口を動かしている。声は聞こえないが、金属が共鳴する。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -190,7 +190,7 @@ export const nodeP26Outcomes: Outcome[] = [
   {
     id: 'p26_silence_sing',
     conditions: { s2: 'subj_silence', s4: 'pred_sing' },
-    resultText: '燃え盛る沈黙が鍛冶場で歌っている。無音の歌。聞こえないのに鉄が反応する。沈黙で鍛えた刃は音もなく斬る。',
+    resultText: '燃え盛る沈黙が鍛冶場で歌っている。無音の歌。聞こえないのに鉄が反応する。気づかぬうちに手の甲が切れていた。音もなく斬る刃だ。',
     damage: 2,
     quill: 6,
     rewardItems: [{ id: 'item_p26_silence_sing', name: '無音の刃欠片', description: '沈黙の歌で鍛えた鉄の欠片。振っても音がしない', sellPrice: 12 }]
@@ -199,13 +199,13 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_knight_sing',
     conditions: { s2: 'subj_knight', s4: 'pred_sing' },
     resultText: '燃え盛る騎士が鍛冶場で歌っている。炎に包まれた騎士が軍歌を歌いながら剣を打っている。自分の武器は自分で鍛える。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'p26_witch_sing',
     conditions: { s2: 'subj_witch', s4: 'pred_sing' },
-    resultText: '燃え盛る魔女が鍛冶場で歌っている。呪歌を歌いながら魔法の金属を鍛えている。歌が途切れると鉄が壊れる。',
+    resultText: '燃え盛る魔女が鍛冶場で歌っている。呪歌を歌いながら魔法の金属を鍛えている。歌が途切れた瞬間、鉄の破片が飛び散って腕をかすめた。',
     damage: 2,
     quill: 6
   },
@@ -213,7 +213,7 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_king_sing',
     conditions: { s2: 'subj_king', s4: 'pred_sing' },
     resultText: '燃え盛る王が鍛冶場で歌っている。炎の冠の王が自ら鍛冶歌を歌う。王が鍛えた剣は国宝になるだろう。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -227,20 +227,20 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_mirror_sing',
     conditions: { s2: 'subj_mirror', s4: 'pred_sing' },
     resultText: '燃え盛る鏡が鍛冶場で歌っている。鏡面が振動して高音を発している。鍛冶場の炎を映しながら共鳴する。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p26_doll_sing',
     conditions: { s2: 'subj_doll', s4: 'pred_sing' },
     resultText: '燃え盛る人形が鍛冶場で歌っている。燃えながらオルゴールのような音を出している。旋律が歪んでいく。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p26_rain_sing',
     conditions: { s2: 'subj_rain', s4: 'pred_sing' },
-    resultText: '燃え盛る雨が鍛冶場で歌っている。火の雨が金属を叩くリズムが歌になっている。焼け鍛ちの音だ。',
+    resultText: '燃え盛る雨が鍛冶場で歌っている。火の雨が金属を叩くリズムが歌になっている。屋根から漏れた火滴が手首を焼いた。',
     damage: 3,
     quill: 4
   },
@@ -248,20 +248,20 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_kitten_dance',
     conditions: { s2: 'subj_kitten', s4: 'pred_dance' },
     resultText: '燃え盛る子猫が鍛冶場で踊っている。炎をまとった猫が火花の中を駆け回っている。本猫は遊んでいるつもりだ。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'p26_snake_dance',
     conditions: { s2: 'subj_snake', s4: 'pred_dance' },
-    resultText: '燃え盛る蛇が鍛冶場で踊っている。赤熱した蛇が鎌首をもたげて左右に揺れる。炎の軌跡が模様を描く。',
+    resultText: '燃え盛る蛇が鍛冶場で踊っている。赤熱した蛇が鎌首をもたげて左右に揺れる。尾が足首をかすめ、火傷の跡が残った。',
     damage: 2,
     quill: 5
   },
   {
     id: 'p26_dragon_dance',
     conditions: { s2: 'subj_dragon', s4: 'pred_dance' },
-    resultText: '燃え盛る竜が鍛冶場で踊っている。全身が業火の竜が暴れている。鍛冶場が半壊。金床が溶けた。',
+    resultText: '燃え盛る竜が鍛冶場で踊っている。全身が業火の竜が暴れている。倒れた柱の下敷きになりかけ、全身を打撲した。',
     damage: 5,
     quill: 2
   },
@@ -276,21 +276,21 @@ export const nodeP26Outcomes: Outcome[] = [
   {
     id: 'p26_wind_dance',
     conditions: { s2: 'subj_wind', s4: 'pred_dance' },
-    resultText: '燃え盛る風が鍛冶場で踊っている。熱風が渦を巻いて炉の炎を煽っている。炎が風に合わせて踊る。温度が急上昇する。',
+    resultText: '燃え盛る風が鍛冶場で踊っている。熱風が渦を巻いて炉の炎を煽っている。急上昇した温度に肌が赤く腫れた。',
     damage: 3,
     quill: 4
   },
   {
     id: 'p26_flame_dance',
     conditions: { s2: 'subj_flame', s4: 'pred_dance' },
-    resultText: '燃え盛る炎が鍛冶場で踊っている。大火が炉から溢れて床を舞っている。制御を超えた。鍛冶場ごと焼けそうだ。',
+    resultText: '燃え盛る炎が鍛冶場で踊っている。大火が炉から溢れて床を舞っている。出口を探して走ったが、足に火が回った。',
     damage: 5,
     quill: 1
   },
   {
     id: 'p26_ice_dance',
     conditions: { s2: 'subj_ice', s4: 'pred_dance' },
-    resultText: '燃え盛る氷が鍛冶場で踊っている。炎と氷が交互に明滅しながら回転している。蒸気が渦を巻く。',
+    resultText: '燃え盛る氷が鍛冶場で踊っている。炎と氷が交互に明滅しながら回転している。蒸気で前が見えず、炉に突っ込みかけた。',
     damage: 3,
     quill: 5
   },
@@ -298,7 +298,7 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_shadow_dance',
     conditions: { s2: 'subj_shadow', s4: 'pred_dance' },
     resultText: '燃え盛る影が鍛冶場で踊っている。炎に照らされた影が壁面で激しく踊っている。鍛冶師の影か。本体はいない。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -312,41 +312,41 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_silence_dance',
     conditions: { s2: 'subj_silence', s4: 'pred_dance' },
     resultText: '燃え盛る沈黙が鍛冶場で踊っている。無音の炎が揺れている。鍛冶場の音が消えた中で、炎だけが静かに舞う。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'p26_knight_dance',
     conditions: { s2: 'subj_knight', s4: 'pred_dance' },
-    resultText: '燃え盛る騎士が鍛冶場で踊っている。炎に包まれた騎士が剣舞を披露している。火花が飛び散る。鍛冶場が戦場になる。',
+    resultText: '燃え盛る騎士が鍛冶場で踊っている。炎に包まれた騎士が剣舞を披露している。振り回された刃が頬をかすめ、血が一筋流れた。',
     damage: 3,
     quill: 5
   },
   {
     id: 'p26_witch_dance',
     conditions: { s2: 'subj_witch', s4: 'pred_dance' },
-    resultText: '燃え盛る魔女が鍛冶場で踊っている。炎の魔女が鍛冶場でサバトを開いている。溶けた金属が魔法陣を描く。',
+    resultText: '燃え盛る魔女が鍛冶場で踊っている。炎の魔女が鍛冶場でサバトを開いている。魔法陣を踏んだ足が焼けた。',
     damage: 3,
     quill: 5
   },
   {
     id: 'p26_king_dance',
     conditions: { s2: 'subj_king', s4: 'pred_dance' },
-    resultText: '燃え盛る王が鍛冶場で踊っている。炎の冠を揺らしながら狂ったように踊る王。金床を踏み台にしている。',
+    resultText: '燃え盛る王が鍛冶場で踊っている。炎の冠を揺らしながら狂ったように踊る王。巻き込まれて転び、溶鉄の飛沫を浴びた。',
     damage: 3,
     quill: 4
   },
   {
     id: 'p26_ghost_dance',
     conditions: { s2: 'subj_ghost', s4: 'pred_dance' },
-    resultText: '燃え盛る亡霊が鍛冶場で踊っている。火に焼かれた霊が炉の中で踊っている。焼死の瞬間を永遠に繰り返している。',
+    resultText: '燃え盛る亡霊が鍛冶場で踊っている。火に焼かれた霊が炉の中で踊っている。霊の冷気と炉の熱が交差し、体の芯が冷えた。',
     damage: 2,
     quill: 5
   },
   {
     id: 'p26_mirror_dance',
     conditions: { s2: 'subj_mirror', s4: 'pred_dance' },
-    resultText: '燃え盛る鏡が鍛冶場で踊っている。回転する鏡が炎を四方に反射させている。鍛冶場が万華鏡になった。',
+    resultText: '燃え盛る鏡が鍛冶場で踊っている。回転する鏡が炎を四方に反射させている。反射した炎が目を灼き、視界が白く潰れた。',
     damage: 2,
     quill: 5
   },
@@ -354,13 +354,13 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_doll_dance',
     conditions: { s2: 'subj_doll', s4: 'pred_dance' },
     resultText: '燃え盛る人形が鍛冶場で踊っている。藁人形が燃えながら踊る。関節がかたかた鳴る。焼かれているのに楽しそうだ。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'p26_rain_dance',
     conditions: { s2: 'subj_rain', s4: 'pred_dance' },
-    resultText: '燃え盛る雨が鍛冶場で踊っている。火の雨が金属の上で跳ねている。リズミカルな焼入れの音。',
+    resultText: '燃え盛る雨が鍛冶場で踊っている。火の雨が金属の上で跳ね、跳ねた飛沫が首筋を焼いた。',
     damage: 3,
     quill: 4
   },
@@ -375,13 +375,13 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_snake_laugh',
     conditions: { s2: 'subj_snake', s4: 'pred_laugh' },
     resultText: '燃え盛る蛇が鍛冶場で笑っている。裂けた口が笑みに見える。しゅうしゅうという音が嘲笑のようだ。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
     id: 'p26_dragon_laugh',
     conditions: { s2: 'subj_dragon', s4: 'pred_laugh' },
-    resultText: '燃え盛る竜が鍛冶場で笑っている。轟く笑い声で鍛冶場が揺れる。金床が倒れた。炉が吹き飛びそうだ。',
+    resultText: '燃え盛る竜が鍛冶場で笑っている。轟く笑い声で鍛冶場が揺れる。倒れた金床が足を直撃した。',
     damage: 4,
     quill: 3
   },
@@ -396,13 +396,13 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_wind_laugh',
     conditions: { s2: 'subj_wind', s4: 'pred_laugh' },
     resultText: '燃え盛る風が鍛冶場で笑っている。煙突を通る風が笑い声のような音を立てる。炉の炎が不安定に揺れる。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
     id: 'p26_flame_laugh',
     conditions: { s2: 'subj_flame', s4: 'pred_laugh' },
-    resultText: '燃え盛る炎が鍛冶場で笑っている。ぱちぱちと弾ける音が狂ったような笑い声に聞こえる。炉が制御を超えている。',
+    resultText: '燃え盛る炎が鍛冶場で笑っている。ぱちぱちと弾ける音が狂ったような笑い声に聞こえる。溢れた火が裾を舐め、慌てて叩き消した。',
     damage: 4,
     quill: 2
   },
@@ -410,14 +410,14 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_ice_laugh',
     conditions: { s2: 'subj_ice', s4: 'pred_laugh' },
     resultText: '燃え盛る氷が鍛冶場で笑っている。溶けながらぱきぱきと割れる音が笑い声に聞こえる。矛盾した冗談だ。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p26_shadow_laugh',
     conditions: { s2: 'subj_shadow', s4: 'pred_laugh' },
     resultText: '燃え盛る影が鍛冶場で笑っている。壁面の影の口が大きく開いている。炎が揺れるたびに影も揺れて笑う。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -430,14 +430,14 @@ export const nodeP26Outcomes: Outcome[] = [
   {
     id: 'p26_silence_laugh',
     conditions: { s2: 'subj_silence', s4: 'pred_laugh' },
-    resultText: '燃え盛る沈黙が鍛冶場で笑っている。無音の笑い。鍛冶場の音が全て消えた中で、何かが笑っている。最も恐ろしい。',
+    resultText: '燃え盛る沈黙が鍛冶場で笑っている。無音の笑い。鍛冶場の音が全て消え、炉に近づきすぎたことに気づけなかった。手が焦げている。',
     damage: 3,
     quill: 5
   },
   {
     id: 'p26_knight_laugh',
     conditions: { s2: 'subj_knight', s4: 'pred_laugh' },
-    resultText: '燃え盛る騎士が鍛冶場で笑っている。兜の奥から笑い声。「この炎の中でこそ、鎧が本物になる」。狂気か、信念か。',
+    resultText: '燃え盛る騎士が鍛冶場で笑っている。兜の奥から笑い声。赤熱した鎧が近すぎて、頬に火傷の跡ができた。',
     damage: 2,
     quill: 5
   },
@@ -445,13 +445,13 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_witch_laugh',
     conditions: { s2: 'subj_witch', s4: 'pred_laugh' },
     resultText: '燃え盛る魔女が鍛冶場で笑っている。高い笑い声が鍛冶場に反響する。何かの実験が成功したらしい。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'p26_king_laugh',
     conditions: { s2: 'subj_king', s4: 'pred_laugh' },
-    resultText: '燃え盛る王が鍛冶場で笑っている。「剣を作れ！ もっと！」。狂王が鍛冶場を占拠して笑い続けている。',
+    resultText: '燃え盛る王が鍛冶場で笑っている。「剣を作れ！ もっと！」。王に従い鍛ち続け、腕が上がらなくなった。',
     damage: 3,
     quill: 4
   },
@@ -459,14 +459,14 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_ghost_laugh',
     conditions: { s2: 'subj_ghost', s4: 'pred_laugh' },
     resultText: '燃え盛る亡霊が鍛冶場で笑っている。焼死した鍛冶師の霊。笑っているのか泣いているのか区別がつかない。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p26_mirror_laugh',
     conditions: { s2: 'subj_mirror', s4: 'pred_laugh' },
     resultText: '燃え盛る鏡が鍛冶場で笑っている。鏡の中の自分が笑っている。炎に照らされた顔は狂人のようだ。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -479,7 +479,7 @@ export const nodeP26Outcomes: Outcome[] = [
   {
     id: 'p26_rain_laugh',
     conditions: { s2: 'subj_rain', s4: 'pred_laugh' },
-    resultText: '燃え盛る雨が鍛冶場で笑っている。火の雨が金属に当たってぱちぱち弾ける。けたけたした音が鍛冶場に響く。',
+    resultText: '燃え盛る雨が鍛冶場で笑っている。火の雨が金属に当たってぱちぱち弾ける。跳ね返った火粒が頬と腕を焼いた。',
     damage: 3,
     quill: 3
   },
@@ -494,13 +494,13 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_snake_sleep',
     conditions: { s2: 'subj_snake', s4: 'pred_sleep' },
     resultText: '燃え盛る蛇が鍛冶場で眠っている。赤熱した蛇が金床の上でとぐろを巻いている。金属を打てない。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
     id: 'p26_dragon_sleep',
     conditions: { s2: 'subj_dragon', s4: 'pred_sleep' },
-    resultText: '燃え盛る竜が鍛冶場で眠っている。全身が業火の竜が炉の中で寝ている。いびきが炎を噴く。最高の炉であり最悪の障害だ。',
+    resultText: '燃え盛る竜が鍛冶場で眠っている。全身が業火の竜が炉の中で寝ている。いびきのたびに炎が噴き出し、髪と袖を焦がされた。',
     damage: 3,
     quill: 6,
     rewardItems: [{ id: 'item_p26_dragon_sleep', name: '竜炉の灰', description: '竜が眠る炉から掬った灰。まだ赤い', sellPrice: 12 }]
@@ -522,7 +522,7 @@ export const nodeP26Outcomes: Outcome[] = [
   {
     id: 'p26_flame_sleep',
     conditions: { s2: 'subj_flame', s4: 'pred_sleep' },
-    resultText: '燃え盛る炎が鍛冶場で眠っている。炉の火が赤く明滅している。熾火だ。息を吹きかけると、轟音を上げて目覚めた。',
+    resultText: '燃え盛る炎が鍛冶場で眠っている。炉の火が赤く明滅している。熾火に息を吹きかけると轟音で目覚め、噴き上がった炎で眉が焼けた。',
     damage: 3,
     quill: 4
   },
@@ -530,7 +530,7 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_ice_sleep',
     conditions: { s2: 'subj_ice', s4: 'pred_sleep' },
     resultText: '燃え盛る氷が鍛冶場で眠っている。炎を放つ氷が水桶の中で眠っている。焼入れの水が沸騰と凍結を繰り返す。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -558,7 +558,7 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_knight_sleep',
     conditions: { s2: 'subj_knight', s4: 'pred_sleep' },
     resultText: '燃え盛る騎士が鍛冶場で眠っている。炎の中で鎧ごと横たわっている。焼き入れをしながら眠る修行なのか。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -572,7 +572,7 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_king_sleep',
     conditions: { s2: 'subj_king', s4: 'pred_sleep' },
     resultText: '燃え盛る王が鍛冶場で眠っている。金床を玉座代わりにして居眠りしている。炎の冠が傾いている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -613,7 +613,7 @@ export const nodeP26Outcomes: Outcome[] = [
   {
     id: 'p26_snake_melt',
     conditions: { s2: 'subj_snake', s4: 'pred_melt' },
-    resultText: '燃え盛る蛇が鍛冶場で溶けている。赤熱した蛇が金属のように溶けている。這った跡が溶鉄の筋になる。',
+    resultText: '燃え盛る蛇が鍛冶場で溶けている。赤熱した蛇が金属のように溶けている。溶鉄の筋を踏んで足裏を焼いた。',
     damage: 2,
     quill: 5,
     rewardItems: [{ id: 'item_p26_snake_melt', name: '蛇鉄の筋', description: '燃える蛇が溶けた跡の金属。蛇の形に固まっている', sellPrice: 10 }]
@@ -621,7 +621,7 @@ export const nodeP26Outcomes: Outcome[] = [
   {
     id: 'p26_dragon_melt',
     conditions: { s2: 'subj_dragon', s4: 'pred_melt' },
-    resultText: '燃え盛る竜が鍛冶場で溶けている。全身が業火の竜が溶鉄のように流れている。竜の形をした金属が鍛冶場を満たす。',
+    resultText: '燃え盛る竜が鍛冶場で溶けている。全身が業火の竜が溶鉄のように流れている。足首まで溶鉄に浸かり、火傷で動けなくなった。',
     damage: 4,
     quill: 4
   },
@@ -642,7 +642,7 @@ export const nodeP26Outcomes: Outcome[] = [
   {
     id: 'p26_flame_melt',
     conditions: { s2: 'subj_flame', s4: 'pred_melt' },
-    resultText: '燃え盛る炎が鍛冶場で溶けている。炎が炎に溶ける。炉の火と区別がつかなくなった。鍛冶場全体が一つの炎だ。',
+    resultText: '燃え盛る炎が鍛冶場で溶けている。炎が炎に溶け、鍛冶場全体が一つの炎になった。逃げ出す間に全身を焼かれた。',
     damage: 4,
     quill: 3
   },
@@ -650,7 +650,7 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_ice_melt',
     conditions: { s2: 'subj_ice', s4: 'pred_melt' },
     resultText: '燃え盛る氷が鍛冶場で溶けている。炎を放つ氷が鍛冶場の熱でようやく溶け始めた。蒸気が天井を覆う。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -678,7 +678,7 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_knight_melt',
     conditions: { s2: 'subj_knight', s4: 'pred_melt' },
     resultText: '燃え盛る騎士が鍛冶場で溶けている。鎧が溶鉄になって流れている。騎士が金属に還っていく。再び鍛え直されるのか。',
-    damage: 2,
+    damage: 1,
     quill: 6,
     rewardItems: [{ id: 'item_p26_knight_melt', name: '騎士の溶鉄', description: '騎士の鎧が溶けた金属。鍛え直せば何かになる', sellPrice: 12 }]
   },
@@ -686,7 +686,7 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_witch_melt',
     conditions: { s2: 'subj_witch', s4: 'pred_melt' },
     resultText: '燃え盛る魔女が鍛冶場で溶けている。炎の魔女が炉に溶けていく。魔力が金属に染み込んでいく。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -742,7 +742,7 @@ export const nodeP26Outcomes: Outcome[] = [
   {
     id: 'p26_dragon_flee',
     conditions: { s2: 'subj_dragon', s4: 'pred_flee' },
-    resultText: '燃え盛る竜が鍛冶場で逃げていく。屋根を突き破って飛び去った。鍛冶場に大穴が開いている。空が見える。',
+    resultText: '燃え盛る竜が鍛冶場で逃げていく。屋根を突き破って飛び去った。崩れた瓦礫に埋もれ、這い出すのに力を使い果たした。',
     damage: 3,
     quill: 4
   },
@@ -764,7 +764,7 @@ export const nodeP26Outcomes: Outcome[] = [
   {
     id: 'p26_flame_flee',
     conditions: { s2: 'subj_flame', s4: 'pred_flee' },
-    resultText: '燃え盛る炎が鍛冶場で逃げていく。大火が鍛冶場から溢れて外へ広がっていく。鍛冶場は助かったが、外が燃えている。',
+    resultText: '燃え盛る炎が鍛冶場で逃げていく。大火が扉を突き破って外へ逃げた。飛び散った炎で肩を焼かれた。',
     damage: 3,
     quill: 3
   },
@@ -857,13 +857,13 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_snake_gaze',
     conditions: { s2: 'subj_snake', s4: 'pred_gaze' },
     resultText: '燃え盛る蛇が鍛冶場で見つめている。赤熱した蛇が鎌首をもたげて鍛冶の手元を見つめている。品定めか。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p26_dragon_gaze',
     conditions: { s2: 'subj_dragon', s4: 'pred_gaze' },
-    resultText: '燃え盛る竜が鍛冶場で見つめている。全身が業火の竜が鍛冶を見下ろしている。竜が認めた武器だけが鍛え上がる。',
+    resultText: '燃え盛る竜が鍛冶場で見つめている。全身が業火の竜が見下ろしている。至近の熱で金属の把手が焼けて、手に水膨れができた。',
     damage: 3,
     quill: 6
   },
@@ -877,14 +877,14 @@ export const nodeP26Outcomes: Outcome[] = [
   {
     id: 'p26_wind_gaze',
     conditions: { s2: 'subj_wind', s4: 'pred_gaze' },
-    resultText: '燃え盛る風が鍛冶場で見つめている。熱風が一点に集中して渦を巻いている。見つめるように一箇所だけ灼熱。',
+    resultText: '燃え盛る風が鍛冶場で見つめている。熱風が一点に集中して渦を巻いている。その灼熱の視線が肌を炙り、赤い跡が残った。',
     damage: 2,
     quill: 3
   },
   {
     id: 'p26_flame_gaze',
     conditions: { s2: 'subj_flame', s4: 'pred_gaze' },
-    resultText: '燃え盛る炎が鍛冶場で見つめている。炉の火が意志を持ったようにこちらを見ている。火に目がある。',
+    resultText: '燃え盛る炎が鍛冶場で見つめている。炉の火が意志を持ったようにこちらを見ている。炎の視線が肌を灼き、逸らしても熱が追ってくる。',
     damage: 3,
     quill: 5
   },
@@ -892,14 +892,14 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_ice_gaze',
     conditions: { s2: 'subj_ice', s4: 'pred_gaze' },
     resultText: '燃え盛る氷が鍛冶場で見つめている。炎を放つ氷が炉と睨み合っている。どちらが先に負けるか。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'p26_shadow_gaze',
     conditions: { s2: 'subj_shadow', s4: 'pred_gaze' },
     resultText: '燃え盛る影が鍛冶場で見つめている。壁面の影がこちらを見ている。炎が揺れるたびに視線が動く。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -912,7 +912,7 @@ export const nodeP26Outcomes: Outcome[] = [
   {
     id: 'p26_silence_gaze',
     conditions: { s2: 'subj_silence', s4: 'pred_gaze' },
-    resultText: '燃え盛る沈黙が鍛冶場で見つめている。音がない。炎は燃えている。無音の圧力がこちらを見つめている。',
+    resultText: '燃え盛る沈黙が鍛冶場で見つめている。音がない。炎は燃えている。無音の圧力に息が詰まり、膝が震えた。',
     damage: 2,
     quill: 5
   },
@@ -920,20 +920,20 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_knight_gaze',
     conditions: { s2: 'subj_knight', s4: 'pred_gaze' },
     resultText: '燃え盛る騎士が鍛冶場で見つめている。炎に包まれた騎士が鍛冶の腕を品定めしている。「余の剣を鍛えられるか」。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'p26_witch_gaze',
     conditions: { s2: 'subj_witch', s4: 'pred_gaze' },
     resultText: '燃え盛る魔女が鍛冶場で見つめている。鉤鼻に鋭い目。炎の魔法で包まれた魔女が鍛冶の技術を盗み見ている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p26_king_gaze',
     conditions: { s2: 'subj_king', s4: 'pred_gaze' },
-    resultText: '燃え盛る王が鍛冶場で見つめている。炎の冠の王が鍛冶を見下ろしている。「名剣を鍛えよ」。圧が凄い。',
+    resultText: '燃え盛る王が鍛冶場で見つめている。炎の冠の王が見下ろしている。覇気に当てられて手が震え、金槌を取り落とした。',
     damage: 2,
     quill: 5
   },
@@ -963,7 +963,7 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_rain_gaze',
     conditions: { s2: 'subj_rain', s4: 'pred_gaze' },
     resultText: '燃え盛る雨が鍛冶場で見つめている。火の雨が窓の外から鍛冶場を覗き込んでいる。中に入りたいのか。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -977,13 +977,13 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_snake_wait',
     conditions: { s2: 'subj_snake', s4: 'pred_wait' },
     resultText: '燃え盛る蛇が鍛冶場で待っている。赤熱した蛇が金床に巻きついて待っている。鍛えた鉄を呑むつもりか。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p26_dragon_wait',
     conditions: { s2: 'subj_dragon', s4: 'pred_wait' },
-    resultText: '燃え盛る竜が鍛冶場で待っている。全身が業火の竜が鍛冶場の外で待っている。「余の鱗で剣を打て」と言っている。',
+    resultText: '燃え盛る竜が鍛冶場で待っている。全身が業火の竜が鍛冶場の外で待っている。差し出された鱗を素手で受け取り、掌が焼けた。',
     damage: 3,
     quill: 7,
     rewardItems: [{ id: 'item_p26_dragon_wait', name: '竜鱗の鍛冶材', description: '燃え盛る竜が差し出した鱗。鍛冶場でしか加工できない', sellPrice: 20 }]
@@ -1006,13 +1006,13 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_flame_wait',
     conditions: { s2: 'subj_flame', s4: 'pred_wait' },
     resultText: '燃え盛る炎が鍛冶場で待っている。炉の火が鍛冶師を待っている。鉄が入れられるのを、ずっと待っている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p26_ice_wait',
     conditions: { s2: 'subj_ice', s4: 'pred_wait' },
-    resultText: '燃え盛る氷が鍛冶場で待っている。焼入れの水桶に炎を放つ氷が沈んでいる。ここに刃を浸したら何が起こるか。',
+    resultText: '燃え盛る氷が鍛冶場で待っている。焼入れの水桶に炎を放つ氷が沈んでいる。水桶に手を入れた瞬間、凍傷と火傷が同時に走った。',
     damage: 2,
     quill: 5
   },
@@ -1055,7 +1055,7 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_king_wait',
     conditions: { s2: 'subj_king', s4: 'pred_wait' },
     resultText: '燃え盛る王が鍛冶場で待っている。「名剣はまだか」。炎の冠の王が腕を組んで不機嫌に待っている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -1082,7 +1082,7 @@ export const nodeP26Outcomes: Outcome[] = [
   {
     id: 'p26_rain_wait',
     conditions: { s2: 'subj_rain', s4: 'pred_wait' },
-    resultText: '燃え盛る雨が鍛冶場で待っている。火の雨が窓の外で降り始めている。鍛冶場に入ってきたら全てが焼ける。',
+    resultText: '燃え盛る雨が鍛冶場で待っている。火の雨が窓の外で降り始めている。隙間から入った火滴に腕を焼かれた。外に出られない。',
     damage: 3,
     quill: 3
   },
@@ -1096,7 +1096,7 @@ export const nodeP26Outcomes: Outcome[] = [
   {
     id: 'p26_snake_whisper',
     conditions: { s2: 'subj_snake', s4: 'pred_whisper' },
-    resultText: '燃え盛る蛇が鍛冶場で囁いている。しゅうしゅうと囁く声。「その鉄に毒を混ぜろ」。従ってはいけない。',
+    resultText: '燃え盛る蛇が鍛冶場で囁いている。しゅうしゅうと囁く声。「その鉄に毒を混ぜろ」。言葉に逆らうと頭が割れるように痛んだ。',
     damage: 2,
     quill: 5
   },
@@ -1104,7 +1104,7 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_dragon_whisper',
     conditions: { s2: 'subj_dragon', s4: 'pred_whisper' },
     resultText: '燃え盛る竜が鍛冶場で囁いている。地面が震える低い囁き。竜の秘伝の鍛冶法を教えている。聞き取れれば名匠になれる。',
-    damage: 2,
+    damage: 1,
     quill: 7,
     rewardItems: [{ id: 'item_p26_dragon_whisper', name: '竜の鍛冶秘伝', description: '竜が囁いた鍛冶の秘法の断片。完全には聞き取れなかった', sellPrice: 18 }]
   },
@@ -1125,7 +1125,7 @@ export const nodeP26Outcomes: Outcome[] = [
   {
     id: 'p26_flame_whisper',
     conditions: { s2: 'subj_flame', s4: 'pred_whisper' },
-    resultText: '燃え盛る炎が鍛冶場で囁いている。炉の火がぱちぱちと言葉を紡いでいる。「もっと鉄をくれ」。飢えた炎だ。',
+    resultText: '燃え盛る炎が鍛冶場で囁いている。炉の火がぱちぱちと言葉を紡いでいる。「もっと鉄をくれ」。言いなりに鉄をくべ続け、腕が火傷だらけだ。',
     damage: 3,
     quill: 4
   },
@@ -1140,7 +1140,7 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_shadow_whisper',
     conditions: { s2: 'subj_shadow', s4: 'pred_whisper' },
     resultText: '燃え盛る影が鍛冶場で囁いている。壁の影が口を動かしている。「裏の鍛冶法がある」。影の鍛冶師だ。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1168,7 +1168,7 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_witch_whisper',
     conditions: { s2: 'subj_witch', s4: 'pred_whisper' },
     resultText: '燃え盛る魔女が鍛冶場で囁いている。呪文を鉄に囁きかけている。魔法の武器が鍛えられようとしている。',
-    damage: 2,
+    damage: 1,
     quill: 6,
     rewardItems: [{ id: 'item_p26_witch_whisper', name: '呪鍛ちの鉄粉', description: '魔女の呪文を聴きながら鍛えた鉄の粉。微かに震えている', sellPrice: 12 }]
   },
@@ -1176,7 +1176,7 @@ export const nodeP26Outcomes: Outcome[] = [
     id: 'p26_king_whisper',
     conditions: { s2: 'subj_king', s4: 'pred_whisper' },
     resultText: '燃え盛る王が鍛冶場で囁いている。「世界を変える剣を」。炎の冠の王が鍛冶師に密命を囁いている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1204,7 +1204,7 @@ export const nodeP26Outcomes: Outcome[] = [
   {
     id: 'p26_rain_whisper',
     conditions: { s2: 'subj_rain', s4: 'pred_whisper' },
-    resultText: '燃え盛る雨が鍛冶場で囁いている。火の雨が屋根を叩く音が囁きに聞こえる。「出てこい」と言っている。',
+    resultText: '燃え盛る雨が鍛冶場で囁いている。火の雨が屋根を叩く音が囁きに聞こえる。「出てこい」。屋根の隙間から火滴が落ち、肩を焼いた。',
     damage: 2,
     quill: 4
   },

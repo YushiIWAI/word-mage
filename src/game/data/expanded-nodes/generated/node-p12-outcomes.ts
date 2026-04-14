@@ -19,7 +19,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_fire_kitten',
     conditions: { s1: 'mod_fire', s2: 'subj_kitten' },
-    resultText: '燃え盛る子猫が庭を見つめている。炎をまとった猫が石畳の上に座っている。足元の雑草が焦げて煙を上げている。本猫は涼しい顔だ。',
+    resultText: '燃え盛る子猫が庭を見つめている。炎をまとった猫が擦り寄ってきた。服の裾が焦げ、慌てて叩き消す。猫は悪気なく燃えている。',
     damage: 3,
     quill: 4
   },
@@ -33,7 +33,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_sharp_kitten',
     conditions: { s1: 'mod_sharp', s2: 'subj_kitten' },
-    resultText: '鋭い子猫が庭を見つめている。硝子の破片のような爪を石畳に立てて、獲物を待つ目をしている。庭に入った虫が消えた。',
+    resultText: '鋭い子猫が庭を見つめている。硝子の破片のような爪を石畳に立てて、獲物を待つ目をしている。手を伸ばした指先に三本の赤い線が走った。',
     damage: 2,
     quill: 4
   },
@@ -49,7 +49,7 @@ export const nodeP12Outcomes: Outcome[] = [
     id: 'p12_mighty_kitten',
     conditions: { s1: 'mod_mighty', s2: 'subj_kitten' },
     resultText: '屈強な子猫が庭を見つめている。子猫サイズの虎だ。石畳を低く唸りながら睨んでいる。この庭の番人を自称しているらしい。',
-    damage: 2,
+    damage: 1,
     quill: 5,
     rewardItems: [{ id: 'item_p12_mighty_kitten', name: '庭番の髭', description: '虎のような子猫の髭。庭の匂いがする', sellPrice: 7 }]
   },
@@ -101,7 +101,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_fire_snake',
     conditions: { s1: 'mod_fire', s2: 'subj_snake' },
-    resultText: '燃え盛る蛇が庭を見つめている。炎の軌跡を描きながら石畳を這う。通った跡の雑草が灰になっている。',
+    resultText: '燃え盛る蛇が庭を見つめている。炎の軌跡を描きながら石畳を這い寄る。足に巻きつかれ、火傷が肌を焼いた。振りほどいても痕が消えない。',
     damage: 4,
     quill: 3
   },
@@ -109,13 +109,13 @@ export const nodeP12Outcomes: Outcome[] = [
     id: 'p12_hard_snake',
     conditions: { s1: 'mod_hard', s2: 'subj_snake' },
     resultText: '堅い蛇が庭を見つめている。鉄の鱗がこすれて石畳に火花が散る。庭を一周する溝が刻まれている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p12_sharp_snake',
     conditions: { s1: 'mod_sharp', s2: 'subj_snake' },
-    resultText: '鋭い蛇が庭を見つめている。猛毒の牙。石畳に映る影すら鋭い。動かない。こちらが先に動くのを待っている。',
+    resultText: '鋭い蛇が庭を見つめている。猛毒の牙が石畳に光る。一歩踏み出した瞬間、足首に激痛が走った。毒が脈を辿って熱く昇る。',
     damage: 3,
     quill: 3
   },
@@ -129,7 +129,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_mighty_snake',
     conditions: { s1: 'mod_mighty', s2: 'subj_snake' },
-    resultText: '屈強な蛇が庭を見つめている。胴回りが人の腰ほどある。石畳がとぐろの下で軋んでいる。庭全体が蛇の領地だ。',
+    resultText: '屈強な蛇が庭を見つめている。胴回りが人の腰ほどある。とぐろが解かれ、締め上げられた。肋骨が軋み、息ができない。',
     damage: 4,
     quill: 3
   },
@@ -151,7 +151,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_cursed_snake',
     conditions: { s1: 'mod_cursed', s2: 'subj_snake' },
-    resultText: '呪われた蛇が庭を見つめている。脱皮するたびに大きくなる蛇。石畳の隙間から溢れ出して、庭を圧迫し始めている。',
+    resultText: '呪われた蛇が庭を見つめている。脱皮するたびに大きくなる蛇。逃げ場が狭まり、鱗が体に押しつけられる。呪いの鱗に触れた肌が痺れた。',
     damage: 3,
     quill: 4
   },
@@ -188,13 +188,13 @@ export const nodeP12Outcomes: Outcome[] = [
     id: 'p12_hard_dragon',
     conditions: { s1: 'mod_hard', s2: 'subj_dragon' },
     resultText: '堅い竜が庭を見つめている。城壁のような鱗。石畳の上に伏せると、竜自身が庭の一部に見える。動く気配がない。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p12_sharp_dragon',
     conditions: { s1: 'mod_sharp', s2: 'subj_dragon' },
-    resultText: '鋭い竜が庭を見つめている。金色の目が庭の隅々まで射抜く。爪の一振りで石畳が裂けた。品定めされている。',
+    resultText: '鋭い竜が庭を見つめている。金色の目が庭の隅々まで射抜く。爪の一振りが風を裂き、頬をかすめた。血が一筋。品定めの結果らしい。',
     damage: 4,
     quill: 3
   },
@@ -209,14 +209,14 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_mighty_dragon',
     conditions: { s1: 'mod_mighty', s2: 'subj_dragon' },
-    resultText: '屈強な竜が庭を見つめている。山のような体。翼を広げると庭が丸ごと影になった。石畳が竜の重みで沈んでいく。',
+    resultText: '屈強な竜が庭を見つめている。山のような体。翼の風圧で体が吹き飛ばされ、石畳に叩きつけられた。竜はこちらに興味がない。それが救いだ。',
     damage: 5,
     quill: 2
   },
   {
     id: 'p12_frozen_dragon',
     conditions: { s1: 'mod_frozen', s2: 'subj_dragon' },
-    resultText: '凍てついた竜が庭を見つめている。白い竜の吐息が吹雪になる。石畳に霜が走り、雑草が氷の彫刻に変わった。',
+    resultText: '凍てついた竜が庭を見つめている。白い竜の吐息が吹雪になる。庭を横切ろうとした足が氷に取られ、指先の感覚が消えた。',
     damage: 3,
     quill: 4
   },
@@ -231,7 +231,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_cursed_dragon',
     conditions: { s1: 'mod_cursed', s2: 'subj_dragon' },
-    resultText: '呪われた竜が庭を見つめている。目に理性がない。かつて守護竜だったらしい。石畳の紋様が竜の加護の名残だ。だが今は庭を壊すだけだ。',
+    resultText: '呪われた竜が庭を見つめている。目に理性がない。尾の一振りが石畳を砕き、破片が体を打つ。逃げ場がない。かつて守護竜だった名残が、かえって恐ろしい。',
     damage: 5,
     quill: 3
   },
@@ -260,7 +260,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_fire_butterfly',
     conditions: { s1: 'mod_fire', s2: 'subj_butterfly' },
-    resultText: '燃え盛る蝶が庭を見つめている。羽が炎でできている。飛んだ跡に火の粉が散り、石畳が焦げていく。庭の雑草が次々と燃える。',
+    resultText: '燃え盛る蝶が庭を見つめている。羽が炎でできている。肩に止まり、服に火が移った。払い落としたが、火傷の痕がじくじくと痛む。',
     damage: 4,
     quill: 3
   },
@@ -295,7 +295,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_frozen_butterfly',
     conditions: { s1: 'mod_frozen', s2: 'subj_butterfly' },
-    resultText: '凍てついた蝶が庭を見つめている。霜の結晶が羽の形をしている。石畳の上に降り立つと、足元から氷が広がった。',
+    resultText: '凍てついた蝶が庭を見つめている。霜の結晶が羽の形をしている。手に止まった瞬間、指先から腕まで霜が這い上がった。',
     damage: 2,
     quill: 5
   },
@@ -339,7 +339,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_fire_wind',
     conditions: { s1: 'mod_fire', s2: 'subj_wind' },
-    resultText: '燃え盛る風が庭を見つめている。熱風が石畳を焼く。雑草が一瞬で乾き、庭が砂漠のように白くなった。',
+    resultText: '燃え盛る風が庭を見つめている。熱風が石畳を焼く。吸い込んだ空気が喉を灼き、肌の水分が奪われて唇が裂けた。',
     damage: 4,
     quill: 2
   },
@@ -347,7 +347,7 @@ export const nodeP12Outcomes: Outcome[] = [
     id: 'p12_hard_wind',
     conditions: { s1: 'mod_hard', s2: 'subj_wind' },
     resultText: '堅い風が庭を見つめている。同じ方向にしか吹かない風。何百年も同じ砂を同じ石畳に叩きつけている。石が削れている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -367,7 +367,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_mighty_wind',
     conditions: { s1: 'mod_mighty', s2: 'subj_wind' },
-    resultText: '屈強な風が庭を見つめている。すべてを押し流す突風。石畳が浮き上がり、庭の形が変わった。引き返すことも許されない。',
+    resultText: '屈強な風が庭を見つめている。すべてを押し流す突風に体が浮き、石畳に叩きつけられた。立ち上がれない。風が体を地面に縫い止めている。',
     damage: 4,
     quill: 2
   },
@@ -424,14 +424,14 @@ export const nodeP12Outcomes: Outcome[] = [
     id: 'p12_hard_flame',
     conditions: { s1: 'mod_hard', s2: 'subj_flame' },
     resultText: '堅い炎が庭を見つめている。水をかけても消えない。石畳の一角で何年も燃え続けているらしい。雑草が近づかない。',
-    damage: 2,
+    damage: 1,
     quill: 5,
     rewardItems: [{ id: 'item_p12_hard_flame', name: '不滅の灯', description: '石畳の欠片にくっついた小さな炎。消えない', sellPrice: 12 }]
   },
   {
     id: 'p12_sharp_flame',
     conditions: { s1: 'mod_sharp', s2: 'subj_flame' },
-    resultText: '鋭い炎が庭を見つめている。触れたものの形を正確に切り取る。石畳の文字だけが焼け残り、それ以外は灰になった。',
+    resultText: '鋭い炎が庭を見つめている。触れたものの形を正確に切り取る炎。袖口を舐められ、布が一瞬で人の腕の形に焼け落ちた。肌に精密な火傷が残る。',
     damage: 3,
     quill: 5
   },
@@ -445,7 +445,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_mighty_flame',
     conditions: { s1: 'mod_mighty', s2: 'subj_flame' },
-    resultText: '屈強な炎が庭を見つめている。火柱が天を衝く。石畳が溶けて歪む。庭の形が焼き変わっていく。',
+    resultText: '屈強な炎が庭を見つめている。火柱が天を衝く。熱気の壁に阻まれ、肌が水膨れになる。息を吸うと肺が焼け、意識が遠のいた。',
     damage: 5,
     quill: 2
   },
@@ -467,7 +467,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_cursed_flame',
     conditions: { s1: 'mod_cursed', s2: 'subj_flame' },
-    resultText: '呪われた炎が庭を見つめている。燃やしたものの形を覚える火。石畳の模様が炎の中で再現されている。かつての庭の幻だ。',
+    resultText: '呪われた炎が庭を見つめている。燃やしたものの形を覚える火。炎の中にかつての庭が見え、手を伸ばした。指先が焼け、記憶の代価を払わされた。',
     damage: 3,
     quill: 5
   },
@@ -495,14 +495,14 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_fire_ice',
     conditions: { s1: 'mod_fire', s2: 'subj_ice' },
-    resultText: '燃え盛る氷が庭を見つめている。炎を放つ氷。石畳が凍傷と火傷の跡で斑になっている。触れてはいけない。',
+    resultText: '燃え盛る氷が庭を見つめている。炎を放つ氷。近づいた手が凍傷と火傷を同時に負った。どちらの痛みかわからない。',
     damage: 4,
     quill: 4
   },
   {
     id: 'p12_hard_ice',
     conditions: { s1: 'mod_hard', s2: 'subj_ice' },
-    resultText: '堅い氷が庭を見つめている。万年氷だ。石畳を覆って鋼のように硬い。叩いても刃が欠ける。庭が封じられた。',
+    resultText: '堅い氷が庭を見つめている。万年氷だ。石畳を覆って鋼のように硬い。叩いた拳の骨が軋み、冷気で手が動かなくなった。',
     damage: 3,
     quill: 3
   },
@@ -523,7 +523,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_mighty_ice',
     conditions: { s1: 'mod_mighty', s2: 'subj_ice' },
-    resultText: '屈強な氷が庭を見つめている。山のような氷塊が庭を押し潰している。石畳が氷の底に沈んでいる。',
+    resultText: '屈強な氷が庭を見つめている。山のような氷塊が庭を押し潰している。冷気だけで体温が奪われ、足が痺れて膝をつく。',
     damage: 4,
     quill: 2
   },
@@ -545,7 +545,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_cursed_ice',
     conditions: { s1: 'mod_cursed', s2: 'subj_ice' },
-    resultText: '呪われた氷が庭を見つめている。溶けない氷が庭に永遠の冬を広げている。石畳の隙間の草が凍り、もう芽は出ない。',
+    resultText: '呪われた氷が庭を見つめている。溶けない氷が庭に永遠の冬を広げている。足を踏み入れた途端、靴の中まで凍りつき、一歩も動けなくなった。',
     damage: 3,
     quill: 4
   },
@@ -587,7 +587,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_sharp_shadow',
     conditions: { s1: 'mod_sharp', s2: 'subj_shadow' },
-    resultText: '鋭い影が庭を見つめている。輪郭がくっきりしすぎている。影の縁に触れると、石畳にひっかき傷がつく。',
+    resultText: '鋭い影が庭を見つめている。輪郭がくっきりしすぎている。影の縁を踏んだ足の裏に、刃物のような痛みが走った。',
     damage: 2,
     quill: 4
   },
@@ -601,7 +601,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_mighty_shadow',
     conditions: { s1: 'mod_mighty', s2: 'subj_shadow' },
-    resultText: '屈強な影が庭を見つめている。庭全体を覆う巨大な影。見上げても、影の主がいない。影だけが庭を支配している。',
+    resultText: '屈強な影が庭を見つめている。庭全体を覆う巨大な影。影の中に踏み入れると体が重くなり、膝が沈む。影の圧力で息が浅くなる。',
     damage: 3,
     quill: 5
   },
@@ -622,7 +622,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_cursed_shadow',
     conditions: { s1: 'mod_cursed', s2: 'subj_shadow' },
-    resultText: '呪われた影が庭を見つめている。影に触れた雑草が黒く染まり、影になった。石畳の上に影が増え続けている。',
+    resultText: '呪われた影が庭を見つめている。自分の影が足元から剥がれ、庭の影に飲まれた。体の半分が暗く冷たくなり、感覚が薄れていく。',
     damage: 3,
     quill: 5,
     rewardItems: [{ id: 'item_p12_cursed_shadow', name: '影の欠片', description: '石畳から剥がれた黒い破片。手に貼りつく', sellPrice: 7 }]
@@ -679,7 +679,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_mighty_song',
     conditions: { s1: 'mod_mighty', s2: 'subj_song' },
-    resultText: '屈強な歌が庭を見つめている。大地を震わせる合唱。石畳が音に合わせて跳ねる。庭の草が揺れ、虫が逃げた。',
+    resultText: '屈強な歌が庭を見つめている。大地を震わせる合唱。振動が足の裏から内臓に響き、立っていられない。歯がガチガチ鳴る。',
     damage: 2,
     quill: 4
   },
@@ -730,14 +730,14 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_fire_silence',
     conditions: { s1: 'mod_fire', s2: 'subj_silence' },
-    resultText: '燃え盛る沈黙が庭を見つめている。空気が焦げている。誰も口を開けない。石畳が熱を帯びて、庭が怒りに満ちている。',
+    resultText: '燃え盛る沈黙が庭を見つめている。空気が焦げている。叫ぼうとしても声が出ず、喉が焼けるように痛む。熱い沈黙が体を蝕む。',
     damage: 3,
     quill: 4
   },
   {
     id: 'p12_hard_silence',
     conditions: { s1: 'mod_hard', s2: 'subj_silence' },
-    resultText: '堅い沈黙が庭を見つめている。何を叫んでも吸い込まれて消える。石畳に響くはずの足音も、庭に飲まれた。',
+    resultText: '堅い沈黙が庭を見つめている。何を叫んでも吸い込まれて消える。音のない圧迫に耳鳴りが始まり、頭が割れそうだ。',
     damage: 2,
     quill: 4
   },
@@ -765,7 +765,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_frozen_silence',
     conditions: { s1: 'mod_frozen', s2: 'subj_silence' },
-    resultText: '凍てついた沈黙が庭を見つめている。息も凍る静けさ。時間が止まったように、石畳の上の落ち葉すら揺れない。',
+    resultText: '凍てついた沈黙が庭を見つめている。息も凍る静けさ。心臓の音が遠くなり、指先から感覚が消えていく。凍った沈黙が体の熱を吸っている。',
     damage: 2,
     quill: 5
   },
@@ -810,7 +810,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_fire_knight',
     conditions: { s1: 'mod_fire', s2: 'subj_knight' },
-    resultText: '燃え盛る騎士が庭を見つめている。鎧ごと炎に包まれている。石畳が焼けて赤い。それでも歩みを止めず、庭を巡回している。',
+    resultText: '燃え盛る騎士が庭を見つめている。鎧ごと炎に包まれ、巡回する騎士とすれ違った。熱波で髪が縮れ、肌がひりつく。離れても火傷の痛みが残る。',
     damage: 4,
     quill: 3
   },
@@ -818,13 +818,13 @@ export const nodeP12Outcomes: Outcome[] = [
     id: 'p12_hard_knight',
     conditions: { s1: 'mod_hard', s2: 'subj_knight' },
     resultText: '堅い騎士が庭を見つめている。分厚い鎧。石畳の上で微動だにしない。表情が見えない。庭の門番のようだ。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
     id: 'p12_sharp_knight',
     conditions: { s1: 'mod_sharp', s2: 'subj_knight' },
-    resultText: '鋭い騎士が庭を見つめている。構えに無駄がない。冷たい目で庭の隅まで見張っている。不審者扱いされている。',
+    resultText: '鋭い騎士が庭を見つめている。構えに無駄がない。一歩踏み出した瞬間、剣の切っ先が喉元に突きつけられた。動くなという意思表示。',
     damage: 3,
     quill: 3
   },
@@ -839,7 +839,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_mighty_knight',
     conditions: { s1: 'mod_mighty', s2: 'subj_knight' },
-    resultText: '屈強な騎士が庭を見つめている。巨体の重装騎士。石畳が軋む。庭を通すかどうか、こちらを値踏みしている。',
+    resultText: '屈強な騎士が庭を見つめている。巨体の重装騎士。盾で押し返され、石畳に倒れた。立ち上がる前に鉄の足が地面を揺らす。通る気はないようだ。',
     damage: 3,
     quill: 3
   },
@@ -847,7 +847,7 @@ export const nodeP12Outcomes: Outcome[] = [
     id: 'p12_frozen_knight',
     conditions: { s1: 'mod_frozen', s2: 'subj_knight' },
     resultText: '凍てついた騎士が庭を見つめている。剣を振り上げた姿勢のまま氷に閉じ込められている。石畳に霜の足跡が残っている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -860,7 +860,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_cursed_knight',
     conditions: { s1: 'mod_cursed', s2: 'subj_knight' },
-    resultText: '呪われた騎士が庭を見つめている。兜の奥の目が赤く光っている。庭を守っているのか、庭に閉じ込められているのか。',
+    resultText: '呪われた騎士が庭を見つめている。兜の奥の赤い目と視線が合った瞬間、呪いが伝染したように体が重くなる。足が石畳に根を張る。',
     damage: 3,
     quill: 5
   },
@@ -897,20 +897,20 @@ export const nodeP12Outcomes: Outcome[] = [
     id: 'p12_hard_witch',
     conditions: { s1: 'mod_hard', s2: 'subj_witch' },
     resultText: '堅い魔女が庭を見つめている。石のように頑固な老魔女。石畳の上に立ちはだかって、一言も発さない。取引を持ちかけるまで動かないだろう。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
     id: 'p12_sharp_witch',
     conditions: { s1: 'mod_sharp', s2: 'subj_witch' },
-    resultText: '鋭い魔女が庭を見つめている。鉤鼻に鋭い目。庭の隅まで見通している。嘘をつけば一瞬でわかるだろう。',
+    resultText: '鋭い魔女が庭を見つめている。鉤鼻に鋭い目。視線が触れるだけで思考が読まれ、頭の奥がずきんと痛む。',
     damage: 2,
     quill: 4
   },
   {
     id: 'p12_broken_witch',
     conditions: { s1: 'mod_broken', s2: 'subj_witch' },
-    resultText: '壊れた魔女が庭を見つめている。魔力が暴走している。呪文が途切れ途切れに漏れ、石畳の模様が歪んでいく。',
+    resultText: '壊れた魔女が庭を見つめている。魔力が暴走している。漏れた呪文の破片が肌を焼き、石畳ごと体が歪む感覚がする。',
     damage: 3,
     quill: 4
   },
@@ -918,13 +918,13 @@ export const nodeP12Outcomes: Outcome[] = [
     id: 'p12_mighty_witch',
     conditions: { s1: 'mod_mighty', s2: 'subj_witch' },
     resultText: '屈強な魔女が庭を見つめている。杖ではなく拳で雑草を引き抜いている。腕が太い。庭の手入れが荒っぽい。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'p12_frozen_witch',
     conditions: { s1: 'mod_frozen', s2: 'subj_witch' },
-    resultText: '凍てついた魔女が庭を見つめている。氷の魔法が漏れている。石畳に霜が広がり、庭の花が凍っていく。魔女の表情は動かない。',
+    resultText: '凍てついた魔女が庭を見つめている。氷の魔法が漏れている。漏れた冷気を浴び、足元から凍りつく。指先の感覚がなくなった。',
     damage: 3,
     quill: 4
   },
@@ -939,7 +939,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_cursed_witch',
     conditions: { s1: 'mod_cursed', s2: 'subj_witch' },
-    resultText: '呪われた魔女が庭を見つめている。自分の呪いに蝕まれている。体の一部が蔦のように変異して、石畳に根を張っている。',
+    resultText: '呪われた魔女が庭を見つめている。自分の呪いに蝕まれた魔女。近づいた途端、同じ蔦が足首に絡みついた。呪いが伝染する。',
     damage: 3,
     quill: 5
   },
@@ -976,14 +976,14 @@ export const nodeP12Outcomes: Outcome[] = [
     id: 'p12_hard_king',
     conditions: { s1: 'mod_hard', s2: 'subj_king' },
     resultText: '堅い王が庭を見つめている。微動だにしない。石畳の上に石像のように立ち、法を一言で下す表情をしている。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
     id: 'p12_sharp_king',
     conditions: { s1: 'mod_sharp', s2: 'subj_king' },
     resultText: '鋭い王が庭を見つめている。鷹のような目で石畳の隅々まで見据えている。庭の荒れ具合から、何が起きたか読み取ったようだ。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -997,14 +997,14 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_mighty_king',
     conditions: { s1: 'mod_mighty', s2: 'subj_king' },
-    resultText: '屈強な王が庭を見つめている。戦士王。石畳を踏む足音が地鳴りのようだ。背中に傷はない。庭の荒廃が気に入らないらしい。',
+    resultText: '屈強な王が庭を見つめている。戦士王。振り向きざまの拳が風を裂いた。庭の荒廃を許した罪を問われている。逆らえる威圧ではない。',
     damage: 3,
     quill: 3
   },
   {
     id: 'p12_frozen_king',
     conditions: { s1: 'mod_frozen', s2: 'subj_king' },
-    resultText: '凍てついた王が庭を見つめている。氷の玉座に座っている。吐く言葉が白い。石畳に永遠の冬が訪れた。',
+    resultText: '凍てついた王が庭を見つめている。氷の玉座に座っている。王の吐息が吹雪となり、体温が奪われて膝が震える。永遠の冬に飲まれていく。',
     damage: 3,
     quill: 4
   },
@@ -1056,13 +1056,13 @@ export const nodeP12Outcomes: Outcome[] = [
     id: 'p12_hard_ghost',
     conditions: { s1: 'mod_hard', s2: 'subj_ghost' },
     resultText: '堅い亡霊が庭を見つめている。同じ場所に何百年も立っている。石畳が敷かれる前からここにいたらしい。動く気配がない。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p12_sharp_ghost',
     conditions: { s1: 'mod_sharp', s2: 'subj_ghost' },
-    resultText: '鋭い亡霊が庭を見つめている。こちらの罪を見透かす目。石畳に映る自分の影が、亡霊の視線で歪んでいる。',
+    resultText: '鋭い亡霊が庭を見つめている。こちらの罪を見透かす目と合った瞬間、胸の奥に鋭い痛みが走った。視線が心臓を刺している。',
     damage: 3,
     quill: 4
   },
@@ -1076,14 +1076,14 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_mighty_ghost',
     conditions: { s1: 'mod_mighty', s2: 'subj_ghost' },
-    resultText: '屈強な亡霊が庭を見つめている。鎧武者の亡霊。生前より強い。石畳を踏む音はしないが、庭の空気が重い。',
+    resultText: '屈強な亡霊が庭を見つめている。鎧武者の亡霊。音もなく近づき、すり抜けられた。体の芯が凍り、膝から崩れた。生者の温もりが霊に吸われていく。',
     damage: 4,
     quill: 3
   },
   {
     id: 'p12_frozen_ghost',
     conditions: { s1: 'mod_frozen', s2: 'subj_ghost' },
-    resultText: '凍てついた亡霊が庭を見つめている。冷気を纏った霊。通った跡の石畳に霜がおりる。永遠に寒がっている。',
+    resultText: '凍てついた亡霊が庭を見つめている。冷気を纏った霊が近づき、手を差し伸べた。握り返すと骨まで冷え、しばらく指が動かなくなった。',
     damage: 2,
     quill: 5
   },
@@ -1098,7 +1098,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_cursed_ghost',
     conditions: { s1: 'mod_cursed', s2: 'subj_ghost' },
-    resultText: '呪われた亡霊が庭を見つめている。呪いに縛られて成仏できない。苦しみの表情で石畳を掴んでいるが、手はすり抜ける。',
+    resultText: '呪われた亡霊が庭を見つめている。呪いに縛られて成仏できない。苦しみの波動が庭に漏れ、近づくだけで全身に倦怠感がのしかかる。',
     damage: 3,
     quill: 4
   },
@@ -1126,7 +1126,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_fire_mirror',
     conditions: { s1: 'mod_fire', s2: 'subj_mirror' },
-    resultText: '燃え盛る鏡が庭を見つめている。鏡面に炎が映っている。だが庭に火はない。鏡の中の庭が燃えている。',
+    resultText: '燃え盛る鏡が庭を見つめている。鏡面に炎が映っている。覗き込んだ瞬間、鏡の中の炎がこちらに飛び出し、頬を灼いた。',
     damage: 3,
     quill: 5
   },
@@ -1155,13 +1155,13 @@ export const nodeP12Outcomes: Outcome[] = [
     id: 'p12_mighty_mirror',
     conditions: { s1: 'mod_mighty', s2: 'subj_mirror' },
     resultText: '屈強な鏡が庭を見つめている。人の背丈を超える姿見が石畳の真ん中に立っている。庭が丸ごと映っている。圧倒的な存在感。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p12_frozen_mirror',
     conditions: { s1: 'mod_frozen', s2: 'subj_mirror' },
-    resultText: '凍てついた鏡が庭を見つめている。鏡面が凍って霜で覆われている。かろうじて映る庭が、冬の景色になっている。',
+    resultText: '凍てついた鏡が庭を見つめている。鏡面が凍って霜で覆われている。覗き込むと冷気が顔を打ち、まつ毛が凍りついた。',
     damage: 2,
     quill: 5
   },
@@ -1204,7 +1204,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_fire_doll',
     conditions: { s1: 'mod_fire', s2: 'subj_doll' },
-    resultText: '燃え盛る人形が庭を見つめている。藁人形が燃えている。祭りの焚き上げのようだ。石畳に灰が散って、庭が煙い。',
+    resultText: '燃え盛る人形が庭を見つめている。藁人形が燃えている。近づいた途端、人形の炎が飛び移り、服の裾が焦げた。祭りの火は人を選ばない。',
     damage: 3,
     quill: 3
   },
@@ -1218,7 +1218,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_sharp_doll',
     conditions: { s1: 'mod_sharp', s2: 'subj_doll' },
-    resultText: '鋭い人形が庭を見つめている。関節が刃になった操り人形。糸は見えない。石畳の上を滑るように動き、雑草を刈っていく。',
+    resultText: '鋭い人形が庭を見つめている。関節が刃になった操り人形。糸は見えない。すれ違いざまに腕を切られた。浅いが鋭い傷。',
     damage: 2,
     quill: 5
   },
@@ -1233,7 +1233,7 @@ export const nodeP12Outcomes: Outcome[] = [
     id: 'p12_mighty_doll',
     conditions: { s1: 'mod_mighty', s2: 'subj_doll' },
     resultText: '屈強な人形が庭を見つめている。等身大の木彫り人形。腕が丸太のように太い。石畳の門番のように立っている。命令を待っている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -1254,7 +1254,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_cursed_doll',
     conditions: { s1: 'mod_cursed', s2: 'subj_doll' },
-    resultText: '呪われた人形が庭を見つめている。夜になると位置が変わる人形。朝見ると石畳の別の場所にいる。誰も動かしていない。',
+    resultText: '呪われた人形が庭を見つめている。目を逸らすと背後に立っている。振り向くたびに近づいてくる。触れられた腕が冷たく痺れた。',
     damage: 2,
     quill: 5
   },
@@ -1318,7 +1318,7 @@ export const nodeP12Outcomes: Outcome[] = [
   {
     id: 'p12_frozen_rain',
     conditions: { s1: 'mod_frozen', s2: 'subj_rain' },
-    resultText: '凍てついた雨が庭を見つめている。凍雨。石畳に触れた瞬間に凍りつく。庭が氷の鏡になった。自分の足が映っている。',
+    resultText: '凍てついた雨が庭を見つめている。凍雨が肌を打ち、触れた端から凍りつく。髪が白くなり、指先の感覚が消えた。庭が氷の鏡になった。',
     damage: 3,
     quill: 5
   },

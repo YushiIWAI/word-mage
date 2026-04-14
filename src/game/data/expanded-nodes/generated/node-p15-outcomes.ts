@@ -19,7 +19,7 @@ export const nodeP15Outcomes: Outcome[] = [
   {
     id: 'p15_dragon',
     conditions: { s2: 'subj_dragon' },
-    resultText: '竜が砂丘に眠っている。砂丘だと思っていたものが竜の背中だった。いびきで大地が揺れる中、息を殺して後退した。',
+    resultText: '竜が砂丘に眠っている。砂丘だと思っていたものが竜の背中だった。鱗が発する熱で靴底が溶ける。焦げた足を引きずりながら後退した。',
     damage: 3,
     quill: 5,
     rewardItems: [{ id: 'item_p15_dragon', name: '竜鱗の砂', description: '竜の鱗が砂に混じっている。微かに熱い', sellPrice: 15 }]
@@ -42,7 +42,7 @@ export const nodeP15Outcomes: Outcome[] = [
     id: 'p15_flame',
     conditions: { s2: 'subj_flame' },
     resultText: '炎が砂丘に眠っている。砂の表面が微かに熱い。掘ると、硝子になった砂の層が現れた。',
-    damage: 2,
+    damage: 1,
     quill: 6,
     rewardItems: [{ id: 'item_p15_flame', name: '硝子の砂', description: '炎で焼かれて硝子になった砂。透き通っている', sellPrice: 12 }]
   },
@@ -78,13 +78,13 @@ export const nodeP15Outcomes: Outcome[] = [
     id: 'p15_knight',
     conditions: { s2: 'subj_knight' },
     resultText: '騎士が砂丘に眠っている。剣を胸に抱いたまま、甲冑姿で横たわっている。砂が風紋を描いて鎧を覆い始めている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p15_witch',
     conditions: { s2: 'subj_witch' },
-    resultText: '魔女が砂丘に眠っている。杖を抱いたまま横たわっている。寝息に合わせて、周囲の砂が微かに浮いては落ちる。',
+    resultText: '魔女が砂丘に眠っている。杖を抱いたまま横たわっている。寝息に合わせて呪力が漏れ、近づいた足が砂に沈む。膝まで埋まり、抜け出すのに体力を使い果たした。',
     damage: 2,
     quill: 5
   },
@@ -99,7 +99,7 @@ export const nodeP15Outcomes: Outcome[] = [
   {
     id: 'p15_ghost',
     conditions: { s2: 'subj_ghost' },
-    resultText: '亡霊が砂丘に眠っている。砂の下に透けた輪郭が見える。踏むと、足元から冷たい風が這い上がってきた。',
+    resultText: '亡霊が砂丘に眠っている。砂の下に透けた輪郭が見える。踏んだ瞬間、冷気が足から全身を駆け上がり、指先の感覚が消えた。',
     damage: 2,
     quill: 4
   },
@@ -114,7 +114,7 @@ export const nodeP15Outcomes: Outcome[] = [
     id: 'p15_doll',
     conditions: { s2: 'subj_doll' },
     resultText: '人形が砂丘に眠っている。横たわった人形の上を、砂が少しずつ流れている。掘り出すと、閉じていた目がゆっくり開いた。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {

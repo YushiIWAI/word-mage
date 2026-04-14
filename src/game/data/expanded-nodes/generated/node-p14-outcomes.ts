@@ -19,7 +19,7 @@ export const nodeP14Outcomes: Outcome[] = [
   {
     id: 'p14_dragon',
     conditions: { s2: 'subj_dragon' },
-    resultText: '竜が吊り橋を揺らしている。巨体が橋の上を歩くだけで板が割れる。渡れるわけがない。遥か下の谷底を見ながら引き返した。',
+    resultText: '竜が吊り橋を揺らしている。巨体が橋の上を歩くだけで板が割れる。翼が起こす突風に足を取られ、谷底へ落ちかける。辛うじてロープに掴まり、引き返した。',
     damage: 5,
     quill: 1
   },
@@ -48,7 +48,7 @@ export const nodeP14Outcomes: Outcome[] = [
     id: 'p14_ice',
     conditions: { s2: 'subj_ice' },
     resultText: '氷が吊り橋を揺らしている。板に張った氷が重みで軋み、橋全体が震えている。足を滑らせないよう四つん這いで渡った。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -69,7 +69,7 @@ export const nodeP14Outcomes: Outcome[] = [
   {
     id: 'p14_silence',
     conditions: { s2: 'subj_silence' },
-    resultText: '沈黙が吊り橋を揺らしている。風も、水音も、虫の声もない。なのに橋が揺れている。静寂そのものが振動を孕んでいる。足がすくんだ。',
+    resultText: '沈黙が吊り橋を揺らしている。風も、水音も、虫の声もない。なのに橋が揺れている。静寂の圧に耐えかね、手すりを握る指の感覚が消えていく。',
     damage: 2,
     quill: 6,
     rewardItems: [{ id: 'item_p14_silence', name: '無音の振動', description: '音のない揺れの記憶。手のひらがまだ痺れている', sellPrice: 10 }]
@@ -78,7 +78,7 @@ export const nodeP14Outcomes: Outcome[] = [
     id: 'p14_knight',
     conditions: { s2: 'subj_knight' },
     resultText: '騎士が吊り橋を揺らしている。重い甲冑のまま渡ろうとして、一歩ごとに橋が大きく揺れる。板が一枚落ちた。騎士が渡り終えるのを待ってからにした。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -99,7 +99,7 @@ export const nodeP14Outcomes: Outcome[] = [
   {
     id: 'p14_ghost',
     conditions: { s2: 'subj_ghost' },
-    resultText: '亡霊が吊り橋を揺らしている。透けた足が板を踏むたびに、橋が冷たく震える。すれ違うとき、笑い声が耳を掠めた。',
+    resultText: '亡霊が吊り橋を揺らしている。透けた足が板を踏むたびに、橋が冷たく震える。すれ違った瞬間、体温が奪われ、膝から力が抜けた。',
     damage: 2,
     quill: 5
   },
@@ -107,7 +107,7 @@ export const nodeP14Outcomes: Outcome[] = [
     id: 'p14_mirror',
     conditions: { s2: 'subj_mirror' },
     resultText: '鏡が吊り橋を揺らしている。橋の中央に大きな鏡が立てかけてある。風を受けて揺れている。覗くと、自分が落ちる姿が映った。目を逸らして渡った。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -120,7 +120,7 @@ export const nodeP14Outcomes: Outcome[] = [
   {
     id: 'p14_rain',
     conditions: { s2: 'subj_rain' },
-    resultText: '雨が吊り橋を揺らしている。板を叩く雨粒が橋全体を震わせる。足元が滑る。手すりを握りしめ、濡れた板を一歩ずつ踏んだ。',
+    resultText: '雨が吊り橋を揺らしている。板を叩く雨粒が橋全体を震わせる。足を滑らせ、膝を強く打った。手すりにしがみつき、ずぶ濡れのまま這って渡った。',
     damage: 2,
     quill: 3
   },

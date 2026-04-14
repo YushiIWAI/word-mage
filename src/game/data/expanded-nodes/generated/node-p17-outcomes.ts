@@ -5,7 +5,7 @@ export const nodeP17Outcomes: Outcome[] = [
   {
     id: 'p17_kitten_block',
     conditions: { s2: 'subj_kitten', s4: 'pred_block' },
-    resultText: '鋭い子猫が道を塞いでいる。硝子の破片のような爪と歯。茨の中に座り込み、通さない構えだ。手を出せば引っ掻かれる。',
+    resultText: '鋭い子猫が道を塞いでいる。硝子の破片のような爪と歯。茨の中に座り込み、通さない構えだ。迂回しようとして茨に腕を裂かれた。',
     damage: 2,
     quill: 3
   },
@@ -61,7 +61,7 @@ export const nodeP17Outcomes: Outcome[] = [
   {
     id: 'p17_song_block',
     conditions: { s2: 'subj_song', s4: 'pred_block' },
-    resultText: '鋭い歌が道を塞いでいる。金切り声のような高音が道を満たしている。茨が振動で揺れる。耳を塞いで走り抜けた。',
+    resultText: '鋭い歌が道を塞いでいる。金切り声のような高音が道を満たしている。鼓膜が軋む。耳を塞いでも骨を伝い、吐き気がこみ上げた。',
     damage: 2,
     quill: 4
   },
@@ -83,7 +83,7 @@ export const nodeP17Outcomes: Outcome[] = [
     id: 'p17_witch_block',
     conditions: { s2: 'subj_witch', s4: 'pred_block' },
     resultText: '鋭い魔女が道を塞いでいる。鉤鼻に鋭い目の魔女が茨を背にして立つ。嘘を一言で見抜く。通りたければ本音を言えと言う。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -97,7 +97,7 @@ export const nodeP17Outcomes: Outcome[] = [
     id: 'p17_ghost_block',
     conditions: { s2: 'subj_ghost', s4: 'pred_block' },
     resultText: '鋭い亡霊が道を塞いでいる。こちらの罪を見透かす目の霊が茨の中に立っている。視線が痛い。目を逸らしたら通れた。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -182,7 +182,7 @@ export const nodeP17Outcomes: Outcome[] = [
     id: 'p17_song_guard',
     conditions: { s2: 'subj_song', s4: 'pred_guard' },
     resultText: '鋭い歌が道を守っている。金切り声の旋律が不審者を追い払う。正しい音程で歌い返せば通れるらしい。音痴には厳しい関門だ。',
-    damage: 2,
+    damage: 1,
     quill: 6,
     rewardItems: [{ id: 'item_p17_song_guard', name: '通行の旋律', description: '正しい音程が記された楽譜。音が微かに聞こえる', sellPrice: 10 }]
   },
@@ -225,14 +225,14 @@ export const nodeP17Outcomes: Outcome[] = [
     id: 'p17_mirror_guard',
     conditions: { s2: 'subj_mirror', s4: 'pred_guard' },
     resultText: '鋭い鏡が道を守っている。割れ鏡の破片が道の両側に並び、反射光が刃のように飛び交っている。光の隙間を走り抜けた。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'p17_doll_guard',
     conditions: { s2: 'subj_doll', s4: 'pred_guard' },
     resultText: '鋭い人形が道を守っている。刃の関節を持つ操り人形が道に吊り下がっている。風に揺れるたびに腕が振られる。タイミングを見計らって通った。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -381,7 +381,7 @@ export const nodeP17Outcomes: Outcome[] = [
     id: 'p17_dragon_gaze',
     conditions: { s2: 'subj_dragon', s4: 'pred_gaze' },
     resultText: '鋭い竜が道を見つめている。金色の目が茨の向こうからこちらを見ている。嘘を見抜く知恵の竜。やましいことが何もなければ通れる。',
-    damage: 2,
+    damage: 1,
     quill: 6,
     rewardItems: [{ id: 'item_p17_dragon_gaze', name: '竜の瞳石', description: '金色の石。覗き込むと本心が映る', sellPrice: 15 }]
   },
@@ -410,7 +410,7 @@ export const nodeP17Outcomes: Outcome[] = [
     id: 'p17_ice_gaze',
     conditions: { s2: 'subj_ice', s4: 'pred_gaze' },
     resultText: '鋭い氷が道を見つめている。氷柱の表面に目のような模様がある。覗き込むと、氷の向こうからこちらを見ている何かがいる。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -425,7 +425,7 @@ export const nodeP17Outcomes: Outcome[] = [
     id: 'p17_song_gaze',
     conditions: { s2: 'subj_song', s4: 'pred_gaze' },
     resultText: '鋭い歌が道を見つめている。旋律がこちらの動きに合わせて変わる。真実を暴く歌。聴いていると嘘がつけなくなる。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -446,7 +446,7 @@ export const nodeP17Outcomes: Outcome[] = [
     id: 'p17_witch_gaze',
     conditions: { s2: 'subj_witch', s4: 'pred_gaze' },
     resultText: '鋭い魔女が道を見つめている。鉤鼻の魔女が茨の奥からこちらを見ている。目が合った瞬間、心の中を読まれた。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -467,20 +467,20 @@ export const nodeP17Outcomes: Outcome[] = [
     id: 'p17_mirror_gaze',
     conditions: { s2: 'subj_mirror', s4: 'pred_gaze' },
     resultText: '鋭い鏡が道を見つめている。割れ鏡の破片が茨に引っかかり、こちらの欠点だけを映し出す。見たくないものが見える。',
-    damage: 2,
+    damage: 1,
     quill: 6
   },
   {
     id: 'p17_doll_gaze',
     conditions: { s2: 'subj_doll', s4: 'pred_gaze' },
     resultText: '鋭い人形が道を見つめている。針のように細い四肢の人形が茨に引っかかっている。目だけが生きていて、こちらを追う。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p17_rain_gaze',
     conditions: { s2: 'subj_rain', s4: 'pred_gaze' },
-    resultText: '鋭い雨が道を見つめている。横殴りの雨粒がこちらの顔を狙って降る。雨に意志がある。一滴一滴がこちらを見ている。',
+    resultText: '鋭い雨が道を見つめている。横殴りの雨粒がこちらの顔を狙って降る。針のような粒が頬を刺し、血が滲んだ。',
     damage: 2,
     quill: 4
   },
@@ -495,7 +495,7 @@ export const nodeP17Outcomes: Outcome[] = [
   {
     id: 'p17_snake_hide',
     conditions: { s2: 'subj_snake', s4: 'pred_hide' },
-    resultText: '鋭い蛇が道を隠している。蛇が茨に巻きついて道の形を変えている。正しい道は蛇が隠し、偽の道に誘導される。',
+    resultText: '鋭い蛇が道を隠している。蛇が茨に巻きついて道の形を変え���いる。偽の道に踏み込み、毒茨を踏んだ。足首が腫れた。',
     damage: 2,
     quill: 5
   },
@@ -516,7 +516,7 @@ export const nodeP17Outcomes: Outcome[] = [
   {
     id: 'p17_wind_hide',
     conditions: { s2: 'subj_wind', s4: 'pred_hide' },
-    resultText: '鋭い風が道を隠している。真空の刃が砂塵を巻き上げ、道を見えなくしている。風に逆らって進むと道が現れた。',
+    resultText: '鋭い風が道を隠している。真空の刃が砂塵を巻き上げ、道を見えなくしている。手探りで進む腕に、刃のような風が切り傷を残した。',
     damage: 2,
     quill: 5
   },
@@ -552,14 +552,14 @@ export const nodeP17Outcomes: Outcome[] = [
     id: 'p17_silence_hide',
     conditions: { s2: 'subj_silence', s4: 'pred_hide' },
     resultText: '鋭い沈黙が道を隠している。足音が消え、手がかりが失われる。沈黙の中では、道の存在すら疑わしくなる。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'p17_knight_hide',
     conditions: { s2: 'subj_knight', s4: 'pred_hide' },
     resultText: '鋭い騎士が道を隠している。戦術家の騎士が偽の道標を立て、本当の道を隠している。罠を見破ったが、回り道を強いられた。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -896,27 +896,27 @@ export const nodeP17Outcomes: Outcome[] = [
     id: 'p17_ice_wait',
     conditions: { s2: 'subj_ice', s4: 'pred_wait' },
     resultText: '鋭い氷が道を待っている。剣のような氷柱が道の両側から突き出し、通る者を待ち受けている。触れれば切れる。触れずに通る幅はぎりぎりある。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p17_shadow_wait',
     conditions: { s2: 'subj_shadow', s4: 'pred_wait' },
     resultText: '鋭い影が道を待っている。くっきりした影が茨の道に長く伸び、縁に触れたものを切る。影が伸びる方向を避けて歩いた。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p17_song_wait',
     conditions: { s2: 'subj_song', s4: 'pred_wait' },
-    resultText: '鋭い歌が道を待っている。金切り声のような高音が茨の道に響いている。近づくほど音が鋭くなる。耳を塞いで駆け抜けた。',
+    resultText: '鋭い歌が道を待っている。金切り声のような高音が茨の道に響いている。近づくと鼓膜が震え、耳の奥が鈍く痛んだ。',
     damage: 2,
     quill: 4
   },
   {
     id: 'p17_silence_wait',
     conditions: { s2: 'subj_silence', s4: 'pred_wait' },
-    resultText: '鋭い沈黙が道を待っている。言葉より痛い無言が道を支配している。茨の棘すら音を立てない。足音が消え、呼吸の音だけが耳を刺す。',
+    resultText: '鋭い沈黙が道を待っている。言葉より痛い無言が道を支配している。茨の棘すら音を立てない。無音の圧で耳鳴りが始まり、平衡感覚が崩れた。',
     damage: 2,
     quill: 5
   },
@@ -938,13 +938,13 @@ export const nodeP17Outcomes: Outcome[] = [
     id: 'p17_king_wait',
     conditions: { s2: 'subj_king', s4: 'pred_wait' },
     resultText: '鋭い王が道を待っている。鷹のような目の王が道の先に立ち、旅人を値踏みしている。何も見逃さない目だ。名を名乗れと言われた。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p17_ghost_wait',
     conditions: { s2: 'subj_ghost', s4: 'pred_wait' },
-    resultText: '鋭い亡霊が道を待っている。こちらの罪を見透かす目の霊が、茨の道の途中に立っている。視線が痛い。やましいことがなければ通れる。',
+    resultText: '鋭い亡霊が道を待っている。こちらの罪を見透かす目の霊が、茨の道の途中に立っている。すれ違う瞬間、体温を一気に持っていかれた。',
     damage: 2,
     quill: 5
   },
@@ -958,7 +958,7 @@ export const nodeP17Outcomes: Outcome[] = [
   {
     id: 'p17_doll_wait',
     conditions: { s2: 'subj_doll', s4: 'pred_wait' },
-    resultText: '鋭い人形が道を待っている。刃の関節の操り人形が、糸もなしに茨の道に立っている。通れば斬りかかってくるのか、それとも道案内なのか。',
+    resultText: '鋭い人形が道を待っている。刃の関節の操り人形が、糸もなしに茨の道に立っている。横を通ったとき、腕が振られ、袖ごと肌を切った。',
     damage: 2,
     quill: 5,
     rewardItems: [{ id: 'item_p17_doll_wait', name: '人形の指', description: '刃の関節の一節。小刀代わりに使える', sellPrice: 7 }]

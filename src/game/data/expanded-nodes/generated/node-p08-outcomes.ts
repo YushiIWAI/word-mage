@@ -99,7 +99,7 @@ export const nodeP08Outcomes: Outcome[] = [
   {
     id: 'p08_fire_sleep',
     conditions: { s1: 'mod_fire', s4: 'pred_sleep' },
-    resultText: '黒い炎で燃える影が洞窟に眠っている。寝息のたびに炎が揺れる。起こしてはいけない。',
+    resultText: '黒い炎で燃える影が洞窟に眠っている。寝息のたびに炎が揺れ、熱波が肌を舐める。起こさぬよう息を殺して通った。汗が止まらない。',
     damage: 2,
     quill: 5
   },
@@ -128,7 +128,7 @@ export const nodeP08Outcomes: Outcome[] = [
   {
     id: 'p08_mighty_sleep',
     conditions: { s1: 'mod_mighty', s4: 'pred_sleep' },
-    resultText: '巨大な影が洞窟に眠っている。いびきが壁を震わせる。天井から砂が落ちてくる。',
+    resultText: '巨大な影が洞窟に眠っている。いびきが壁を震わせ、天井から砂と小石が降る。頭を庇いながら匍匐で抜けた。',
     damage: 2,
     quill: 4
   },
@@ -136,7 +136,7 @@ export const nodeP08Outcomes: Outcome[] = [
     id: 'p08_frozen_sleep',
     conditions: { s1: 'mod_frozen', s4: 'pred_sleep' },
     resultText: '霜のような影が洞窟に眠っている。そばの空気が冷たい。息が白くなる。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
@@ -186,7 +186,7 @@ export const nodeP08Outcomes: Outcome[] = [
     id: 'p08_hard_entangle',
     conditions: { s1: 'mod_hard', s4: 'pred_entangle' },
     resultText: '固まった影が洞窟に絡みついている。鋳型のように壁を覆っている。中に何かを閉じ込めているようだ。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -364,7 +364,7 @@ export const nodeP08Outcomes: Outcome[] = [
   {
     id: 'p08_mighty_whisper',
     conditions: { s1: 'mod_mighty', s4: 'pred_whisper' },
-    resultText: '巨大な影が洞窟で囁いている。囁きのつもりだろうが声が大きい。壁が振動する。',
+    resultText: '巨大な影が洞窟で囁いている。囁きのつもりだろうが声が大きい。壁が振動し、鼓膜が軋む。耳を塞いでも骨に響く。',
     damage: 2,
     quill: 5
   },
@@ -372,7 +372,7 @@ export const nodeP08Outcomes: Outcome[] = [
     id: 'p08_frozen_whisper',
     conditions: { s1: 'mod_frozen', s4: 'pred_whisper' },
     resultText: '凍てついた影が洞窟で囁いている。声が白い息のように見える。言葉が凍って落ちた。',
-    damage: 2,
+    damage: 1,
     quill: 5,
     rewardItems: [{ id: 'item_p08_frozen_whisper', name: '凍った言葉', description: '影が囁いた言葉が凍ったもの。溶けると声が聞こえる', sellPrice: 10 }]
   },

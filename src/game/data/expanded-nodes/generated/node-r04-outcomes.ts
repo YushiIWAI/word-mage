@@ -20,7 +20,7 @@ export const nodeR04Outcomes: Outcome[] = [
     id: 'r04_fire_shine',
     conditions: { s1: 'mod_fire', s2: 'pred_shine' },
     resultText: '燃え盛る蝶が花畑で輝いている。炎の羽が花を照らしている。美しいが、花が焦げ始めている。',
-    damage: 3,
+    damage: 1,
     quill: 4
   },
   {
@@ -56,7 +56,7 @@ export const nodeR04Outcomes: Outcome[] = [
     id: 'r04_frozen_shine',
     conditions: { s1: 'mod_frozen', s2: 'pred_shine' },
     resultText: '凍てついた蝶が花畑で輝いている。霜の結晶が日光を受けてプリズムのように光る。花が氷で覆われていく。',
-    damage: 2,
+    damage: 1,
     quill: 5,
     rewardItems: [{ id: 'item_r04_frozen_shine', name: '氷蝶のプリズム', description: '霜の結晶。光を当てると虹を作る', sellPrice: 10 }]
   },
@@ -72,7 +72,7 @@ export const nodeR04Outcomes: Outcome[] = [
     id: 'r04_cursed_shine',
     conditions: { s1: 'mod_cursed', s2: 'pred_shine' },
     resultText: '呪われた蝶が花畑で輝いている。不吉な光。追いかけたくなるが、花畑の奥で道が消えている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -101,7 +101,7 @@ export const nodeR04Outcomes: Outcome[] = [
     id: 'r04_fire_sing',
     conditions: { s1: 'mod_fire', s2: 'pred_sing' },
     resultText: '燃え盛る蝶が花畑で歌っている。戦の歌のような激しい旋律。花が炎に照らされて赤く揺れる。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -150,7 +150,7 @@ export const nodeR04Outcomes: Outcome[] = [
     id: 'r04_cursed_sing',
     conditions: { s1: 'mod_cursed', s2: 'pred_sing' },
     resultText: '呪われた蝶が花畑で歌っている。頭から離れない歌。花畑を去っても旋律がずっと鳴っている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -178,7 +178,7 @@ export const nodeR04Outcomes: Outcome[] = [
     id: 'r04_fire_dance',
     conditions: { s1: 'mod_fire', s2: 'pred_dance' },
     resultText: '燃え盛る蝶が花畑で踊っている。炎の羽が弧を描くたびに火の粉が散る。花が燃え始めた。',
-    damage: 3,
+    damage: 1,
     quill: 4
   },
   {
@@ -192,7 +192,7 @@ export const nodeR04Outcomes: Outcome[] = [
     id: 'r04_sharp_dance',
     conditions: { s1: 'mod_sharp', s2: 'pred_dance' },
     resultText: '鋭い蝶が花畑で踊っている。刃の羽が舞うたびに花が切られていく。踊りは美しいが、花畑が荒れていく。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -206,7 +206,7 @@ export const nodeR04Outcomes: Outcome[] = [
     id: 'r04_mighty_dance',
     conditions: { s1: 'mod_mighty', s2: 'pred_dance' },
     resultText: '屈強な蝶が花畑で踊っている。羽ばたきで花が吹き飛んでいる。力強い踊りだが、花畑が台無しだ。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -256,7 +256,7 @@ export const nodeR04Outcomes: Outcome[] = [
     id: 'r04_fire_laugh',
     conditions: { s1: 'mod_fire', s2: 'pred_laugh' },
     resultText: '燃え盛る蝶が花畑で笑っている。炎の羽がパチパチと弾けている。笑い声か、それとも花が燃える音か。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -270,7 +270,7 @@ export const nodeR04Outcomes: Outcome[] = [
     id: 'r04_sharp_laugh',
     conditions: { s1: 'mod_sharp', s2: 'pred_laugh' },
     resultText: '鋭い蝶が花畑で笑っている。刃の羽がきらりと光る。嘲笑うような動き。近づくと頬を切られそうだ。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
@@ -305,7 +305,7 @@ export const nodeR04Outcomes: Outcome[] = [
     id: 'r04_cursed_laugh',
     conditions: { s1: 'mod_cursed', s2: 'pred_laugh' },
     resultText: '呪われた蝶が花畑で笑っている。不吉な笑い。追いかけると花畑の奥に迷い込む。引き返した。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
@@ -333,7 +333,7 @@ export const nodeR04Outcomes: Outcome[] = [
     id: 'r04_fire_sleep',
     conditions: { s1: 'mod_fire', s2: 'pred_sleep' },
     resultText: '燃え盛る蝶が花畑で眠っている。炎の羽が揺れている。周りの花が焦げているが、蝶は平和に眠っている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -410,7 +410,7 @@ export const nodeR04Outcomes: Outcome[] = [
   {
     id: 'r04_fire_melt',
     conditions: { s1: 'mod_fire', s2: 'pred_melt' },
-    resultText: '燃え盛る蝶が花畑で溶けている。炎が花畑に溶け広がっていく。花が燃えながら咲いている。',
+    resultText: '燃え盛る蝶が花畑で溶けている。炎が花畑に溶け広がっていく。裾が炎に舐められ、足首に火傷の跡が残った。',
     damage: 3,
     quill: 4
   },
@@ -425,7 +425,7 @@ export const nodeR04Outcomes: Outcome[] = [
     id: 'r04_sharp_melt',
     conditions: { s1: 'mod_sharp', s2: 'pred_melt' },
     resultText: '鋭い蝶が花畑で溶けている。刃が溶けて花に染み込んでいる。花びらの縁が鋭くなった。触ると切れそうだ。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -460,7 +460,7 @@ export const nodeR04Outcomes: Outcome[] = [
     id: 'r04_cursed_melt',
     conditions: { s1: 'mod_cursed', s2: 'pred_melt' },
     resultText: '呪われた蝶が花畑で溶けている。蝶が溶けた花に触れると指が痺れた。呪いが花に移っている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -488,7 +488,7 @@ export const nodeR04Outcomes: Outcome[] = [
     id: 'r04_fire_flee',
     conditions: { s1: 'mod_fire', s2: 'pred_flee' },
     resultText: '燃え盛る蝶が花畑で逃げていく。飛んだ跡に火の粉が散り、花畑に火の道ができた。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
@@ -580,7 +580,7 @@ export const nodeR04Outcomes: Outcome[] = [
     id: 'r04_sharp_gaze',
     conditions: { s1: 'mod_sharp', s2: 'pred_gaze' },
     resultText: '鋭い蝶が花畑で見つめている。狙いすました軌道で旋回している。獲物を見定めるような動き。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -615,7 +615,7 @@ export const nodeR04Outcomes: Outcome[] = [
     id: 'r04_cursed_gaze',
     conditions: { s1: 'mod_cursed', s2: 'pred_gaze' },
     resultText: '呪われた蝶が花畑で見つめている。不吉な視線。目を逸らせない。蝶が飛び去るまで動けなかった。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -643,7 +643,7 @@ export const nodeR04Outcomes: Outcome[] = [
     id: 'r04_fire_wait',
     conditions: { s1: 'mod_fire', s2: 'pred_wait' },
     resultText: '燃え盛る蝶が花畑で待っている。炎の蝶が花の上で待ち構えている。近づくと花ごと燃え上がった。',
-    damage: 3,
+    damage: 1,
     quill: 3
   },
   {
@@ -657,7 +657,7 @@ export const nodeR04Outcomes: Outcome[] = [
     id: 'r04_sharp_wait',
     conditions: { s1: 'mod_sharp', s2: 'pred_wait' },
     resultText: '鋭い蝶が花畑で待っている。刃の羽の蝶が獲物を待ち構えている。花に触ろうとした手を引っ込めた。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
@@ -692,7 +692,7 @@ export const nodeR04Outcomes: Outcome[] = [
     id: 'r04_cursed_wait',
     conditions: { s1: 'mod_cursed', s2: 'pred_wait' },
     resultText: '呪われた蝶が花畑で待っている。待ち伏せだ。近づくと羽の模様に吸い込まれそうになった。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -721,7 +721,7 @@ export const nodeR04Outcomes: Outcome[] = [
     id: 'r04_fire_whisper',
     conditions: { s1: 'mod_fire', s2: 'pred_whisper' },
     resultText: '燃え盛る蝶が花畑で囁いている。炎の蝶の囁きが耳を焼く。聞き取れたが、忘れたほうがいい言葉だった。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -770,7 +770,7 @@ export const nodeR04Outcomes: Outcome[] = [
     id: 'r04_cursed_whisper',
     conditions: { s1: 'mod_cursed', s2: 'pred_whisper' },
     resultText: '呪われた蝶が花畑で囁いている。聞いてはいけない声。頭から離れない。花畑を出ても耳の奥に残っている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {

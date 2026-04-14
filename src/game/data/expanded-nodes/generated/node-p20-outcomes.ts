@@ -12,14 +12,14 @@ export const nodeP20Outcomes: Outcome[] = [
   {
     id: 'p20_snake',
     conditions: { s2: 'subj_snake' },
-    resultText: '蛇が城壁を守っている。石の隙間という隙間に蛇が棲みついている。手をかける場所がない。壁沿いに別の入口を探した。',
+    resultText: '蛇が城壁を守っている。石の隙間という隙間に蛇が棲みついている。手をかけた瞬間、指を噛まれた。腫れた手で壁沿いに別の入口を探した。',
     damage: 2,
     quill: 4
   },
   {
     id: 'p20_dragon',
     conditions: { s2: 'subj_dragon' },
-    resultText: '竜が城壁を守っている。翼を広げ、城壁そのものが竜の体に見える。これを突破する手段はない。引き返した。',
+    resultText: '竜が城壁を守っている。翼を広げ、城壁そのものが竜の体に見える。吐息の熱波だけで全身の皮膚が赤く焼けた。引き返すほかない。',
     damage: 5,
     quill: 1
   },
@@ -33,7 +33,7 @@ export const nodeP20Outcomes: Outcome[] = [
   {
     id: 'p20_wind',
     conditions: { s2: 'subj_wind' },
-    resultText: '風が城壁を守っている。壁に沿って烈風が吹き、近づく者を押し返す。体を低くして壁際を這い、なんとか通り抜けた。',
+    resultText: '風が城壁を守っている。壁に沿って烈風が吹き、近づく者を押し返す。石礫が混じった突風に肌を削られながら、壁際を這って通り抜けた。',
     damage: 2,
     quill: 5
   },
@@ -55,7 +55,7 @@ export const nodeP20Outcomes: Outcome[] = [
     id: 'p20_shadow',
     conditions: { s2: 'subj_shadow' },
     resultText: '影が城壁を守っている。壁に張りついた巨大な影が、通る者の影を飲み込もうとする。自分の影が引っ張られる。走って抜けた。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -76,7 +76,7 @@ export const nodeP20Outcomes: Outcome[] = [
   {
     id: 'p20_knight',
     conditions: { s2: 'subj_knight' },
-    resultText: '騎士が城壁を守っている。正門に立ちはだかり、通行を許さない。剣を構える姿に隙がない。交渉の余地もない。',
+    resultText: '騎士が城壁を守っている。正門に立ちはだかり、通行を許さない。強行突破を試みた瞬間、盾で弾き飛ばされた。石畳に叩きつけられ、息が止まる。',
     damage: 4,
     quill: 3
   },
@@ -91,7 +91,7 @@ export const nodeP20Outcomes: Outcome[] = [
   {
     id: 'p20_king',
     conditions: { s2: 'subj_king' },
-    resultText: '王が城壁を守っている。王自ら城壁に立つとは、よほどの事態だ。王冠を陽に光らせ、城門を背に微動だにしない。',
+    resultText: '王が城壁を守っている。王自ら城壁に立つとは、よほどの事態だ。王の一喝が空気を震わせ、膝が折れた。立ち上がれない。這って退いた。',
     damage: 4,
     quill: 4
   },
@@ -107,13 +107,13 @@ export const nodeP20Outcomes: Outcome[] = [
     id: 'p20_mirror',
     conditions: { s2: 'subj_mirror' },
     resultText: '鏡が城壁を守っている。壁面が鏡になっている。自分の姿が映り、向こう側が見えない。入口がどこかわからない。',
-    damage: 2,
+    damage: 1,
     quill: 6
   },
   {
     id: 'p20_doll',
     conditions: { s2: 'subj_doll' },
-    resultText: '人形が城壁を守っている。等身大の人形が城門の前に並んでいる。風で首がゆっくり動く。目が合った。',
+    resultText: '人形が城壁を守っている。等身大の人形が城門の前に並んでいる。目が合った瞬間、足が竦んで動けなくなった。呪縛が解けたとき、半日が過ぎていた。',
     damage: 2,
     quill: 4
   },

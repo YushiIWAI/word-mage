@@ -21,7 +21,7 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_fire_shine',
     conditions: { s1: 'mod_fire', s4: 'pred_shine' },
-    resultText: '燃え盛る炎が灯台で輝いている。光が強すぎて船乗りの目を灼く。灯台が道標でなく脅威になっている。',
+    resultText: '燃え盛る炎が灯台で輝いている。光が強すぎて直視できない。灯室に踏み入れた瞬間、肌が焼けるように熱い。髪の先が焦げた。',
     damage: 3,
     quill: 4
   },
@@ -36,13 +36,13 @@ export const nodeP11Outcomes: Outcome[] = [
     id: 'p11_sharp_shine',
     conditions: { s1: 'mod_sharp', s4: 'pred_shine' },
     resultText: '鋭い炎が灯台で輝いている。光の筋が海面を切り裂くように走る。照らされた魚が腹を見せて浮いた。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'p11_broken_shine',
     conditions: { s1: 'mod_broken', s4: 'pred_shine' },
-    resultText: '色のおかしい炎が灯台で輝いている。緑と紫の光が交互に海を染める。船乗りは混乱するだろう。',
+    resultText: '色のおかしい炎が灯台で輝いている。緑と紫の光が交互に海を染める。見つめていると頭がぐらつき、平衡感覚が狂う。',
     damage: 2,
     quill: 5,
     rewardItems: [{ id: 'item_p11_broken_shine', name: '壊れた光', description: '緑と紫に明滅する光の欠片。温かくない', sellPrice: 7 }]
@@ -58,7 +58,7 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_frozen_shine',
     conditions: { s1: 'mod_frozen', s4: 'pred_shine' },
-    resultText: '青白い炎が灯台で輝いている。霜を纏った冷たい光。灯台の窓ガラスが内側から凍っている。',
+    resultText: '青白い炎が灯台で輝いている。霜を纏った冷たい光。近づくと息が白く凍り、手の甲に霜が降りた。灯台の中が冬だ。',
     damage: 2,
     quill: 5
   },
@@ -72,7 +72,7 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_cursed_shine',
     conditions: { s1: 'mod_cursed', s4: 'pred_shine' },
-    resultText: '呪われた炎が灯台で輝いている。光の中に燃えた町の幻が見える。この灯台に導かれた船は二度と戻らない。',
+    resultText: '呪われた炎が灯台で輝いている。光の中に燃えた町の幻が見える。見つめた目が灼け、涙が止まらない。視界がぼやけたまま戻らない。',
     damage: 4,
     quill: 5
   },
@@ -101,7 +101,7 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_fire_sing',
     conditions: { s1: 'mod_fire', s4: 'pred_sing' },
-    resultText: '燃え盛る炎が灯台で歌っている。轟音だ。歌というより咆哮に近い。窓ガラスが共振で割れた。',
+    resultText: '燃え盛る炎が灯台で歌っている。轟音だ。歌というより咆哮に近い。窓ガラスが割れ、破片が腕を切った。鼓膜が痛い。',
     damage: 4,
     quill: 3
   },
@@ -138,7 +138,7 @@ export const nodeP11Outcomes: Outcome[] = [
     id: 'p11_frozen_sing',
     conditions: { s1: 'mod_frozen', s4: 'pred_sing' },
     resultText: '青白い炎が灯台で歌っている。凍った旋律が空気中で結晶化して落ちる。足元にガラスのような音の破片が散った。',
-    damage: 2,
+    damage: 1,
     quill: 6,
     rewardItems: [{ id: 'item_p11_frozen_sing', name: '音の結晶', description: '溶けると微かに歌声が聞こえる氷', sellPrice: 10 }]
   },
@@ -180,7 +180,7 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_fire_dance',
     conditions: { s1: 'mod_fire', s4: 'pred_dance' },
-    resultText: '燃え盛る炎が灯台で踊っている。狂ったように旋回し、灯台の内壁を焦がしている。止まる気配がない。',
+    resultText: '燃え盛る炎が灯台で踊っている。狂ったように旋回し、灯台の内壁を焦がしている。熱気で息ができない。服の裾に火が移った。',
     damage: 4,
     quill: 3
   },
@@ -194,7 +194,7 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_sharp_dance',
     conditions: { s1: 'mod_sharp', s4: 'pred_dance' },
-    resultText: '鋭い炎が灯台で踊っている。跳ねるたびに火花が散り、床に焦げ跡の模様を刻んでいく。',
+    resultText: '鋭い炎が灯台で踊っている。跳ねるたびに火花が飛び、腕や頬を灼く。避けようがない。床が焦げ跡だらけだ。',
     damage: 3,
     quill: 4
   },
@@ -208,7 +208,7 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_mighty_dance',
     conditions: { s1: 'mod_mighty', s4: 'pred_dance' },
-    resultText: '火柱の炎が灯台で踊っている。灯台が揺れている。踊りに合わせて海面が波立つ。',
+    resultText: '火柱の炎が灯台で踊っている。灯台が揺れている。熱波が渦を巻き、肌が乾いてひび割れる。踊りに巻き込まれたら焼け死ぬ。',
     damage: 3,
     quill: 5
   },
@@ -216,7 +216,7 @@ export const nodeP11Outcomes: Outcome[] = [
     id: 'p11_frozen_dance',
     conditions: { s1: 'mod_frozen', s4: 'pred_dance' },
     resultText: '青白い炎が灯台で踊っている。踊るたびに足元から霜が広がる。美しいが、近寄れない。',
-    damage: 2,
+    damage: 1,
     quill: 6,
     rewardItems: [{ id: 'item_p11_frozen_dance', name: '霜の舞', description: '炎が踊った跡に残った霜の結晶。模様が美しい', sellPrice: 8 }]
   },
@@ -272,7 +272,7 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_sharp_laugh',
     conditions: { s1: 'mod_sharp', s4: 'pred_laugh' },
-    resultText: '鋭い炎が灯台で笑っている。甲高い笑い声が、硝子を引っ掻くような音だ。',
+    resultText: '鋭い炎が灯台で笑っている。甲高い笑い声が、硝子を引っ掻くような音だ。耳の奥が鋭く痛み、しばらく音が遠くなった。',
     damage: 2,
     quill: 4
   },
@@ -286,14 +286,14 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_mighty_laugh',
     conditions: { s1: 'mod_mighty', s4: 'pred_laugh' },
-    resultText: '火柱の炎が灯台で笑っている。灯台の石壁にひびが入った。笑い声に建物が耐えられない。',
+    resultText: '火柱の炎が灯台で笑っている。灯台の石壁にひびが入り、隙間から熱風が噴き出す。肌を灼かれながら階段を転げ落ちた。',
     damage: 4,
     quill: 4
   },
   {
     id: 'p11_frozen_laugh',
     conditions: { s1: 'mod_frozen', s4: 'pred_laugh' },
-    resultText: '青白い炎が灯台で笑っている。吐息のように冷気が漏れ、笑うたびに窓が曇る。',
+    resultText: '青白い炎が灯台で笑っている。笑うたびに冷気が吹き出す。指先が白く変色し、吐く息が凍って落ちる。',
     damage: 2,
     quill: 5
   },
@@ -336,7 +336,7 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_fire_sleep',
     conditions: { s1: 'mod_fire', s4: 'pred_sleep' },
-    resultText: '燃え盛る炎が灯台で眠っている。眠っていてもなお大火だ。寝返りのたびに柱が燃える。',
+    resultText: '燃え盛る炎が灯台で眠っている。眠っていてもなお大火だ。寝返りのたびに柱が燃え、煙が階段を満たす。喉が焼け、目が開けられない。',
     damage: 4,
     quill: 4
   },
@@ -351,7 +351,7 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_sharp_sleep',
     conditions: { s1: 'mod_sharp', s4: 'pred_sleep' },
-    resultText: '鋭い炎が灯台で眠っている。近づくと火花が飛ぶ。寝相が悪い。',
+    resultText: '鋭い炎が灯台で眠っている。近づくと火花が飛び、手の甲に焦げ跡がついた。寝相が悪い。',
     damage: 2,
     quill: 4
   },
@@ -365,7 +365,7 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_mighty_sleep',
     conditions: { s1: 'mod_mighty', s4: 'pred_sleep' },
-    resultText: '火柱の炎が灯台で眠っている。いびきのように熱風が吹き出す。目覚めたら灯台ごと吹き飛ぶだろう。',
+    resultText: '火柱の炎が灯台で眠っている。いびきのように熱風が吹き出し、肌が乾いて痛む。近くにいるだけで体力を削られる。',
     damage: 3,
     quill: 5
   },
@@ -386,7 +386,7 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_cursed_sleep',
     conditions: { s1: 'mod_cursed', s4: 'pred_sleep' },
-    resultText: '呪われた炎が灯台で眠っている。炎の中に燃えた町の夢が見える。起こしてはいけない。',
+    resultText: '呪われた炎が灯台で眠っている。炎の中に燃えた町の夢が見える。覗き込んだ目に町の悲鳴が焼きつき、しばらく瞼を閉じられない。',
     damage: 2,
     quill: 5
   },
@@ -394,7 +394,7 @@ export const nodeP11Outcomes: Outcome[] = [
     id: 'p11_sleepy_sleep',
     conditions: { s1: 'mod_sleepy', s4: 'pred_sleep' },
     resultText: '眠い炎が灯台で眠っている。熾火が赤く明滅し、やがてそれも止まった。灯台が暗くなった。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -414,7 +414,7 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_fire_melt',
     conditions: { s1: 'mod_fire', s4: 'pred_melt' },
-    resultText: '燃え盛る炎が灯台で溶けている。炎の熱で灯台のレンズが歪み始めた。光の焦点がずれていく。',
+    resultText: '燃え盛る炎が灯台で溶けている。灯台のレンズが歪み、集中した光線が体を掠めた。服が焦げ、肌が水膨れになる。',
     damage: 4,
     quill: 3
   },
@@ -436,14 +436,14 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_broken_melt',
     conditions: { s1: 'mod_broken', s4: 'pred_melt' },
-    resultText: '色のおかしい炎が灯台で溶けている。緑の液体が床を伝う。炎なのか毒なのかわからない。',
+    resultText: '色のおかしい炎が灯台で溶けている。緑の液体が床を伝う。靴底が溶けた。炎なのか毒なのかわからない。',
     damage: 2,
     quill: 5
   },
   {
     id: 'p11_mighty_melt',
     conditions: { s1: 'mod_mighty', s4: 'pred_melt' },
-    resultText: '火柱の炎が灯台で溶けている。灯台の石壁が飴のように垂れ始めた。灯台が形を失いつつある。',
+    resultText: '火柱の炎が灯台で溶けている。灯台の石壁が飴のように垂れ始めた。溶けた石が足元に流れ、逃げ場を塞ぐ。靴底を通して熱が骨まで届く。',
     damage: 4,
     quill: 4
   },
@@ -451,7 +451,7 @@ export const nodeP11Outcomes: Outcome[] = [
     id: 'p11_frozen_melt',
     conditions: { s1: 'mod_frozen', s4: 'pred_melt' },
     resultText: '青白い炎が灯台で溶けている。溶けた先が凍る。灯台の床が氷と炎のまだら模様になっている。',
-    damage: 2,
+    damage: 1,
     quill: 6,
     rewardItems: [{ id: 'item_p11_frozen_melt', name: '炎氷の欠片', description: '半分が炎で半分が氷。持つと不思議な感触', sellPrice: 12 }]
   },
@@ -508,7 +508,7 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_sharp_flee',
     conditions: { s1: 'mod_sharp', s4: 'pred_flee' },
-    resultText: '鋭い炎が灯台で逃げていく。通り道の壁に切り傷が残る。炎が去った後、冷たい風が傷口から入ってくる。',
+    resultText: '鋭い炎が灯台で逃げていく。逃げる炎が頬を掠め、細い火傷の跡が残った。壁にも同じ傷がある。',
     damage: 2,
     quill: 5
   },
@@ -523,7 +523,7 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_mighty_flee',
     conditions: { s1: 'mod_mighty', s4: 'pred_flee' },
-    resultText: '火柱の炎が灯台で逃げていく。灯台の屋根を突き破って空に昇った。夜空に一瞬、二つ目の太陽が見えた。',
+    resultText: '火柱の炎が灯台で逃げていく。灯台の屋根を突き破って空に昇った。崩れた瓦礫に腕を打たれ、熱風で眉が焦げた。',
     damage: 3,
     quill: 7,
     rewardItems: [{ id: 'item_p11_mighty_flee', name: '焦げた灯台の石', description: '火柱が抜けた穴の縁の石。まだ熱い', sellPrice: 7 }]
@@ -546,7 +546,7 @@ export const nodeP11Outcomes: Outcome[] = [
     id: 'p11_cursed_flee',
     conditions: { s1: 'mod_cursed', s4: 'pred_flee' },
     resultText: '呪われた炎が灯台で逃げていく。逃げた先で別の何かを燃やすだろう。止める術はない。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -574,7 +574,7 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_fire_gaze',
     conditions: { s1: 'mod_fire', s4: 'pred_gaze' },
-    resultText: '燃え盛る炎が灯台でこちらを見つめている。大火の中心に瞳がある。睨まれている。',
+    resultText: '燃え盛る炎が灯台でこちらを見つめている。大火の中心に瞳がある。視線が合った瞬間、肌がじりじりと焼ける。逸らせない。',
     damage: 3,
     quill: 4
   },
@@ -602,7 +602,7 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_mighty_gaze',
     conditions: { s1: 'mod_mighty', s4: 'pred_gaze' },
-    resultText: '火柱の炎が灯台でこちらを見つめている。天を衝く炎の中に巨大な瞳がある。見下ろされている。',
+    resultText: '火柱の炎が灯台でこちらを見つめている。天を衝く炎の中に巨大な瞳がある。見据えられただけで汗が蒸発し、膝の力が抜ける。',
     damage: 3,
     quill: 5
   },
@@ -623,7 +623,7 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_cursed_gaze',
     conditions: { s1: 'mod_cursed', s4: 'pred_gaze' },
-    resultText: '呪われた炎が灯台でこちらを見つめている。炎の中に町の亡霊が見える。彼らもこちらを見ている。',
+    resultText: '呪われた炎が灯台でこちらを見つめている。炎の中に町の亡霊が見える。目が合った瞬間、頭の中に悲鳴が流れ込み、膝から崩れ落ちた。',
     damage: 4,
     quill: 5
   },
@@ -651,7 +651,7 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_fire_wait',
     conditions: { s1: 'mod_fire', s4: 'pred_wait' },
-    resultText: '燃え盛る炎が灯台で待っている。近づく船を待ち構えている。灯台が罠になっている。',
+    resultText: '燃え盛る炎が灯台で待っている。灯室の扉を開けた瞬間、溜め込まれた熱気が噴き出した。全身を焼かれ、階段を転げ落ちる。',
     damage: 4,
     quill: 4
   },
@@ -666,7 +666,7 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_sharp_wait',
     conditions: { s1: 'mod_sharp', s4: 'pred_wait' },
-    resultText: '鋭い炎が灯台で待っている。獲物を狙う目で海を睨んでいる。船が来たら焼くつもりだ。',
+    resultText: '鋭い炎が灯台で待っている。獲物を狙う目で海を睨んでいる。不用意に近づいた腕を、鋭い熱線が切り裂いた。',
     damage: 3,
     quill: 4
   },
@@ -701,7 +701,7 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_cursed_wait',
     conditions: { s1: 'mod_cursed', s4: 'pred_wait' },
-    resultText: '呪われた炎が灯台で待っている。この灯台に導かれた船は帰らない。炎はそれを知っていて待っている。',
+    resultText: '呪われた炎が灯台で待っている。炎を見つめた瞬間、足が竦んで動けなくなった。帰れないのは船だけではない。',
     damage: 4,
     quill: 5
   },
@@ -730,7 +730,7 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_fire_whisper',
     conditions: { s1: 'mod_fire', s4: 'pred_whisper' },
-    resultText: '燃え盛る炎が灯台で囁いている。囁きのはずが、轟音で何も聞き取れない。',
+    resultText: '燃え盛る炎が灯台で囁いている。囁きのはずが轟音だ。鼓膜が破れそうな音圧に、耳を塞いでも間に合わない。頭が割れる。',
     damage: 3,
     quill: 4
   },
@@ -751,7 +751,7 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_broken_whisper',
     conditions: { s1: 'mod_broken', s4: 'pred_whisper' },
-    resultText: '色のおかしい炎が灯台で囁いている。言葉が途切れ途切れで意味をなさない。でたらめな航路を教えている。',
+    resultText: '色のおかしい炎が灯台で囁いている。言葉が途切れ途切れで意味をなさない。聴いているうちに方角の感覚が消え、自分がどこにいるかわからなくなった。',
     damage: 2,
     quill: 5
   },
@@ -780,7 +780,7 @@ export const nodeP11Outcomes: Outcome[] = [
   {
     id: 'p11_cursed_whisper',
     conditions: { s1: 'mod_cursed', s4: 'pred_whisper' },
-    resultText: '呪われた炎が灯台で囁いている。「こちらへ」と。この声に従った船は岩礁に乗り上げる。',
+    resultText: '呪われた炎が灯台で囁いている。「こちらへ」と。従いかけた足が勝手に動く。気づけば窓際に立っていた。崖の下に海が光っている。',
     damage: 4,
     quill: 5
   },

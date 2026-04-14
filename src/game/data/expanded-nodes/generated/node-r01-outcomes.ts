@@ -20,7 +20,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_fire_kitten',
     conditions: { s1: 'mod_fire', s2: 'subj_kitten' },
     resultText: '燃え盛る子猫が泉に浮かんでいる。水面が沸騰している。泉が温泉になっている。猫は平然としている。',
-    damage: 2,
+    damage: 1,
     quill: 5,
     rewardItems: [{ id: 'item_r01_fire_kitten', name: '温泉の結晶', description: '沸いた泉の底にあった石。ほんのり温かい', sellPrice: 8 }]
   },
@@ -35,7 +35,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_sharp_kitten',
     conditions: { s1: 'mod_sharp', s2: 'subj_kitten' },
     resultText: '鋭い子猫が泉に浮かんでいる。硝子のような爪で水面を引っ掻いている。泉に細い傷がつく。水は傷から漏れていく。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -56,7 +56,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_frozen_kitten',
     conditions: { s1: 'mod_frozen', s2: 'subj_kitten' },
     resultText: '凍てついた子猫が泉に浮かんでいる。氷の猫。泉の水面が猫の周りから凍っていく。水が飲めない。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -99,7 +99,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_fire_snake',
     conditions: { s1: 'mod_fire', s2: 'subj_snake' },
     resultText: '燃え盛る蛇が泉に浮かんでいる。泉が沸き立ち、蒸気が上がっている。水に手を入れたら火傷した。',
-    damage: 3,
+    damage: 1,
     quill: 3
   },
   {
@@ -112,7 +112,7 @@ export const nodeR01Outcomes: Outcome[] = [
   {
     id: 'r01_sharp_snake',
     conditions: { s1: 'mod_sharp', s2: 'subj_snake' },
-    resultText: '鋭い蛇が泉に浮かんでいる。牙から毒が垂れ、泉の水が黒ずんでいく。飲めそうにない。',
+    resultText: '鋭い蛇が泉に浮かんでいる。牙から毒が垂れ、泉の水が黒ずんでいく。うっかり口に含んだ水が苦く、舌が痺れた。',
     damage: 3,
     quill: 3
   },
@@ -127,7 +127,7 @@ export const nodeR01Outcomes: Outcome[] = [
   {
     id: 'r01_mighty_snake',
     conditions: { s1: 'mod_mighty', s2: 'subj_snake' },
-    resultText: '屈強な蛇が泉に浮かんでいる。大蛇がとぐろを巻いて泉を占拠している。近づけない。',
+    resultText: '屈強な蛇が泉に浮かんでいる。大蛇がとぐろを巻いて泉を占拠している。威嚇の尾打ちが脛を薙ぎ、転倒した。',
     damage: 3,
     quill: 2
   },
@@ -150,7 +150,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_cursed_snake',
     conditions: { s1: 'mod_cursed', s2: 'subj_snake' },
     resultText: '呪われた蛇が泉に浮かんでいる。脱皮を繰り返すたびに大きくなっている。泉が狭くなっていく。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -193,7 +193,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_sharp_dragon',
     conditions: { s1: 'mod_sharp', s2: 'subj_dragon' },
     resultText: '鋭い竜が泉に浮かんでいる。金色の目がこちらを射る。泉の水を飲もうとしたが、竜が先に飲み干した。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
@@ -207,14 +207,14 @@ export const nodeR01Outcomes: Outcome[] = [
   {
     id: 'r01_mighty_dragon',
     conditions: { s1: 'mod_mighty', s2: 'subj_dragon' },
-    resultText: '屈強な竜が泉に浮かんでいる。翼を広げると泉が影に沈む。泉が竜の水たまりに見える。',
+    resultText: '屈強な竜が泉に浮かんでいる。翼を広げると泉が影に沈む。鼻息の熱風で吹き飛ばされ、岩に背中を打ちつけた。',
     damage: 4,
     quill: 2
   },
   {
     id: 'r01_frozen_dragon',
     conditions: { s1: 'mod_frozen', s2: 'subj_dragon' },
-    resultText: '凍てついた竜が泉に浮かんでいる。白い竜の息が泉を凍らせていく。水面が鏡になった。',
+    resultText: '凍てついた竜が泉に浮かんでいる。白い竜の息が泉を凍らせていく。吐息を浴びた指先が白くなり、感覚が消えた。',
     damage: 3,
     quill: 3
   },
@@ -229,7 +229,7 @@ export const nodeR01Outcomes: Outcome[] = [
   {
     id: 'r01_cursed_dragon',
     conditions: { s1: 'mod_cursed', s2: 'subj_dragon' },
-    resultText: '呪われた竜が泉に浮かんでいる。目に理性がない。泉の水が黒く濁り始めている。飲むべきではない。',
+    resultText: '呪われた竜が泉に浮かんでいる。目に理性がない。呪いの瘴気を吸い込み、喉の奥が焼けるように痛む。',
     damage: 4,
     quill: 2
   },
@@ -258,7 +258,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_fire_butterfly',
     conditions: { s1: 'mod_fire', s2: 'subj_butterfly' },
     resultText: '燃え盛る蝶が泉に浮かんでいる。炎の羽が水面に触れるたび、蒸気が上がる。泉がぬるくなっている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -272,7 +272,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_sharp_butterfly',
     conditions: { s1: 'mod_sharp', s2: 'subj_butterfly' },
     resultText: '鋭い蝶が泉に浮かんでいる。羽の縁が刃。泉に落ちた葉を切り刻んでいる。水に手を入れづらい。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
@@ -308,7 +308,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_cursed_butterfly',
     conditions: { s1: 'mod_cursed', s2: 'subj_butterfly' },
     resultText: '呪われた蝶が泉に浮かんでいる。追いかけたくなる。足が勝手に泉へ向かう。水に入る前に我慢した。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -336,7 +336,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_fire_wind',
     conditions: { s1: 'mod_fire', s2: 'subj_wind' },
     resultText: '燃え盛る風が泉に浮かんでいる。熱風が水面から湯気を立てている。泉の水が温まって飲めたものではない。',
-    damage: 3,
+    damage: 1,
     quill: 2
   },
   {
@@ -350,7 +350,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_sharp_wind',
     conditions: { s1: 'mod_sharp', s2: 'subj_wind' },
     resultText: '鋭い風が泉に浮かんでいる。水面を切り裂くような風。泉の水が細い筋になって宙に舞っている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -363,7 +363,7 @@ export const nodeR01Outcomes: Outcome[] = [
   {
     id: 'r01_mighty_wind',
     conditions: { s1: 'mod_mighty', s2: 'subj_wind' },
-    resultText: '屈強な風が泉に浮かんでいる。泉の水が巻き上げられている。近づくと体ごと持っていかれそうだ。',
+    resultText: '屈強な風が泉に浮かんでいる。泉の水が巻き上げられている。近づいた途端、体が浮き上がって地面に叩きつけられた。',
     damage: 3,
     quill: 2
   },
@@ -386,7 +386,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_cursed_wind',
     conditions: { s1: 'mod_cursed', s2: 'subj_wind' },
     resultText: '呪われた風が泉に浮かんでいる。風に吹かれると帰り道を忘れそうになる。泉から離れられない。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -414,7 +414,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_fire_flame',
     conditions: { s1: 'mod_fire', s2: 'subj_flame' },
     resultText: '燃え盛る炎が泉に浮かんでいる。水面が炎に覆われている。泉が火の池になった。近づけない。',
-    damage: 5,
+    damage: 1,
     quill: 1
   },
   {
@@ -427,7 +427,7 @@ export const nodeR01Outcomes: Outcome[] = [
   {
     id: 'r01_sharp_flame',
     conditions: { s1: 'mod_sharp', s2: 'subj_flame' },
-    resultText: '鋭い炎が泉に浮かんでいる。一点集中の火。水面に触れた葉が一瞬で灰になった。',
+    resultText: '鋭い炎が泉に浮かんでいる。一点集中の火。手を伸ばした瞬間に袖が燃え、慌てて水に浸した。',
     damage: 3,
     quill: 3
   },
@@ -441,7 +441,7 @@ export const nodeR01Outcomes: Outcome[] = [
   {
     id: 'r01_mighty_flame',
     conditions: { s1: 'mod_mighty', s2: 'subj_flame' },
-    resultText: '屈強な炎が泉に浮かんでいる。火柱が泉から天を衝く。泉の水が蒸発していく。休息どころではない。',
+    resultText: '屈強な炎が泉に浮かんでいる。火柱が泉から天を衝く。熱風に焼かれ、全身に水膨れができた。休息どころではない。',
     damage: 5,
     quill: 1
   },
@@ -464,7 +464,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_cursed_flame',
     conditions: { s1: 'mod_cursed', s2: 'subj_flame' },
     resultText: '呪われた炎が泉に浮かんでいる。泉に映る景色が燃えている。幻だが、目を逸らせない。',
-    damage: 3,
+    damage: 1,
     quill: 4
   },
   {
@@ -492,7 +492,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_fire_ice',
     conditions: { s1: 'mod_fire', s2: 'subj_ice' },
     resultText: '燃え盛る氷が泉に浮かんでいる。炎を放つ氷。泉の水が沸騰と凍結を繰り返している。手を入れるのは危険だ。',
-    damage: 3,
+    damage: 1,
     quill: 4
   },
   {
@@ -520,14 +520,14 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_mighty_ice',
     conditions: { s1: 'mod_mighty', s2: 'subj_ice' },
     resultText: '屈強な氷が泉に浮かんでいる。山のような氷塊が泉を塞いでいる。水面が見えない。回り込んだ。',
-    damage: 2,
+    damage: 1,
     quill: 2
   },
   {
     id: 'r01_frozen_ice',
     conditions: { s1: 'mod_frozen', s2: 'subj_ice' },
     resultText: '凍てついた氷が泉に浮かんでいる。泉が完全に凍結している。近づくだけで息が白くなる。水は飲めない。',
-    damage: 3,
+    damage: 1,
     quill: 2
   },
   {
@@ -541,7 +541,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_cursed_ice',
     conditions: { s1: 'mod_cursed', s2: 'subj_ice' },
     resultText: '呪われた氷が泉に浮かんでいる。溶けない氷が永遠の冬を広げている。泉の周りの草が霜に覆われた。',
-    damage: 3,
+    damage: 1,
     quill: 3
   },
   {
@@ -569,7 +569,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_fire_shadow',
     conditions: { s1: 'mod_fire', s2: 'subj_shadow' },
     resultText: '燃え盛る影が泉に浮かんでいる。黒い炎が水面で燃えている。触れると灼ける。泉の水は無事だが、手を入れる気にはならない。',
-    damage: 3,
+    damage: 1,
     quill: 3
   },
   {
@@ -597,7 +597,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_mighty_shadow',
     conditions: { s1: 'mod_mighty', s2: 'subj_shadow' },
     resultText: '屈強な影が泉に浮かんでいる。泉全体を覆う巨大な影。何を映しているか見上げたが、空には何もない。',
-    damage: 2,
+    damage: 1,
     quill: 5,
     rewardItems: [{ id: 'item_r01_mighty_shadow', name: '影の水', description: '影が溶けた泉の水。黒いが冷たくて清潔だ', sellPrice: 8 }]
   },
@@ -648,7 +648,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_fire_song',
     conditions: { s1: 'mod_fire', s2: 'subj_song' },
     resultText: '燃え盛る歌が泉に浮かんでいる。戦の歌だ。水面が震え、泉の水が跳ねている。血が沸く。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -676,7 +676,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_mighty_song',
     conditions: { s1: 'mod_mighty', s2: 'subj_song' },
     resultText: '屈強な歌が泉に浮かんでいる。大合唱が水面を震わせている。足元が揺れる。泉の底が割れそうだ。',
-    damage: 3,
+    damage: 1,
     quill: 3
   },
   {
@@ -699,7 +699,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_cursed_song',
     conditions: { s1: 'mod_cursed', s2: 'subj_song' },
     resultText: '呪われた歌が泉に浮かんでいる。聴くと頭から離れない。泉を去った後もずっと鳴っている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -727,7 +727,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_fire_silence',
     conditions: { s1: 'mod_fire', s2: 'subj_silence' },
     resultText: '燃え盛る沈黙が泉に浮かんでいる。空気が焦げるような無音。泉の水を飲んでも喉の渇きが消えない。',
-    damage: 3,
+    damage: 1,
     quill: 4
   },
   {
@@ -741,7 +741,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_sharp_silence',
     conditions: { s1: 'mod_sharp', s2: 'subj_silence' },
     resultText: '鋭い沈黙が泉に浮かんでいる。無言の圧力。泉の水面が張り詰めている。一滴垂らすのも躊躇われる。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -762,7 +762,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_frozen_silence',
     conditions: { s1: 'mod_frozen', s2: 'subj_silence' },
     resultText: '凍てついた沈黙が泉に浮かんでいる。息も凍る冷たい静寂。泉が時間ごと止まったように見える。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -776,7 +776,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_cursed_silence',
     conditions: { s1: 'mod_cursed', s2: 'subj_silence' },
     resultText: '呪われた沈黙が泉に浮かんでいる。口を開いても声が出ない。泉の水を飲もうとしたが、飲み込む音すらしない。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -803,7 +803,7 @@ export const nodeR01Outcomes: Outcome[] = [
   {
     id: 'r01_fire_knight',
     conditions: { s1: 'mod_fire', s2: 'subj_knight' },
-    resultText: '燃え盛る騎士が泉に浮かんでいる。鎧ごと炎に包まれた騎士が泉で火を消そうとしている。泉が湯気に包まれた。',
+    resultText: '燃え盛る騎士が泉に浮かんでいる。鎧ごと炎に包まれた騎士が泉で火を消そうとしている。蒸気で視界を奪われ、岩に頭をぶつけた。',
     damage: 3,
     quill: 4
   },
@@ -832,7 +832,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_mighty_knight',
     conditions: { s1: 'mod_mighty', s2: 'subj_knight' },
     resultText: '屈強な騎士が泉に浮かんでいる。巨体が泉の水をほとんど押し出している。水かさが減っている。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
@@ -854,7 +854,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_cursed_knight',
     conditions: { s1: 'mod_cursed', s2: 'subj_knight' },
     resultText: '呪われた騎士が泉に浮かんでいる。兜の奥の目が赤く光っている。泉の水が黒ずんでいく。',
-    damage: 3,
+    damage: 1,
     quill: 3
   },
   {
@@ -883,7 +883,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_fire_witch',
     conditions: { s1: 'mod_fire', s2: 'subj_witch' },
     resultText: '燃え盛る魔女が泉に浮かんでいる。炎の魔法で全身を包んだ魔女。泉で冷やそうとしているが、水がすぐ蒸発する。',
-    damage: 3,
+    damage: 1,
     quill: 4
   },
   {
@@ -897,28 +897,28 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_sharp_witch',
     conditions: { s1: 'mod_sharp', s2: 'subj_witch' },
     resultText: '鋭い魔女が泉に浮かんでいる。鉤鼻の魔女が泉の水で何かを占っている。こちらを見て首を横に振った。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'r01_broken_witch',
     conditions: { s1: 'mod_broken', s2: 'subj_witch' },
     resultText: '壊れた魔女が泉に浮かんでいる。魔力が暴走した魔女。泉の水が不規則に沸いたり凍ったりしている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'r01_mighty_witch',
     conditions: { s1: 'mod_mighty', s2: 'subj_witch' },
     resultText: '屈強な魔女が泉に浮かんでいる。杖ではなく拳で水面を叩いている。泉が揺れて波が立つ。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'r01_frozen_witch',
     conditions: { s1: 'mod_frozen', s2: 'subj_witch' },
     resultText: '凍てついた魔女が泉に浮かんでいる。氷の魔法で泉を凍らせている。霜が広がっていく。水を飲むには氷を砕くしかない。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
@@ -932,7 +932,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_cursed_witch',
     conditions: { s1: 'mod_cursed', s2: 'subj_witch' },
     resultText: '呪われた魔女が泉に浮かんでいる。自分の呪いに蝕まれた魔女。泉の水が呪いを吸って変色している。',
-    damage: 3,
+    damage: 1,
     quill: 3
   },
   {
@@ -960,7 +960,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_fire_king',
     conditions: { s1: 'mod_fire', s2: 'subj_king' },
     resultText: '燃え盛る王が泉に浮かんでいる。炎の冠の王。泉の水が沸騰している。王は平然と浮かんでいる。',
-    damage: 4,
+    damage: 1,
     quill: 2
   },
   {
@@ -988,14 +988,14 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_mighty_king',
     conditions: { s1: 'mod_mighty', s2: 'subj_king' },
     resultText: '屈強な王が泉に浮かんでいる。戦士王が水浴びしている。泉が狭い。水を分けてもらえる気配がない。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
     id: 'r01_frozen_king',
     conditions: { s1: 'mod_frozen', s2: 'subj_king' },
     resultText: '凍てついた王が泉に浮かんでいる。氷の玉座ごと凍った王。泉の水がその周りだけ冷え切っている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -1009,7 +1009,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_cursed_king',
     conditions: { s1: 'mod_cursed', s2: 'subj_king' },
     resultText: '呪われた王が泉に浮かんでいる。触れたものが金になる王。泉の水が金色に輝いている。飲んだら自分も金になりそうだ。',
-    damage: 3,
+    damage: 1,
     quill: 5,
     rewardItems: [{ id: 'item_r01_cursed_king', name: '金の水滴', description: '呪いの王が触れた泉の水。金色に凝固している', sellPrice: 15 }]
   },
@@ -1038,7 +1038,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_fire_ghost',
     conditions: { s1: 'mod_fire', s2: 'subj_ghost' },
     resultText: '燃え盛る亡霊が泉に浮かんでいる。火に焼かれた死の記憶。泉の水が温まっているが、飲む気にはならない。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -1052,7 +1052,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_sharp_ghost',
     conditions: { s1: 'mod_sharp', s2: 'subj_ghost' },
     resultText: '鋭い亡霊が泉に浮かんでいる。こちらの罪を見透かす目。泉の水を飲もうとしたが、目が合って手が止まった。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -1066,14 +1066,14 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_mighty_ghost',
     conditions: { s1: 'mod_mighty', s2: 'subj_ghost' },
     resultText: '屈強な亡霊が泉に浮かんでいる。鎧武者の霊。死んで枷が外れている。泉を守っているのか、占有しているのか。',
-    damage: 3,
+    damage: 1,
     quill: 3
   },
   {
     id: 'r01_frozen_ghost',
     conditions: { s1: 'mod_frozen', s2: 'subj_ghost' },
     resultText: '凍てついた亡霊が泉に浮かんでいる。冷気を纏った霊。通った跡に霜が浮く。泉の水が冷えすぎている。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
@@ -1088,7 +1088,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_cursed_ghost',
     conditions: { s1: 'mod_cursed', s2: 'subj_ghost' },
     resultText: '呪われた亡霊が泉に浮かんでいる。呪いで成仏できない霊。苦しみの表情のまま泉を漂っている。水が呪いを帯びている。',
-    damage: 3,
+    damage: 1,
     quill: 3
   },
   {
@@ -1116,7 +1116,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_fire_mirror',
     conditions: { s1: 'mod_fire', s2: 'subj_mirror' },
     resultText: '燃え盛る鏡が泉に浮かんでいる。鏡面に炎が映っている。だが周囲に火はない。鏡の中だけが燃えている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1151,7 +1151,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_frozen_mirror',
     conditions: { s1: 'mod_frozen', s2: 'subj_mirror' },
     resultText: '凍てついた鏡が泉に浮かんでいる。霜で覆われた鏡面。泉の水が凍り始めている。鏡に触ると手が張りつきそうだ。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
@@ -1166,7 +1166,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_cursed_mirror',
     conditions: { s1: 'mod_cursed', s2: 'subj_mirror' },
     resultText: '呪われた鏡が泉に浮かんでいる。覗いた自分の顔が鏡に残った。泉を去っても、鏡の中の自分がこちらを見ている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1195,7 +1195,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_fire_doll',
     conditions: { s1: 'mod_fire', s2: 'subj_doll' },
     resultText: '燃え盛る人形が泉に浮かんでいる。藁人形が水面で燃えている。泉の水でも消えない。煙が立ちのぼる。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -1209,7 +1209,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_sharp_doll',
     conditions: { s1: 'mod_sharp', s2: 'subj_doll' },
     resultText: '鋭い人形が泉に浮かんでいる。関節が刃になっている操り人形。糸が見えない。水面を這うように動いている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -1245,7 +1245,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_cursed_doll',
     conditions: { s1: 'mod_cursed', s2: 'subj_doll' },
     resultText: '呪われた人形が泉に浮かんでいる。拾い上げると手から離れない。泉に戻しても浮かんで戻ってくる。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -1273,7 +1273,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_fire_rain',
     conditions: { s1: 'mod_fire', s2: 'subj_rain' },
     resultText: '燃え盛る雨が泉に浮かんでいる。火の雨が泉に降り注いでいる。水面が跳ね、蒸気が上がる。近づけない。',
-    damage: 4,
+    damage: 1,
     quill: 2
   },
   {
@@ -1300,7 +1300,7 @@ export const nodeR01Outcomes: Outcome[] = [
   {
     id: 'r01_mighty_rain',
     conditions: { s1: 'mod_mighty', s2: 'subj_rain' },
-    resultText: '屈強な雨が泉に浮かんでいる。豪雨。泉が溢れて足元が水浸しだ。休息どころではない。',
+    resultText: '屈強な雨が泉に浮かんでいる。豪雨。泉が溢れて急流になり、足をすくわれて岩場に転がった。',
     damage: 3,
     quill: 2
   },
@@ -1308,7 +1308,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_frozen_rain',
     conditions: { s1: 'mod_frozen', s2: 'subj_rain' },
     resultText: '凍てついた雨が泉に浮かんでいる。凍雨が泉の水面を氷の膜で覆っていく。世界が氷の鏡になった。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -1322,7 +1322,7 @@ export const nodeR01Outcomes: Outcome[] = [
     id: 'r01_cursed_rain',
     conditions: { s1: 'mod_cursed', s2: 'subj_rain' },
     resultText: '呪われた雨が泉に浮かんでいる。浴びるとその場から動けなくなる雨。泉のほとりに根が生えたように立ち尽くした。',
-    damage: 3,
+    damage: 1,
     quill: 3
   },
   {

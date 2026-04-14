@@ -50,7 +50,7 @@ export const nodeP06Outcomes: Outcome[] = [
     id: 'p06_mighty_kitten',
     conditions: { s1: 'mod_mighty', s2: 'subj_kitten' },
     resultText: '屈強な子猫が森に待っている。子猫サイズで虎の体格。低い唸り声が森に響く。この森の主らしい。',
-    damage: 2,
+    damage: 1,
     quill: 5,
     rewardItems: [{ id: 'item_p06_mighty_kitten', name: '森の主の髭', description: '虎のような子猫の髭。ぴんと張っている', sellPrice: 7 }]
   },
@@ -109,7 +109,7 @@ export const nodeP06Outcomes: Outcome[] = [
   {
     id: 'p06_hard_snake',
     conditions: { s1: 'mod_hard', s2: 'subj_snake' },
-    resultText: '堅い蛇が森に待っている。鉄の鱗を持つ蛇。木の幹に巻きついて動かない。噛まれたら歯が折れるのはこちらだ。',
+    resultText: '堅い蛇が森に待っている。鉄の鱗を持つ蛇が道を横切り、跨ごうとした足首を締め上げた。鉄の輪をはめられたようだ。',
     damage: 2,
     quill: 3
   },
@@ -292,7 +292,7 @@ export const nodeP06Outcomes: Outcome[] = [
     id: 'p06_mighty_butterfly',
     conditions: { s1: 'mod_mighty', s2: 'subj_butterfly' },
     resultText: '屈強な蝶が森に待っている。羽ばたきが風を起こす。枝が揺れ、木の葉が渦を巻く。蝶のくせに威圧的だ。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -362,7 +362,7 @@ export const nodeP06Outcomes: Outcome[] = [
   {
     id: 'p06_broken_wind',
     conditions: { s1: 'mod_broken', s2: 'subj_wind' },
-    resultText: '壊れた風が森に待っている。方向が定まらない乱気流。渦を巻いては散る。落ち葉が不規則に舞い上がる。',
+    resultText: '壊れた風が森に待っている。方向が定まらない乱気流に巻き込まれ、三度よろめいた。どちらに足を出しても押し返される。',
     damage: 2,
     quill: 3
   },
@@ -427,7 +427,7 @@ export const nodeP06Outcomes: Outcome[] = [
     id: 'p06_hard_flame',
     conditions: { s1: 'mod_hard', s2: 'subj_flame' },
     resultText: '堅い炎が森に待っている。消えない炎。水をかけても風を当てても揺らがない。仕方なく避けて通る。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -520,7 +520,7 @@ export const nodeP06Outcomes: Outcome[] = [
   {
     id: 'p06_broken_ice',
     conditions: { s1: 'mod_broken', s2: 'subj_ice' },
-    resultText: '壊れた氷が森に待っている。ひび割れた氷が散乱している。踏むたびに割れて、下から暗い水が滲む。',
+    resultText: '壊れた氷が森に待っている。ひび割れた氷が散乱している。踏み抜いた足が暗い水に沈み、靴の中まで凍えが這い上がる。',
     damage: 2,
     quill: 3
   },
@@ -584,7 +584,7 @@ export const nodeP06Outcomes: Outcome[] = [
   {
     id: 'p06_hard_shadow',
     conditions: { s1: 'mod_hard', s2: 'subj_shadow' },
-    resultText: '堅い影が森に待っている。地面に貼りついた影が壁のように立ち上がっている。通れない。剥がせない。',
+    resultText: '堅い影が森に待っている。地面に貼りついた影が壁のように立ち上がっている。迂回に半日費やし、膝が笑い始めた頃ようやく裏手に出た。',
     damage: 2,
     quill: 4
   },
@@ -662,7 +662,7 @@ export const nodeP06Outcomes: Outcome[] = [
   {
     id: 'p06_hard_song',
     conditions: { s1: 'mod_hard', s2: 'subj_song' },
-    resultText: '堅い歌が森に待っている。一度始まると止められない歌。他のすべての音を上書きして、森が沈黙する。',
+    resultText: '堅い歌が森に待っている。一度始まると止められない歌。頭蓋の内側で反響し、自分の足音すら聞こえなくなった。',
     damage: 2,
     quill: 5,
     rewardItems: [{ id: 'item_p06_hard_song', name: '止まらない旋律', description: '耳に残る一節。ふとした時に口ずさんでしまう', sellPrice: 7 }]
@@ -686,7 +686,7 @@ export const nodeP06Outcomes: Outcome[] = [
     id: 'p06_mighty_song',
     conditions: { s1: 'mod_mighty', s2: 'subj_song' },
     resultText: '屈強な歌が森に待っている。大地を震わせる合唱。足元が揺れる。木々が歌に合わせて揺れている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -757,7 +757,7 @@ export const nodeP06Outcomes: Outcome[] = [
     id: 'p06_broken_silence',
     conditions: { s1: 'mod_broken', s2: 'subj_silence' },
     resultText: '壊れた沈黙が森に待っている。静寂のはずなのに、どこかからノイズが混じる。何かが漏れ出している。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -819,7 +819,7 @@ export const nodeP06Outcomes: Outcome[] = [
   {
     id: 'p06_hard_knight',
     conditions: { s1: 'mod_hard', s2: 'subj_knight' },
-    resultText: '堅い騎士が森に待っている。分厚い鎧で全身を覆っている。道の真ん中に仁王立ち。表情が見えない。',
+    resultText: '堅い騎士が森に待っている。分厚い鎧で全身を覆い、道の真ん中に仁王立ちしている。押しのけようとして突き飛ばされ、地面に転がった。',
     damage: 2,
     quill: 3
   },
@@ -899,7 +899,7 @@ export const nodeP06Outcomes: Outcome[] = [
   {
     id: 'p06_hard_witch',
     conditions: { s1: 'mod_hard', s2: 'subj_witch' },
-    resultText: '堅い魔女が森に待っている。石のように頑固な老魔女。取引以外では一言も話さない。何かを差し出さないと通さないらしい。',
+    resultText: '堅い魔女が森に待っている。石のように頑固な老魔女。通行料代わりに呪文を一つ抜かれた。体が少し重くなった。',
     damage: 2,
     quill: 4
   },
@@ -976,7 +976,7 @@ export const nodeP06Outcomes: Outcome[] = [
   {
     id: 'p06_hard_king',
     conditions: { s1: 'mod_hard', s2: 'subj_king' },
-    resultText: '堅い王が森に待っている。石の表情で立っている。法を一言で下す。「この森は通行禁止」と。',
+    resultText: '堅い王が森に待っている。石の表情で立っている。「通行禁止」と宣告され、藪を漕いで大回りする羽目になった。足が棘だらけだ。',
     damage: 2,
     quill: 4
   },
@@ -984,7 +984,7 @@ export const nodeP06Outcomes: Outcome[] = [
     id: 'p06_sharp_king',
     conditions: { s1: 'mod_sharp', s2: 'subj_king' },
     resultText: '鋭い王が森に待っている。鷹のような目で見据えてくる。こちらの荷物の中身まで見抜かれたような気がする。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -1127,7 +1127,7 @@ export const nodeP06Outcomes: Outcome[] = [
     id: 'p06_fire_mirror',
     conditions: { s1: 'mod_fire', s2: 'subj_mirror' },
     resultText: '燃え盛る鏡が森に待っている。鏡面が炎を映している。だが周囲に火はない。鏡の中が燃えている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1155,14 +1155,14 @@ export const nodeP06Outcomes: Outcome[] = [
     id: 'p06_mighty_mirror',
     conditions: { s1: 'mod_mighty', s2: 'subj_mirror' },
     resultText: '屈強な鏡が森に待っている。人の背丈を超える巨大な姿見。森の奥に立っている。鏡の中から何かが出てきそうだ。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'p06_frozen_mirror',
     conditions: { s1: 'mod_frozen', s2: 'subj_mirror' },
     resultText: '凍てついた鏡が森に待っている。鏡面が凍って霜で覆われている。かろうじて映る影は、こちらの姿ではなかった。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1318,7 +1318,7 @@ export const nodeP06Outcomes: Outcome[] = [
     id: 'p06_frozen_rain',
     conditions: { s1: 'mod_frozen', s2: 'subj_rain' },
     resultText: '凍てついた雨が森に待っている。凍雨が降っている。触れたものを氷の膜で覆う。木の枝が硝子細工のように光る。',
-    damage: 2,
+    damage: 1,
     quill: 5,
     rewardItems: [{ id: 'item_p06_frozen_rain', name: '凍雨の枝', description: '氷に閉じ込められた小枝。宝石のように光る', sellPrice: 8 }]
   },

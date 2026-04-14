@@ -47,7 +47,7 @@ export const nodeP19Outcomes: Outcome[] = [
   {
     id: 'p19_mighty_wait',
     conditions: { s1: 'mod_mighty', s4: 'pred_wait' },
-    resultText: '屈強な人形が祭壇に待っている。等身大の木彫り人形が門番のように立っている。ゴーレム。命令を待って微動だにしない。',
+    resultText: '屈強な人形が祭壇に待っている。等身大の木彫り人形が門番のように立っている。ゴーレム。近づいた瞬間、丸太のような腕で突き飛ばされた。',
     damage: 2,
     quill: 4
   },
@@ -113,7 +113,7 @@ export const nodeP19Outcomes: Outcome[] = [
     id: 'p19_sharp_sleep',
     conditions: { s1: 'mod_sharp', s4: 'pred_sleep' },
     resultText: '鋭い人形が祭壇に眠っている。刃の関節の人形が祭壇に横たわっている。寝返りを打つたびに祭壇に傷がつく。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -127,7 +127,7 @@ export const nodeP19Outcomes: Outcome[] = [
     id: 'p19_mighty_sleep',
     conditions: { s1: 'mod_mighty', s4: 'pred_sleep' },
     resultText: '屈強な人形が祭壇に眠っている。ゴーレムが祭壇を枕にして寝ている。起こしたらどうなるか。起こさない方がいい。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -147,7 +147,7 @@ export const nodeP19Outcomes: Outcome[] = [
   {
     id: 'p19_cursed_sleep',
     conditions: { s1: 'mod_cursed', s4: 'pred_sleep' },
-    resultText: '呪われた人形が祭壇に眠っている。目を閉じているが、閉じた瞼の下で目が動いている。夢を見ている。悪い夢だ。',
+    resultText: '呪われた人形が祭壇に眠っている。目を閉じているが、閉じた瞼の下で目が動いている。近くにいると悪夢が伝染し、意識が朦朧とした。',
     damage: 2,
     quill: 5
   },
@@ -203,14 +203,14 @@ export const nodeP19Outcomes: Outcome[] = [
   {
     id: 'p19_mighty_entangle',
     conditions: { s1: 'mod_mighty', s4: 'pred_entangle' },
-    resultText: '屈強な人形が祭壇に絡みついている。ゴーレムが祭壇を丸太の腕で抱え込んでいる。引き剥がせない。祭壇ごと動くかもしれない。',
+    resultText: '屈強な人形が祭壇に絡みついている。ゴーレムが祭壇を丸太の腕で抱え込んでいる。引き剥がそうとして腕を挟まれ、骨が軋んだ。',
     damage: 2,
     quill: 4
   },
   {
     id: 'p19_frozen_entangle',
     conditions: { s1: 'mod_frozen', s4: 'pred_entangle' },
-    resultText: '凍てついた人形が祭壇に絡みついている。氷の人形が祭壇に張りつき、凍って一体化している。祭壇ごと霜に覆われている。',
+    resultText: '凍てついた人形が祭壇に絡みついている。氷の人形が祭壇に張りつき、凍って一体化している。触れた指先が凍傷で白く変わった。',
     damage: 2,
     quill: 4
   },
@@ -290,7 +290,7 @@ export const nodeP19Outcomes: Outcome[] = [
     id: 'p19_frozen_rain_pred',
     conditions: { s1: 'mod_frozen', s4: 'pred_rain_down' },
     resultText: '凍てついた人形が祭壇に降り注いでいる。氷の人形が雪のように降っている。祭壇が霜で覆われていく。繊細な造形が積もる。',
-    damage: 2,
+    damage: 1,
     quill: 5,
     rewardItems: [{ id: 'item_p19_frozen_rain_pred', name: '氷の奉納品', description: '祭壇に降った氷人形の一体。溶けない', sellPrice: 10 }]
   },
@@ -340,14 +340,14 @@ export const nodeP19Outcomes: Outcome[] = [
   {
     id: 'p19_hard_whisper',
     conditions: { s1: 'mod_hard', s4: 'pred_whisper' },
-    resultText: '堅い人形が祭壇に囁いている。木彫りの人形の口が動かないのに、声が聞こえる。低く硬い声。「ここから動くな」。',
+    resultText: '堅い人形が祭壇に囁いている。木彫りの人形の口が動かないのに、声が聞こえる。低く硬い声。「ここから動くな」。足が石のように重くなった。',
     damage: 2,
     quill: 4
   },
   {
     id: 'p19_sharp_whisper',
     conditions: { s1: 'mod_sharp', s4: 'pred_whisper' },
-    resultText: '鋭い人形が祭壇に囁いている。刃の人形が鋭い声で囁く。耳元で針が刺さるような声だ。「見ているぞ」。',
+    resultText: '鋭い人形が祭壇に囁いている。刃の人形が鋭い声で囁く。耳の奥に針を刺すような声。鼓膜が痛み、耳鳴りが止まらない。',
     damage: 2,
     quill: 5
   },
@@ -362,13 +362,13 @@ export const nodeP19Outcomes: Outcome[] = [
     id: 'p19_mighty_whisper',
     conditions: { s1: 'mod_mighty', s4: 'pred_whisper' },
     resultText: '屈強な人形が祭壇に囁いている。ゴーレムが地鳴りのような低い声で囁く。祭壇が振動する。「命令を」。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'p19_frozen_whisper',
     conditions: { s1: 'mod_frozen', s4: 'pred_whisper' },
-    resultText: '凍てついた人形が祭壇に囁いている。氷の人形から白い息のような囁きが漏れる。「寒い」。祭壇に霜が広がっている。',
+    resultText: '凍てついた人形が祭壇に囁いている。氷の人形から白い息のような囁きが漏れる。「寒い」。聴いた瞬間から体の芯が冷え始め、指が震えて止まらない。',
     damage: 2,
     quill: 5,
     rewardItems: [{ id: 'item_p19_frozen_whisper', name: '凍る言葉', description: '人形が囁いた言葉が凍った結晶。握ると声が聞こえる', sellPrice: 10 }]
@@ -428,7 +428,7 @@ export const nodeP19Outcomes: Outcome[] = [
     id: 'p19_sharp_melt',
     conditions: { s1: 'mod_sharp', s4: 'pred_melt' },
     resultText: '鋭い人形が祭壇に溶けている。刃の関節が祭壇に刺さったまま溶け込んでいく。触ると切れるので手が出せない。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -505,7 +505,7 @@ export const nodeP19Outcomes: Outcome[] = [
   {
     id: 'p19_sharp_shine',
     conditions: { s1: 'mod_sharp', s4: 'pred_shine' },
-    resultText: '鋭い人形が祭壇に輝いている。刃の関節が鋭い光を反射している。祭壇に光の線が走っている。目が眩む。',
+    resultText: '鋭い人形が祭壇に輝いている。刃の関節が鋭い光を反射している。祭壇に光の線が走り、目を灼かれた。しばらく何も見えない。',
     damage: 2,
     quill: 4
   },
@@ -578,7 +578,7 @@ export const nodeP19Outcomes: Outcome[] = [
   {
     id: 'p19_hard_sing',
     conditions: { s1: 'mod_hard', s4: 'pred_sing' },
-    resultText: '堅い人形が祭壇で歌っている。木彫りの人形の口は動かないのに歌が聞こえる。一度始まると止められない歌だ。',
+    resultText: '堅い人形が祭壇で歌っている。木彫りの人形の口は動かないのに歌が聞こえる。頭の中に入り込み、自分の思考が歌に上書きされていく。',
     damage: 2,
     quill: 4
   },
@@ -586,7 +586,7 @@ export const nodeP19Outcomes: Outcome[] = [
     id: 'p19_sharp_sing',
     conditions: { s1: 'mod_sharp', s4: 'pred_sing' },
     resultText: '鋭い人形が祭壇で歌っている。金切り声のような高音。祭壇の石に亀裂が走った。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -599,7 +599,7 @@ export const nodeP19Outcomes: Outcome[] = [
   {
     id: 'p19_mighty_sing',
     conditions: { s1: 'mod_mighty', s4: 'pred_sing' },
-    resultText: '屈強な人形が祭壇で歌っている。ゴーレムの大合唱。足元が揺れる。祭壇が共鳴して音が何倍にも膨れ上がる。',
+    resultText: '屈強な人形が祭壇で歌っている。ゴーレムの大合唱。祭壇が共鳴して崩れかけ、足元の石が割れた。膝を強く打った。',
     damage: 2,
     quill: 5
   },
@@ -663,7 +663,7 @@ export const nodeP19Outcomes: Outcome[] = [
   {
     id: 'p19_sharp_dance',
     conditions: { s1: 'mod_sharp', s4: 'pred_dance' },
-    resultText: '鋭い人形が祭壇で踊っている。刃の関節の人形が優雅に舞っている。動くたびに祭壇に傷がつく。美しいが危険な踊りだ。',
+    resultText: '鋭い人形が祭壇で踊っている。刃の関節の人形が優雅に舞っている。近づきすぎて腕を切られた。赤い線が一筋走る。',
     damage: 2,
     quill: 6
   },
@@ -677,7 +677,7 @@ export const nodeP19Outcomes: Outcome[] = [
   {
     id: 'p19_mighty_dance',
     conditions: { s1: 'mod_mighty', s4: 'pred_dance' },
-    resultText: '屈強な人形が祭壇で踊っている。ゴーレムが足踏みするたびに祭壇が揺れる。地震のような踊りだ。',
+    resultText: '屈強な人形が祭壇で踊っている。ゴーレムが足踏みするたびに祭壇が揺れる。石段が崩れ、足を取られて転んだ。',
     damage: 2,
     quill: 4
   },
@@ -741,7 +741,7 @@ export const nodeP19Outcomes: Outcome[] = [
     id: 'p19_sharp_laugh',
     conditions: { s1: 'mod_sharp', s4: 'pred_laugh' },
     resultText: '鋭い人形が祭壇で笑っている。刃の関節がカチカチ鳴っている。笑い声に聞こえる。不気味だ。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {

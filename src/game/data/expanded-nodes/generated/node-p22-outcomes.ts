@@ -5,7 +5,7 @@ export const nodeP22Outcomes: Outcome[] = [
   {
     id: 'p22_block',
     conditions: { s4: 'pred_block' },
-    resultText: '古い水車が川を塞いでいる。歯車が軋みながら動き、水の流れを完全に堰き止めている。下流が干上がり始めた。',
+    resultText: '古い水車が川を塞いでいる。歯車が軋みながら動き、水の流れを完全に堰き止めている。溢れた水が足元を浸し、泥に足を取られて膝を打った。',
     damage: 3,
     quill: 2
   },
@@ -20,7 +20,7 @@ export const nodeP22Outcomes: Outcome[] = [
   {
     id: 'p22_chase',
     conditions: { s4: 'pred_chase' },
-    resultText: '古い水車が川を追いかけてくる。軸ごと岸を離れ、水流に沿ってこちらに転がってくる。歯車がごとごと鳴って不気味だ。',
+    resultText: '古い水車が川を追いかけてくる。軸ごと岸を離れ、水流に沿ってこちらに転がってくる。逃げ遅れて脚を巻き込まれ、泥水の中に叩きつけられた。',
     damage: 3,
     quill: 4
   },
@@ -35,7 +35,7 @@ export const nodeP22Outcomes: Outcome[] = [
     id: 'p22_hide',
     conditions: { s4: 'pred_hide' },
     resultText: '古い水車が川を隠している。水車の羽板が扇のように広がり、川面を覆い尽くしている。水音だけが聞こえる。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {

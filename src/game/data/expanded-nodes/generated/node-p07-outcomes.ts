@@ -21,7 +21,7 @@ export const nodeP07Outcomes: Outcome[] = [
     id: 'p07_dragon_gaze',
     conditions: { s2: 'subj_dragon', s4: 'pred_gaze' },
     resultText: '壊れた竜が塔から見つめている。翼は折れ、鱗は剥がれている。それでも瞳だけは爛々と光っている。',
-    damage: 2,
+    damage: 1,
     quill: 5,
     rewardItems: [{ id: 'item_p07_dragon_gaze', name: '竜の眼光', description: '折れた竜の瞳に残る光。見つめ返すと胸が痛む', sellPrice: 12 }]
   },
@@ -42,7 +42,7 @@ export const nodeP07Outcomes: Outcome[] = [
   {
     id: 'p07_flame_gaze',
     conditions: { s2: 'subj_flame', s4: 'pred_gaze' },
-    resultText: '壊れた炎が塔から見つめている。紫色の火が塔の上で揺れている。温かくない光だ。',
+    resultText: '壊れた炎が塔から見つめている。紫色の火が塔の上で揺れている。目を合わせた途端、眉が焦げた。温かくない光のはずだった。',
     damage: 2,
     quill: 4
   },
@@ -57,7 +57,7 @@ export const nodeP07Outcomes: Outcome[] = [
     id: 'p07_shadow_gaze',
     conditions: { s2: 'subj_shadow', s4: 'pred_gaze' },
     resultText: '壊れた影が塔から見つめている。立体的にめくれ上がった影が、塔の壁面からこちらに身を乗り出している。',
-    damage: 2,
+    damage: 1,
     quill: 5,
     rewardItems: [{ id: 'item_p07_shadow_gaze', name: '立体の影', description: '平面に戻れない影の断片。手に持つと重い', sellPrice: 8 }]
   },
@@ -86,7 +86,7 @@ export const nodeP07Outcomes: Outcome[] = [
   {
     id: 'p07_witch_gaze',
     conditions: { s2: 'subj_witch', s4: 'pred_gaze' },
-    resultText: '壊れた魔女が塔から見つめている。途切れ途切れの呪文を呟きながら、虚ろな目でこちらを追う。',
+    resultText: '壊れた魔女が塔から見つめている。途切れ途切れの呪文が漏れるたび、こちらの指先が痺れる。視線を外すまで止まなかった。',
     damage: 2,
     quill: 4
   },
@@ -101,21 +101,21 @@ export const nodeP07Outcomes: Outcome[] = [
     id: 'p07_ghost_gaze',
     conditions: { s2: 'subj_ghost', s4: 'pred_gaze' },
     resultText: '壊れた亡霊が塔から見つめている。自分が何者だったかも忘れた霊が、輪郭を揺らしながらこちらを見ている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p07_mirror_gaze',
     conditions: { s2: 'subj_mirror', s4: 'pred_gaze' },
     resultText: '壊れた鏡が塔から見つめている。ひび割れた鏡面に映る顔が、こちらとは違う表情をしている。',
-    damage: 2,
+    damage: 1,
     quill: 6,
     rewardItems: [{ id: 'item_p07_mirror_gaze', name: '割れた映し身', description: 'ひび割れた鏡の欠片。覗くと知らない顔が映る', sellPrice: 10 }]
   },
   {
     id: 'p07_doll_gaze',
     conditions: { s2: 'subj_doll', s4: 'pred_gaze' },
-    resultText: '壊れた人形が塔から見つめている。首がもげかけた人形が、残った片目でじっとこちらを追っている。',
+    resultText: '壊れた人形が塔から見つめている。首がもげかけた人形の片目と目が合った。足が竦んで動けない。振り払うのに長い時間がかかった。',
     damage: 2,
     quill: 5
   },
@@ -166,7 +166,7 @@ export const nodeP07Outcomes: Outcome[] = [
   {
     id: 'p07_flame_whisper',
     conditions: { s2: 'subj_flame', s4: 'pred_whisper' },
-    resultText: '壊れた炎が塔から囁いている。紫の火が壁を這い、焦げ跡が文字のように見える。',
+    resultText: '壊れた炎が塔から囁いている。紫の火が壁を這い、焦げた文字が肌に移った。洗っても消えない。',
     damage: 2,
     quill: 5
   },
@@ -180,7 +180,7 @@ export const nodeP07Outcomes: Outcome[] = [
   {
     id: 'p07_shadow_whisper',
     conditions: { s2: 'subj_shadow', s4: 'pred_whisper' },
-    resultText: '壊れた影が塔から囁いている。めくれ上がった影の裏側から、声にならない声が漏れている。',
+    resultText: '壊れた影が塔から囁いている。めくれ上がった影の裏側から声が漏れている。聴き取ろうと耳を寄せたら、こめかみが冷たく痺れた。',
     damage: 2,
     quill: 5
   },
@@ -239,7 +239,7 @@ export const nodeP07Outcomes: Outcome[] = [
     id: 'p07_doll_whisper',
     conditions: { s2: 'subj_doll', s4: 'pred_whisper' },
     resultText: '壊れた人形が塔から囁いている。もげかけた首が風で揺れるたび、口が開閉する。偶然だろうか。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -414,7 +414,7 @@ export const nodeP07Outcomes: Outcome[] = [
     id: 'p07_flame_sing',
     conditions: { s2: 'subj_flame', s4: 'pred_sing' },
     resultText: '壊れた炎が塔から歌っている。紫の火がぱちぱちと不規則に爆ぜ、拍子のとれない歌になる。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -512,7 +512,7 @@ export const nodeP07Outcomes: Outcome[] = [
     id: 'p07_dragon_dance',
     conditions: { s2: 'subj_dragon', s4: 'pred_dance' },
     resultText: '壊れた竜が塔から踊っている。折れた翼を広げ、鱗を散らし、崩れながら旋回する。壮絶だ。',
-    damage: 2,
+    damage: 1,
     quill: 7,
     rewardItems: [{ id: 'item_p07_dragon_dance', name: '舞い散る鱗', description: '竜が踊った跡に残った鱗。虹色に光る', sellPrice: 14 }]
   },
@@ -527,7 +527,7 @@ export const nodeP07Outcomes: Outcome[] = [
   {
     id: 'p07_wind_dance',
     conditions: { s2: 'subj_wind', s4: 'pred_dance' },
-    resultText: '壊れた風が塔から踊っている。乱気流が瓦礫を巻き上げ、不規則な竜巻を作っては崩す。',
+    resultText: '壊れた風が塔から踊っている。乱気流が瓦礫を巻き上げ、石礫が頬を掠める。竜巻を避けて壁に張りつくしかない。',
     damage: 2,
     quill: 4
   },
@@ -626,7 +626,7 @@ export const nodeP07Outcomes: Outcome[] = [
   {
     id: 'p07_snake_laugh',
     conditions: { s2: 'subj_snake', s4: 'pred_laugh' },
-    resultText: '壊れた蛇が塔から笑っている。古い皮が剥がれた口元が、にやりと歪んでいる。',
+    resultText: '壊れた蛇が塔から笑っている。古い皮が剥がれた口元がにやりと歪んでいる。足元を見たら、いつの間にか尾が巻きついていた。',
     damage: 2,
     quill: 4
   },
@@ -655,7 +655,7 @@ export const nodeP07Outcomes: Outcome[] = [
     id: 'p07_flame_laugh',
     conditions: { s2: 'subj_flame', s4: 'pred_laugh' },
     resultText: '壊れた炎が塔から笑っている。紫の火がぱちぱち弾け、嘲笑うように明滅する。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -668,7 +668,7 @@ export const nodeP07Outcomes: Outcome[] = [
   {
     id: 'p07_shadow_laugh',
     conditions: { s2: 'subj_shadow', s4: 'pred_laugh' },
-    resultText: '壊れた影が塔から笑っている。めくれ上がった影が痙攣のように震えている。笑いだろうか、泣きだろうか。',
+    resultText: '壊れた影が塔から笑っている。めくれ上がった影が痙攣のように震え、そのたびにこちらの影も引き攣る。膝の力が抜けた。',
     damage: 2,
     quill: 5
   },
@@ -719,7 +719,7 @@ export const nodeP07Outcomes: Outcome[] = [
   {
     id: 'p07_mirror_laugh',
     conditions: { s2: 'subj_mirror', s4: 'pred_laugh' },
-    resultText: '壊れた鏡が塔から笑っている。ひび割れた鏡に映る顔が全部笑っている。こちらは笑っていないのに。',
+    resultText: '壊れた鏡が塔から笑っている。ひび割れた鏡に映る顔が全部笑っている。こちらは笑っていないのに、頬の筋肉が勝手に引き攣った。',
     damage: 2,
     quill: 6,
     rewardItems: [{ id: 'item_p07_mirror_laugh', name: '笑う鏡片', description: '覗くと必ず笑顔が映る鏡の欠片。自分の顔かどうかは不明', sellPrice: 10 }]
@@ -728,7 +728,7 @@ export const nodeP07Outcomes: Outcome[] = [
     id: 'p07_doll_laugh',
     conditions: { s2: 'subj_doll', s4: 'pred_laugh' },
     resultText: '壊れた人形が塔から笑っている。首がもげかけた人形が、固定された笑顔でこちらを向いている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -823,7 +823,7 @@ export const nodeP07Outcomes: Outcome[] = [
   {
     id: 'p07_witch_shine',
     conditions: { s2: 'subj_witch', s4: 'pred_shine' },
-    resultText: '壊れた魔女が塔から輝く。暴走した魔力が体から漏れ、制御できない光が辺りを照らす。',
+    resultText: '壊れた魔女が塔から輝く。暴走した魔力が体から漏れ、制御できない光に目を灼かれた。しばらく視界が戻らない。',
     damage: 2,
     quill: 4
   },
@@ -881,7 +881,7 @@ export const nodeP07Outcomes: Outcome[] = [
   {
     id: 'p07_dragon_rain_pred',
     conditions: { s2: 'subj_dragon', s4: 'pred_rain_down' },
-    resultText: '壊れた竜が塔から降り注いでいる。剥がれた鱗が雨のように降る。一枚一枚が手のひらほどある。',
+    resultText: '壊れた竜が塔から降り注いでいる。剥がれた鱗が雨のように降る。一枚が肩を打ち、鎧の上からでも骨に響いた。',
     damage: 2,
     quill: 5
   },
@@ -958,7 +958,7 @@ export const nodeP07Outcomes: Outcome[] = [
   {
     id: 'p07_ghost_rain_pred',
     conditions: { s2: 'subj_ghost', s4: 'pred_rain_down' },
-    resultText: '壊れた亡霊が塔から降り注いでいる。輪郭を失った霊が霧のように降りてくる。冷たい。',
+    resultText: '壊れた亡霊が塔から降り注いでいる。輪郭を失った霊が霧のように降りてくる。浴びた肌から体温が奪われ、歯の根が合わなくなった。',
     damage: 2,
     quill: 4
   },
@@ -973,7 +973,7 @@ export const nodeP07Outcomes: Outcome[] = [
     id: 'p07_doll_rain_pred',
     conditions: { s2: 'subj_doll', s4: 'pred_rain_down' },
     resultText: '壊れた人形が塔から降り注いでいる。人形の部品が降ってくる。腕、脚、頭、目玉。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -1001,7 +1001,7 @@ export const nodeP07Outcomes: Outcome[] = [
     id: 'p07_dragon_melt',
     conditions: { s2: 'subj_dragon', s4: 'pred_melt' },
     resultText: '壊れた竜が塔から溶けている。剥がれた鱗の下から竜の体が溶け出し、塔の壁を赤く染める。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1064,7 +1064,7 @@ export const nodeP07Outcomes: Outcome[] = [
   {
     id: 'p07_witch_melt',
     conditions: { s2: 'subj_witch', s4: 'pred_melt' },
-    resultText: '壊れた魔女が塔から溶けている。魔力の暴走が体を蝕み、輪郭がぼやけていく。呪文だけが残る。',
+    resultText: '壊れた魔女が塔から溶けている。魔力の暴走が体を蝕み、輪郭がぼやけていく。残った呪文が足に纏わりつき、一歩が重い。',
     damage: 2,
     quill: 5
   },
