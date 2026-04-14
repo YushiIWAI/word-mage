@@ -99,7 +99,7 @@ export const nodeP28Outcomes: Outcome[] = [
     id: 'p28_fire_slow',
     conditions: { s1: 'mod_fire', s3: 'adv_slow' },
     resultText: '燃え盛る篝火がゆっくり燃えている。溶岩のような炎。何日も燃え続けているらしい。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
@@ -128,7 +128,7 @@ export const nodeP28Outcomes: Outcome[] = [
   {
     id: 'p28_hard_fierce',
     conditions: { s1: 'mod_hard', s3: 'adv_fierce' },
-    resultText: '堅い篝火が激しく燃えている。鍛冶の炉のような火力。金属を溶かせそうだ。',
+    resultText: '堅い篝火が激しく燃えている。石炭が白熱し、鍛冶の炉のような熱が吹きつける。近くに落ちていた釘が赤く曲がった。',
     damage: 2,
     quill: 4
   },
@@ -187,7 +187,7 @@ export const nodeP28Outcomes: Outcome[] = [
   {
     id: 'p28_sharp_sudden',
     conditions: { s1: 'mod_sharp', s3: 'adv_sudden' },
-    resultText: '鋭い篝火が突然伸びた。槍のような炎が夜空を突く。何かの信号だろうか。',
+    resultText: '鋭い篝火が突然伸びた。一本の火柱が夜空を貫き、遠くの山肌に同じ光が応えた。合図だった。誰かがこちらを見ている。',
     damage: 2,
     quill: 5
   },
@@ -241,7 +241,7 @@ export const nodeP28Outcomes: Outcome[] = [
     id: 'p28_mighty_fierce',
     conditions: { s1: 'mod_mighty', s3: 'adv_fierce' },
     resultText: '屈強な篝火が激しく燃えている。キャンプファイアどころではない。祭りの大篝火だ。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -360,7 +360,7 @@ export const nodeP28Outcomes: Outcome[] = [
   {
     id: 'p28_cursed_slow',
     conditions: { s1: 'mod_cursed', s3: 'adv_slow' },
-    resultText: '呪われた篝火がゆっくり燃えている。誰かの怨念が火を灯している。長い怨みだ。',
+    resultText: '呪われた篝火がゆっくり燃えている。紫の炎の中に顔が浮かんでは消える。薪を足した覚えはないのに、火は絶えない。背中が冷える。',
     damage: 2,
     quill: 4
   },
@@ -391,7 +391,7 @@ export const nodeP28Outcomes: Outcome[] = [
     id: 'p28_sleepy_fierce',
     conditions: { s1: 'mod_sleepy', s3: 'adv_fierce' },
     resultText: '眠い篝火が激しく燃えている。寝ぼけているのか。炎があちこちに暴れている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {

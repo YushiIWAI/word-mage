@@ -6,7 +6,7 @@ export const nodeP25Outcomes: Outcome[] = [
   {
     id: 'p25_orig',
     conditions: { s2: 'subj_ghost', s4: 'orig_p25_pred' },
-    resultText: '透き通った亡霊が渡し場で待っている。桟橋の端に腰を下ろし、水面を見つめている。舟はまだ来ない。ずっと来ない。',
+    resultText: '透き通った亡霊が渡し場で待っている。桟橋の端に腰を下ろし、水面を見つめている。隣に座ると、膝から体温が抜けていった。',
     damage: 2,
     quill: 3
   },
@@ -72,7 +72,7 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_kitten_laugh',
     conditions: { s2: 'subj_kitten', s4: 'pred_laugh' },
     resultText: '透き通った子猫が渡し場で笑っている。口が三日月になっている。猫は笑わない。これは猫ではない。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -87,14 +87,14 @@ export const nodeP25Outcomes: Outcome[] = [
   {
     id: 'p25_snake_gaze',
     conditions: { s2: 'subj_snake', s4: 'pred_gaze' },
-    resultText: '透き通った蛇が渡し場で見つめている。水中から硝子の眼がこちらを追う。渡るべきか、戻るべきか。',
+    resultText: '透き通った蛇が渡し場で見つめている。水中から硝子の眼がこちらを追う。足を止めた瞬間、靴の中が冷たくなった。',
     damage: 2,
     quill: 3
   },
   {
     id: 'p25_snake_whisper',
     conditions: { s2: 'subj_snake', s4: 'pred_whisper' },
-    resultText: '透き通った蛇が渡し場で囁いている。舌が空気を舐めるたび、渡し賃の額が聞こえる。高い。',
+    resultText: '透き通った蛇が渡し場で囁いている。舌が空気を舐めるたび、値が上がる。財布が軽くなった気がして手を当てた。本当に軽い。',
     damage: 2,
     quill: 3
   },
@@ -129,7 +129,7 @@ export const nodeP25Outcomes: Outcome[] = [
   {
     id: 'p25_snake_dance',
     conditions: { s2: 'subj_snake', s4: 'pred_dance' },
-    resultText: '透き通った蛇が渡し場で踊っている。コブラのように鎌首をもたげ、左右に揺れる。目を逸らせない。',
+    resultText: '透き通った蛇が渡し場で踊っている。鎌首が左右に揺れる。目を逸らせない。気づくと一歩、桟橋の縁に寄っていた。',
     damage: 2,
     quill: 3
   },
@@ -150,7 +150,7 @@ export const nodeP25Outcomes: Outcome[] = [
   {
     id: 'p25_snake_wait',
     conditions: { s2: 'subj_snake', s4: 'pred_wait' },
-    resultText: '透き通った蛇が渡し場で待っている。獲物を待つ目。だが体が透明では、待ち伏せにならない。',
+    resultText: '透き通った蛇が渡し場で待っている。透明な体で待ち伏せる矛盾。だが足首に巻きつかれるまで、そこにいることに気づかなかった。',
     damage: 2,
     quill: 3
   },
@@ -160,14 +160,14 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_dragon_gaze',
     conditions: { s2: 'subj_dragon', s4: 'pred_gaze' },
     resultText: '透き通った竜が渡し場で見つめている。水晶の瞳に映る対岸。竜が見つめる先に、渡る価値があるのかもしれない。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p25_dragon_whisper',
     conditions: { s2: 'subj_dragon', s4: 'pred_whisper' },
     resultText: '透き通った竜が渡し場で囁いている。大きな体から小さな声。川の名前を教えてくれた。忘却の川だと。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -223,7 +223,7 @@ export const nodeP25Outcomes: Outcome[] = [
   {
     id: 'p25_dragon_wait',
     conditions: { s2: 'subj_dragon', s4: 'pred_wait' },
-    resultText: '透き通った竜が渡し場で待っている。千年前から待っている。約束した相手はもういない。それでも待つ。',
+    resultText: '透き通った竜が渡し場で待っている。千年前から待っている。傍に立つと、竜の悲しみが空気を伝って胸を圧した。息が浅くなる。',
     damage: 2,
     quill: 5
   },
@@ -354,14 +354,14 @@ export const nodeP25Outcomes: Outcome[] = [
   {
     id: 'p25_wind_melt',
     conditions: { s2: 'subj_wind', s4: 'pred_melt' },
-    resultText: '透き通った風が渡し場で溶けている。風が空気に溶ける。無風になり、川霧が立ち込めた。前が見えない。',
+    resultText: '透き通った風が渡し場で溶けている。風が消え、川霧が桟橋を飲んだ。三歩先が見えない。足元の板が腐っているのに気づかず、片足が抜けた。',
     damage: 2,
     quill: 3
   },
   {
     id: 'p25_wind_laugh',
     conditions: { s2: 'subj_wind', s4: 'pred_laugh' },
-    resultText: '透き通った風が渡し場で笑っている。突風が桟橋を揺らし、板が笑い声のように軋む。不吉な音だ。',
+    resultText: '透き通った風が渡し場で笑っている。突風が桟橋を揺らし、板が軋む。帽子が川に落ち、荷物の紐が緩んだ。風が奪えるものを全部奪っていく。',
     damage: 2,
     quill: 3
   },
@@ -377,7 +377,7 @@ export const nodeP25Outcomes: Outcome[] = [
   {
     id: 'p25_flame_gaze',
     conditions: { s2: 'subj_flame', s4: 'pred_gaze' },
-    resultText: '透き通った炎が渡し場で見つめている。青白い火が桟橋の先端で揺れている。近づくと大きくなる。',
+    resultText: '透き通った炎が渡し場で見つめている。青白い火が桟橋の先端で揺れている。見返した瞬間、眉が焦げた。見えない炎は距離を誤らせる。',
     damage: 2,
     quill: 3
   },
@@ -385,7 +385,7 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_flame_whisper',
     conditions: { s2: 'subj_flame', s4: 'pred_whisper' },
     resultText: '透き通った炎が渡し場で囁いている。燃える音が言葉に聞こえる。渡し賃を値切ろうとしている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -427,7 +427,7 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_flame_melt',
     conditions: { s2: 'subj_flame', s4: 'pred_melt' },
     resultText: '透き通った炎が渡し場で溶けている。火が液体になって桟橋を流れる。触れても熱くない。冷たい火だ。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -449,21 +449,21 @@ export const nodeP25Outcomes: Outcome[] = [
   {
     id: 'p25_ice_gaze',
     conditions: { s2: 'subj_ice', s4: 'pred_gaze' },
-    resultText: '透き通った氷が渡し場で見つめている。氷柱の中に目がある。瞬きもせず、渡る者を数えている。',
+    resultText: '透き通った氷が渡し場で見つめている。氷柱の中に目がある。見つめ返した途端、指先の感覚が消えた。数えられた者は少しずつ凍る。',
     damage: 2,
     quill: 3
   },
   {
     id: 'p25_ice_whisper',
     conditions: { s2: 'subj_ice', s4: 'pred_whisper' },
-    resultText: '透き通った氷が渡し場で囁いている。氷が軋む音が言葉になる。川が凍る前に渡れと言っている。',
+    resultText: '透き通った氷が渡し場で囁いている。氷が軋む音が言葉になる。川が凍る前に渡れ、と。急いだ拍子に膝を板に打ちつけた。',
     damage: 2,
     quill: 3
   },
   {
     id: 'p25_ice_sleep',
     conditions: { s2: 'subj_ice', s4: 'pred_sleep' },
-    resultText: '透き通った氷が渡し場で眠っている。川面が凍りつき、渡し場ごと氷に閉じ込められている。舟も動かない。',
+    resultText: '透き通った氷が渡し場で眠っている。川面が凍りつき、渡し場ごと閉じ込められた。靴底が氷に張りつき、引き剥がすのに体力を使った。',
     damage: 2,
     quill: 3
   },
@@ -492,7 +492,7 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_ice_dance',
     conditions: { s2: 'subj_ice', s4: 'pred_dance' },
     resultText: '透き通った氷が渡し場で踊っている。氷柱が風に揺れ、ぶつかり合う。硝子の風鈴のような音がする。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -506,7 +506,7 @@ export const nodeP25Outcomes: Outcome[] = [
   {
     id: 'p25_ice_laugh',
     conditions: { s2: 'subj_ice', s4: 'pred_laugh' },
-    resultText: '透き通った氷が渡し場で笑っている。ひび割れが笑顔の形に走った。踏むと割れそうだ。',
+    resultText: '透き通った氷が渡し場で笑っている。ひび割れが笑顔の形に走る。足を乗せた瞬間、氷が砕けて片足が川に落ちた。水が骨まで冷たい。',
     damage: 2,
     quill: 3
   },
@@ -523,7 +523,7 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_shadow_gaze',
     conditions: { s2: 'subj_shadow', s4: 'pred_gaze' },
     resultText: '透き通った影が渡し場で見つめている。透明な影。矛盾しているが、確かにそこにいる。視線だけが濃い。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -558,20 +558,20 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_shadow_shine',
     conditions: { s2: 'subj_shadow', s4: 'pred_shine' },
     resultText: '透き通った影が渡し場で輝く。影が光る。あり得ないことが起きている。渡し場の法則が乱れている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'p25_shadow_dance',
     conditions: { s2: 'subj_shadow', s4: 'pred_dance' },
     resultText: '透き通った影が渡し場で踊っている。誰もいないのに影だけが踊る。足音はしない。拍手もない。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
     id: 'p25_shadow_melt',
     conditions: { s2: 'subj_shadow', s4: 'pred_melt' },
-    resultText: '透き通った影が渡し場で溶けている。影が地面に染み込んでいく。桟橋の板が黒く染まった。',
+    resultText: '透き通った影が渡し場で溶けている。影が地面に染み込み、桟橋の板が黒く染まる。黒い板を踏んだ足が重い。影が靴底に張りついている。',
     damage: 2,
     quill: 3
   },
@@ -585,7 +585,7 @@ export const nodeP25Outcomes: Outcome[] = [
   {
     id: 'p25_shadow_wait',
     conditions: { s2: 'subj_shadow', s4: 'pred_wait' },
-    resultText: '透き通った影が渡し場で待っている。夕暮れを待っている。日が沈めば、影は世界を覆える。',
+    resultText: '透き通った影が渡し場で待っている。夕暮れを待っている。日が傾くにつれ影が伸び、足元に触れた。急に寒気がした。',
     damage: 2,
     quill: 4
   },
@@ -668,14 +668,14 @@ export const nodeP25Outcomes: Outcome[] = [
   {
     id: 'p25_silence_gaze',
     conditions: { s2: 'subj_silence', s4: 'pred_gaze' },
-    resultText: '透き通った沈黙が渡し場で見つめている。音のない圧力が桟橋を包む。声を出してはいけない気がする。',
+    resultText: '透き通った沈黙が渡し場で見つめている。音のない圧力が桟橋を包む。声を出そうとしたが、喉が詰まって音にならなかった。',
     damage: 2,
     quill: 3
   },
   {
     id: 'p25_silence_whisper',
     conditions: { s2: 'subj_silence', s4: 'pred_whisper' },
-    resultText: '透き通った沈黙が渡し場で囁いている。沈黙が囁く矛盾。だが確かに何か聞こえる。聞こえないはずの声が。',
+    resultText: '透き通った沈黙が渡し場で囁いている。沈黙が囁く矛盾。聞こえないはずの声に耳を傾けるうち、自分の呼吸音が遠くなった。',
     damage: 2,
     quill: 5
   },
@@ -710,7 +710,7 @@ export const nodeP25Outcomes: Outcome[] = [
   {
     id: 'p25_silence_dance',
     conditions: { s2: 'subj_silence', s4: 'pred_dance' },
-    resultText: '透き通った沈黙が渡し場で踊っている。音のない踊り。水飛沫も足音も吸い込まれる。不気味な静寂の中の動き。',
+    resultText: '透き通った沈黙が渡し場で踊っている。水飛沫も足音も吸い込まれる。一緒に踊れと手を引かれた気がして、膝が折れた。',
     damage: 2,
     quill: 3
   },
@@ -741,7 +741,7 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_knight_gaze',
     conditions: { s2: 'subj_knight', s4: 'pred_gaze' },
     resultText: '透き通った騎士が渡し場で見つめている。硝子の甲冑を着た騎士が桟橋に立っている。通行料を請求された。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
@@ -790,14 +790,14 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_knight_melt',
     conditions: { s2: 'subj_knight', s4: 'pred_melt' },
     resultText: '透き通った騎士が渡し場で溶けている。甲冑が崩れ、中から水があふれ出す。騎士は水でできていた。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p25_knight_laugh',
     conditions: { s2: 'subj_knight', s4: 'pred_laugh' },
     resultText: '透き通った騎士が渡し場で笑っている。兜の奥から笑い声。何がおかしいのか。渡し賃を見て笑っている。安すぎると。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
@@ -813,7 +813,7 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_witch_gaze',
     conditions: { s2: 'subj_witch', s4: 'pred_gaze' },
     resultText: '透き通った魔女が渡し場で見つめている。水面に映る自分を見ている。水面の魔女は透き通っていない。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -862,13 +862,13 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_witch_melt',
     conditions: { s2: 'subj_witch', s4: 'pred_melt' },
     resultText: '透き通った魔女が渡し場で溶けている。水を被ったわけではない。自分から溶けている。魔力が尽きたのだ。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p25_witch_laugh',
     conditions: { s2: 'subj_witch', s4: 'pred_laugh' },
-    resultText: '透き通った魔女が渡し場で笑っている。甲高い笑い声が川に反響する。渡し守が耳を塞いだ。',
+    resultText: '透き通った魔女が渡し場で笑っている。甲高い笑い声が川に反響し、鼓膜の奥で鳴り止まない。渡し守が耳を塞いだ。真似するべきだった。',
     damage: 2,
     quill: 3
   },
@@ -885,14 +885,14 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_king_gaze',
     conditions: { s2: 'subj_king', s4: 'pred_gaze' },
     resultText: '透き通った王が渡し場で見つめている。硝子の冠をかぶった王が対岸を睨んでいる。あちらは元は王の領土だった。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p25_king_whisper',
     conditions: { s2: 'subj_king', s4: 'pred_whisper' },
     resultText: '透き通った王が渡し場で囁いている。命令を囁いている。だが透明な王の言葉は誰にも届かない。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -928,7 +928,7 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_king_dance',
     conditions: { s2: 'subj_king', s4: 'pred_dance' },
     resultText: '透き通った王が渡し場で踊っている。宮廷舞踏。だが相手はいない。一人で踊る王を、川が映している。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -949,7 +949,7 @@ export const nodeP25Outcomes: Outcome[] = [
     id: 'p25_king_wait',
     conditions: { s2: 'subj_king', s4: 'pred_wait' },
     resultText: '透き通った王が渡し場で待っている。迎えの使者を待っている。使者は来ない。王国はもうない。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
 

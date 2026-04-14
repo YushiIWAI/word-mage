@@ -23,7 +23,7 @@ export const nodeP13Outcomes: Outcome[] = [
   {
     id: 'p13_kitten_whisper',
     conditions: { s2: 'subj_kitten', s4: 'pred_whisper' },
-    resultText: '鋭い子猫が裂け目から囁いている。甲高い鳴き声が反響し、人語に聞こえる。「降りてこい」と言ったように思えた。',
+    resultText: '鋭い子猫が裂け目から囁いている。硝子のような牙の隙間から、甘い声が漏れる。「降りてこい」。従った者の足跡が、裂け目の縁に爪痕と一緒に残っている。',
     damage: 2,
     quill: 4
   },
@@ -53,7 +53,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_kitten_rain_down',
     conditions: { s2: 'subj_kitten', s4: 'pred_rain_down' },
     resultText: '鋭い子猫が裂け目から降り注いでいる。無数の小さな影が上から落ちてくる。着地した子猫が一斉にこちらを見た。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -73,7 +73,7 @@ export const nodeP13Outcomes: Outcome[] = [
   {
     id: 'p13_kitten_laugh',
     conditions: { s2: 'subj_kitten', s4: 'pred_laugh' },
-    resultText: '鋭い子猫が裂け目から笑っている。口角が上がり、犬歯が覗く。猫の表情にしては人間じみている。背筋が冷えた。',
+    resultText: '鋭い子猫が裂け目から笑っている。口角が上がり、硝子の犬歯が光る。猫は笑わない。だからこれは猫ではない。そう気づいた時にはもう、足首に爪が触れていた。',
     damage: 2,
     quill: 4
   },
@@ -90,7 +90,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_snake_whisper',
     conditions: { s2: 'subj_snake', s4: 'pred_whisper' },
     resultText: '鋭い蛇が裂け目から囁いている。舌が空気を割る音が言葉に聞こえる。何を言っているかは分からないが、耳が離せない。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -132,7 +132,7 @@ export const nodeP13Outcomes: Outcome[] = [
   {
     id: 'p13_snake_melt',
     conditions: { s2: 'subj_snake', s4: 'pred_melt' },
-    resultText: '鋭い蛇が裂け目から溶けている。鱗が液体になり、岩壁を伝って底へ流れ落ちる。毒なのか体液なのか。触れない方がいい。',
+    resultText: '鋭い蛇が裂け目から溶けている。鱗が一枚ずつ液体に変わり、銀色の筋を引いて底へ落ちる。溶けた跡を草が避けて生えている。何年分の毒だろう。',
     damage: 2,
     quill: 3
   },
@@ -163,7 +163,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_dragon_sing',
     conditions: { s2: 'subj_dragon', s4: 'pred_sing' },
     resultText: '鋭い竜が裂け目から歌っている。地鳴りのような低音が旋律を持ち、岩壁に共鳴して裂け目全体が楽器になっている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -197,7 +197,7 @@ export const nodeP13Outcomes: Outcome[] = [
   {
     id: 'p13_dragon_melt',
     conditions: { s2: 'subj_dragon', s4: 'pred_melt' },
-    resultText: '鋭い竜が裂け目から溶けている。鱗が一枚ずつ剥がれ落ち、赤い液体になって底へ流れる。竜の終わりを見ている。',
+    resultText: '鋭い竜が裂け目から溶けている。鱗が赤い涙のように岩を伝い、底に血の湖を作る。竜の体が小さくなっていく。偉大なものが終わる音は、意外と静かだ。',
     damage: 2,
     quill: 5
   },
@@ -345,13 +345,13 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_flame_gaze',
     conditions: { s2: 'subj_flame', s4: 'pred_gaze' },
     resultText: '鋭い炎が裂け目から見つめている。揺れる炎の芯が瞳のように動き、こちらの動きを追っている。火に意識がある。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p13_flame_whisper',
     conditions: { s2: 'subj_flame', s4: 'pred_whisper' },
-    resultText: '鋭い炎が裂け目から囁いている。爆ぜる音の合間に声が混じる。火に近づくと言葉が聞こえ、離れると消える。',
+    resultText: '鋭い炎が裂け目から囁いている。爆ぜる音の合間に声が混じる。「名前を教えろ」。火に名前を知られると、二度と消せなくなるという話を思い出した。',
     damage: 2,
     quill: 4
   },
@@ -359,7 +359,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_flame_sing',
     conditions: { s2: 'subj_flame', s4: 'pred_sing' },
     resultText: '鋭い炎が裂け目から歌っている。炎が大小に脈打ち、リズムを持って燃えている。燃料がないのに消えない。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -394,7 +394,7 @@ export const nodeP13Outcomes: Outcome[] = [
   {
     id: 'p13_flame_melt',
     conditions: { s2: 'subj_flame', s4: 'pred_melt' },
-    resultText: '鋭い炎が裂け目から溶けている。火が液体のように岩壁を伝い落ちる。溶岩ではない。炎そのものが溶けている。',
+    resultText: '鋭い炎が裂け目から溶けている。炎が液体に相転移し、光る水のように岩壁を伝い落ちる。溶岩ではない。火の死体だ。触れた指先が一瞬だけ燃えた。',
     damage: 2,
     quill: 5
   },
@@ -411,7 +411,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_ice_gaze',
     conditions: { s2: 'subj_ice', s4: 'pred_gaze' },
     resultText: '鋭い氷が裂け目から見つめている。氷柱の表面に映り込んだ自分の顔が、微かに違う表情をしている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -452,7 +452,7 @@ export const nodeP13Outcomes: Outcome[] = [
   {
     id: 'p13_ice_dance',
     conditions: { s2: 'subj_ice', s4: 'pred_dance' },
-    resultText: '鋭い氷が裂け目から踊っている。氷片が宙を舞い、ぶつかり合って高い音を立てる。風鈴のような音が不釣り合いに美しい。',
+    resultText: '鋭い氷が裂け目から踊っている。氷片が宙を舞い、互いを削り合って細くなっていく。踊りの終わりには針のように尖った破片が、地面に突き刺さっていた。',
     damage: 2,
     quill: 5
   },
@@ -468,7 +468,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_ice_laugh',
     conditions: { s2: 'subj_ice', s4: 'pred_laugh' },
     resultText: '鋭い氷が裂け目から笑っている。亀裂が走るたびにきしむ音が上がる。割れる寸前の氷が、笑い声を上げている。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
 
@@ -518,7 +518,7 @@ export const nodeP13Outcomes: Outcome[] = [
   {
     id: 'p13_shadow_dance',
     conditions: { s2: 'subj_shadow', s4: 'pred_dance' },
-    resultText: '鋭い影が裂け目から踊っている。壁に映る影が音もなく跳ね回る。光源がないのに影だけが動いている。',
+    resultText: '鋭い影が裂け目から踊っている。壁に映る影が音もなく跳ね回る。影の縁がこちらの影を切り取った。足元に欠けた自分の影が横たわっている。',
     damage: 2,
     quill: 4
   },
@@ -526,7 +526,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_shadow_melt',
     conditions: { s2: 'subj_shadow', s4: 'pred_melt' },
     resultText: '鋭い影が裂け目から溶けている。闇が滴り落ち、黒い水溜まりを作っている。覗き込むと底がない。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -548,7 +548,7 @@ export const nodeP13Outcomes: Outcome[] = [
   {
     id: 'p13_song_whisper',
     conditions: { s2: 'subj_song', s4: 'pred_whisper' },
-    resultText: '鋭い歌が裂け目から囁いている。旋律に似た何かが岩の隙間から漏れ出し、耳の奥を引っ掻く。意味はないが、足が止まる。',
+    resultText: '鋭い歌が裂け目から囁いている。岩の隙間から漏れ出す旋律が、聴いた者の記憶を一つ剥がしていく。気づくと、ここに来た理由を思い出せなくなっていた。',
     damage: 2,
     quill: 3
   },
@@ -599,7 +599,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_song_laugh',
     conditions: { s2: 'subj_song', s4: 'pred_laugh' },
     resultText: '鋭い歌が裂け目から笑っている。旋律が歪み、笑い声のフレーズが繰り返される。陽気な曲なのに寒気がする。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
 
@@ -672,7 +672,7 @@ export const nodeP13Outcomes: Outcome[] = [
   {
     id: 'p13_knight_gaze',
     conditions: { s2: 'subj_knight', s4: 'pred_gaze' },
-    resultText: '鋭い騎士が裂け目から見つめている。兜の隙間から光る目が、こちらの装備を値踏みしている。通行料を取る気だ。',
+    resultText: '鋭い騎士が裂け目から見つめている。兜の隙間から覗く目が、こちらの剣筋を読んでいる。痩せこけた体に見合わない眼光。裂け目ごと避けて通った。',
     damage: 2,
     quill: 3
   },
@@ -715,7 +715,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_knight_dance',
     conditions: { s2: 'subj_knight', s4: 'pred_dance' },
     resultText: '鋭い騎士が裂け目から踊っている。剣を振り回す型稽古が、暗闘の中で踊りに見える。刃が空気を切る音だけが聞こえる。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -810,7 +810,7 @@ export const nodeP13Outcomes: Outcome[] = [
   {
     id: 'p13_king_whisper',
     conditions: { s2: 'subj_king', s4: 'pred_whisper' },
-    resultText: '鋭い王が裂け目から囁いている。勅命のような声が岩に反響する。「ここは余の領土だ」。裂け目の底に王座があるらしい。',
+    resultText: '鋭い王が裂け目から囁いている。「跪け」。鷹の目をした王が裂け目の底から命じる。膝が勝手に折れかけた。噛み締めた歯で耐える。',
     damage: 2,
     quill: 4
   },
@@ -861,7 +861,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_king_laugh',
     conditions: { s2: 'subj_king', s4: 'pred_laugh' },
     resultText: '鋭い王が裂け目から笑っている。哄笑が岩壁に跳ね返り、嘲りの声に変わる。何もかもが可笑しいらしい。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
 
@@ -869,7 +869,7 @@ export const nodeP13Outcomes: Outcome[] = [
   {
     id: 'p13_ghost_gaze',
     conditions: { s2: 'subj_ghost', s4: 'pred_gaze' },
-    resultText: '鋭い亡霊が裂け目から見つめている。半透明の眼窩にまだ視線が宿っている。死んでなお、何かを探し続けている。',
+    resultText: '鋭い亡霊が裂け目から見つめている。こちらの胸の内を透視するような目。生前の罪を全て知っているかのように、ゆっくり首を横に振った。',
     damage: 2,
     quill: 4
   },
@@ -926,7 +926,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_ghost_laugh',
     conditions: { s2: 'subj_ghost', s4: 'pred_laugh' },
     resultText: '鋭い亡霊が裂け目から笑っている。空洞の口から声のない笑いが漏れる。何十年も同じことを繰り返しているらしい。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
 
@@ -976,7 +976,7 @@ export const nodeP13Outcomes: Outcome[] = [
   {
     id: 'p13_mirror_dance',
     conditions: { s2: 'subj_mirror', s4: 'pred_dance' },
-    resultText: '鋭い鏡が裂け目から踊っている。回転する鏡面が光を乱反射させ、万華鏡のように景色が崩れる。酔いそうだ。',
+    resultText: '鋭い鏡が裂け目から踊っている。回転する破片が光を散らし、壁に百の自分が映る。どの自分も少しずつ違う動きをしている。本物がどれか、一瞬わからなくなった。',
     damage: 2,
     quill: 4
   },
@@ -1057,7 +1057,7 @@ export const nodeP13Outcomes: Outcome[] = [
     id: 'p13_doll_laugh',
     conditions: { s2: 'subj_doll', s4: 'pred_laugh' },
     resultText: '鋭い人形が裂け目から笑っている。口が動かないのに笑い声が聞こえる。腹話術の相方が、どこかに隠れている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
 

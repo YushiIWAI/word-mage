@@ -135,7 +135,7 @@ export const nodeP27Outcomes: Outcome[] = [
   {
     id: 'p27_butterfly_fierce',
     conditions: { s1: 'subj_butterfly', s4: 'adv_fierce' },
-    resultText: '蝶が鐘楼で激しく鳴り続けている。何百もの蝶の羽が鐘を叩く。嵐のようだ。',
+    resultText: '蝶が鐘楼で激しく鳴り続けている。何百もの蝶が鐘にぶつかり、鱗粉が金属に焼きつく。鐘の表面が虹色に変わっていく。耳鳴りがする。',
     damage: 2,
     quill: 4
   },
@@ -411,7 +411,7 @@ export const nodeP27Outcomes: Outcome[] = [
     id: 'p27_knight_sudden',
     conditions: { s1: 'subj_knight', s4: 'adv_sudden' },
     resultText: '騎士が鐘楼で突然鐘を鳴らした。出陣の合図。鎧が光り、馬が嘶く。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
 
@@ -485,7 +485,7 @@ export const nodeP27Outcomes: Outcome[] = [
   {
     id: 'p27_king_sudden',
     conditions: { s1: 'subj_king', s4: 'adv_sudden' },
-    resultText: '王が鐘楼で突然鐘を鳴らした。「目を覚ませ！」と叫んでいる。何かが来る。',
+    resultText: '王が鐘楼で突然鐘を鳴らした。老いた手で綱を引き、鐘が割れるほど打つ。谷の向こうから土煙が迫っている。',
     damage: 2,
     quill: 5
   },
@@ -523,7 +523,7 @@ export const nodeP27Outcomes: Outcome[] = [
     id: 'p27_ghost_sudden',
     conditions: { s1: 'subj_ghost', s4: 'adv_sudden' },
     resultText: '亡霊が鐘楼で突然鳴り出した。生者が来たことに気づいたのだ。歓迎なのか、拒絶なのか。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
 

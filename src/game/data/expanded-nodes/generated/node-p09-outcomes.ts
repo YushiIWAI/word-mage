@@ -6,7 +6,7 @@ export const nodeP09Outcomes: Outcome[] = [
   {
     id: 'p09_orig',
     conditions: { s1: 'mod_cursed', s4: 'orig_p09_pred' },
-    resultText: '呪われた鏡が井戸の底に沈んでいる。覗き込むと、水面のない暗がりの中に自分の顔が映る。ただし、映った顔は笑っていた。',
+    resultText: '呪われた鏡が井戸の底に沈んでいる。覗き込むと、水面のない暗がりの中に自分の顔が映る。映った顔が先にこちらへ手を振った。',
     damage: 2,
     quill: 3
   },
@@ -276,7 +276,7 @@ export const nodeP09Outcomes: Outcome[] = [
     id: 'p09_hard_entangle',
     conditions: { s1: 'mod_hard', s4: 'pred_entangle' },
     resultText: '堅い鏡が井戸に絡みついている。鉄の根のように井戸の壁に食い込み、石組みを圧迫している。井戸自体が軋んでいる。',
-    damage: 2,
+    damage: 1,
     quill: 2
   },
   {
@@ -303,7 +303,7 @@ export const nodeP09Outcomes: Outcome[] = [
   {
     id: 'p09_hard_dance',
     conditions: { s1: 'mod_hard', s4: 'pred_dance' },
-    resultText: '堅い鏡が井戸に踊っている。重い鏡が不自然に跳ね回り、井戸の壁を削っている。石の粉が舞い上がる。',
+    resultText: '堅い鏡が井戸の中で跳ねている。壁に当たるたびに火花が散り、石が削れて粉になる。割れもしない。底で立ち止まり、また跳ねた。',
     damage: 2,
     quill: 3
   },
@@ -318,7 +318,7 @@ export const nodeP09Outcomes: Outcome[] = [
     id: 'p09_hard_laugh',
     conditions: { s1: 'mod_hard', s4: 'pred_laugh' },
     resultText: '堅い鏡が井戸に笑っている。金属がきしむような笑い声が底から響く。不快な音だが、止める手段がない。',
-    damage: 2,
+    damage: 1,
     quill: 2
   },
   {
@@ -621,7 +621,7 @@ export const nodeP09Outcomes: Outcome[] = [
   {
     id: 'p09_frozen_dance',
     conditions: { s1: 'mod_frozen', s4: 'pred_dance' },
-    resultText: '凍てついた鏡が井戸に踊っている。氷上を滑るように回転し、冷気を撒き散らす。井戸の周りの草が白く凍った。',
+    resultText: '凍てついた鏡が井戸の縁で回転している。触れた石が次々と凍りつき、白い霧が立ち上る。手がかじかんで感覚がなくなった。',
     damage: 2,
     quill: 4
   },
@@ -787,7 +787,7 @@ export const nodeP09Outcomes: Outcome[] = [
   {
     id: 'p09_cursed_melt',
     conditions: { s1: 'mod_cursed', s4: 'pred_melt' },
-    resultText: '呪われた鏡が井戸に溶けている。呪いが解けつつあるのか、それとも溶けた鏡の方が危険なのか。黒い液体が底に広がっている。',
+    resultText: '呪われた鏡が井戸の中で溶けている。黒い液体が底に広がり、そこに映る空は夜だった。今は昼なのに。液体に触れた指先が冷たく痺れる。',
     damage: 2,
     quill: 4
   },
@@ -802,7 +802,7 @@ export const nodeP09Outcomes: Outcome[] = [
     id: 'p09_cursed_wait',
     conditions: { s1: 'mod_cursed', s4: 'pred_wait' },
     resultText: '呪われた鏡が井戸に待っている。覗き込む者を永遠に待ち続ける呪い。井戸の周りの草が枯れ、虫の声が消えている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
 

@@ -182,7 +182,7 @@ export const nodeP18Outcomes: Outcome[] = [
   {
     id: 'p18_fire_sleep',
     conditions: { s1: 'mod_fire', s4: 'pred_sleep' },
-    resultText: '燃え盛る子猫が湖に眠っている。火をまとったまま水辺に丸くなっている。周囲の水が蒸発して、猫の形に干上がった地面が見えている。',
+    resultText: '燃え盛る子猫が湖に眠っている。炎をまとったまま水辺に丸くなり、周囲の水が蒸発して地面が露出している。猫の寝息に合わせて炎が強弱する。湖がじわじわ縮んでい���。',
     damage: 2,
     quill: 4
   },
@@ -225,7 +225,7 @@ export const nodeP18Outcomes: Outcome[] = [
     id: 'p18_fire_dance',
     conditions: { s1: 'mod_fire', s4: 'pred_dance' },
     resultText: '燃え盛る子猫が湖に踊っている。水面で炎の輪を描きながら回転している。湖が温泉になりかけている。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -245,7 +245,7 @@ export const nodeP18Outcomes: Outcome[] = [
   {
     id: 'p18_fire_wait',
     conditions: { s1: 'mod_fire', s4: 'pred_wait' },
-    resultText: '燃え盛る子猫が湖に待っている。岸辺に座って燃えている。草が焦げている。猫は動かない。何を待っているのか。',
+    resultText: '燃え盛る子猫が湖に待っている。岸辺に座り、尻尾で地面を叩くたびに火花が散る。焦げた草の円が少しずつ広がっている。こちらに気づくと、嬉しそうに炎を膨らませた。',
     damage: 2,
     quill: 3
   },
@@ -383,7 +383,7 @@ export const nodeP18Outcomes: Outcome[] = [
     id: 'p18_sharp_dance',
     conditions: { s1: 'mod_sharp', s4: 'pred_dance' },
     resultText: '鋭い子猫が湖に踊っている。爪先で水面を引っ掻きながら回転している。水面に模様が刻まれていく。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -514,7 +514,7 @@ export const nodeP18Outcomes: Outcome[] = [
     id: 'p18_mighty_entangle',
     conditions: { s1: 'mod_mighty', s4: 'pred_entangle' },
     resultText: '屈強な子猫が湖に絡みついている。水草に絡まっているが、力任せに引きちぎっている。湖底が掘り返されていく。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
@@ -548,7 +548,7 @@ export const nodeP18Outcomes: Outcome[] = [
   {
     id: 'p18_mighty_melt',
     conditions: { s1: 'mod_mighty', s4: 'pred_melt' },
-    resultText: '屈強な子猫が湖に溶けている。あの巨体が湖に飲まれていく。最後に残った尻尾が一振りして消えた。湖が少し大きくなった。',
+    resultText: '屈強な子猫が湖に溶けている。あの虎のような体が湖水に混ざり、水が筋肉質に盛り上がる。波が立つたび獣の力が伝わってくる。この湖で泳ぐのはやめた方がいい。',
     damage: 2,
     quill: 4
   },
@@ -636,7 +636,7 @@ export const nodeP18Outcomes: Outcome[] = [
     id: 'p18_frozen_laugh',
     conditions: { s1: 'mod_frozen', s4: 'pred_laugh' },
     resultText: '凍てついた子猫が湖に笑っている。氷の表情が笑顔のまま固まっている。溶けても笑顔は変わらない。怖い。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
@@ -738,7 +738,7 @@ export const nodeP18Outcomes: Outcome[] = [
   {
     id: 'p18_cursed_sleep',
     conditions: { s1: 'mod_cursed', s4: 'pred_sleep' },
-    resultText: '呪われた子猫が湖に眠っている。黒い猫が水辺で丸くなっている。近づくと悪夢が見えた。起こしてはいけない。',
+    resultText: '呪われた子猫が湖に眠っている。黒い猫が水辺で丸くなっている。三歩近づいたところで、昨夜見た悪夢が白昼のまま再生された。二歩で引き返した。',
     damage: 2,
     quill: 3
   },
@@ -767,7 +767,7 @@ export const nodeP18Outcomes: Outcome[] = [
     id: 'p18_cursed_shine',
     conditions: { s1: 'mod_cursed', s4: 'pred_shine' },
     resultText: '呪われた子猫が湖に輝く。不吉な紫の光が水面を照らしている。美しいが、見つめてはいけない気がする。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -780,7 +780,7 @@ export const nodeP18Outcomes: Outcome[] = [
   {
     id: 'p18_cursed_dance',
     conditions: { s1: 'mod_cursed', s4: 'pred_dance' },
-    resultText: '呪われた子猫が湖に踊っている。狂ったように回っている。踊りをやめられないのかもしれない。目が助けを求めている。',
+    resultText: '呪われた子猫が湖に踊っている。黒い猫が水面をぐるぐると回り続けている。三日三晩踊っているらしい。足跡が湖面に呪いの紋様を描いている。助けたいが、触れたら伝染する。',
     damage: 2,
     quill: 5
   },

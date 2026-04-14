@@ -277,7 +277,7 @@ export const nodeP23Outcomes: Outcome[] = [
     id: 'p23_hard_entangle',
     conditions: { s1: 'mod_hard', s4: 'pred_entangle' },
     resultText: '堅い炎が書庫に絡みついている。石化した火の蔓が書架を締め上げている。本を抜こうとしても動かない。',
-    damage: 2,
+    damage: 1,
     quill: 3
   },
   {
@@ -456,7 +456,7 @@ export const nodeP23Outcomes: Outcome[] = [
   {
     id: 'p23_broken_rain_down',
     conditions: { s1: 'mod_broken', s4: 'pred_rain_down' },
-    resultText: '壊れた炎が書庫に降り注いでいる。灰と煤が静かに舞い落ちる。かつての大火の残滓だ。本はとうに焼けている。',
+    resultText: '壊れた炎が書庫に降り注いでいる。灰が雪のように積もり、足首まで埋まる。吸い込んだ煤で喉が焼けた。書架の本はすべて背表紙だけの抜け殻だった。',
     damage: 2,
     quill: 2
   },
@@ -596,7 +596,7 @@ export const nodeP23Outcomes: Outcome[] = [
     id: 'p23_frozen_entangle',
     conditions: { s1: 'mod_frozen', s4: 'pred_entangle' },
     resultText: '凍てついた炎が書庫に絡みついている。氷の火が樹氷のように書架を覆っている。美しいが、本はもう開けない。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -631,7 +631,7 @@ export const nodeP23Outcomes: Outcome[] = [
   {
     id: 'p23_frozen_melt',
     conditions: { s1: 'mod_frozen', s4: 'pred_melt' },
-    resultText: '凍てついた炎が書庫に溶けている。冷たい火が水になって書架を伝う。本が濡れていく。焼けるよりましだが、インクが滲む。',
+    resultText: '凍てついた炎が書庫で溶けている。青白い水が書架を伝い落ち、床に薄い氷の膜を張る。足を滑らせて本棚に手をつくと、指先のインクが本に移った。',
     damage: 2,
     quill: 3
   },
@@ -741,7 +741,7 @@ export const nodeP23Outcomes: Outcome[] = [
   {
     id: 'p23_cursed_sleep',
     conditions: { s1: 'mod_cursed', s4: 'pred_sleep' },
-    resultText: '呪われた炎が書庫に眠っている。黒い焔が燭台の上で沈黙している。起こせば災いが起きるが、このまま放置しても呪いは広がる。',
+    resultText: '呪われた炎が書庫に眠っている。黒い焔が燭台の上で微動だにしない。近くの本を開くと、全ページが同じ一文で埋め尽くされていた。「起こすな」。',
     damage: 2,
     quill: 3
   },
@@ -770,7 +770,7 @@ export const nodeP23Outcomes: Outcome[] = [
     id: 'p23_cursed_shine',
     conditions: { s1: 'mod_cursed', s4: 'pred_shine' },
     resultText: '呪われた炎が書庫に輝いている。紫の光に照らされた本の文字が浮かび上がる。読んではいけない知識だった。',
-    damage: 2,
+    damage: 1,
     quill: 5,
     rewardItems: [{ id: 'item_p23_cursed_shine', name: '禁忌の頁', description: '呪いの光に浮かんだ知識。読むと頭痛がする', sellPrice: 7 }]
   },

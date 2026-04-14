@@ -1215,7 +1215,7 @@
           <div class="result-stats">
             {#if lastPlayerDamage > 0}<span class="stat-damage">-{lastPlayerDamage} HP</span>
             {:else if lastPlayerDamage < 0}<span class="stat-heal">+{-lastPlayerDamage} HP</span>
-            {:else}<span class="stat-nodamage">ダメージなし</span>{/if}
+            {:else}<span class="stat-nodamage">消耗なし</span>{/if}
             {#if lastQuill > 0}<span class="stat-gold">+{lastQuill} Q</span>{/if}
           </div>
           {#if lastRewardCards.length > 0 || lastRewardItems.length > 0}

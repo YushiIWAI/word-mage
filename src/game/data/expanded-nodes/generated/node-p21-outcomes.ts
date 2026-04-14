@@ -96,7 +96,7 @@ export const nodeP21Outcomes: Outcome[] = [
     id: 'p21_snake_whisper',
     conditions: { s2: 'subj_snake', s4: 'pred_whisper' },
     resultText: '屈強な蛇が十字路に囁いている。太い蛇が石畳に腹をつけて振動を送っている。地面が微かに震え、足裏に言葉が伝わる。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -116,7 +116,7 @@ export const nodeP21Outcomes: Outcome[] = [
   {
     id: 'p21_snake_entangle',
     conditions: { s2: 'subj_snake', s4: 'pred_entangle' },
-    resultText: '屈強な蛇が十字路に絡みついている。四本の道標すべてに蛇が巻きつき、文字が読めない。どの道がどこへ続くかわからない。',
+    resultText: '屈強な蛇が十字路に絡みついている。四本の道標すべてに蛇が巻きつき、文字が読めない。勘で選んだ道は、三歩進んで行き止まりだった。',
     damage: 2,
     quill: 4
   },
@@ -144,14 +144,14 @@ export const nodeP21Outcomes: Outcome[] = [
   {
     id: 'p21_snake_dance',
     conditions: { s2: 'subj_snake', s4: 'pred_dance' },
-    resultText: '屈強な蛇が十字路に踊っている。鎌首を揺らし、笛もないのに蛇使いの踊りを舞う。見入ると足が止まる。',
+    resultText: '屈強な蛇が十字路に踊っている。鎌首を揺らし、笛もないのに蛇使いの踊りを舞う。気づけば膝が折れていた。蛇と同じ高さで目が合う。',
     damage: 2,
     quill: 5
   },
   {
     id: 'p21_snake_melt',
     conditions: { s2: 'subj_snake', s4: 'pred_melt' },
-    resultText: '屈強な蛇が十字路に溶けている。鱗が液体になり、石畳の隙間に染み込んでいく。どこを踏んでも湿っている。',
+    resultText: '屈強な蛇が十字路に溶けている。鱗が液体になり、石畳の隙間に染み込んでいく。靴底を突き抜けて、足の裏がぬるい。',
     damage: 2,
     quill: 3
   },
@@ -165,7 +165,7 @@ export const nodeP21Outcomes: Outcome[] = [
   {
     id: 'p21_snake_wait',
     conditions: { s2: 'subj_snake', s4: 'pred_wait' },
-    resultText: '屈強な蛇が十字路に待っている。とぐろを巻いて微動だにしない。獲物を待つ忍耐。こちらが獲物でないことを祈る。',
+    resultText: '屈強な蛇が十字路に待っている。とぐろを巻いて微動だにしない。横を通り抜けた瞬間、尾が足首に触れた。心臓が一拍飛ぶ。',
     damage: 2,
     quill: 4
   },
@@ -211,7 +211,7 @@ export const nodeP21Outcomes: Outcome[] = [
     id: 'p21_dragon_shine',
     conditions: { s2: 'subj_dragon', s4: 'pred_shine' },
     resultText: '屈強な竜が十字路に輝く。鱗が月光を受けて白熱する。十字路が真昼のように明るい。影が四方に長く伸びた。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -268,7 +268,7 @@ export const nodeP21Outcomes: Outcome[] = [
   {
     id: 'p21_butterfly_sing',
     conditions: { s2: 'subj_butterfly', s4: 'pred_sing' },
-    resultText: '屈強な蝶が十字路に歌っている。翅の振動が高周波の旋律を生む。硝子が割れるような音だ。',
+    resultText: '屈強な蝶が十字路に歌っている。翅の振動が高周波の旋律を生む。耳の奥がきんと鳴り、しばらく右耳が聞こえなくなった。',
     damage: 2,
     quill: 5
   },
@@ -384,7 +384,7 @@ export const nodeP21Outcomes: Outcome[] = [
     id: 'p21_wind_dance',
     conditions: { s2: 'subj_wind', s4: 'pred_dance' },
     resultText: '屈強な風が十字路に踊っている。四方から吹く風が組み合い、螺旋を描く。巻き込まれた木の葉が踊り子のように舞う。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -397,7 +397,7 @@ export const nodeP21Outcomes: Outcome[] = [
   {
     id: 'p21_wind_laugh',
     conditions: { s2: 'subj_wind', s4: 'pred_laugh' },
-    resultText: '屈強な風が十字路に笑っている。突風が吹くたびに、建物の隙間から嘲るような音が響く。風に笑われている。',
+    resultText: '屈強な風が十字路に笑っている。突風が吹くたびに、建物の隙間から嘲るような音が響く。帽子を奪われ、追えば追うほど遠ざかる。',
     damage: 2,
     quill: 3
   },
@@ -448,7 +448,7 @@ export const nodeP21Outcomes: Outcome[] = [
   {
     id: 'p21_flame_shine',
     conditions: { s2: 'subj_flame', s4: 'pred_shine' },
-    resultText: '屈強な炎が十字路に輝く。炎が純白に燃え、十字路を真昼のように照らす。影が一切ない。不気味に明るい。',
+    resultText: '屈強な炎が十字路に輝く。炎が純白に燃え、十字路を真昼のように照らす。影が一切消えた場所を歩くと、目の焦点が合わなくなる。',
     damage: 2,
     quill: 5
   },
@@ -493,7 +493,7 @@ export const nodeP21Outcomes: Outcome[] = [
     id: 'p21_ice_whisper',
     conditions: { s2: 'subj_ice', s4: 'pred_whisper' },
     resultText: '屈強な氷が十字路に囁いている。氷柱が風で触れ合い、澄んだ音を立てる。言葉に聞こえるのは気のせいか。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -555,7 +555,7 @@ export const nodeP21Outcomes: Outcome[] = [
   {
     id: 'p21_ice_laugh',
     conditions: { s2: 'subj_ice', s4: 'pred_laugh' },
-    resultText: '屈強な氷が十字路に笑っている。氷が軋む音が笑い声に聞こえる。寒さが骨に沁みる。',
+    resultText: '屈強な氷が十字路に笑っている。氷が軋む音が笑い声に聞こえる。吐く息が白くなり、指先から順に感覚が遠のいていく。',
     damage: 2,
     quill: 3
   },
@@ -571,21 +571,21 @@ export const nodeP21Outcomes: Outcome[] = [
   {
     id: 'p21_shadow_whisper',
     conditions: { s2: 'subj_shadow', s4: 'pred_whisper' },
-    resultText: '屈強な影が十字路に囁いている。地面に広がる影が脈動し、耳に直接声が届く。道を教えている。信じていいかはわからない。',
+    resultText: '屈強な影が十字路に囁いている。地面に広がる影が脈動し、耳に直接声が届く。教えられた道を選んだが、景色に覚えがない。引き返せない。',
     damage: 2,
     quill: 5
   },
   {
     id: 'p21_shadow_sleep',
     conditions: { s2: 'subj_shadow', s4: 'pred_sleep' },
-    resultText: '屈強な影が十字路に眠っている。四つ辻全体が深い影に沈んでいる。月が出ているのに暗い。踏むと冷たい。',
+    resultText: '屈強な影が十字路に眠っている。四つ辻全体が深い影に沈んでいる。月が出ているのに暗い。影を踏んで渡ると、体温を一枚剥がされた気がした。',
     damage: 2,
     quill: 3
   },
   {
     id: 'p21_shadow_sing',
     conditions: { s2: 'subj_shadow', s4: 'pred_sing' },
-    resultText: '屈強な影が十字路に歌っている。影から低い歌声が湧き上がる。聴いていると自分の影が長く伸びていく。',
+    resultText: '屈強な影が十字路に歌っている。影から低い歌声が湧き上がる。歌に合わせて自分の影が伸び、足首を掴もうとする。振り払って走った。',
     damage: 2,
     quill: 5
   },
@@ -620,21 +620,21 @@ export const nodeP21Outcomes: Outcome[] = [
   {
     id: 'p21_shadow_dance',
     conditions: { s2: 'subj_shadow', s4: 'pred_dance' },
-    resultText: '屈強な影が十字路に踊っている。月光の下、主のない影が四つ辻で輪舞する。自分の影が引きずられるように動き始めた。',
+    resultText: '屈強な影が十字路に踊っている。月光の下、主のない影が四つ辻で輪舞する。自分の影が勝手に輪に加わり、体ごと三歩引きずられた。',
     damage: 2,
     quill: 5
   },
   {
     id: 'p21_shadow_melt',
     conditions: { s2: 'subj_shadow', s4: 'pred_melt' },
-    resultText: '屈強な影が十字路に溶けている。影が液体のように地面に広がり、四方の道を黒く染めている。底が見えない。',
+    resultText: '屈強な影が十字路に溶けている。影が液体のように地面に広がり、四方の道を黒く染めている。膝まで沈んだところで、何かが脛を撫でた。',
     damage: 2,
     quill: 4
   },
   {
     id: 'p21_shadow_laugh',
     conditions: { s2: 'subj_shadow', s4: 'pred_laugh' },
-    resultText: '屈強な影が十字路に笑っている。影が震えている。笑い声はしないが、嘲りが伝わる。自分の影も震え始めた。',
+    resultText: '屈強な影が十字路に笑っている。影が震えている。笑い声はしないが、嘲りが伝わる。振り向くと、自分の影が一瞬だけ別の形をしていた。',
     damage: 2,
     quill: 4
   },
@@ -708,7 +708,7 @@ export const nodeP21Outcomes: Outcome[] = [
   {
     id: 'p21_song_melt',
     conditions: { s2: 'subj_song', s4: 'pred_melt' },
-    resultText: '屈強な歌が十字路に溶けている。力強かった旋律が崩れ、不協和音になっていく。聴いていると気分が悪くなる。',
+    resultText: '屈強な歌が十字路に溶けている。力強かった旋律が崩れ、不協和音になっていく。胃の底が持ち上がり、立ち止まって壁に手をつく。',
     damage: 2,
     quill: 3
   },
@@ -774,14 +774,14 @@ export const nodeP21Outcomes: Outcome[] = [
   {
     id: 'p21_silence_rain_down',
     conditions: { s2: 'subj_silence', s4: 'pred_rain_down' },
-    resultText: '屈強な沈黙が十字路に降り注いでいる。空から無音が降ってくる。浴びた場所から音が死んでいく。',
+    resultText: '屈強な沈黙が十字路に降り注いでいる。空から無音が降ってくる。頭に当たるたび記憶が一つ、音を失っていく。母の声が思い出せない。',
     damage: 2,
     quill: 5
   },
   {
     id: 'p21_silence_dance',
     conditions: { s2: 'subj_silence', s4: 'pred_dance' },
-    resultText: '屈強な沈黙が十字路に踊っている。音もなく空気が揺れる。何かが動いているのに何も聞こえない。不気味だ。',
+    resultText: '屈強な沈黙が十字路に踊っている。音もなく空気が揺れる。見えない腕に肩を掴まれ、一回転させられた。方角がわからなくなった。',
     damage: 2,
     quill: 4
   },
@@ -795,7 +795,7 @@ export const nodeP21Outcomes: Outcome[] = [
   {
     id: 'p21_silence_laugh',
     conditions: { s2: 'subj_silence', s4: 'pred_laugh' },
-    resultText: '屈強な沈黙が十字路に笑っている。音がないのに笑いの気配がある。空気が痙攣している。',
+    resultText: '屈強な沈黙が十字路に笑っている。音がないのに笑いの気配がある。つられて口を開けたが、自分の声も出なくなっていた。',
     damage: 2,
     quill: 5
   },
@@ -812,7 +812,7 @@ export const nodeP21Outcomes: Outcome[] = [
     id: 'p21_knight_whisper',
     conditions: { s2: 'subj_knight', s4: 'pred_whisper' },
     resultText: '屈強な騎士が十字路に囁いている。兜の奥から低い声が漏れる。道を尋ねているのか、警告しているのか。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -826,7 +826,7 @@ export const nodeP21Outcomes: Outcome[] = [
     id: 'p21_knight_sing',
     conditions: { s2: 'subj_knight', s4: 'pred_sing' },
     resultText: '屈強な騎士が十字路に歌っている。兜の中で反響する軍歌が、四方の道に響く。士気が上がるような、沈むような歌だ。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -868,13 +868,13 @@ export const nodeP21Outcomes: Outcome[] = [
     id: 'p21_knight_melt',
     conditions: { s2: 'subj_knight', s4: 'pred_melt' },
     resultText: '屈強な騎士が十字路に溶けている。甲冑の中身が液体になって流れ出している。兜だけが残り、空を見上げている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'p21_knight_laugh',
     conditions: { s2: 'subj_knight', s4: 'pred_laugh' },
-    resultText: '屈強な騎士が十字路に笑っている。兜の中で反響する笑い声が不気味に響く。目のスリットの奥が見えない。',
+    resultText: '屈強な騎士が十字路に笑っている。兜の中で反響する笑い声。すれ違いざまに肩を叩かれた。鉄の手甲の重さが、翌朝まで残った。',
     damage: 2,
     quill: 3
   },
@@ -890,7 +890,7 @@ export const nodeP21Outcomes: Outcome[] = [
   {
     id: 'p21_witch_whisper',
     conditions: { s2: 'subj_witch', s4: 'pred_whisper' },
-    resultText: '屈強な魔女が十字路に囁いている。四つ辻にしゃがみ込み、石畳に呪文を刻んでいる。聞こえた一節が頭から離れない。',
+    resultText: '屈強な魔女が十字路に囁いている。四つ辻にしゃがみ込み、石畳に呪文を刻んでいる。一節が耳に残り、そのせいで今夜は眠れない。',
     damage: 2,
     quill: 5
   },
@@ -912,7 +912,7 @@ export const nodeP21Outcomes: Outcome[] = [
     id: 'p21_witch_entangle',
     conditions: { s2: 'subj_witch', s4: 'pred_entangle' },
     resultText: '屈強な魔女が十字路に絡みついている。道標を抱え込んで離さない。魔女ごと引き倒さないと通れない。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -941,7 +941,7 @@ export const nodeP21Outcomes: Outcome[] = [
     id: 'p21_witch_dance',
     conditions: { s2: 'subj_witch', s4: 'pred_dance' },
     resultText: '屈強な魔女が十字路に踊っている。ワルプルギスの夜のように、ひとりで輪を描いて踊る。地面に魔法陣が刻まれていく。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -954,7 +954,7 @@ export const nodeP21Outcomes: Outcome[] = [
   {
     id: 'p21_witch_laugh',
     conditions: { s2: 'subj_witch', s4: 'pred_laugh' },
-    resultText: '屈強な魔女が十字路に笑っている。腹の底から響く哄笑。四つの道が震え、どの道も危険に聞こえる。',
+    resultText: '屈強な魔女が十字路に笑っている。腹の底から響く哄笑。笑い声を浴びた肌がひりつき、服の下に小さな痣ができていた。',
     damage: 2,
     quill: 4
   },
@@ -985,7 +985,7 @@ export const nodeP21Outcomes: Outcome[] = [
     id: 'p21_king_sing',
     conditions: { s2: 'subj_king', s4: 'pred_sing' },
     resultText: '屈強な王が十字路に歌っている。朗々と軍歌を歌い上げる。声に力があり、四方から兵士が集まりそうな響きだ。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -1028,20 +1028,20 @@ export const nodeP21Outcomes: Outcome[] = [
     id: 'p21_king_melt',
     conditions: { s2: 'subj_king', s4: 'pred_melt' },
     resultText: '屈強な王が十字路に溶けている。黄金の甲冑から王が流れ出している。王冠だけが形を保ち、空を見上げている。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'p21_king_laugh',
     conditions: { s2: 'subj_king', s4: 'pred_laugh' },
-    resultText: '屈強な王が十字路に笑っている。見下ろすような笑い。何がおかしいのかわからないが、笑われているのは確かだ。',
+    resultText: '屈強な王が十字路に笑っている。見下ろすような笑い。背筋が勝手に伸び、膝が折れそうになる。王の前では誰もが臣下になる。',
     damage: 2,
     quill: 3
   },
   {
     id: 'p21_king_wait',
     conditions: { s2: 'subj_king', s4: 'pred_wait' },
-    resultText: '屈強な王が十字路に待っている。道の中央に立ち、腕を組んでいる。謁見を求めるように通行者を見下ろす。',
+    resultText: '屈強な王が十字路に待っている。道の中央に立ち、腕を組んでいる。目を合わせた瞬間、足が縫い止められた。許しが出るまで動けない。',
     damage: 2,
     quill: 4
   },
@@ -1051,7 +1051,7 @@ export const nodeP21Outcomes: Outcome[] = [
     id: 'p21_ghost_whisper',
     conditions: { s2: 'subj_ghost', s4: 'pred_whisper' },
     resultText: '屈強な亡霊が十字路に囁いている。透けた体から低い声が漏れる。道を間違えるなと言っている。どの道が正しいかは教えてくれない。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
@@ -1065,14 +1065,14 @@ export const nodeP21Outcomes: Outcome[] = [
     id: 'p21_ghost_sing',
     conditions: { s2: 'subj_ghost', s4: 'pred_sing' },
     resultText: '屈強な亡霊が十字路に歌っている。生前の軍歌だろうか。力強い声だが、どこか遠い。涙が出そうになる。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
     id: 'p21_ghost_entangle',
     conditions: { s2: 'subj_ghost', s4: 'pred_entangle' },
     resultText: '屈強な亡霊が十字路に絡みついている。道標に抱きついて離れない。生前の記憶がこの場所に縛りつけているのだろう。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
@@ -1114,14 +1114,14 @@ export const nodeP21Outcomes: Outcome[] = [
     id: 'p21_ghost_laugh',
     conditions: { s2: 'subj_ghost', s4: 'pred_laugh' },
     resultText: '屈強な亡霊が十字路に笑っている。透けた体を震わせて笑う。何が面白いのか。死者のユーモアはわからない。',
-    damage: 2,
+    damage: 1,
     quill: 4
   },
   {
     id: 'p21_ghost_wait',
     conditions: { s2: 'subj_ghost', s4: 'pred_wait' },
     resultText: '屈強な亡霊が十字路に待っている。何百年も同じ場所に立ち続けている気配がある。待ち人はもう来ないだろう。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
 
@@ -1129,7 +1129,7 @@ export const nodeP21Outcomes: Outcome[] = [
   {
     id: 'p21_mirror_whisper',
     conditions: { s2: 'subj_mirror', s4: 'pred_whisper' },
-    resultText: '屈強な鏡が十字路に囁いている。鏡面が震え、映った像の口が動いている。自分の姿が何か言っている。聞こえない。',
+    resultText: '屈強な鏡が十字路に囁いている。鏡面が震え、映った像の口が動いている。唇を読もうとして額を寄せた。額が氷のように冷たい鏡面に触れ、離れない。',
     damage: 2,
     quill: 5
   },
@@ -1143,7 +1143,7 @@ export const nodeP21Outcomes: Outcome[] = [
   {
     id: 'p21_mirror_sing',
     conditions: { s2: 'subj_mirror', s4: 'pred_sing' },
-    resultText: '屈強な鏡が十字路に歌っている。鏡面が振動し、澄んだ高音を発する。映った景色が歪んでいく。',
+    resultText: '屈強な鏡が十字路に歌っている。鏡面が振動し、澄んだ高音を発する。共鳴で歯の奥が疼き、こめかみに鈍い痛みが走る。',
     damage: 2,
     quill: 5
   },
@@ -1185,14 +1185,14 @@ export const nodeP21Outcomes: Outcome[] = [
   {
     id: 'p21_mirror_melt',
     conditions: { s2: 'subj_mirror', s4: 'pred_melt' },
-    resultText: '屈強な鏡が十字路に溶けている。水銀のように流れ、石畳を銀色に染めている。覗き込むと底に自分の顔がある。',
+    resultText: '屈強な鏡が十字路に溶けている。水銀のように流れ、石畳を銀色に染めている。踏んで渡ったら、靴底に自分の顔が貼りついて取れない。',
     damage: 2,
     quill: 5
   },
   {
     id: 'p21_mirror_laugh',
     conditions: { s2: 'subj_mirror', s4: 'pred_laugh' },
-    resultText: '屈強な鏡が十字路に笑っている。映った自分の顔が笑っている。こちらは笑っていないのに。',
+    resultText: '屈強な鏡が十字路に笑っている。映った自分の顔が笑っている。こちらは笑っていないのに。口元の筋肉がひきつり、同じ笑みを作らされた。',
     damage: 2,
     quill: 5
   },
@@ -1223,7 +1223,7 @@ export const nodeP21Outcomes: Outcome[] = [
     id: 'p21_doll_sing',
     conditions: { s2: 'subj_doll', s4: 'pred_sing' },
     resultText: '屈強な人形が十字路に歌っている。ぎこちない口の動きから子守歌が漏れる。誰に聞かせているのか。',
-    damage: 2,
+    damage: 1,
     quill: 5
   },
   {
