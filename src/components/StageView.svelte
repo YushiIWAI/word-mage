@@ -125,10 +125,10 @@
   const stageNames = ['森', '谷', '山', '城', '塔'];
 
   // ノード移動時のアニメーション
+  // 魔女は左側固定（WALK_POS）、その場で歩く。景色の方がスクロールする
   const WALK_DURATION = 2000; // ms
-  const WALK_START = 30; // left%
-  const WALK_END = 70; // left%
-  const BG_SCROLL_DISTANCE = 120; // px
+  const WALK_POS = 30; // left% （固定位置）
+  const BG_SCROLL_DISTANCE = 400; // px （景色のスクロール量）
 
   function easeInOutCubic(t: number): number {
     return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
@@ -139,8 +139,8 @@
     isMoving = true;
     showArrivalName = false;
 
-    // 魔女を開始位置にリセット（瞬間移動）
-    witchLeft = WALK_START;
+    // 魔女は固定位置（左寄り）に保ち、景色がスクロールする
+    witchLeft = WALK_POS;
 
     const startOffset = bgOffset;
     const startTime = performance.now();
@@ -150,9 +150,7 @@
       const t = Math.min(1, elapsed / WALK_DURATION);
       const eased = easeInOutCubic(t);
 
-      // 魔女を左から右にスライド
-      witchLeft = WALK_START + (WALK_END - WALK_START) * eased;
-      // 背景をスクロール
+      // 背景をスクロール（魔女はその場で歩く）
       bgOffset = startOffset + BG_SCROLL_DISTANCE * eased;
 
       // 歩行中のフレーム切り替え（walk1 ⇄ walk2 を WALK_FRAME_INTERVAL ごと）
