@@ -52,4 +52,11 @@ export const nodeP22Outcomes: Outcome[] = [
     damage: 0,
     quill: 4
   },
+  {
+    id: 'p22_wait',
+    conditions: { s4: 'pred_wait' },
+    resultText: '古い水車が川を待っている。上流の水が細り、羽板の先まで届かない。水車は微動だにせず、次の雨を待っている。',
+    damage: 0,
+    quill: 5
+  },
 ];
