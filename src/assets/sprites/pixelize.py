@@ -53,12 +53,14 @@ PRESETS = {
         "chromakey": True, "chromakey_fuzz": 12.0,
     },
     # bg-mid-complex: 情報量が多い複雑なシーン（森・山）用
-    # chromakey で上部の空を透過化し、far層と自然に重なるようにする
+    # 色距離ベース chromakey（flood fill ではない）: 木の間など被写体に接しない
+    # 同系色も透過される。内部の小さな穴は自動島除去でカバー。
     "bg-mid-complex": {
         "width": 400, "height": 96, "colors": 18,
         "outline": True, "outline_strength": 0.15,
         "dither": False, "bilateral": True,
-        "chromakey": True, "chromakey_fuzz": 22.0,
+        "chromakey": True, "chromakey_fuzz": 24.0,
+        "chromakey_flood": False,
     },
     "road": {
         "width": 400, "height": 16, "colors": 8,
@@ -333,50 +335,106 @@ def floyd_steinberg_dither(
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # メインパイプライン
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-def remove_background(img_cv: np.ndarray, fuzz: float = 40.0, flood: bool = False) -> np.ndarray:
+def _flood_from_edge(img_cv: np.ndarray, seed_color_hsv: np.ndarray, edges: list, fuzz: float) -> np.ndarray:
+    """
+    指定された seed 色に類似し、指定された edges のいずれかに接する
+    連結成分を True にしたマスクを返す。
+    edges: ['top', 'bottom', 'left', 'right'] から選択
+    """
+    hsv = cv2.cvtColor(img_cv, cv2.COLOR_BGR2HSV).astype(np.float32)
+    h_diff = np.abs(hsv[:, :, 0] - seed_color_hsv[0])
+    h_diff = np.minimum(h_diff, 180 - h_diff)
+    s_diff = np.abs(hsv[:, :, 1] - seed_color_hsv[1])
+    v_diff = np.abs(hsv[:, :, 2] - seed_color_hsv[2])
+    dist = np.sqrt(h_diff ** 2 + (s_diff * 0.5) ** 2 + (v_diff * 0.5) ** 2)
+    similar = (dist < fuzz).astype(np.uint8)
+
+    num_labels, labels = cv2.connectedComponents(similar, connectivity=8)
+    h, w = similar.shape
+    edge_labels = set()
+    if 'top' in edges:
+        for x in range(w):
+            if similar[0, x]:
+                edge_labels.add(int(labels[0, x]))
+    if 'bottom' in edges:
+        for x in range(w):
+            if similar[h - 1, x]:
+                edge_labels.add(int(labels[h - 1, x]))
+    if 'left' in edges:
+        for y in range(h):
+            if similar[y, 0]:
+                edge_labels.add(int(labels[y, 0]))
+    if 'right' in edges:
+        for y in range(h):
+            if similar[y, w - 1]:
+                edge_labels.add(int(labels[y, w - 1]))
+    edge_labels.discard(0)
+    return np.isin(labels, list(edge_labels) if edge_labels else []).astype(bool)
+
+
+def remove_background(img_cv: np.ndarray, fuzz: float = 40.0, flood: bool = False,
+                      flood_bottom: bool = False, flood_bottom_fuzz: float = None) -> np.ndarray:
     """
     背景を除去してアルファマスクを返す。
 
-    flood=False (従来): 左上ピクセル色と HSV 距離が fuzz 以内を全て透過化。
-        シンプルだが、被写体内部に同系色があると穴が開く。
+    flood=False (色距離chromakey): 左上ピクセル色と HSV 距離が fuzz 以内を全て透過化。
+        被写体内部の同系色は小さな島として除去される（内部の「ゴミ」対策）。
+        木の隙間など、画像端に連結していない同色領域も透過になる（望ましい場合）。
 
-    flood=True (推奨): 画像の上端・左端・右端に接触しているピクセルで、
-        背景色に似ているものだけを透過化（連結成分ベース）。
-        被写体内部の同系色は透過されないので穴が開かない。
+    flood=True: 画像端から連結した背景色のみ透過化。被写体の内部穴を防ぐが、
+        flood_bottom=True で下端からも別色 seed で flood fill 可能。
 
     Returns: アルファマスク (h, w) uint8 0=透過, 255=不透過
     """
     hsv = cv2.cvtColor(img_cv, cv2.COLOR_BGR2HSV).astype(np.float32)
-    bg_hsv = hsv[0, 0]
-    h_diff = np.abs(hsv[:, :, 0] - bg_hsv[0])
-    h_diff = np.minimum(h_diff, 180 - h_diff)
-    s_diff = np.abs(hsv[:, :, 1] - bg_hsv[1])
-    v_diff = np.abs(hsv[:, :, 2] - bg_hsv[2])
-    dist = np.sqrt(h_diff ** 2 + (s_diff * 0.5) ** 2 + (v_diff * 0.5) ** 2)
-    similar = (dist < fuzz).astype(np.uint8)  # 1=背景色に類似
+    h, w = img_cv.shape[:2]
 
     if not flood:
-        return np.where(similar, 0, 255).astype(np.uint8)
+        bg_hsv = hsv[0, 0]
+        h_diff = np.abs(hsv[:, :, 0] - bg_hsv[0])
+        h_diff = np.minimum(h_diff, 180 - h_diff)
+        s_diff = np.abs(hsv[:, :, 1] - bg_hsv[1])
+        v_diff = np.abs(hsv[:, :, 2] - bg_hsv[2])
+        dist = np.sqrt(h_diff ** 2 + (s_diff * 0.5) ** 2 + (v_diff * 0.5) ** 2)
+        alpha = np.where(dist < fuzz, 0, 255).astype(np.uint8)
+    else:
+        # 上端からの flood fill
+        top_seed = hsv[0, 0]
+        transparent = _flood_from_edge(img_cv, top_seed, ['top', 'left', 'right'], fuzz)
+        if flood_bottom:
+            bottom_seed = hsv[h - 1, 0]
+            bf = flood_bottom_fuzz if flood_bottom_fuzz is not None else fuzz
+            transparent |= _flood_from_edge(img_cv, bottom_seed, ['bottom'], bf)
+        alpha = np.where(transparent, 0, 255).astype(np.uint8)
 
-    # 連結成分ラベリング。背景色に類似するピクセルのうち、画像の
-    # 上端・左端・右端に接しているコンポーネントだけを背景と判定する。
-    # （被写体内部の同系色穴を防ぐため）
-    num_labels, labels = cv2.connectedComponents(similar, connectivity=8)
-    h, w = similar.shape
-    edge_labels = set()
-    # 上端・左端・右端のピクセルのラベルを収集
+    # 小さな孤立非透過ピクセル（空中に浮くゴミ）を除去
+    opaque_mask = (alpha > 0).astype(np.uint8)
+    num, op_labels, stats, _ = cv2.connectedComponentsWithStats(opaque_mask, connectivity=8)
+    min_area = max(50, int(h * w * 0.0005))
+    for i in range(1, num):
+        if stats[i, cv2.CC_STAT_AREA] < min_area:
+            alpha[op_labels == i] = 0
+
+    # 被写体内部の小さな透過穴を埋める（「木の葉の内側が空色で透けた」等）
+    # 透過領域に対して小さな連結成分を検出し、一定サイズ未満は不透過に戻す
+    transparent_mask = (alpha == 0).astype(np.uint8)
+    num_t, t_labels, t_stats, _ = cv2.connectedComponentsWithStats(transparent_mask, connectivity=8)
+    min_hole_area = max(30, int(h * w * 0.0003))
+    # ラベル 0 は不透過（背景反転の背景）。
+    # 画像端に接しないコンポーネントのうち、小さいものだけ埋める
+    edge_set = set()
     for x in range(w):
-        if similar[0, x]:
-            edge_labels.add(int(labels[0, x]))
+        if transparent_mask[0, x]: edge_set.add(int(t_labels[0, x]))
+        if transparent_mask[h - 1, x]: edge_set.add(int(t_labels[h - 1, x]))
     for y in range(h):
-        if similar[y, 0]:
-            edge_labels.add(int(labels[y, 0]))
-        if similar[y, w - 1]:
-            edge_labels.add(int(labels[y, w - 1]))
-    edge_labels.discard(0)  # 0 は背景ラベル（類似しないピクセル群）
-
-    transparent = np.isin(labels, list(edge_labels) if edge_labels else [])
-    return np.where(transparent, 0, 255).astype(np.uint8)
+        if transparent_mask[y, 0]: edge_set.add(int(t_labels[y, 0]))
+        if transparent_mask[y, w - 1]: edge_set.add(int(t_labels[y, w - 1]))
+    for i in range(1, num_t):
+        if i in edge_set:
+            continue  # 画像端に接する大きな透過領域（空など）は埋めない
+        if t_stats[i, cv2.CC_STAT_AREA] < min_hole_area:
+            alpha[t_labels == i] = 255
+    return alpha
 
 
 def pixelize(
@@ -393,6 +451,9 @@ def pixelize(
     chromakey_fuzz: float = 40.0,
     crop_top_frac: float = 0.0,
     crop_bottom_frac: float = 0.0,
+    chromakey_flood: bool = True,
+    chromakey_flood_bottom: bool = False,
+    chromakey_bottom_fuzz: float = None,
 ) -> None:
     # 読み込み（OpenCV BGR）
     img = cv2.imread(input_path, cv2.IMREAD_COLOR)
@@ -415,8 +476,13 @@ def pixelize(
     # 被写体内部の同系色が透過されて穴が開くのを防ぐ
     alpha_mask = None
     if chromakey:
-        alpha_mask = remove_background(img, chromakey_fuzz, flood=True)
-        print(" → chromakey", end="", flush=True)
+        alpha_mask = remove_background(
+            img, chromakey_fuzz, flood=chromakey_flood,
+            flood_bottom=chromakey_flood_bottom,
+            flood_bottom_fuzz=chromakey_bottom_fuzz,
+        )
+        mode_tag = 'flood' + ('+bottom' if chromakey_flood_bottom else '') if chromakey_flood else 'color'
+        print(f" → chromakey({mode_tag})", end="", flush=True)
 
     # ── Step 1: バイラテラルフィルタ ──
     if bilateral:
@@ -493,6 +559,8 @@ def run_batch(base_dir: str) -> None:
             preset["dither"], preset["bilateral"],
             preset.get("chromakey", False), preset.get("chromakey_fuzz", 40.0),
             preset.get("crop_top_frac", 0.0), preset.get("crop_bottom_frac", 0.0),
+            preset.get("chromakey_flood", True),
+            preset.get("chromakey_flood_bottom", False), preset.get("chromakey_bottom_fuzz", None),
         )
         success += 1
     print(f"\n完了: {success}件変換, {skip}件スキップ")
@@ -537,18 +605,25 @@ def main():
         chromakey_fuzz = p.get("chromakey_fuzz", 40.0)
         crop_top_frac = p.get("crop_top_frac", 0.0)
         crop_bottom_frac = p.get("crop_bottom_frac", 0.0)
+        chromakey_flood = p.get("chromakey_flood", True)
+        chromakey_flood_bottom = p.get("chromakey_flood_bottom", False)
+        chromakey_bottom_fuzz = p.get("chromakey_bottom_fuzz", None)
     else:
         bilateral = not args.no_bilateral
         chromakey = False
         chromakey_fuzz = 40.0
         crop_top_frac = 0.0
         crop_bottom_frac = 0.0
+        chromakey_flood = True
+        chromakey_flood_bottom = False
+        chromakey_bottom_fuzz = None
 
     output = args.output or args.input.replace("-raw", "").replace(".png", "-pixel.png")
 
     pixelize(args.input, output, args.width, args.height, args.colors,
              args.outline, args.outline_strength, args.dither, bilateral,
-             chromakey, chromakey_fuzz, crop_top_frac, crop_bottom_frac)
+             chromakey, chromakey_fuzz, crop_top_frac, crop_bottom_frac,
+             chromakey_flood, chromakey_flood_bottom, chromakey_bottom_fuzz)
 
 
 if __name__ == "__main__":
