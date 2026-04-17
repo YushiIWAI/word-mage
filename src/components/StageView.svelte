@@ -131,16 +131,18 @@
   const BG_SCROLL_DISTANCE = 400; // px （景色のスクロール量）
   const ARRIVAL_PAUSE_MS = 1000; // ノード名を表示して次へ進む前の間
 
-  // 歩行は基本等速。立ち上がりと停止の僅かな緩和のみ。
-  // （cubic は加減速が効きすぎて「気持ち悪い」ため、ほぼ直線に近い形状を採用）
+  // 歩行は基本等速。両端 ramp% だけ二次で緩めて立ち上がり/停止を滑らかに。
+  // 線形区間の傾き S = 1/(1-ramp) として境界の値と速度を C1 連続にする
+  // （これを満たさないと境界で見かけの瞬間移動が起きる）
   function easeWalk(t: number): number {
-    const ramp = 0.12; // 両端 12% だけ二次で緩める
-    if (t < ramp) return (t * t) / (2 * ramp);
+    const ramp = 0.18;
+    const S = 1 / (1 - ramp);
+    if (t < ramp) return (S / (2 * ramp)) * t * t;
     if (t > 1 - ramp) {
       const u = 1 - t;
-      return 1 - (u * u) / (2 * ramp);
+      return 1 - (S / (2 * ramp)) * u * u;
     }
-    return t - ramp / 2;
+    return S * t - (S * ramp) / 2;
   }
 
   function startMovement(nodeId: string) {
