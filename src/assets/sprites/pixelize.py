@@ -455,13 +455,21 @@ def pixelize(
     chromakey_flood_bottom: bool = False,
     chromakey_bottom_fuzz: float = None,
 ) -> None:
-    # 読み込み（OpenCV BGR）
-    img = cv2.imread(input_path, cv2.IMREAD_COLOR)
-    if img is None:
+    # 読み込み（OpenCV BGR / RGBA の両対応）
+    raw = cv2.imread(input_path, cv2.IMREAD_UNCHANGED)
+    if raw is None:
         print(f"  ERROR: {input_path} を読み込めません")
         return
 
-    print(f"    入力: {img.shape[1]}x{img.shape[0]}", end="", flush=True)
+    # raw画像にアルファがあれば保持、ない場合は None
+    raw_alpha = None
+    if raw.ndim == 3 and raw.shape[2] == 4:
+        raw_alpha = raw[:, :, 3].copy()
+        img = cv2.cvtColor(raw, cv2.COLOR_BGRA2BGR)
+        print(f"    入力: {img.shape[1]}x{img.shape[0]} (RGBA)", end="", flush=True)
+    else:
+        img = raw if raw.ndim == 3 else cv2.cvtColor(raw, cv2.COLOR_GRAY2BGR)
+        print(f"    入力: {img.shape[1]}x{img.shape[0]}", end="", flush=True)
 
     # ── Step -1: クロップ（raw画像の上端/下端を切り捨て） ──
     if crop_top_frac > 0 or crop_bottom_frac > 0:
@@ -469,13 +477,18 @@ def pixelize(
         top = int(h_src * crop_top_frac)
         bottom = int(h_src * (1.0 - crop_bottom_frac))
         img = img[top:bottom, :]
+        if raw_alpha is not None:
+            raw_alpha = raw_alpha[top:bottom, :]
         print(f" → crop[{img.shape[1]}x{img.shape[0]}]", end="", flush=True)
 
     # ── Step 0: 背景除去 ──
-    # 常に flood-fill ベース: 画像端から連結した背景色のみ透過化し、
-    # 被写体内部の同系色が透過されて穴が開くのを防ぐ
+    # raw画像にすでにアルファがある場合はそれを優先（手動透過の尊重）。
+    # なければ chromakey を実行。
     alpha_mask = None
-    if chromakey:
+    if raw_alpha is not None:
+        alpha_mask = raw_alpha
+        print(" → use-raw-alpha", end="", flush=True)
+    elif chromakey:
         alpha_mask = remove_background(
             img, chromakey_fuzz, flood=chromakey_flood,
             flood_bottom=chromakey_flood_bottom,
