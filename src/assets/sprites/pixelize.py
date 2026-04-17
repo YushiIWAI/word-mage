@@ -28,6 +28,9 @@ from sklearn.mixture import GaussianMixture
 
 
 # ── プリセット定義（ドット絵サイズ、2倍拡大でゲーム表示） ──
+# 追加パラメータ:
+#   crop_top_frac, crop_bottom_frac: raw画像の上端/下端を指定割合でクロップ（0.0〜1.0）
+#   例: crop_top_frac=0.50 → 上半分を切り捨て、下半分だけ使う
 PRESETS = {
     # キャラ: 64x64ドット → 128x128表示（2倍拡大）
     "witch": {
@@ -42,9 +45,16 @@ PRESETS = {
         "outline": False, "outline_strength": 0,
         "dither": False, "bilateral": True,
     },
+    # bg-mid (標準): 単純なシーン用
     "bg-mid": {
         "width": 400, "height": 96, "colors": 14,
         "outline": True, "outline_strength": 0.3,
+        "dither": False, "bilateral": True,
+    },
+    # bg-mid-complex: 情報量が多い複雑なシーン（森・山）用
+    "bg-mid-complex": {
+        "width": 400, "height": 96, "colors": 18,
+        "outline": True, "outline_strength": 0.15,
         "dither": False, "bilateral": True,
     },
     "road": {
@@ -52,10 +62,41 @@ PRESETS = {
         "outline": False, "outline_strength": 0,
         "dither": False, "bilateral": True,
     },
-    "bg-near": {
-        "width": 480, "height": 32, "colors": 10,
+    # bg-near は scene 別にクロップ範囲を変えるため個別定義する
+    # crop_top_frac: raw画像のここから下を使う（空部分を捨てる）
+    "bg-near-forest": {
+        "width": 480, "height": 32, "colors": 14,
         "outline": True, "outline_strength": 0.4,
         "dither": False, "bilateral": True,
+        "chromakey": True, "chromakey_fuzz": 55.0,
+        "crop_top_frac": 0.50, "crop_bottom_frac": 0.02,
+    },
+    # valley/mountain/castle の near は左上が空の単色でないため chromakey 不可。
+    # crop で空を切り捨て、地面ごと不透明で描画する
+    "bg-near-valley": {
+        "width": 480, "height": 32, "colors": 14,
+        "outline": True, "outline_strength": 0.4,
+        "dither": False, "bilateral": True,
+        "crop_top_frac": 0.60, "crop_bottom_frac": 0.0,
+    },
+    "bg-near-mountain": {
+        "width": 480, "height": 32, "colors": 14,
+        "outline": True, "outline_strength": 0.4,
+        "dither": False, "bilateral": True,
+        "crop_top_frac": 0.50, "crop_bottom_frac": 0.0,
+    },
+    "bg-near-castle": {
+        "width": 480, "height": 32, "colors": 14,
+        "outline": True, "outline_strength": 0.4,
+        "dither": False, "bilateral": True,
+        "crop_top_frac": 0.50, "crop_bottom_frac": 0.0,
+    },
+    "bg-near-tower": {
+        "width": 480, "height": 32, "colors": 14,
+        "outline": True, "outline_strength": 0.4,
+        "dither": False, "bilateral": True,
+        "chromakey": True, "chromakey_fuzz": 55.0,
+        "crop_top_frac": 0.55, "crop_bottom_frac": 0.0,
     },
     # UIアイコン
     "icon": {
@@ -66,15 +107,24 @@ PRESETS = {
 }
 
 # ── バッチ定義 ──────────────────────────────────────
+# mid 層: 複雑シーン(森・山)は bg-mid-complex、単純シーン(谷・城・塔)は bg-mid
+MID_PRESET_BY_STAGE = {
+    "forest": "bg-mid-complex",
+    "valley": "bg-mid",
+    "mountain": "bg-mid-complex",
+    "castle": "bg-mid",
+    "tower": "bg-mid",
+}
+
 BATCH_JOBS = []
 for name in ["witch-idle-v7", "witch-walk-1-v7", "witch-walk-2-v7"]:
     out_name = name.replace("-v7", "")
     BATCH_JOBS.append((f"raw/{name}-raw.png", f"{out_name}.png", "witch"))
 for stage in ["forest", "valley", "mountain", "castle", "tower"]:
     BATCH_JOBS.append((f"bg-{stage}-far-raw.png", f"bg-{stage}-far.png", "bg-far"))
-    BATCH_JOBS.append((f"bg-{stage}-mid-raw.png", f"bg-{stage}-mid.png", "bg-mid"))
+    BATCH_JOBS.append((f"bg-{stage}-mid-raw.png", f"bg-{stage}-mid.png", MID_PRESET_BY_STAGE[stage]))
     BATCH_JOBS.append((f"road-{stage}-raw.png", f"road-{stage}.png", "road"))
-    BATCH_JOBS.append((f"bg-{stage}-near-raw.png", f"bg-{stage}-near.png", "bg-near"))
+    BATCH_JOBS.append((f"bg-{stage}-near-raw.png", f"bg-{stage}-near.png", f"bg-near-{stage}"))
 BATCH_JOBS.append(("ui-icons-raw.png", "ui-icons.png", "icon"))
 
 
@@ -305,6 +355,8 @@ def pixelize(
     bilateral: bool = True,
     chromakey: bool = False,
     chromakey_fuzz: float = 40.0,
+    crop_top_frac: float = 0.0,
+    crop_bottom_frac: float = 0.0,
 ) -> None:
     # 読み込み（OpenCV BGR）
     img = cv2.imread(input_path, cv2.IMREAD_COLOR)
@@ -313,6 +365,14 @@ def pixelize(
         return
 
     print(f"    入力: {img.shape[1]}x{img.shape[0]}", end="", flush=True)
+
+    # ── Step -1: クロップ（raw画像の上端/下端を切り捨て） ──
+    if crop_top_frac > 0 or crop_bottom_frac > 0:
+        h_src = img.shape[0]
+        top = int(h_src * crop_top_frac)
+        bottom = int(h_src * (1.0 - crop_bottom_frac))
+        img = img[top:bottom, :]
+        print(f" → crop[{img.shape[1]}x{img.shape[0]}]", end="", flush=True)
 
     # ── Step 0: 背景除去 ──
     alpha_mask = None
@@ -394,6 +454,7 @@ def run_batch(base_dir: str) -> None:
             preset["outline"], preset["outline_strength"],
             preset["dither"], preset["bilateral"],
             preset.get("chromakey", False), preset.get("chromakey_fuzz", 40.0),
+            preset.get("crop_top_frac", 0.0), preset.get("crop_bottom_frac", 0.0),
         )
         success += 1
     print(f"\n完了: {success}件変換, {skip}件スキップ")
@@ -436,16 +497,20 @@ def main():
         bilateral = p["bilateral"]
         chromakey = p.get("chromakey", False)
         chromakey_fuzz = p.get("chromakey_fuzz", 40.0)
+        crop_top_frac = p.get("crop_top_frac", 0.0)
+        crop_bottom_frac = p.get("crop_bottom_frac", 0.0)
     else:
         bilateral = not args.no_bilateral
         chromakey = False
         chromakey_fuzz = 40.0
+        crop_top_frac = 0.0
+        crop_bottom_frac = 0.0
 
     output = args.output or args.input.replace("-raw", "").replace(".png", "-pixel.png")
 
     pixelize(args.input, output, args.width, args.height, args.colors,
              args.outline, args.outline_strength, args.dither, bilateral,
-             chromakey, chromakey_fuzz)
+             chromakey, chromakey_fuzz, crop_top_frac, crop_bottom_frac)
 
 
 if __name__ == "__main__":
