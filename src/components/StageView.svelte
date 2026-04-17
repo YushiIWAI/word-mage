@@ -204,6 +204,12 @@
       if (animFrameId) cancelAnimationFrame(animFrameId);
     };
   });
+
+  // 面（stage）が切り替わったら背景オフセットをリセット（5コピーの範囲に戻す）
+  $effect(() => {
+    void stageIndex;
+    bgOffset = 0;
+  });
 </script>
 
 <div class="stage-view">
@@ -218,18 +224,19 @@
     <!-- 面タイトル -->
     <h2 class="stage-title">{stageName ? `第${(stageIndex ?? 0) + 1}面: ${stageName}` : '旅路を選ぶ'}</h2>
 
-    <!-- パララックス層: background-image + repeat-x で無限スクロール -->
-    <!-- 遠景 (0.3x速度) -->
-    <div class="parallax-far" style="background-image: url({currentBg.far}); background-position: {-bgOffset * 0.3}px 100%;"></div>
-
-    <!-- 中景 (0.5x速度) -->
-    <div class="parallax-mid" style="background-image: url({currentBg.mid}); background-position: {-bgOffset * 0.5}px 100%;"></div>
-
-    <!-- 道 (0.8x速度) -->
-    <div class="road-layer" style="background-image: url({currentBg.road}); background-position: {-bgOffset * 0.8}px 100%;"></div>
-
-    <!-- 前景 (1x速度) -->
-    <div class="parallax-near" style="background-image: url({currentBg.near}); background-position: {-bgOffset}px 100%;"></div>
+    <!-- パララックス層 (<img>×5: スクロール余裕を確保) -->
+    <div class="parallax-far" style="transform: translateX({-bgOffset * 0.3}px)">
+      {#each Array(5) as _}<img src={currentBg.far} alt="" class="parallax-img" />{/each}
+    </div>
+    <div class="parallax-mid" style="transform: translateX({-bgOffset * 0.5}px)">
+      {#each Array(5) as _}<img src={currentBg.mid} alt="" class="parallax-img" />{/each}
+    </div>
+    <div class="road-layer" style="transform: translateX({-bgOffset * 0.8}px)">
+      {#each Array(5) as _}<img src={currentBg.road} alt="" class="parallax-img road-img" />{/each}
+    </div>
+    <div class="parallax-near" style="transform: translateX({-bgOffset}px)">
+      {#each Array(5) as _}<img src={currentBg.near} alt="" class="parallax-img" />{/each}
+    </div>
 
     <!-- 魔女スプライト -->
     <div class="witch" class:walking={isWalking} style="left: {witchLeft}%;">
@@ -355,16 +362,20 @@
     display: inline-block;
   }
 
-  /* 共通パララックス層スタイル: background-image を repeat-x で無限タイル */
+  /* 共通パララックス層スタイル */
   .parallax-far, .parallax-mid, .parallax-near, .road-layer {
     position: absolute;
     left: 0;
-    right: 0;
+    display: flex;
     pointer-events: none;
-    will-change: background-position;
-    background-repeat: repeat-x;
-    background-size: auto 100%;
+    will-change: transform;
+  }
+  .parallax-img {
     image-rendering: pixelated;
+    display: block;
+    flex-shrink: 0;
+    height: 100%;
+    width: auto;
   }
 
   /* 遠景 (z:1) */
@@ -373,25 +384,22 @@
     height: 55%;
     z-index: 1;
   }
-
   /* 中景 (z:2) */
   .parallax-mid {
     bottom: 15%;
     height: 55%;
     z-index: 2;
   }
-
   /* 道 (z:3) */
   .road-layer {
-    bottom: 18%;
+    bottom: 8%;
     height: 10%;
     z-index: 3;
   }
-
-  /* 前景 (z:4) */
+  /* 前景 (z:4) — 画面下まで届かせて緑色の素地を隠す */
   .parallax-near {
     bottom: 0;
-    height: 25%;
+    height: 20%;
     z-index: 4;
   }
 
