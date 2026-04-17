@@ -117,8 +117,12 @@ MID_PRESET_BY_STAGE = {
 }
 
 BATCH_JOBS = []
-for name in ["witch-idle-v7", "witch-walk-1-v7", "witch-walk-2-v7"]:
-    out_name = name.replace("-v7", "")
+# idle は v7（立ち絵）、walk は v8（側面プロファイル歩行サイクル）を使用
+for name, out_name in [
+    ("witch-idle-v7", "witch-idle"),
+    ("witch-walk-1-v8", "witch-walk-1"),
+    ("witch-walk-2-v8", "witch-walk-2"),
+]:
     BATCH_JOBS.append((f"raw/{name}-raw.png", f"{out_name}.png", "witch"))
 for stage in ["forest", "valley", "mountain", "castle", "tower"]:
     BATCH_JOBS.append((f"bg-{stage}-far-raw.png", f"bg-{stage}-far.png", "bg-far"))
