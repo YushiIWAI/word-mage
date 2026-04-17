@@ -45,17 +45,20 @@ PRESETS = {
         "outline": False, "outline_strength": 0,
         "dither": False, "bilateral": True,
     },
-    # bg-mid (標準): 単純なシーン用
+    # bg-mid (標準): 単純なシーン用。chromakeyで上部の空を透過化
     "bg-mid": {
         "width": 400, "height": 96, "colors": 14,
         "outline": True, "outline_strength": 0.3,
         "dither": False, "bilateral": True,
+        "chromakey": True, "chromakey_fuzz": 12.0,
     },
     # bg-mid-complex: 情報量が多い複雑なシーン（森・山）用
+    # chromakey で上部の空を透過化し、far層と自然に重なるようにする
     "bg-mid-complex": {
         "width": 400, "height": 96, "colors": 18,
         "outline": True, "outline_strength": 0.15,
         "dither": False, "bilateral": True,
+        "chromakey": True, "chromakey_fuzz": 22.0,
     },
     "road": {
         "width": 400, "height": 16, "colors": 8,
