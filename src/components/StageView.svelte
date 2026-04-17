@@ -155,7 +155,8 @@
       // 背景をスクロール
       bgOffset = startOffset + BG_SCROLL_DISTANCE * eased;
 
-      // 歩行中もidleフレームのまま（上下揺れのみで歩行表現）
+      // 歩行中のフレーム切り替え（walk1 ⇄ walk2 を WALK_FRAME_INTERVAL ごと）
+      witchFrame = Math.floor(elapsed / WALK_FRAME_INTERVAL) % 2 === 0 ? 1 : 2;
 
       if (t < 1) {
         animFrameId = requestAnimationFrame(animate);
