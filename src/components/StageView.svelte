@@ -171,8 +171,8 @@
         // アニメーション完了
         isMoving = false;
         witchFrame = 0; // idle に戻す
-        // ループ用にオフセットを正規化（装飾要素のリピート幅で割る）
-        bgOffset = bgOffset % 600;
+        // background-repeat: repeat-x で無限タイル化されているので
+        // bgOffset の正規化は不要。値が大きくなっても CSS が wrap する
 
         // 到着ノード名を表示（イベント開始前に間を置いて読ませる）
         const node = map.nodes.find(n => n.id === nodeId);
@@ -218,33 +218,18 @@
     <!-- 面タイトル -->
     <h2 class="stage-title">{stageName ? `第${(stageIndex ?? 0) + 1}面: ${stageName}` : '旅路を選ぶ'}</h2>
 
-    <!-- 遠景パララックス層 (0.3x速度) -->
-    <div class="parallax-far" style="transform: translateX({-bgOffset * 0.3}px)">
-      <img src={currentBg.far} alt="" class="parallax-img" />
-      <img src={currentBg.far} alt="" class="parallax-img" />
-      <img src={currentBg.far} alt="" class="parallax-img" />
-    </div>
+    <!-- パララックス層: background-image + repeat-x で無限スクロール -->
+    <!-- 遠景 (0.3x速度) -->
+    <div class="parallax-far" style="background-image: url({currentBg.far}); background-position: {-bgOffset * 0.3}px 100%;"></div>
 
-    <!-- 中景パララックス層 (0.5x速度) -->
-    <div class="parallax-mid" style="transform: translateX({-bgOffset * 0.5}px)">
-      <img src={currentBg.mid} alt="" class="parallax-img" />
-      <img src={currentBg.mid} alt="" class="parallax-img" />
-      <img src={currentBg.mid} alt="" class="parallax-img" />
-    </div>
+    <!-- 中景 (0.5x速度) -->
+    <div class="parallax-mid" style="background-image: url({currentBg.mid}); background-position: {-bgOffset * 0.5}px 100%;"></div>
 
     <!-- 道 (0.8x速度) -->
-    <div class="road-layer" style="transform: translateX({-bgOffset * 0.8}px)">
-      <img src={currentBg.road} alt="" class="parallax-img road-img" />
-      <img src={currentBg.road} alt="" class="parallax-img road-img" />
-      <img src={currentBg.road} alt="" class="parallax-img road-img" />
-    </div>
+    <div class="road-layer" style="background-image: url({currentBg.road}); background-position: {-bgOffset * 0.8}px 100%;"></div>
 
-    <!-- 前景パララックス層 (1x速度) -->
-    <div class="parallax-near" style="transform: translateX({-bgOffset}px)">
-      <img src={currentBg.near} alt="" class="parallax-img" />
-      <img src={currentBg.near} alt="" class="parallax-img" />
-      <img src={currentBg.near} alt="" class="parallax-img" />
-    </div>
+    <!-- 前景 (1x速度) -->
+    <div class="parallax-near" style="background-image: url({currentBg.near}); background-position: {-bgOffset}px 100%;"></div>
 
     <!-- 魔女スプライト -->
     <div class="witch" class:walking={isWalking} style="left: {witchLeft}%;">
@@ -370,18 +355,16 @@
     display: inline-block;
   }
 
-  /* 共通パララックス層スタイル */
+  /* 共通パララックス層スタイル: background-image を repeat-x で無限タイル */
   .parallax-far, .parallax-mid, .parallax-near, .road-layer {
     position: absolute;
     left: 0;
-    display: flex;
+    right: 0;
     pointer-events: none;
-    will-change: transform;
-  }
-  .parallax-img {
+    will-change: background-position;
+    background-repeat: repeat-x;
+    background-size: auto 100%;
     image-rendering: pixelated;
-    display: block;
-    flex-shrink: 0;
   }
 
   /* 遠景 (z:1) */
@@ -390,20 +373,12 @@
     height: 55%;
     z-index: 1;
   }
-  .parallax-far .parallax-img {
-    height: 100%;
-    width: auto;
-  }
 
   /* 中景 (z:2) */
   .parallax-mid {
     bottom: 15%;
     height: 55%;
     z-index: 2;
-  }
-  .parallax-mid .parallax-img {
-    height: 100%;
-    width: auto;
   }
 
   /* 道 (z:3) */
@@ -412,20 +387,12 @@
     height: 10%;
     z-index: 3;
   }
-  .road-img {
-    height: 100%;
-    width: auto;
-  }
 
   /* 前景 (z:4) */
   .parallax-near {
-    bottom: 10%;
-    height: 20%;
+    bottom: 0;
+    height: 25%;
     z-index: 4;
-  }
-  .parallax-near .parallax-img {
-    height: 100%;
-    width: auto;
   }
 
   /* 魔女スプライト */
