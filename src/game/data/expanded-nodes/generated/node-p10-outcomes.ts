@@ -977,4 +977,124 @@ export const nodeP10Outcomes: Outcome[] = [
     damage: 1,
     quill: 4
   },
+  {
+    id: 'p10_kitten_shine',
+    conditions: { s2: 'subj_kitten', s4: 'pred_shine' },
+    resultText: '凍てついた子猫が鐘を輝く。氷漬けになった子猫の体を通して光が差し、鐘の内側が万華鏡のように彩られる。鐘は鳴らないが、鐘楼が明るい。',
+    damage: 0,
+    quill: 6
+  },
+  {
+    id: 'p10_snake_shine',
+    conditions: { s2: 'subj_snake', s4: 'pred_shine' },
+    resultText: '凍てついた蛇が鐘を輝く。鐘の撞木に巻き付いた氷の蛇が、月光を受けて銀色に輝く。鐘を叩こうとすると撞木ごと凍えて動かない。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p10_dragon_shine',
+    conditions: { s2: 'subj_dragon', s4: 'pred_shine' },
+    resultText: '凍てついた竜が鐘を輝く。鐘楼を抱くように氷漬けになった竜の鱗が、内側からの光で青白く燃える。鐘楼全体が巨大な灯篭になった。',
+    damage: 1,
+    quill: 6,
+    rewardItems: [{ id: 'item_p10_dragon_shine', name: '氷竜の鱗', description: '青白く発光する凍った鱗。闇夜の灯りになる', sellPrice: 11 }]
+  },
+  {
+    id: 'p10_butterfly_shine',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_shine' },
+    resultText: '凍てついた蝶が鐘を輝く。鐘の内側に凍り付いた蝶の翅が光を通し、鐘は色硝子の灯籠のように静かに輝いた。鳴らなくても十分だ。',
+    damage: 0,
+    quill: 6
+  },
+  {
+    id: 'p10_wind_shine',
+    conditions: { s2: 'subj_wind', s4: 'pred_shine' },
+    resultText: '凍てついた風が鐘を輝く。鐘にまとわりつく冷たい風が月光を帯びて見え、鐘の縁が霜で縁取られて光っている。触れれば指先の皮膚が張り付く。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p10_flame_shine',
+    conditions: { s2: 'subj_flame', s4: 'pred_shine' },
+    resultText: '凍てついた炎が鐘を輝く。熱を失いながらも消えない青い炎が鐘の表面を舐め、冷たい光が鐘楼を満たす。鐘に触れた指先が白く凍った。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p10_ice_shine',
+    conditions: { s2: 'subj_ice', s4: 'pred_shine' },
+    resultText: '凍てついた氷が鐘を輝く。鐘ごと氷塊に封じ込められた鐘楼の中で、氷が月光を集めて光の柱になった。鐘は鳴らず、ただ輝いている。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p10_shadow_shine',
+    conditions: { s2: 'subj_shadow', s4: 'pred_shine' },
+    resultText: '凍てついた影が鐘を輝く。鐘楼の影が氷に閉じ込められ、光ではなく黒を放っている。鐘の周りだけが夜よりも暗く、手探りで登った。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p10_song_shine',
+    conditions: { s2: 'subj_song', s4: 'pred_shine' },
+    resultText: '凍てついた歌が鐘を輝く。鐘の内壁に凍り付いた歌声が光に変わっている。鐘を鳴らせば歌が解けて流れ出すのか、やめておく。',
+    damage: 0,
+    quill: 6
+  },
+  {
+    id: 'p10_silence_shine',
+    conditions: { s2: 'subj_silence', s4: 'pred_shine' },
+    resultText: '凍てついた沈黙が鐘を輝く。鐘楼に立ち込めた沈黙が氷の幕になり、月光を反射している。足音さえも凍りついて届かない。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p10_knight_shine',
+    conditions: { s2: 'subj_knight', s4: 'pred_shine' },
+    resultText: '凍てついた騎士が鐘を輝く。鐘を守って倒れた騎士が氷漬けのまま立ち続け、鎧越しにうっすらと光を透過させている。騎士は番を止めない。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p10_witch_shine',
+    conditions: { s2: 'subj_witch', s4: 'pred_shine' },
+    resultText: '凍てついた魔女が鐘を輝く。魔女の氷漬けの姿が鐘楼の主のように安置され、手のひらからの微光が鐘を照らしている。凍った瞳がこちらを見た。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p10_king_shine',
+    conditions: { s2: 'subj_king', s4: 'pred_shine' },
+    resultText: '凍てついた王が鐘を輝く。氷漬けの廃王が鐘楼の中央に座し、王冠の金が氷越しにくすんだ光を放つ。鐘は王の玉璽のようにその傍らにあった。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p10_ghost_shine',
+    conditions: { s2: 'subj_ghost', s4: 'pred_shine' },
+    resultText: '凍てついた亡霊が鐘を輝く。冷たい霊が鐘の中に宿り、青白い燐光を漏らしている。鐘に触れると冷気と光が同時に指先から這い上がってきた。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p10_mirror_shine',
+    conditions: { s2: 'subj_mirror', s4: 'pred_shine' },
+    resultText: '凍てついた鏡が鐘を輝く。霜の鏡が鐘の真下に据えられ、上からの月光を鐘の内側に投げ返す。鐘は鳴らずに光だけを響かせた。',
+    damage: 0,
+    quill: 6
+  },
+  {
+    id: 'p10_doll_shine',
+    conditions: { s2: 'subj_doll', s4: 'pred_shine' },
+    resultText: '凍てついた人形が鐘を輝く。氷の人形が鐘の撞木を握ったまま止まり、瞳だけが薄く光っている。溶ければ鐘は鳴るのだろう。いま溶かす手段はない。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p10_rain_shine',
+    conditions: { s2: 'subj_rain', s4: 'pred_shine' },
+    resultText: '凍てついた雨が鐘を輝く。凍雨の粒が鐘楼の周りで止まり、月光を受けて宙に輝く針になった。針の森を縫うように鐘に近づいた。',
+    damage: 1,
+    quill: 5
+  },
 ];

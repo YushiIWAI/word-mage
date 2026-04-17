@@ -1159,4 +1159,124 @@ export const nodeCOutcomes: Outcome[] = [
     damage: 1,
     quill: 5
   },
+  {
+    id: 'c_kitten_shine',
+    conditions: { s2: 'subj_kitten', s4: 'pred_shine' },
+    resultText: '呪われた子猫が街道を輝く。何十匹もの同じ顔の猫が、夜の街道にほのかな燐光を散らしている。踏まずに歩くと、光が足跡を避けて分かれた。',
+    damage: 0,
+    quill: 6
+  },
+  {
+    id: 'c_snake_shine',
+    conditions: { s2: 'subj_snake', s4: 'pred_shine' },
+    resultText: '呪われた蛇が街道を輝く。脱け殻の鱗が月光を浴びて銀色に燃え立ち、道の両脇を細い光の線が伸びていく。鱗の道標に沿って進んだ。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'c_dragon_shine',
+    conditions: { s2: 'subj_dragon', s4: 'pred_shine' },
+    resultText: '呪われた竜が街道を輝く。理性を失った竜の吐息が白熱し、街道を灼熱の帯に変える。近づけない。遠巻きに光の棒が虚空を薙ぐのを見送った。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'c_butterfly_shine',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_shine' },
+    resultText: '呪われた蝶が街道を輝く。追いかけると迷子になる蝶の群れが、鱗粉を散らして街道そのものを光の河に変えた。どこを歩いても元の道には戻れない。',
+    damage: 2,
+    quill: 6
+  },
+  {
+    id: 'c_wind_shine',
+    conditions: { s2: 'subj_wind', s4: 'pred_shine' },
+    resultText: '呪われた風が街道を輝く。帰り道を忘れさせる風が、通り過ぎるたびに空気そのものを発光させる。光の流れに身を任せると、どこへ運ばれるのか分からなくなる。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'c_flame_shine',
+    conditions: { s2: 'subj_flame', s4: 'pred_shine' },
+    resultText: '呪われた炎が街道を輝く。消えないはずの火が、地面の石を熾火のように灼いている。踏んだ石から足裏へ熱が這い上がった。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'c_ice_shine',
+    conditions: { s2: 'subj_ice', s4: 'pred_shine' },
+    resultText: '呪われた氷が街道を輝く。永遠に溶けない氷が街道に張り付き、月光をプリズムのように散らす。美しい。足を滑らせて肘を擦りむいた。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'c_shadow_shine',
+    conditions: { s2: 'subj_shadow', s4: 'pred_shine' },
+    resultText: '呪われた影が街道を輝く。光ではなく黒を放つ影が、街道にまだら模様を描いている。影の中に足を踏み入れると、自分の影も一瞬消えた。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'c_song_shine',
+    conditions: { s2: 'subj_song', s4: 'pred_shine' },
+    resultText: '呪われた歌が街道を輝く。聴けば忘れられない旋律が、音そのものを光に変えて街道を照らす。耳を塞いで歩いた。指の隙間からも光が漏れてくる。',
+    damage: 1,
+    quill: 6
+  },
+  {
+    id: 'c_silence_shine',
+    conditions: { s2: 'subj_silence', s4: 'pred_shine' },
+    resultText: '呪われた沈黙が街道を輝く。音を奪う沈黙が、奪った音を光に変えて放っている。足音が消えた瞬間、足元の光が強くなった。',
+    damage: 1,
+    quill: 6
+  },
+  {
+    id: 'c_knight_shine',
+    conditions: { s2: 'subj_knight', s4: 'pred_shine' },
+    resultText: '呪われた騎士が街道を輝く。霊となった騎士の鎧が、自らの光で街道を照らしながら巡回している。通りがかった者は灯の中に招かれ、出てこない。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'c_witch_shine',
+    conditions: { s2: 'subj_witch', s4: 'pred_shine' },
+    resultText: '呪われた魔女が街道を輝く。自らの呪いを灯にして、魔女は街道の真ん中に立っている。近づくと呪いの光が肌を灼くが、遠回りすれば何時間も余分に歩く。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'c_king_shine',
+    conditions: { s2: 'subj_king', s4: 'pred_shine' },
+    resultText: '呪われた王が街道を輝く。王冠が自らの呪いで金色に燃え、街道沿いの木々を照らす。王の影は歩くたびに街道に焼き付けられていく。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'c_ghost_shine',
+    conditions: { s2: 'subj_ghost', s4: 'pred_shine' },
+    resultText: '呪われた亡霊が街道を輝く。成仏できない霊たちが青白い光になって街道を漂う。光の中を通り抜けるたびに、体温が少し奪われていった。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'c_mirror_shine',
+    conditions: { s2: 'subj_mirror', s4: 'pred_shine' },
+    resultText: '呪われた鏡が街道を輝く。見た者の魂を映す鏡が、街道沿いに点々と立てられ、互いを反射し合って光の回廊を作っている。自分が何人も映っている。',
+    damage: 2,
+    quill: 5,
+    rewardItems: [{ id: 'item_c_mirror_shine', name: '呪鏡の欠片', description: '自分以外の自分が映る。夜の闇でもほのかに光る', sellPrice: 9 }]
+  },
+  {
+    id: 'c_doll_shine',
+    conditions: { s2: 'subj_doll', s4: 'pred_shine' },
+    resultText: '呪われた人形が街道を輝く。夜になると動く人形が、今宵は目だけを光らせて街道に並んでいる。数百対の瞳が同時にこちらを見た。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'c_rain_shine',
+    conditions: { s2: 'subj_rain', s4: 'pred_shine' },
+    resultText: '呪われた雨が街道を輝く。動けなくなる雨粒が街道の上空で発光し、降らずに滞空している。光の雨雲の下を、音を立てずに走り抜けた。',
+    damage: 1,
+    quill: 6
+  },
 ];

@@ -970,4 +970,124 @@ export const nodeP17Outcomes: Outcome[] = [
     damage: 2,
     quill: 4
   },
+  {
+    id: 'p17_kitten_shine',
+    conditions: { s2: 'subj_kitten', s4: 'pred_shine' },
+    resultText: '鋭い子猫が道を輝く。針のような毛並みの子猫が茨の道を走り、毛先が月光を反射して光の筋を引く。子猫の軌跡を辿れば茨の隙間を抜けられた。',
+    damage: 1,
+    quill: 6
+  },
+  {
+    id: 'p17_snake_shine',
+    conditions: { s2: 'subj_snake', s4: 'pred_shine' },
+    resultText: '鋭い蛇が道を輝く。牙のように尖った鱗の蛇が茨の中を這い、鱗の反射が道の先を照らす。蛇が通った跡だけ茨が裂けていた。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p17_dragon_shine',
+    conditions: { s2: 'subj_dragon', s4: 'pred_shine' },
+    resultText: '鋭い竜が道を輝く。刃のような翼を持つ竜が茨の道を舞い、羽ばたきのたびに光が切り拓かれる。頭上を飛び過ぎた翼の風圧で地面に伏せた。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p17_butterfly_shine',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_shine' },
+    resultText: '鋭い蝶が道を輝く。剃刀のような翅の蝶が舞い、鱗粉が光の粉塵となって茨の道を淡く照らす。翅で頬を掠められ、血が一筋流れた。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p17_wind_shine',
+    conditions: { s2: 'subj_wind', s4: 'pred_shine' },
+    resultText: '鋭い風が道を輝く。刃のような風が茨を撫でるたびに火花のような光が散り、道の形が一瞬だけ浮かび上がる。光を頼りに一歩ずつ進んだ。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p17_flame_shine',
+    conditions: { s2: 'subj_flame', s4: 'pred_shine' },
+    resultText: '鋭い炎が道を輝く。尖った炎の舌が茨の枝を選んで舐め、燃え尽きた隙間が道になる。炎に頬を灼かれながら、その道を駆け抜けた。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p17_ice_shine',
+    conditions: { s2: 'subj_ice', s4: 'pred_shine' },
+    resultText: '鋭い氷が道を輝く。茨に絡む氷の棘がプリズムのように月光を散らし、道全体を青く光らせる。美しいが、氷に触れるたび指先が裂けた。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p17_shadow_shine',
+    conditions: { s2: 'subj_shadow', s4: 'pred_shine' },
+    resultText: '鋭い影が道を輝く。刃の形をした影が茨の間を走り、光の代わりに黒を放って道の輪郭を際立たせる。影に触れた指先が切れていた。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p17_song_shine',
+    conditions: { s2: 'subj_song', s4: 'pred_shine' },
+    resultText: '鋭い歌が道を輝く。耳を切る高音の旋律が茨の道に響き、音が光に変わって道を明るくする。歌に晒された肌がひりひりと痛んだ。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p17_silence_shine',
+    conditions: { s2: 'subj_silence', s4: 'pred_shine' },
+    resultText: '鋭い沈黙が道を輝く。研ぎ澄まされた静寂の中で、茨の棘の先端だけが月光を集めて光っている。息を止めて針山のような道を渡った。',
+    damage: 1,
+    quill: 6
+  },
+  {
+    id: 'p17_knight_shine',
+    conditions: { s2: 'subj_knight', s4: 'pred_shine' },
+    resultText: '鋭い騎士が道を輝く。抜き身の剣を掲げた騎士が茨の道の先を歩き、剣身の反射が道を照らす。騎士の背を追えば茨に触れずに進めた。',
+    damage: 1,
+    quill: 5,
+    rewardItems: [{ id: 'item_p17_knight_shine', name: '折れた剣先', description: '騎士の剣の先端が折れたもの。ほのかに発光する', sellPrice: 10 }]
+  },
+  {
+    id: 'p17_witch_shine',
+    conditions: { s2: 'subj_witch', s4: 'pred_shine' },
+    resultText: '鋭い魔女が道を輝く。研ぎ澄ました爪を持つ魔女が茨を掻き分け、爪先の光が道を切り拓く。魔女の後をついていくと、茨が閉じるのが一拍遅れた。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p17_king_shine',
+    conditions: { s2: 'subj_king', s4: 'pred_shine' },
+    resultText: '鋭い王が道を輝く。戴冠した刃の王が茨の道で玉座に座し、王冠の鋭い先端が月光を集めて四方を照らす。王の視線を避けて脇の藪を縫った。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p17_ghost_shine',
+    conditions: { s2: 'subj_ghost', s4: 'pred_shine' },
+    resultText: '鋭い亡霊が道を輝く。刃のような輪郭を持つ霊が茨の道に立ち、青白い光を縦に伸ばす。光の幕をくぐるとき、冷気が肋骨の間を撫でた。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p17_mirror_shine',
+    conditions: { s2: 'subj_mirror', s4: 'pred_shine' },
+    resultText: '鋭い鏡が道を輝く。尖った破片の鏡が茨に絡みつき、月光を多方向へ反射して道の全体像を見せる。鏡像の中に自分が茨に引き裂かれる姿を見た。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p17_doll_shine',
+    conditions: { s2: 'subj_doll', s4: 'pred_shine' },
+    resultText: '鋭い人形が道を輝く。刃の関節の人形が茨の道に立ち、関節の金属面が月光を跳ね返して道を照らす。横を通り抜けるとき、腕が振られ、袖を裂かれた。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p17_rain_shine',
+    conditions: { s2: 'subj_rain', s4: 'pred_shine' },
+    resultText: '鋭い雨が道を輝く。針のような雨粒が落ちる前に宙で光り、茨の道を銀の簾で仕切っている。雨が降り出す前に走り抜けた。背中に数粒、刺さった。',
+    damage: 2,
+    quill: 5
+  },
 ];

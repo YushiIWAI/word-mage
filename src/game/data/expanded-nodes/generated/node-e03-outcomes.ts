@@ -972,4 +972,124 @@ export const nodeE03Outcomes: Outcome[] = [
     damage: 2,
     quill: 5
   },
+  {
+    id: 'e03_kitten_shine',
+    conditions: { s2: 'subj_kitten', s4: 'pred_shine' },
+    resultText: '呪われた子猫が森を輝く。無数の同じ顔の猫が、森の下草に燐光を撒き散らしている。踏まないように歩くと、光が道の形になって先へと伸びた。',
+    damage: 0,
+    quill: 6
+  },
+  {
+    id: 'e03_snake_shine',
+    conditions: { s2: 'subj_snake', s4: 'pred_shine' },
+    resultText: '呪われた蛇が森を輝く。巨大な蛇の鱗が木漏れ日を集めて反射し、森の奥深くまで光の筋が走る。進むべき道を示しているのか、罠か、判断がつかない。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'e03_dragon_shine',
+    conditions: { s2: 'subj_dragon', s4: 'pred_shine' },
+    resultText: '呪われた竜が森を輝く。理性を失った竜の息が木々を燃やし、森が松明のような光の柱を次々に立てていく。走って逃げる間も背後が明るかった。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'e03_butterfly_shine',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_shine' },
+    resultText: '呪われた蝶が森を輝く。追いかけると迷子になる蝶の鱗粉が、森の空気そのものを淡い虹色に染めた。進むほどに方向感覚が狂っていく。',
+    damage: 2,
+    quill: 6
+  },
+  {
+    id: 'e03_wind_shine',
+    conditions: { s2: 'subj_wind', s4: 'pred_shine' },
+    resultText: '呪われた風が森を輝く。帰り道を忘れさせる風が葉叢を揺らすたびに、葉の裏が光を放つ。森じゅうの木が同時にまばたきをしているように見えた。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'e03_flame_shine',
+    conditions: { s2: 'subj_flame', s4: 'pred_shine' },
+    resultText: '呪われた炎が森を輝く。樹皮に貼り付いた火が消えず、燃え尽きず、ただ光り続ける。触れようとした手の毛が焦げた。',
+    damage: 3,
+    quill: 3
+  },
+  {
+    id: 'e03_ice_shine',
+    conditions: { s2: 'subj_ice', s4: 'pred_shine' },
+    resultText: '呪われた氷が森を輝く。木々を包んだ氷柱がプリズムになって森に虹を散らす。息を呑むほど美しい。足元の氷にヒビを見つけて慎重に進んだ。',
+    damage: 1,
+    quill: 6
+  },
+  {
+    id: 'e03_shadow_shine',
+    conditions: { s2: 'subj_shadow', s4: 'pred_shine' },
+    resultText: '呪われた影が森を輝く。木の影が反転し、光の代わりに黒を放っている。闇だらけの森の中で、自分の影だけが白く浮かび上がった。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'e03_song_shine',
+    conditions: { s2: 'subj_song', s4: 'pred_shine' },
+    resultText: '呪われた歌が森を輝く。忘れられない旋律が音のまま光に変わり、森の枝葉の間を縫って流れる。耳を塞いでも光は目に届いた。',
+    damage: 1,
+    quill: 6
+  },
+  {
+    id: 'e03_silence_shine',
+    conditions: { s2: 'subj_silence', s4: 'pred_shine' },
+    resultText: '呪われた沈黙が森を輝く。鳥の声も虫の音もない森で、奪われた音たちが淡い光になって浮遊している。光を握りしめると冷たかった。',
+    damage: 1,
+    quill: 6
+  },
+  {
+    id: 'e03_knight_shine',
+    conditions: { s2: 'subj_knight', s4: 'pred_shine' },
+    resultText: '呪われた騎士が森を輝く。霊騎士の鎧が森の奥でぼうと発光している。光に近づいたが、触れた途端に鎧は消え、あとに冷たい空気だけが残った。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'e03_witch_shine',
+    conditions: { s2: 'subj_witch', s4: 'pred_shine' },
+    resultText: '呪われた魔女が森を輝く。自らの呪いを灯にして魔女が森の真ん中で祭壇を築いている。光の輪に入ると意識が遠のく。輪の外を回って抜けた。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'e03_king_shine',
+    conditions: { s2: 'subj_king', s4: 'pred_shine' },
+    resultText: '呪われた王が森を輝く。廃王の亡骸が森の奥で朽ちかけながら、まだ金色に燃えている。王冠の光に魅せられた獣たちが周りに伏していた。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'e03_ghost_shine',
+    conditions: { s2: 'subj_ghost', s4: 'pred_shine' },
+    resultText: '呪われた亡霊が森を輝く。成仏できぬ霊が木々の間を青白い燐光となって漂う。光を避けて歩いたが、冷気で指先の感覚が鈍った。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'e03_mirror_shine',
+    conditions: { s2: 'subj_mirror', s4: 'pred_shine' },
+    resultText: '呪われた鏡が森を輝く。木の幹に嵌め込まれた鏡たちが互いを映し合い、森の奥まで光の回廊を作る。歩いていくと鏡の中に自分が増えていった。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'e03_doll_shine',
+    conditions: { s2: 'subj_doll', s4: 'pred_shine' },
+    resultText: '呪われた人形が森を輝く。夜に動く人形たちが枝々に吊るされ、今はガラスの瞳だけを光らせている。光を手がかりに進むと、瞳はすべて同じ方向を見ていた。',
+    damage: 2,
+    quill: 5,
+    rewardItems: [{ id: 'item_e03_doll_shine', name: '人形のまなこ', description: 'ガラスでできた目玉。暗闇で淡く光り、見られている気がする', sellPrice: 8 }]
+  },
+  {
+    id: 'e03_rain_shine',
+    conditions: { s2: 'subj_rain', s4: 'pred_shine' },
+    resultText: '呪われた雨が森を輝く。動けなくなる雨粒が樹冠の上で発光しながら停滞している。雨の下を抜けるとき、光の粒が肩に触れて一拍だけ足が止まった。',
+    damage: 1,
+    quill: 6
+  },
 ];

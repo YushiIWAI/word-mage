@@ -973,4 +973,123 @@ export const nodeP16Outcomes: Outcome[] = [
     damage: 2,
     quill: 3
   },
+  {
+    id: 'p16_kitten_shine',
+    conditions: { s2: 'subj_kitten', s4: 'pred_shine' },
+    resultText: '堅い子猫が関所を輝く。陶器のように硬い毛並みが松明を受けてつやめき、関所の鋼鉄の門まで柔らかく照らす。番兵が子猫を撫でに出てきて、道を譲った。',
+    damage: 0,
+    quill: 6
+  },
+  {
+    id: 'p16_snake_shine',
+    conditions: { s2: 'subj_snake', s4: 'pred_shine' },
+    resultText: '堅い蛇が関所を輝く。鎧のような鱗を持つ蛇が関所の屋根に昇り、太陽を浴びて金属光沢を放つ。光を眩しがった番兵が門を開けた隙に通った。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p16_dragon_shine',
+    conditions: { s2: 'subj_dragon', s4: 'pred_shine' },
+    resultText: '堅い竜が関所を輝く。鋼のごとき鱗を持つ竜が関所を背にして羽ばたき、吐息が関所の壁を赤熱させる。番兵たちは持ち場を捨てて逃げた。開け放たれた門を走り抜ける。',
+    damage: 3,
+    quill: 4
+  },
+  {
+    id: 'p16_butterfly_shine',
+    conditions: { s2: 'subj_butterfly', s4: 'pred_shine' },
+    resultText: '堅い蝶が関所を輝く。硬く色硝子のような翅の蝶が関所の頭上を舞い、翅越しの光が門に色模様を描く。番兵が見惚れている間に歩いて通った。',
+    damage: 0,
+    quill: 6
+  },
+  {
+    id: 'p16_wind_shine',
+    conditions: { s2: 'subj_wind', s4: 'pred_shine' },
+    resultText: '堅い風が関所を輝く。壁のような強風が関所の旗を張り詰めさせ、松明の炎を横になびかせて灯を強めている。風上から進めばほぼ前進できない。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p16_flame_shine',
+    conditions: { s2: 'subj_flame', s4: 'pred_shine' },
+    resultText: '堅い炎が関所を輝く。鋼鉄の門が真昼のように照らされ、影が消える。番兵が手をかざして道を譲った。',
+    damage: 0,
+    quill: 5
+  },
+  {
+    id: 'p16_ice_shine',
+    conditions: { s2: 'subj_ice', s4: 'pred_shine' },
+    resultText: '堅い氷が関所を輝く。岩のような氷塊が関所の前に鎮座し、陽光を集めて内側から青白く光る。番兵が珍しさに見惚れ、検分を忘れていた。',
+    damage: 0,
+    quill: 6
+  },
+  {
+    id: 'p16_shadow_shine',
+    conditions: { s2: 'subj_shadow', s4: 'pred_shine' },
+    resultText: '堅い影が関所を輝く。壁のように濃い影が関所に貼り付き、かえって松明の光を強く対照させる。光と影の境界に身を隠して通り過ぎた。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p16_song_shine',
+    conditions: { s2: 'subj_song', s4: 'pred_shine' },
+    resultText: '堅い歌が関所を輝く。鋼鉄の響きを持つ軍歌が番兵たちの間で斉唱され、関所全体が音の光を放つ。その光に飲まれないよう耳を塞いで歩いた。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p16_silence_shine',
+    conditions: { s2: 'subj_silence', s4: 'pred_shine' },
+    resultText: '堅い沈黙が関所を輝く。誰もが口を開かない関所で、松明の光だけが際立って鋼鉄の門を照らしている。足音を殺して近づき、開いた小扉を抜けた。',
+    damage: 1,
+    quill: 6
+  },
+  {
+    id: 'p16_knight_shine',
+    conditions: { s2: 'subj_knight', s4: 'pred_shine' },
+    resultText: '堅い騎士が関所を輝く。磨き抜かれた甲冑の騎士が関所の前で陽光を反射し、周囲を眩い光で満たす。目を伏せて検分を受け、通された。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p16_witch_shine',
+    conditions: { s2: 'subj_witch', s4: 'pred_shine' },
+    resultText: '堅い魔女が関所を輝く。石化しかけた魔女が関所の脇で、まだ瞳の奥に光を宿して番兵を見張っている。通過するとき、瞳がこちらを追った。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p16_king_shine',
+    conditions: { s2: 'subj_king', s4: 'pred_shine' },
+    resultText: '堅い王が関所を輝く。鉄の玉座に座した王が関所を支配し、王冠の宝玉が光を放って門番たちを従わせている。王の御名を呟けば通れるが、名前を知らない。',
+    damage: 2,
+    quill: 4
+  },
+  {
+    id: 'p16_ghost_shine',
+    conditions: { s2: 'subj_ghost', s4: 'pred_shine' },
+    resultText: '堅い亡霊が関所を輝く。退かぬ決意のまま死んだ番兵の霊が、関所の前に立って青白い光を放つ。光を避けて遠回りに通り抜けた。',
+    damage: 2,
+    quill: 5
+  },
+  {
+    id: 'p16_mirror_shine',
+    conditions: { s2: 'subj_mirror', s4: 'pred_shine' },
+    resultText: '堅い鏡が関所を輝く。割れない鏡が門扉に嵌め込まれ、陽光を反射して対岸まで光を届かせる。鏡越しに自分の目を見ると、番兵の位置がずれて映った。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p16_doll_shine',
+    conditions: { s2: 'subj_doll', s4: 'pred_shine' },
+    resultText: '堅い人形が関所を輝く。鋳鉄でできた番人人形が関所に並び、目のランプが一斉に光を放つ。人形の目の光が自分を追っているのを感じた。',
+    damage: 1,
+    quill: 5
+  },
+  {
+    id: 'p16_rain_shine',
+    conditions: { s2: 'subj_rain', s4: 'pred_shine' },
+    resultText: '堅い雨が関所を輝く。雹の粒が関所の屋根を叩きながら、屋根の上で跳ね返って光を散らす。雹の音と光に紛れて門を抜けた。',
+    damage: 2,
+    quill: 5
+  },
 ];
