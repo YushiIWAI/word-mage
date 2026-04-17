@@ -129,9 +129,18 @@
   const WALK_DURATION = 2000; // ms
   const WALK_POS = 30; // left% （固定位置）
   const BG_SCROLL_DISTANCE = 400; // px （景色のスクロール量）
+  const ARRIVAL_PAUSE_MS = 1000; // ノード名を表示して次へ進む前の間
 
-  function easeInOutCubic(t: number): number {
-    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  // 歩行は基本等速。立ち上がりと停止の僅かな緩和のみ。
+  // （cubic は加減速が効きすぎて「気持ち悪い」ため、ほぼ直線に近い形状を採用）
+  function easeWalk(t: number): number {
+    const ramp = 0.12; // 両端 12% だけ二次で緩める
+    if (t < ramp) return (t * t) / (2 * ramp);
+    if (t > 1 - ramp) {
+      const u = 1 - t;
+      return 1 - (u * u) / (2 * ramp);
+    }
+    return t - ramp / 2;
   }
 
   function startMovement(nodeId: string) {
@@ -148,7 +157,7 @@
     function animate(now: number) {
       const elapsed = now - startTime;
       const t = Math.min(1, elapsed / WALK_DURATION);
-      const eased = easeInOutCubic(t);
+      const eased = easeWalk(t);
 
       // 背景をスクロール（魔女はその場で歩く）
       bgOffset = startOffset + BG_SCROLL_DISTANCE * eased;
@@ -165,7 +174,7 @@
         // ループ用にオフセットを正規化（装飾要素のリピート幅で割る）
         bgOffset = bgOffset % 600;
 
-        // 到着ノード名を表示
+        // 到着ノード名を表示（イベント開始前に間を置いて読ませる）
         const node = map.nodes.find(n => n.id === nodeId);
         if (node && node.nodeDefId !== '__start__') {
           const def = getNodeDef(node);
@@ -175,8 +184,8 @@
           }
         }
 
-        // ゲームロジックを実行
-        onSelect(nodeId);
+        // 名前を見せる時間を取ってからゲームロジックへ
+        setTimeout(() => onSelect(nodeId), ARRIVAL_PAUSE_MS);
       }
     }
 
@@ -449,19 +458,20 @@
     animation: walk-cycle 0.4s ease-in-out infinite;
   }
 
-  /* イベント名 */
+  /* イベント名（魔女の頭上に表示） */
   .event-label {
     position: absolute;
-    bottom: calc(18% + 115px);
+    bottom: calc(18% + 170px);
     transform: translateX(-50%);
     font-family: var(--font-story);
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     color: var(--page-cream);
-    text-shadow: 0 1px 6px rgba(0,0,0,0.6);
+    text-shadow: 0 1px 6px rgba(0,0,0,0.8), 0 0 12px rgba(0,0,0,0.6);
     white-space: nowrap;
-    z-index: 4;
+    z-index: 10;
     letter-spacing: 0.1em;
     animation: fade-in 0.4s ease-out;
+    pointer-events: none;
   }
 
   @keyframes fade-in {
