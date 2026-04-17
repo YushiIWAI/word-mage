@@ -805,7 +805,7 @@
   {#if !currentBattleNode}
     <div class="status-top">
       <div class="hp-bar">
-        <span class="hp-label">HP</span>
+        <span class="ui-icon ui-icon-hp" aria-label="HP"></span>
         <div class="hp-track">
           <div class="hp-fill" style:width="{hpPercent}%"
                class:hp-danger={gameState.hp <= 5}
@@ -816,7 +816,7 @@
       {#if isExpanded && currentOmen.id !== 'calm_journey'}
         <div class="omen-display" title={currentOmen.description}>兆: {currentOmen.name}</div>
       {/if}
-      <div class="gold-display">{gameState.quill} Q</div>
+      <div class="gold-display"><span class="ui-icon ui-icon-quill" aria-label="Quill"></span>{gameState.quill}</div>
     </div>
   {/if}
 
@@ -1093,7 +1093,7 @@
             <!-- プレイヤーHP・ゴールド -->
             <div class="player-status-row">
               <div class="hp-bar">
-                <span class="hp-label">HP</span>
+                <span class="ui-icon ui-icon-hp" aria-label="HP"></span>
                 <div class="hp-track">
                   <div class="hp-fill" style:width="{hpPercent}%"
                        class:hp-danger={gameState.hp <= 5}
@@ -1101,13 +1101,13 @@
                 </div>
                 <span class="hp-text">{gameState.hp}/{gameState.maxHp}</span>
               </div>
-              <div class="gold-display">{gameState.quill} Q</div>
+              <div class="gold-display"><span class="ui-icon ui-icon-quill" aria-label="Quill"></span>{gameState.quill}</div>
             </div>
           </div>
         </div>
 
         <div class="action-bar">
-          <span class="ap-display">残り {gameState.actionPoints} 手</span>
+          <span class="ap-display"><span class="ui-icon ui-icon-ap" aria-label="AP"></span>残り {gameState.actionPoints} 手</span>
           {#if battle.turnPhase === 'writing' && !isBattleWon}
             <button class="resolve-btn" onclick={handleBattleResolve}>書き換えを確定する</button>
           {/if}
@@ -1196,7 +1196,7 @@
           </div>
         </div>
         <div class="action-bar">
-          <span class="ap-display">残り {gameState.actionPoints} 手</span>
+          <span class="ap-display"><span class="ui-icon ui-icon-ap" aria-label="AP"></span>残り {gameState.actionPoints} 手</span>
           {#if gameState.phase === 'playing'}
             <button class="resolve-btn" onclick={handleResolve}>書き換えを確定する</button>
           {/if}
@@ -1294,6 +1294,33 @@
   .status-top { width: 100%; max-width: 960px; display: flex; align-items: center; gap: 16px; padding: 0 8px; }
   .hp-bar { display: flex; align-items: center; gap: 8px; flex: 1; }
   .hp-label { color: var(--page-cream); font-family: var(--font-story); font-size: 0.8rem; }
+
+  /* UIアイコン（ui-icons.png 48×16 → 2倍拡大で32×32各） */
+  .ui-icon {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-image: url(./assets/sprites/ui-icons.png);
+    background-repeat: no-repeat;
+    background-size: 96px 32px;
+    image-rendering: pixelated;
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
+  .ui-icon-hp { background-position: 0 0; }
+  .ui-icon-quill { background-position: -32px 0; }
+  .ui-icon-ap { background-position: -64px 0; }
+
+  /* Quill/AP 表示内のアイコンは少し小さめに */
+  .gold-display .ui-icon,
+  .ap-display .ui-icon {
+    width: 24px;
+    height: 24px;
+    background-size: 72px 24px;
+    margin-right: 4px;
+  }
+  .gold-display .ui-icon-quill { background-position: -24px 0; }
+  .ap-display .ui-icon-ap { background-position: -48px 0; }
   .hp-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; overflow: hidden; }
   .hp-fill { height: 100%; background: #5a9e5a; border-radius: 5px; transition: width 0.5s ease; }
   .hp-fill.hp-warn { background: #c4a265; }
