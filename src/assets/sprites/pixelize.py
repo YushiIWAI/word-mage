@@ -333,12 +333,18 @@ def floyd_steinberg_dither(
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # メインパイプライン
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-def remove_background(img_cv: np.ndarray, fuzz: float = 40.0) -> np.ndarray:
+def remove_background(img_cv: np.ndarray, fuzz: float = 40.0, flood: bool = False) -> np.ndarray:
     """
-    左上ピクセルの色を基準に背景を除去。
-    HSV空間で距離がfuzz以内のピクセルを透過にする。
+    背景を除去してアルファマスクを返す。
 
-    Returns: アルファマスク (h, w) uint8 0-255
+    flood=False (従来): 左上ピクセル色と HSV 距離が fuzz 以内を全て透過化。
+        シンプルだが、被写体内部に同系色があると穴が開く。
+
+    flood=True (推奨): 画像の上端・左端・右端に接触しているピクセルで、
+        背景色に似ているものだけを透過化（連結成分ベース）。
+        被写体内部の同系色は透過されないので穴が開かない。
+
+    Returns: アルファマスク (h, w) uint8 0=透過, 255=不透過
     """
     hsv = cv2.cvtColor(img_cv, cv2.COLOR_BGR2HSV).astype(np.float32)
     bg_hsv = hsv[0, 0]
@@ -347,7 +353,30 @@ def remove_background(img_cv: np.ndarray, fuzz: float = 40.0) -> np.ndarray:
     s_diff = np.abs(hsv[:, :, 1] - bg_hsv[1])
     v_diff = np.abs(hsv[:, :, 2] - bg_hsv[2])
     dist = np.sqrt(h_diff ** 2 + (s_diff * 0.5) ** 2 + (v_diff * 0.5) ** 2)
-    return np.where(dist < fuzz, 0, 255).astype(np.uint8)
+    similar = (dist < fuzz).astype(np.uint8)  # 1=背景色に類似
+
+    if not flood:
+        return np.where(similar, 0, 255).astype(np.uint8)
+
+    # 連結成分ラベリング。背景色に類似するピクセルのうち、画像の
+    # 上端・左端・右端に接しているコンポーネントだけを背景と判定する。
+    # （被写体内部の同系色穴を防ぐため）
+    num_labels, labels = cv2.connectedComponents(similar, connectivity=8)
+    h, w = similar.shape
+    edge_labels = set()
+    # 上端・左端・右端のピクセルのラベルを収集
+    for x in range(w):
+        if similar[0, x]:
+            edge_labels.add(int(labels[0, x]))
+    for y in range(h):
+        if similar[y, 0]:
+            edge_labels.add(int(labels[y, 0]))
+        if similar[y, w - 1]:
+            edge_labels.add(int(labels[y, w - 1]))
+    edge_labels.discard(0)  # 0 は背景ラベル（類似しないピクセル群）
+
+    transparent = np.isin(labels, list(edge_labels) if edge_labels else [])
+    return np.where(transparent, 0, 255).astype(np.uint8)
 
 
 def pixelize(
@@ -382,9 +411,11 @@ def pixelize(
         print(f" → crop[{img.shape[1]}x{img.shape[0]}]", end="", flush=True)
 
     # ── Step 0: 背景除去 ──
+    # 常に flood-fill ベース: 画像端から連結した背景色のみ透過化し、
+    # 被写体内部の同系色が透過されて穴が開くのを防ぐ
     alpha_mask = None
     if chromakey:
-        alpha_mask = remove_background(img, chromakey_fuzz)
+        alpha_mask = remove_background(img, chromakey_fuzz, flood=True)
         print(" → chromakey", end="", flush=True)
 
     # ── Step 1: バイラテラルフィルタ ──
